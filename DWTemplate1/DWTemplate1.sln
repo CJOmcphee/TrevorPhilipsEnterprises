@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWTemplate1", "DWTemplate1\DWTemplate1.csproj", "{B7C44620-7046-4103-AB31-40ECB0A77DAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7C44620-7046-4103-AB31-40ECB0A77DAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7C44620-7046-4103-AB31-40ECB0A77DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7C44620-7046-4103-AB31-40ECB0A77DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7C44620-7046-4103-AB31-40ECB0A77DAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6F9C181-BA04-4901-B3DF-1323A4CCF853}
+	EndGlobalSection
+EndGlobal
