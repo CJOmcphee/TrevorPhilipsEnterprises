@@ -178,6 +178,22 @@ as begin
 			delete from tbQuestions where question=@questions
 		end
 end
+go
+create procedure forgotPassword(
+@sID varchar(100)
+)
+as begin
+	select  studentPassword from  tbLogin where sID=@sID
+end
+go
+create procedure forgotUsername(
+@studentEmail varchar(100)
+)
+as begin
+	select studentEmail from tbStudents where studentEmail=@studentEmail
+end
+
+
 
 
 
