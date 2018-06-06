@@ -33,6 +33,10 @@ create table tbTest(
 testID int identity(1,1) primary key,
 score int
 )
+
+-- You COULD put in a test ID for the sake of easier coding, you would just have to know what individual questions are
+-- because there's going to be an absolute ton of questions - Darryl.
+
 create table tbQuestions(
 question varchar(500) primary key,
 tID int foreign key references tbTest(testID),
