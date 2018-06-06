@@ -150,10 +150,10 @@ end
 go
 
 create procedure spQuestions(
-@questions varchar(1000),
-@answers varchar(1000),
-@tID int,
-@crud varchar(1)
+@questions varchar(1000) =null,
+@answers varchar(1000) =null,
+@tID int =null,
+@crud varchar(1) =null
 )
 as begin
 	if @crud='c'
