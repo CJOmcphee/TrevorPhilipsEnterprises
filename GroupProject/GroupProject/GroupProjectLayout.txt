@@ -1,0 +1,40 @@
+Modules[11]
+	Lecture page
+		- explain what theyre gonna learn during this module (summary of module)
+		- take step by step explaining parts of module
+		- explain how we are gonna use the new code we just learnt (explain the program/goal we are going to create)
+	Example page
+		- explain again how we are gonna use the code we just learnt and what were gonna make
+		- take step by step how to accomplish our goal/program(make them write most of it, if we need them create an int tell them to dont show them thats what the lecture page is for)
+		- if they fail to accomplish that step send them back to the lecture page where we explained how to do it
+	OutCome page
+		- what the app is suppose to do at the end
+		- What the code looks like in the end(Do not allow copying)
+	Test page
+		- ask user questions based on lecture page, allow input from users to test to see if answer is right
+		- users must pass this test to access next module
+
+Sql Database
+	- login system for users/ admin
+	- keep track if user passed certain tests(and what grade, for admin to see which module is the most difficult to comprehend)
+	- 1 test per module
+	- multiple data for questions/answers for tests
+	- stored procedures
+	- Module Example page question and answers
+	- Module Lecture page steps, goal, summary
+		- spUser(Update/Read User Grades and information)
+		- spLogin(check to see if admin/User)
+		- spGetModuleInfo(Gets module lecture steps, goal and summary. Gets module Example steps and answers. Gets module test, and all the questions and answers)
+		- spUpdateModule(Update Module lecture steps, goal and summary. Updates module Exmaple steps and answers. Updates modules questions and answers
+
+U = User access
+A = Admin access
+Navigation
+	- Master Page(users can access their grades and other modules as well as their login information, Admin can access module and user page)
+	- U User Page(change current logged in user information, and see grades for each module)
+	- U Module Page [11] (goes to Module Lecture page as default, allows access to other module pages) 
+	- A User Page(Edit user information (excluding test marks) able to see test marks)
+	- A Module Page [11]  Edit Module Test page questions and answers)
+Css
+	- color oreiented, great user experience, master page organized(easily able to access other modules and their info), 
+		
