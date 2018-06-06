@@ -158,8 +158,12 @@ create procedure spQuestions(
 as begin
 	if @crud='c'
 		begin 
-			 insert into tbQuestions(tID,questions,answers)values
-									(@tID,@questions,@solutions)
+			 insert into tbQuestions(tID,question,answers)values
+									(@tID,@questions,@answers)
+		end
+	if @crud='r'
+		begin
+			select * from tbQuestions
 		end
 end
 
