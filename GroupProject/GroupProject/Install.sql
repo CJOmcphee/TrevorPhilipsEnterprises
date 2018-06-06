@@ -165,6 +165,18 @@ as begin
 		begin
 			select * from tbQuestions
 		end
+	if @crud='u'
+		begin
+			update tbQuestions
+				set tID=@tID,
+					question=@questions,
+					answers=@answers
+					where question=@questions
+		end
+	if @crud='d'
+		begin
+			delete from tbQuestions where question=@questions
+		end
 end
 
 
