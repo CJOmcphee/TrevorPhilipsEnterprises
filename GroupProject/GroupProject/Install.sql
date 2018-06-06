@@ -33,6 +33,10 @@ create table tbTest(
 testID int identity(1,1) primary key,
 score int
 )
+
+-- You COULD put in a test ID for the sake of easier coding, you would just have to know what individual questions are
+-- because there's going to be an absolute ton of questions - Darryl.
+
 create table tbQuestions(
 question varchar(500) primary key,
 tID int foreign key references tbTest(testID),
@@ -146,18 +150,50 @@ end
 go
 
 create procedure spQuestions(
-@questions varchar(1000),
-@answers varchar(1000),
-@tID int,
-@crud varchar(1)
+@questions varchar(1000) =null,
+@answers varchar(1000) =null,
+@tID int =null,
+@crud varchar(1) =null
 )
 as begin
 	if @crud='c'
 		begin 
-			 insert into tbQuestions(tID,questions,answers)values
-									(@tID,@questions,@solutions)
+			 insert into tbQuestions(tID,question,answers)values
+									(@tID,@questions,@answers)
+		end
+	if @crud='r'
+		begin
+			select * from tbQuestions
+		end
+	if @crud='u'
+		begin
+			update tbQuestions
+				set tID=@tID,
+					question=@questions,
+					answers=@answers
+					where question=@questions
+		end
+	if @crud='d'
+		begin
+			delete from tbQuestions where question=@questions
 		end
 end
+go
+create procedure forgotPassword(
+@sID varchar(100)
+)
+as begin
+	select  studentPassword from  tbLogin where sID=@sID
+end
+go
+create procedure forgotUsername(
+@studentEmail varchar(100)
+)
+as begin
+	select studentEmail from tbStudents where studentEmail=@studentEmail
+end
+
+
 
 
 
