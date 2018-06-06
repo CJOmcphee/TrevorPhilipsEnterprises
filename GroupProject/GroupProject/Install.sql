@@ -143,4 +143,21 @@ as begin
 		end
 end
 
+go
+
+create procedure spQuestions(
+@questions varchar(1000),
+@answers varchar(1000),
+@tID int,
+@crud varchar(1)
+)
+as begin
+	if @crud='c'
+		begin 
+			 insert into tbQuestions(tID,questions,answers)values
+									(@tID,@questions,@solutions)
+		end
+end
+
+
 
