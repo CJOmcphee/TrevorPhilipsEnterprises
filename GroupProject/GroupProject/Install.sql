@@ -5,6 +5,7 @@ go
 create database dbTestEnviroment;
 go
 use dbTestEnviroment
+go
 create table tbLogin(
 sID varchar(100) primary key,
 studentPassword varchar(50),
@@ -52,6 +53,7 @@ create procedure spStudents(
 @lastName varchar(50) =null,
 @crud varchar(1), 
 @access varchar(1) =null
+
 )
 as begin
 	if @crud='c'
@@ -81,10 +83,9 @@ as begin
 		end
 	if @crud ='d'
 		begin
-			declare @sid varchar(50);
-			select @sid=studentID from tbStudents where studentID=@studentID
-			delete from tbStudents where studentID=@sid
-			delete from tbLogin where sID =@sid
+			select @studentEmail=studentEmail from tbStudents where studentEmail=@studentEmail
+			delete from tbStudents where studentEmail=@studentEmail
+			delete from tbLogin where sID =@studentEmail
 		end
 end
 go
@@ -95,7 +96,10 @@ exec spStudents @crud='c', @studentEmail='bruce.banner@robertsoncollege.net',@st
 exec spStudents @crud='c', @studentEmail='doug.jackson@robertsoncollege.net',@studentPassword='password',
 					@firstName='Doug',@lastName='Jackson',@access='a'
 select * from tbLogin
-select * from tbStudents
+exec spStudents @crud='u', @studentID=2, @firstName='Bruce',@lastName='Jenner',@studentEmail='bruce.banner@robertsoncollege.net'
+exec spStudents @crud='r'
+
+
 go
 create procedure spLogin(
 @studentID varchar(50) =null,
@@ -111,10 +115,12 @@ as begin
 		select @access as access
 			if @access ='u'
 				begin
-					select firstName+' '+lastName as fullname,studentID,firstName,lastName from tbStudents where studentID=@studentID
+					select firstName+' '+lastName as fullname,studentID,firstName,lastName from tbStudents where studentEmail=@studentID
 				end
 	end
 end
+go
+exec spLogin @studentID='bruce.banner@robertsoncollege.net',@studentPassword='password'
 go
 create procedure spExamples(
 @exampleID int =null,
