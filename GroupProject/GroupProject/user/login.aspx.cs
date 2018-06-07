@@ -18,7 +18,7 @@ namespace GroupProject.user
 
         protected void btnSignIn_Click(object sender, EventArgs e)
         {
-            DataSet ds = Crud.Login(username.Value.ToString(), password.Value.ToString());
+            DataSet ds = Crud.Login(tbEmail.Text.ToString(), tbPassword.Text.ToString());
             if (ds == null)
             {
 

@@ -15,8 +15,8 @@ namespace GroupProject
         public static DAL mydal = new DAL(conn);
         public static DataSet Login(string UserEmail, string UserPassword)
         {
-            mydal.AddParam("@StudentID", UserEmail);
-            mydal.AddParam("@StudentPassword", UserPassword);
+            mydal.AddParam("@studentID", UserEmail);
+            mydal.AddParam("@studentPassword", UserPassword);
             DataSet ds = mydal.ExecuteProcedure("spLogin");
             return ds;
         }
