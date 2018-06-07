@@ -43,6 +43,11 @@ question varchar(500) primary key,
 tID int foreign key references tbTest(testID),
 answers varchar(500)
 )
+
+create table tbWrongQuestions(
+questions varchar(1000) foreign key references tbQuestions(question),
+wrongQuestions varchar(1000)
+)
 go
 --PROCEDURES FOR STUDENTS
 create procedure spStudents(
