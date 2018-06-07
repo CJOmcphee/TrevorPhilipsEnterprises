@@ -47,14 +47,14 @@ score int
 -- because there's going to be an absolute ton of questions - Darryl.
 
 create table tbQuestions(
-question varchar(500) primary key,
 tID varchar(50)foreign key references tbTest(testID),
+question varchar(500) primary key,
 answers varchar(500)
 )
 
-create table tbWrongQuestions(
+create table tbWrongAnswers(
 questions varchar(500) foreign key references tbQuestions(question),
-wrongQuestions varchar(1000)
+wrongAnswers varchar(1000)
 )
 go
 --PROCEDURES FOR STUDENTS
@@ -172,7 +172,7 @@ go
 create procedure spQuestions(
 @questions varchar(1000) =null,
 @answers varchar(1000) =null,
-@tID int =null,
+@tID varchar(50) =null,
 @crud varchar(1) =null
 )
 as begin
@@ -199,7 +199,33 @@ as begin
 		end
 end
 go
-exec spQuestions @crud='c', @tID=1, @questions='What is 1 plus 1?', @answers='2'
+create procedure spWrongAnswer(
+@question varchar(500) =null,
+@wrongAnswers varchar(500) = null,
+@crud varchar(1) =null
+)
+as begin
+	if @crud='c'
+		begin
+			insert into tbWrongAnswers(questions,wrongAnswers)values
+										(@question,@wrongAnswers)
+		end
+	if @crud='r'
+		begin
+			select wrongAnswers from tbWrongAnswers where questions= @question
+		end
+	if @crud='d'
+		begin
+			delete from tbWrongAnswers where questions=@question
+		end
+end
+go
+exec spQuestions @crud='c', @tID='module1', @questions='What is 1 plus 1?', @answers='2'
+exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='32'
+exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='3'
+exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='22'
+exec spWrongAnswer @crud='r', @question='What is 1 plus 1?'
+exec spQuestions @crud='r'
 go
 create procedure spforgotPassword(
 @sID varchar(100)
