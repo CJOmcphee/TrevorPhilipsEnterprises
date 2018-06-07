@@ -198,6 +198,8 @@ create procedure forgotUsername(
 as begin
 	select studentEmail from tbStudents where studentEmail=@studentEmail
 end
+go
+exec spforgotUsername @studentemail='bruce.banner@robertsoncollege.net'
 
 
 
