@@ -199,7 +199,7 @@ as begin
 		end
 end
 go
-
+exec spQuestions @crud='c', @tID=1, @questions='What is 1 plus 1?', @answers='2'
 go
 create procedure spforgotPassword(
 @sID varchar(100)
