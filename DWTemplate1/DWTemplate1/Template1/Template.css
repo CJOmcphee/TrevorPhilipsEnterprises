@@ -1,7 +1,4 @@
-﻿body {
-}
-
-.sidenav{
+﻿.sidenav{
     height:100%;
     width:160px;
     position:fixed;
@@ -94,6 +91,16 @@ img {
     padding: 8px 12px;
     position: absolute;
     bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.textContent {
+    color: #f2f2f2;
+    font-size: 30px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 20px;
     width: 100%;
     text-align: center;
 }

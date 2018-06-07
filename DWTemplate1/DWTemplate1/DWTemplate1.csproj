@@ -68,13 +68,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CodeTest.html" />
-    <Content Include="img\bass_banner.jpg" />
-    <Content Include="img\Steve-Jackson-Games-Gen-Con-2016-e1471051988631 %282%29.jpg" />
-    <Content Include="img\watch-banner.jpg" />
-    <Content Include="Lesson1.html" />
-    <Content Include="Index.html" />
-    <Content Include="Template.css" />
+    <Content Include="Template1\CodeTest.html" />
+    <Content Include="Template1\img\bass_banner.jpg" />
+    <Content Include="Template1\img\Steve-Jackson-Games-Gen-Con-2016-e1471051988631 %282%29.jpg" />
+    <Content Include="Template1\img\watch-banner.jpg" />
+    <Content Include="Template1\Lesson1.html" />
+    <Content Include="Template1\Index.html" />
+    <Content Include="Template1\Template.css" />
+    <Content Include="Template2\Index2.html" />
+    <Content Include="Template2\StyleSheet1.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
