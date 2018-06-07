@@ -82,12 +82,64 @@
     <Content Include="GroupProjectLayout.txt" />
     <Content Include="Install.sql" />
     <Content Include="Module1.aspx" />
+    <Content Include="user\css\ie\html5shiv.js" />
+    <Content Include="user\css\ie\PIE.htc" />
+    <Content Include="user\css\ie\v8.css" />
+    <Content Include="user\css\ie\v9.css" />
+    <Content Include="user\css\images\img01.jpg" />
+    <Content Include="user\css\images\img02.jpg" />
+    <Content Include="user\css\images\img03.jpg" />
+    <Content Include="user\css\images\img04.png" />
+    <Content Include="user\css\images\img05.png" />
+    <Content Include="user\css\images\img06.png" />
+    <Content Include="user\css\images\img07.png" />
+    <Content Include="user\css\images\img08.jpg" />
+    <Content Include="user\css\images\img09.png" />
+    <Content Include="user\css\images\img10.png" />
+    <Content Include="user\css\images\img11.jpg" />
+    <Content Include="user\css\images\img12.jpg" />
+    <Content Include="user\css\images\img12.png" />
+    <Content Include="user\css\images\img13.jpg" />
+    <Content Include="user\css\images\mobileUI-site-nav-opener-bg.svg" />
+    <Content Include="user\css\images\spacer.gif" />
+    <Content Include="user\css\images\toggle.svg" />
+    <Content Include="user\css\skel-noscript.css" />
+    <Content Include="user\css\style-1000px.css" />
+    <Content Include="user\css\style-desktop.css" />
+    <Content Include="user\css\style-mobile.css" />
+    <Content Include="user\css\style.css" />
+    <Content Include="user\images\banner.jpg" />
+    <Content Include="user\images\pics04.jpg" />
+    <Content Include="user\images\pics05.jpg" />
+    <Content Include="user\images\pics06.jpg" />
+    <Content Include="user\images\pics07.jpg" />
+    <Content Include="user\images\pics08.jpg" />
+    <Content Include="user\images\pics09.jpg" />
+    <Content Include="user\images\pics10.jpg" />
+    <Content Include="user\images\pics11.jpg" />
+    <Content Include="user\images\pics12.jpg" />
+    <Content Include="user\images\pics13.jpg" />
+    <Content Include="user\images\pics14.jpg" />
+    <Content Include="user\images\pics15.jpg" />
+    <Content Include="user\images\pics16.jpg" />
+    <Content Include="user\images\robertson.png" />
+    <Content Include="user\images\spacer.gif" />
+    <Content Include="user\index.aspx" />
+    <Content Include="user\index.html" />
+    <Content Include="user\js\html5shiv.js" />
+    <Content Include="user\js\init.js" />
+    <Content Include="user\js\skel-panels.min.js" />
+    <Content Include="user\js\skel.min.js" />
+    <Content Include="user\left-sidebar.html" />
+    <Content Include="user\Login.aspx" />
+    <Content Include="user\modules.aspx" />
+    <Content Include="user\no-sidebar.html" />
+    <Content Include="user\right-sidebar.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Crud.cs" />
     <Compile Include="DAL_Project\DAL.cs" />
-    <Compile Include="DAL_Project\Properties\AssemblyInfo.cs" />
     <Compile Include="Module1.aspx.cs">
       <DependentUpon>Module1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -97,6 +149,30 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security.cs" />
+    <Compile Include="user\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\modules.aspx.cs">
+      <DependentUpon>modules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\modules.aspx.designer.cs">
+      <DependentUpon>modules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\user.Master.cs">
+      <DependentUpon>user.Master</DependentUpon>
+    </Compile>
+    <Compile Include="user\user.Master.designer.cs">
+      <DependentUpon>user.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL_Project\obj\Debug\DAL_Project.csproj.CoreCompileInputs.cache" />
@@ -106,6 +182,7 @@
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.min.map" />
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.slim.min.map" />
     <None Include="packages.config" />
+    <Content Include="user\user.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

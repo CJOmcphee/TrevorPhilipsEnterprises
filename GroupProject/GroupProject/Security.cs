@@ -7,6 +7,7 @@ namespace GroupProject
 {
     public class Security
     {
-
+        public string Access { get; set; }
+        public string FullName { get; set; }
     }
 }
