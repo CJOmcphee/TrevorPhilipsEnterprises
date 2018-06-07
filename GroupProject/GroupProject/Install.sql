@@ -221,6 +221,7 @@ as begin
 end
 go
 exec spQuestions @crud='c', @tID='module1', @questions='What is 1 plus 1?', @answers='2'
+exec spQuestions @crud='c', @tID='module2', @questions='Which of these is an Interger?', @answers='5'
 exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='32'
 exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='3'
 exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='22'
@@ -234,14 +235,9 @@ as begin
 	select  studentPassword from  tbLogin where sID=@sID
 end
 go
-create procedure spforgotUsername(
-@studentEmail varchar(100)
-)
-as begin
-	select studentEmail from tbStudents where studentEmail=@studentEmail
-end
+
 go
-exec spforgotUsername @studentemail='bruce.banner@robertsoncollege.net'
+
 exec spforgotPassword @sID='bruce.banner@robertsoncollege.net'
 
 
