@@ -185,14 +185,14 @@ as begin
 		end
 end
 go
-create procedure forgotPassword(
+create procedure spforgotPassword(
 @sID varchar(100)
 )
 as begin
 	select  studentPassword from  tbLogin where sID=@sID
 end
 go
-create procedure forgotUsername(
+create procedure spforgotUsername(
 @studentEmail varchar(100)
 )
 as begin
