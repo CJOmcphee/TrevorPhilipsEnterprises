@@ -22,7 +22,7 @@
 					<div class="3u">
 						<section>
 							<header>
-								<h2>Maecenas lectus</h2>
+								<h2>Maecenas lectus1</h2>
 							</header>
 							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
 							<p><a href="#"><img src="images/pics14.jpg" alt=""></a></p>
