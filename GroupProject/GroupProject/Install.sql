@@ -200,6 +200,7 @@ as begin
 end
 go
 exec spforgotUsername @studentemail='bruce.banner@robertsoncollege.net'
+exec spforgotPassword @sID='bruce.banner@robertsoncollege.net'
 
 
 
