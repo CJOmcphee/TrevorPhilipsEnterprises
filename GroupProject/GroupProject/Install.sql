@@ -31,21 +31,29 @@ solution varchar(1000),
 lID int foreign key references tbLesson(lessonID)
 )
 create table tbTest(
-testID int identity(1,1) primary key,
-score int
+testID varchar(50) primary key,
 )
+go
+insert into tbTest (testID)values
+					('module1'),('module2'),('module3')
 
+go
+create table tbStudentTest(
+tID varchar(50) foreign key references tbTest(testID),
+sID int foreign key references tbStudents (studentID),
+score int 
+)
 -- You COULD put in a test ID for the sake of easier coding, you would just have to know what individual questions are
 -- because there's going to be an absolute ton of questions - Darryl.
 
 create table tbQuestions(
 question varchar(500) primary key,
-tID int foreign key references tbTest(testID),
+tID varchar(50)foreign key references tbTest(testID),
 answers varchar(500)
 )
 
 create table tbWrongQuestions(
-questions varchar(1000) foreign key references tbQuestions(question),
+questions varchar(500) foreign key references tbQuestions(question),
 wrongQuestions varchar(1000)
 )
 go
@@ -159,7 +167,8 @@ as begin
 end
 
 go
-
+select * from tbTest
+go
 create procedure spQuestions(
 @questions varchar(1000) =null,
 @answers varchar(1000) =null,
@@ -189,6 +198,8 @@ as begin
 			delete from tbQuestions where question=@questions
 		end
 end
+go
+
 go
 create procedure spforgotPassword(
 @sID varchar(100)
