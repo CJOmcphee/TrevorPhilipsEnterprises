@@ -15,8 +15,8 @@ namespace GroupProject
         public static DAL mydal = new DAL(conn);
         public static DataSet Login(string UserEmail, string UserPassword)
         {
-            mydal.AddParam("@StudentID", UserEmail);
-            mydal.AddParam("@StudentPassword", UserPassword);
+            mydal.AddParam("@studentEmail", UserEmail);
+            mydal.AddParam("@studentPassword", UserPassword);
             DataSet ds = mydal.ExecuteProcedure("spLogin");
             return ds;
         }
@@ -33,7 +33,7 @@ namespace GroupProject
             mydal.AddParam("@crud", "r");
             if (Procedure== "spStudents")
             {
-                mydal.AddParam("@StudentID", id.ToString());
+                mydal.AddParam("@studentEmail", id.ToString());
             }
             if (Procedure == "spExamples")
             {
@@ -42,6 +42,10 @@ namespace GroupProject
             if (Procedure == "spQuestions")
             {
                 mydal.AddParam("@questions", id.ToString());
+            }
+            if(Procedure == "spWrongAnswer")
+            {
+                mydal.AddParam("@question", id.ToString());
             }
             DataSet ds = mydal.ExecuteProcedure(Procedure);
             return ds;
@@ -51,7 +55,7 @@ namespace GroupProject
             mydal.AddParam("@crud", "d");
             if (Procedure == "spStudents")
             {
-                mydal.AddParam("@StudentID", id.ToString());
+                mydal.AddParam("@studentEmail", id.ToString());
             }
             if (Procedure == "spExamples")
             {
@@ -60,6 +64,10 @@ namespace GroupProject
             if (Procedure == "spQuestions")
             {
                 mydal.AddParam("@questions", id.ToString());
+            }
+            if(Procedure == "spWrongAnswer")
+            {
+                mydal.AddParam("@question", id.ToString());
             }
         }
         public static void CreateUpdateUser(string crud ,string UserEmail,string UserPassword,string FirstName,string LastName,string access)
@@ -88,6 +96,34 @@ namespace GroupProject
             mydal.AddParam("@answers", answer);
             mydal.AddParam("tID", TestID);
             mydal.ExecuteProcedure("spQuestions");
+        }
+        public static void CreateWrongAnswer(string crud, string question, string wronganswer)
+        {
+            mydal.AddParam("@crud", crud);
+            mydal.AddParam("@question", question);
+            mydal.AddParam("@wrongAnswers", wronganswer);
+            mydal.ExecuteProcedure("spWrongAnswer");
+        }
+        public static void UpdateTestScore(string score, string test, string StudentEmail)
+        {
+            mydal.AddParam("@crud", "u"); 
+            mydal.AddParam("@score", score);
+            mydal.AddParam("@tID", test);
+            mydal.AddParam("@sID", StudentEmail);
+            mydal.ExecuteProcedure("spScore");
+        }
+        public static void GetScore(string StudentEmail, string test)
+        {
+            mydal.AddParam("@crud", "r");
+            mydal.AddParam("@sID", StudentEmail);
+            mydal.AddParam("@tID", test);
+            mydal.ExecuteProcedure("spScore");
+        }
+        public static DataSet GetPassword(string Email)
+        {
+            mydal.AddParam("@sEmail", Email);
+            DataSet ds = mydal.ExecuteProcedure("spforgotPassword");
+            return ds;
         }
     }
 }
