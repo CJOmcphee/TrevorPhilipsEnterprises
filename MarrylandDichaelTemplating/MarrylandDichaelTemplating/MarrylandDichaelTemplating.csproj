@@ -8,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B7C44620-7046-4103-AB31-40ECB0A77DAB}</ProjectGuid>
+    <ProjectGuid>{7F3088F8-958D-4509-8D09-B21E0B4BCF33}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DWTemplate1</RootNamespace>
-    <AssemblyName>DWTemplate1</AssemblyName>
+    <RootNamespace>MarrylandDichaelTemplating</RootNamespace>
+    <AssemblyName>MarrylandDichaelTemplating</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -68,40 +68,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
-    <Content Include="Template1\CodeTest.html" />
-    <Content Include="Template1\img\bass_banner.jpg" />
-    <Content Include="Template1\img\Steve-Jackson-Games-Gen-Con-2016-e1471051988631 %282%29.jpg" />
-    <Content Include="Template1\img\watch-banner.jpg" />
-    <Content Include="Template1\Lesson1.html" />
-    <Content Include="Template1\Index.html" />
-    <Content Include="Template1\Template.css" />
-    <Content Include="Template2\img\bass_banner.jpg" />
-    <Content Include="Template2\img\Steve-Jackson-Games-Gen-Con-2016-e1471051988631 %282%29.jpg" />
-    <Content Include="Template2\img\watch-banner.jpg" />
-    <Content Include="Template2\Index2.html" />
-    <Content Include="Template2\Lesson1.aspx" />
-    <Content Include="Template2\StyleSheet1.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Template2\Lesson1.aspx.cs">
-      <DependentUpon>Lesson1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Template2\Lesson1.aspx.designer.cs">
-      <DependentUpon>Lesson1.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.3.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -122,9 +95,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>58119</DevelopmentServerPort>
+          <DevelopmentServerPort>49955</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:58119/</IISUrl>
+          <IISUrl>http://localhost:49955/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
