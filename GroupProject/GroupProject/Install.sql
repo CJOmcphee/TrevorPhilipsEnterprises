@@ -241,7 +241,7 @@ exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='32'
 exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='3'
 exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='22'
 exec spWrongAnswer @crud='r', @question='What is 1 plus 1?'
-exec spQuestions @crud='r'
+exec spQuestions @crud='r', @questions='What is 1 plus 1?'
 
 
 go
