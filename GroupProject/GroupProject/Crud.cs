@@ -106,10 +106,18 @@ namespace GroupProject
         }
         public static void UpdateTestScore(string score, string test, string StudentEmail)
         {
+            mydal.AddParam("@crud", "u"); 
             mydal.AddParam("@score", score);
             mydal.AddParam("@tID", test);
             mydal.AddParam("@sID", StudentEmail);
-            mydal.ExecuteProcedure("spUpdateScore");
+            mydal.ExecuteProcedure("spScore");
+        }
+        public static void GetScore(string StudentEmail, string test)
+        {
+            mydal.AddParam("@crud", "r");
+            mydal.AddParam("@sID", StudentEmail);
+            mydal.AddParam("@tID", test);
+            mydal.ExecuteProcedure("spScore");
         }
         public static DataSet GetPassword(string Email)
         {
