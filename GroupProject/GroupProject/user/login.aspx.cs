@@ -21,7 +21,10 @@ namespace GroupProject.user
             DataSet ds = Crud.Login(tbEmail.Text.ToString(), tbPassword.Text.ToString());
             if (ds == null)
             {
-
+                lblDisplay.Text = "Unsuccessful";
+            }else
+            {
+                lblDisplay.Text = "Success";
             }
         }
     }
