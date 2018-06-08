@@ -68,6 +68,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Template1\CodeTest.html" />
     <Content Include="Template1\img\bass_banner.jpg" />
     <Content Include="Template1\img\Steve-Jackson-Games-Gen-Con-2016-e1471051988631 %282%29.jpg" />
@@ -75,6 +80,9 @@
     <Content Include="Template1\Lesson1.html" />
     <Content Include="Template1\Index.html" />
     <Content Include="Template1\Template.css" />
+    <Content Include="Template2\img\bass_banner.jpg" />
+    <Content Include="Template2\img\Steve-Jackson-Games-Gen-Con-2016-e1471051988631 %282%29.jpg" />
+    <Content Include="Template2\img\watch-banner.jpg" />
     <Content Include="Template2\Index2.html" />
     <Content Include="Template2\StyleSheet1.css" />
     <Content Include="Web.config" />
@@ -84,6 +92,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
