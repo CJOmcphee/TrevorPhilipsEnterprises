@@ -8,7 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div> <%--slideshow container--%>
             Slide-Show Here
         </div>
     </form>
