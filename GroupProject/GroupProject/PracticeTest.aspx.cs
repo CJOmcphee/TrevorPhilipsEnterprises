@@ -9,6 +9,7 @@ namespace GroupProject
 {
     public partial class PracticeTest : System.Web.UI.Page
     {
+        Crud mycrud = new Crud();
         protected void Page_Load(object sender, EventArgs e)
         {
 

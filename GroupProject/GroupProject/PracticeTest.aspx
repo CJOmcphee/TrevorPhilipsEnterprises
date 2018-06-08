@@ -11,8 +11,20 @@
         <div>
             <table>
                 <tr>
-                    
+                    <td> <asp:Label ID="lblQuestion" runat="server" Text=""></asp:Label> </td>
                 </tr>
+                <tr>
+                    <td>
+                        <asp:RadioButtonList ID="rblAnswers" runat="server">
+                        <asp:ListItem></asp:ListItem>
+                        <asp:ListItem></asp:ListItem>
+                        <asp:ListItem></asp:ListItem>
+                        <asp:ListItem></asp:ListItem>
+                    </asp:RadioButtonList>
+                    </td>
+                </tr>
+                    
+                
             </table>
         </div>
     </form>

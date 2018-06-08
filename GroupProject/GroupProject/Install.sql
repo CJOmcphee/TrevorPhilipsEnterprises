@@ -239,8 +239,8 @@ end
 go
 create procedure spScore(
 @score int,
-@tID int,
-@sID int,
+@tID varchar(50),
+@sID varchar(50),
 @crud  varchar(1)
 )
 as  begin
