@@ -237,15 +237,23 @@ as begin
 	select  studentPassword from  tbLogin where sID=@sEmail
 end
 go
-create procedure spUpdateScore(
+create procedure spScore(
 @score int,
 @tID int,
-@sID int
+@sID int,
+@crud  varchar(1)
 )
 as  begin
-	update tbStudentTest
-		set score =@score
-		where sID=@sID and tID=@tID
+	if @crud='r'
+		begin
+			select * from tbStudentScore where sID=isnull(@sID,sID) and tID=isnull(@tID,tID)
+	end
+	if @crud='u'
+		begin
+			update tbStudentTest
+				set score =@score
+				where sID=@sID and tID=@tID
+		end
 end
 go
 
