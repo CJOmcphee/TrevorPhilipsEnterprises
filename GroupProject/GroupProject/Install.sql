@@ -239,6 +239,9 @@ exec spQuestions @crud='c', @tID='module2', @questions='Which of these is an Int
 exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='32'
 exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='3'
 exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='22'
+exec spWrongAnswer @crud='c', @question='What is 2 plus 2?', @wrongAnswers='16'
+exec spWrongAnswer @crud='c', @question='What is 2 plus 2?', @wrongAnswers='0'
+exec spWrongAnswer @crud='c', @question='What is 2 plus 2?', @wrongAnswers='17'
 exec spWrongAnswer @crud='r', @question='What is 1 plus 1?'
 exec spQuestions @crud='r', @questions='What is 1 plus 1?'
 
