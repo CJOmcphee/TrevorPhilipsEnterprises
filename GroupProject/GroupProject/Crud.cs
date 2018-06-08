@@ -69,6 +69,7 @@ namespace GroupProject
             {
                 mydal.AddParam("@question", id.ToString());
             }
+            mydal.ExecuteProcedure(Procedure);
         }
         public static void CreateUpdateUser(string crud ,string UserEmail,string UserPassword,string FirstName,string LastName,string access)
         {
