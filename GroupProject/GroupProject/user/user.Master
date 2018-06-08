@@ -13,6 +13,7 @@
        	<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
+        
    
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
@@ -42,11 +43,28 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li class="active"><a href="index.aspx">Home</a></li>
-							<li class="active"><a href="modules.aspx">Modules</a></li>
-							<li class="active"><a href="login.aspx">Login</a></li>
+							<li id="Home" class="active"><a href="index.aspx">Home</a></li>
+							<li id="Modules"><a href="modules.aspx">Modules</a></li>
+							<li id="Login"><a href="login.aspx">Login</a></li>
 						</ul>
 					</nav>
+                <script>
+                     $(function () {
+                         setNavigation();
+                    });
+                    function setNavigatin() {
+                        var path = window.location.pathname;
+                        path = path.replace(/\/$/, "");
+                        path = decodeURIComponent(path);
+                        $("#nav .active a").each(function () {
+                            var href = $(this).attr('href');
+                            if (path.substring(0, href.length) == href) {
+                                $(this).closest('li').addClass('active');
+                            }
+                            
+                        });
+                    }
+                </script>
 
 			</div>
 		</div>

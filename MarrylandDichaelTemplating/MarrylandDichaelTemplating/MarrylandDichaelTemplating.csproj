@@ -68,6 +68,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="img1.jpg" />
+    <Content Include="img2.jpg" />
+    <Content Include="img3.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="Slider.css" />
     <Content Include="Web.config" />
