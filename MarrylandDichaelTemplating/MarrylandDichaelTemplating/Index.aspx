@@ -9,8 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Hello
-            <asp:Button ID="Button1" runat="server" Text="Button" />
+            Slide-Show Here
         </div>
     </form>
 </body>
