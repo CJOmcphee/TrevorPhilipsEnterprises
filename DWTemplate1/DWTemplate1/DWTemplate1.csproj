@@ -73,28 +73,18 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
-    <Content Include="Template1\CodeTest.html" />
-    <Content Include="Template1\img\bass_banner.jpg" />
-    <Content Include="Template1\img\red-wallpaper-13.jpg" />
-    <Content Include="Template1\img\Steve-Jackson-Games-Gen-Con-2016-e1471051988631 %282%29.jpg" />
-    <Content Include="Template1\img\watch-banner.jpg" />
-    <Content Include="Template1\Lesson1.html" />
-    <Content Include="Template1\Index.html" />
-    <Content Include="Template1\Template.css" />
-    <Content Include="Template2\Index2.html" />
-    <Content Include="Template2\Lesson1.aspx" />
-    <Content Include="Template2\StyleSheet1.css" />
+    <Content Include="CodeTest.html" />
+    <Content Include="img\bass_banner.jpg" />
+    <Content Include="img\red-wallpaper-13.jpg" />
+    <Content Include="img\Steve-Jackson-Games-Gen-Con-2016-e1471051988631 %282%29.jpg" />
+    <Content Include="img\watch-banner.jpg" />
+    <Content Include="Lesson1.html" />
+    <Content Include="Index.html" />
+    <Content Include="Template.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Template2\Lesson1.aspx.cs">
-      <DependentUpon>Lesson1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Template2\Lesson1.aspx.designer.cs">
-      <DependentUpon>Lesson1.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -107,9 +97,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Template2\img\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
