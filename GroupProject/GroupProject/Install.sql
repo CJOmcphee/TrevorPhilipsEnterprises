@@ -183,7 +183,7 @@ as begin
 		end
 	if @crud='r'
 		begin
-			select * from tbQuestions
+			select * from tbQuestions where question=isnull(@questions, question)
 		end
 	if @crud='u'
 		begin
@@ -222,13 +222,25 @@ as begin
 		end
 end
 go
+create procedure spGetTestQuestions(
+@testID varchar(50),
+@questions varchar(500)=null
+)
+as begin
+	select question, answers from tbQuestions where tID=@testID
+	select
+end
+go
 exec spQuestions @crud='c', @tID='module1', @questions='What is 1 plus 1?', @answers='2'
+exec spQuestions @crud='c', @tID='module1', @questions='What is 2 plus 2?', @answers='4'
+exec spQuestions @crud='c', @tID='module1', @questions='What is 3 plus 3?', @answers='6'
 exec spQuestions @crud='c', @tID='module2', @questions='Which of these is an Interger?', @answers='5'
 exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='32'
 exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='3'
 exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='22'
 exec spWrongAnswer @crud='r', @question='What is 1 plus 1?'
 exec spQuestions @crud='r'
+
 go
 create procedure spforgotPassword(
 @sEmail varchar(100)
@@ -257,8 +269,9 @@ as  begin
 end
 go
 
+go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
-
+exec spGetTestQuestions @testID='module1'
 
 
 
