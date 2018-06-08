@@ -82,6 +82,7 @@
     <Content Include="GroupProjectLayout.txt" />
     <Content Include="Install.sql" />
     <Content Include="Module1.aspx" />
+    <Content Include="PracticeTest.aspx" />
     <Content Include="user\css\ie\html5shiv.js" />
     <Content Include="user\css\ie\PIE.htc" />
     <Content Include="user\css\ie\v8.css" />
@@ -146,6 +147,13 @@
     </Compile>
     <Compile Include="Module1.aspx.designer.cs">
       <DependentUpon>Module1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PracticeTest.aspx.cs">
+      <DependentUpon>PracticeTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PracticeTest.aspx.designer.cs">
+      <DependentUpon>PracticeTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security.cs" />
