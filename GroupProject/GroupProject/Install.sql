@@ -226,8 +226,7 @@ as begin
 end
 go
 create procedure spGetTestQuestions(
-@testID varchar(50),
-@questions varchar(500)=null
+@testID varchar(50)
 )
 as begin
 	select question, answers from tbQuestions where tID=@testID
