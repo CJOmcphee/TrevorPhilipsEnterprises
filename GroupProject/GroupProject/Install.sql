@@ -211,10 +211,11 @@ as begin
 		begin
 			insert into tbWrongAnswers(questions,wrongAnswers)values
 										(@question,@wrongAnswers)
-		end
+		end 
 	if @crud='r'
 		begin
-			select wrongAnswers from tbWrongAnswers where questions= @question
+			select wrongAnswers, answers from tbWrongAnswers W inner join  tbQuestions Q
+			on W.questions=Q.question where questions= @question	
 		end
 	if @crud='d'
 		begin
@@ -228,7 +229,6 @@ create procedure spGetTestQuestions(
 )
 as begin
 	select question, answers from tbQuestions where tID=@testID
-	select
 end
 go
 exec spQuestions @crud='c', @tID='module1', @questions='What is 1 plus 1?', @answers='2'
