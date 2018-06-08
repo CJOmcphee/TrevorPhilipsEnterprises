@@ -12,7 +12,6 @@ studentPassword varchar(50),
 access varchar(1)
 )
 create table tbStudents(
-studentID int identity(1,1) primary key,
 firstName varchar(50),
 lastName varchar(50),
 studentEmail varchar(100) foreign key references tbLogin(sID)
@@ -40,7 +39,7 @@ insert into tbTest (testID)values
 go
 create table tbStudentTest(
 tID varchar(50) foreign key references tbTest(testID),
-sID int foreign key references tbStudents (studentID),
+sID varchar(100) foreign key references tbLogin (sID),
 score int 
 )
 -- You COULD put in a test ID for the sake of easier coding, you would just have to know what individual questions are
@@ -59,7 +58,6 @@ wrongAnswers varchar(1000)
 go
 --PROCEDURES FOR STUDENTS
 create procedure spStudents(
-@studentID int =null,
 @studentEmail varchar(100) =null,
 @studentPassword varchar(100) =null,
 @firstName varchar(50)  =null,
@@ -84,15 +82,17 @@ as begin
 		end
 	if @crud='r'
 		begin
-			select * from tbStudents where studentID=isnull(@studentID,studentID)
+			select * from tbStudents where studentEmail=isnull(@studentEmail,studentEmail)
 		end
 	if @crud='u'
 		begin
 			update tbStudents
 				set firstName=@firstName,
-					lastName=@lastName,
-					studentEmail=@studentEmail
-					where studentID=@studentID
+					lastName=@lastName
+					where studentEmail=@studentEmail
+			 update tbLogin
+				set  studentPassword=@studentPassword
+				where sID=@studentEmail
 		end
 	if @crud ='d'
 		begin
@@ -109,31 +109,31 @@ exec spStudents @crud='c', @studentEmail='bruce.banner@robertsoncollege.net',@st
 exec spStudents @crud='c', @studentEmail='doug.jackson@robertsoncollege.net',@studentPassword='password',
 					@firstName='Doug',@lastName='Jackson',@access='a'
 select * from tbLogin
-exec spStudents @crud='u', @studentID=2, @firstName='Bruce',@lastName='Jenner',@studentEmail='bruce.banner@robertsoncollege.net'
+exec spStudents @crud='u', @firstName='Bruce',@lastName='Jenner',@studentEmail='bruce.banner@robertsoncollege.net',@studentPassword='password'
 exec spStudents @crud='r'
 
 
 go
 create procedure spLogin(
-@studentID varchar(50) =null,
+@studentEmail varchar(50) =null,
 @studentPassword varchar(50) =null
 )
 as begin
 	declare @access varchar(1);
-		if exists(select * from tbLogin where sID=@studentID and
+		if exists(select * from tbLogin where sID=@studentEmail and
 											studentPassword=@studentPassword)
 	begin
-		select @access =access from tbLogin where sID=@studentID and
+		select @access =access from tbLogin where sID=@studentEmail and
 											studentPassword=@studentPassword
 		select @access as access
 			if @access ='u'
 				begin
-					select firstName+' '+lastName as fullname,studentID,firstName,lastName from tbStudents where studentEmail=@studentID
+					select firstName+' '+lastName as fullname,firstName,lastName from tbStudents where studentEmail=@studentEmail
 				end
 	end
 end
 go
-exec spLogin @studentID='bruce.banner@robertsoncollege.net',@studentPassword='password'
+exec spLogin @studentEmail='bruce.banner@robertsoncollege.net',@studentPassword='password'
 go
 create procedure spExamples(
 @exampleID int =null,
@@ -231,10 +231,10 @@ exec spWrongAnswer @crud='r', @question='What is 1 plus 1?'
 exec spQuestions @crud='r'
 go
 create procedure spforgotPassword(
-@sID varchar(100)
+@sEmail varchar(100)
 )
 as begin
-	select  studentPassword from  tbLogin where sID=@sID
+	select  studentPassword from  tbLogin where sID=@sEmail
 end
 go
 create procedure spUpdateScore(
@@ -249,7 +249,7 @@ as  begin
 end
 go
 
-exec spforgotPassword @sID='bruce.banner@robertsoncollege.net'
+exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
 
 
 
