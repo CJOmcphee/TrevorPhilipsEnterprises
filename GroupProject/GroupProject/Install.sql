@@ -173,7 +173,6 @@ create procedure spQuestions(
 @questions varchar(1000) =null,
 @answers varchar(1000) =null,
 @tID varchar(50) =null,
-@wrongAnswers varchar(500),
 @crud varchar(1) =null
 )
 as begin
