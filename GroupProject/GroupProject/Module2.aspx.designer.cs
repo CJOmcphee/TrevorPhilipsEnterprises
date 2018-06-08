@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GroupProject
-{
-
-
-    public partial class Module2
-    {
-
+namespace GroupProject {
+    
+    
+    public partial class Module2 {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
