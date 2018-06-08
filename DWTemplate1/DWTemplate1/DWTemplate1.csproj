@@ -75,14 +75,12 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Template1\CodeTest.html" />
     <Content Include="Template1\img\bass_banner.jpg" />
+    <Content Include="Template1\img\red-wallpaper-13.jpg" />
     <Content Include="Template1\img\Steve-Jackson-Games-Gen-Con-2016-e1471051988631 %282%29.jpg" />
     <Content Include="Template1\img\watch-banner.jpg" />
     <Content Include="Template1\Lesson1.html" />
     <Content Include="Template1\Index.html" />
     <Content Include="Template1\Template.css" />
-    <Content Include="Template2\img\bass_banner.jpg" />
-    <Content Include="Template2\img\Steve-Jackson-Games-Gen-Con-2016-e1471051988631 %282%29.jpg" />
-    <Content Include="Template2\img\watch-banner.jpg" />
     <Content Include="Template2\Index2.html" />
     <Content Include="Template2\Lesson1.aspx" />
     <Content Include="Template2\StyleSheet1.css" />
@@ -108,6 +106,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Template2\img\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
