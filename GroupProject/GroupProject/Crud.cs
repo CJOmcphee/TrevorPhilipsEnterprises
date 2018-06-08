@@ -113,7 +113,7 @@ namespace GroupProject
         }
         public static DataSet GetPassword(string Email)
         {
-            mydal.AddParam("@sID", Email);
+            mydal.AddParam("@sEmail", Email);
             DataSet ds = mydal.ExecuteProcedure("spforgotPassword");
             return ds;
         }
