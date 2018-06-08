@@ -195,6 +195,8 @@ as begin
 		end
 	if @crud='d'
 		begin
+
+			delete from tbWrongAnswers where questions=@questions
 			delete from tbQuestions where question=@questions
 		end
 end
@@ -235,7 +237,16 @@ as begin
 	select  studentPassword from  tbLogin where sID=@sID
 end
 go
-
+create procedure spUpdateScore(
+@score int,
+@tID int,
+@sID int
+)
+as  begin
+	update tbStudentTest
+		set score =@score
+		where sID=@sID and tID=@tID
+end
 go
 
 exec spforgotPassword @sID='bruce.banner@robertsoncollege.net'
