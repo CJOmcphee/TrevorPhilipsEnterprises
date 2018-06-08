@@ -10,7 +10,7 @@
   <a href="#" class="forgot">forgot password?</a>
         
   <asp:Button ID="btnSignIn" runat="server" Text="Sign In" OnClick="btnSignIn_Click" />
-            
+        <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label> 
 </div>
 <div class="shadow"></div>
 </div>
