@@ -24,18 +24,27 @@ namespace GroupProject
             {
                 DataSet dsQuestion = Crud.ReadTable("spQuestions", Row[0].ToString());
                 DataSet dsAnswers = Crud.ReadTable("spWrongAnswer", Row[0].ToString());
-
+                
                 Table mytable = new Table();
                 TableRow tRow = new TableRow();
+                TableRow trow1 = new TableRow();
+                TableCell tCell = new TableCell();
+                TableCell tCell1 = new TableCell();
+                
                 Label myLabel = new Label();
                 myLabel.Text = dsQuestion.Tables[0].Rows[0]["question"].ToString();
-                table1.Controls.Add(myLabel);
+                tCell.Controls.Add(myLabel);
+                tRow.Controls.Add(tCell);
+                mytable.Controls.Add(tRow);
+                
 
                 RadioButtonList myrb = new RadioButtonList();
                 myrb.DataSource = dsAnswers.Tables[0];
                 myrb.DataValueField = "wrongAnswers";
                 myrb.DataBind();
-                table1.Controls.Add(myrb);
+                tCell1.Controls.Add(myrb);
+                trow1.Controls.Add(tCell1);
+                mytable.Controls.Add(trow1);
                
             }
            
