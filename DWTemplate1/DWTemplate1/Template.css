@@ -97,13 +97,14 @@ img {
 
 .textContent {
     color: #f2f2f2;
-    font-size: 30px;
-    padding: 8px 12px;
+    font-size: medium;
+    padding: 10px 12px;
     position: absolute;
-    bottom: 20px;
+    margin:250px,auto;
     width: 100%;
     text-align: center;
 }
+
 
 /* Number text (1/3 etc) */
 .numbertext {
