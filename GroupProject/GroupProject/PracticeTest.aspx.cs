@@ -41,18 +41,19 @@ namespace GroupProject
                 tCell.Text = myLabel.ToString();
                 tRow.Cells.Add(tCell);
                 mytable.Rows.Add(tRow);
-                
-                
 
-                //RadioButtonList myrb = new RadioButtonList();
-                //myrb.DataSource = dsAnswers.Tables[0];
-                //myrb.DataValueField = "wrongAnswers";
-                //myrb.DataTextField = "wrongAnswers";
-                //myrb.DataBind();
-                //tCell1.Controls.Add(myrb);
-                //trow1.Controls.Add(tCell1);
-                //mytable.Controls.Add(trow1);
-               
+
+
+
+                RadioButtonList myrb = new RadioButtonList();
+                myrb.DataSource = dsAnswers.Tables[0];
+                myrb.DataValueField = "wrongAnswers";
+                myrb.DataTextField = "wrongAnswers";
+                myrb.DataBind();
+                tCell1.Controls.Add(myrb);
+                trow1.Controls.Add(tCell1);
+                mytable.Controls.Add(trow1);
+
             }
            
            
