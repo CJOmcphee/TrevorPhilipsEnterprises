@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.Web.UI.HtmlControls;
 
 
 namespace GroupProject
@@ -16,14 +17,16 @@ namespace GroupProject
         protected void Page_Load(object sender, EventArgs e) => LoadQuestion();
         public void LoadQuestion()
         {
+            
             DataSet dsTestQ = Crud.GetTestQuestions("module1");
-            Table mytable = new Table();
-            TableRow tRow = new TableRow();
-            TableRow trow1 = new TableRow();
-            TableCell tCell = new TableCell();
-            TableCell tCell1 = new TableCell();
+            
+            
             foreach (DataRow Row in dsTestQ.Tables[0].Rows)
             {
+                HtmlTableRow tRow = new HtmlTableRow();
+                HtmlTableRow trow1 = new HtmlTableRow();
+                HtmlTableCell tCell = new HtmlTableCell();
+                HtmlTableCell tCell1 = new HtmlTableCell();
                 DataSet dsQuestion = Crud.ReadTable("spQuestions", Row[0].ToString());
                 DataSet dsAnswers = Crud.ReadTable("spWrongAnswer", Row[0].ToString());
                 
@@ -32,11 +35,11 @@ namespace GroupProject
                 
                 Label myLabel = new Label();
                 myLabel.Text = dsQuestion.Tables[0].Rows[0]["question"].ToString();
+
                 tCell.Controls.Add(myLabel);
-                tRow.Controls.Contains(tCell);
-                tCell.Text = myLabel.ToString();
-                tRow.Cells.Add(tCell);
-                mytable.Rows.Add(tRow);
+                tRow.Controls.Add(tCell);
+                table1.Controls.Add(tRow);
+
 
 
 
@@ -48,7 +51,8 @@ namespace GroupProject
                 myrb.DataBind();
                 tCell1.Controls.Add(myrb);
                 trow1.Controls.Add(tCell1);
-                mytable.Controls.Add(trow1);
+                table1.Controls.Add(trow1);
+
 
             }
         }
