@@ -12,12 +12,8 @@ namespace GroupProject
 {
     public partial class PracticeTest : System.Web.UI.Page
     {
-        
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            LoadQuestion();
-            
-        }
+
+        protected void Page_Load(object sender, EventArgs e) => LoadQuestion();
         public void LoadQuestion()
         {
             DataSet dsTestQ = Crud.GetTestQuestions("module1");
@@ -55,12 +51,6 @@ namespace GroupProject
                 mytable.Controls.Add(trow1);
 
             }
-           
-           
-
-           
-           
-
         }
     }
 }
