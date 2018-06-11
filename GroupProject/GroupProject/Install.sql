@@ -217,7 +217,7 @@ as begin
 		begin
 			select wrongAnswers into #Allanswer from tbWrongAnswers where questions = @question 
 			insert into #Allanswer select answers from tbQuestions where question = @question
-			select * from #Allanswer
+			select * from #Allanswer Order by newID();
 		end
 	if @crud='d'
 		begin
@@ -245,7 +245,7 @@ exec spWrongAnswer @crud='c', @question='What is 2 plus 2?', @wrongAnswers='17'
 exec spWrongAnswer @crud='c', @question='What is 3 plus 3?', @wrongAnswers='15'
 exec spWrongAnswer @crud='c', @question='What is 3 plus 3?', @wrongAnswers='78'
 exec spWrongAnswer @crud='c', @question='What is 3 plus 3?', @wrongAnswers='92'
-exec spWrongAnswer @crud='r', @question='What is 1 plus 1?'
+exec spWrongAnswer @crud='r', @question='What is 3 plus 3?'
 exec spQuestions @crud='r', @questions='What is 1 plus 1?'
 
 
