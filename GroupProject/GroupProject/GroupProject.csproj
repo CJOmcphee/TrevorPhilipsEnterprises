@@ -215,6 +215,7 @@
     <Content Include="Install.sql" />
     <Content Include="Module1.aspx" />
     <Content Include="Module2.aspx" />
+    <Content Include="Module3.aspx" />
     <Content Include="PracticeTest.aspx" />
     <Content Include="Modules.css" />
     <Content Include="user\css\ie\html5shiv.js" />
@@ -288,6 +289,13 @@
     </Compile>
     <Compile Include="Module2.aspx.designer.cs">
       <DependentUpon>Module2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Module3.aspx.cs">
+      <DependentUpon>Module3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module3.aspx.designer.cs">
+      <DependentUpon>Module3.aspx</DependentUpon>
     </Compile>
     <Compile Include="PracticeTest.aspx.cs">
       <DependentUpon>PracticeTest.aspx</DependentUpon>

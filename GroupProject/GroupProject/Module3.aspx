@@ -1,17 +1,18 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Module2.aspx.cs" Inherits="GroupProject.Module2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Module3.aspx.cs" Inherits="GroupProject.Module3" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="Modules.css" rel="stylesheet" />
-    <title>Module 2</title>
+    <title>Module 3</title>
 </head>
 <body>
     <div class="sidenav" style="width:auto">
         <a href="Index.html">Home</a>
         <a href="Module1.aspx">Module 1</a>
         <a href="Module2.aspx">Module 2</a>
+        <a href="Module3.aspx">Module 3</a>
     </div>
     <div class="main">
         <div class="slideshow-container">
@@ -142,7 +143,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="button" value="Button" />
+                            <input type="button" value="Button" onclick="return fillText()" />
                             <input id="exampleBox" type="text" />
                         </td>
                     </tr>
@@ -156,6 +157,13 @@
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
 
+        </div>
+        <br />
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
         </div>
         <br />
         <div style="text-align:center">
@@ -195,6 +203,11 @@
             dots[slideIndex - 1].className += " active";
         }
 
+        function fillText() {
+            var box = document.getElementById("exampleBox").innerHTML;
+
+            box.innerHTML = "HEY";
+        }
     </script>
 </body>
 </html>
