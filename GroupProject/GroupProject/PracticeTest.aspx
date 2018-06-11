@@ -9,21 +9,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <table>
-                <tr>
-                    <td> <asp:Label ID="lblQuestion" runat="server" Text=""></asp:Label> </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:RadioButtonList ID="rblAnswers" runat="server">
-                        <asp:ListItem></asp:ListItem>
-                        <asp:ListItem></asp:ListItem>
-                        <asp:ListItem></asp:ListItem>
-                        <asp:ListItem></asp:ListItem>
-                    </asp:RadioButtonList>
-                    </td>
-                </tr>
-                    
+            <table id="table1" runat="server">
+                
+                
                 
             </table>
         </div>
