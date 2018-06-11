@@ -232,23 +232,28 @@ as begin
 	select question, answers from tbQuestions where tID=@testID
 end
 go
+--MODULE 1 Test
 exec spQuestions @crud='c', @tID='module1', @questions='______ is equipment or physical devices associted with a computer?', @answers='Hardware'
-exec spQuestions @crud='c', @tID='module1', @questions='What is 2 plus 2?', @answers='4'
-exec spQuestions @crud='c', @tID='module1', @questions='What is 3 plus 3?', @answers='6'
-exec spQuestions @crud='c', @tID='module2', @questions='Which of these is an Interger?', @answers='5'
+exec spQuestions @crud='c', @tID='module1', @questions='______ are designed to communicate directly to hardware?', @answers='Machine Language'
+exec spQuestions @crud='c', @tID='module1', @questions='All syntax errors are caught by the _____ ?', @answers='compiler'
+exec spQuestions @crud='c', @tID='module1', @questions='What is the correct order in the Systems Development Life Cycle?', @answers='Investigation, Analysis, Design, Implement, Maintenance'
+
 exec spWrongAnswer @crud='c', @question='______ is equipment or physical devices associted with a computer?', @wrongAnswers='Software'
 exec spWrongAnswer @crud='c', @question='______ is equipment or physical devices associted with a computer?', @wrongAnswers='Computer'
 exec spWrongAnswer @crud='c', @question='______ is equipment or physical devices associted with a computer?', @wrongAnswers='Input'
-exec spWrongAnswer @crud='c', @question='What is 2 plus 2?', @wrongAnswers='16'
-exec spWrongAnswer @crud='c', @question='What is 2 plus 2?', @wrongAnswers='0'
-exec spWrongAnswer @crud='c', @question='What is 2 plus 2?', @wrongAnswers='17'
-exec spWrongAnswer @crud='c', @question='What is 3 plus 3?', @wrongAnswers='15'
-exec spWrongAnswer @crud='c', @question='What is 3 plus 3?', @wrongAnswers='78'
-exec spWrongAnswer @crud='c', @question='What is 3 plus 3?', @wrongAnswers='92'
-exec spWrongAnswer @crud='r', @question='What is 3 plus 3?'
-exec spQuestions @crud='r', @questions='What is 1 plus 1?'
+exec spWrongAnswer @crud='c', @question='______ are designed to communicate directly to hardware?', @wrongAnswers='Machine Code'
+exec spWrongAnswer @crud='c', @question='______ are designed to communicate directly to hardware?', @wrongAnswers='Procedural Language'
+exec spWrongAnswer @crud='c', @question='______ are designed to communicate directly to hardware?', @wrongAnswers='Compiler'
+exec spWrongAnswer @crud='c', @question='All syntax errors are caught by the _____ ?', @wrongAnswers='trapper keeper'
+exec spWrongAnswer @crud='c', @question='All syntax errors are caught by the _____ ?', @wrongAnswers='interpreter'
+exec spWrongAnswer @crud='c', @question='All syntax errors are caught by the _____ ?', @wrongAnswers='input data'
+exec spWrongAnswer @crud='c', @question='What is the correct order in the Systems Development Life Cycle?', @wrongAnswers='Investigation, Design, Analysis, Implement, Maintenance'
+exec spWrongAnswer @crud='c', @question='What is the correct order in the Systems Development Life Cycle?', @wrongAnswers='Investigation, Design, Analysis, Bannana, Maintenance'
+exec spWrongAnswer @crud='c', @question='What is the correct order in the Systems Development Life Cycle?', @wrongAnswers='Investigation, Design, Analysis, Implement, Error-Reporting'
+exec spWrongAnswer @crud='r', @question='______ is equipment or physical devices associted with a computer?'
+exec spQuestions @crud='r', @questions='What is the correct order in the Systems Development Life Cycle?'
 
-
+exec spQuestions @crud='c', @tID='module2', @questions='Which of these is an Interger?', @answers='5'
 go
 create procedure spforgotPassword(
 @sEmail varchar(100)
