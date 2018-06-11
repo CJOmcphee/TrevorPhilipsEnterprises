@@ -13,8 +13,17 @@ namespace GroupProject
 {
     public partial class PracticeTest : System.Web.UI.Page
     {
-
-        protected void Page_Load(object sender, EventArgs e) => LoadQuestion();
+        public Decimal score;
+        public Decimal Total;
+        
+        Dictionary<RadioButtonList, Label> radioButtonLists = new Dictionary<RadioButtonList, Label>();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            LoadQuestion();
+            
+                score = 0;
+            
+        }
         public void LoadQuestion()
         {
             
@@ -35,16 +44,12 @@ namespace GroupProject
                 
                 Label myLabel = new Label();
                 myLabel.Text = dsQuestion.Tables[0].Rows[0]["question"].ToString();
-
                 tCell.Controls.Add(myLabel);
                 tRow.Controls.Add(tCell);
                 table1.Controls.Add(tRow);
 
-
-
-
-
                 RadioButtonList myrb = new RadioButtonList();
+                radioButtonLists.Add(myrb,myLabel);
                 myrb.DataSource = dsAnswers.Tables[0];
                 myrb.DataValueField = "wrongAnswers";
                 myrb.DataTextField = "wrongAnswers";
@@ -55,6 +60,23 @@ namespace GroupProject
 
 
             }
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+
+            foreach (KeyValuePair<RadioButtonList, Label> radioButton in radioButtonLists)
+            {
+                DataSet dsQuestion = Crud.ReadTable("spQuestions", radioButton.Value.Text);
+                if (radioButton.Key.SelectedValue.ToString() == dsQuestion.Tables[0].Rows[0]["answers"].ToString())
+                {
+                    score++;
+                    
+
+                }
+            }
+            Total = (score / radioButtonLists.Count) * 100;
+            Label1.Text = Math.Round(Total, 2).ToString();
         }
     }
 }
