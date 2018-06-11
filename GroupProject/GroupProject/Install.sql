@@ -232,13 +232,13 @@ as begin
 	select question, answers from tbQuestions where tID=@testID
 end
 go
-exec spQuestions @crud='c', @tID='module1', @questions='What is 1 plus 1?', @answers='2'
+exec spQuestions @crud='c', @tID='module1', @questions='______ is equipment or physical devices associted with a computer?', @answers='Hardware'
 exec spQuestions @crud='c', @tID='module1', @questions='What is 2 plus 2?', @answers='4'
 exec spQuestions @crud='c', @tID='module1', @questions='What is 3 plus 3?', @answers='6'
 exec spQuestions @crud='c', @tID='module2', @questions='Which of these is an Interger?', @answers='5'
-exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='32'
-exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='3'
-exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='22'
+exec spWrongAnswer @crud='c', @question='______ is equipment or physical devices associted with a computer?', @wrongAnswers='Software'
+exec spWrongAnswer @crud='c', @question='______ is equipment or physical devices associted with a computer?', @wrongAnswers='Computer'
+exec spWrongAnswer @crud='c', @question='______ is equipment or physical devices associted with a computer?', @wrongAnswers='Input'
 exec spWrongAnswer @crud='c', @question='What is 2 plus 2?', @wrongAnswers='16'
 exec spWrongAnswer @crud='c', @question='What is 2 plus 2?', @wrongAnswers='0'
 exec spWrongAnswer @crud='c', @question='What is 2 plus 2?', @wrongAnswers='17'

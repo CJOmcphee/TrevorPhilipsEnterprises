@@ -71,8 +71,6 @@ namespace GroupProject
                 if (radioButton.Key.SelectedValue.ToString() == dsQuestion.Tables[0].Rows[0]["answers"].ToString())
                 {
                     score++;
-                    
-
                 }
             }
             Total = (score / radioButtonLists.Count) * 100;
