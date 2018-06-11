@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace GroupProject
 {
-    public partial class Module2 : System.Web.UI.Page
+    public partial class Module3 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

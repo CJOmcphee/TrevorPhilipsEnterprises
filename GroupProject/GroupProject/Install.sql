@@ -48,7 +48,7 @@ score int
 create table tbQuestions(
 tID varchar(50)foreign key references tbTest(testID),
 question varchar(500) primary key,
-answers varchar(500)
+answers varchar(1000)
 )
 
 create table tbWrongAnswers(
@@ -183,6 +183,7 @@ as begin
 		end
 	if @crud='r'
 		begin
+			
 			select * from tbQuestions where question=isnull(@questions, question)
 		end
 	if @crud='u'
@@ -203,7 +204,7 @@ end
 go
 create procedure spWrongAnswer(
 @question varchar(500) =null,
-@wrongAnswers varchar(500) = null,
+@wrongAnswers varchar(1000) = null,
 @crud varchar(1) =null
 )
 as begin
@@ -214,8 +215,9 @@ as begin
 		end 
 	if @crud='r'
 		begin
-			select wrongAnswers, answers from tbWrongAnswers W inner join  tbQuestions Q
-			on W.questions=Q.question where questions= @question	
+			select wrongAnswers into #Allanswer from tbWrongAnswers where questions = @question 
+			insert into #Allanswer select answers from tbQuestions where question = @question
+			select * from #Allanswer
 		end
 	if @crud='d'
 		begin
@@ -224,8 +226,7 @@ as begin
 end
 go
 create procedure spGetTestQuestions(
-@testID varchar(50),
-@questions varchar(500)=null
+@testID varchar(50)
 )
 as begin
 	select question, answers from tbQuestions where tID=@testID
@@ -238,8 +239,12 @@ exec spQuestions @crud='c', @tID='module2', @questions='Which of these is an Int
 exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='32'
 exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='3'
 exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='22'
+exec spWrongAnswer @crud='c', @question='What is 2 plus 2?', @wrongAnswers='16'
+exec spWrongAnswer @crud='c', @question='What is 2 plus 2?', @wrongAnswers='0'
+exec spWrongAnswer @crud='c', @question='What is 2 plus 2?', @wrongAnswers='17'
 exec spWrongAnswer @crud='r', @question='What is 1 plus 1?'
-exec spQuestions @crud='r'
+exec spQuestions @crud='r', @questions='What is 1 plus 1?'
+
 
 go
 create procedure spforgotPassword(

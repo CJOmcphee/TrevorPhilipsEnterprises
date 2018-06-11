@@ -126,5 +126,11 @@ namespace GroupProject
             DataSet ds = mydal.ExecuteProcedure("spforgotPassword");
             return ds;
         }
+        public static DataSet GetTestQuestions(string test)
+        {
+            mydal.AddParam("@testID", test);
+            DataSet ds =mydal.ExecuteProcedure("spGetTestQuestions");
+            return ds;
+        }
     }
 }

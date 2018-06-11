@@ -10,6 +10,6 @@
 namespace GroupProject {
     
     
-    public partial class Module2 {
+    public partial class Module3 {
     }
 }

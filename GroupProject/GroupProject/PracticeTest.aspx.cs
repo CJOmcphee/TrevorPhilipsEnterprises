@@ -7,30 +7,50 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 
+
 namespace GroupProject
 {
     public partial class PracticeTest : System.Web.UI.Page
     {
-        
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            LoadQuestion();
-        }
+
+        protected void Page_Load(object sender, EventArgs e) => LoadQuestion();
         public void LoadQuestion()
         {
+            DataSet dsTestQ = Crud.GetTestQuestions("module1");
+            Table mytable = new Table();
+            TableRow tRow = new TableRow();
+            TableRow trow1 = new TableRow();
+            TableCell tCell = new TableCell();
+            TableCell tCell1 = new TableCell();
+            foreach (DataRow Row in dsTestQ.Tables[0].Rows)
+            {
+                DataSet dsQuestion = Crud.ReadTable("spQuestions", Row[0].ToString());
+                DataSet dsAnswers = Crud.ReadTable("spWrongAnswer", Row[0].ToString());
+                
+                
+               
+                
+                Label myLabel = new Label();
+                myLabel.Text = dsQuestion.Tables[0].Rows[0]["question"].ToString();
+                tCell.Controls.Add(myLabel);
+                tRow.Controls.Contains(tCell);
+                tCell.Text = myLabel.ToString();
+                tRow.Cells.Add(tCell);
+                mytable.Rows.Add(tRow);
 
-           DataSet ds =  Crud.ReadTable("spQuestions", "What is 1 plus 1?");
-            DataSet ds1 = Crud.ReadTable("spWrongAnswer", "What is 1 plus 1?");
 
-            rblAnswers.DataSource = ds.Tables[0];
-            rblAnswers.DataSource = ds1.Tables[0];
-            rblAnswers.DataValueField = "answers";
-            rblAnswers.DataValueField = "wrongAnswers";
-            rblAnswers.DataTextField = "wrongAnswers";
-            
-            rblAnswers.DataBind();
-            lblQuestion.Text = ds.Tables[0].Rows[0]["question"].ToString();
 
+
+                RadioButtonList myrb = new RadioButtonList();
+                myrb.DataSource = dsAnswers.Tables[0];
+                myrb.DataValueField = "wrongAnswers";
+                myrb.DataTextField = "wrongAnswers";
+                myrb.DataBind();
+                tCell1.Controls.Add(myrb);
+                trow1.Controls.Add(tCell1);
+                mytable.Controls.Add(trow1);
+
+            }
         }
     }
 }

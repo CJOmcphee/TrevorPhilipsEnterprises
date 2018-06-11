@@ -211,9 +211,13 @@
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.slim.js" />
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="GroupProjectLayout.txt" />
+    <Content Include="img\red-wallpaper-13.jpg" />
     <Content Include="Install.sql" />
     <Content Include="Module1.aspx" />
+    <Content Include="Module2.aspx" />
+    <Content Include="Module3.aspx" />
     <Content Include="PracticeTest.aspx" />
+    <Content Include="Modules.css" />
     <Content Include="user\css\ie\html5shiv.js" />
     <Content Include="user\css\ie\PIE.htc" />
     <Content Include="user\css\ie\v8.css" />
@@ -279,6 +283,20 @@
     <Compile Include="Module1.aspx.designer.cs">
       <DependentUpon>Module1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Module2.aspx.cs">
+      <DependentUpon>Module2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module2.aspx.designer.cs">
+      <DependentUpon>Module2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Module3.aspx.cs">
+      <DependentUpon>Module3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module3.aspx.designer.cs">
+      <DependentUpon>Module3.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PracticeTest.aspx.cs">
       <DependentUpon>PracticeTest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -290,24 +308,28 @@
     <Compile Include="Security.cs" />
     <Compile Include="user\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\modules.aspx.cs">
       <DependentUpon>modules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\modules.aspx.designer.cs">
       <DependentUpon>modules.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\user.Master.cs">
       <DependentUpon>user.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\user.Master.designer.cs">
       <DependentUpon>user.Master</DependentUpon>
