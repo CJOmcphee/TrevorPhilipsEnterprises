@@ -1,3 +1,27 @@
+Functionality.
+
+User Part:
+1. Profile
+2. Sign Up
+3. Lesson Content with Examples
+4. Exercises
+5. Working App based on Exercises
+6. Test
+
+
+Admin Part:
+1. Sign Up
+2. Add/Edit/Remove User
+3. Add/Edit/Remove Test
+4. Reports: Students Progress, Average Marks…
+
+Stack of Technologies:
+1. External HTML Templates
+2. ASP.NET
+3. SQL
+4. DAL_Project
+5. Java Scripts (Angular, Ajax…)
+
 Modules[11]
 	Lecture page
 		- explain what theyre gonna learn during this module (summary of module)

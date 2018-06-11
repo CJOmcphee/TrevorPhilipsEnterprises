@@ -1,10 +1,10 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="user.master.cs" Inherits="GroupProject.user.user" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="GroupProject.admin.admin" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
-    <title>SD28Alpha</title>
+    <title>SD28Alpha.Admin</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -36,35 +36,21 @@
 				<!-- Logo -->
                     
 					<div id="logo">
-                        <h1><a href="index.aspx"><img src="images/robertson.png" class="image left" alt="">Software and Database <br /> Development</a></h1>
+                        <h1><a href="index.aspx"><img src="images/robertson.png" class="image left" alt="">Software and Database <br /> Development <br /> Admin Console</a></h1>
                         <br />
 					</div>
 				
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li id="Home" class="active"><a href="index_user.aspx">Home</a></li>
-							<li id="Modules"><a href="modules.aspx">Modules</a></li>
-							<li id="Login"><a href="login_user.aspx">Login</a></li>
+							<li id="Home" class="active"><a href="index_admin.aspx">Home</a></li>
+							<li id="Users"><a href=#>Users</a></li>
+                            <li id="Exercises"><a href=#>Exercises</a></li>
+                            <li id="Tests"><a href=#>Tests</a></li>
+							<li id="Login"><a href="login_admin.aspx">Login</a></li>
 						</ul>
 					</nav>
-                <script>
-                     $(function () {
-                         setNavigation();
-                    });
-                    function setNavigatin() {
-                        var path = window.location.pathname;
-                        path = path.replace(/\/$/, "");
-                        path = decodeURIComponent(path);
-                        $("#nav .active a").each(function () {
-                            var href = $(this).attr('href');
-                            if (path.substring(0, href.length) == href) {
-                                $(this).closest('li').addClass('active');
-                            }
-                            
-                        });
-                    }
-                </script>
+         
 
 			</div>
 		</div>
@@ -81,3 +67,4 @@
          </asp:ContentPlaceHolder>
  </body>
 </html>
+

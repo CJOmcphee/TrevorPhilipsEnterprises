@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GroupProject {
+namespace GroupProject.admin {
     
     
-    public partial class Module1 {
+    public partial class index {
         
         /// <summary>
         /// form1 control.
