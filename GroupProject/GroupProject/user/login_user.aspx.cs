@@ -25,6 +25,17 @@ namespace GroupProject.user
             }else
             {
                 lblDisplay.Text = "Success";
+                Security security = new Security();
+                if (ds.Tables.Count == 2)
+                {
+                    security.Login(tbEmail.Text,ds.Tables[1].Rows[0]["fullname"].ToString(), "u");
+                    HttpContext.Current.Response.Redirect("~/user/index_user.aspx");
+                }
+                else
+                {
+                    security.Login(tbEmail.Text, "Admin", "a");
+                    HttpContext.Current.Response.Redirect("~/admin/index_admin.aspx");
+                }
             }
         }
     }
