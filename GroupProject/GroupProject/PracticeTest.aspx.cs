@@ -33,18 +33,25 @@ namespace GroupProject
             score = 0;            
         }
         public void LoadQuestion(string Test)
-        {           
+        {     
+            int count =  1;
             DataSet dsTestQ = Crud.GetTestQuestions(Test); 
             foreach (DataRow Row in dsTestQ.Tables[0].Rows)
             {
                 HtmlTableRow tRow = new HtmlTableRow();
                 HtmlTableRow trow1 = new HtmlTableRow();
+                HtmlTableRow trow2 = new HtmlTableRow();
                 HtmlTableCell tCell = new HtmlTableCell();
                 HtmlTableCell tCell1 = new HtmlTableCell();
                 HtmlTableCell tCell2 = new HtmlTableCell();
                 DataSet dsQuestion = Crud.ReadTable("spQuestions", Row[0].ToString());
                 DataSet dsAnswers = Crud.ReadTable("spWrongAnswer", Row[0].ToString());
 
+                Label number = new Label();
+                number.Text = count.ToString() +") ";
+                tCell.Controls.Add(number);
+                tRow.Controls.Add(tCell);
+                
                 Label myLabel = new Label();
                 myLabel.Text = dsQuestion.Tables[0].Rows[0]["question"].ToString();
                 tCell.Controls.Add(myLabel);
@@ -62,10 +69,11 @@ namespace GroupProject
 
                 Label answerLabel = new Label();
                 tCell.Controls.Add(answerLabel);
-                tRow.Controls.Add(tCell2);
-                table1.Controls.Add(tRow);
+                trow2.Controls.Add(tCell2);
+                table1.Controls.Add(trow2);
 
                 radioButtonLists.Add(myrb, new Tuple<Label, Label>(myLabel,answerLabel));
+                count++;
             }
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
