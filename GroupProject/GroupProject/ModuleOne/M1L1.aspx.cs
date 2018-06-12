@@ -20,7 +20,7 @@ namespace GroupProject.ModuleOne
             {
                 
                 btnNext.Visible = true;
-                txtInput.Text = lblOutput.Text;
+                lblOutput.Text = txtInput.Text;
             }
         }
     }
