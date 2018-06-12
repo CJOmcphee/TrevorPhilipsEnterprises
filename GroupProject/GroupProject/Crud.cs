@@ -69,6 +69,7 @@ namespace GroupProject
             {
                 mydal.AddParam("@question", id.ToString());
             }
+            mydal.ExecuteProcedure(Procedure);
         }
         public static void CreateUpdateUser(string crud ,string UserEmail,string UserPassword,string FirstName,string LastName,string access)
         {
@@ -123,6 +124,12 @@ namespace GroupProject
         {
             mydal.AddParam("@sEmail", Email);
             DataSet ds = mydal.ExecuteProcedure("spforgotPassword");
+            return ds;
+        }
+        public static DataSet GetTestQuestions(string test)
+        {
+            mydal.AddParam("@testID", test);
+            DataSet ds =mydal.ExecuteProcedure("spGetTestQuestions");
             return ds;
         }
     }

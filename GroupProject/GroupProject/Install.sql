@@ -48,7 +48,7 @@ score int
 create table tbQuestions(
 tID varchar(50)foreign key references tbTest(testID),
 question varchar(500) primary key,
-answers varchar(500)
+answers varchar(1000)
 )
 
 create table tbWrongAnswers(
@@ -183,6 +183,7 @@ as begin
 		end
 	if @crud='r'
 		begin
+			
 			select * from tbQuestions where question=isnull(@questions, question)
 		end
 	if @crud='u'
@@ -203,7 +204,7 @@ end
 go
 create procedure spWrongAnswer(
 @question varchar(500) =null,
-@wrongAnswers varchar(500) = null,
+@wrongAnswers varchar(1000) = null,
 @crud varchar(1) =null
 )
 as begin
@@ -211,10 +212,12 @@ as begin
 		begin
 			insert into tbWrongAnswers(questions,wrongAnswers)values
 										(@question,@wrongAnswers)
-		end
+		end 
 	if @crud='r'
 		begin
-			select wrongAnswers from tbWrongAnswers where questions= @question
+			select wrongAnswers into #Allanswer from tbWrongAnswers where questions = @question 
+			insert into #Allanswer select answers from tbQuestions where question = @question
+			select * from #Allanswer Order by newID();
 		end
 	if @crud='d'
 		begin
@@ -223,24 +226,39 @@ as begin
 end
 go
 create procedure spGetTestQuestions(
-@testID varchar(50),
-@questions varchar(500)=null
+@testID varchar(50)
 )
 as begin
 	select question, answers from tbQuestions where tID=@testID
-	select
 end
 go
-exec spQuestions @crud='c', @tID='module1', @questions='What is 1 plus 1?', @answers='2'
-exec spQuestions @crud='c', @tID='module1', @questions='What is 2 plus 2?', @answers='4'
-exec spQuestions @crud='c', @tID='module1', @questions='What is 3 plus 3?', @answers='6'
-exec spQuestions @crud='c', @tID='module2', @questions='Which of these is an Interger?', @answers='5'
-exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='32'
-exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='3'
-exec spWrongAnswer @crud='c', @question='What is 1 plus 1?', @wrongAnswers='22'
-exec spWrongAnswer @crud='r', @question='What is 1 plus 1?'
-exec spQuestions @crud='r'
+--MODULE 1 Test
+exec spQuestions @crud='c', @tID='module1', @questions='______ is equipment or physical devices associted with a computer?', @answers='Hardware'
+exec spQuestions @crud='c', @tID='module1', @questions='______ are designed to communicate directly to hardware?', @answers='Machine Language'
+exec spQuestions @crud='c', @tID='module1', @questions='All syntax errors are caught by the _____ ?', @answers='External Storage'
+exec spQuestions @crud='c', @tID='module1', @questions='CDs and USB drives are types of _____?', @answers='Investigation, Analysis, Design, Implement, Maintenance'
+exec spQuestions @crud='c', @tID='module1', @questions='What is the correct order in the Systems Development Life Cycle?', @answers='Investigation, Analysis, Design, Implement, Maintenance'
+exec spQuestions @crud='c', @tID='module1', @questions='Pseudo-code and Flowcharts are the two most common tools in planning logic?', @answers='True'
+exec spWrongAnswer @crud='c', @question='______ is equipment or physical devices associted with a computer?', @wrongAnswers='Software'
+exec spWrongAnswer @crud='c', @question='______ is equipment or physical devices associted with a computer?', @wrongAnswers='Computer'
+exec spWrongAnswer @crud='c', @question='______ is equipment or physical devices associted with a computer?', @wrongAnswers='Input'
+exec spWrongAnswer @crud='c', @question='______ are designed to communicate directly to hardware?', @wrongAnswers='Machine Code'
+exec spWrongAnswer @crud='c', @question='______ are designed to communicate directly to hardware?', @wrongAnswers='Procedural Language'
+exec spWrongAnswer @crud='c', @question='______ are designed to communicate directly to hardware?', @wrongAnswers='Compiler'
+exec spWrongAnswer @crud='c', @question='All syntax errors are caught by the _____ ?', @wrongAnswers='trapper keeper'
+exec spWrongAnswer @crud='c', @question='All syntax errors are caught by the _____ ?', @wrongAnswers='interpreter'
+exec spWrongAnswer @crud='c', @question='All syntax errors are caught by the _____ ?', @wrongAnswers='input data'
+exec spWrongAnswer @crud='c', @question='CDs and USB drives are types of _____?', @wrongAnswers='Permanent Storage'
+exec spWrongAnswer @crud='c', @question='CDs and USB drives are types of _____?', @wrongAnswers='Storage'
+exec spWrongAnswer @crud='c', @question='CDs and USB drives are types of _____?', @wrongAnswers='Internal Storage'
+exec spWrongAnswer @crud='c', @question='Pseudo-code and Flowcharts are the two most common tools in planning logic?', @wrongAnswers='False'
+exec spWrongAnswer @crud='c', @question='What is the correct order in the Systems Development Life Cycle?', @wrongAnswers='Investigation, Design, Analysis, Implement, Maintenance'
+exec spWrongAnswer @crud='c', @question='What is the correct order in the Systems Development Life Cycle?', @wrongAnswers='Investigation, Design, Analysis, Bannana, Maintenance'
+exec spWrongAnswer @crud='c', @question='What is the correct order in the Systems Development Life Cycle?', @wrongAnswers='Investigation, Design, Analysis, Implement, Error-Reporting'
+exec spWrongAnswer @crud='r', @question='______ is equipment or physical devices associted with a computer?'
+exec spQuestions @crud='r', @questions='What is the correct order in the Systems Development Life Cycle?'
 
+exec spQuestions @crud='c', @tID='module2', @questions='Which of these is an Interger?', @answers='5'
 go
 create procedure spforgotPassword(
 @sEmail varchar(100)
