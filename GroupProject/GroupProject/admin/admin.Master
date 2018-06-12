@@ -4,17 +4,67 @@
 
 <html>
 <head runat="server">
-    <title>Admin. Software and Database Development.</title>
+    <title>SD28Alpha.Admin</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700italic,400,300,700' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+       	<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+        
+   
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+            <link rel="stylesheet" type="text/css" href="css/util.css">
+	        <link rel="stylesheet" type="text/css" href="css/main.css">
+  		</noscript>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-    </form>
-</body>
+<body class="homepage">
+   
+        <!-- Header -->
+		<div id="header">
+           
+			<div class="container">
+
+				<!-- Logo -->
+                    
+					<div id="logo">
+                        <h1><a href="index.aspx"><img src="images/robertson.png" class="image left" alt="">Software and Database <br /> Development <br /> Admin Console</a></h1>
+                        <br />
+					</div>
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li id="Home" class="active"><a href="index_admin.aspx">Home</a></li>
+							<li id="Users"><a href=#>Users</a></li>
+                            <li id="Exercises"><a href=#>Exercises</a></li>
+                            <li id="Tests"><a href=#>Tests</a></li>
+							<li id="Login"><a href="login_admin.aspx">Login</a></li>
+						</ul>
+					</nav>
+         
+
+			</div>
+		</div>
+	<!-- Header -->
+		
+	<!-- Banner -->
+		<div id="banner">
+			<div class="container">
+			</div>
+		</div>
+	<!-- /Banner -->
+  
+		 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+         </asp:ContentPlaceHolder>
+ </body>
 </html>
+

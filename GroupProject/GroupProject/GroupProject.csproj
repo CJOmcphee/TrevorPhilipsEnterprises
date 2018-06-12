@@ -68,144 +68,60 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="admin\css\datePicker.css" />
-    <Content Include="admin\css\pro_dropline.css" />
-    <Content Include="admin\css\pro_dropline_ie.css" />
-    <Content Include="admin\css\screen.css" />
-    <Content Include="admin\form.html" />
-    <Content Include="admin\images\forms\bg_related_act.gif" />
-    <Content Include="admin\images\forms\bubble_inner.gif" />
-    <Content Include="admin\images\forms\bubble_left.gif" />
-    <Content Include="admin\images\forms\bubble_right.gif" />
-    <Content Include="admin\images\forms\choose-file.gif" />
-    <Content Include="admin\images\forms\error_left.gif" />
-    <Content Include="admin\images\forms\error_right.gif" />
-    <Content Include="admin\images\forms\form_inp.gif" />
-    <Content Include="admin\images\forms\form_inp_error.gif" />
-    <Content Include="admin\images\forms\form_reset.gif" />
-    <Content Include="admin\images\forms\form_select.gif" />
-    <Content Include="admin\images\forms\form_select_small.gif" />
-    <Content Include="admin\images\forms\form_submit.gif" />
-    <Content Include="admin\images\forms\form_textarea.gif" />
-    <Content Include="admin\images\forms\header_related_act.gif" />
-    <Content Include="admin\images\forms\icon_calendar.jpg" />
-    <Content Include="admin\images\forms\icon_edit.gif" />
-    <Content Include="admin\images\forms\icon_list_arrow.gif" />
-    <Content Include="admin\images\forms\icon_minus.gif" />
-    <Content Include="admin\images\forms\icon_plus.gif" />
-    <Content Include="admin\images\forms\lines_dotted_short.gif" />
-    <Content Include="admin\images\forms\step_1.gif" />
-    <Content Include="admin\images\forms\step_dark_left.gif" />
-    <Content Include="admin\images\forms\step_dark_right.gif" />
-    <Content Include="admin\images\forms\step_dark_round.gif" />
-    <Content Include="admin\images\forms\step_light_left.gif" />
-    <Content Include="admin\images\forms\step_light_right.gif" />
-    <Content Include="admin\images\forms\step_light_round.gif" />
-    <Content Include="admin\images\forms\upload_file.gif" />
-    <Content Include="admin\images\login\icon_back_login.gif" />
-    <Content Include="admin\images\login\inp_login.gif" />
-    <Content Include="admin\images\login\loginbox_bg.png" />
-    <Content Include="admin\images\login\login_bg.jpg" />
-    <Content Include="admin\images\login\submit_login.gif" />
-    <Content Include="admin\images\shared\blank.gif" />
-    <Content Include="admin\images\shared\border_bit.jpg" />
-    <Content Include="admin\images\shared\cal_th_repeat.jpg" />
-    <Content Include="admin\images\shared\cal_top_bg.jpg" />
-    <Content Include="admin\images\shared\cal_top_repeat.jpg" />
-    <Content Include="admin\images\shared\checkbox.gif" />
-    <Content Include="admin\images\shared\content_repeat.jpg" />
-    <Content Include="admin\images\shared\corner_bottom_left.jpg" />
-    <Content Include="admin\images\shared\corner_bottom_right.jpg" />
-    <Content Include="admin\images\shared\corner_top_left.jpg" />
-    <Content Include="admin\images\shared\corner_top_right.jpg" />
-    <Content Include="admin\images\shared\icon_idlogo.jpg" />
-    <Content Include="admin\images\shared\logo.png" />
-    <Content Include="admin\images\shared\nav\account_drop_bg.gif" />
-    <Content Include="admin\images\shared\nav\account_line.gif" />
-    <Content Include="admin\images\shared\nav\back_0.gif" />
-    <Content Include="admin\images\shared\nav\back_1x.gif" />
-    <Content Include="admin\images\shared\nav\Copy of pro_line_1.gif" />
-    <Content Include="admin\images\shared\nav\divider.jpg" />
-    <Content Include="admin\images\shared\nav\icon_acc_inbox.gif" />
-    <Content Include="admin\images\shared\nav\icon_acc_personal.gif" />
-    <Content Include="admin\images\shared\nav\icon_acc_projects.gif" />
-    <Content Include="admin\images\shared\nav\icon_acc_settings.gif" />
-    <Content Include="admin\images\shared\nav\icon_acc_stats.gif" />
-    <Content Include="admin\images\shared\nav\nav_logout.gif" />
-    <Content Include="admin\images\shared\nav\nav_myaccount.gif" />
-    <Content Include="admin\images\shared\nav\pro_line_0x.gif" />
-    <Content Include="admin\images\shared\nav\pro_line_1.gif" />
-    <Content Include="admin\images\shared\nav\pro_line_2.gif" />
-    <Content Include="admin\images\shared\nav\repeat.jpg" />
-    <Content Include="admin\images\shared\side_shadowleft.jpg" />
-    <Content Include="admin\images\shared\side_shadowright.jpg" />
-    <Content Include="admin\images\shared\top_bg.jpg" />
-    <Content Include="admin\images\shared\top_search_btn.gif" />
-    <Content Include="admin\images\shared\top_search_inp.gif" />
-    <Content Include="admin\images\shared\top_search_select.gif" />
-    <Content Include="admin\images\shared\year_next.gif" />
-    <Content Include="admin\images\shared\year_prev.gif" />
-    <Content Include="admin\images\table\actions_slider_bg.gif" />
-    <Content Include="admin\images\table\action_delete.gif" />
-    <Content Include="admin\images\table\action_edit.gif" />
-    <Content Include="admin\images\table\content_round_repeat.jpg" />
-    <Content Include="admin\images\table\content_round_top.jpg" />
-    <Content Include="admin\images\table\dropdown_actions.gif" />
-    <Content Include="admin\images\table\icon_close_blue.gif" />
-    <Content Include="admin\images\table\icon_close_green.gif" />
-    <Content Include="admin\images\table\icon_close_red.gif" />
-    <Content Include="admin\images\table\icon_close_yellow.gif" />
-    <Content Include="admin\images\table\message_blue.gif" />
-    <Content Include="admin\images\table\message_green.gif" />
-    <Content Include="admin\images\table\message_red.gif" />
-    <Content Include="admin\images\table\message_yellow.gif" />
-    <Content Include="admin\images\table\paging_far_left.gif" />
-    <Content Include="admin\images\table\paging_far_right.gif" />
-    <Content Include="admin\images\table\paging_left.gif" />
-    <Content Include="admin\images\table\paging_right.gif" />
-    <Content Include="admin\images\table\select_number_rows.gif" />
-    <Content Include="admin\images\table\table_header.jpg" />
-    <Content Include="admin\images\table\table_header_checkbox.jpg" />
-    <Content Include="admin\images\table\table_header_options.jpg" />
-    <Content Include="admin\images\table\table_header_repeat.jpg" />
-    <Content Include="admin\images\table\table_icon_1.gif" />
-    <Content Include="admin\images\table\table_icon_2.gif" />
-    <Content Include="admin\images\table\table_icon_3.gif" />
-    <Content Include="admin\images\table\table_icon_4.gif" />
-    <Content Include="admin\images\table\table_icon_5.gif" />
-    <Content Include="admin\images\table\table_sort_arrow.gif" />
-    <Content Include="admin\js\jquery\Copy of custom_jquery.js" />
-    <Content Include="admin\js\jquery\custom_jquery.js" />
-    <Content Include="admin\js\jquery\date.js" />
-    <Content Include="admin\js\jquery\jquery-1.4.1.min.js" />
-    <Content Include="admin\js\jquery\jquery.bind.js" />
-    <Content Include="admin\js\jquery\jquery.datePicker.js" />
-    <Content Include="admin\js\jquery\jquery.dimensions.js" />
-    <Content Include="admin\js\jquery\jquery.filestyle.js" />
-    <Content Include="admin\js\jquery\jquery.pngFix.pack.js" />
-    <Content Include="admin\js\jquery\jquery.selectbox-0.5.js" />
-    <Content Include="admin\js\jquery\jquery.selectbox-0.5_style_2.js" />
-    <Content Include="admin\js\jquery\jquery.selectbox-0.5_style_3.js" />
-    <Content Include="admin\js\jquery\jquery.tooltip.js" />
-    <Content Include="admin\js\jquery\jquery.usermode.js" />
-    <Content Include="admin\js\jquery\ui.checkbox.js" />
-    <Content Include="admin\js\jquery\ui.core.js" />
-    <Content Include="admin\login.aspx" />
-    <Content Include="admin\login.html" />
-    <Content Include="admin\table.html" />
-    <Content Include="admin\text.html" />
+    <Content Include="admin\css\ie\html5shiv.js" />
+    <Content Include="admin\css\ie\PIE.htc" />
+    <Content Include="admin\css\ie\v8.css" />
+    <Content Include="admin\css\ie\v9.css" />
+    <Content Include="admin\css\images\img01.jpg" />
+    <Content Include="admin\css\images\img02.jpg" />
+    <Content Include="admin\css\images\img03.jpg" />
+    <Content Include="admin\css\images\img04.png" />
+    <Content Include="admin\css\images\img05.png" />
+    <Content Include="admin\css\images\img06.png" />
+    <Content Include="admin\css\images\img07.png" />
+    <Content Include="admin\css\images\img08.jpg" />
+    <Content Include="admin\css\images\img09.png" />
+    <Content Include="admin\css\images\img10.png" />
+    <Content Include="admin\css\images\img11.jpg" />
+    <Content Include="admin\css\images\img12.jpg" />
+    <Content Include="admin\css\images\img12.png" />
+    <Content Include="admin\css\images\img13.jpg" />
+    <Content Include="admin\css\images\mobileUI-site-nav-opener-bg.svg" />
+    <Content Include="admin\css\images\spacer.gif" />
+    <Content Include="admin\css\images\toggle.svg" />
+    <Content Include="admin\css\skel-noscript.css" />
+    <Content Include="admin\css\style-1000px.css" />
+    <Content Include="admin\css\style-desktop.css" />
+    <Content Include="admin\css\style-mobile.css" />
+    <Content Include="admin\css\style.css" />
+    <Content Include="admin\images\banner.jpg" />
+    <Content Include="admin\images\pics04.jpg" />
+    <Content Include="admin\images\pics05.jpg" />
+    <Content Include="admin\images\pics06.jpg" />
+    <Content Include="admin\images\pics07.jpg" />
+    <Content Include="admin\images\pics08.jpg" />
+    <Content Include="admin\images\pics09.jpg" />
+    <Content Include="admin\images\pics10.jpg" />
+    <Content Include="admin\images\pics11.jpg" />
+    <Content Include="admin\images\pics12.jpg" />
+    <Content Include="admin\images\pics13.jpg" />
+    <Content Include="admin\images\pics14.jpg" />
+    <Content Include="admin\images\pics15.jpg" />
+    <Content Include="admin\images\pics16.jpg" />
+    <Content Include="admin\images\robertson.png" />
+    <Content Include="admin\images\spacer.gif" />
+    <Content Include="admin\index_admin.aspx" />
+    <Content Include="admin\js\html5shiv.js" />
+    <Content Include="admin\js\init.js" />
+    <Content Include="admin\js\skel-panels.min.js" />
+    <Content Include="admin\js\skel.min.js" />
+    <Content Include="admin\login_admin.aspx" />
     <Content Include="DAL_Project\bin\Debug\DAL_Project.dll" />
     <Content Include="DAL_Project\bin\Debug\DAL_Project.pdb" />
     <Content Include="DAL_Project\DAL_Project.csproj" />
     <Content Include="DAL_Project\obj\Debug\DAL_Project.csproj.FileListAbsolute.txt" />
     <Content Include="DAL_Project\obj\Debug\DAL_Project.dll" />
     <Content Include="DAL_Project\obj\Debug\DAL_Project.pdb" />
-    <Content Include="admin\images\forms\Thumbs.db" />
-    <Content Include="admin\images\login\Thumbs.db" />
-    <Content Include="admin\images\shared\nav\Thumbs.db" />
-    <Content Include="admin\images\shared\Thumbs.db" />
-    <Content Include="admin\images\table\Thumbs.db" />
-    <Content Include="admin\images\Thumbs.db" />
     <Content Include="admin\admin.Master" />
     <None Include="DAL_Project\Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.js" />
@@ -262,14 +178,14 @@
     <Content Include="user\images\pics16.jpg" />
     <Content Include="user\images\robertson.png" />
     <Content Include="user\images\spacer.gif" />
-    <Content Include="user\index.aspx" />
+    <Content Include="user\index_user.aspx" />
     <Content Include="user\index.html" />
     <Content Include="user\js\html5shiv.js" />
     <Content Include="user\js\init.js" />
     <Content Include="user\js\skel-panels.min.js" />
     <Content Include="user\js\skel.min.js" />
     <Content Include="user\left-sidebar.html" />
-    <Content Include="user\Login.aspx" />
+    <Content Include="user\login_user.aspx" />
     <Content Include="user\modules.aspx" />
     <Content Include="user\no-sidebar.html" />
     <Content Include="user\right-sidebar.html" />
@@ -283,12 +199,19 @@
     <Compile Include="admin\admin.Master.designer.cs">
       <DependentUpon>admin.Master</DependentUpon>
     </Compile>
-    <Compile Include="admin\login.aspx.cs">
-      <DependentUpon>login.aspx</DependentUpon>
+    <Compile Include="admin\index_admin.aspx.cs">
+      <DependentUpon>index_admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\login.aspx.designer.cs">
-      <DependentUpon>login.aspx</DependentUpon>
+    <Compile Include="admin\index_admin.aspx.designer.cs">
+      <DependentUpon>index_admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\login_admin.aspx.cs">
+      <DependentUpon>login_admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\login_admin.aspx.designer.cs">
+      <DependentUpon>login_admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Crud.cs" />
     <Compile Include="DAL_Project\DAL.cs" />
@@ -322,19 +245,19 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security.cs" />
-    <Compile Include="user\index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="user\index_user.aspx.cs">
+      <DependentUpon>index_user.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="user\index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="user\index_user.aspx.designer.cs">
+      <DependentUpon>index_user.aspx</DependentUpon>
     </Compile>
-    <Compile Include="user\login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="user\login_user.aspx.cs">
+      <DependentUpon>login_user.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="user\login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="user\login_user.aspx.designer.cs">
+      <DependentUpon>login_user.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\modules.aspx.cs">
       <DependentUpon>modules.aspx</DependentUpon>
