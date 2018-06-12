@@ -58,7 +58,12 @@ namespace GroupProject
                 DataSet dsQuestion = Crud.ReadTable("spQuestions", radioButton.Value.Text);
                 if (radioButton.Key.SelectedValue.ToString() == dsQuestion.Tables[0].Rows[0]["answers"].ToString())
                 {
+                    radioButton.Value.Text = radioButton.Value.Text + " " + "Right";
                     score++;
+                }
+                else
+                {
+                    radioButton.Value.Text = radioButton.Value.Text + " " + "Wrong";
                 }
             }
             Total = (score / radioButtonLists.Count) * 100;
