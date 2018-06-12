@@ -19,12 +19,21 @@ namespace GroupProject
         Dictionary<RadioButtonList, Label> radioButtonLists = new Dictionary<RadioButtonList, Label>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadQuestion();           
-                score = 0;            
+            switch(ddlTestChoice.SelectedItem.Text)
+            {
+                case "module1":
+                    LoadQuestion("module1");
+                    break;
+                case "module2":
+                    LoadQuestion("module2");
+                    break;
+            }
+            
+            score = 0;            
         }
-        public void LoadQuestion()
+        public void LoadQuestion(string Test)
         {           
-            DataSet dsTestQ = Crud.GetTestQuestions("module1"); 
+            DataSet dsTestQ = Crud.GetTestQuestions(Test); 
             foreach (DataRow Row in dsTestQ.Tables[0].Rows)
             {
                 HtmlTableRow tRow = new HtmlTableRow();

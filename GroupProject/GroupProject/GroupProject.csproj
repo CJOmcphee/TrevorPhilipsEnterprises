@@ -68,54 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="admin\css\ie\html5shiv.js" />
-    <Content Include="admin\css\ie\PIE.htc" />
-    <Content Include="admin\css\ie\v8.css" />
-    <Content Include="admin\css\ie\v9.css" />
-    <Content Include="admin\css\images\img01.jpg" />
-    <Content Include="admin\css\images\img02.jpg" />
-    <Content Include="admin\css\images\img03.jpg" />
-    <Content Include="admin\css\images\img04.png" />
-    <Content Include="admin\css\images\img05.png" />
-    <Content Include="admin\css\images\img06.png" />
-    <Content Include="admin\css\images\img07.png" />
-    <Content Include="admin\css\images\img08.jpg" />
-    <Content Include="admin\css\images\img09.png" />
-    <Content Include="admin\css\images\img10.png" />
-    <Content Include="admin\css\images\img11.jpg" />
-    <Content Include="admin\css\images\img12.jpg" />
-    <Content Include="admin\css\images\img12.png" />
-    <Content Include="admin\css\images\img13.jpg" />
-    <Content Include="admin\css\images\mobileUI-site-nav-opener-bg.svg" />
-    <Content Include="admin\css\images\spacer.gif" />
-    <Content Include="admin\css\images\toggle.svg" />
-    <Content Include="admin\css\skel-noscript.css" />
-    <Content Include="admin\css\style-1000px.css" />
-    <Content Include="admin\css\style-desktop.css" />
-    <Content Include="admin\css\style-mobile.css" />
-    <Content Include="admin\css\style.css" />
-    <Content Include="admin\images\banner.jpg" />
-    <Content Include="admin\images\pics04.jpg" />
-    <Content Include="admin\images\pics05.jpg" />
-    <Content Include="admin\images\pics06.jpg" />
-    <Content Include="admin\images\pics07.jpg" />
-    <Content Include="admin\images\pics08.jpg" />
-    <Content Include="admin\images\pics09.jpg" />
-    <Content Include="admin\images\pics10.jpg" />
-    <Content Include="admin\images\pics11.jpg" />
-    <Content Include="admin\images\pics12.jpg" />
-    <Content Include="admin\images\pics13.jpg" />
-    <Content Include="admin\images\pics14.jpg" />
-    <Content Include="admin\images\pics15.jpg" />
-    <Content Include="admin\images\pics16.jpg" />
-    <Content Include="admin\images\robertson.png" />
-    <Content Include="admin\images\spacer.gif" />
     <Content Include="admin\index_admin.aspx" />
-    <Content Include="admin\js\html5shiv.js" />
-    <Content Include="admin\js\init.js" />
-    <Content Include="admin\js\skel-panels.min.js" />
-    <Content Include="admin\js\skel.min.js" />
-    <Content Include="admin\login_admin.aspx" />
     <Content Include="DAL_Project\bin\Debug\DAL_Project.dll" />
     <Content Include="DAL_Project\bin\Debug\DAL_Project.pdb" />
     <Content Include="DAL_Project\DAL_Project.csproj" />
@@ -132,8 +85,6 @@
     <Content Include="img\red-wallpaper-13.jpg" />
     <Content Include="Install.sql" />
     <Content Include="Module1.aspx" />
-    <Content Include="Module2\M2L1.aspx" />
-    <Content Include="Module2\M2L1EX.aspx" />
     <Content Include="Module3.aspx" />
     <Content Include="ModuleOne\M1L1.aspx" />
     <Content Include="ModuleOne\M1L2a.aspx" />
@@ -145,54 +96,54 @@
     <Content Include="ModuleOne\Pictures\CSside.PNG" />
     <Content Include="PracticeTest.aspx" />
     <Content Include="Modules.css" />
-    <Content Include="user\css\ie\html5shiv.js" />
-    <Content Include="user\css\ie\PIE.htc" />
-    <Content Include="user\css\ie\v8.css" />
-    <Content Include="user\css\ie\v9.css" />
-    <Content Include="user\css\images\img01.jpg" />
-    <Content Include="user\css\images\img02.jpg" />
-    <Content Include="user\css\images\img03.jpg" />
-    <Content Include="user\css\images\img04.png" />
-    <Content Include="user\css\images\img05.png" />
-    <Content Include="user\css\images\img06.png" />
-    <Content Include="user\css\images\img07.png" />
-    <Content Include="user\css\images\img08.jpg" />
-    <Content Include="user\css\images\img09.png" />
-    <Content Include="user\css\images\img10.png" />
-    <Content Include="user\css\images\img11.jpg" />
-    <Content Include="user\css\images\img12.jpg" />
-    <Content Include="user\css\images\img12.png" />
-    <Content Include="user\css\images\img13.jpg" />
-    <Content Include="user\css\images\mobileUI-site-nav-opener-bg.svg" />
-    <Content Include="user\css\images\spacer.gif" />
-    <Content Include="user\css\images\toggle.svg" />
-    <Content Include="user\css\skel-noscript.css" />
-    <Content Include="user\css\style-1000px.css" />
-    <Content Include="user\css\style-desktop.css" />
-    <Content Include="user\css\style-mobile.css" />
-    <Content Include="user\css\style.css" />
-    <Content Include="user\images\banner.jpg" />
-    <Content Include="user\images\pics04.jpg" />
-    <Content Include="user\images\pics05.jpg" />
-    <Content Include="user\images\pics06.jpg" />
-    <Content Include="user\images\pics07.jpg" />
-    <Content Include="user\images\pics08.jpg" />
-    <Content Include="user\images\pics09.jpg" />
-    <Content Include="user\images\pics10.jpg" />
-    <Content Include="user\images\pics11.jpg" />
-    <Content Include="user\images\pics12.jpg" />
-    <Content Include="user\images\pics13.jpg" />
-    <Content Include="user\images\pics14.jpg" />
-    <Content Include="user\images\pics15.jpg" />
-    <Content Include="user\images\pics16.jpg" />
-    <Content Include="user\images\robertson.png" />
-    <Content Include="user\images\spacer.gif" />
+    <Content Include="css\ie\html5shiv.js" />
+    <Content Include="css\ie\PIE.htc" />
+    <Content Include="css\ie\v8.css" />
+    <Content Include="css\ie\v9.css" />
+    <Content Include="css\images\img01.jpg" />
+    <Content Include="css\images\img02.jpg" />
+    <Content Include="css\images\img03.jpg" />
+    <Content Include="css\images\img04.png" />
+    <Content Include="css\images\img05.png" />
+    <Content Include="css\images\img06.png" />
+    <Content Include="css\images\img07.png" />
+    <Content Include="css\images\img08.jpg" />
+    <Content Include="css\images\img09.png" />
+    <Content Include="css\images\img10.png" />
+    <Content Include="css\images\img11.jpg" />
+    <Content Include="css\images\img12.jpg" />
+    <Content Include="css\images\img12.png" />
+    <Content Include="css\images\img13.jpg" />
+    <Content Include="css\images\mobileUI-site-nav-opener-bg.svg" />
+    <Content Include="css\images\spacer.gif" />
+    <Content Include="css\images\toggle.svg" />
+    <Content Include="css\skel-noscript.css" />
+    <Content Include="css\style-1000px.css" />
+    <Content Include="css\style-desktop.css" />
+    <Content Include="css\style-mobile.css" />
+    <Content Include="css\style.css" />
+    <Content Include="images\banner.jpg" />
+    <Content Include="images\pics04.jpg" />
+    <Content Include="images\pics05.jpg" />
+    <Content Include="images\pics06.jpg" />
+    <Content Include="images\pics07.jpg" />
+    <Content Include="images\pics08.jpg" />
+    <Content Include="images\pics09.jpg" />
+    <Content Include="images\pics10.jpg" />
+    <Content Include="images\pics11.jpg" />
+    <Content Include="images\pics12.jpg" />
+    <Content Include="images\pics13.jpg" />
+    <Content Include="images\pics14.jpg" />
+    <Content Include="images\pics15.jpg" />
+    <Content Include="images\pics16.jpg" />
+    <Content Include="images\robertson.png" />
+    <Content Include="images\spacer.gif" />
     <Content Include="user\index_user.aspx" />
     <Content Include="user\index.html" />
-    <Content Include="user\js\html5shiv.js" />
-    <Content Include="user\js\init.js" />
-    <Content Include="user\js\skel-panels.min.js" />
-    <Content Include="user\js\skel.min.js" />
+    <Content Include="js\html5shiv.js" />
+    <Content Include="js\init.js" />
+    <Content Include="js\skel-panels.min.js" />
+    <Content Include="js\skel.min.js" />
     <Content Include="user\left-sidebar.html" />
     <Content Include="user\login_user.aspx" />
     <Content Include="user\modules.aspx" />
@@ -215,13 +166,6 @@
     <Compile Include="admin\index_admin.aspx.designer.cs">
       <DependentUpon>index_admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\login_admin.aspx.cs">
-      <DependentUpon>login_admin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\login_admin.aspx.designer.cs">
-      <DependentUpon>login_admin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Crud.cs" />
     <Compile Include="DAL_Project\DAL.cs" />
     <Compile Include="Module1.aspx.cs">
@@ -230,20 +174,6 @@
     </Compile>
     <Compile Include="Module1.aspx.designer.cs">
       <DependentUpon>Module1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Module2\M2L1.aspx.cs">
-      <DependentUpon>M2L1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Module2\M2L1.aspx.designer.cs">
-      <DependentUpon>M2L1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Module2\M2L1EX.aspx.cs">
-      <DependentUpon>M2L1EX.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Module2\M2L1EX.aspx.designer.cs">
-      <DependentUpon>M2L1EX.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module3.aspx.cs">
       <DependentUpon>Module3.aspx</DependentUpon>
