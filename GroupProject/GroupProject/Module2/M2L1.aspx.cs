@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace GroupProject
+namespace GroupProject.Module2
 {
-    public partial class login_admin : System.Web.UI.Page
+    public partial class M2L1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
