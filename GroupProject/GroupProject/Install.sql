@@ -245,7 +245,7 @@ exec spQuestions @crud='c', @tID='module1', @questions='Data is not often stored
 exec spQuestions @crud='c', @tID='module1', @questions='The three major techniques used to develop programs are Procedural, Object Oriented and Control Oriented', @answers='False'
 exec spQuestions @crud='c', @tID='module1', @questions='Boolean expressions are either true or false?', @answers='True'
 exec spQuestions @crud='c', @tID='module1', @questions='A decision inside of another decision is a _____?', @answers='Nested Decision'
-exec spQuestions @crud='c', @tID='module1', @questions='IF anf Case constructs can both be used for descions?', @answers='True'
+exec spQuestions @crud='c', @tID='module1', @questions='IF and Case constructs can both be used for descions?', @answers='True'
 exec spQuestions @crud='c', @tID='module1', @questions='The process of ignoring noneessential details  is called ____?', @answers='Abstraction'
 exec spQuestions @crud='c', @tID='module1', @questions='Values passed to a method are called?', @answers='Arguments'
 exec spQuestions @crud='c', @tID='module1', @questions='Internal memory is _____?', @answers='Volatile'
@@ -284,24 +284,30 @@ exec spWrongAnswer @crud='c', @question='When you add a string together it is ca
 exec spWrongAnswer @crud='c', @question='What is the correct order in the Systems Development Life Cycle?', @wrongAnswers='Investigation, Design, Analysis, Implement, Maintenance'
 exec spWrongAnswer @crud='c', @question='What is the correct order in the Systems Development Life Cycle?', @wrongAnswers='Investigation, Design, Analysis, Bannana, Maintenance'
 exec spWrongAnswer @crud='c', @question='What is the correct order in the Systems Development Life Cycle?', @wrongAnswers='Investigation, Design, Analysis, Implement, Error-Reporting'
-exec spWrongAnswer @crud='c', @question='IF anf Case constructs can both be used for descions?', @wrongAnswers='False'
+exec spWrongAnswer @crud='c', @question='IF and Case constructs can both be used for descions?', @wrongAnswers='False'
 exec spWrongAnswer @crud='c', @question='Boolean expressions are either true or false?', @wrongAnswers='False'
 exec spWrongAnswer @crud='c', @question='A decision inside of another decision is a _____?', @wrongAnswers='Compound Decision'
 exec spWrongAnswer @crud='c', @question='A decision inside of another decision is a _____?', @wrongAnswers='Nester'
 exec spWrongAnswer @crud='c', @question='A decision inside of another decision is a _____?', @wrongAnswers='Compound Join'
 
 --Module 2 Questions
---exec spQuestions @crud='c', @tID='module2', @questions='CIL is an object-oriented language?', @answers='True'
-
+exec spQuestions @crud='c', @tID='module2', @questions='CIL is an object-oriented language?', @answers='True'
+exec spQuestions @crud='c', @tID='module2', @questions='Which of these does the CLR provide?', @answers='All of the Above'
+exec spQuestions @crud='c', @tID='module2', @questions='EXE and DLL are the two type of assemblies?', @answers='True'
 --Mondule 2 Wrong Answers
---exec spWrongAnswer @crud='c', @question='CIL is an object-oriented language?', @wrongAnswers='False'
-
+exec spWrongAnswer @crud='c', @question='CIL is an object-oriented language?', @wrongAnswers='False'
+exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Security'
+exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Garbage collection'
+exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Exception Handling'
+exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Thread Managment'
+exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Memory Managment'
+exec spWrongAnswer @crud='c', @question='EXE and DLL are the two type of assemblies?', @wrongAnswers='False'
 
 
 exec spWrongAnswer @crud='r', @question='______ is equipment or physical devices associted with a computer?'
 exec spQuestions @crud='r', @questions='What is the correct order in the Systems Development Life Cycle?'
 
-exec spQuestions @crud='c', @tID='module2', @questions='Which of these is an Interger?', @answers='5'
+
 go
 create procedure spforgotPassword(
 @sEmail varchar(100)
