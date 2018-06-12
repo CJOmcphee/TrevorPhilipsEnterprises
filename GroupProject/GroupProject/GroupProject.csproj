@@ -84,9 +84,7 @@
     <Content Include="GroupProjectLayout.txt" />
     <Content Include="img\red-wallpaper-13.jpg" />
     <Content Include="Install.sql" />
-    <Content Include="admin\login_admin.aspx" />
     <Content Include="Module1.aspx" />
-    <Content Include="Module2.aspx" />
     <Content Include="Module3.aspx" />
     <Content Include="PracticeTest.aspx" />
     <Content Include="Modules.css" />
@@ -162,26 +160,12 @@
     </Compile>
     <Compile Include="Crud.cs" />
     <Compile Include="DAL_Project\DAL.cs" />
-    <Compile Include="admin\login_admin.aspx.cs">
-      <DependentUpon>login_admin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\login_admin.aspx.designer.cs">
-      <DependentUpon>login_admin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Module1.aspx.cs">
       <DependentUpon>Module1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module1.aspx.designer.cs">
       <DependentUpon>Module1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Module2.aspx.cs">
-      <DependentUpon>Module2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Module2.aspx.designer.cs">
-      <DependentUpon>Module2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module3.aspx.cs">
       <DependentUpon>Module3.aspx</DependentUpon>
