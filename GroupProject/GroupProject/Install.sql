@@ -290,6 +290,14 @@ exec spWrongAnswer @crud='c', @question='A decision inside of another decision i
 exec spWrongAnswer @crud='c', @question='A decision inside of another decision is a _____?', @wrongAnswers='Nester'
 exec spWrongAnswer @crud='c', @question='A decision inside of another decision is a _____?', @wrongAnswers='Compound Join'
 
+--Module 2 Questions
+exec spQuestions @crud='c', @tID='module2', @questions='CIL is an object-oriented language?', @answers='True'
+
+--Mondule 2 Wrong Answers
+exec spWrongAnswer @crud='c', @question='CIL is an object-oriented language?', @wrongAnswers='False'
+
+
+
 exec spWrongAnswer @crud='r', @question='______ is equipment or physical devices associted with a computer?'
 exec spQuestions @crud='r', @questions='What is the correct order in the Systems Development Life Cycle?'
 
