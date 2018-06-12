@@ -87,6 +87,14 @@
     <Content Include="Install.sql" />
     <Content Include="Module1.aspx" />
     <Content Include="Module3.aspx" />
+    <Content Include="ModuleOne\M1L1.aspx" />
+    <Content Include="ModuleOne\M1L2a.aspx" />
+    <Content Include="ModuleOne\M1L2b.aspx" />
+    <Content Include="ModuleOne\M1L3.aspx" />
+    <Content Include="ModuleOne\M1L4.aspx" />
+    <Content Include="ModuleOne\M1L5.aspx" />
+    <Content Include="ModuleOne\Pictures\ASPside.PNG" />
+    <Content Include="ModuleOne\Pictures\CSside.PNG" />
     <Content Include="PracticeTest.aspx" />
     <Content Include="Modules.css" />
     <Content Include="css\ie\html5shiv.js" />
@@ -181,6 +189,48 @@
     </Compile>
     <Compile Include="Module3.aspx.designer.cs">
       <DependentUpon>Module3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleOne\M1L1.aspx.cs">
+      <DependentUpon>M1L1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleOne\M1L1.aspx.designer.cs">
+      <DependentUpon>M1L1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleOne\M1L2a.aspx.cs">
+      <DependentUpon>M1L2a.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleOne\M1L2a.aspx.designer.cs">
+      <DependentUpon>M1L2a.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleOne\M1L2b.aspx.cs">
+      <DependentUpon>M1L2b.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleOne\M1L2b.aspx.designer.cs">
+      <DependentUpon>M1L2b.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleOne\M1L3.aspx.cs">
+      <DependentUpon>M1L3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleOne\M1L3.aspx.designer.cs">
+      <DependentUpon>M1L3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleOne\M1L4.aspx.cs">
+      <DependentUpon>M1L4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleOne\M1L4.aspx.designer.cs">
+      <DependentUpon>M1L4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleOne\M1L5.aspx.cs">
+      <DependentUpon>M1L5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleOne\M1L5.aspx.designer.cs">
+      <DependentUpon>M1L5.aspx</DependentUpon>
     </Compile>
     <Compile Include="PracticeTest.aspx.cs">
       <DependentUpon>PracticeTest.aspx</DependentUpon>
