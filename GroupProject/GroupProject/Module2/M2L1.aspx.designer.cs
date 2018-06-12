@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GroupProject {
+namespace GroupProject.Module2 {
     
     
-    public partial class Module2 {
+    public partial class M2L1 {
     }
 }
