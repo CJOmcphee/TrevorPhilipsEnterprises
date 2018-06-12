@@ -18,18 +18,12 @@ namespace GroupProject
         
         Dictionary<RadioButtonList, Label> radioButtonLists = new Dictionary<RadioButtonList, Label>();
         protected void Page_Load(object sender, EventArgs e)
-        {
-            LoadQuestion();
-            
-                score = 0;
-            
+        {         
+                score = 0;            
         }
-        public void LoadQuestion()
-        {
-            
-            DataSet dsTestQ = Crud.GetTestQuestions("module1");
-            
-            
+        public void LoadQuestion(string Test)
+        {           
+            DataSet dsTestQ = Crud.GetTestQuestions(Test); 
             foreach (DataRow Row in dsTestQ.Tables[0].Rows)
             {
                 HtmlTableRow tRow = new HtmlTableRow();
@@ -38,10 +32,7 @@ namespace GroupProject
                 HtmlTableCell tCell1 = new HtmlTableCell();
                 DataSet dsQuestion = Crud.ReadTable("spQuestions", Row[0].ToString());
                 DataSet dsAnswers = Crud.ReadTable("spWrongAnswer", Row[0].ToString());
-                
-                
-               
-                
+
                 Label myLabel = new Label();
                 myLabel.Text = dsQuestion.Tables[0].Rows[0]["question"].ToString();
                 tCell.Controls.Add(myLabel);
@@ -57,14 +48,10 @@ namespace GroupProject
                 tCell1.Controls.Add(myrb);
                 trow1.Controls.Add(tCell1);
                 table1.Controls.Add(trow1);
-
-
             }
         }
-
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-
             foreach (KeyValuePair<RadioButtonList, Label> radioButton in radioButtonLists)
             {
                 DataSet dsQuestion = Crud.ReadTable("spQuestions", radioButton.Value.Text);
