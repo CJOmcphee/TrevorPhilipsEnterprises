@@ -81,6 +81,7 @@
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.min.js" />
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.slim.js" />
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="ExampleTemplate.aspx" />
     <Content Include="GroupProjectLayout.txt" />
     <Content Include="img\red-wallpaper-13.jpg" />
     <Content Include="Install.sql" />
@@ -168,6 +169,13 @@
     </Compile>
     <Compile Include="Crud.cs" />
     <Compile Include="DAL_Project\DAL.cs" />
+    <Compile Include="ExampleTemplate.aspx.cs">
+      <DependentUpon>ExampleTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExampleTemplate.aspx.designer.cs">
+      <DependentUpon>ExampleTemplate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Module1.aspx.cs">
       <DependentUpon>Module1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
