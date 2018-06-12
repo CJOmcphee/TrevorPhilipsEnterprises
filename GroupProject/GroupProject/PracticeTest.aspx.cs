@@ -18,7 +18,8 @@ namespace GroupProject
         
         Dictionary<RadioButtonList, Label> radioButtonLists = new Dictionary<RadioButtonList, Label>();
         protected void Page_Load(object sender, EventArgs e)
-        {         
+        {
+            LoadQuestion("module1");
                 score = 0;            
         }
         public void LoadQuestion(string Test)
