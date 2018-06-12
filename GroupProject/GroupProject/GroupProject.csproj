@@ -132,7 +132,8 @@
     <Content Include="img\red-wallpaper-13.jpg" />
     <Content Include="Install.sql" />
     <Content Include="Module1.aspx" />
-    <Content Include="Module2.aspx" />
+    <Content Include="Module2\M2L1.aspx" />
+    <Content Include="Module2\M2L1EX.aspx" />
     <Content Include="Module3.aspx" />
     <Content Include="PracticeTest.aspx" />
     <Content Include="Modules.css" />
@@ -222,12 +223,19 @@
     <Compile Include="Module1.aspx.designer.cs">
       <DependentUpon>Module1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Module2.aspx.cs">
-      <DependentUpon>Module2.aspx</DependentUpon>
+    <Compile Include="Module2\M2L1.aspx.cs">
+      <DependentUpon>M2L1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Module2.aspx.designer.cs">
-      <DependentUpon>Module2.aspx</DependentUpon>
+    <Compile Include="Module2\M2L1.aspx.designer.cs">
+      <DependentUpon>M2L1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Module2\M2L1EX.aspx.cs">
+      <DependentUpon>M2L1EX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module2\M2L1EX.aspx.designer.cs">
+      <DependentUpon>M2L1EX.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module3.aspx.cs">
       <DependentUpon>Module3.aspx</DependentUpon>
