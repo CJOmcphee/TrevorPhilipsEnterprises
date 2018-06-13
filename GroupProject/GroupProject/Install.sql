@@ -328,12 +328,13 @@ exec spWrongAnswer @crud='c', @question='_____ is the blueprint or schematic for
 exec spWrongAnswer @crud='c', @question='Objects are a varied instances of a class?', @wrongAnswers='True'
 exec spWrongAnswer @crud='c', @question='Static is used to describe an object that can have many values', @wrongAnswers='True'
 exec spWrongAnswer @crud='c', @question='Controls  have properties', @wrongAnswers='False'
-exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Library'
-exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='CLR'
-exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Process'
+exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='Library'
+exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='CLR'
+exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='Process'
 exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Frameworl Class Library?', @wrongAnswers='using'
 exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Frameworl Class Library?', @wrongAnswers='Namespace'
 exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Frameworl Class Library?', @wrongAnswers='Module'
+
 
 
 exec spWrongAnswer @crud='r', @question='______ is equipment or physical devices associted with a computer?'
