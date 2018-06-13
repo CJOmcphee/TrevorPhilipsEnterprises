@@ -18,7 +18,7 @@ namespace GroupProject
 
         public void LoadQuestion(string Lesson)
         {
-            DataSet ds = Crud.ReadTable("spExamples",)
+            DataSet ds = Crud.ReadTable("spExamples", Lesson);
         }
     }
 }
