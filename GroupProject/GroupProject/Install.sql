@@ -185,6 +185,7 @@ as begin
 		begin
 			
 			select * from tbQuestions where question=isnull(@questions, question)
+			
 		end
 	if @crud='u'
 		begin
@@ -230,6 +231,7 @@ create procedure spGetTestQuestions(
 )
 as begin
 	select question, answers from tbQuestions where tID=@testID
+	Order by newID();
 end
 go
 --MODULE 1 Test
@@ -311,7 +313,7 @@ exec spWrongAnswer @crud='c', @question='_____ is the blueprint or schematic for
 exec spWrongAnswer @crud='c', @question='_____ is the blueprint or schematic for an object?', @wrongAnswers='Parameter'
 exec spWrongAnswer @crud='c', @question='Objects are a varied instances of a class?', @wrongAnswers='True'
 exec spWrongAnswer @crud='c', @question='Static is used to describe an object that can have many values', @wrongAnswers='True'
-exec spWrongAnswer @crud='c', @question='Controls  have properties', @wrongAnswers='Falsee'
+exec spWrongAnswer @crud='c', @question='Controls  have properties', @wrongAnswers='False e'
 
 
 exec spWrongAnswer @crud='r', @question='______ is equipment or physical devices associted with a computer?'
