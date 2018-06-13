@@ -27,6 +27,9 @@ create table tbExample(
 exampleID int identity(1,1),
 example varchar(1000),
 solution varchar(1000),
+code varchar(max),
+explanation varchar(1000),
+slide int,
 lID int foreign key references tbLesson(lessonID)
 )
 create table tbTest(
@@ -140,13 +143,16 @@ create procedure spExamples(
 @example varchar(1000) =null,
 @solutions varchar(1000) =null,
 @lID int =null,
+@code varchar(max)= null,
+@explanation varchar(1000) = null,
+@slide int = null,
 @crud varchar(1)
 )
 as begin
 	if @crud='c'
 		begin
-			insert into tbExample(lID,exampleID,example,solution)values
-								(@lID,@exampleID,@example,@solutions)
+			insert into tbExample(lID,exampleID,example,solution,code,explanation,slide)values
+								(@lID,@exampleID,@example,@solutions,@code,@explanation,@slide)
 		end
 	if @crud='r'
 		begin
@@ -157,7 +163,10 @@ as begin
 			update tbExample
 				set lID=@lID,
 					example=@example,
-					solution=@solutions
+					solution=@solutions,
+					code = @code,
+					explanation = @explanation,
+					slide = @slide
 					where  exampleID=@exampleID
 			end
 	if @crud='d'
