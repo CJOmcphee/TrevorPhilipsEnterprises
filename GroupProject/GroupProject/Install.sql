@@ -297,6 +297,7 @@ exec spQuestions @crud='c', @tID='module2', @questions='EXE and DLL are the two 
 exec spQuestions @crud='c', @tID='module2', @questions='_____ is the blueprint or schematic for an object?', @answers='Class'
 exec spQuestions @crud='c', @tID='module2', @questions='Objects are a varied instances of a class?', @answers='False'
 exec spQuestions @crud='c', @tID='module2', @questions='Static is used to describe an object that can have many values', @answers='False'
+exec spQuestions @crud='c', @tID='module2', @questions='Controls  have properties', @answers='True'
 --Mondule 2 Wrong Answers
 exec spWrongAnswer @crud='c', @question='CIL is an object-oriented language?', @wrongAnswers='False'
 exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Security'
@@ -310,6 +311,7 @@ exec spWrongAnswer @crud='c', @question='_____ is the blueprint or schematic for
 exec spWrongAnswer @crud='c', @question='_____ is the blueprint or schematic for an object?', @wrongAnswers='Parameter'
 exec spWrongAnswer @crud='c', @question='Objects are a varied instances of a class?', @wrongAnswers='True'
 exec spWrongAnswer @crud='c', @question='Static is used to describe an object that can have many values', @wrongAnswers='True'
+exec spWrongAnswer @crud='c', @question='Controls  have properties', @wrongAnswers='Falsee'
 
 
 exec spWrongAnswer @crud='r', @question='______ is equipment or physical devices associted with a computer?'
