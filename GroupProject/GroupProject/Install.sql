@@ -156,7 +156,8 @@ as begin
 		end
 	if @crud='r'
 		begin
-			select * from tbExample
+			select * from tbExample WHERE lID = ISNULL(@lID,lID)
+			
 		end
 	if @crud='u'
 		begin
