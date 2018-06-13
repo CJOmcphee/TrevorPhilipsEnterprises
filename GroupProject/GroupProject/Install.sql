@@ -311,7 +311,9 @@ exec spQuestions @crud='c', @tID='module2', @questions='Static is used to descri
 exec spQuestions @crud='c', @tID='module2', @questions='Controls  have properties', @answers='True'
 exec spQuestions @crud='c', @tID='module2', @questions='An _____ is your compiled "Project" code', @answers='Assembly'
 exec spQuestions @crud='c', @tID='module2', @questions='What is the root namespace for the .NET Frameworl Class Library?', @answers='System'
+exec spQuestions @crud='c', @tID='module2', @questions='Is this a proper constructor     public string FirstName (get; set;)?', @answers='False'
 --Mondule 2 Wrong Answers
+exec spWrongAnswer @crud='c', @question='Is this a proper constructor     public string FirstName (get; set;)?', @wrongAnswers='True'
 exec spWrongAnswer @crud='c', @question='CIL is an object-oriented language?', @wrongAnswers='False'
 exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Security'
 exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Garbage collection'
