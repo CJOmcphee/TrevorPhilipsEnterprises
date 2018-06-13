@@ -69,7 +69,7 @@
                     </tr>
                 </table>
                 <img src="img/red-wallpaper-13.jpg" style="width:100%" />
-                <%--<div class="text">Introduction to C#.</div>--%>
+                <div class="text">Introduction to C#.</div>
             </div>
 
             <div class="mySlides fade">
