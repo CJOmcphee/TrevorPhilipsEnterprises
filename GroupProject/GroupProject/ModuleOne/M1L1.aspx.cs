@@ -36,10 +36,12 @@ namespace GroupProject.ModuleOne
             pnlExercise2.Visible = true;
         }
 
-        protected void btnPrevious2_Click(object sender, EventArgs e)
+        protected void btnPrev_Click(object sender, EventArgs e)
         {
-            pnlExercise1.Visible = true;
-            pnlExercise2.Visible = false;
+
+                pnlExercise1.Visible = true;
+                pnlExercise2.Visible = false;
+
         }
     }
 }

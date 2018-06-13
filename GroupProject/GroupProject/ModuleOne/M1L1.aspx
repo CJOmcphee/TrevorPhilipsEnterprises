@@ -25,6 +25,11 @@
         #lblMessage {
             color:red;
         }
+        #button{
+            position:fixed;
+            top: 95%;
+            left: 45%;
+        }
     </style>
 </head>
 <body>
@@ -51,23 +56,7 @@
                 <br />
                 <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
             </div>
-            <div id="div5">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-                <br />
-                <br />
-
-            <asp:Button ID="btnPrev" runat="server" Text="Previous" />
-            <asp:Button ID="btnGo" runat="server" Text="Go" OnClick="btnGo_Click" />
-            <asp:Button ID="btnNext" OnClick="btnNext_Click" Visible="false" runat="server" Text="Next" /> 
-            <br /> 
-           </div>
+            
            </div>
             </asp:Panel>
         <asp:Panel ID="pnlExercise2" Visible="false" runat="server">
@@ -91,24 +80,13 @@
                 <br />
                 <asp:Label ID="lblMessage2" runat="server" Text=""></asp:Label>
             </div>
-            <div id="div2">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <%--  --%>
-            <asp:Button ID="btnPrevious2" OnClick="btnPrevious2_Click" runat="server" Text="Previous" />
-            <asp:Button ID="btnGo2" runat="server" Text="Go" />
-            <asp:Button ID="btnNext2" Visible="false" runat="server" Text="Next" /> 
-            <br /> 
-           </div>
            </div>
         </asp:Panel>
+        <div id="button">
+            <asp:Button ID="btnPrev" runat="server" Text="Previous" OnClick="btnPrev_Click" />
+            <asp:Button ID="btnGo" runat="server" Text="Go" OnClick="btnGo_Click" />
+            <asp:Button ID="btnNext" OnClick="btnNext_Click" Visible="false" runat="server" Text="Next" />  
+           </div>
     </form>
 </body>
 </html>
