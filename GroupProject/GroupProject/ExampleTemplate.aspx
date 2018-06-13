@@ -43,6 +43,7 @@
 
 
         #div1 {
+            position:fixed;
 
             top:0%;
 
@@ -54,17 +55,19 @@
 
 
 
-        #div2 {
+        /*#div2 {
+            position:fixed;
 
             top:0%;
 
             left:50%;
 
-            background: #AAA;
+            background: #f5f5f5;
 
-        }
+        }*/
 
         #div3 {
+            position:fixed;
 
             top:50%;
 
@@ -73,16 +76,18 @@
             background:#f5f5f5
 
         }
-
         #div4{
+            position:fixed;
 
-            top:50%;
-
+            top:0%;
+            height:100%;
             left:50%;
 
             background:#808080
 
         }
+
+        
 
     </style>
 
@@ -94,13 +99,13 @@
 
     <div>
 
-        <div id="div1"></div>
+        <div id="div1">Explanation</div>
 
-            <div id="div2"></div>
+            <%--<div id="div2">bbb</div>--%>
 
-            <div id="div3">ccc</div>
+            <div id="div3">Example</div>
 
-            <div id="div4">ddd</div>
+            <div id="div4">Code</div>
 
     </div>
 
