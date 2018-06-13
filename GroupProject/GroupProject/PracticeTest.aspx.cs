@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Web.UI.HtmlControls;
+using System.Drawing;
 
 
 namespace GroupProject
@@ -73,6 +74,7 @@ namespace GroupProject
                 else
                 {
                     radioButton.Value.Text = radioButton.Value.Text + " " + "Wrong";
+                    
                 }
             }
             Total = (score / radioButtonLists.Count) * 100;
