@@ -231,7 +231,7 @@ create procedure spGetTestQuestions(
 )
 as begin
 	select question, answers from tbQuestions where tID=@testID
-	
+	Order by newID();
 end
 go
 --MODULE 1 Test
