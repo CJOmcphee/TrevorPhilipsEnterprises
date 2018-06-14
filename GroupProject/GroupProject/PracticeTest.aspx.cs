@@ -51,6 +51,7 @@ namespace GroupProject
                 number.Text = count.ToString() +") ";
                 tCell.Controls.Add(number);
                 tRow.Controls.Add(tCell);
+
                 
                 Label myLabel = new Label();
                 myLabel.Text = dsQuestion.Tables[0].Rows[0]["question"].ToString();
