@@ -14,13 +14,13 @@ namespace GroupProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            loadExample("1-1-1");
         }
 
         public void loadExample(string Lesson)
         {
-            int count = 1;
-            DataSet ds = Crud.ReadTable("spExamples");
+            int count = 0;
+            DataSet ds = Crud.ReadTable("spExamples",Lesson);
             foreach(DataRow Row in ds.Tables[0].Rows)
             {
                 
@@ -37,7 +37,10 @@ namespace GroupProject
                 dvExample.Controls.Add(pnlExm);
                 dvCode.Controls.Add(pnlCode);
 
-
+                Label lblExample = new Label();
+                lblExample.ID = "lblExample" + count;
+                lblExample.Text = ds.Tables[0].Rows[0]["example"].ToString();
+                pnlExm.Controls.Add(lblExample);
 
                 count++;
             }
