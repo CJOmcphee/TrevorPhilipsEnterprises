@@ -315,7 +315,7 @@ exec spQuestions @crud='c', @tID='module2', @questions='Objects are a varied ins
 exec spQuestions @crud='c', @tID='module2', @questions='Static is used to describe an object that can have many values', @answers='False'
 exec spQuestions @crud='c', @tID='module2', @questions='Controls  have properties', @answers='True'
 exec spQuestions @crud='c', @tID='module2', @questions='An _____ is your compiled "Project" code', @answers='Assembly'
-exec spQuestions @crud='c', @tID='module2', @questions='What is the root namespace for the .NET Frameworl Class Library?', @answers='System'
+exec spQuestions @crud='c', @tID='module2', @questions='What is the root namespace for the .NET Framework Class Library?', @answers='System'
 exec spQuestions @crud='c', @tID='module2', @questions='Is this a proper variable     public string FirstName (get; set;)?', @answers='False'
 
 --Mondule 2 Wrong Answers
@@ -336,9 +336,9 @@ exec spWrongAnswer @crud='c', @question='Controls  have properties', @wrongAnswe
 exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='Library'
 exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='CLR'
 exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='Process'
-exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Frameworl Class Library?', @wrongAnswers='using'
-exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Frameworl Class Library?', @wrongAnswers='Namespace'
-exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Frameworl Class Library?', @wrongAnswers='Module'
+exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Framework Class Library?', @wrongAnswers='using'
+exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Framework Class Library?', @wrongAnswers='Namespace'
+exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Framework Class Library?', @wrongAnswers='Module'
 
 
 
