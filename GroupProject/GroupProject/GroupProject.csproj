@@ -94,6 +94,7 @@
     <Content Include="ModuleOne\M1L4.aspx" />
     <Content Include="ModuleOne\M1L5.aspx" />
     <Content Include="ModuleOne\Pictures\ASPside.PNG" />
+    <Content Include="ModuleOne\Pictures\code.png" />
     <Content Include="ModuleOne\Pictures\CSside.PNG" />
     <Content Include="PracticeTest.aspx" />
     <Content Include="Modules.css" />
