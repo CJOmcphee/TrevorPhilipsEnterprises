@@ -240,7 +240,7 @@ create procedure spGetTestQuestions(
 )
 as begin
 	select question, answers from tbQuestions where tID=@testID
-	Order by newID();
+	
 end
 go
 --MODULE 1 Test
@@ -309,7 +309,12 @@ exec spQuestions @crud='c', @tID='module2', @questions='_____ is the blueprint o
 exec spQuestions @crud='c', @tID='module2', @questions='Objects are a varied instances of a class?', @answers='False'
 exec spQuestions @crud='c', @tID='module2', @questions='Static is used to describe an object that can have many values', @answers='False'
 exec spQuestions @crud='c', @tID='module2', @questions='Controls  have properties', @answers='True'
+exec spQuestions @crud='c', @tID='module2', @questions='An _____ is your compiled "Project" code', @answers='Assembly'
+exec spQuestions @crud='c', @tID='module2', @questions='What is the root namespace for the .NET Frameworl Class Library?', @answers='System'
+exec spQuestions @crud='c', @tID='module2', @questions='Is this a proper variable     public string FirstName (get; set;)?', @answers='False'
+
 --Mondule 2 Wrong Answers
+exec spWrongAnswer @crud='c', @question='Is this a proper variable     public string FirstName (get; set;)?', @wrongAnswers='True'
 exec spWrongAnswer @crud='c', @question='CIL is an object-oriented language?', @wrongAnswers='False'
 exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Security'
 exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Garbage collection'
@@ -322,7 +327,14 @@ exec spWrongAnswer @crud='c', @question='_____ is the blueprint or schematic for
 exec spWrongAnswer @crud='c', @question='_____ is the blueprint or schematic for an object?', @wrongAnswers='Parameter'
 exec spWrongAnswer @crud='c', @question='Objects are a varied instances of a class?', @wrongAnswers='True'
 exec spWrongAnswer @crud='c', @question='Static is used to describe an object that can have many values', @wrongAnswers='True'
-exec spWrongAnswer @crud='c', @question='Controls  have properties', @wrongAnswers='False e'
+exec spWrongAnswer @crud='c', @question='Controls  have properties', @wrongAnswers='False'
+exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='Library'
+exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='CLR'
+exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='Process'
+exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Frameworl Class Library?', @wrongAnswers='using'
+exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Frameworl Class Library?', @wrongAnswers='Namespace'
+exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Frameworl Class Library?', @wrongAnswers='Module'
+
 
 
 exec spWrongAnswer @crud='r', @question='______ is equipment or physical devices associted with a computer?'
