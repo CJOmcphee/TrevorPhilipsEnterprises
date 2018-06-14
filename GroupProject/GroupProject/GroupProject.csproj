@@ -85,6 +85,7 @@
     <Content Include="GroupProjectLayout.txt" />
     <Content Include="img\red-wallpaper-13.jpg" />
     <Content Include="Install.sql" />
+    <Content Include="MikesExampleTemplate.aspx" />
     <Content Include="Module1.aspx" />
     <Content Include="Module3.aspx" />
     <Content Include="ModuleOne\M1L1.aspx" />
@@ -176,6 +177,13 @@
     </Compile>
     <Compile Include="ExampleTemplate.aspx.designer.cs">
       <DependentUpon>ExampleTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MikesExampleTemplate.aspx.cs">
+      <DependentUpon>MikesExampleTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MikesExampleTemplate.aspx.designer.cs">
+      <DependentUpon>MikesExampleTemplate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module1.aspx.cs">
       <DependentUpon>Module1.aspx</DependentUpon>
