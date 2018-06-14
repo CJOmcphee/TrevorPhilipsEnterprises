@@ -14,6 +14,7 @@ namespace GroupProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             loadExample("1-1-1");
         }
 
@@ -42,8 +43,32 @@ namespace GroupProject
                 lblExample.Text = ds.Tables[0].Rows[0]["example"].ToString();
                 pnlExm.Controls.Add(lblExample);
 
+                Label lblExplain = new Label();
+                lblExplain.ID = "lblExplaination" + count;
+                lblExplain.Text = ds.Tables[0].Rows[0]["explanation"].ToString();
+                pnlExp.Controls.Add(lblExplain);
+
+                Label lblCode = new Label();
+                lblCode.ID = "lblCode" + count;
+                lblCode.Text = ds.Tables[0].Rows[0]["solution"].ToString();
+                pnlCode.Controls.Add(lblCode);
+
                 count++;
             }
+        }
+
+        protected void btnGo_Click(object sender, EventArgs e)
+        {
+            DataSet ds = Crud.ReadTable("spExamples", "1-1-1");
+            if (tbAnswer.Text == ds.Tables[0].Rows[0]["code"].ToString())
+            {
+                btnNext.Visible = true;
+            }
+        }
+
+        protected void btnNext_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

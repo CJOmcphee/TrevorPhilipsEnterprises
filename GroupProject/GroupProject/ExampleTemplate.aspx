@@ -98,6 +98,11 @@
 
         }
 
+        /*#tbAnswer{
+            margin-left:150px;
+            margin-top:50px;
+        }*/
+
     </style>
 
     <title>Module 2 Lesson 1 Example</title>
@@ -121,7 +126,7 @@
             </div>
 
             <div id="dvCode" runat="server">
-                
+                <asp:TextBox ID="tbAnswer" runat="server"></asp:TextBox>
             </div>
 
     </div>
@@ -129,8 +134,8 @@
     <br />
     <div id="button" runat="server">
         <asp:Button ID="btnPrev" runat="server" Text="Prev" />
-        <asp:Button ID="btnGo" runat="server" Text="Go" />
-        <asp:Button ID="btnNext" runat="server" Text="Next" />
+        <asp:Button ID="btnGo" runat="server" Text="Go" OnClick="btnGo_Click" />
+        <asp:Button ID="btnNext" Visible="false" runat="server" Text="Next" OnClick="btnNext_Click" />
 
     </div>
     </form>
