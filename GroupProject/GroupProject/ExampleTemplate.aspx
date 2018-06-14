@@ -42,7 +42,7 @@
 
 
 
-        #div1 {
+        #dvExplaination {
             position:fixed;
 
             top:0%;
@@ -66,7 +66,7 @@
 
         }*/
 
-        #div3 {
+        #dvExample {
             position:fixed;
 
             top:50%;
@@ -76,7 +76,7 @@
             background:#f5f5f5
 
         }
-        #div4{
+        #dvCode{
             position:fixed;
 
             top:0%;
@@ -108,24 +108,30 @@
     <form runat="server" id="form1">
     <div>
 
-        <div id="div1">
-            <p></p>Explanation
+        <div id="dvExplaination" runat="server">
 
         </div>
 
-            <%--<div id="div2">bbb</div>--%>
+            <%--<div id="div2">
+                <asp:Panel runat="server"></asp:Panel>
+                </div>--%>
 
-            <div id="div3">Example</div>
+            <div id="dvExample" runat="server">
+                
+            </div>
 
-            <div id="div4">Code</div>
+            <div id="dvCode" runat="server">
+                
+            </div>
 
     </div>
 
     <br />
-        <div id="button">
+    <div id="button" runat="server">
         <asp:Button ID="btnPrev" runat="server" Text="Prev" />
         <asp:Button ID="btnGo" runat="server" Text="Go" />
         <asp:Button ID="btnNext" runat="server" Text="Next" />
+
     </div>
     </form>
 </body>

@@ -14,23 +14,35 @@ namespace GroupProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if(Session["Example"] == null)
-            //{
-            //    LoadExample("1");
-            //}
-            //else
-            //{
-            //    LoadExample(Session["Example"].ToString());
-            //}
+            loadExample("1-1-1");
         }
 
-        public void LoadExample(string Lesson)
+        public void loadExample(string Lesson)
         {
-            
-            DataSet ds = Crud.ReadTable("spExamples");
+            int count = 0;
+            DataSet ds = Crud.ReadTable("spExamples",Lesson);
             foreach(DataRow Row in ds.Tables[0].Rows)
             {
-                HtmlTableRow tRow = new HtmlTableRow();
+                
+                Panel pnlExp = new Panel();
+                pnlExp.ID = "pnlExplaination" + count;
+
+                Panel pnlExm = new Panel();
+                pnlExm.ID = "pnlExample" + count;
+
+                Panel pnlCode = new Panel();
+                pnlCode.ID = "pnlCode" + count;
+
+                dvExplaination.Controls.Add(pnlExp);
+                dvExample.Controls.Add(pnlExm);
+                dvCode.Controls.Add(pnlCode);
+
+                Label lblExample = new Label();
+                lblExample.ID = "lblExample" + count;
+                lblExample.Text = ds.Tables[0].Rows[0]["example"].ToString();
+                pnlExm.Controls.Add(lblExample);
+
+                count++;
             }
         }
     }

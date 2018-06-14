@@ -37,7 +37,7 @@ namespace GroupProject
             }
             if (Procedure == "spExamples")
             {
-                mydal.AddParam("@ExampleID", id.ToString());
+                mydal.AddParam("@lID", id.ToString());
             }
             if (Procedure == "spQuestions")
             {
