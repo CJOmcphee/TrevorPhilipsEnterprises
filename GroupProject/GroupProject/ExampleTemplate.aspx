@@ -87,7 +87,16 @@
 
         }
 
-        
+        #button{
+            position:fixed;
+
+            top:95%;
+            
+            left:50%;
+
+            background:#808080
+
+        }
 
     </style>
 
@@ -96,12 +105,10 @@
 </head>
 
 <body>
-
+    <form runat="server" id="form1">
     <div>
 
-        <div id="div1">Explanation
-
-        </div>
+        <div id="div1">Explanation</div>
 
             <%--<div id="div2">bbb</div>--%>
 
@@ -112,9 +119,13 @@
     </div>
 
     <br />
+    <div id="button">
+        <asp:Button ID="btnPrev" runat="server" Text="Prev" />
+        <asp:Button ID="btnGo" runat="server" Text="Go" />
+        <asp:Button ID="btnNext" runat="server" Text="Next" />
 
-    <input type="button" value="Prev" />
-
+    </div>
+    </form>
 </body>
 
 </html>
