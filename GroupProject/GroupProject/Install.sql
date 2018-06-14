@@ -146,7 +146,7 @@ create procedure spExamples(
 @exampleID int =null,
 @example varchar(1000) =null,
 @solutions varchar(1000) =null,
-@lID int =null,
+@lID varchar(50) =null,
 @code varchar(max)= null,
 @explanation varchar(1000) = null,
 @slide int = null,
@@ -155,8 +155,8 @@ create procedure spExamples(
 as begin
 	if @crud='c'
 		begin
-			insert into tbExample(lID,exampleID,example,solution,code,explanation,slide)values
-								(@lID,@exampleID,@example,@solutions,@code,@explanation,@slide)
+			insert into tbExample(lID,example,solution,code,explanation,slide)values
+								(@lID,@example,@solutions,@code,@explanation,@slide)
 		end
 	if @crud='r'
 		begin
@@ -179,8 +179,11 @@ as begin
 			delete from tbExample where lID=@lID
 		end
 end
-
 go
+
+exec spExamples @crud='c',@lID='1-1-1',@example='Show 1 plus 1',@solutions='1+1',@code='int answer = 1+1',@explanation='you create a int called answer and assing it 1+1',@slide=0
+go
+select * from tbExample
 select * from tbTest
 go
 create procedure spQuestions(
