@@ -133,7 +133,7 @@
 
     <br />
     <div id="button" runat="server">
-        <asp:Button ID="btnPrev" runat="server" Text="Prev" />
+        <asp:Button ID="btnPrev" runat="server" Text="Prev" OnClick="btnPrev_Click" />
         <asp:Button ID="btnGo" runat="server" Text="Go" OnClick="btnGo_Click" />
         <asp:Button ID="btnNext" Visible="false" runat="server" Text="Next" OnClick="btnNext_Click" />
 
