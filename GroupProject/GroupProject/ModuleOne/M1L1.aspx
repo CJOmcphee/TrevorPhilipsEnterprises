@@ -17,7 +17,7 @@
         #cs1{background:#777;top:50%; left:0%;}
         #input1{background:#444;top:50%; left:50%;}
 
-        #imgCode{/*background:#DDD*/;top:0%; left:0%;}
+        #imgCode{top:0%; left:0%;}
         #explanation2{background:#AAA;top:0%; left:50%;}
         #cs2{background:#777;top:50%; left:0%;}
         #input2{background:#444;top:50%; left:50%;}
