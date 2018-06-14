@@ -29,7 +29,7 @@ namespace GroupProject
                     LoadQuestion("module2");
                     break;
             }
-            
+
             score = 0;            
         }
         public void LoadQuestion(string Test)
@@ -57,7 +57,7 @@ namespace GroupProject
                 tCell.Controls.Add(myLabel);
                 tRow.Controls.Add(tCell);
                 table1.Controls.Add(tRow);
-
+                
                 RadioButtonList myrb = new RadioButtonList();
                 myrb.DataSource = dsAnswers.Tables[0];
                 myrb.DataValueField = "wrongAnswers";
@@ -67,6 +67,7 @@ namespace GroupProject
                 trow1.Controls.Add(tCell1);
                 table1.Controls.Add(trow1);
 
+                
                 Label answerLabel = new Label();
                 tCell.Controls.Add(answerLabel);
                 trow2.Controls.Add(tCell2);

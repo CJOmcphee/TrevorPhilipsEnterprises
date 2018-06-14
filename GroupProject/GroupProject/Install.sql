@@ -146,7 +146,7 @@ create procedure spExamples(
 @exampleID int =null,
 @example varchar(1000) =null,
 @solutions varchar(1000) =null,
-@lID int =null,
+@lID varchar(50) =null,
 @code varchar(max)= null,
 @explanation varchar(1000) = null,
 @slide int = null,
@@ -155,8 +155,8 @@ create procedure spExamples(
 as begin
 	if @crud='c'
 		begin
-			insert into tbExample(lID,exampleID,example,solution,code,explanation,slide)values
-								(@lID,@exampleID,@example,@solutions,@code,@explanation,@slide)
+			insert into tbExample(lID,example,solution,code,explanation,slide)values
+								(@lID,@example,@solutions,@code,@explanation,@slide)
 		end
 	if @crud='r'
 		begin
@@ -179,8 +179,11 @@ as begin
 			delete from tbExample where lID=@lID
 		end
 end
-
 go
+
+exec spExamples @crud='c',@lID='1-1-1',@example='Show 1 plus 1',@solutions='1+1',@code='int answer = 1+1',@explanation='you create a int called answer and assing it 1+1',@slide=0
+go
+select * from tbExample
 select * from tbTest
 go
 create procedure spQuestions(
@@ -315,7 +318,7 @@ exec spQuestions @crud='c', @tID='module2', @questions='Objects are a varied ins
 exec spQuestions @crud='c', @tID='module2', @questions='Static is used to describe an object that can have many values', @answers='False'
 exec spQuestions @crud='c', @tID='module2', @questions='Controls  have properties', @answers='True'
 exec spQuestions @crud='c', @tID='module2', @questions='An _____ is your compiled "Project" code', @answers='Assembly'
-exec spQuestions @crud='c', @tID='module2', @questions='What is the root namespace for the .NET Frameworl Class Library?', @answers='System'
+exec spQuestions @crud='c', @tID='module2', @questions='What is the root namespace for the .NET Framework Class Library?', @answers='System'
 exec spQuestions @crud='c', @tID='module2', @questions='Is this a proper variable     public string FirstName (get; set;)?', @answers='False'
 
 --Mondule 2 Wrong Answers
@@ -336,9 +339,9 @@ exec spWrongAnswer @crud='c', @question='Controls  have properties', @wrongAnswe
 exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='Library'
 exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='CLR'
 exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='Process'
-exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Frameworl Class Library?', @wrongAnswers='using'
-exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Frameworl Class Library?', @wrongAnswers='Namespace'
-exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Frameworl Class Library?', @wrongAnswers='Module'
+exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Framework Class Library?', @wrongAnswers='using'
+exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Framework Class Library?', @wrongAnswers='Namespace'
+exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Framework Class Library?', @wrongAnswers='Module'
 
 
 
