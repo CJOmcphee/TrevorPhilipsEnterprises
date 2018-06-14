@@ -7,10 +7,11 @@
         <div class="login">
             <asp:TextBox ID="tbEmail" runat="server"></asp:TextBox>
             <asp:TextBox ID="tbPassword" runat="server"></asp:TextBox>
-            <a href="#" class="forgot">forgot password?</a>
-        
+            <a href="recovery.aspx" class="forgot">forgot password?</a>
+            <a href="registration.aspx" class="forgot">have no account?</a>
             <asp:Button ID="btnSignIn" runat="server" Text="Sign In" OnClick="btnSignIn_Click" />
-            <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label> 
+            <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label>
+                       
         </div>
         <div class="shadow"></div>
     </div>

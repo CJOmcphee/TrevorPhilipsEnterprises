@@ -1087,6 +1087,22 @@ input[type="checkbox"]:checked + .toggle {
         color: #3b3b3b
     }
 
+.noaccount {
+    color: #7f7f7f;
+    display: inline-block;
+    float: right;
+    font: 12px/1 sans-serif;
+    left: -19px;
+    position: relative;
+    text-decoration: none;
+    top: 5px;
+    transition: color .4s;
+}
+
+    .noaccount:hover {
+        color: #3b3b3b
+    }
+
 input[type="submit"] {
     width: 240px;
     height: 35px;
@@ -1112,6 +1128,7 @@ input[type="submit"] {
     border-bottom-left-radius: 5px;
     box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;
 }
+
 
 .shadow {
     background: #000;
