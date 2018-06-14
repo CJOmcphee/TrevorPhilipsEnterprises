@@ -17,12 +17,16 @@ lastName varchar(50),
 studentEmail varchar(100) foreign key references tbLogin(sID)
 )
 create table tbModule(
-moduleID int identity(1,1) primary key
+moduleID varchar(50) primary key
 )
+	insert into tbModule (moduleID)values
+							('Module 1'),('Module 2'),('Module 3')
 create table tbLesson(
-lessonID int identity(1,1) primary key,
-mID int foreign key references tbModule(moduleID)
+lessonID varchar(50) primary key,
+mID varchar(50) foreign key references tbModule(moduleID)
 )
+	insert into tbLesson(lessonID, mID)values
+						('1-1-1','Module 1'),('1-1-2','Module 1'),('1-1-3','Module 1'),('1-1-4','Module 1'),('1-1-5','Module 1'),('1-1-6','Module 1'),('1-1-7','Module 1'),('1-1-8','Module 1'),('1-1-9','Module 1'),('1-1-10','Module 1')
 create table tbExample(
 exampleID int identity(1,1),
 example varchar(1000),
@@ -30,7 +34,7 @@ solution varchar(1000),
 code varchar(max),
 explanation varchar(1000),
 slide int,
-lID int foreign key references tbLesson(lessonID)
+lID varchar(50) foreign key references tbLesson(lessonID)
 )
 create table tbTest(
 testID varchar(50) primary key,
@@ -156,7 +160,8 @@ as begin
 		end
 	if @crud='r'
 		begin
-			select * from tbExample
+			select * from tbExample WHERE lID = ISNULL(@lID,lID)
+			
 		end
 	if @crud='u'
 		begin
@@ -171,7 +176,7 @@ as begin
 			end
 	if @crud='d'
 		begin
-			delete from tbExample where exampleID=@exampleID
+			delete from tbExample where lID=@lID
 		end
 end
 
@@ -372,7 +377,7 @@ go
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
 exec spGetTestQuestions @testID='module1'
-
+select * from tbLesson
 
 
 

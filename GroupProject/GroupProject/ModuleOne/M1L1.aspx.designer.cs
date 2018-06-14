@@ -67,33 +67,6 @@ namespace GroupProject.ModuleOne {
         protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
-        /// btnPrev control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPrev;
-        
-        /// <summary>
-        /// btnGo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGo;
-        
-        /// <summary>
-        /// btnNext control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNext;
-        
-        /// <summary>
         /// pnlExercise2 control.
         /// </summary>
         /// <remarks>
@@ -130,30 +103,30 @@ namespace GroupProject.ModuleOne {
         protected global::System.Web.UI.WebControls.Label lblMessage2;
         
         /// <summary>
-        /// btnPrevious2 control.
+        /// btnPrev control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPrevious2;
+        protected global::System.Web.UI.WebControls.Button btnPrev;
         
         /// <summary>
-        /// btnGo2 control.
+        /// btnGo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGo2;
+        protected global::System.Web.UI.WebControls.Button btnGo;
         
         /// <summary>
-        /// btnNext2 control.
+        /// btnNext control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNext2;
+        protected global::System.Web.UI.WebControls.Button btnNext;
     }
 }
