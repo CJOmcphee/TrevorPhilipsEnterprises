@@ -191,6 +191,7 @@
     <Content Include="images\pics16.jpg" />
     <Content Include="images\robertson.png" />
     <Content Include="images\spacer.gif" />
+    <Content Include="TJ.sql" />
     <Content Include="user\css\ie\html5shiv.js" />
     <Content Include="user\css\ie\PIE.htc" />
     <Content Include="user\css\ie\v8.css" />
@@ -245,7 +246,6 @@
     <Content Include="user\js\skel.min.js" />
     <Content Include="user\left-sidebar.html" />
     <Content Include="user\login.aspx" />
-    <Content Include="user\login_user.aspx" />
     <Content Include="user\modules.aspx" />
     <Content Include="user\no-sidebar.html" />
     <Content Include="user\Recovery.aspx" />
@@ -270,12 +270,14 @@
     </Compile>
     <Compile Include="admin\tests_admin.aspx.cs">
       <DependentUpon>tests_admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\tests_admin.aspx.designer.cs">
       <DependentUpon>tests_admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\users_admin.aspx.cs">
       <DependentUpon>users_admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\users_admin.aspx.designer.cs">
       <DependentUpon>users_admin.aspx</DependentUpon>
@@ -305,12 +307,14 @@
     </Compile>
     <Compile Include="Module2\M2L1.aspx.cs">
       <DependentUpon>M2L1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module2\M2L1.aspx.designer.cs">
       <DependentUpon>M2L1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module2\M2L1EX.aspx.cs">
       <DependentUpon>M2L1EX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module2\M2L1EX.aspx.designer.cs">
       <DependentUpon>M2L1EX.aspx</DependentUpon>
@@ -382,16 +386,10 @@
     </Compile>
     <Compile Include="user\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="user\login_user.aspx.cs">
-      <DependentUpon>login_user.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="user\login_user.aspx.designer.cs">
-      <DependentUpon>login_user.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\modules.aspx.cs">
       <DependentUpon>modules.aspx</DependentUpon>
@@ -402,12 +400,14 @@
     </Compile>
     <Compile Include="user\recovery.aspx.cs">
       <DependentUpon>Recovery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\recovery.aspx.designer.cs">
       <DependentUpon>Recovery.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\registration.aspx.cs">
       <DependentUpon>registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\registration.aspx.designer.cs">
       <DependentUpon>registration.aspx</DependentUpon>
