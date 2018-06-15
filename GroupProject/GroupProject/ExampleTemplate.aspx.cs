@@ -12,11 +12,12 @@ namespace GroupProject
 {
     public partial class ExampleTemplate : System.Web.UI.Page
     {
-        int nav = 1;
+        int nav = 0;
         DataSet ds;
         List<Panel> Example = new List<Panel>();
         List<Panel> Explanation = new List<Panel>();
         List<Panel> Code = new List<Panel>();
+        List<TextBox> Answer = new List<TextBox>();
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -69,6 +70,7 @@ namespace GroupProject
 
                 Label lblExample = new Label();
                 TextBox tbAnswer = new TextBox();
+                Answer.Add(tbAnswer);
                 lblExample.Text = ds.Tables[0].Rows[0]["example"].ToString();
                 pnlExm.Controls.Add(lblExample);
                 pnlExm.Controls.Add(tbAnswer);
@@ -86,7 +88,7 @@ namespace GroupProject
 
         protected void btnGo_Click(object sender, EventArgs e)
         {
-            if (tbAnswer.Text == ds.Tables[0].Rows[0]["code"].ToString())
+            if (Answer[nav].Text == ds.Tables[0].Rows[0]["code"].ToString())
             {
                 btnNext.Visible = true;
             }

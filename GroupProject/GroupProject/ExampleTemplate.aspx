@@ -126,7 +126,6 @@
             </div>
 
             <div id="dvCode" runat="server">
-                <asp:TextBox ID="tbAnswer" runat="server"></asp:TextBox>
             </div>
 
     </div>
