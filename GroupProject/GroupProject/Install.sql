@@ -143,7 +143,6 @@ go
 exec spLogin @studentEmail='bruce.banner@robertsoncollege.net',@studentPassword='password'
 go
 create procedure spExamples(
-@exampleID int =null,
 @example varchar(1000) =null,
 @solutions varchar(1000) =null,
 @lID varchar(50) =null,
