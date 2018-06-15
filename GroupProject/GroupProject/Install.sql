@@ -171,7 +171,7 @@ as begin
 					code = @code,
 					explanation = @explanation,
 					slide = @slide
-					where  exampleID=@exampleID
+					where  example=@example
 			end
 	if @crud='d'
 		begin
