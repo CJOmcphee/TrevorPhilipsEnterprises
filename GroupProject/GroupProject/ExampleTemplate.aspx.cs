@@ -12,7 +12,6 @@ namespace GroupProject
 {
     public partial class ExampleTemplate : System.Web.UI.Page
     {
-        int nav = 0;
         DataSet ds;
         List<Panel> Example = new List<Panel>();
         List<Panel> Explanation = new List<Panel>();
@@ -20,8 +19,18 @@ namespace GroupProject
         List<TextBox> Answer = new List<TextBox>();
         protected void Page_Load(object sender, EventArgs e)
         {
+                
+                loadExample("1-1-1");
+            if(!IsPostBack)
+            {
+                HttpCookie nav = new HttpCookie("Nav");
+                nav.Value = "0";
+                nav.Expires = DateTime.Now.AddDays(30);
+                Response.Cookies.Add(nav);
+
+            }
             
-            loadExample("1-1-1");
+            
         }
 
         public void loadExample(string Lesson)
@@ -31,6 +40,9 @@ namespace GroupProject
             {
                 
                 Panel pnlExp = new Panel();
+                Label lblExplain = new Label();
+                lblExplain.Text = Row["explanation"].ToString();
+                pnlExp.Controls.Add(lblExplain);
                 if (Explanation.Count == 0)
                 {
                     Explanation.Add(pnlExp);
@@ -43,9 +55,15 @@ namespace GroupProject
 
 
                 Panel pnlExm = new Panel();
+                Label lblExample = new Label();
+                TextBox tbAnswer = new TextBox();
+                Answer.Add(tbAnswer);
+                lblExample.Text = Row["example"].ToString();
+                pnlExm.Controls.Add(lblExample);
+                pnlExm.Controls.Add(tbAnswer);
                 if (Example.Count == 0)
                 {
-                    Example.Add(pnlExp);
+                    Example.Add(pnlExm);
                 }
                 else
                 {
@@ -54,6 +72,9 @@ namespace GroupProject
                 }
 
                 Panel pnlCode = new Panel();
+                Label lblCode = new Label();
+                lblCode.Text = Row["code"].ToString();
+                pnlCode.Controls.Add(lblCode);
                 if (Code.Count == 0)
                 {
                     Code.Add(pnlCode);
@@ -68,27 +89,19 @@ namespace GroupProject
                 dvExample.Controls.Add(pnlExm);
                 dvCode.Controls.Add(pnlCode);
 
-                Label lblExample = new Label();
-                TextBox tbAnswer = new TextBox();
-                Answer.Add(tbAnswer);
-                lblExample.Text = ds.Tables[0].Rows[0]["example"].ToString();
-                pnlExm.Controls.Add(lblExample);
-                pnlExm.Controls.Add(tbAnswer);
+                
 
-                Label lblExplain = new Label();
-                lblExplain.Text = ds.Tables[0].Rows[0]["explanation"].ToString();
-                pnlExp.Controls.Add(lblExplain);
+               
 
-                Label lblCode = new Label();
-                lblCode.Text = ds.Tables[0].Rows[0]["code"].ToString();
-                pnlCode.Controls.Add(lblCode);
+                
 
             }
         }
 
         protected void btnGo_Click(object sender, EventArgs e)
         {
-            if (Answer[nav].Text == ds.Tables[0].Rows[0]["solutions"].ToString())
+            int x = Convert.ToInt32(Request.Cookies["Nav"].Value);
+            if (Answer[x].Text== ds.Tables[0].Rows[x]["solution"].ToString())
             {
                 btnNext.Visible = true;
             }
@@ -96,16 +109,20 @@ namespace GroupProject
 
         protected void btnNext_Click(object sender, EventArgs e)
         {
-            HidePanel(nav);
-            nav++;
-            ShowPanel(nav);
+            int x = Convert.ToInt32(Request.Cookies["Nav"].Value);
+            HidePanel(x);
+            x++;
+            Response.Cookies["Nav"].Value = x.ToString();
+            ShowPanel(x);
         }
 
         protected void btnPrev_Click(object sender, EventArgs e)
         {
-            HidePanel(nav);
-            nav--;
-            ShowPanel(nav);
+            int x = Convert.ToInt32(Request.Cookies["Nav"].Value);
+            HidePanel(x);
+            x--;
+            Response.Cookies["Nav"].Value = x.ToString();
+            ShowPanel(x);
         }
 
         public void ShowPanel(int index)
