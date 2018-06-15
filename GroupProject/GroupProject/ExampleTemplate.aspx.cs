@@ -88,7 +88,7 @@ namespace GroupProject
 
         protected void btnGo_Click(object sender, EventArgs e)
         {
-            if (Answer[nav].Text == ds.Tables[0].Rows[0]["code"].ToString())
+            if (Answer[nav].Text == ds.Tables[0].Rows[0]["solutions"].ToString())
             {
                 btnNext.Visible = true;
             }
