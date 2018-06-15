@@ -190,6 +190,7 @@
     <Content Include="MikesExampleTemplate.aspx" />
     <Content Include="Module2\M2L1.aspx" />
     <Content Include="Module2\M2L1EX.aspx" />
+    <Content Include="ModuleOne.html" />
     <Content Include="ModuleOne\M1L1.aspx" />
     <Content Include="ModuleOne\M1L2a.aspx" />
     <Content Include="ModuleOne\M1L2b.aspx" />

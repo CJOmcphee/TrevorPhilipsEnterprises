@@ -20,12 +20,12 @@ namespace GroupProject
         protected void Page_Load(object sender, EventArgs e)
         {
                 
-                loadExample("1-1-1");
+            loadExample("1-1-1");
             btnNext.Enabled = false;
             HidePreviousBtn();
             if(!IsPostBack)
             {
-                Session["Nav"] = "0";
+                Session["Nav"] = 0;
                 
 
             }
@@ -34,7 +34,7 @@ namespace GroupProject
         }
         public void HidePreviousBtn()
         {
-            if (Session["Nav"] == null || Session["Nav"] == "0")
+            if (Session["Nav"] == null || (int)Session["Nav"] == 0)
             {
                 btnPrev.Enabled = false;
             }
@@ -110,31 +110,40 @@ namespace GroupProject
 
         protected void btnGo_Click(object sender, EventArgs e)
         {
-            int x = Convert.ToInt32(Session["Nav"]);
+            int x = (int)Session["Nav"];
             if (Answer[x].Text== ds.Tables[0].Rows[x]["solution"].ToString())
             {
                 btnNext.Enabled = true;
+                Answer[x].Enabled = false;
             }
         }
 
         protected void btnNext_Click(object sender, EventArgs e)
         {
-            int x = Convert.ToInt32(Session["Nav"]);
+            int x = (int)Session["Nav"];
             HidePanel(x);
             x++;
             Session["Nav"] = x;
             ShowPanel(x);
             HidePreviousBtn();
+            if (Answer[x].Enabled == false)
+            {
+                btnNext.Enabled = true;
+            }
         }
 
         protected void btnPrev_Click(object sender, EventArgs e)
         {
-            int x = Convert.ToInt32(Session["Nav"]);
+            int x = (int)Session["Nav"];
             HidePanel(x);
             x--;
             Session["Nav"] = x;
             ShowPanel(x);
             HidePreviousBtn();
+            if(Answer[x].Enabled==false)
+            {
+                btnNext.Enabled = true;
+            }
         }
 
         public void ShowPanel(int index)
