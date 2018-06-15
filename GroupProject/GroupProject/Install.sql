@@ -181,6 +181,7 @@ end
 go
 
 exec spExamples @crud='c',@lID='1-1-1',@example='Show 1 plus 1',@solutions='1+1',@code='int answer = 1+1',@explanation='you create a int called answer and assing it 1+1',@slide=0
+exec spExamples @crud='c',@lID='1-1-1',@example='Show 2 plus 2',@solutions='2+2',@code='int answer = 2+2',@explanation='you create a int called answer and assing it 1+1',@slide=0
 go
 select * from tbExample
 select * from tbTest
