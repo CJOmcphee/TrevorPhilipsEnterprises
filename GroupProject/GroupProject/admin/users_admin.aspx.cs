@@ -11,7 +11,7 @@ namespace GroupProject.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            pnlUserUpdate.Visible = false;
         }
 
         protected void gvUsers_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -23,5 +23,7 @@ namespace GroupProject.admin
         {
             
         }
+
+       
     }
 }
