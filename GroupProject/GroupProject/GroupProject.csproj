@@ -160,6 +160,7 @@
     <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="ChrisTest.sql" />
     <Content Include="DAL_Project\bin\Debug\DAL_Project.dll" />
     <Content Include="DAL_Project\bin\Debug\DAL_Project.pdb" />
     <Content Include="DAL_Project\DAL_Project.csproj" />
@@ -187,10 +188,9 @@
     <Content Include="img\red-wallpaper-13.jpg" />
     <Content Include="Install.sql" />
     <Content Include="MikesExampleTemplate.aspx" />
-    <Content Include="Module1.aspx" />
     <Content Include="Module2\M2L1.aspx" />
     <Content Include="Module2\M2L1EX.aspx" />
-    <Content Include="Module3.aspx" />
+    <Content Include="ModuleOne.html" />
     <Content Include="ModuleOne\M1L1.aspx" />
     <Content Include="ModuleOne\M1L2a.aspx" />
     <Content Include="ModuleOne\M1L2b.aspx" />
@@ -288,7 +288,7 @@
     <Content Include="user\images\robertson.png" />
     <Content Include="user\images\spacer.gif" />
     <Content Include="user\index_user.aspx" />
-    <Content Include="user\index.html" />
+    <Content Include="user\StylesDrafts\index.html" />
     <Content Include="js\html5shiv.js" />
     <Content Include="js\init.js" />
     <Content Include="js\skel-panels.min.js" />
@@ -297,13 +297,13 @@
     <Content Include="user\js\init.js" />
     <Content Include="user\js\skel-panels.min.js" />
     <Content Include="user\js\skel.min.js" />
-    <Content Include="user\left-sidebar.html" />
+    <Content Include="user\StylesDrafts\left-sidebar.html" />
     <Content Include="user\login.aspx" />
     <Content Include="user\modules.aspx" />
-    <Content Include="user\no-sidebar.html" />
+    <Content Include="user\StylesDrafts\no-sidebar.html" />
     <Content Include="user\Recovery.aspx" />
     <Content Include="user\registration.aspx" />
-    <Content Include="user\right-sidebar.html" />
+    <Content Include="user\StylesDrafts\right-sidebar.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -351,13 +351,6 @@
     <Compile Include="MikesExampleTemplate.aspx.designer.cs">
       <DependentUpon>MikesExampleTemplate.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Module1.aspx.cs">
-      <DependentUpon>Module1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Module1.aspx.designer.cs">
-      <DependentUpon>Module1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Module2\M2L1.aspx.cs">
       <DependentUpon>M2L1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -371,13 +364,6 @@
     </Compile>
     <Compile Include="Module2\M2L1EX.aspx.designer.cs">
       <DependentUpon>M2L1EX.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Module3.aspx.cs">
-      <DependentUpon>Module3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Module3.aspx.designer.cs">
-      <DependentUpon>Module3.aspx</DependentUpon>
     </Compile>
     <Compile Include="ModuleOne\M1L1.aspx.cs">
       <DependentUpon>M1L1.aspx</DependentUpon>
