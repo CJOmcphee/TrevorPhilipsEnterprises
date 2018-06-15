@@ -13,8 +13,11 @@
             <asp:TextBox ID="tbEmail" runat="server"></asp:TextBox>
             <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
             <asp:TextBox ID="tbPassword" runat="server"></asp:TextBox>
-                   
-            <asp:Button ID="btnRegister" runat="server" Text="Register" />
+
+            
+
+            <asp:Button ID="btnRegister" runat="server" Text="Register" />    
+
             <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label> 
         </div>
         <div class="shadow"></div>

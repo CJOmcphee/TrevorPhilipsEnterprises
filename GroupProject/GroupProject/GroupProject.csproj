@@ -117,6 +117,8 @@
     <Content Include="admin\js\skel.min.js" />
     <Content Include="admin\tests_admin.aspx" />
     <Content Include="admin\users_admin.aspx" />
+    <Content Include="bin\GroupProject.dll" />
+    <Content Include="bin\GroupProject.pdb" />
     <Content Include="DAL_Project\bin\Debug\DAL_Project.dll" />
     <Content Include="DAL_Project\bin\Debug\DAL_Project.pdb" />
     <Content Include="DAL_Project\DAL_Project.csproj" />
@@ -245,7 +247,6 @@
     <Content Include="user\js\skel.min.js" />
     <Content Include="user\left-sidebar.html" />
     <Content Include="user\login.aspx" />
-    <Content Include="user\login_user.aspx" />
     <Content Include="user\modules.aspx" />
     <Content Include="user\no-sidebar.html" />
     <Content Include="user\Recovery.aspx" />
@@ -386,13 +387,6 @@
     <Compile Include="user\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="user\login_user.aspx.cs">
-      <DependentUpon>login_user.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="user\login_user.aspx.designer.cs">
-      <DependentUpon>login_user.aspx</DependentUpon>
-    </Compile>
     <Compile Include="user\modules.aspx.cs">
       <DependentUpon>modules.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -440,7 +434,6 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\" />
     <Folder Include="DAL_Project\bin\Release\" />
     <Folder Include="DAL_Project\obj\Debug\TempPE\" />
     <Folder Include="obj\Debug\TempPE\" />
