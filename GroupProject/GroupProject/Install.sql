@@ -17,17 +17,24 @@ lastName varchar(50),
 studentEmail varchar(100) foreign key references tbLogin(sID)
 )
 create table tbModule(
-moduleID int identity(1,1) primary key
+moduleID varchar(50) primary key
 )
+	insert into tbModule (moduleID)values
+							('Module 1'),('Module 2'),('Module 3')
 create table tbLesson(
-lessonID int identity(1,1) primary key,
-mID int foreign key references tbModule(moduleID)
+lessonID varchar(50) primary key,
+mID varchar(50) foreign key references tbModule(moduleID)
 )
+	insert into tbLesson(lessonID, mID)values
+						('1-1-1','Module 1'),('1-1-2','Module 1'),('1-1-3','Module 1'),('1-1-4','Module 1'),('1-1-5','Module 1'),('1-1-6','Module 1'),('1-1-7','Module 1'),('1-1-8','Module 1'),('1-1-9','Module 1'),('1-1-10','Module 1')
 create table tbExample(
 exampleID int identity(1,1),
 example varchar(1000),
 solution varchar(1000),
-lID int foreign key references tbLesson(lessonID)
+code varchar(max),
+explanation varchar(1000),
+slide int,
+lID varchar(50) foreign key references tbLesson(lessonID)
 )
 create table tbTest(
 testID varchar(50) primary key,
@@ -136,37 +143,47 @@ go
 exec spLogin @studentEmail='bruce.banner@robertsoncollege.net',@studentPassword='password'
 go
 create procedure spExamples(
-@exampleID int =null,
 @example varchar(1000) =null,
 @solutions varchar(1000) =null,
-@lID int =null,
+@lID varchar(50) =null,
+@code varchar(max)= null,
+@explanation varchar(1000) = null,
+@slide int = null,
 @crud varchar(1)
 )
 as begin
 	if @crud='c'
 		begin
-			insert into tbExample(lID,exampleID,example,solution)values
-								(@lID,@exampleID,@example,@solutions)
+			insert into tbExample(lID,example,solution,code,explanation,slide)values
+								(@lID,@example,@solutions,@code,@explanation,@slide)
 		end
 	if @crud='r'
 		begin
-			select * from tbExample
+			select * from tbExample WHERE lID = ISNULL(@lID,lID)
+			
 		end
 	if @crud='u'
 		begin
 			update tbExample
 				set lID=@lID,
 					example=@example,
-					solution=@solutions
-					where  exampleID=@exampleID
+					solution=@solutions,
+					code = @code,
+					explanation = @explanation,
+					slide = @slide
+					where  example=@example
 			end
 	if @crud='d'
 		begin
-			delete from tbExample where exampleID=@exampleID
+			delete from tbExample where lID=@lID
 		end
 end
-
 go
+
+exec spExamples @crud='c',@lID='1-1-1',@example='Show 1 plus 1',@solutions='1+1',@code='int answer = 1+1',@explanation='you create a int called answer and assing it 1+1',@slide=0
+exec spExamples @crud='c',@lID='1-1-1',@example='Show 2 plus 2',@solutions='2+2',@code='int answer = 2+2',@explanation='you create a int called answer and assing it 1+1',@slide=0
+go
+select * from tbExample
 select * from tbTest
 go
 create procedure spQuestions(
@@ -185,6 +202,7 @@ as begin
 		begin
 			
 			select * from tbQuestions where question=isnull(@questions, question)
+			
 		end
 	if @crud='u'
 		begin
@@ -230,6 +248,7 @@ create procedure spGetTestQuestions(
 )
 as begin
 	select question, answers from tbQuestions where tID=@testID
+	
 end
 go
 --MODULE 1 Test
@@ -245,7 +264,7 @@ exec spQuestions @crud='c', @tID='module1', @questions='Data is not often stored
 exec spQuestions @crud='c', @tID='module1', @questions='The three major techniques used to develop programs are Procedural, Object Oriented and Control Oriented', @answers='False'
 exec spQuestions @crud='c', @tID='module1', @questions='Boolean expressions are either true or false?', @answers='True'
 exec spQuestions @crud='c', @tID='module1', @questions='A decision inside of another decision is a _____?', @answers='Nested Decision'
-exec spQuestions @crud='c', @tID='module1', @questions='IF anf Case constructs can both be used for descions?', @answers='True'
+exec spQuestions @crud='c', @tID='module1', @questions='IF and Case constructs can both be used for descions?', @answers='True'
 exec spQuestions @crud='c', @tID='module1', @questions='The process of ignoring noneessential details  is called ____?', @answers='Abstraction'
 exec spQuestions @crud='c', @tID='module1', @questions='Values passed to a method are called?', @answers='Arguments'
 exec spQuestions @crud='c', @tID='module1', @questions='Internal memory is _____?', @answers='Volatile'
@@ -284,16 +303,52 @@ exec spWrongAnswer @crud='c', @question='When you add a string together it is ca
 exec spWrongAnswer @crud='c', @question='What is the correct order in the Systems Development Life Cycle?', @wrongAnswers='Investigation, Design, Analysis, Implement, Maintenance'
 exec spWrongAnswer @crud='c', @question='What is the correct order in the Systems Development Life Cycle?', @wrongAnswers='Investigation, Design, Analysis, Bannana, Maintenance'
 exec spWrongAnswer @crud='c', @question='What is the correct order in the Systems Development Life Cycle?', @wrongAnswers='Investigation, Design, Analysis, Implement, Error-Reporting'
-exec spWrongAnswer @crud='c', @question='IF anf Case constructs can both be used for descions?', @wrongAnswers='False'
+exec spWrongAnswer @crud='c', @question='IF and Case constructs can both be used for descions?', @wrongAnswers='False'
 exec spWrongAnswer @crud='c', @question='Boolean expressions are either true or false?', @wrongAnswers='False'
 exec spWrongAnswer @crud='c', @question='A decision inside of another decision is a _____?', @wrongAnswers='Compound Decision'
 exec spWrongAnswer @crud='c', @question='A decision inside of another decision is a _____?', @wrongAnswers='Nester'
 exec spWrongAnswer @crud='c', @question='A decision inside of another decision is a _____?', @wrongAnswers='Compound Join'
 
+--Module 2 Questions
+exec spQuestions @crud='c', @tID='module2', @questions='CIL is an object-oriented language?', @answers='True'
+exec spQuestions @crud='c', @tID='module2', @questions='Which of these does the CLR provide?', @answers='All of the Above'
+exec spQuestions @crud='c', @tID='module2', @questions='EXE and DLL are the two type of assemblies?', @answers='True'
+exec spQuestions @crud='c', @tID='module2', @questions='_____ is the blueprint or schematic for an object?', @answers='Class'
+exec spQuestions @crud='c', @tID='module2', @questions='Objects are a varied instances of a class?', @answers='False'
+exec spQuestions @crud='c', @tID='module2', @questions='Static is used to describe an object that can have many values', @answers='False'
+exec spQuestions @crud='c', @tID='module2', @questions='Controls  have properties', @answers='True'
+exec spQuestions @crud='c', @tID='module2', @questions='An _____ is your compiled "Project" code', @answers='Assembly'
+exec spQuestions @crud='c', @tID='module2', @questions='What is the root namespace for the .NET Framework Class Library?', @answers='System'
+exec spQuestions @crud='c', @tID='module2', @questions='Is this a proper variable     public string FirstName (get; set;)?', @answers='False'
+
+--Mondule 2 Wrong Answers
+exec spWrongAnswer @crud='c', @question='Is this a proper variable     public string FirstName (get; set;)?', @wrongAnswers='True'
+exec spWrongAnswer @crud='c', @question='CIL is an object-oriented language?', @wrongAnswers='False'
+exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Security'
+exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Garbage collection'
+exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Exception Handling'
+exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Thread Managment'
+exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Memory Managment'
+exec spWrongAnswer @crud='c', @question='EXE and DLL are the two type of assemblies?', @wrongAnswers='False'
+exec spWrongAnswer @crud='c', @question='_____ is the blueprint or schematic for an object?', @wrongAnswers='Variable'
+exec spWrongAnswer @crud='c', @question='_____ is the blueprint or schematic for an object?', @wrongAnswers='Method'
+exec spWrongAnswer @crud='c', @question='_____ is the blueprint or schematic for an object?', @wrongAnswers='Parameter'
+exec spWrongAnswer @crud='c', @question='Objects are a varied instances of a class?', @wrongAnswers='True'
+exec spWrongAnswer @crud='c', @question='Static is used to describe an object that can have many values', @wrongAnswers='True'
+exec spWrongAnswer @crud='c', @question='Controls  have properties', @wrongAnswers='False'
+exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='Library'
+exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='CLR'
+exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='Process'
+exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Framework Class Library?', @wrongAnswers='using'
+exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Framework Class Library?', @wrongAnswers='Namespace'
+exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Framework Class Library?', @wrongAnswers='Module'
+
+
+
 exec spWrongAnswer @crud='r', @question='______ is equipment or physical devices associted with a computer?'
 exec spQuestions @crud='r', @questions='What is the correct order in the Systems Development Life Cycle?'
 
-exec spQuestions @crud='c', @tID='module2', @questions='Which of these is an Interger?', @answers='5'
+
 go
 create procedure spforgotPassword(
 @sEmail varchar(100)
@@ -325,7 +380,7 @@ go
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
 exec spGetTestQuestions @testID='module1'
-
+select * from tbLesson
 
 
 

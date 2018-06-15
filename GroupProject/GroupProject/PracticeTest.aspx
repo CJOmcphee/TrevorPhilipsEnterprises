@@ -9,10 +9,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <table id="table1" runat="server">
-                
-                
-                
+            <asp:DropDownList ID="ddlTestChoice" AutoPostBack="true" runat="server">
+                <asp:ListItem>module1</asp:ListItem>
+                <asp:ListItem>module2</asp:ListItem>
+            </asp:DropDownList>
+            <table id="table1" runat="server">    
             </table>
             <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
             <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
