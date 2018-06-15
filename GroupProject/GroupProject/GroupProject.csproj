@@ -115,6 +115,7 @@
     <Content Include="admin\js\init.js" />
     <Content Include="admin\js\skel-panels.min.js" />
     <Content Include="admin\js\skel.min.js" />
+    <Content Include="admin\tests_admin.aspx" />
     <Content Include="admin\users_admin.aspx" />
     <Content Include="DAL_Project\bin\Debug\DAL_Project.dll" />
     <Content Include="DAL_Project\bin\Debug\DAL_Project.pdb" />
@@ -254,6 +255,13 @@
     </Compile>
     <Compile Include="admin\index_admin.aspx.designer.cs">
       <DependentUpon>index_admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\tests_admin.aspx.cs">
+      <DependentUpon>tests_admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\tests_admin.aspx.designer.cs">
+      <DependentUpon>tests_admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\users_admin.aspx.cs">
       <DependentUpon>users_admin.aspx</DependentUpon>
