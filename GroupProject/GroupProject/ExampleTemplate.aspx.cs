@@ -21,18 +21,28 @@ namespace GroupProject
         {
                 
                 loadExample("1-1-1");
+            btnNext.Enabled = false;
+            HidePreviousBtn();
             if(!IsPostBack)
             {
-                HttpCookie nav = new HttpCookie("Nav");
-                nav.Value = "0";
-                nav.Expires = DateTime.Now.AddDays(30);
-                Response.Cookies.Add(nav);
+                Session["Nav"] = "0";
+                
 
             }
             
             
         }
-
+        public void HidePreviousBtn()
+        {
+            if (Session["Nav"] == null || Session["Nav"] == "0")
+            {
+                btnPrev.Enabled = false;
+            }
+            else
+            {
+                btnPrev.Enabled = true;
+            }
+        }
         public void loadExample(string Lesson)
         {
             ds = Crud.ReadTable("spExamples",Lesson);
@@ -100,29 +110,31 @@ namespace GroupProject
 
         protected void btnGo_Click(object sender, EventArgs e)
         {
-            int x = Convert.ToInt32(Request.Cookies["Nav"].Value);
+            int x = Convert.ToInt32(Session["Nav"]);
             if (Answer[x].Text== ds.Tables[0].Rows[x]["solution"].ToString())
             {
-                btnNext.Visible = true;
+                btnNext.Enabled = true;
             }
         }
 
         protected void btnNext_Click(object sender, EventArgs e)
         {
-            int x = Convert.ToInt32(Request.Cookies["Nav"].Value);
+            int x = Convert.ToInt32(Session["Nav"]);
             HidePanel(x);
             x++;
-            Response.Cookies["Nav"].Value = x.ToString();
+            Session["Nav"] = x;
             ShowPanel(x);
+            HidePreviousBtn();
         }
 
         protected void btnPrev_Click(object sender, EventArgs e)
         {
-            int x = Convert.ToInt32(Request.Cookies["Nav"].Value);
+            int x = Convert.ToInt32(Session["Nav"]);
             HidePanel(x);
             x--;
-            Response.Cookies["Nav"].Value = x.ToString();
+            Session["Nav"] = x;
             ShowPanel(x);
+            HidePreviousBtn();
         }
 
         public void ShowPanel(int index)

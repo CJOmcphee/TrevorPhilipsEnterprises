@@ -47,7 +47,6 @@
 							<li id="Users"><a href=#>Users</a></li>
                             <li id="Exercises"><a href=#>Exercises</a></li>
                             <li id="Tests"><a href=#>Tests</a></li>
-							<li id="Login"><a href="login_admin.aspx">Login</a></li>
 						</ul>
 					</nav>
          
