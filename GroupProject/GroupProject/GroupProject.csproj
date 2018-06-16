@@ -287,7 +287,7 @@
     <Content Include="user\images\robertson.png" />
     <Content Include="user\images\spacer.gif" />
     <Content Include="user\index_user.aspx" />
-    <Content Include="user\index.html" />
+    <Content Include="user\StylesDrafts\index.html" />
     <Content Include="js\html5shiv.js" />
     <Content Include="js\init.js" />
     <Content Include="js\skel-panels.min.js" />
@@ -296,13 +296,13 @@
     <Content Include="user\js\init.js" />
     <Content Include="user\js\skel-panels.min.js" />
     <Content Include="user\js\skel.min.js" />
-    <Content Include="user\left-sidebar.html" />
+    <Content Include="user\StylesDrafts\left-sidebar.html" />
     <Content Include="user\login.aspx" />
     <Content Include="user\modules.aspx" />
-    <Content Include="user\no-sidebar.html" />
+    <Content Include="user\StylesDrafts\no-sidebar.html" />
     <Content Include="user\Recovery.aspx" />
     <Content Include="user\registration.aspx" />
-    <Content Include="user\right-sidebar.html" />
+    <Content Include="user\StylesDrafts\right-sidebar.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
