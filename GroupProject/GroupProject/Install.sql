@@ -27,6 +27,14 @@ mID varchar(50) foreign key references tbModule(moduleID)
 )
 	insert into tbLesson(lessonID, mID)values
 						('1-1-1','Module 1'),('1-1-2','Module 1'),('1-1-3','Module 1'),('1-1-4','Module 1'),('1-1-5','Module 1'),('1-1-6','Module 1'),('1-1-7','Module 1'),('1-1-8','Module 1'),('1-1-9','Module 1'),('1-1-10','Module 1')
+create table tbSlides(
+slideID varchar(50) primary key,
+lessonid varchar(50) foreign key references tbLesson(lessonID),
+slideInfo varchar(1000) 
+)
+
+
+
 create table tbExample(
 exampleID int identity(1,1),
 example varchar(1000),
@@ -288,13 +296,31 @@ as  begin
 		end
 end
 go
-
+create procedure spSlides(
+@slideID varchar(50) = null,
+@lessonid varchar(50) =null,
+@slideinfo varchar(1000) =null,
+@crud varchar(1)
+)
+as begin
+	if @crud='c'
+		begin
+		insert into tbSlides(slideID,lessonid,slideInfo)values
+							(@slideID,@lessonid,@slideinfo)
+		end
+	if @crud='r' 
+		begin
+			select * from tbSlides where lessonid =@lessonid
+		end
+end
+go
+exec spSlides @crud='c', @slideID='1', @lessonid='1-1-1', @slideinfo='Daryl and mike YOU WILL ^ MAKE SOME INFO ^ FOR THE TESTING OF THIS'
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
 exec spGetTestQuestions @testID='module1'
 
 select * from tbLesson
 
-
+exec spSlides @crud='r', @lessonid ='1-1-1'
 
 
