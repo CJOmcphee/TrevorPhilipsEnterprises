@@ -315,6 +315,8 @@ as begin
 end
 go
 exec spSlides @crud='c', @slideID='1', @lessonid='1-1-1', @slideinfo='Daryl and mike YOU WILL ^ MAKE SOME INFO ^ FOR THE TESTING OF THIS'
+exec spSlides @crud='c', @slideID='2', @lessonid='1-1-1', @slideinfo='I Hope ^ This ^ Works'
+exec spSlides @crud='c', @slideID='3', @lessonid='1-1-1', @slideinfo='TJ ^ This ^ Works'
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
 exec spGetTestQuestions @testID='module1'
