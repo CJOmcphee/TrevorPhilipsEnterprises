@@ -13,21 +13,15 @@ namespace GroupProject
     public partial class ExampleTemplate : System.Web.UI.Page
     {
         DataSet ds;
+        int count;
         List<Panel> Example = new List<Panel>();
         List<Panel> Explanation = new List<Panel>();
         List<Panel> Code = new List<Panel>();
-        List<TextBox> Answer = new List<TextBox>();
+        List<Object> Answer = new List<Object>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Answer[Convert.ToInt32(Session["Nav"])].Enabled == false)
-            {
-                btnNext.Enabled = true;
-            }
-            else
-            {
-                btnNext.Enabled = false;
-            }
             loadExample("1-1-1");
+           
             HidePreviousBtn();
             if(!IsPostBack)
             {
@@ -37,6 +31,11 @@ namespace GroupProject
             }
             
             
+        }
+        public string CheckType()
+        {
+            string type = Answer[Convert.ToInt32(Session["Nav"])].GetType().Name;
+            return type;
         }
         public void HidePreviousBtn()
         {
@@ -52,6 +51,7 @@ namespace GroupProject
         public void loadExample(string Lesson)
         {
             ds = Crud.ReadTable("spExamples",Lesson);
+            count = ds.Tables[0].Rows.Count;
             foreach(DataRow Row in ds.Tables[0].Rows)
             {
                 
@@ -72,19 +72,20 @@ namespace GroupProject
 
                 Panel pnlExm = new Panel();
                 Label lblExample = new Label();
-                TextBox tbAnswer = new TextBox();
                 lblExample.Text = Row["example"].ToString();
                 pnlExm.Controls.Add(lblExample);
-                if (Row["showSolution"].ToString() == "0")
+                if (Convert.ToBoolean(Row["showSolution"]) == false)
                 {
+                    TextBox tbAnswer = new TextBox();
                     Answer.Add(tbAnswer);
                     pnlExm.Controls.Add(tbAnswer);
                 } else
                 {
-                    tbAnswer.Text = Row["solution"].ToString();
-                    tbAnswer.Enabled = false;
-                    Answer.Add(tbAnswer);
-                    pnlExm.Controls.Add(tbAnswer);
+                    Label lblAnswer = new Label();
+                    lblAnswer.Text = Row["solution"].ToString();
+                    Answer.Add(lblAnswer);
+                    pnlExm.Controls.Add(new LiteralControl("<br />"));
+                    pnlExm.Controls.Add(lblAnswer);
 
                 }
                 
@@ -130,11 +131,18 @@ namespace GroupProject
         protected void btnGo_Click(object sender, EventArgs e)
         {
             int x = (int)Session["Nav"];
-            if (Answer[x].Text== ds.Tables[0].Rows[x]["solution"].ToString())
+            string type = CheckType();
+            if(type == "TextBox")
             {
-                btnNext.Enabled = true;
-                Answer[x].Enabled = false;
+                TextBox mytb = (TextBox)Answer[x];
+                if (mytb.Text == ds.Tables[0].Rows[x]["solution"].ToString())
+                {
+                    btnNext.Enabled = true;
+                    mytb.Enabled = false;
+                    btnGo.Enabled = false;
+                }
             }
+           
         }
 
         protected void btnNext_Click(object sender, EventArgs e)
@@ -145,9 +153,25 @@ namespace GroupProject
             Session["Nav"] = x;
             ShowPanel(x);
             HidePreviousBtn();
-            if (Answer[x].Enabled == false)
+            if(x+1 == count)
+            {
+                HideNextButton(true);
+            }
+            if(CheckType()=="TextBox")
+            {
+                TextBox mytb = (TextBox)Answer[x];
+                HideNextButton(mytb.Enabled);
+            }
+        }
+        public void HideNextButton(bool enabled)
+        {
+            if(enabled==false)
             {
                 btnNext.Enabled = true;
+            }
+            else
+            {
+                btnNext.Enabled = false;
             }
         }
 
@@ -159,9 +183,10 @@ namespace GroupProject
             Session["Nav"] = x;
             ShowPanel(x);
             HidePreviousBtn();
-            if(Answer[x].Enabled==false)
+            if (CheckType() == "TextBox")
             {
-                btnNext.Enabled = true;
+                TextBox mytb = (TextBox)Answer[x];
+                HideNextButton(mytb.Enabled);
             }
         }
 

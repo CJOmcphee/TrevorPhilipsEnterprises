@@ -68,55 +68,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="admin\css\ie\html5shiv.js" />
-    <Content Include="admin\css\ie\PIE.htc" />
-    <Content Include="admin\css\ie\v8.css" />
-    <Content Include="admin\css\ie\v9.css" />
-    <Content Include="admin\css\images\img01.jpg" />
-    <Content Include="admin\css\images\img02.jpg" />
-    <Content Include="admin\css\images\img03.jpg" />
-    <Content Include="admin\css\images\img04.png" />
-    <Content Include="admin\css\images\img05.png" />
-    <Content Include="admin\css\images\img06.png" />
-    <Content Include="admin\css\images\img07.png" />
-    <Content Include="admin\css\images\img08.jpg" />
-    <Content Include="admin\css\images\img09.png" />
-    <Content Include="admin\css\images\img10.png" />
-    <Content Include="admin\css\images\img11.jpg" />
-    <Content Include="admin\css\images\img12.jpg" />
-    <Content Include="admin\css\images\img12.png" />
-    <Content Include="admin\css\images\img13.jpg" />
-    <Content Include="admin\css\images\mobileUI-site-nav-opener-bg.svg" />
-    <Content Include="admin\css\images\spacer.gif" />
-    <Content Include="admin\css\images\toggle.svg" />
-    <Content Include="admin\css\skel-noscript.css" />
-    <Content Include="admin\css\style-1000px.css" />
-    <Content Include="admin\css\style-desktop.css" />
-    <Content Include="admin\css\style-mobile.css" />
-    <Content Include="admin\css\style.css" />
-    <Content Include="admin\images\banner.jpg" />
-    <Content Include="admin\images\pics04.jpg" />
-    <Content Include="admin\images\pics05.jpg" />
-    <Content Include="admin\images\pics06.jpg" />
-    <Content Include="admin\images\pics07.jpg" />
-    <Content Include="admin\images\pics08.jpg" />
-    <Content Include="admin\images\pics09.jpg" />
-    <Content Include="admin\images\pics10.jpg" />
-    <Content Include="admin\images\pics11.jpg" />
-    <Content Include="admin\images\pics12.jpg" />
-    <Content Include="admin\images\pics13.jpg" />
-    <Content Include="admin\images\pics14.jpg" />
-    <Content Include="admin\images\pics15.jpg" />
-    <Content Include="admin\images\pics16.jpg" />
-    <Content Include="admin\images\robertson.png" />
-    <Content Include="admin\images\spacer.gif" />
-    <Content Include="admin\index_admin.aspx" />
-    <Content Include="admin\js\html5shiv.js" />
-    <Content Include="admin\js\init.js" />
-    <Content Include="admin\js\skel-panels.min.js" />
-    <Content Include="admin\js\skel.min.js" />
-    <Content Include="admin\tests_admin.aspx" />
-    <Content Include="admin\users_admin.aspx" />
+    <Content Include="index_admin.aspx" />
+    <Content Include="tests_admin.aspx" />
+    <Content Include="users_admin.aspx" />
     <Content Include="bin\GroupProject.dll" />
     <Content Include="bin\GroupProject.pdb" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
@@ -167,7 +121,6 @@
     <Content Include="DAL_Project\obj\Debug\DAL_Project.csproj.FileListAbsolute.txt" />
     <Content Include="DAL_Project\obj\Debug\DAL_Project.dll" />
     <Content Include="DAL_Project\obj\Debug\DAL_Project.pdb" />
-    <Content Include="admin\admin.Master" />
     <Content Include="bin\roslyn\csc.exe.config" />
     <Content Include="bin\roslyn\csc.rsp" />
     <Content Include="bin\roslyn\csi.exe.config" />
@@ -187,7 +140,6 @@
     <Content Include="GroupProjectLayout.txt" />
     <Content Include="img\red-wallpaper-13.jpg" />
     <Content Include="Install.sql" />
-    <Content Include="Mike.sql" />
     <Content Include="MikesExampleTemplate.aspx" />
     <Content Include="Module2\M2L1.aspx" />
     <Content Include="Module2\M2L1EX.aspx" />
@@ -203,92 +155,84 @@
     <Content Include="ModuleOne\Pictures\CSside.PNG" />
     <Content Include="PracticeTest.aspx" />
     <Content Include="Modules.css" />
-    <Content Include="SlideshowTemplate.aspx" />
     <Content Include="TJ.sql" />
-    <Content Include="user\css\ie\html5shiv.js" />
-    <Content Include="user\css\ie\PIE.htc" />
-    <Content Include="user\css\ie\v8.css" />
-    <Content Include="user\css\ie\v9.css" />
-    <Content Include="user\css\images\img01.jpg" />
-    <Content Include="user\css\images\img02.jpg" />
-    <Content Include="user\css\images\img03.jpg" />
-    <Content Include="user\css\images\img04.png" />
-    <Content Include="user\css\images\img05.png" />
-    <Content Include="user\css\images\img06.png" />
-    <Content Include="user\css\images\img07.png" />
-    <Content Include="user\css\images\img08.jpg" />
-    <Content Include="user\css\images\img09.png" />
-    <Content Include="user\css\images\img10.png" />
-    <Content Include="user\css\images\img11.jpg" />
-    <Content Include="user\css\images\img12.jpg" />
-    <Content Include="user\css\images\img12.png" />
-    <Content Include="user\css\images\img13.jpg" />
-    <Content Include="user\css\images\mobileUI-site-nav-opener-bg.svg" />
-    <Content Include="user\css\images\spacer.gif" />
-    <Content Include="user\css\images\toggle.svg" />
-    <Content Include="user\css\skel-noscript.css" />
-    <Content Include="user\css\style-1000px.css" />
-    <Content Include="user\css\style-desktop.css" />
-    <Content Include="user\css\style-mobile.css" />
-    <Content Include="user\css\style.css" />
-    <Content Include="user\images\banner.jpg" />
-    <Content Include="user\images\pics04.jpg" />
-    <Content Include="user\images\pics05.jpg" />
-    <Content Include="user\images\pics06.jpg" />
-    <Content Include="user\images\pics07.jpg" />
-    <Content Include="user\images\pics08.jpg" />
-    <Content Include="user\images\pics09.jpg" />
-    <Content Include="user\images\pics10.jpg" />
-    <Content Include="user\images\pics11.jpg" />
-    <Content Include="user\images\pics12.jpg" />
-    <Content Include="user\images\pics13.jpg" />
-    <Content Include="user\images\pics14.jpg" />
-    <Content Include="user\images\pics15.jpg" />
-    <Content Include="user\images\pics16.jpg" />
-    <Content Include="user\images\robertson.png" />
-    <Content Include="user\images\spacer.gif" />
-    <Content Include="user\index_user.aspx" />
-    <Content Include="user\StylesDrafts\index.html" />
-    <Content Include="user\js\html5shiv.js" />
-    <Content Include="user\js\init.js" />
-    <Content Include="user\js\skel-panels.min.js" />
-    <Content Include="user\js\skel.min.js" />
-    <Content Include="user\StylesDrafts\left-sidebar.html" />
-    <Content Include="user\login.aspx" />
-    <Content Include="user\modules.aspx" />
-    <Content Include="user\StylesDrafts\no-sidebar.html" />
-    <Content Include="user\Recovery.aspx" />
-    <Content Include="user\registration.aspx" />
-    <Content Include="user\StylesDrafts\right-sidebar.html" />
+    <Content Include="css\ie\html5shiv.js" />
+    <Content Include="css\ie\PIE.htc" />
+    <Content Include="css\ie\v8.css" />
+    <Content Include="css\ie\v9.css" />
+    <Content Include="css\images\img01.jpg" />
+    <Content Include="css\images\img02.jpg" />
+    <Content Include="css\images\img03.jpg" />
+    <Content Include="css\images\img04.png" />
+    <Content Include="css\images\img05.png" />
+    <Content Include="css\images\img06.png" />
+    <Content Include="css\images\img07.png" />
+    <Content Include="css\images\img08.jpg" />
+    <Content Include="css\images\img09.png" />
+    <Content Include="css\images\img10.png" />
+    <Content Include="css\images\img11.jpg" />
+    <Content Include="css\images\img12.jpg" />
+    <Content Include="css\images\img12.png" />
+    <Content Include="css\images\img13.jpg" />
+    <Content Include="css\images\mobileUI-site-nav-opener-bg.svg" />
+    <Content Include="css\images\spacer.gif" />
+    <Content Include="css\images\toggle.svg" />
+    <Content Include="css\skel-noscript.css" />
+    <Content Include="css\style-1000px.css" />
+    <Content Include="css\style-desktop.css" />
+    <Content Include="css\style-mobile.css" />
+    <Content Include="css\style.css" />
+    <Content Include="images\banner.jpg" />
+    <Content Include="images\pics04.jpg" />
+    <Content Include="images\pics05.jpg" />
+    <Content Include="images\pics06.jpg" />
+    <Content Include="images\pics07.jpg" />
+    <Content Include="images\pics08.jpg" />
+    <Content Include="images\pics09.jpg" />
+    <Content Include="images\pics10.jpg" />
+    <Content Include="images\pics11.jpg" />
+    <Content Include="images\pics12.jpg" />
+    <Content Include="images\pics13.jpg" />
+    <Content Include="images\pics14.jpg" />
+    <Content Include="images\pics15.jpg" />
+    <Content Include="images\pics16.jpg" />
+    <Content Include="images\robertson.png" />
+    <Content Include="images\spacer.gif" />
+    <Content Include="index_user.aspx" />
+    <Content Include="StylesDrafts\index.html" />
+    <Content Include="js\html5shiv.js" />
+    <Content Include="js\init.js" />
+    <Content Include="js\skel-panels.min.js" />
+    <Content Include="js\skel.min.js" />
+    <Content Include="StylesDrafts\left-sidebar.html" />
+    <Content Include="login.aspx" />
+    <Content Include="modules.aspx" />
+    <Content Include="StylesDrafts\no-sidebar.html" />
+    <Content Include="recovery.aspx" />
+    <Content Include="registration.aspx" />
+    <Content Include="StylesDrafts\right-sidebar.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="admin\admin.Master.cs">
-      <DependentUpon>admin.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\admin.Master.designer.cs">
-      <DependentUpon>admin.Master</DependentUpon>
-    </Compile>
-    <Compile Include="admin\index_admin.aspx.cs">
+    <Compile Include="index_admin.aspx.cs">
       <DependentUpon>index_admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\index_admin.aspx.designer.cs">
+    <Compile Include="index_admin.aspx.designer.cs">
       <DependentUpon>index_admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\tests_admin.aspx.cs">
+    <Compile Include="tests_admin.aspx.cs">
       <DependentUpon>tests_admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\tests_admin.aspx.designer.cs">
+    <Compile Include="tests_admin.aspx.designer.cs">
       <DependentUpon>tests_admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\users_admin.aspx.cs">
+    <Compile Include="users_admin.aspx.cs">
       <DependentUpon>users_admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\users_admin.aspx.designer.cs">
+    <Compile Include="users_admin.aspx.designer.cs">
       <DependentUpon>users_admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Crud.cs" />
@@ -299,6 +243,13 @@
     </Compile>
     <Compile Include="ExampleTemplate.aspx.designer.cs">
       <DependentUpon>ExampleTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
     </Compile>
     <Compile Include="MikesExampleTemplate.aspx.cs">
       <DependentUpon>MikesExampleTemplate.aspx</DependentUpon>
@@ -372,54 +323,40 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security.cs" />
-    <Compile Include="SlideshowTemplate.aspx.cs">
-      <DependentUpon>SlideshowTemplate.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SlideshowTemplate.aspx.designer.cs">
-      <DependentUpon>SlideshowTemplate.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="user\index_user.aspx.cs">
+    <Compile Include="index_user.aspx.cs">
       <DependentUpon>index_user.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="user\index_user.aspx.designer.cs">
+    <Compile Include="index_user.aspx.designer.cs">
       <DependentUpon>index_user.aspx</DependentUpon>
     </Compile>
-    <Compile Include="user\login.aspx.cs">
+    <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="user\login.aspx.designer.cs">
+    <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="user\modules.aspx.cs">
+    <Compile Include="modules.aspx.cs">
       <DependentUpon>modules.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="user\modules.aspx.designer.cs">
+    <Compile Include="modules.aspx.designer.cs">
       <DependentUpon>modules.aspx</DependentUpon>
     </Compile>
-    <Compile Include="user\recovery.aspx.cs">
-      <DependentUpon>Recovery.aspx</DependentUpon>
+    <Compile Include="recovery.aspx.cs">
+      <DependentUpon>recovery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="user\recovery.aspx.designer.cs">
-      <DependentUpon>Recovery.aspx</DependentUpon>
+    <Compile Include="recovery.aspx.designer.cs">
+      <DependentUpon>recovery.aspx</DependentUpon>
     </Compile>
-    <Compile Include="user\registration.aspx.cs">
+    <Compile Include="registration.aspx.cs">
       <DependentUpon>registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="user\registration.aspx.designer.cs">
+    <Compile Include="registration.aspx.designer.cs">
       <DependentUpon>registration.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="user\user.Master.cs">
-      <DependentUpon>user.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="user\user.Master.designer.cs">
-      <DependentUpon>user.Master</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -429,8 +366,8 @@
     <None Include="DAL_Project\packages.config" />
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.min.map" />
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Main.Master" />
     <None Include="packages.config" />
-    <Content Include="user\user.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -442,12 +379,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="css\ie\" />
-    <Folder Include="css\images\" />
     <Folder Include="DAL_Project\bin\Release\" />
     <Folder Include="DAL_Project\obj\Debug\TempPE\" />
-    <Folder Include="images\" />
-    <Folder Include="js\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>
