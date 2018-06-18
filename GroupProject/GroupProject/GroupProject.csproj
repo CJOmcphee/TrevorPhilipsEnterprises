@@ -183,6 +183,7 @@
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.min.js" />
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.slim.js" />
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Darryl.sql" />
     <Content Include="ExampleTemplate.aspx" />
     <Content Include="GroupProjectLayout.txt" />
     <Content Include="img\red-wallpaper-13.jpg" />
