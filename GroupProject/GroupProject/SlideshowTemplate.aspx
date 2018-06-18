@@ -36,16 +36,17 @@
     </div>
 
 
-
     <div style="text-align:center">
-
-        <select>
+        <form runat="server">
+        <asp:DropDownList ID="DropDownList1" AutoPostBack="true" runat="server"></asp:DropDownList>
+            </form>
+       <%-- <select id="DropDownTest" runat="server">
 
             <option class="dot" onclick="currentSlide(1)">Page 1</option>
 
             <option class="dot" onclick="currentSlide(2)">Page 2</option>
 
-        </select>
+        </select>--%>
 
     </div>
 
@@ -79,7 +80,7 @@
 
             var slides = document.getElementsByClassName("mySlides");
 
-            var dots = document.getElementsByClassName("dot");
+            //var dots = document.getElementsByClassName("dot");
 
             if (n > slides.length) { slideIndex = 1 }
 
@@ -91,15 +92,15 @@
 
             }
 
-            for (i = 0; i < dots.length; i++) {
+            //for (i = 0; i < dots.length; i++) {
 
-                dots[i].className = dots[i].className.replace(" active", "");
+            //    dots[i].className = dots[i].className.replace(" active", "");
 
-            }
+            //}
 
             slides[slideIndex - 1].style.display = "block";
 
-            dots[slideIndex - 1].className += " active";
+            //dots[slideIndex - 1].className += " active";
 
         }
 
