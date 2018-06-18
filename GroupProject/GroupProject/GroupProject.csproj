@@ -187,6 +187,7 @@
     <Content Include="GroupProjectLayout.txt" />
     <Content Include="img\red-wallpaper-13.jpg" />
     <Content Include="Install.sql" />
+    <Content Include="Mike.sql" />
     <Content Include="MikesExampleTemplate.aspx" />
     <Content Include="Module2\M2L1.aspx" />
     <Content Include="Module2\M2L1EX.aspx" />
