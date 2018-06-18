@@ -4,8 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <!-- Main -->
 		<div id="page">
-				
-			<!-- Main -->
+	    
 			<div id="main" class="container">
 				<div class="row">
 
@@ -15,26 +14,23 @@
 								<h2>Modules</h2>
 							</header>
 							<ul class="style1">
-								<li><a href="#">Module 1 - Intro to Programming Concepts</a></li>
+								<li><a href="/Module1.aspx">Module 1 - Intro to Programming Concepts</a></li>
 								<li><a href="#">Module 2 - C# & .NET Framework</a></li>
-								<li><a href="#">Module 3 - Databases</a></li>
+								<li><a href="/Module3.aspx">Module 3 - Databases</a></li>
 								<li><a href="#">Module 4 - ADO.NET</a></li>
 								<li><a href="#">Module 5 - Assignment #1</a></li>
+                                <li><a href="#">Module 6 - ASP.NET</a></li>
+                                <li><a href="#">Module 7 - CSS & Master Pages</a></li>
+                                <li><a href="#">Module 8 - Assignment #2</a></li>
+                                <li><a href="#">Module 9 - Object Oriented Programming (OOP)</a></li>
+                                <li><a href="#">Module 10 - XML & Web Services</a></li>
+                                <li><a href="#">Module 11 - Assignment #3</a></li>
+                                <li><a href="#">Module 12 - JavaScript, HTML5 & CSS3</a></li>
+                                <li><a href="#">Module 13 - MVC</a></li>
+                                <li><a href="#">Module 14 - Group Project</a></li>
 							</ul>
 						</section>
-						<section class="sidebar">
-							<header>
-								<h2>Nulla luctus eleifend</h2>
-							</header>
-							<ul class="style1">
-								<li><a href="#">Maecenas luctus lectus at sapien</a></li>
-								<li><a href="#">Donec dictum metus in sapien</a></li>
-								<li><a href="#">Integer gravida nibh quis urna</a></li>
-								<li><a href="#">Etiam posuere augue sit amet nisl</a></li>
-								<li><a href="#">Mauris vulputate dolor sit amet nibh</a></li>
-							</ul>
-						</section>
-                        </div>
+				    </div>
                         <div class="9u skel-cell-important">
 						<section>
 							<header>
@@ -50,5 +46,5 @@
                     </div>
                 </div>
             </div>
-    	
+<!-- Main -->    	
 </asp:Content>

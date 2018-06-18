@@ -98,6 +98,11 @@
 
         }
 
+        /*#tbAnswer{
+            margin-left:150px;
+            margin-top:50px;
+        }*/
+
     </style>
 
     <title>Module 2 Lesson 1 Example</title>
@@ -121,16 +126,15 @@
             </div>
 
             <div id="dvCode" runat="server">
-                
             </div>
 
     </div>
 
     <br />
     <div id="button" runat="server">
-        <asp:Button ID="btnPrev" runat="server" Text="Prev" />
-        <asp:Button ID="btnGo" runat="server" Text="Go" />
-        <asp:Button ID="btnNext" runat="server" Text="Next" />
+        <asp:Button ID="btnPrev" runat="server" Text="Prev" OnClick="btnPrev_Click" />
+        <asp:Button ID="btnGo" runat="server" Text="Go" OnClick="btnGo_Click" />
+        <asp:Button ID="btnNext" Enabled ="false" runat="server" Text="Next" OnClick="btnNext_Click" />
 
     </div>
     </form>
