@@ -34,7 +34,7 @@ namespace GroupProject
                 string value = dsSlideInfo.Tables[0].Rows[0]["slideInfo"].ToString();
                 Char delimiter = '^';
                 String[] substrings = value.Split(delimiter);
-                foreach (var substring in substrings) ;
+                foreach (var substring in substrings) 
                 {
                     Label mylabel = new Label();
                     mylabel.Text = value;
