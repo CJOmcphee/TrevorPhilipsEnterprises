@@ -47,6 +47,10 @@ namespace GroupProject
             {
                 mydal.AddParam("@question", id.ToString());
             }
+            if(Procedure == "spSlides")
+            {
+                mydal.AddParam("@lessonid", id.ToString());
+            }
             DataSet ds = mydal.ExecuteProcedure(Procedure);
             return ds;
         }
@@ -104,6 +108,13 @@ namespace GroupProject
             mydal.AddParam("@question", question);
             mydal.AddParam("@wrongAnswers", wronganswer);
             mydal.ExecuteProcedure("spWrongAnswer");
+        }
+        public static void CreateSlide(string SlideID,string lessonid, string slideInfo)
+        {
+            mydal.AddParam("@slideID", SlideID);
+            mydal.AddParam("@lessonid", lessonid);
+            mydal.AddParam("@slideinfo", slideInfo);
+            mydal.ExecuteProcedure("spSlides");
         }
         public static void UpdateTestScore(string score, string test, string StudentEmail)
         {
