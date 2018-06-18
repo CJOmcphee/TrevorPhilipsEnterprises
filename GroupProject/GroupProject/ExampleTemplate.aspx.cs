@@ -23,7 +23,6 @@ namespace GroupProject
             DataSet ds = Crud.ReadTable("spExamples",Lesson);
             foreach(DataRow Row in ds.Tables[0].Rows)
             {
-                
                 Panel pnlExp = new Panel();
                 pnlExp.ID = "pnlExplaination" + count;
 
@@ -41,7 +40,7 @@ namespace GroupProject
                 lblExample.ID = "lblExample" + count;
                 lblExample.Text = ds.Tables[0].Rows[0]["example"].ToString();
                 pnlExm.Controls.Add(lblExample);
-
+                
                 count++;
             }
         }
