@@ -42,6 +42,7 @@ solution varchar(1000),
 code varchar(max),
 explanation varchar(1000),
 slide int,
+showSolution bit,
 lID varchar(50) foreign key references tbLesson(lessonID)
 )
 create table tbTest(
@@ -157,13 +158,14 @@ create procedure spExamples(
 @code varchar(max)= null,
 @explanation varchar(1000) = null,
 @slide int = null,
+@showSolution bit = 0, 
 @crud varchar(1)
 )
 as begin
 	if @crud='c'
 		begin
-			insert into tbExample(lID,example,solution,code,explanation,slide)values
-								(@lID,@example,@solutions,@code,@explanation,@slide)
+			insert into tbExample(lID,example,solution,code,explanation,slide,showSolution)values
+								(@lID,@example,@solutions,@code,@explanation,@slide,@showSolution)
 		end
 	if @crud='r'
 		begin
@@ -178,7 +180,8 @@ as begin
 					solution=@solutions,
 					code = @code,
 					explanation = @explanation,
-					slide = @slide
+					slide = @slide,
+					showSolution = @showSolution
 					where  example=@example
 			end
 	if @crud='d'
@@ -188,8 +191,8 @@ as begin
 end
 go
 
-exec spExamples @crud='c',@lID='1-1-1',@example='Show 1 plus 1',@solutions='1+1',@code='int answer = 1+1',@explanation='you create a int called answer and assing it 1+1',@slide=0
-exec spExamples @crud='c',@lID='1-1-1',@example='Show 2 plus 2',@solutions='2+2',@code='int answer = 2+2',@explanation='you create a int called answer and assing it 1+1',@slide=0
+exec spExamples @crud='c',@lID='1-1-1',@example='Show 1 plus 1',@solutions='1+1',@code='int answer = 1+1',@explanation='you create a int called answer and assing it 1+1',@slide=0, @showSolution = 0
+exec spExamples @crud='c',@lID='1-1-1',@example='Show 2 plus 2',@solutions='2+2',@code='int answer = 2+2',@explanation='you create a int called answer and assing it 1+1',@slide=0, @showSolution = 1
 go
 select * from tbExample
 select * from tbTest

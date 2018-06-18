@@ -19,9 +19,15 @@ namespace GroupProject
         List<TextBox> Answer = new List<TextBox>();
         protected void Page_Load(object sender, EventArgs e)
         {
-                
+            if (Answer[Convert.ToInt32(Session["Nav"])].Enabled == false)
+            {
+                btnNext.Enabled = true;
+            }
+            else
+            {
+                btnNext.Enabled = false;
+            }
             loadExample("1-1-1");
-            btnNext.Enabled = false;
             HidePreviousBtn();
             if(!IsPostBack)
             {
@@ -67,10 +73,23 @@ namespace GroupProject
                 Panel pnlExm = new Panel();
                 Label lblExample = new Label();
                 TextBox tbAnswer = new TextBox();
-                Answer.Add(tbAnswer);
                 lblExample.Text = Row["example"].ToString();
                 pnlExm.Controls.Add(lblExample);
-                pnlExm.Controls.Add(tbAnswer);
+                if (Row["showSolution"].ToString() == "0")
+                {
+                    Answer.Add(tbAnswer);
+                    pnlExm.Controls.Add(tbAnswer);
+                } else
+                {
+                    tbAnswer.Text = Row["solution"].ToString();
+                    tbAnswer.Enabled = false;
+                    Answer.Add(tbAnswer);
+                    pnlExm.Controls.Add(tbAnswer);
+
+                }
+                
+                
+                
                 if (Example.Count == 0)
                 {
                     Example.Add(pnlExm);
