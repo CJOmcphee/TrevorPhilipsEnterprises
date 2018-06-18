@@ -299,19 +299,27 @@ go
 create procedure spSlides(
 @slideID varchar(50) = null,
 @lessonid varchar(50) =null,
-@slideinfo varchar(1000) =null
+@slideinfo varchar(1000) =null,
+@crud varchar(1)
 )
 as begin
+	if @crud='c'
+		begin
 		insert into tbSlides(slideID,lessonid,slideInfo)values
 							(@slideID,@lessonid,@slideinfo)
+		end
+	if @crud='r' 
+		begin
+			select * from tbSlides where lessonid =@lessonid
+		end
 end
 go
-exec spSlides  @slideID='1', @lessonid='1-1-1', @slideinfo='Daryl and mike YOU WILL MAKE SOME INFO FOR THE TESTING OF THIS'
+exec spSlides @crud='c', @slideID='1', @lessonid='1-1-1', @slideinfo='Daryl and mike YOU WILL ^ MAKE SOME INFO ^ FOR THE TESTING OF THIS'
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
 exec spGetTestQuestions @testID='module1'
 select * from tbLesson
 
-select * from tbSlides
+exec spSlides @crud='r', @lessonid ='1-1-1'
 
 
