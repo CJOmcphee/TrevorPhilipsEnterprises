@@ -203,6 +203,7 @@
     <Content Include="ModuleOne\Pictures\CSside.PNG" />
     <Content Include="PracticeTest.aspx" />
     <Content Include="Modules.css" />
+    <Content Include="SlideshowTemplate.aspx" />
     <Content Include="TJ.sql" />
     <Content Include="user\css\ie\html5shiv.js" />
     <Content Include="user\css\ie\PIE.htc" />
@@ -371,6 +372,13 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security.cs" />
+    <Compile Include="SlideshowTemplate.aspx.cs">
+      <DependentUpon>SlideshowTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SlideshowTemplate.aspx.designer.cs">
+      <DependentUpon>SlideshowTemplate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="user\index_user.aspx.cs">
       <DependentUpon>index_user.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -434,8 +442,12 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="css\ie\" />
+    <Folder Include="css\images\" />
     <Folder Include="DAL_Project\bin\Release\" />
     <Folder Include="DAL_Project\obj\Debug\TempPE\" />
+    <Folder Include="images\" />
+    <Folder Include="js\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>

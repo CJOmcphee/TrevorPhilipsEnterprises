@@ -27,6 +27,14 @@ mID varchar(50) foreign key references tbModule(moduleID)
 )
 	insert into tbLesson(lessonID, mID)values
 						('1-1-1','Module 1'),('1-1-2','Module 1'),('1-1-3','Module 1'),('1-1-4','Module 1'),('1-1-5','Module 1'),('1-1-6','Module 1'),('1-1-7','Module 1'),('1-1-8','Module 1'),('1-1-9','Module 1'),('1-1-10','Module 1')
+create table tbSlides(
+slideID varchar(50) primary key,
+lessonid varchar(50) foreign key references tbLesson(lessonID),
+slideInfo varchar(1000) 
+)
+
+
+
 create table tbExample(
 exampleID int identity(1,1),
 example varchar(1000),
@@ -34,6 +42,7 @@ solution varchar(1000),
 code varchar(max),
 explanation varchar(1000),
 slide int,
+showSolution bit,
 lID varchar(50) foreign key references tbLesson(lessonID)
 )
 create table tbTest(
@@ -149,13 +158,14 @@ create procedure spExamples(
 @code varchar(max)= null,
 @explanation varchar(1000) = null,
 @slide int = null,
+@showSolution bit = 0, 
 @crud varchar(1)
 )
 as begin
 	if @crud='c'
 		begin
-			insert into tbExample(lID,example,solution,code,explanation,slide)values
-								(@lID,@example,@solutions,@code,@explanation,@slide)
+			insert into tbExample(lID,example,solution,code,explanation,slide,showSolution)values
+								(@lID,@example,@solutions,@code,@explanation,@slide,@showSolution)
 		end
 	if @crud='r'
 		begin
@@ -170,7 +180,8 @@ as begin
 					solution=@solutions,
 					code = @code,
 					explanation = @explanation,
-					slide = @slide
+					slide = @slide,
+					showSolution = @showSolution
 					where  example=@example
 			end
 	if @crud='d'
@@ -180,8 +191,8 @@ as begin
 end
 go
 
-exec spExamples @crud='c',@lID='1-1-1',@example='Show 1 plus 1',@solutions='1+1',@code='int answer = 1+1',@explanation='you create a int called answer and assing it 1+1',@slide=0
-exec spExamples @crud='c',@lID='1-1-1',@example='Show 2 plus 2',@solutions='2+2',@code='int answer = 2+2',@explanation='you create a int called answer and assing it 1+1',@slide=0
+exec spExamples @crud='c',@lID='1-1-1',@example='Show 1 plus 1',@solutions='1+1',@code='int answer = 1+1',@explanation='you create a int called answer and assing it 1+1',@slide=0, @showSolution = 0
+exec spExamples @crud='c',@lID='1-1-1',@example='Show 2 plus 2',@solutions='2+2',@code='int answer = 2+2',@explanation='you create a int called answer and assing it 1+1',@slide=0, @showSolution = 1
 go
 select * from tbExample
 select * from tbTest
@@ -285,12 +296,22 @@ as  begin
 		end
 end
 go
-
+create procedure spSlides(
+@slideID varchar(50) = null,
+@lessonid varchar(50) =null,
+@slideinfo varchar(1000) =null
+)
+as begin
+		insert into tbSlides(slideID,lessonid,slideInfo)values
+							(@slideID,@lessonid,@slideinfo)
+end
+go
+exec spSlides  @slideID='1', @lessonid='1-1-1', @slideinfo='Daryl and mike YOU WILL MAKE SOME INFO FOR THE TESTING OF THIS'
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
 exec spGetTestQuestions @testID='module1'
 select * from tbLesson
 
-
+select * from tbSlides
 
 
