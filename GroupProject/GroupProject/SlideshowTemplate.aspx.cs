@@ -29,15 +29,22 @@ namespace GroupProject
                 HtmlTableRow myRow = new HtmlTableRow();
                 HtmlTableCell myCell = new HtmlTableCell();
                 HtmlTableRow myRow1 = new HtmlTableRow();
-                HtmlTableCell myCell1 = new HtmlTableCell();
-                HtmlTableRow myRow2 = new HtmlTableRow();
-                HtmlTableCell myCell2 = new HtmlTableCell();
-                HtmlTableRow myRow3 = new HtmlTableRow();
-                HtmlTableCell myCell3 = new HtmlTableCell();
-                HtmlTableRow myRow4 = new HtmlTableRow();
-                HtmlTableCell myCell4 = new HtmlTableCell();
+                
 
+                string value = dsSlideInfo.Tables[0].Rows[0]["slideInfo"].ToString();
+                Char delimiter = '^';
+                String[] substrings = value.Split(delimiter);
+                foreach (var substring in substrings) ;
+                {
+                    Label mylabel = new Label();
+                    mylabel.Text = value;
+                    myCell.Controls.Add(mylabel);
+                    
+                }
 
+                myRow.Controls.Add(myCell);
+                myTable.Controls.Add(myRow);
+                slidePanel.Controls.Add(myTable);
 
             }
         }
