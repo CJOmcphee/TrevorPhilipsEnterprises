@@ -55,7 +55,6 @@ namespace GroupProject
                 myslides.Controls.Add(slidePanel);
                 //DropDownTest.Items.Add(new ListItem
                 DropDownList1.DataSource = dsSlides.Tables[0];
-                DropDownList1
                 DropDownList1.DataTextField = "slideID";
                 DropDownList1.DataValueField = "slideID";
                 DropDownList1.DataBind();

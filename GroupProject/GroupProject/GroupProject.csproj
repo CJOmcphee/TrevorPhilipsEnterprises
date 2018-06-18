@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index_admin.aspx" />
+    <Content Include="SlideshowTemplate.aspx" />
     <Content Include="tests_admin.aspx" />
     <Content Include="users_admin.aspx" />
     <Content Include="bin\GroupProject.dll" />
@@ -221,6 +222,13 @@
     </Compile>
     <Compile Include="index_admin.aspx.designer.cs">
       <DependentUpon>index_admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SlideshowTemplate.aspx.cs">
+      <DependentUpon>SlideshowTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SlideshowTemplate.aspx.designer.cs">
+      <DependentUpon>SlideshowTemplate.aspx</DependentUpon>
     </Compile>
     <Compile Include="tests_admin.aspx.cs">
       <DependentUpon>tests_admin.aspx</DependentUpon>
