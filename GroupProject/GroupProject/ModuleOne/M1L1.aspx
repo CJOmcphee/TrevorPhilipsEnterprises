@@ -12,7 +12,7 @@
             margin:0;
         }
         div{width:50%; height:50%; position:fixed;}
-        #imgCode{/*background:#DDD*/;top:0%; left:0%;}
+        #imgCode{top:0%; left:0%;}
         #explanation1{background:#AAA;top:0%; left:50%;}
         #cs1{background:#777;top:50%; left:0%;}
         #input1{background:#444;top:50%; left:50%;}
@@ -65,7 +65,7 @@
             
             <div id="explanation2">
                 Explanation <br />
-                <p>In this exercise, lorem ipsum is satanic and Waryl Dilson knows it.</p>
+                <p>Lorem ipsum is satan.</p>
             </div>
             <div id="cs2">
                 C# <br />

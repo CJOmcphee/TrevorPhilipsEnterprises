@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="GroupProject.admin.admin" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.Master.cs" Inherits="GroupProject.master" %>
 
 <!DOCTYPE html>
 
@@ -43,15 +43,15 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li id="Home" class="active"><a href="index_admin.aspx">Home</a></li>
-							<li id="Users"><a href=#>Users</a></li>
-                            <li id="Exercises"><a href=#>Exercises</a></li>
-                            <li id="Tests"><a href=#>Tests</a></li>
-						</ul>
+							<li><asp:HyperLink ID="hlHome" NavigateUrl="~/index_user.aspx" runat="server">Home</asp:HyperLink></li>
+				            <li><asp:HyperLink ID="hlLogin" NavigateUrl="~/login.aspx" runat="server">Login</asp:HyperLink></li>
+				            <li><asp:HyperLink ID="hlModules" NavigateUrl="~/modules.aspx" Visible="false" runat="server">Modules</asp:HyperLink></li>
+				            <li><asp:HyperLink ID="hlUsers" NavigateUrl="#" Visible="false"  runat="server">Users</asp:HyperLink></li>
+				            <li><asp:HyperLink ID="hlExercises" NavigateUrl="#" Visible="false" runat="server">Exercises</asp:HyperLink></li>
+				            <li><asp:HyperLink ID="hlTests" NavigateUrl="#" Visible="false" runat="server">Tests</asp:HyperLink></li>
+                         </ul>
 					</nav>
-         
-
-			</div>
+ 			</div>
 		</div>
 	<!-- Header -->
 		
@@ -60,4 +60,3 @@
          </asp:ContentPlaceHolder>
  </body>
 </html>
-
