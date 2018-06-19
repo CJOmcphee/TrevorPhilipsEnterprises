@@ -317,7 +317,7 @@ exec spSlides @crud='c', @slideID='2', @lessonid='1-1-1', @slideinfo='I Hope ^ T
 exec spSlides @crud='c', @slideID='3', @lessonid='1-1-1', @slideinfo='TJ ^ This ^ Works'
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
-exec spGetTestQuestions @testID='module1'
+exec spGetTestQuestions @testID='module4'
 
 select * from tbLesson
 
