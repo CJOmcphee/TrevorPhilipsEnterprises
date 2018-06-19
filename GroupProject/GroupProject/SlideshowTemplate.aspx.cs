@@ -70,10 +70,7 @@ namespace GroupProject
             string chosenSlide = DropDownList1.SelectedIndex.ToString();
             string slideNumber = dsSlides.Tables[0].Rows[0]["slideID"].ToString();
 
-            if(chosenSlide == slideNumber)
-            {
-                slideNumber.
-            }
+            
             
         }
     }
