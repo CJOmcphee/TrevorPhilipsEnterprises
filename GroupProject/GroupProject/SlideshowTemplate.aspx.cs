@@ -13,11 +13,27 @@ namespace GroupProject
     public partial class SlideshowTemplate : System.Web.UI.Page
     {
         List<Panel> Slideshow = new List<Panel>();
+        int x;
         string slide = "1-1-1";
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            LoadSlides(slide);
+            if (!IsPostBack)
+            {
+                LoadSlides(slide);
+                Slideshow[0].Visible = true;
+                Session["SlideShow"] = Slideshow;
+            }
+            else
+            {
+                Slideshow = (List<Panel>)Session["SlideShow"];
+                foreach (var Slide in Slideshow)
+                {
+                    FillDiv(Slide);
+                }
+                
+            }
+
         }
         public void LoadSlides(string slide)
         {
@@ -29,7 +45,7 @@ namespace GroupProject
             foreach (DataRow Row in dsSlides.Tables[0].Rows)
             {
                 Panel slidePanel = new Panel();
-                slidePanel.CssClass = "mySlides";
+                slidePanel.Visible = false;
                 HtmlTable myTable = new HtmlTable();
 
                 string value = Row["slideInfo"].ToString();
@@ -53,7 +69,7 @@ namespace GroupProject
                 slidePanel.Controls.Add(myTable);
 
 
-                myslides.Controls.Add(slidePanel);
+                FillDiv(slidePanel);
 
                 Slideshow.Add(slidePanel);
             }
@@ -65,13 +81,16 @@ namespace GroupProject
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            DataSet dsSlides = Crud.ReadTable("spSlides", slide);
-            string chosenSlide = DropDownList1.SelectedIndex.ToString();
-            string slideNumber = dsSlides.Tables[0].Rows[0]["slideID"].ToString();
-
-            
-            
+            x = DropDownList1.SelectedIndex;
+            foreach (Panel Slide in Slideshow)
+            {
+                Slide.Visible = false;
+            }
+            Slideshow[x].Visible = true;
+        }
+        public void FillDiv(Panel panel)
+        {
+            myslides.Controls.Add(panel);
         }
     }
 }
