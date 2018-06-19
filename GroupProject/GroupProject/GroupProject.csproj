@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index_admin.aspx" />
+    <Content Include="Mike.sql" />
     <Content Include="SlideshowTemplate.aspx" />
     <Content Include="tests_admin.aspx" />
     <Content Include="users_admin.aspx" />

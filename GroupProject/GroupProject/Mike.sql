@@ -1,7 +1,6 @@
 ﻿USE dbTestEnviroment;
 GO
 
-
 -- Module 3, Question 1
 EXEC dbo.spQuestions @questions = 'What does SQL stand for?', -- varchar(1000)
                      @answers = 'Structured Query Language',   -- varchar(1000)

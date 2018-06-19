@@ -33,8 +33,6 @@ lessonid varchar(50) foreign key references tbLesson(lessonID),
 slideInfo varchar(1000) 
 )
 
-
-
 create table tbExample(
 exampleID int identity(1,1),
 example varchar(1000),
