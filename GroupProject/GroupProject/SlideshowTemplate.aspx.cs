@@ -13,9 +13,10 @@ namespace GroupProject
     public partial class SlideshowTemplate : System.Web.UI.Page
     {
         List<Panel> Slideshow = new List<Panel>();
+        string slide = "1-1-1";
         protected void Page_Load(object sender, EventArgs e)
         {
-            string slide = "1-1-1";
+            
             LoadSlides(slide);
         }
         public void LoadSlides(string slide)
@@ -53,7 +54,8 @@ namespace GroupProject
 
 
                 myslides.Controls.Add(slidePanel);
-                
+
+                Slideshow.Add(slidePanel);
             }
             DropDownList1.DataSource = dsSlides.Tables[0];
             DropDownList1.DataTextField = "slideID";
@@ -63,7 +65,16 @@ namespace GroupProject
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+            DataSet dsSlides = Crud.ReadTable("spSlides", slide);
+            string chosenSlide = DropDownList1.SelectedIndex.ToString();
+            string slideNumber = dsSlides.Tables[0].Rows[0]["slideID"].ToString();
 
+            if(chosenSlide == slideNumber)
+            {
+                slideNumber.
+            }
+            
         }
     }
 }
