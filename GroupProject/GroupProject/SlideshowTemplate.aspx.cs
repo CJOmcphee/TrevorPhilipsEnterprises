@@ -12,7 +12,7 @@ namespace GroupProject
 {
     public partial class SlideshowTemplate : System.Web.UI.Page
     {
-        
+        List<Panel> Slideshow = new List<Panel>();
         protected void Page_Load(object sender, EventArgs e)
         {
             string slide = "1-1-1";
@@ -53,12 +53,16 @@ namespace GroupProject
 
 
                 myslides.Controls.Add(slidePanel);
-                //DropDownTest.Items.Add(new ListItem
                 DropDownList1.DataSource = dsSlides.Tables[0];
                 DropDownList1.DataTextField = "slideID";
                 DropDownList1.DataValueField = "slideID";
                 DropDownList1.DataBind();
             }
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

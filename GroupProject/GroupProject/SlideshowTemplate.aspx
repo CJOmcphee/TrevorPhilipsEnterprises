@@ -38,7 +38,7 @@
 
     <div style="text-align:center">
         <form runat="server">
-        <asp:DropDownList ID="DropDownList1" AutoPostBack="true" runat="server"></asp:DropDownList>
+        <asp:DropDownList ID="DropDownList1" AutoPostBack="true" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
             </form>
        <%-- <select id="DropDownTest" runat="server">
 
