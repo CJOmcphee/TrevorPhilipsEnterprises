@@ -315,6 +315,7 @@ go
 exec spSlides @crud='c', @slideID='1', @lessonid='1-1-1', @slideinfo='Daryl and mike YOU WILL ^ MAKE SOME INFO ^ FOR THE TESTING OF THIS'
 exec spSlides @crud='c', @slideID='2', @lessonid='1-1-1', @slideinfo='I Hope ^ This ^ Works'
 exec spSlides @crud='c', @slideID='3', @lessonid='1-1-1', @slideinfo='TJ ^ This ^ Works'
+exec spSlides @crud='c', @slideID='4', @lessonid='1-1-1', @slideinfo='Hardware: Equipment or physical device associated with a computer ^ SoftWare: For computers to be useful, it needs more  then ^ equipment; a computer needs to be given instructions ^ We refer to a set of instructions as software or a program'
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
 exec spGetTestQuestions @testID='module4'
