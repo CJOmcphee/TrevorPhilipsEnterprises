@@ -53,11 +53,12 @@ namespace GroupProject
 
 
                 myslides.Controls.Add(slidePanel);
-                DropDownList1.DataSource = dsSlides.Tables[0];
-                DropDownList1.DataTextField = "slideID";
-                DropDownList1.DataValueField = "slideID";
-                DropDownList1.DataBind();
+                
             }
+            DropDownList1.DataSource = dsSlides.Tables[0];
+            DropDownList1.DataTextField = "slideID";
+            DropDownList1.DataValueField = "slideID";
+            DropDownList1.DataBind();
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
