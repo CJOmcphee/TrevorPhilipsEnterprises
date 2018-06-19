@@ -323,4 +323,6 @@ select * from tbLesson
 
 exec spSlides @crud='r', @lessonid ='1-1-1'
 
+SELECT * FROM dbo.tbQuestions
+
 
