@@ -1,7 +1,7 @@
 ﻿USE dbTestEnviroment;
 GO
 
-EXEC dbo.spQuestions @questions = 'What is the proper method of calling a parameter?', -- varchar(1000) ** Question 1
+EXEC spQuestions @questions = 'What is the proper method of calling a parameter?', -- varchar(1000) ** Question 1
                      @answers = '@Parameter VARCHAR(20)',   -- varchar(1000)
                      @tID = 'module4',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
@@ -101,3 +101,4 @@ EXEC dbo.spQuestions @questions = '', -- varchar(1000) ** 20
                      @tID = 'module4',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
+SELECT * FROM dbo.tbQuestions
