@@ -88,7 +88,7 @@ EXEC dbo.spQuestions @questions = 'How do we convert a datatype of Example into 
                      @tID = 'module4',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
-					 EXEC dbo.spWrongAnswer @question = 'How do we convert a datatype of Example into another type in SQL?',     -- varchar(500)
+					 EXEC dbo.spWrongAnswer @question = 'How do we convert a datatype of Example into varchar type in SQL?',     -- varchar(500)
                      @wrongAnswers = 'Convert.ToVarchar(Example)', -- varchar(1000)
                      @crud = 'c'          -- varchar(1)
 
@@ -122,43 +122,5 @@ EXEC dbo.spQuestions @questions = 'What does ExecuteScalar() do?', -- varchar(10
                      @tID = 'module4',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spQuestions @questions = '', -- varchar(1000) ** 13
-                     @answers = '',   -- varchar(1000)
-                     @tID = 'module4',       -- varchar(50)
-                     @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spQuestions @questions = '', -- varchar(1000) ** 14
-                     @answers = '',   -- varchar(1000)
-                     @tID = 'module4',       -- varchar(50)
-                     @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spQuestions @questions = '', -- varchar(1000) ** 15
-                     @answers = '',   -- varchar(1000)
-                     @tID = 'module4',       -- varchar(50)
-                     @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spQuestions @questions = '', -- varchar(1000) ** 16
-                     @answers = '',   -- varchar(1000)
-                     @tID = 'module4',       -- varchar(50)
-                     @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spQuestions @questions = '', -- varchar(1000) ** 17
-                     @answers = '',   -- varchar(1000)
-                     @tID = 'module4',       -- varchar(50)
-                     @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spQuestions @questions = '', -- varchar(1000) ** 18
-                     @answers = '',   -- varchar(1000)
-                     @tID = 'module4',       -- varchar(50)
-                     @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spQuestions @questions = '', -- varchar(1000) ** 19
-                     @answers = '',   -- varchar(1000)
-                     @tID = 'module4',       -- varchar(50)
-                     @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spQuestions @questions = '', -- varchar(1000) ** 20
-                     @answers = '',   -- varchar(1000)
-                     @tID = 'module4',       -- varchar(50)
-                     @crud = 'c'       -- varchar(1)
 
