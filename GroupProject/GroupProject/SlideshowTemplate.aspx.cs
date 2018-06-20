@@ -17,7 +17,7 @@ namespace GroupProject
         string slide = "1-1-1";
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            HidePreviousButton();
             if (!IsPostBack)
             {
                 LoadSlides(slide);
@@ -35,6 +35,17 @@ namespace GroupProject
                 
             }
 
+        }
+        public void HidePreviousButton()
+        {
+            if (Session["Navi"] == null )
+            {
+                btnPrev.Enabled = false;
+            }
+            else
+            {
+                btnPrev.Enabled = true;
+            }
         }
         public void LoadSlides(string slide)
         {
@@ -93,12 +104,44 @@ namespace GroupProject
 
         protected void btnPrev_Click(object sender, EventArgs e)
         {
-
+            int y = (int)Session["Navi"];
+            if (y == 0)
+            {
+                //y = Slideshow.Count-1;
+                btnPrev.Enabled = false;
+            }
+            else
+            {
+                y--;
+            }
+            foreach (Panel Slide in Slideshow)
+            {
+                Slide.Visible = false;
+            }
+            Slideshow[y].Visible = true;
+            Session["Navi"] = y;
         }
 
         protected void btnNext_Click(object sender, EventArgs e)
         {
-            int x = (int)Session["Navi"];
-        }
+
+            int y = (int)Session["Navi"];
+           
+            if (y == Slideshow.Count -1)
+            {
+                y = 0;
+            }
+            else
+            {
+                y++;
+            }
+            foreach (Panel Slide in Slideshow)
+            {
+                Slide.Visible = false;
+                
+            }
+            Slideshow[y].Visible = true;
+            Session["Navi"] = y;        
+         }
     }
 }
