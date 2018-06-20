@@ -1,7 +1,8 @@
-﻿use dbTestEnviroment
+﻿USE dbTestEnviroment
 
 --MODULE 1 Test
 -- Module 1 Questions Right Answer
+
 exec spQuestions @crud='c', @tID='module1', @questions='______ is equipment or physical devices associted with a computer?', @answers='Hardware'
 exec spQuestions @crud='c', @tID='module1', @questions='______ are designed to communicate directly to hardware?', @answers='Machine Language'
 exec spQuestions @crud='c', @tID='module1', @questions='All syntax errors are caught by the _____ ?', @answers='compiler'
@@ -91,5 +92,10 @@ exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" cod
 exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Framework Class Library?', @wrongAnswers='using'
 exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Framework Class Library?', @wrongAnswers='Namespace'
 exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Framework Class Library?', @wrongAnswers='Module'
+
+EXEC dbo.spWrongAnswer @question = 'What is the root namespace for the .NET Framework Class Library?',     -- varchar(500)
+                       @wrongAnswers = 'test', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
 
 

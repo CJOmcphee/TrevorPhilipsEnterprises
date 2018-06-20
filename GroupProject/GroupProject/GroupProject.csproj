@@ -69,6 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index_admin.aspx" />
+    <Content Include="Mike.sql" />
+    <Content Include="SlideshowTemplate.aspx" />
     <Content Include="tests_admin.aspx" />
     <Content Include="users_admin.aspx" />
     <Content Include="bin\GroupProject.dll" />
@@ -136,6 +138,7 @@
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.min.js" />
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.slim.js" />
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Darryl.sql" />
     <Content Include="ExampleTemplate.aspx" />
     <Content Include="GroupProjectLayout.txt" />
     <Content Include="img\red-wallpaper-13.jpg" />
@@ -220,6 +223,13 @@
     </Compile>
     <Compile Include="index_admin.aspx.designer.cs">
       <DependentUpon>index_admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SlideshowTemplate.aspx.cs">
+      <DependentUpon>SlideshowTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SlideshowTemplate.aspx.designer.cs">
+      <DependentUpon>SlideshowTemplate.aspx</DependentUpon>
     </Compile>
     <Compile Include="tests_admin.aspx.cs">
       <DependentUpon>tests_admin.aspx</DependentUpon>

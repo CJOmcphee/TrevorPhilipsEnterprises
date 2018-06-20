@@ -12,23 +12,49 @@ namespace GroupProject
 {
     public partial class SlideshowTemplate : System.Web.UI.Page
     {
-        
+        List<Panel> Slideshow = new List<Panel>();
+        int x;
+        string slide = "1-1-1";
         protected void Page_Load(object sender, EventArgs e)
         {
-            string slide = "1-1-1";
-            LoadSlides(slide);
+            HidePreviousButton();
+            if (!IsPostBack)
+            {
+                LoadSlides(slide);
+                Slideshow[0].Visible = true;
+                Session["SlideShow"] = Slideshow;
+                Session["Navi"] = 0;
+            }
+            else
+            {
+                Slideshow = (List<Panel>)Session["SlideShow"];
+                foreach (var Slide in Slideshow)
+                {
+                    FillDiv(Slide);
+                }
+                
+            }
+
+        }
+        public void HidePreviousButton()
+        {
+            if (Session["Navi"] == null )
+            {
+                btnPrev.Enabled = false;
+            }
+            else
+            {
+                btnPrev.Enabled = true;
+            }
         }
         public void LoadSlides(string slide)
         {
             DataSet dsSlides = Crud.ReadTable("spSlides", slide);
-            
-            
-            
-           
+
             foreach (DataRow Row in dsSlides.Tables[0].Rows)
             {
                 Panel slidePanel = new Panel();
-                slidePanel.CssClass = "mySlides";
+                slidePanel.Visible = false;
                 HtmlTable myTable = new HtmlTable();
 
                 string value = Row["slideInfo"].ToString();
@@ -52,9 +78,70 @@ namespace GroupProject
                 slidePanel.Controls.Add(myTable);
 
 
-                myslides.Controls.Add(slidePanel);
+                FillDiv(slidePanel);
 
+                Slideshow.Add(slidePanel);
             }
+            DropDownList1.DataSource = dsSlides.Tables[0];
+            DropDownList1.DataTextField = "slideID";
+            DropDownList1.DataValueField = "slideID";
+            DropDownList1.DataBind();
         }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            x = DropDownList1.SelectedIndex;
+            foreach (Panel Slide in Slideshow)
+            {
+                Slide.Visible = false;
+            }
+            Slideshow[x].Visible = true;
+        }
+        public void FillDiv(Panel panel)
+        {
+            myslides.Controls.Add(panel);
+        }
+
+        protected void btnPrev_Click(object sender, EventArgs e)
+        {
+            int y = (int)Session["Navi"];
+            if (y == 0)
+            {
+                //y = Slideshow.Count-1;
+                btnPrev.Enabled = false;
+            }
+            else
+            {
+                y--;
+            }
+            foreach (Panel Slide in Slideshow)
+            {
+                Slide.Visible = false;
+            }
+            Slideshow[y].Visible = true;
+            Session["Navi"] = y;
+        }
+
+        protected void btnNext_Click(object sender, EventArgs e)
+        {
+
+            int y = (int)Session["Navi"];
+           
+            if (y == Slideshow.Count -1)
+            {
+                y = 0;
+            }
+            else
+            {
+                y++;
+            }
+            foreach (Panel Slide in Slideshow)
+            {
+                Slide.Visible = false;
+                
+            }
+            Slideshow[y].Visible = true;
+            Session["Navi"] = y;        
+         }
     }
 }
