@@ -23,6 +23,7 @@ namespace GroupProject
                 LoadSlides(slide);
                 Slideshow[0].Visible = true;
                 Session["SlideShow"] = Slideshow;
+                Session["Navi"] = 0;
             }
             else
             {
@@ -38,10 +39,7 @@ namespace GroupProject
         public void LoadSlides(string slide)
         {
             DataSet dsSlides = Crud.ReadTable("spSlides", slide);
-            
-            
-            
-           
+
             foreach (DataRow Row in dsSlides.Tables[0].Rows)
             {
                 Panel slidePanel = new Panel();
@@ -91,6 +89,16 @@ namespace GroupProject
         public void FillDiv(Panel panel)
         {
             myslides.Controls.Add(panel);
+        }
+
+        protected void btnPrev_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnNext_Click(object sender, EventArgs e)
+        {
+            int x = (int)Session["Navi"];
         }
     }
 }
