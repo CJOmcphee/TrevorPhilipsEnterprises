@@ -26,6 +26,9 @@
     
         <form runat="server">
         <asp:DropDownList ID="DropDownList1" AutoPostBack="true" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
+            <br />
+            <asp:Button ID="btnPrev" runat="server" Text="Previous Slide" />
+            <asp:Button ID="btnNext" runat="server" Text="Next Slide" />
             </form>
       
    
