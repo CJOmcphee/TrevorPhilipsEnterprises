@@ -11,6 +11,7 @@ namespace GroupProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             Security mySecurity = new Security();
             switch (mySecurity.Access)
             {

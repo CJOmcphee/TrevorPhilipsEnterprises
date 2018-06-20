@@ -28,6 +28,15 @@ namespace GroupProject
                 case "module2":
                     LoadQuestion("module2");
                     break;
+                case "module3":
+                    LoadQuestion("module3");
+                    break;
+                case "module4":
+                    LoadQuestion("module4");
+                    break;
+                case "module5":
+                    LoadQuestion("module5");
+                    break;
             }
 
             score = 0;            
