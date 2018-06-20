@@ -33,8 +33,6 @@ lessonid varchar(50) foreign key references tbLesson(lessonID),
 slideInfo varchar(1000) 
 )
 
-
-
 create table tbExample(
 exampleID int identity(1,1),
 example varchar(1000),
@@ -50,7 +48,7 @@ testID varchar(50) primary key,
 )
 go
 insert into tbTest (testID)values
-					('module1'),('module2'),('module3')
+					('module1'),('module2'),('module3'),('module4'),('module5'),('module6'),('module7'),('module8'),('module9')
 
 go
 create table tbStudentTest(
@@ -319,10 +317,12 @@ exec spSlides @crud='c', @slideID='2', @lessonid='1-1-1', @slideinfo='I Hope ^ T
 exec spSlides @crud='c', @slideID='3', @lessonid='1-1-1', @slideinfo='TJ ^ This ^ Works'
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
-exec spGetTestQuestions @testID='module1'
+exec spGetTestQuestions @testID='module4'
 
 select * from tbLesson
 
 exec spSlides @crud='r', @lessonid ='1-1-1'
+
+SELECT * FROM dbo.tbQuestions
 
 
