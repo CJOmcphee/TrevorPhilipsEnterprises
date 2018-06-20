@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI.HtmlControls;
+using System.Drawing;
 
 namespace GroupProject
 {
@@ -66,20 +67,15 @@ namespace GroupProject
                     HtmlTableRow myRow = new HtmlTableRow();
                     HtmlTableCell myCell = new HtmlTableCell();
                     Label mylabel = new Label();
+                    mylabel.ForeColor = System.Drawing.Color.White;
                     mylabel.Text = substring;
                     myCell.Controls.Add(mylabel);
                     myRow.Controls.Add(myCell);
                     myTable.Controls.Add(myRow);
 
                 }
-
-                
-                
                 slidePanel.Controls.Add(myTable);
-
-
                 FillDiv(slidePanel);
-
                 Slideshow.Add(slidePanel);
             }
             DropDownList1.DataSource = dsSlides.Tables[0];
