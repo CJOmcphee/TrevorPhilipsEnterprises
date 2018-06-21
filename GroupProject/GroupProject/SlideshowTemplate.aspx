@@ -18,8 +18,8 @@
 <body>
 
 
-    <div  id ="myslides" runat="server">
-
+    <div  id ="myslides" runat="server" style="background-image:url(../img/red-wallpaper-13.jpg)" >
+        
     </div>
 
 
