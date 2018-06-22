@@ -14,7 +14,7 @@
 								<h2>Modules</h2>
 							</header>
 							<ul class="style1">
-								<li><a href="/Module1.aspx">Module 1 - Intro to Programming Concepts</a></li>
+								<li><a href="/SlideshowTemplate.aspx">Module 1 - Intro to Programming Concepts</a></li>
 								<li><a href="#">Module 2 - C# & .NET Framework</a></li>
 								<li><a href="/Module3.aspx">Module 3 - Databases</a></li>
 								<li><a href="#">Module 4 - ADO.NET</a></li>
