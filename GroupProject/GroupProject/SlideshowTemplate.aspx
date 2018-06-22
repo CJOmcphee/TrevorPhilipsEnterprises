@@ -8,7 +8,7 @@
 
 <head runat="server">
 
-    <link href="Modules.css" rel="stylesheet" />
+   <%-- <link href="Modules.css" rel="stylesheet" />--%>
 
     <title>Module 1</title>
 
@@ -16,8 +16,11 @@
     div  {
         background-image:url(../img/red-wallpaper-13.jpg);
         height: 100px;
-        width: 350px; 
+        width:400px;
         text-align:center;
+        font-size:20px;
+        font-weight:bold;
+        
     }
 
 
