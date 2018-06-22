@@ -96,6 +96,9 @@ exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET
 EXEC dbo.spWrongAnswer @question = 'What is the root namespace for the .NET Framework Class Library?',     -- varchar(500)
                        @wrongAnswers = 'test', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
+					  
+		
+
 
 
 
