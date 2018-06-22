@@ -15,12 +15,14 @@ namespace GroupProject
     {
         List<Panel> Slideshow = new List<Panel>();
         int x;
-        string slide = "1-1-1";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             HidePreviousButton();
             if (!IsPostBack)
             {
+                string slide;
+                slide = Request.QueryString["Slide"];
                 LoadSlides(slide);
                 Slideshow[0].Visible = true;
                 Session["SlideShow"] = Slideshow;

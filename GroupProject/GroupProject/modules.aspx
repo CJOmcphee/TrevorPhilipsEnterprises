@@ -14,10 +14,9 @@
 								<h2>Modules</h2>
 							</header>
 							<ul class="style1">
-                                <li><a href="SlideshowTemplate.aspx" target="slide">Slideshow Template</a></li>
-								<li><a href="ModuleOne.html" target="slide">Module 1 - Intro to Programming Concepts</a></li>
-								<li><a href="#">Module 2 - C# & .NET Framework</a></li>
-								<li><a href="/Module3.aspx" target="slide">Module 3 - Databases</a></li>
+								<li><a href="SlideshowTemplate.aspx?Slide=1-1-1" target="slide">Module 1 - Intro to Programming Concepts</a></li>
+								<li><a href="SlideshowTemplate.aspx?Slide=2-1-1">Module 2 - C# & .NET Framework</a></li>
+								<li><a href="SlideshowTemplate.aspx?Slide=3-1-1" target="slide">Module 3 - Databases</a></li>
 								<li><a href="#">Module 4 - ADO.NET</a></li>
 								<li><a href="#">Module 5 - Assignment #1</a></li>
                                 <li><a href="#">Module 6 - ASP.NET</a></li>
@@ -34,7 +33,7 @@
 				    </div>
                         <div class="9u skel-cell-important">
 						
-					
+					<iframe name="slide" height="900" width="900"></iframe>
 					</div>
                     </div>
                 </div>
