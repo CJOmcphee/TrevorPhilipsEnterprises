@@ -12,13 +12,23 @@
 
     <title>Module 1</title>
 
+<style>
+    div  {
+        background-image:url(../img/red-wallpaper-13.jpg);
+        height: 100px;
+        width: 400px;
+        vertical-align: middle;  
+        text-align:center;
+    }
 
+
+</style>
 </head>
 
 <body>
 
 
-    <div  id ="myslides" runat="server" style="background-image:url(../img/red-wallpaper-13.jpg)" >
+    <div  id ="myslides" runat="server" >
         
     </div>
 
