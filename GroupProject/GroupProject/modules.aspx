@@ -33,7 +33,7 @@
 						</section>
 				    </div>
                         <div class="9u skel-cell-important">
-						<iframe name="slide" src="ModuleOne.html" height="600" width="600"></iframe>
+						
 					
 					</div>
                     </div>

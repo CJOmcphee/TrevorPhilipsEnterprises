@@ -97,7 +97,7 @@ EXEC dbo.spWrongAnswer @question = 'What is the root namespace for the .NET Fram
                        @wrongAnswers = 'test', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
 					  
-		
+	
 
 
 
