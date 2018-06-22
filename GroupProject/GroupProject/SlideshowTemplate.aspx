@@ -16,8 +16,7 @@
     div  {
         background-image:url(../img/red-wallpaper-13.jpg);
         height: 100px;
-        width: 400px;
-        vertical-align: middle;  
+        width: 350px; 
         text-align:center;
     }
 
