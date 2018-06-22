@@ -54,9 +54,15 @@
         	</div>
 		</div>
 	<!-- Header -->
-		
+
+    <!-- Banner -->
+		<div id="banner">
+			<div class="container">
+			</div>
+		</div>
+	<!-- /Banner -->		
 	 
-		 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+		 <asp:ContentPlaceHolder ID="body" runat="server">
          </asp:ContentPlaceHolder>
  </body>
 </html>
