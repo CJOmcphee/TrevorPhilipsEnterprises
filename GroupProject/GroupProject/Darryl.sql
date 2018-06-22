@@ -182,32 +182,32 @@ EXEC dbo.spQuestions @questions = 'What does ExecuteScalar() do?', -- varchar(10
 
 EXEC dbo.spSlides @slideID = '301',   -- varchar(50)
                   @lessonid = '3-1-1',  -- varchar(50)
-                  @slideinfo = 'Introduction to Databases^^We will discuss:^·General concepts of data storage^·The concept of Tables and Columns</h3>^<h3>·How data is related to one another between tables', -- varchar(1000)
+                  @slideinfo = 'Introduction to Databases^^We will discuss:^·General concepts of data storage^·The concept of Tables and Columns^·How data is related to one another between tables', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '302',   -- varchar(50)
-                  @lessonid = '3-1-2',  -- varchar(50)
+                  @lessonid = '3-1-1',  -- varchar(50)
                   @slideinfo = 'Databases^^A Database is a system intended to organize, store, and retrieve large amoutns of data easily^Database technology is crucial to almost all businesses today^Most organizations actually have too much data^Poorly designed databases may even contain duplicate information^Learning to structure databases properly can save time and money', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
 
 EXEC dbo.spSlides @slideID = '303',   -- varchar(50)
-                  @lessonid = '3-1-3',  -- varchar(50)
+                  @lessonid = '3-1-1',  -- varchar(50)
                   @slideinfo = 'Databases^^', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
 
 EXEC dbo.spSlides @slideID = '304',   -- varchar(50)
-                  @lessonid = '3-1-4',  -- varchar(50)
+                  @lessonid = '3-1-1',  -- varchar(50)
                   @slideinfo = 'Testing', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '305',   -- varchar(50)
-                  @lessonid = '3-1-5',  -- varchar(50)
+                  @lessonid = '3-1-1',  -- varchar(50)
                   @slideinfo = 'Testing', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '306',   -- varchar(50)
-                  @lessonid = '3-1-6',  -- varchar(50)
+                  @lessonid = '3-1-1',  -- varchar(50)
                   @slideinfo = 'Testing', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
