@@ -41,6 +41,22 @@ namespace GroupProject
                     break;
             }
 
+            lblFullName.Text = mySecurity.FullName;
+            if (mySecurity.Access != null)
+            {
+                btnLogout.Visible = true;
+            }
+            else
+            {
+
+            }
+
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            HttpContext.Current.Session.Abandon();
+            HttpContext.Current.Response.Redirect("index_user.aspx");
         }
     }
 }
