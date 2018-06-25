@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Net.Mail;
 
 namespace GroupProject
 {
@@ -66,6 +67,20 @@ namespace GroupProject
             HttpContext.Current.Session["Access"] = "";
             HttpContext.Current.Response.Redirect("Login.aspx");
         }
-
+        public static void SendMail(string subject, string receiver, string body)
+        {
+            MailMessage message = new MailMessage();
+            message.From = new MailAddress("projecthelper.2424@gmail.com");
+            message.To.Add(new MailAddress(receiver));
+            message.Subject = subject;
+            message.Body = body;
+            SmtpClient client = new SmtpClient();
+            client.Host = "smtp.gmail.com";
+            client.Port = 587;
+            client.EnableSsl = true;
+            client.Credentials = new System.Net.NetworkCredential("projecthelper.2424@gmail.com", "Admin2424");
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.Send(message);
+        }
     }
 }

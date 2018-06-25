@@ -24,7 +24,6 @@ namespace GroupProject.user
                 lblDisplay.Text = "Unsuccessful";
             }else
             {
-                lblDisplay.Text = "Success";
                 Security security = new Security();
                 if (ds.Tables.Count == 2)
                 {

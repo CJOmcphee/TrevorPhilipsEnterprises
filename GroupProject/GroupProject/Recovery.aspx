@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-    <form runat="server">
+  
         <div id="page">
            <table>
             <tr>
@@ -10,13 +10,12 @@
                     Enter your email
                 </td>
                 <td>
-                    <asp:TextBox ID="txtUNRecovery" runat="server" Text=""></asp:TextBox>
+                    <asp:TextBox ID="tbEmail" runat="server" Text=""></asp:TextBox>
                 </td>
              </tr>
             </table>
-        <asp:Button ID="btnUNRecover" runat="server" Text="Recover!" />
-        <asp:Label ID="lblUN" Visible="false" runat="server" Text=""></asp:Label>
-        <asp:Label ID="lblMessageUN" Visible="false" runat="server" Text="New password sent to your Email"></asp:Label>
+        <asp:Button ID="btngetPw" runat="server" Text="Get Password!" OnClick="btnUNRecover_Click" />
+        <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label>
       </div>
-    </form>
+  
 </asp:Content>

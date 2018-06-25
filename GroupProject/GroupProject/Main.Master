@@ -25,6 +25,14 @@
     </asp:ContentPlaceHolder>
 </head>
 <body class="homepage">
+    <form id="form1" runat="server">
+   
+     <!-- Login-details -->
+        <div id="login-details">
+			<p>Welcome,  <asp:Label ID="lblFullName" CssClass="user" runat="server" Text=""></asp:Label></p>
+            <asp:Button ID="btnLogout" Visible="false" runat="server" Text="Logout" OnClick="btnLogout_Click" />
+		</div>
+        <!-- End Login-details -->
    
         <!-- Header -->
 		<div id="header">
@@ -54,7 +62,11 @@
         	</div>
 		</div>
 	<!-- Header -->
+   
+   
+		
 
+  
     <!-- Banner -->
 		<div id="banner">
 			<div class="container">
@@ -64,5 +76,6 @@
 	 
 		 <asp:ContentPlaceHolder ID="body" runat="server">
          </asp:ContentPlaceHolder>
+        </form>
  </body>
 </html>

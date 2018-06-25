@@ -544,6 +544,45 @@ EXEC dbo.spSlides @slideID = '215',   -- varchar(50)
                   @slideinfo = 'String ^^ -It is worth mentioning again that string, although it looks like a ^ value type, it is not ^^ -On the previous slide we said: ^ string sName = ""; ^ // "string" is a class, sName is an object ^^ -This is true, however... ^ int myAge = 30; ^^ -int is not a class, it is just a data type ^ *More on this later...', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '216',   -- varchar(50)
+                  @lessonid = '2-1-1',  -- varchar(50)
+                  @slideinfo = 'Properties and Methods ^^ -Properties ^ *Define the state of an object ^ *Are simply "class variables" or "fields" with a way of getting ^ and setting their values (more later) ^ *Think of properties as column names in database table ^ *A property is usually a noun ^^ -Example: Robs car is blue ^ *The property name (variable name) is Colour ^ *The Property value is blue ^ *C# code: robsCorolla.Colour = "blue";', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '217',   -- varchar(50)
+                  @lessonid = '2-1-1',  -- varchar(50)
+                  @slideinfo = 'Properties and Methods ^^ -Methods ^ *Usually performs an action assocaited within the class ^ *Methods are usually verbs ^ *Often used to manipulate the value of class properties ^^ -Example: ^ *Accelerate() is a method in the "Car" class that ^ increases the value of the "Speed" property ^ *C# class code: ^ Public void Accelerate() {Speed = Speed + 1;} ^ C# usage outside of the class: ^ robsCorolla.Accelerate();', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '218',   -- varchar(50)
+                  @lessonid = '2-1-1',  -- varchar(50)
+                  @slideinfo = 'Class Example ^^ -Example of a Toothbrush Class: ^^ -Class - Toothbrush ^ *instance (object) - Robs Oral B Toothbrush ^ *Properties - colour, stiffness, age ^ *Methods - brush, drop, clean ^ *Values - colour:Red; stiffness:soft; age:2 weeks ^ *brush - executes every 3rd day (kidding!) ^ *drop - executes when my hand lets go accidentally ^ *clean - executes when I rinse the brush under water', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '219',   -- varchar(50)
+                  @lessonid = '2-1-1',  -- varchar(50)
+                  @slideinfo = 'Exercise 2-1-1', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '220',   -- varchar(50)
+                  @lessonid = '2-1-1',  -- varchar(50)
+                  @slideinfo = 'How to Create a New Class ^^ -To make a new C# class: right-click on your project name in the "Solutions Explorer" ^^ -Click "Add" ^^ -Click "Class"', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '221',   -- varchar(50)
+                  @lessonid = '2-1-1',  -- varchar(50)
+                  @slideinfo = 'How to Create a New Class ^^ -Choose Visual C# and find "Class" in the middle panel ^ - Rename the class at the bottom before clicking "Add"', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+
+
+
+
+
+
+
+
 
 
 

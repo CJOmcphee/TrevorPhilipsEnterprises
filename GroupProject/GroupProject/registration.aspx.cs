@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace GroupProject.user
 {
@@ -12,6 +14,20 @@ namespace GroupProject.user
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            DataSet ds =  Crud.CreateUpdateUser("c", tbEmail.Text, tbPassword.Text, tbFirstName.Text, tbLastName.Text);
+            if(ds.Tables[0].Rows[0].ToString()== "success")
+            { 
+                    Response.Redirect("~/Login.aspx");
+            }
+            else
+            {
+                lblDisplay.Text = "Email already exists.";
+            }
+                
         }
     }
 }
