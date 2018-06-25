@@ -178,26 +178,27 @@ EXEC dbo.spSlides @slideID = '3-1-15',   -- varchar(50)
                   @slideinfo = 'Many to Many (M-M) Relationships are definded as ^ Multiple rows in one table can be associated with one or more rows in another table ^ Example : Students in Student table can take multiple sessions ^ and a single session can be taken by many students ^ tbStudent to tbSession would be many to many', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '3-1-16',   -- varchar(50)
-                  @lessonid = '3-1',  -- varchar(50)
-                  @slideinfo = '', -- varchar(1000)
-                  @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '3-1-17',   -- varchar(50)
+
+EXEC dbo.spSlides @slideID = '3-1-16',   -- varchar(50)
                   @lessonid = '3-1',  -- varchar(50)
                   @slideinfo = 'A primary key Identifies a specific row of data in the table^ <b>A Primary Key </b> is inuqie and its value cannot be duplicated within a single table^ ^ ^ Example: Your SIN number is unique to you', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '3-1-18',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '3-1-17',   -- varchar(50)
                   @lessonid = '3-1',  -- varchar(50)
                   @slideinfo = 'Lets add a <i> primary key field</i> to each table in our example ^ tbStudent Table : StudentID ^ ^ tbTeacher Table: TeacherID ^ ^ tbCourse Subject Table: CourseID ^ ^ tbSession Table: SessionID', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '3-1-19',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '3-1-18',   -- varchar(50)
                   @lessonid = '3-1',  -- varchar(50)
                   @slideinfo = 'Lets take a look at each tables so far: ^ <u>tbTeacher</u>:, Name, Address, Birthday, Specialty ^ <u>tbCourseSubject</u>: <i>CourseID</i>, Name, Description ^ <u>tbSession</u>: <i>SessionID</i>,CourseSubject,  GradeYear, StartDate, EndDate ^ <u>tbStudent</u>: <i>StudentID</i>, Name, Birthday, Address, GradeYear', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-1-19',   -- varchar(50)
+                  @lessonid = '3-1',  -- varchar(50)
+                  @slideinfo = 'tbTeacher now looks like ^ <Table><tr><td>TeacherID</td><td>Name </td>  <td>Address</td>  <td>Birthday</td> <td> Speciality</td></tr> ^ <tr><td>1</td><td>Scott Wachal </td><td> 555 Some place </td><td> 1/1/1981 </td><td> Computer Scienece </tr></tr> ^ <tr><td>2</td><td> Matt Tipper </td><td> 111 Wall st </td><td> 1/1/1987 </td><td> English </td></tr>  ^ <tr><td>3</td><td> Len Ganetsky </td><td> 333 Education Way </td><td> 1/1/1970 </td><td> Networking </td></tr></table> ^ tbCourseSubject now looks like this: ^ <table><tr><td>CourseID</td><td>Name</td><td>Description</td></tr><tr><td>1</td><td>Computer Science</td><td>Programming in C# </td></tr><tr><td>2</td><td>Networking</td><td>Connecting computers though networks</td></tr><tr><td>3</td><td>English</td><td>Learning the rules of the English Language</td></tr></table>  ', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
 
 
