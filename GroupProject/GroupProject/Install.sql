@@ -32,7 +32,7 @@ mID varchar(50) foreign key references tbModule(moduleID)
 						('4-1','Module 4'),('4-1-2','Module 4'),('4-3','Module 4'),('4-4','Module 4'),('4-5','Module 4'),
 						('5-1','Module 5'),('5-2','Module 5'),('5-3','Module 5'),('5-4','Module 5'),('5-5','Module 5')
 create table tbSlides(
-slideID varchar(50) primary key,
+slideID varchar(50),
 lessonid varchar(50) foreign key references tbLesson(lessonID),
 slideInfo varchar(1000) 
 )
@@ -316,17 +316,17 @@ as begin
 		end
 end
 go
-exec spSlides @crud='c', @slideID='1', @lessonid='1-1', @slideinfo='Daryl and mike YOU WILL ^ MAKE SOME INFO ^ FOR THE TESTING OF THIS'
-exec spSlides @crud='c', @slideID='2', @lessonid='1-1', @slideinfo='I Hope ^ This ^ Works'
-exec spSlides @crud='c', @slideID='3', @lessonid='1-1', @slideinfo='TJ ^ This ^ Works'
-exec spSlides @crud='c', @slideID='4', @lessonid='1-1', @slideinfo='Hardware: Equipment or physical device associated with a computer ^ SoftWare: For computers to be useful, it needs more  then ^ equipment; a computer needs to be given instructions ^ We refer to a set of instructions as software or a program'
+exec spSlides @crud='c', @slideID='1-1-2', @lessonid='1-1', @slideinfo='Daryl and mike YOU WILL ^ MAKE SOME INFO ^ FOR THE TESTING OF THIS'
+exec spSlides @crud='c', @slideID='1-1-2', @lessonid='1-1', @slideinfo='I Hope ^ This ^ Works'
+exec spSlides @crud='c', @slideID='1-1-3', @lessonid='1-1', @slideinfo='TJ ^ This ^ Works'
+exec spSlides @crud='c', @slideID='1-1-4', @lessonid='1-1', @slideinfo='Hardware: Equipment or physical device associated with a computer ^ SoftWare: For computers to be useful, it needs more  then ^ equipment; a computer needs to be given instructions ^ We refer to a set of instructions as software or a program'
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
 exec spGetTestQuestions @testID='module4'
 
 select * from tbLesson
 
-exec spSlides @crud='r', @lessonid ='1-1-1'
+exec spSlides @crud='r', @lessonid ='1-1'
 
 SELECT * FROM dbo.tbQuestions
 
