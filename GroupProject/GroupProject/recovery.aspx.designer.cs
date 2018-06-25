@@ -13,39 +13,30 @@ namespace GroupProject.user {
     public partial class Recovery {
         
         /// <summary>
-        /// txtUNRecovery control.
+        /// tbEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUNRecovery;
+        protected global::System.Web.UI.WebControls.TextBox tbEmail;
         
         /// <summary>
-        /// btnUNRecover control.
+        /// btngetPw control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUNRecover;
+        protected global::System.Web.UI.WebControls.Button btngetPw;
         
         /// <summary>
-        /// lblUN control.
+        /// lblDisplay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUN;
-        
-        /// <summary>
-        /// lblMessageUN control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessageUN;
+        protected global::System.Web.UI.WebControls.Label lblDisplay;
     }
 }
