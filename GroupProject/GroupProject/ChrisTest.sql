@@ -133,6 +133,21 @@ EXEC dbo.spSlides @slideID = '3-1-6',   -- varchar(50)
                   @slideinfo = '', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-1-7',   -- varchar(50)
+                  @lessonid = '3-1',  -- varchar(50)
+                  @slideinfo = 'Lets design a simple high school database with the following rules:  ^ ^ A TEACHER teaches a single COURSESUBJECT ^ Example : Math and english are COURSESUBJECTS ^ A COURSESUBJECT may be taught to different grade levels, ^ so for each COURSE SUBJECT there  may be many SESSIONS ^ A STUDENT enrolls into a specfic SESSION of a COURSESUBJECT ^ STUDENTS may enroll into many SESSIONS', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-1-8',   -- varchar(50)
+                  @lessonid = '3-1',  -- varchar(50)
+                  @slideinfo = 'In our High School example we can naturally see 4 table names emerge: ^  tbTeacher, tbCourseSubject, tbSession, tbStudent ^ ^ Note that the naming convention is to put the letters tb ^ infront of the noun.  This is not required but it is good practice ^  ^ Now we can give each table some columns ^ tbTeacher: Name, Address, Birthday, Speciality ^ tbCourseSubject: Name, Description ^ tbSession: Course Subject, GradeYear, StartDate, EndDate ^ tbStudent: Name, Birthday, Address, GradeYear', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-1-9',   -- varchar(50)
+                  @lessonid = '3-1',  -- varchar(50)
+                  @slideinfo = 'In order to understand the data better, let us take a look at ^ what one of these tables might look lik with some example ^ data, here we can see the table tbTeacher: ^ Name  Address  Birthday Speciality ^ Scott Wachal  555 Some place 1/1/1981  Computer Scienece ^ Matt Tipper  111 Wall st  1/1/1987  English  ^ Len Ganetsky  333 Education Way  1/1/1970  Networking ^ ^ We can see 3 rows of data in this table, each row ^ represents a series of values that make up a description of a ^ single teacher in our database ', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
 
 
 
