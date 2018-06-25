@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-  <form runat ="server" method="post">
+  
     <div id="page">
         <div class="login">
             <asp:TextBox ID="tbEmail" runat="server"></asp:TextBox>
@@ -16,5 +16,5 @@
         </div>
         <div class="shadow"></div>
     </div>
-  </form>
+  
 </asp:Content>

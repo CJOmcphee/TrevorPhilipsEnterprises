@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-  <form runat="server">
+ 
     <div id="page">
        <div id="marketing" class="container">
         <a href="#" class="button">Add Test</a>
@@ -88,5 +88,5 @@
                 </table>
             </asp:Panel>
    </div>
- </form>
+ 
 </asp:Content>
