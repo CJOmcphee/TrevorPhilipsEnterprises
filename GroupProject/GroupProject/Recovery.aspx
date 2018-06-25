@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-    <form runat="server">
+  
         <div id="page">
            <table>
             <tr>
@@ -17,5 +17,5 @@
         <asp:Button ID="btngetPw" runat="server" Text="Get Password!" OnClick="btnUNRecover_Click" />
         <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label>
       </div>
-    </form>
+  
 </asp:Content>

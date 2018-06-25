@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-    <form runat ="server" method="post">
+    
     <div id="page">
         <div class="register">
             <asp:Label ID="lblFirstName" runat="server" Text="First Name"></asp:Label>
@@ -22,5 +22,5 @@
         </div>
         <div class="shadow"></div>
     </div>
-  </form>
+
 </asp:Content>
