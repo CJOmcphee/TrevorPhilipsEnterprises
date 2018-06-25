@@ -26,13 +26,13 @@ lessonID varchar(50) primary key,
 mID varchar(50) foreign key references tbModule(moduleID)
 )
 	insert into tbLesson(lessonID, mID)values
-						('1-1-1','Module 1'),('1-1-2','Module 1'),('1-1-3','Module 1'),('1-1-4','Module 1'),('1-1-5','Module 1'),('1-1-6','Module 1'),('1-1-7','Module 1'),('1-1-8','Module 1'),('1-1-9','Module 1'),('1-1-10','Module 1'),
-						('2-1-1','Module 2'),('2-1-2','Module 2'),('2-1-3','Module 2'),('2-1-4','Module 2'),('2-1-5','Module 2'),('2-1-6','Module 2'),('2-1-7','Module 2'),('2-1-8','Module 2'),('2-1-9','Module 2'),('2-1-10','Module 2'),
-						('3-1-1','Module 3'),('3-1-2','Module 3'),('3-1-3','Module 3'),('3-1-4','Module 3'),('3-1-5','Module 3'),('3-1-6','Module 3'),('3-1-7','Module 3'),('3-1-8','Module 3'),('3-1-9','Module 3'),('3-1-10','Module 3'),
-						('4-1-1','Module 4'),('4-1-2','Module 4'),('4-1-3','Module 4'),('4-1-4','Module 4'),('4-1-5','Module 4'),('4-1-6','Module 4'),('4-1-7','Module 4'),('4-1-8','Module 4'),('4-1-9','Module 4'),('4-1-10','Module 4'),
-						('5-1-1','Module 5'),('5-1-2','Module 5'),('5-1-3','Module 5'),('5-1-4','Module 5'),('5-1-5','Module 5'),('5-1-6','Module 5'),('5-1-7','Module 5'),('5-1-8','Module 5'),('5-1-9','Module 5'),('5-1-10','Module 5')
+						('1-1','Module 1'),('1-2','Module 1'),('1-3','Module 1'),('1-4','Module 1'),('1-5','Module 1'),
+						('2-1','Module 2'),('2-2','Module 2'),('2-3','Module 2'),('2-4','Module 2'),('2-5','Module 2'),
+						('3-1','Module 3'),('3-2','Module 3'),('3-3','Module 3'),('3-4','Module 3'),('3-5','Module 3'),
+						('4-1','Module 4'),('4-1-2','Module 4'),('4-3','Module 4'),('4-4','Module 4'),('4-5','Module 4'),
+						('5-1','Module 5'),('5-2','Module 5'),('5-3','Module 5'),('5-4','Module 5'),('5-5','Module 5')
 create table tbSlides(
-slideID varchar(50) primary key,
+slideID varchar(50),
 lessonid varchar(50) foreign key references tbLesson(lessonID),
 slideInfo varchar(1000) 
 )
@@ -193,8 +193,8 @@ as begin
 end
 go
 
-exec spExamples @crud='c',@lID='1-1-1',@example='Show 1 plus 1',@solutions='1+1',@code='int answer = 1+1',@explanation='you create a int called answer and assing it 1+1',@slide=0, @showSolution = 0
-exec spExamples @crud='c',@lID='1-1-1',@example='Show 2 plus 2',@solutions='2+2',@code='int answer = 2+2',@explanation='you create a int called answer and assing it 1+1',@slide=0, @showSolution = 1
+exec spExamples @crud='c',@lID='1-1',@example='Show 1 plus 1',@solutions='1+1',@code='int answer = 1+1',@explanation='you create a int called answer and assing it 1+1',@slide=0, @showSolution = 0
+exec spExamples @crud='c',@lID='1-1',@example='Show 2 plus 2',@solutions='2+2',@code='int answer = 2+2',@explanation='you create a int called answer and assing it 1+1',@slide=0, @showSolution = 1
 go
 select * from tbExample
 select * from tbTest
@@ -316,17 +316,17 @@ as begin
 		end
 end
 go
-exec spSlides @crud='c', @slideID='1', @lessonid='1-1-1', @slideinfo='Daryl and mike YOU WILL ^ MAKE SOME INFO ^ FOR THE TESTING OF THIS'
-exec spSlides @crud='c', @slideID='2', @lessonid='1-1-1', @slideinfo='I Hope ^ This ^ Works'
-exec spSlides @crud='c', @slideID='3', @lessonid='1-1-1', @slideinfo='TJ ^ This ^ Works'
-exec spSlides @crud='c', @slideID='4', @lessonid='1-1-1', @slideinfo='Hardware: Equipment or physical device associated with a computer ^ SoftWare: For computers to be useful, it needs more  then ^ equipment; a computer needs to be given instructions ^ We refer to a set of instructions as software or a program'
+exec spSlides @crud='c', @slideID='1-1-2', @lessonid='1-1', @slideinfo='Daryl and mike YOU WILL ^ MAKE SOME INFO ^ FOR THE TESTING OF THIS'
+exec spSlides @crud='c', @slideID='1-1-2', @lessonid='1-1', @slideinfo='I Hope ^ This ^ Works'
+exec spSlides @crud='c', @slideID='1-1-3', @lessonid='1-1', @slideinfo='TJ ^ This ^ Works'
+exec spSlides @crud='c', @slideID='1-1-4', @lessonid='1-1', @slideinfo='Hardware: Equipment or physical device associated with a computer ^ SoftWare: For computers to be useful, it needs more  then ^ equipment; a computer needs to be given instructions ^ We refer to a set of instructions as software or a program'
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
 exec spGetTestQuestions @testID='module4'
 
 select * from tbLesson
 
-exec spSlides @crud='r', @lessonid ='1-1-1'
+exec spSlides @crud='r', @lessonid ='1-1'
 
 SELECT * FROM dbo.tbQuestions
 

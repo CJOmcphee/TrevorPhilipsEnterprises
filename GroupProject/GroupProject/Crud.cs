@@ -17,15 +17,13 @@ namespace GroupProject
         {
             mydal.AddParam("@studentEmail", UserEmail);
             mydal.AddParam("@studentPassword", UserPassword);
-            DataSet ds = mydal.ExecuteProcedure("spLogin");
-            return ds;
+            return mydal.ExecuteProcedure("spLogin");
         }
         // gets whole dataset of table
         public static DataSet ReadTable(string Procedure)
         {
             mydal.AddParam("@crud","r");
-            DataSet ds = mydal.ExecuteProcedure(Procedure);
-            return ds;
+            return mydal.ExecuteProcedure(Procedure);
         }
         // gets dataset based off ID
         public static DataSet ReadTable(string Procedure, string id)
@@ -51,8 +49,7 @@ namespace GroupProject
             {
                 mydal.AddParam("@lessonid", id.ToString());
             }
-            DataSet ds = mydal.ExecuteProcedure(Procedure);
-            return ds;
+             return mydal.ExecuteProcedure(Procedure);
         }
         public static void DeleteData(string Procedure, string id)
         {
@@ -75,15 +72,14 @@ namespace GroupProject
             }
             mydal.ExecuteProcedure(Procedure);
         }
-        public static void CreateUpdateUser(string crud ,string UserEmail,string UserPassword,string FirstName,string LastName,string access)
+        public static DataSet CreateUpdateUser(string crud ,string UserEmail,string UserPassword,string FirstName,string LastName)
         {
             mydal.AddParam("@crud", crud);
             mydal.AddParam("@studentEmail", UserEmail);
             mydal.AddParam("@studentPassword", UserPassword);
             mydal.AddParam("@firstName", FirstName);
             mydal.AddParam("@lastName", LastName);
-            mydal.AddParam("@access", access);
-            mydal.ExecuteProcedure("spStudents");
+            return mydal.ExecuteProcedure("spStudents");
         }
         public static void CreateUpdateExamples(string crud, string exampleID, string example, string solution, string lessonID)
         {
@@ -134,14 +130,12 @@ namespace GroupProject
         public static DataSet GetPassword(string Email)
         {
             mydal.AddParam("@sEmail", Email);
-            DataSet ds = mydal.ExecuteProcedure("spforgotPassword");
-            return ds;
+            return  mydal.ExecuteProcedure("spforgotPassword");
         }
         public static DataSet GetTestQuestions(string test)
         {
             mydal.AddParam("@testID", test);
-            DataSet ds =mydal.ExecuteProcedure("spGetTestQuestions");
-            return ds;
+            return mydal.ExecuteProcedure("spGetTestQuestions");
         }
     }
 }
