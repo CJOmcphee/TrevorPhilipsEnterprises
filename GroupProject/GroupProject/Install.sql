@@ -28,7 +28,7 @@ mID varchar(50) foreign key references tbModule(moduleID)
 	insert into tbLesson(lessonID, mID)values
 						('1-1-1','Module 1'),('1-1-2','Module 1'),('1-1-3','Module 1'),('1-1-4','Module 1'),('1-1-5','Module 1'),('1-1-6','Module 1'),('1-1-7','Module 1'),('1-1-8','Module 1'),('1-1-9','Module 1'),('1-1-10','Module 1'),
 						('2-1-1','Module 2'),('2-1-2','Module 2'),('2-1-3','Module 2'),('2-1-4','Module 2'),('2-1-5','Module 2'),('2-1-6','Module 2'),('2-1-7','Module 2'),('2-1-8','Module 2'),('2-1-9','Module 2'),('2-1-10','Module 2'),
-						('3-1-1','Module 3'),('3-1-2','Module 3'),('3-1-3','Module 3'),('3-1-4','Module 3'),('3-1-5','Module 3'),('3-1-6','Module 3'),('3-1-7','Module 3'),('3-1-8','Module 3'),('3-1-9','Module 3'),('3-1-10','Module 3'),
+						('3-1','Module 3'),('3-2','Module 3'),('3-3','Module 3'),('3-4','Module 3'),('3-5','Module 3'),('3-1-6','Module 3'),('3-1-7','Module 3'),('3-1-8','Module 3'),('3-1-9','Module 3'),('3-1-10','Module 3'),
 						('4-1-1','Module 4'),('4-1-2','Module 4'),('4-1-3','Module 4'),('4-1-4','Module 4'),('4-1-5','Module 4'),('4-1-6','Module 4'),('4-1-7','Module 4'),('4-1-8','Module 4'),('4-1-9','Module 4'),('4-1-10','Module 4'),
 						('5-1-1','Module 5'),('5-1-2','Module 5'),('5-1-3','Module 5'),('5-1-4','Module 5'),('5-1-5','Module 5'),('5-1-6','Module 5'),('5-1-7','Module 5'),('5-1-8','Module 5'),('5-1-9','Module 5'),('5-1-10','Module 5')
 create table tbSlides(
