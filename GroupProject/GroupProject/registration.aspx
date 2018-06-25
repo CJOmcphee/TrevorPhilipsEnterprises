@@ -16,7 +16,7 @@
 
             
 
-            <asp:Button ID="btnRegister" runat="server" Text="Register" />    
+            <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />    
 
             <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label> 
         </div>
