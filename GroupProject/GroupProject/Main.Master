@@ -27,25 +27,28 @@
 <body class="homepage">
     <form id="form1" runat="server">
    
-     <!-- Login-details -->
-        <div id="login-details">
-			<p>Welcome,  <asp:Label ID="lblFullName" CssClass="user" runat="server" Text=""></asp:Label></p>
-            <asp:Button ID="btnLogout" Visible="false" runat="server" Text="Logout" OnClick="btnLogout_Click" />
-		</div>
-        <!-- End Login-details -->
+     
    
         <!-- Header -->
 		<div id="header">
            
 			<div class="container">
+              
 
 				<!-- Logo -->
-                    
+                 <!--   
 					<div id="logo">
                         <h1><a href="index_user.aspx"><img src="images/robertson.png" class="image left" alt="">Software and Database <br /> Development </a></h1>
                         <br />
 					</div>
-				
+                     --!>
+				<!-- Logo -->
+                 <!-- Login-details -->
+                <div id="login-details">
+			        <p>Welcome,  <asp:Label ID="lblFullName" CssClass="user" runat="server" Text=""></asp:Label></p>
+                    <asp:Button ID="btnLogout" Visible="false" runat="server" Text="Logout" OnClick="btnLogout_Click" />
+		        </div>
+            <!-- End Login-details -->
 				<!-- Nav -->
 
                	<nav id="nav">
@@ -63,7 +66,7 @@
 		</div>
 	<!-- Header -->
    
-   
+           
 		
 
   
