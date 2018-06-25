@@ -145,7 +145,7 @@ EXEC dbo.spSlides @slideID = '3-1-8',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '3-1-9',   -- varchar(50)
                   @lessonid = '3-1',  -- varchar(50)
-                  @slideinfo = 'In order to understand the data better, let us take a look at ^ what one of these tables might look lik with some example ^ data, here we can see the table tbTeacher: ^ Name  Address  Birthday Speciality ^ Scott Wachal  555 Some place 1/1/1981  Computer Scienece ^ Matt Tipper  111 Wall st  1/1/1987  English  ^ Len Ganetsky  333 Education Way  1/1/1970  Networking ^ ^ We can see 3 rows of data in this table, each row ^ represents a series of values that make up a description of a ^ single teacher in our database ', -- varchar(1000)
+                  @slideinfo = 'In order to understand the data better, let us take a look at ^ what one of these tables might look lik with some example ^ data, here we can see the table tbTeacher: ^ <Table><tr><td>Name </td>  <td>Address</td>  <td>Birthday</td> <td> Speciality</td></tr> ^ <tr><td>Scott Wachal </td><td> 555 Some place </td><td> 1/1/1981 </td><td> Computer Scienece </tr></tr> ^ <tr><td> Matt Tipper </td><td> 111 Wall st </td><td> 1/1/1987 </td><td> English </td></tr></table>  ^ Len Ganetsky  333 Education Way  1/1/1970  Networking ^ ^ We can see 3 rows of data in this table, each row ^ represents a series of values that make up a description of a ^ single teacher in our database ', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
 
