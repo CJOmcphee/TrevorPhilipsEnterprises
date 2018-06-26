@@ -42,13 +42,13 @@ namespace GroupProject
             }
 
             lblFullName.Text = mySecurity.FullName;
-            if (mySecurity.Access != null)
+            if (mySecurity.Access == null)
             {
-                btnLogout.Visible = true;
+                btnLogout.Visible = false;
             }
             else
             {
-
+                btnLogout.Visible = true;
             }
 
         }
