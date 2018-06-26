@@ -46,7 +46,7 @@
                  <!-- Login-details -->
                 <div id="login-details">
 			        <p>Welcome,  <asp:Label ID="lblFullName" CssClass="user" runat="server" Text=""></asp:Label></p>
-                    <asp:Button ID="btnLogout" Visible="false" runat="server" Text="Logout" OnClick="btnLogout_Click" />
+                    <asp:Button ID="btnLogout" CssClass="button" Visible="false" runat="server" Text="Logout" OnClick="btnLogout_Click" />
 		        </div>
             <!-- End Login-details -->
 				<!-- Nav -->
