@@ -844,7 +844,8 @@
 			{
 				display: none;
 			}
-	
+
+
 /*********************************************************************************/
 /* Banner                                                                        */
 /*********************************************************************************/
@@ -995,16 +996,31 @@
 /* Login                                                                      */
 /*********************************************************************************/
 
-#login-details .user {
-    color: #0182b5;
-    text-decoration: underline;
-    font-weight: bold;
-   }
+#login-details {
+    position: absolute;
+    right: 60px;
+    top: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #707070;
+}
 
-    #login-details .user:hover {
-        color: #000;
-        text-decoration: underline;
+    #login-details p {
+        float: left;
+        display: inline;
     }
+
+    #login-details .user {
+        color: #0182b5;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+        #login-details .user:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+	
 
 
 .login {
