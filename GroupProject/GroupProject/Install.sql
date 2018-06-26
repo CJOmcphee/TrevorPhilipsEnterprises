@@ -336,5 +336,21 @@ select * from tbLesson
 exec spSlides @crud='r', @lessonid ='1-1'
 
 SELECT * FROM dbo.tbQuestions
+GO
 
+CREATE PROCEDURE spGetModule (
+@moduleID varchar(50)
+)
+AS BEGIN
+	SELECT * FROM dbo.tbModule WHERE moduleID=@moduleID
+END
+GO
+CREATE PROCEDURE spGetLessons(
+@moduleID VARCHAR(50)
+)
+AS BEGIN
+	SELECT * FROM dbo.tbLesson WHERE mID= @moduleID
+END
+
+EXEC dbo.spGetLessons @moduleID = '1' -- varchar(50)
 
