@@ -226,11 +226,11 @@ EXEC dbo.spSlides @slideID = '3-1-24',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '3-1-25',   -- varchar(50)
                   @lessonid = '3-1',  -- varchar(50)
-                  @slideinfo = 'tbSession now looks like this : ^ table><tr><td>SessionID></td><td>CourseID </td> <td>Grade Year </td> <td>Start Date</td><td>End Date</td></tr> <tr><td>1</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>2</td><td>3</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>3</td><td>2</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>4</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>5</td><td>3</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>6</td><td>2</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr></table>', -- varchar(1000)
+                  @slideinfo = 'tbSession now looks like this : ^ table><tr><td>SessionID></td><td>CourseID </td> <td>Grade Year </td> <td>Start Date</td><td>End Date</td></tr> <tr><td>1</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>2</td><td>3</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>3</td><td>2</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>4</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>5</td><td>3</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>6</td><td>2</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr></table> ^ Just remeber, tbCourseSubject looks like this: ^ <table><tr><td>CourseID</td><td>Name</td><td>Description</td></tr><tr><td>1</td><td>Computer Science</td><td>Programming in C# </td></tr><tr><td>2</td><td>Networking</td><td>Connecting computers though networks</td></tr><tr><td>3</td><td>English</td><td>Learning the rules of the English Language</td></tr></table> ', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
 
-EXEC dbo.spSlides @slideID = '',   -- varchar(50)
-                  @lessonid = '',  -- varchar(50)
-                  @slideinfo = '', -- varchar(1000)
+EXEC dbo.spSlides @slideID = '3-1-26',   -- varchar(50)
+                  @lessonid = '3-1',  -- varchar(50)
+                  @slideinfo = 'Student has M-N relationship with Session ^ ^ This is a special case ^ ^ We cannot simply add foreign keys to Session or Student; this ^ would be restrictive ^ ^  Example: ^ if we add a foreign key to StudentID to the table Session, then we ^ imply that a session can only have one Student ^ if we add a foreign key SessionID to the table Student, then we ^ imply that a Student can only have one Session ^ What can we do? ', -- varchar(1000)
                   @crud = ''       -- varchar(1)
