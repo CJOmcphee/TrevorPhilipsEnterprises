@@ -224,5 +224,13 @@ EXEC dbo.spSlides @slideID = '3-1-24',   -- varchar(50)
                   @slideinfo = 'CourseSubject has a 1-M relationship with Session, so we must ^ ^ add a foreign key CourseID to Session ^ ^  Each row in Session is directly associated with a row in ^ CourseSubject, howeber, a single CourseSubject can be ^  associated with many Session rows', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-1-25',   -- varchar(50)
+                  @lessonid = '3-1',  -- varchar(50)
+                  @slideinfo = 'tbSession now looks like this : ^ table><tr><td>SessionID></td><td>CourseID </td> <td>Grade Year </td> <td>Start Date</td><td>End Date</td></tr> <tr><td>1</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>2</td><td>3</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>3</td><td>2</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>4</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>5</td><td>3</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>6</td><td>2</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr></table>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
 
+EXEC dbo.spSlides @slideID = '',   -- varchar(50)
+                  @lessonid = '',  -- varchar(50)
+                  @slideinfo = '', -- varchar(1000)
+                  @crud = ''       -- varchar(1)
