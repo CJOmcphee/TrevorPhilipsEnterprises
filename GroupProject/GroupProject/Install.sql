@@ -100,7 +100,7 @@ as begin
 		end
 	if @crud='r'
 		begin
-			select * from tbStudents where studentEmail=isnull(@studentEmail,studentEmail)
+			select firstName,lastName,studentEmail,tbLogin.studentPassword from tbStudents inner join tbLogin on tbLogin.sID = tbStudents.studentEmail where studentEmail=isnull(@studentEmail,studentEmail)
 		end
 	if @crud='u'
 		begin
