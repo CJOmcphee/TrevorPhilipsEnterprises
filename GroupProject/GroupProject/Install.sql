@@ -316,6 +316,13 @@ as begin
 		end
 end
 go
+
+create procedure spTest
+(@crud varchar(1))
+as begin
+select * from tbTest
+end
+go
 exec spSlides @crud='c', @slideID='1-1-2', @lessonid='1-1', @slideinfo='Daryl and mike YOU WILL ^ MAKE SOME INFO ^ FOR THE TESTING OF THIS'
 exec spSlides @crud='c', @slideID='1-1-2', @lessonid='1-1', @slideinfo='I Hope ^ This ^ Works'
 exec spSlides @crud='c', @slideID='1-1-3', @lessonid='1-1', @slideinfo='TJ ^ This ^ Works'
