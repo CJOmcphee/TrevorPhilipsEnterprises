@@ -89,6 +89,7 @@ namespace GroupProject
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             x = DropDownList1.SelectedIndex;
+            Session["Navi"] = x;
             foreach (Panel Slide in Slideshow)
             {
                 Slide.Visible = false;
