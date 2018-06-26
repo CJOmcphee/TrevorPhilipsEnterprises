@@ -29,7 +29,7 @@ mID varchar(50) foreign key references tbModule(moduleID)
 						('1-1','Module 1'),('1-2','Module 1'),('1-3','Module 1'),('1-4','Module 1'),('1-5','Module 1'),
 						('2-1','Module 2'),('2-2','Module 2'),('2-3','Module 2'),('2-4','Module 2'),('2-5','Module 2'),
 						('3-1','Module 3'),('3-2','Module 3'),('3-3','Module 3'),('3-4','Module 3'),('3-5','Module 3'),
-						('4-1','Module 4'),('4-1-2','Module 4'),('4-3','Module 4'),('4-4','Module 4'),('4-5','Module 4'),
+						('4-1','Module 4'),('4-2','Module 4'),('4-3','Module 4'),('4-4','Module 4'),('4-5','Module 4'),
 						('5-1','Module 5'),('5-2','Module 5'),('5-3','Module 5'),('5-4','Module 5'),('5-5','Module 5')
 create table tbSlides(
 slideID varchar(50),
@@ -339,13 +339,15 @@ SELECT * FROM dbo.tbQuestions
 GO
 
 CREATE PROCEDURE spGetModule (
+@crud varchar(1),
 @moduleID varchar(50)
 )
 AS BEGIN
-	SELECT * FROM dbo.tbModule WHERE moduleID=@moduleID
+	SELECT * FROM dbo.tbModule
 END
 GO
 CREATE PROCEDURE spGetLessons(
+@crud varchar(1),
 @moduleID VARCHAR(50)
 )
 AS BEGIN
