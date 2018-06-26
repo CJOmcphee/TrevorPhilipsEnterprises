@@ -15,7 +15,7 @@
 								<h2>The Basics of C#</h2>
 							</header>
 							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img width="250" height="150" src="images/csharp.jpg" /></a></p>
+							<p><a href="#"><img width="275" height="150" src="images/csharp.jpg" alt="C Sharp" /></a></p>
 							<a href="#" class="button">Learn</a>
 						</section>
 					</div>
@@ -45,7 +45,7 @@
 								<h2>Javascript & HTML5</h2>
 							</header>
 							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/pics16.jpg" alt=""></a></p>
+							<p><a href="#"><img src="images/jswide.png" width="275" height="150" alt="Javascript" /></a></p>
 							<a href="#" class="button">More</a>
 						</section>
 					</div>
