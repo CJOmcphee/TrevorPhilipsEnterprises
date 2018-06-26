@@ -13,6 +13,8 @@ namespace GroupProject.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Security mysecure = new Security();
+            mysecure.checkAccess("a");
             if (!IsPostBack)
             {
                 pnlUserUpdate.Visible = false;
@@ -51,6 +53,7 @@ namespace GroupProject.admin
         protected void gvUsers_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvUsers.PageIndex = e.NewPageIndex;
+            LoadView();
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
