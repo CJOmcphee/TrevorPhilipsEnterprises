@@ -49,6 +49,10 @@ namespace GroupProject
             {
                 mydal.AddParam("@lessonid", id.ToString());
             }
+            if(Procedure == "spGetLessons")
+            {
+                mydal.AddParam("@moduleID", id.ToString());
+            }
              return mydal.ExecuteProcedure(Procedure);
         }
         public static void DeleteData(string Procedure, string id)

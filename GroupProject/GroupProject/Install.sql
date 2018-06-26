@@ -339,13 +339,15 @@ SELECT * FROM dbo.tbQuestions
 GO
 
 CREATE PROCEDURE spGetModule (
+@crud varchar(1),
 @moduleID varchar(50)
 )
 AS BEGIN
-	SELECT * FROM dbo.tbModule WHERE moduleID=@moduleID
+	SELECT * FROM dbo.tbModule
 END
 GO
 CREATE PROCEDURE spGetLessons(
+@crud varchar(1),
 @moduleID VARCHAR(50)
 )
 AS BEGIN
