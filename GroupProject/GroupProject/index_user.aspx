@@ -12,17 +12,17 @@
 					<div class="3u">
 						<section>
 							<header>
-								<h2>Feugiat Tempus</h2>
+								<h2>The Basics of C#</h2>
 							</header>
 							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/pics13.jpg" alt=""></a></p>
-							<a href="#" class="button">More</a>
+							<p><a href="#"><img width="275" height="150" src="images/csharp.jpg" alt="C Sharp" /></a></p>
+							<a href="#" class="button">Learn</a>
 						</section>
 					</div>
 					<div class="3u">
 						<section>
 							<header>
-								<h2>Maecenas lectus1</h2>
+								<h2>Learn SQL Databases</h2>
 							</header>
 							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
 							<p><a href="#"><img src="images/pics14.jpg" alt=""></a></p>
@@ -32,7 +32,7 @@
 					<div class="3u">
 						<section>
 							<header>
-								<h2>Luctus lectus</h2>
+								<h2>Get started with PHP</h2>
 							</header>
 							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
 							<p><a href="#"><img src="images/pics15.jpg" alt=""></a></p>
@@ -42,10 +42,10 @@
 					<div class="3u">
 						<section>
 							<header>
-								<h2>Posuere eleifend</h2>
+								<h2>Javascript & HTML5</h2>
 							</header>
 							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/pics16.jpg" alt=""></a></p>
+							<p><a href="#"><img src="images/jswide.png" width="275" height="150" alt="Javascript" /></a></p>
 							<a href="#" class="button">More</a>
 						</section>
 					</div>
@@ -59,19 +59,19 @@
 					<div class="6u">
 						<section>
 							<header>
-								<h2>Integer gravida nibh quis urna</h2>
-								<span class="byline">Augue praesent a lacus at urna congue rutrum</span>
+								<h2>Welcome to the Program!</h2>
+								<span class="byline">Introduction:</span>
 							</header>
-							<p>This is <strong>Ex Machina</strong>, a responsive HTML5 site template freebie by <a href="http://templated.co">TEMPLATED</a>. Released for free under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so use it for whatever (personal or commercial) &ndash; just give us credit! Check out more of our stuff at <a href="http://templated.co">our site</a> or follow us on <a href="http://twitter.com/templatedco">Twitter</a>.</p>
+							<p><a></a>.</p>
 							<p>Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget lorem ipsum dolor. Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat. Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat.</p>
 							<p>Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget lorem ipsum dolor. Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat. Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat.</p>
-							<a href="#" class="button">More Details</a>
+							<a href="#" class="button">Begin Lesson 1</a>
 						</section>
 					</div>
 					<div class="3u">
 						<section class="sidebar">
 							<header>
-								<h2>Feugiat Tempus</h2>
+								<h2>What you will learn:</h2>
 							</header>
 							<ul class="style2">
 								<li>
