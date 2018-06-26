@@ -339,8 +339,7 @@ SELECT * FROM dbo.tbQuestions
 GO
 
 CREATE PROCEDURE spGetModule (
-@crud varchar(1),
-@moduleID varchar(50)
+@crud varchar(1)
 )
 AS BEGIN
 	SELECT * FROM dbo.tbModule
