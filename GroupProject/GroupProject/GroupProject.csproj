@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\csharp.jpg" />
     <Content Include="index_admin.aspx" />
     <Content Include="Mike.sql" />
     <Content Include="SlideshowTemplate.aspx" />
