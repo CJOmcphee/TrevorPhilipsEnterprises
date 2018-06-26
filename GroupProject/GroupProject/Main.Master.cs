@@ -9,10 +9,11 @@ namespace GroupProject
 {
     public partial class master : System.Web.UI.MasterPage
     {
+        public Security mySecurity = new Security();
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            Security mySecurity = new Security();
+            
             switch (mySecurity.Access)
             {
                 case "u":
@@ -42,21 +43,20 @@ namespace GroupProject
             }
 
             lblFullName.Text = mySecurity.FullName;
-            if (mySecurity.Access != null)
+            if (mySecurity.Access == "")
             {
-                btnLogout.Visible = true;
+                btnLogout.Visible = false;
             }
             else
             {
-
+                btnLogout.Visible = true;
             }
 
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
         {
-            HttpContext.Current.Session.Abandon();
-            HttpContext.Current.Response.Redirect("index_user.aspx");
+            mySecurity.AbandonSession();
         }
     }
 }

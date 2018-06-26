@@ -100,7 +100,7 @@ as begin
 		end
 	if @crud='r'
 		begin
-			select * from tbStudents where studentEmail=isnull(@studentEmail,studentEmail)
+			select firstName,lastName,studentEmail,tbLogin.studentPassword from tbStudents inner join tbLogin on tbLogin.sID = tbStudents.studentEmail where studentEmail=isnull(@studentEmail,studentEmail)
 		end
 	if @crud='u'
 		begin
@@ -336,5 +336,23 @@ select * from tbLesson
 exec spSlides @crud='r', @lessonid ='1-1'
 
 SELECT * FROM dbo.tbQuestions
+GO
+
+CREATE PROCEDURE spGetModule (
+@crud varchar(1),
+@moduleID varchar(50)
+)
+AS BEGIN
+	SELECT * FROM dbo.tbModule
+END
+GO
+CREATE PROCEDURE spGetLessons(
+@crud varchar(1),
+@moduleID VARCHAR(50)
+)
+AS BEGIN
+	SELECT * FROM dbo.tbLesson WHERE mID= @moduleID
+END
+
 
 

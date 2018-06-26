@@ -65,7 +65,7 @@ namespace GroupProject
             HttpContext.Current.Session["Email"] = "";
             HttpContext.Current.Session["FullName"] = "";
             HttpContext.Current.Session["Access"] = "";
-            HttpContext.Current.Response.Redirect("Login.aspx");
+            HttpContext.Current.Response.Redirect("~/Login.aspx");
         }
         public static void SendMail(string subject, string receiver, string body)
         {
