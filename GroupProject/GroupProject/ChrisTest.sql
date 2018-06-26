@@ -209,8 +209,20 @@ EXEC dbo.spSlides @slideID = '3-1-21',   -- varchar(50)
                   @slideinfo = 'With a <b>primary key</b> value we can now identify a specific row ^ in Teacher, Student, CourseSubject or Session ^ ^ We now need to find a way for these <b>keys</b> to  be assoicated ^ with one naother ^ ^ To solve this problem, we can add the <b>primary key</b> field of ^  one table into another table  ^ ^ However, when a table holds two ore more <b>keys</b>, we need to ^ specify which is the tables <b>primary key</b> and which are ^ <b>foreign keys </b>', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-1-22',   -- varchar(50)
+                  @lessonid = '3-1',  -- varchar(50)
+                  @slideinfo = 'To begin with, we know that Teacher and CourseSubject ^ have Many to 1 relationship so we must ^  Add a foreignkey CourseID to Teacher ^ Remove field Specialty from Teacher ^ ^ We can now find the teachers speciality through CourseID', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-1-23',   -- varchar(50)
+                  @lessonid = '3-1',  -- varchar(50)
+                  @slideinfo = 'tbTeacher now looks like this ^ <Table><tr><td>TeacherID</td><td>Name </td>  <td>Address</td>  <td>Birthday</td> <td> CourseID</td></tr> ^ <tr><td>1</td><td>Scott Wachal </td><td> 555 Some place </td><td> 1/1/1981 </td><td> 1 </tr></tr> ^ <tr><td>2</td><td> Matt Tipper </td><td> 111 Wall st </td><td> 1/1/1987 </td><td> 3 </td></tr>  ^ <tr><td>3</td><td> Len Ganetsky </td><td> 333 Education Way </td><td> 1/1/1970 </td><td>2 </td></tr></table> ^ Just remeber, tbCourseSubject looks like this ^ <table><tr><td>CourseID</td><td>Name</td><td>Description</td></tr><tr><td>1</td><td>Computer Science</td><td>Programming in C# </td></tr><tr><td>2</td><td>Networking</td><td>Connecting computers though networks</td></tr><tr><td>3</td><td>English</td><td>Learning the rules of the English Language</td></tr></table> ', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-1-24',   -- varchar(50)
+                  @lessonid = '3-1',  -- varchar(50)
+                  @slideinfo = 'CourseSubject has a 1-M relationship with Session, so we must ^ ^ add a foreign key CourseID to Session ^ ^  Each row in Session is directly associated with a row in ^ CourseSubject, howeber, a single CourseSubject can be ^  associated with many Session rows', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
 
 
