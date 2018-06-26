@@ -352,5 +352,5 @@ AS BEGIN
 	SELECT * FROM dbo.tbLesson WHERE mID= @moduleID
 END
 
-EXEC dbo.spGetLessons @moduleID = '1' -- varchar(50)
+
 
