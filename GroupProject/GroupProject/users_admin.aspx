@@ -9,7 +9,7 @@
         
             <asp:Panel ID="pnlUsersList" runat="server">
               
-                <asp:GridView ID="gvUsers" PageSize="10" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="studentEmail" runat="server" OnPageIndexChanging="gvUsers_PageIndexChanging" OnRowCommand="gvUsers_RowCommand" >
+                <asp:GridView ID="gvUsers" PageSize="2" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="studentEmail" runat="server" OnPageIndexChanging="gvUsers_PageIndexChanging" OnRowCommand="gvUsers_RowCommand" >
                       <Columns>
                         <asp:ButtonField HeaderText="Delete" ButtonType="Button" CommandName="Del" Text="Delete" />
                         <asp:ButtonField HeaderText="Update" ButtonType="Button" CommandName="Up" Text="Update" />

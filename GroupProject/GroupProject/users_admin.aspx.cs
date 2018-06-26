@@ -50,17 +50,21 @@ namespace GroupProject.admin
 
         protected void gvUsers_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            
+            gvUsers.PageIndex = e.NewPageIndex;
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-
+            Crud.CreateUpdateUser("u", lblEmail.Text, tbPassword.Text, tbFirstName.Text, tbLastName.Text);
+            pnlUsersList.Visible = true;
+            pnlUserUpdate.Visible = false;
+            LoadView();
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-
+            pnlUsersList.Visible = true;
+            pnlUserUpdate.Visible = false;
         }
     }
 }
