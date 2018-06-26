@@ -244,3 +244,13 @@ EXEC dbo.spSlides @slideID = '3-1-28',   -- varchar(50)
                   @lessonid = '3-1',  -- varchar(50)
                   @slideinfo = 'The solution is to make a new table altogether and store ^ both keys: ^ ^ Create new table called tbEnrollment ^ This table will contain two fields, both foreign keys : ^ StudentID, SessionID ^ Now each row in Enrollment is directly assoicated with a row ^ in Student and a row in Session ^ ^ Since foreign keys can be duplicated, we can now ^ assoicate Student to Session in many to many relationship', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-1-29',   -- varchar(50)
+                  @lessonid = '3-1',  -- varchar(50)
+                  @slideinfo = 'tbEnrollment will look like this: ^ <table><tr><td>SessionID</td><td>StudentID</td></tr><tr><td>1</td><td>1</td></tr><tr><td>1</td><td>2</td></tr><tr><td>2</td><td>1</td></tr><tr><td>2</td><td>2</td></tr><tr><td>3</td><td>2</td></tr><tr><td>4</td><td>3</td><t/tr><tr><td>4</td><td>4</td></tr><tr><td>5</td><td>3</td></tr><tr><td>5</td><td>4</td></tr><tr><td>6</td><td>3</td></tr><tr><td>6</td><td>4</td></tr></table>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-1-30',   -- varchar(50)
+                  @lessonid = '3-1',  -- varchar(50)
+                  @slideinfo = 'Our High School datbase so far: ^ ^ <u>tbTeacher</u>: TeacherID,Name,Address,Birthday,CourseID ^ ^  <u>tbCourseSubject</u>: CourseID, Name, Description ^ ^ <u>tbSession</u>:  SessionID,CourseID,GradeYear,StartDate,EndDate ^ ^ <u>tbStudent</u>: StudentID, Name, Birthday, Address, GradeYear ^  ^ <u>tbEnrollment</u>: EnrollmentID, StudentID, SessionID', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
