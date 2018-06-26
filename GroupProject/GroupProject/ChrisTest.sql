@@ -329,8 +329,14 @@ EXEC dbo.spSlides @slideID = '3-2-14',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '3-2-15',   -- varchar(50)
                   @lessonid = '3-2',  -- varchar(50)
-                  @slideinfo = 'Example INSERTS: ^ ^ INSERT INTO tbHobbit(Name, GradeLevel, Birthday)^ VALUES(  ', -- varchar(1000)
+                  @slideinfo = 'Example INSERTS: ^ ^ INSERT INTO tbHobbit(Name, GradeLevel, Birthday)^ VALUES(''Scott Wacal'',12,''1981-01-01'')^ ^ We can choose to only add some columns, and we can rearrange^ the order, bbut we just have to be consistent...^ ^ INSERT INTO tbHobbit(Name)^ VALUES (''Scott Wachal'')^ ^ Note that without  giving a value for GradeLevel, the value in the row^ will be a NULL a specual value indicating" no value given"', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-16',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'Note that INT values do not require single quotes around the values', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
 
 
 
