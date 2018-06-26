@@ -254,3 +254,225 @@ EXEC dbo.spSlides @slideID = '3-1-30',   -- varchar(50)
                   @lessonid = '3-1',  -- varchar(50)
                   @slideinfo = 'Our High School datbase so far: ^ ^ <u>tbTeacher</u>: TeacherID,Name,Address,Birthday,CourseID ^ ^  <u>tbCourseSubject</u>: CourseID, Name, Description ^ ^ <u>tbSession</u>:  SessionID,CourseID,GradeYear,StartDate,EndDate ^ ^ <u>tbStudent</u>: StudentID, Name, Birthday, Address, GradeYear ^  ^ <u>tbEnrollment</u>: EnrollmentID, StudentID, SessionID', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
+
+--Lesson 2
+
+EXEC dbo.spSlides @slideID = '3-2-1',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'SQL is a database language used to oraganize and manage data ^ ^ There are many DBMSs out there, but ^ we will be using the program called Microsoft SQL Server Management Studio', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-2',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'The following slides go over the basic commands required ^ to make a Database and tables ^ ^ Note: When the slides say <DatabaseName>, it means that ^ you should be tpying your own name, WITHOUT the <> ^ symbols on either side   ^ ^ Example: ^ USE <DatabaseName> ^ means: USE MyDataBase', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-3',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'You Write SQL Queries in a Query Window ^ ^ VERY IMPORTANT NOTE: ^ When creating or removinf a database be sure you are in "master" by typing: USE master ^ ^ To create a database: ^CREATE DATABASE <DatabaseName>^ ^ To remove a database: ^DROP DATABASE <DatabaseName> ^ ONce you create database be sure to type ^ USE <DatabaseName>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-4',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'Here is an example of what it would look like ^ USE MASTER^ GO^ DROP DATABASE dbMyDb^ GO^ CREATE DATABASE dbMyDb^ GO^ USE DATABASE dbMyDb^ GO', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-5',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'Keep in mind, we use this code because everytime we run^ our SQL in this windows, we WANT to start from scratch as if^ we had never made a database with that name on this^ computer before ^ ^ In the real world, we do not want to drop the database!!^ Butt here, we will have all our code in one window for practice puroposes^ ^ Each time you create a database, it will be saved permanently on your computer untill the DROP DATABASE^ command is run, Keep this in mind', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-6',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'You might also be wondering, what does :GO" command means?^ It means you are done that "batch" of commands^ When we switch from using one database to another, or when we^ are drating/dropping a database, it is important to make sure that^ command is run immediatley before proceeding^ ^ Normally you can just write SQL lines and when the end of the^ commands ireached and implied :GO" is executed, running ALL of^ te commands above all at the same time^ ^ If you are unsure when to use a O, follow my sql examples as a^ guidline for now until you understand or do^ further reading/experimenting', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-7',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'To create a table:^ CREATE TABLE <TableName>^ (<ColumnName> <DATATYPE> <RULES> PRIMARY KEY,^ <ColumnName2> <DATATYPE> <RULES>,^ <ColumnName3> <DATATYPE> <RULES)^ ^ Example:^ CREATE TABLE tbStudent ^ (^ StudentID INT PRIMARY KEY^ Name VARCHAR(MAX)^ )^ ^ NOTE: There are many different kinds of <data types> and <rules>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-8',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'Some of the common <data types> to use in SQL are:^ INT^ VARCHAR(#)^ DATE^ DECIMAL^ BIT^ ^ The # number in VARCHAR is the maximum number of characters that the^ variable will hold^ ^ You can use MAX inside the brackets, instead of a number to indicate^ you will need as many characters as is possible^ ^ EXAMPLE:^ CustomerNotes VARCHAR(MAX)', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-9',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'Some of the common <rules> to apply to columns when making^ tbale inculde:^ IDENTITY(1,1)^ PRIMARY KEY^ FOREIGN KEY^ NOT NULL^ ^ NOTE: The (1,1) in IDENTITY means that the column is ^ automatically opulated with a number, starting at 1 and^ incrementing by one with each new row^ ^ Primary keys should often be IDENTITY columns', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-10',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'PRIMARY KEY^ Every table should ave a primary key^ This column must be unique^  This column cannot contain nulls^ ^ Example Usage:^ CREATE TABLE Goblin^ (^ GoblinID INT IDENTITY(1,1) PRIMARY KEY^ )', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-11',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'A very useful condition to add is NOT NULL, use this  on^ columns that are required and cannot have blanks!^ ^ CREATE TABLE tbHobbit^ (^ HobbitID INT IDENTITY(1,1) PRIMARY KEY^ Name VARCHAR(20) NOT NULL, Address VARCHAR(255)^ )^ ^ IN the above, we will not allows a person to be entered into ^ this table without havin a neme. But we dont need their ^ address', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-12',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'FOREIGN KEY^ As we discuessed in the previous module, foreign keys^ are used to describe the relationship between two tables^ ^ You should describe a column as a foreign key, if the^ column is a primary in another table^ ^ IMPORTANT NOTE: you nust create the tables in the^ appropraite order in your query window^ ^ Tables that are being referenced, must come first, tables^ doing the referencing come later^You cannot reference somehting  that is not created yet', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-13',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'FOREIGN KEY - Example Usage:^ ^ CREATE TABLE tbArchery^ (^ ArcheryID INT IDENTITY(1,) PRIMARY KEY,^ Name VARCHAR(100),^ Description VARCHAR(255)^ )^ ^ CREATE TABLE tbTeacher^ (^ TeacherID INT IDENTITY(1,1) PRIMARY KEY,^ Name VARCHAR(50),^ ArcheryID INT FOREIGN KEY REFERENCES tbArchery(ArcheryID)^ )', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-14',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'To Insert a data row into table ^ ^ INSER INTO <TableName>^ (<ColumnName1>,<ColumnName2>,<ColumnName3>)^  Values^  (<Column1Value>,<Column2Value>,<Column3Value>)^  ^ Note: the order of the values mustmatch the order of the columns^ ^ Also, the datatype of the column will have to match the value you^ enter( (INT to INT,etc)', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-15',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'Example INSERTS: ^ ^ INSERT INTO tbHobbit(Name, GradeLevel, Birthday)^ VALUES(  ', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
