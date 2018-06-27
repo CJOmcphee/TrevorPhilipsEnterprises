@@ -213,9 +213,7 @@ as begin
 		end
 	if @crud='r'
 		begin
-			
-			select * from tbQuestions where question=isnull(@questions, question)
-			
+			select question,answers,COUNT(wrongAnswers) as [wrongAnswers] from tbQuestions  inner join tbWrongAnswers on tbWrongAnswers.questions = tbQuestions.question where question=@questions group by question,answers
 		end
 	if @crud='u'
 		begin
@@ -249,6 +247,7 @@ as begin
 			select wrongAnswers into #Allanswer from tbWrongAnswers where questions = @question 
 			insert into #Allanswer select answers from tbQuestions where question = @question
 			select * from #Allanswer Order by newID();
+			select * from tbWrongAnswers where questions = @question
 		end
 	if @crud='d'
 		begin
@@ -260,7 +259,7 @@ create procedure spGetTestQuestions(
 @testID varchar(50)
 )
 as begin
-	select question, answers from tbQuestions where tID=@testID
+	select question,answers,COUNT(wrongAnswers) as [wrongAnswers] from tbQuestions  inner join tbWrongAnswers on tbWrongAnswers.questions = tbQuestions.question where tID=@testID group by question,answers
 	
 end
 go
@@ -318,9 +317,21 @@ end
 go
 
 create procedure spTest
-(@crud varchar(1))
+(
+@crud varchar(1),
+@TestID varchar(50) = null
+)
 as begin
-select * from tbTest
+	if @crud = 'r'
+	begin
+		select * from tbTest where testID = isnull(@TestID,testID)
+	end
+	if @crud ='d'
+	begin
+		delete from tbQuestions where tID = @TestID
+		delete from tbStudentTest where tID = @TestID
+		delete from tbTest where testID = @TestID
+	end
 end
 go
 exec spSlides @crud='c', @slideID='1-1-2', @lessonid='1-1', @slideinfo='Daryl and mike YOU WILL ^ MAKE SOME INFO ^ FOR THE TESTING OF THIS'
@@ -329,7 +340,8 @@ exec spSlides @crud='c', @slideID='1-1-3', @lessonid='1-1', @slideinfo='TJ ^ Thi
 exec spSlides @crud='c', @slideID='1-1-4', @lessonid='1-1', @slideinfo='Hardware: Equipment or physical device associated with a computer ^ SoftWare: For computers to be useful, it needs more  then ^ equipment; a computer needs to be given instructions ^ We refer to a set of instructions as software or a program'
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
-exec spGetTestQuestions @testID='module4'
+exec spGetTestQuestions @testID='module2'
+exec spTest @crud = 'r'
 
 select * from tbLesson
 

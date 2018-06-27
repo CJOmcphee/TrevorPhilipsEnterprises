@@ -349,12 +349,12 @@ EXEC dbo.spSlides @slideID = '3-2-18',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '3-2-19',   -- varchar(50)
                   @lessonid = '3-2',  -- varchar(50)
-                  @slideinfo = '<Table><tr><td>SessionID</td><td>CourseID</td><td>Grade Year</td><td>Start Date</td><td>End Date</td></tr><tr><td>1</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>2</td><td>3</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr></table>^ <table><tr><td>CourseID</td><td>Name</td><td>Description</td></tr><tr><td>1</td><td>Computer Science</td><td>Programming in C# </td></tr><tr><td>2</td><td>Networking</td><td>Connecting computers though networks</td></tr><tr><td>3</td><td>English</td><td>Learning the rules of the English Language</td></tr></table>^ ^ Above is the Session and Course tables from previous slides^ ^ We can deduce that in TB session,  this is what CourseID looks like^ CourseID INT FOREIGN KEY REFERENCES tbCourse(CourseID)^ ^ What Happens if we try to run this: ^ DELETE tbCOURSE WHERE CourseID=1', -- varchar(1000)
+                  @slideinfo = '<Table><tr><td>SessionID</td><td>CourseID</td><td>Grade Year</td><td>Start Date</td><td>End Date</td></tr><tr><td>1</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>2</td><td>3</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr></table><table><tr><td>CourseID</td><td>Name</td><td>Description</td></tr><tr><td>1</td><td>Computer Science</td><td>Programming in C# </td></tr><tr><td>2</td><td>Networking</td><td>Connecting computers though networks</td></tr><tr><td>3</td><td>English</td><td>Learning the rules of the English Language</td></tr></table>^ ^ Above is the Session and Course tables from previous slides^ ^ We can deduce that in TB session,  this is what CourseID looks like^ CourseID INT FOREIGN KEY REFERENCES tbCourse(CourseID)^ ^ What Happens if we try to run this: ^ DELETE tbCOURSE WHERE CourseID=1', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '3-2-20',   -- varchar(50)
                   @lessonid = '3-2',  -- varchar(50)
-                  @slideinfo = '<Table><tr><td>SessionID</td><td>CourseID</td><td>Grade Year</td><td>Start Date</td><td>End Date</td></tr><tr><td>1</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>2</td><td>3</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr>^ <table><tr><td>CourseID</td><td>Name</td><td>Description</td></tr><tr><td>1</td><td>Computer Science</td><td>Programming in C# </td></tr><tr><td>2</td><td>Networking</td><td>Connecting computers though networks</td></tr><tr><td>3</td><td>English</td><td>Learning the rules of the English Language</td></tr></table>^ ^ What Happens if we try to run this: ^ DELETE tbCOURSE WHERE CourseID=1^ ^ We get a constraint error because CourseID 1 is being used in a table outside of tbCourse! We CANNOT Remove it^ ^ We CAN Delete CourseID=2 in tbCourse, because there are no rows^ in tbSession referencing that one', -- varchar(1000)
+                  @slideinfo = '<Table><tr><td>SessionID</td><td>CourseID</td><td>Grade Year</td><td>Start Date</td><td>End Date</td></tr><tr><td>1</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>2</td><td>3</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr></table>^ <table><tr><td>CourseID</td><td>Name</td><td>Description</td></tr><tr><td>1</td><td>Computer Science</td><td>Programming in C# </td></tr><tr><td>2</td><td>Networking</td><td>Connecting computers though networks</td></tr><tr><td>3</td><td>English</td><td>Learning the rules of the English Language</td></tr></table>^ ^ What Happens if we try to run this: ^ DELETE tbCOURSE WHERE CourseID=1^ ^ We get a constraint error because CourseID 1 is being used in a table outside of tbCourse! We CANNOT Remove it^ ^ We CAN Delete CourseID=2 in tbCourse, because there are no rows^ in tbSession referencing that one', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '3-2-21',   -- varchar(50)
@@ -447,13 +447,47 @@ EXEC dbo.spSlides @slideID = '3-2-37',   -- varchar(50)
                   @slideinfo = 'Another way is to make a SELECT after the first set of INSERTS:^ ^ CREATE TABLE tbPerson^ (^ PersonID INT IDENTITY(1,1) PRIMARY KEY,^ Name VARCHAR(50)^ )^ INSERT INTO tbPerson(Name)VALUES (''Scott'')^ INSERT INTO tbPerson(Name)VALUES (''Jeff'')^ ^ Select * FROM tbPerson^ ^ Now you can see whatID''s were generated on the screen. Then^ we can continue to write our SQ  with the IDs in front of  us!', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
+--MODULE 3
 
+EXEC dbo.spSlides @slideID = '3-3-1',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = 'Normalization is the process of efficiently organizing data in^ a database^ ^ There are two goals of nomralization  process:^ 1. Eliminating redundant data^ example storing the same data in more thean on tab;e^ ^ 2.Ensuring data dependencies make sense^ Example: Only storing related  data fields in a table^ ^ Normalization reduces the amount of space a data base consumes  and esnures that data is logically stored', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-3-2',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = 'We use Normalization to^ ^ Creating an accuracte model of buineness logic^ Allow for greater flexibility^  minimize redundancy in data^ Reduce NULL values^ Reduce physical side of database^ improve performance of database', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-3-3',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = 'First Normal Form (1NF)^ "TheKey"^ Second Normal Form (2NF)^ "The Whole Key"^ Third Normal Form (3NF)^ "Nothing  but the Key', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-3-4',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = '3  Basic Rules 1NF:^ ^ 1.A primary key must exist in each tale^ 2.Tables should not contain repeating columns^ Example: Author1, Author2, Author3,...^3.Data must be atomic^ Example: instead of a FullName column, you should^ have seperate columns for FirstName/LastName ^ ^ In other words, each cell in a table must contain only one^ peice of information, and there can be no duplicte rows', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-3-5',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = '2 Ruls to 2NF: 1. All tables must confrom to 1NF^ 2. All non key- columnds must be related to the entire primary^ key^ If you are using two or more primary key columns as a^ single primary key, it is called a composite key^ The rules for 2NF suggests that the entire set of priimary^ keys should relate to each column', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-3-6',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = 'Example: You have a table with 4 columns( CourseID and^ SessionID together make up the Composite Key)^ Since Course Name only depends on CourseID, we need to make a new table containing just CourseName & CourseID^ ^ CourseID will now be a <b>Primary Key</b> in it''s own table and a^  <b>foreign key</b> in the original table^ ^  ', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-3-7',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = '3NF is our goal, 2 RULES^ ^ ^ 1.All tables in 2NF^ ^ ^ 2. All non-key values must  be related to only the primary^ key, not to any  other non-key values', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-3-8',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = 'An INNER JOIN is the default join operation used in SQL^ This JOIN combines  two tables based ON a common column^ If the common column values match on BOTH tables, a data row^ will return^ Example JOIN tbEmployee with tbStudent based on name^ ^ tbEmployee			tbStudent		Result of INNER JOIN ON name^<table><tr><td><table><tr><td>eID</td><td>Name</td></tr><tr><td>1</td><td>Scott</td></tr><tr><td>2</td><td>Matt</td></tr><tr><td>3</td><td>Len</td></tr><tr><td>4</td><td>Rob</td></tr></table></td><td><table><tr><td>sID</td><td>Name</td></tr><tr><td>1</td><td>Alan</td></tr><tr><td>2</td><td>James</td></tr><tr><td>3</td><td>Matt</td></tr><tr><td>4</td><td>George</td></tr></table></td><td>	<table><tr><td>eID</td><td>Name</td><td>sID</td><td>Name</tr><tr><td>2</td><td>Matt</td><td>3</td><td>Matt</td></tr></table></td></tr></table>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
 
 
