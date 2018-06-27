@@ -407,13 +407,45 @@ EXEC dbo.spSlides @slideID = '3-2-29',   -- varchar(50)
                   @slideinfo = 'SELECT * FROM tbStudent WHERE Name =''Chris Cringle'' AND GradeYear= 12^ ^ <table><tr><td>StudentID</td><td>Name</td><td>Address</td><td>Grade Year</td><td>Birthday</td></tr><tr><tr><td>4</td><td>Chris Cringle</td><td>777  Crateor Cres</td><td>12</td><td>1/1/1993</td></tr></table> ^ We can see that only BOTH conditions being true have^ shown up, whihc resulted in only 1 row', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-30',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'Select *^ FROM tbStudent^ WHERE Birthday BETWEEN ''1980-1-1'' AND ''2000-1-1''^ ^<table><tr><td>StudentID</td><td>Name</td><td>Address</td><td>Grade Year</td><td>Birthday</td></tr><tr><td>2</td><td>Becky Bayes</td><td>444 Balloon Bay</td><td>11</td><td>1/1/1998</td></tr><tr><td>3</td><td>Dwayne Derkson</td><td>222 Daring Dr</td><td>12</td><td>1/1/1989</td></tr><tr><td>4</td><td>Chris Cringle</td><td>777  Crateor Cres</td><td>12</td><td>1/1/1993</td></tr></table>^ ^ There are a lot of neat DATE condtions, but this one is quite useful to^ remember', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-31',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'SELECT * FROM tbStudent^ WHERE Address LIKE ''444%''^ ^ <table><tr><td>StudentID</td><td>Name</td><td>Address</td><td>Grade Year</td><td>Birthday</td></tr><tr><td>2</td><td>Becky Bayes</td><td>444 Balloon Bay</td><td>11</td><td>1/1/1998</td></tr><tr><td>3</td><td>Dwayne Derkson</td><td>222 Daring Dr</td><td>12</td><td>1/1/1989</td></tr><tr><td>4</td><td>Chris Cringle</td><td>777  Crateor Cres</td><td>12</td><td>1/1/1993</td></tr></table>^ The LIKE condition is extremely useful. In the above SQL we are^ sasying: "Find me all students whose address starts with 444"^ ^ The percent symbole %, is used as a wildcard character meaning^ "anything else"^ ^ If we wanted to ask for students with 444 anywhere in their address we^ would have said: WHERE Address LIKE ''%444%'' ', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-32',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'The Previous examples of WHERE clause conditions wll help^ when trying to find specific information in a database later^ ^ Note that you can use ALL the same conditions when making an UPDATE or DELETE^ ^ So you want to UPDATE/DELETE all the students found by a^ complex SELECT, just copy over the WHERE clause conditions^ and paste them as your where clause condtions for^ UPDATE/DELETE^ ^ EXAMPLE:^ DELETE tbStudent^ Where Name= ''Chris Cringle'' and GradeYear=12', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-33',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'In your SQL Query windows, we can write notes to ourselves using^ a dash or hypen character twice like this: --^ ^ Example: ^ ^ --This query will delete all the Chris Cringle''s in Grade 12:^ Delete tbStudent^ WHERE Name = ''Chringle'' AND GradeYear= 12', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-34',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'Note,when you are making set of SQL from scratch you will^ eventually need to know IDENTITY was created for a^ specific row^ ^ This is vital for FOREIGN KEY REFEREMCES!^ ^ Lets do a quick examples to see how you will overcome this issue', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-35',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'USE MASTER^ GO^ DROP DATABSE dbTest^ GO^ CREATE DATABASE dbTest^ GO^ USE dbTEST6 GO ^ ^ CREATE TABLE tbPerson^ (^  PersonID INT IDENITITY(1,1) PRIMARY KEY,^ Name VARCHAR(50)^ )^ ^ INSERT INTO tbPerson(Name)VALUES (''SCOTT'')^ INSERT INTO tbPerson(Name) VALUES (''Jeff'')^ ^ --CONTINUED ON NEXT SLIDE ', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-36',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = '--CONTINUED FROM LAST SLIDE^ ^ CREATE TABLE tbPET^ (^ PetID INT IDENTITY(1,1) PRIMARY KEY,^ Name VARCHAR(20),^ PersonID INT FOREIGN KEY REFERENCES tbPErson(PersonID)^ )^ ^ INSERT INTO tbPet(Name)VALUES(''Muddy'',2)^ INSERT INTO tbPet(Name) VALUES (''Patches'',1)^ If I want ''Muddy'' to be ''Scott''s per, how do i know what Ids to use???^ ^ The answer can  be found in a few different ways... One way is to just^ COUNT the INSERTS, since the IDENTITY(1,1) implies  that the first^ INSERT produces  ID 1, the second is 2 and so forth', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-37',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'Another way is to make a SELECT after the first set of INSERTS:^ ^ CREATE TABLE tbPerson^ (^ PersonID INT IDENTITY(1,1) PRIMARY KEY,^ Name VARCHAR(50)^ )^ INSERT INTO tbPerson(Name)VALUES (''Scott'')^ INSERT INTO tbPerson(Name)VALUES (''Jeff'')^ ^ Select * FROM tbPerson^ ^ Now you can see whatID''s were generated on the screen. Then^ we can continue to write our SQ  with the IDs in front of  us!', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
 
 
