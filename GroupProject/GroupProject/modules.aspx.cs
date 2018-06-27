@@ -22,27 +22,40 @@ namespace GroupProject.user
         private void loadModules()
         {
             DataSet module = Crud.ReadTable("spGetModule");
+            HtmlTable tbMod = new HtmlTable();
+            dvModuleList.Controls.Add(tbMod);
 
             foreach(DataRow row in module.Tables[0].Rows)
             {
+                HtmlTableRow trMod = new HtmlTableRow();
+                HtmlTableCell tcMod = new HtmlTableCell();
                 Panel pnlModule = new Panel();
                 pnlModule.CssClass = "dropdown";
-                Label lblModule = new Label();
-                lblModule.Text = row["moduleID"].ToString();
-                pnlModule.Controls.Add(lblModule);
-                dvModuleList.Controls.Add(pnlModule);
+                HyperLink hlModule = new HyperLink();
+                hlModule.Text = row["moduleID"].ToString();
+                hlModule.NavigateUrl = "module_summary.aspx?Module=" + hlModule.Text;
+                hlModule.Target = "slide";
+                pnlModule.Controls.Add(hlModule);
+                tcMod.Controls.Add(pnlModule);
+                trMod.Controls.Add(tcMod);
+                tbMod.Controls.Add(trMod);
                 Panel pnlLesson = new Panel();
-                DataSet Lessons = Crud.ReadTable("spGetLessons", lblModule.Text);
+                HtmlTable tbLess = new HtmlTable();
+                pnlLesson.Controls.Add(tbLess);
+                pnlModule.Controls.Add(pnlLesson);
+                DataSet Lessons = Crud.ReadTable("spGetLessons", hlModule.Text);
                 foreach(DataRow lessRow in Lessons.Tables[0].Rows)
                 {
-                    
+                    HtmlTableRow trLess = new HtmlTableRow();
+                    HtmlTableCell tcLess = new HtmlTableCell();
                     pnlLesson.CssClass = "dropdown-content";
                     HyperLink hlLesson = new HyperLink();
                     hlLesson.NavigateUrl = "SlideshowTemplate.aspx?Slide=" + lessRow["lessonid"].ToString();
                     hlLesson.Text = "Lesson " + lessRow["lessonid"].ToString();
                     hlLesson.Target = "slide";
-                    pnlLesson.Controls.Add(hlLesson);
-                    pnlModule.Controls.Add(pnlLesson);
+                    tcLess.Controls.Add(hlLesson);
+                    trLess.Controls.Add(tcLess);
+                    tbLess.Controls.Add(trLess);
                 }
             }
         }
