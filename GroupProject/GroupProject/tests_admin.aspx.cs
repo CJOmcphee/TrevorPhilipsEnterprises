@@ -13,8 +13,33 @@ namespace GroupProject.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            gvTests.DataSource=  Crud.ReadTable("spTest");
+            LoadView();
+        }
+
+        protected void btnAddTest_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void LoadView()
+        {
+            gvTests.DataSource = Crud.ReadTable("spTest");
             gvTests.DataBind();
+        }
+        protected void gvTests_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            switch(e.CommandName)
+            {
+                case "Up":
+                    pnlTestsList.Visible = false;
+                    gvQuestions.DataSource = Crud.GetTestQuestions(gvTests.SelectedDataKey["testID"].ToString());
+                    gvQuestions.DataBind();
+                    pnlQuestion.Visible = true;
+                    break;
+                case "Del":
+                    Crud.DeleteData("spTest", gvTests.SelectedDataKey["testID"].ToString());
+                    LoadView();
+                    break;
+            }
         }
     }
 }
