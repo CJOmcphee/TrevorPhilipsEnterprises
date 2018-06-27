@@ -72,6 +72,7 @@
     <Content Include="images\jswide.png" />
     <Content Include="index_admin.aspx" />
     <Content Include="Mike.sql" />
+    <Content Include="module_summary.aspx" />
     <Content Include="SlideshowTemplate.aspx" />
     <Content Include="tests_admin.aspx" />
     <Content Include="users_admin.aspx" />
@@ -225,6 +226,13 @@
     </Compile>
     <Compile Include="index_admin.aspx.designer.cs">
       <DependentUpon>index_admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="module_summary.aspx.cs">
+      <DependentUpon>module_summary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="module_summary.aspx.designer.cs">
+      <DependentUpon>module_summary.aspx</DependentUpon>
     </Compile>
     <Compile Include="SlideshowTemplate.aspx.cs">
       <DependentUpon>SlideshowTemplate.aspx</DependentUpon>

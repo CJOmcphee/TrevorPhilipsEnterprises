@@ -201,7 +201,7 @@ EXEC dbo.spSlides @slideID = '3-1-19',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '3-1-20',   -- varchar(50)
                   @lessonid = '3-1',  -- varchar(50)
-                  @slideinfo = 'Here is tbStudent now ^ <table><tr><td>StudentID</td><td>Name</td><td>Address</td><td>Grade Year</td><td>Birthday</td><tr><td>1</td><td>Steve Smith</td><td>555 Stone ST</td><td>11</td><td>1/1/1970</td></tr><tr><td>2</td><td>Becky Bayes</td><td>444 Balloon Bay</td><td>11</td><td>1/1/1998</td></tr><tr><td>3</td><td>Dwayne Derkson</td><td>222 Daring Dr</td><td>12</td><td>1/1/1989</td></tr><tr><td>4</td><td>Chris Cringle</td><td>777  Crateor Cres</td><td>12</td><td>1/1/1993</td></tr></table>', -- varchar(1000)
+                  @slideinfo = 'Here is tbStudent now ^ <table><tr><td>StudentID</td><td>Name</td><td>Address</td><td>Grade Year</td><td>Birthday</td></tr><tr><td>1</td><td>Steve Smith</td><td>555 Stone ST</td><td>11</td><td>1/1/1970</td></tr><tr><td>2</td><td>Becky Bayes</td><td>444 Balloon Bay</td><td>11</td><td>1/1/1998</td></tr><tr><td>3</td><td>Dwayne Derkson</td><td>222 Daring Dr</td><td>12</td><td>1/1/1989</td></tr><tr><td>4</td><td>Chris Cringle</td><td>777  Crateor Cres</td><td>12</td><td>1/1/1993</td></tr></table>', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '3-1-21',   -- varchar(50)
@@ -329,29 +329,123 @@ EXEC dbo.spSlides @slideID = '3-2-14',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '3-2-15',   -- varchar(50)
                   @lessonid = '3-2',  -- varchar(50)
-                  @slideinfo = 'Example INSERTS: ^ ^ INSERT INTO tbHobbit(Name, GradeLevel, Birthday)^ VALUES(  ', -- varchar(1000)
+                  @slideinfo = 'Example INSERTS: ^ ^ INSERT INTO tbHobbit(Name, GradeLevel, Birthday)^ VALUES(''Scott Wacal'',12,''1981-01-01'')^ ^ We can choose to only add some columns, and we can rearrange^ the order, bbut we just have to be consistent...^ ^ INSERT INTO tbHobbit(Name)^ VALUES (''Scott Wachal'')^ ^ Note that without  giving a value for GradeLevel, the value in the row^ will be a NULL a specual value indicating" no value given"', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-16',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'Note that INT values do not require single quotes around the^ values, but VARCHARS do!^ ^ INSERT INTO tbStudent (GradeLevel,Name)^ VALUES (12, ''Scott Wachal'')^ ^ Actually in SQL you CAN put single quotes around your INTs if^ you want to, you just DO NOT HAVE to^ INSERT INTO tbStudent (GradeLevel,Name)^ VALUES(''12'',''Scott Wachal'')', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-17',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'To Delete a data row in table:^ DELETE <TableName> WHERE <COLUMN = VALUE>^ ^ Whatever column and value you use, will be matched with every^ row in that table, all rows with matches will be removed.^ ^ IMPORTANT NOTE: You should, where possible use primary^ keys as your determining condition clause when deleting and^ individual row', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-18',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = '<table><tr><td>StudentID</td><td>Name</td><td>Address</td><td>Grade Year</td><td>Birthday</td></tr><tr><td>1</td><td>Steve Smith</td><td>555 Stone ST</td><td>11</td><td>1/1/1970</td></tr><tr><td>2</td><td>Becky Bayes</td><td>444 Balloon Bay</td><td>11</td><td>1/1/1998</td></tr><tr><td>3</td><td>Dwayne Derkson</td><td>222 Daring Dr</td><td>12</td><td>1/1/1989</td></tr><tr><td>4</td><td>Chris Cringle</td><td>777  Crateor Cres</td><td>12</td><td>1/1/1993</td></tr></table>^ ^ To delete all students with a studentID of 3:^ DELETE tbStudent WHERE studentID=3^ ^ To delete all students with the name Steve Smith:^ DELETE tbStudent WHERE Name = ''Steve Smith''^ ^ To delete all students with the birthday of Jan 1st 1993:^ DELETE tbStudent WHERE Birhtday =''1-1-1993''', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-19',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = '<Table><tr><td>SessionID</td><td>CourseID</td><td>Grade Year</td><td>Start Date</td><td>End Date</td></tr><tr><td>1</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>2</td><td>3</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr>^ <table><tr><td>CourseID</td><td>Name</td><td>Description</td></tr><tr><td>1</td><td>Computer Science</td><td>Programming in C# </td></tr><tr><td>2</td><td>Networking</td><td>Connecting computers though networks</td></tr><tr><td>3</td><td>English</td><td>Learning the rules of the English Language</td></tr></table>^ ^ Above is the Session and Course tables from previous slides^ ^ We can deduce that in TB session,  this is what CourseID looks like^ CourseID INT FOREIGN KEY REFERENCES tbCourse(CourseID)^ ^ What Happens if we try to run this: ^ DELETE tbCOURSE WHERE CourseID=1', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-20',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = '<Table><tr><td>SessionID</td><td>CourseID</td><td>Grade Year</td><td>Start Date</td><td>End Date</td></tr><tr><td>1</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>2</td><td>3</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr>^ <table><tr><td>CourseID</td><td>Name</td><td>Description</td></tr><tr><td>1</td><td>Computer Science</td><td>Programming in C# </td></tr><tr><td>2</td><td>Networking</td><td>Connecting computers though networks</td></tr><tr><td>3</td><td>English</td><td>Learning the rules of the English Language</td></tr></table>^ ^ What Happens if we try to run this: ^ DELETE tbCOURSE WHERE CourseID=1^ ^ We get a constraint error because CourseID 1 is being used in a table outside of tbCourse! We CANNOT Remove it^ ^ We CAN Delete CourseID=2 in tbCourse, because there are no rows^ in tbSession referencing that one', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-21',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'To Update column values within rows in a table ^ UPDATE <TableName>^ SET <ColumnName1>=<value>,^     <ColumnName2>=<value>^ Where <CONDITION = TRUE>^ ^ Note that you can update 1 or more rows at a time and you can also update one or more column value at a time', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-21',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = '<table><tr><td>StudentID</td><td>Name</td><td>Address</td><td>Grade Year</td><td>Birthday</td></tr><tr><td>1</td><td>Steve Smith</td><td>555 Stone ST</td><td>11</td><td>1/1/1970</td></tr><tr><td>2</td><td>Becky Bayes</td><td>444 Balloon Bay</td><td>11</td><td>1/1/1998</td></tr><tr><td>3</td><td>Dwayne Derkson</td><td>222 Daring Dr</td><td>12</td><td>1/1/1989</td></tr><tr><td>4</td><td>Chris Cringle</td><td>777  Crateor Cres</td><td>12</td><td>1/1/1993</td></tr></table>^ ^ To Update all students with a studentID of 3 to have a new name^ Update tbStudent^ Set Name =''Scott Smith''^ WHERE studentID =3 ^ ^ To update all tusdnets with the birthday of Jan 1st 1993, to be in Grade 13^ and to have a new birthday in december:^ UPDATE tbStudent ^ SET GradeYear = 13, Birthday=''1-12-1993''^ WHERE Birthday= ''1-1-1993''', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-22',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'To Select Data from a table:^ SELECT <ColumnName>,<ColumnName2>, etc^ FROM <TableName> WHERE <CONDITION = TRUE>^ ^ The SELECT command is likely the most important and alos^ the most comples of the four CRUD operations that we will^ learn ^ ^ CRUD stands for: CREATE, REQUEST, UPDATE, DELETE^ ^ The result of SELECT is a table with rows and columns, but^ specified by the SQL', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-23',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'SELECT * FROM tbStudent^ ^ <table><tr><td>StudentID</td><td>Name</td><td>Address</td><td>Grade Year</td><td>Birthday</td></tr><tr><td>1</td><td>Steve Smith</td><td>555 Stone ST</td><td>11</td><td>1/1/1970</td></tr><tr><td>2</td><td>Becky Bayes</td><td>444 Balloon Bay</td><td>11</td><td>1/1/1998</td></tr><tr><td>3</td><td>Dwayne Derkson</td><td>222 Daring Dr</td><td>12</td><td>1/1/1989</td></tr><tr><td>4</td><td>Chris Cringle</td><td>777  Crateor Cres</td><td>12</td><td>1/1/1993</td></tr></table>^ ^ The above table shows ALL columns (that what the asterix does) and^ since there is no WHERE clause, it will return ALL rows, since there are no conditions to match ', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-24',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'SELECT StudentID, Name, Address^ FROM tbStudent^ ^ <table><tr><td>StudentID</td><td>Name</td><td>Address</td></tr><tr><td>1</td><td>Steve Smith</td><td>555 Stone ST</td></tr><tr><td>2</td><td>Becky Bayes</td><td>444 Balloon Bay</td><td>11</td></tr><tr><td>3</td><td>Dwayne Derkson</td><td>222 Daring Dr</td></tr><tr><td>4</td><td>Chris Cringle</td><td>777  Crateor Cres</td></tr></table> ', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-25',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'The above table shows the 3 columns specified and again, all rows^ since there is no WHERE clause condition^ ^ Note: the spacing of my SQL is irrelevent, you do not have to put a line^ break between the word Address and FROM, you could keep it on the^ same line, but for readability, I have seperated them', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-26',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'SELECT StudentID, Name, Address^ FROM tbStudent^ WHERE StudentID = 3^ ^ <table><tr><td>StudentID</td><td>Name</td><td>Address</td></tr><tr><td>3</td><td>Dwayne Derkson</td><td>222 Daring Dr</td></tr></table>^ ^ The above table shows the 3 columns specified and this time only the^ students matching the WHERE clause condition( the studnets with^ StudentID=3, which in this case can only be 1 student)', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-27',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'Select * FROM tbStudent WHERE GradeYear < 12^ <table><tr><td>StudentID</td><td>Name</td><td>Address</td><td>Grade Year</td><td>Birthday</td></tr><tr><td>1</td><td>Steve Smith</td><td>555 Stone ST</td><td>11</td><td>1/1/1970</td></tr><tr><td>2</td><td>Becky Bayes</td><td>444 Balloon Bay</td><td>11</td><td>1/1/1998</td></tr></table>^ ^ The above table shows all columns as well as all students with a^ Grade Year less than 12^ ^ You do not just have to use EQUALS in conditions, we can say:^ =,<,>, <=, >=, <>(This is NOT EQUALS in SQL)^ ^ There are more, but these are basicis! REMEBER THEM! ', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-28',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'SELECT * FROM tbStudent WHERE StudentID = 3 OR StudentID = 4^ <table><tr><td>StudentID</td><td>Name</td><td>Address</td><td>Grade Year</td><td>Birthday</td></tr><tr><td>1</td><td>Steve Smith</td><td>555 Stone ST</td><td>11</td><td>1/1/1970</td></tr><tr><td>2</td><td>Becky Bayes</td><td>444 Balloon Bay</td><td>11</td><td>1/1/1998</td></tr><tr><td>3</td><td>Dwayne Derkson</td><td>222 Daring Dr</td><td>12</td><td>1/1/1989</td></tr><tr><td>4</td><td>Chris Cringle</td><td>777  Crateor Cres</td><td>12</td><td>1/1/1993</td></tr></table>^ I have added an addition here using an OR. Now studnets who have^ either StudentID eq ualing 3 or 4 will show up!', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-29',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'SELECT * FROM tbStudent WHERE Name =''Chris Cringle'' AND GradeYear= 12^ ^ <table><tr><td>StudentID</td><td>Name</td><td>Address</td><td>Grade Year</td><td>Birthday</td></tr><tr><tr><td>4</td><td>Chris Cringle</td><td>777  Crateor Cres</td><td>12</td><td>1/1/1993</td></tr></table> ^ We can see that only BOTH conditions being true have^ shown up, whihc resulted in only 1 row', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-30',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'Select *^ FROM tbStudent^ WHERE Birthday BETWEEN ''1980-1-1'' AND ''2000-1-1''^ ^<table><tr><td>StudentID</td><td>Name</td><td>Address</td><td>Grade Year</td><td>Birthday</td></tr><tr><td>2</td><td>Becky Bayes</td><td>444 Balloon Bay</td><td>11</td><td>1/1/1998</td></tr><tr><td>3</td><td>Dwayne Derkson</td><td>222 Daring Dr</td><td>12</td><td>1/1/1989</td></tr><tr><td>4</td><td>Chris Cringle</td><td>777  Crateor Cres</td><td>12</td><td>1/1/1993</td></tr></table>^ ^ There are a lot of neat DATE condtions, but this one is quite useful to^ remember', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-31',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'SELECT * FROM tbStudent^ WHERE Address LIKE ''444%''^ ^ <table><tr><td>StudentID</td><td>Name</td><td>Address</td><td>Grade Year</td><td>Birthday</td></tr><tr><td>2</td><td>Becky Bayes</td><td>444 Balloon Bay</td><td>11</td><td>1/1/1998</td></tr><tr><td>3</td><td>Dwayne Derkson</td><td>222 Daring Dr</td><td>12</td><td>1/1/1989</td></tr><tr><td>4</td><td>Chris Cringle</td><td>777  Crateor Cres</td><td>12</td><td>1/1/1993</td></tr></table>^ The LIKE condition is extremely useful. In the above SQL we are^ sasying: "Find me all students whose address starts with 444"^ ^ The percent symbole %, is used as a wildcard character meaning^ "anything else"^ ^ If we wanted to ask for students with 444 anywhere in their address we^ would have said: WHERE Address LIKE ''%444%'' ', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-32',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'The Previous examples of WHERE clause conditions wll help^ when trying to find specific information in a database later^ ^ Note that you can use ALL the same conditions when making an UPDATE or DELETE^ ^ So you want to UPDATE/DELETE all the students found by a^ complex SELECT, just copy over the WHERE clause conditions^ and paste them as your where clause condtions for^ UPDATE/DELETE^ ^ EXAMPLE:^ DELETE tbStudent^ Where Name= ''Chris Cringle'' and GradeYear=12', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-33',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'In your SQL Query windows, we can write notes to ourselves using^ a dash or hypen character twice like this: --^ ^ Example: ^ ^ --This query will delete all the Chris Cringle''s in Grade 12:^ Delete tbStudent^ WHERE Name = ''Chringle'' AND GradeYear= 12', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-34',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'Note,when you are making set of SQL from scratch you will^ eventually need to know IDENTITY was created for a^ specific row^ ^ This is vital for FOREIGN KEY REFEREMCES!^ ^ Lets do a quick examples to see how you will overcome this issue', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-2-35',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'USE MASTER^ GO^ DROP DATABSE dbTest^ GO^ CREATE DATABASE dbTest^ GO^ USE dbTEST6 GO ^ ^ CREATE TABLE tbPerson^ (^  PersonID INT IDENITITY(1,1) PRIMARY KEY,^ Name VARCHAR(50)^ )^ ^ INSERT INTO tbPerson(Name)VALUES (''SCOTT'')^ INSERT INTO tbPerson(Name) VALUES (''Jeff'')^ ^ --CONTINUED ON NEXT SLIDE ', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-36',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = '--CONTINUED FROM LAST SLIDE^ ^ CREATE TABLE tbPET^ (^ PetID INT IDENTITY(1,1) PRIMARY KEY,^ Name VARCHAR(20),^ PersonID INT FOREIGN KEY REFERENCES tbPErson(PersonID)^ )^ ^ INSERT INTO tbPet(Name)VALUES(''Muddy'',2)^ INSERT INTO tbPet(Name) VALUES (''Patches'',1)^ If I want ''Muddy'' to be ''Scott''s per, how do i know what Ids to use???^ ^ The answer can  be found in a few different ways... One way is to just^ COUNT the INSERTS, since the IDENTITY(1,1) implies  that the first^ INSERT produces  ID 1, the second is 2 and so forth', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-2-37',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = 'Another way is to make a SELECT after the first set of INSERTS:^ ^ CREATE TABLE tbPerson^ (^ PersonID INT IDENTITY(1,1) PRIMARY KEY,^ Name VARCHAR(50)^ )^ INSERT INTO tbPerson(Name)VALUES (''Scott'')^ INSERT INTO tbPerson(Name)VALUES (''Jeff'')^ ^ Select * FROM tbPerson^ ^ Now you can see whatID''s were generated on the screen. Then^ we can continue to write our SQ  with the IDs in front of  us!', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
 
 

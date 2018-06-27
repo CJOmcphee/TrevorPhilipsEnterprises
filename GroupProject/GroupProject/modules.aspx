@@ -14,7 +14,7 @@
                         <header>
                             <h2>Modules</h2>
                         </header>
-                        <div id="dvModuleList" runat="server"></div>
+                        <div id="dvModuleList" class="style1" runat="server"></div>
                     </section>
                 </div>
 
