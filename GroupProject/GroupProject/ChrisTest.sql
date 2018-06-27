@@ -447,9 +447,27 @@ EXEC dbo.spSlides @slideID = '3-2-37',   -- varchar(50)
                   @slideinfo = 'Another way is to make a SELECT after the first set of INSERTS:^ ^ CREATE TABLE tbPerson^ (^ PersonID INT IDENTITY(1,1) PRIMARY KEY,^ Name VARCHAR(50)^ )^ INSERT INTO tbPerson(Name)VALUES (''Scott'')^ INSERT INTO tbPerson(Name)VALUES (''Jeff'')^ ^ Select * FROM tbPerson^ ^ Now you can see whatID''s were generated on the screen. Then^ we can continue to write our SQ  with the IDs in front of  us!', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
+--MODULE 3
 
+EXEC dbo.spSlides @slideID = '3-3-1',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = 'Normalization is the process of efficiently organizing data in^ a database^ ^ There are two goals of nomralization  process:^ 1. Eliminating redundant data^ example storing the same data in more thean on tab;e^ ^ 2.Ensuring data dependencies make sense^ Example: Only storing related  data fields in a table^ ^ Normalization reduces the amount of space a data base consumes  and esnures that data is logically stored', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-3-2',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = 'We use Normalization to^ ^ Creating an accuracte model of buineness logic^ Allow for greater flexibility^  minimize redundancy in data^ Reduce NULL values^ Reduce physical side of database^ improve performance of database', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-3-3',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = 'First Normal Form (1NF)^ "TheKey"^ Second Normal Form (2NF)^ "The Whole Key"^ Third Normal Form (3NF)^ "Nothing  but the Key', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-3-4',   -- varchar(50)
+                  @lessonid = '3-2',  -- varchar(50)
+                  @slideinfo = '3  Basic Rules 1NF:^ ^ 1.A primary key must exist in each tale^ 2.Tables should not contain repeating columns^ Example: Author1, Author2, Author3,...^3.Data must be atomic^ Example: instead of a FullName column, you should^ have seperate columns for FirstName/LastName ^ ^ In other words, each cell in a table must contain only one^ peice of information, and there can be no duplicte rows', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
 
 
