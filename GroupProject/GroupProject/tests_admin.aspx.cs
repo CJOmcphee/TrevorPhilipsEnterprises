@@ -22,6 +22,7 @@ namespace GroupProject.admin
         }
         public void LoadView()
         {
+            pnlTestsList.Visible = true;
             gvTests.DataSource = Crud.ReadTable("spTest");
             gvTests.DataBind();
         }
@@ -38,6 +39,19 @@ namespace GroupProject.admin
                 case "Del":
                     Crud.DeleteData("spTest", gvTests.SelectedDataKey["testID"].ToString());
                     LoadView();
+                    break;
+            }
+        }
+
+        protected void gvQuestions_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            switch (e.CommandName)
+            {
+                case "Up":
+
+                    break;
+                case "Del":
+
                     break;
             }
         }

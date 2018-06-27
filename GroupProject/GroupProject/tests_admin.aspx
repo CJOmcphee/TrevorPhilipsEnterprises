@@ -22,7 +22,7 @@
          </div>
           
             <asp:Panel ID="pnlQuestion" Visible="false" runat="server">
-                 <asp:GridView ID="gvQuestions" PageSize="10" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="question" runat="server" >
+                 <asp:GridView ID="gvQuestions" PageSize="10" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="question" runat="server" OnRowCommand="gvQuestions_RowCommand" >
                       <Columns>
                         <asp:ButtonField HeaderText="Delete" ButtonType="Button" CommandName="Del" Text="Delete" />
                         <asp:ButtonField HeaderText="Update" ButtonType="Button" CommandName="Up" Text="Update" />
@@ -31,14 +31,6 @@
                         <asp:BoundField HeaderText="# Wrong Answers" DataField="wrongAnswers" />
                       </Columns>
                 </asp:GridView>
-                <table>
-                    <tr>
-                        <td>
-                            <asp:Button ID="btnSaveQuestion" runat="server" CssClass="button" Text="Save" />   
-                            <asp:Button ID="btnCancelQuestion" runat="server" CssClass="button" Text="Cancel" />  
-                        </td>
-                    </tr>
-                </table>
             </asp:Panel>
    </div>
  

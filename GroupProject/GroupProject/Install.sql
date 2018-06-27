@@ -319,14 +319,14 @@ go
 create procedure spTest
 (
 @crud varchar(1),
-@TestID varchar(50)
+@TestID varchar(50) = null
 )
 as begin
 	if @crud = 'r'
 	begin
-		select * from tbTest where @TestID = isnull(@TestID,testID)
+		select * from tbTest where testID = isnull(@TestID,testID)
 	end
-	else if @crud ='d'
+	if @crud ='d'
 	begin
 		delete from tbQuestions where tID = @TestID
 		delete from tbStudentTest where tID = @TestID
@@ -340,7 +340,8 @@ exec spSlides @crud='c', @slideID='1-1-3', @lessonid='1-1', @slideinfo='TJ ^ Thi
 exec spSlides @crud='c', @slideID='1-1-4', @lessonid='1-1', @slideinfo='Hardware: Equipment or physical device associated with a computer ^ SoftWare: For computers to be useful, it needs more  then ^ equipment; a computer needs to be given instructions ^ We refer to a set of instructions as software or a program'
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
-exec spGetTestQuestions @testID='module4'
+exec spGetTestQuestions @testID='module2'
+exec spTest @crud = 'r'
 
 select * from tbLesson
 
