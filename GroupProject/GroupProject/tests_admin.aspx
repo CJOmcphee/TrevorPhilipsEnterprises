@@ -13,7 +13,7 @@
                 <asp:GridView ID="gvTests" PageSize="5" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="testID" runat="server" OnRowCommand="gvTests_RowCommand" OnPageIndexChanging="gvTests_PageIndexChanging" >
                       <Columns>
                         <asp:ButtonField HeaderText="Delete" ButtonType="Button" CommandName="Del" Text="Delete" />
-                        <asp:ButtonField HeaderText="Update" ButtonType="Button" CommandName="Up" Text="Update" />
+                        <asp:ButtonField HeaderText="Update" ButtonType="Button" CommandName="Edi" Text="Edit" />
                         <asp:BoundField HeaderText="Module" DataField="testID" />
                       </Columns>
                 </asp:GridView>
@@ -25,7 +25,20 @@
                  <asp:GridView ID="gvQuestions" PageSize="10" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="question" runat="server" OnRowCommand="gvQuestions_RowCommand" OnPageIndexChanging="gvQuestions_PageIndexChanging" >
                       <Columns>
                         <asp:ButtonField HeaderText="Delete" ButtonType="Button" CommandName="Del" Text="Delete" />
-                        <asp:ButtonField HeaderText="Update" ButtonType="Button" CommandName="Edit" Text="Edit" />
+                        <asp:ButtonField HeaderText="Update" ButtonType="Button" CommandName="Edi" Text="Edit" />
+                        <asp:BoundField HeaderText="Question" DataField="question" />
+                        <asp:BoundField HeaderText="Answer" DataField="answers" />
+                        <asp:BoundField HeaderText="# Wrong Answers" DataField="wrongAnswers" />
+                      </Columns>
+                </asp:GridView>
+            </asp:Panel>
+
+
+        <asp:Panel ID="pnlEditQuestion" Visible="false" runat="server">
+                 <asp:GridView ID="gvWrongAnswers" PageSize="10" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="wrongAnswers" runat="server" >
+                      <Columns>
+                        <asp:ButtonField HeaderText="Delete" ButtonType="Button" CommandName="Del" Text="Delete" />
+                        <asp:ButtonField HeaderText="Update" ButtonType="Button" CommandName="Edi" Text="Edit" />
                         <asp:BoundField HeaderText="Question" DataField="question" />
                         <asp:BoundField HeaderText="Answer" DataField="answers" />
                         <asp:BoundField HeaderText="# Wrong Answers" DataField="wrongAnswers" />

@@ -31,7 +31,7 @@ namespace GroupProject.admin
             gvTests.SelectedIndex = Convert.ToInt32(e.CommandArgument);
             switch (e.CommandName)
             {
-                case "Up":
+                case "Edi":
                     pnlTestsList.Visible = false;
                     gvQuestions.DataSource = Crud.GetTestQuestions(gvTests.SelectedDataKey["testID"].ToString());
                     gvQuestions.DataBind();
@@ -49,7 +49,7 @@ namespace GroupProject.admin
             gvQuestions.SelectedIndex = Convert.ToInt32(e.CommandArgument);
             switch (e.CommandName)
             {
-                case "Up":
+                case "Edi":
 
                     break;
                 case "Del":

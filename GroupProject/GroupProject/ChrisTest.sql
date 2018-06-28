@@ -494,9 +494,25 @@ EXEC dbo.spSlides @slideID = '3-3-9',   -- varchar(50)
                   @slideinfo = 'Example: INNER JOIN two tables tbEmployee and tbStudent^ ^ SELECT * FROM tbEmployee^ JOIN tbStudent^ ON tbEmployee.Name=tbStudent.Name^ --You can swap the key word JOIN with INNER JOIN if you want^ ^ Exmaple 2: INNER JOIN two tables tbEmployee and tbStudent^ ^ SELECT  *^ From tbEmployee, tbSTUDENT^ WHERE Employee.Name=Student.Name^ Without the join', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-3-10',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = 'We can alos create psuedonames for our tables to save soace(if^ this isnt more confusing for you)^ ^ SELECT * FROM tbEmployee e^ JOIN tbStudent s^ ON e.Name= s.Name^ ^ Note that we didn;t have to rewrite tbStudent over again, just the^ letter s(it is psudo names), this woul have also applied to column names^ and WHERE clauses^ ^ SELECT s.Name FROM tbEmployee e^ JOIN tbStudent s^ ON e.Name = s.Name^ WHERE e.Name = ''Matt''', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-3-11',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = 'What if we wanted to join three tables? How does that work? The^ answer i: It is the same^ --This select would get all the tracher for each session:^ SELECT t.Name, c.Name *^ FROM tbTeacher t^ Join tbCourse c ON t.CourseID=c.CourseID^ Join tbSession s ON c.CourseID=s.CourseID ', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-3-12',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = 'On the next slide we will see example data for: tbCourse, tbTeacher,^ tbSession ^ ^ ^ The last(4th) table will be the result of the table below SQL:^ ^ SELECT t.Name, c.Name, s.GradeYear, s.StartDate, s.EndDate^ FROM tbTeacher t ^ JOIN tbCourse c ON t.CourseID = c.CourseID^ Join tbSession s ON c.CourseID = s.CourseID', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-3-13',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = '<table><tr><td>CourseID</td><td>Name</td><td>Description</td></tr><tr><td>1</td><td>Computer Science</td><td>Programming in C#</td></tr><tr><td>2</td><td>Networking</td><td>Connecting computers through networks</td></tr></table>  ^ <table><tr><td>TeacherID</td><td>Name</td><td>Address</td><td>Birthday</td><td>CourseID</td></tr><tr><td>1</td><td>Scott Wachal</td><td>555 Some place</td><td>1/1/1981</td><td>1</td></tr><tr><td>2</td><td>Len Ganetsky</td><td>333 Education Way</td><td>1/1/1970</td><td>2</td></tr></table>  ^ <table><tr><td>SessionID</td><td>CourseID</td><td>Grade Year</td><td>Start Date</td><td>End Date</td></tr><tr><td>1</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>2</td><td>2</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr></table> ^ <table><tr><td>Name</td><td>Name</td><td>Grade Year</td><td>Start Date</td><td>End Date</td></tr><tr><td>Scott Wachal</td><td>Computer Science</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>Len Ganetskey</td><td>Networking</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr></table>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
 
 
