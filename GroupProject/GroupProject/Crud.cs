@@ -76,7 +76,7 @@ namespace GroupProject
             }
             if(Procedure == "spWrongAnswer")
             {
-                mydal.AddParam("@question", id.ToString());
+                mydal.AddParam("@wrongAnswer", id.ToString());
             }
             if(Procedure == "spTest")
             {
