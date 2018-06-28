@@ -28,7 +28,8 @@ namespace GroupProject.admin
         }
         protected void gvTests_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            switch(e.CommandName)
+            gvTests.SelectedIndex = Convert.ToInt32(e.CommandArgument);
+            switch (e.CommandName)
             {
                 case "Up":
                     pnlTestsList.Visible = false;
@@ -45,6 +46,7 @@ namespace GroupProject.admin
 
         protected void gvQuestions_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            gvQuestions.SelectedIndex = Convert.ToInt32(e.CommandArgument);
             switch (e.CommandName)
             {
                 case "Up":
@@ -54,6 +56,18 @@ namespace GroupProject.admin
 
                     break;
             }
+        }
+
+        protected void gvTests_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvTests.PageIndex = e.NewPageIndex;
+            LoadView();
+        }
+
+        protected void gvQuestions_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvQuestions.PageIndex = e.NewPageIndex;
+            LoadView();
         }
     }
 }
