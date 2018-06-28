@@ -57,7 +57,7 @@ testID varchar(50) primary key,
 )
 go
 insert into tbTest (testID)values
-					('module1'),('module2'),('module3'),('module4'),('module5'),('module6'),('module7'),('module8'),('module9')
+					('Module 1'),('Module 2'),('Module 3'),('Module 4'),('Module 5'),('Module 6'),('Module 7'),('Module 8'),('Module 9')
 
 go
 create table tbStudentTest(
@@ -389,8 +389,7 @@ AS BEGIN
     IF @crud='u'
 		BEGIN
 			UPDATE dbo.tbModule
-				SET moduleID=@moduleID,
-					@moduleSum=@moduleSum
+				Set moduleSum=@moduleSum
 				WHERE moduleID=@moduleID
 		END
    IF @crud='d'
@@ -399,13 +398,6 @@ AS BEGIN
 		END
 END
 GO
-EXEC dbo.spModule @moduleID = 'module10', -- int
-                  @moduleSum = 'module10',  -- varchar(1000)
-                  @crud = 'c'        -- varchar(1)
-
-EXEC dbo.spModule @moduleID = NULL,  -- varchar(50)
-                  @moduleSum = NULL, -- varchar(1000)
-                  @crud = 'r'         -- varchar(1)
 					
 			    
 				

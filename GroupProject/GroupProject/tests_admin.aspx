@@ -5,7 +5,7 @@
  
     <div id="page">
        <div id="marketing" class="container">
-          <asp:Button ID="btnAddTest" runat="server" Text="Add Test" OnClick="btnAddTest_Click" />
+          
            
 
             <asp:Panel ID="pnlTestsList" runat="server">
@@ -17,7 +17,9 @@
                         <asp:BoundField HeaderText="Module" DataField="testID" />
                       </Columns>
                 </asp:GridView>
-              
+                <asp:Button ID="btnAddTest" runat="server" Text="Add Module" OnClick="btnAddTest_Click" />
+                Module Sum
+                <asp:TextBox ID="tbModuleSum" runat="server" Height="157px" Width="643px"></asp:TextBox>
             </asp:Panel>
          </div>
           
