@@ -14,8 +14,19 @@ namespace GroupProject
             if (!IsPostBack)
             {
                 string module = Request.QueryString["Module"];
-                hTitle.InnerText = module;
-                hSubTitle.InnerText = "Welcome to " + module;
+                loadSummary(module);
+            }
+        }
+
+        private void loadSummary(string module)
+        {
+            if (module == null)
+            {
+
+            }
+            else
+            {
+                
             }
         }
     }
