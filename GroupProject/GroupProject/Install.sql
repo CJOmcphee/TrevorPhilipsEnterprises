@@ -329,6 +329,11 @@ create procedure spTest
 @TestID varchar(50) = null
 )
 as begin
+	if @crud = 'c'
+		begin
+			insert into tbTest(testID) values
+			(@TestID)
+		end
 	if @crud = 'r'
 	begin
 		select * from tbTest where testID = isnull(@TestID,testID)
@@ -357,13 +362,6 @@ exec spSlides @crud='r', @lessonid ='1-1'
 SELECT * FROM dbo.tbQuestions
 GO
 
-CREATE PROCEDURE spGetModule (
-@crud varchar(1)
-)
-AS BEGIN
-	SELECT * FROM dbo.tbModule
-END
-GO
 CREATE PROCEDURE spGetLessons(
 @crud varchar(1),
 @moduleID VARCHAR(50)
