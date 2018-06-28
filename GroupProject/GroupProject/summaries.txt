@@ -1,0 +1,22 @@
+Module 1
+Intro to Programming Concepts
+The first module is an introduction to idea of programming.^
+In this module you may get understanding of generic concept when using the computer, logic and basic programming ideas, a bit of history and evolution of programming.^
+You will get understanding a basic syntax of C#, data types and variables, how to use operators(AND/OR/IF/CASE).^
+Learn to create “loops”. Be able to modularize a program.^
+
+Module 2
+C# & .NET Framework
+This module is an introduction to C# and .NET Framework.^
+During going through it you learn about Assembles(Libraries and Executables), difference between Objects and Classes.^
+You will learn how to create WebForm Applications, Form Controls, Events and Event Handlers.^
+Understand basics client/server interactions, basic HTML elements and basics of state management.^
+Get more deep understanding of Data Types, using operators, loops and modules.^
+
+Module 3
+Databases
+This module is an introduction to idea of databases.^
+Here will talk about generic concepts data storage, concepts of tables and columns^
+and how data is related to one another between tables.^
+You will get understanding of Structured Query Language (SQL), forms of normalization of a data, primary and foreign keys.^
+Learn SQL functions and how to get data from different tables (JOIN).^

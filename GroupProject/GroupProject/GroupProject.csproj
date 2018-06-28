@@ -73,6 +73,7 @@
     <Content Include="index_admin.aspx" />
     <Content Include="Mike.sql" />
     <Content Include="SlideshowTemplate.aspx" />
+    <Content Include="summaries.txt" />
     <Content Include="tests_admin.aspx" />
     <Content Include="users_admin.aspx" />
     <Content Include="bin\GroupProject.dll" />
