@@ -254,11 +254,11 @@ as begin
 			select wrongAnswers into #Allanswer from tbWrongAnswers where questions = @question 
 			insert into #Allanswer select answers from tbQuestions where question = @question
 			select * from #Allanswer Order by newID();
-			select * from tbWrongAnswers where questions = @question
+			select wrongAnswers from tbWrongAnswers where questions = @question
 		end
 	if @crud='d'
 		begin
-			delete from tbWrongAnswers where questions=@question
+			delete from tbWrongAnswers where wrongAnswers = @wrongAnswers
 		end
 end
 go
