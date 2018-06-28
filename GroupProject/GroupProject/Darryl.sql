@@ -179,3 +179,4 @@ EXEC dbo.spQuestions @questions = 'What does ExecuteScalar() do?', -- varchar(10
 					 EXEC dbo.spWrongAnswer @question = 'What does ExecuteScalar() do?',     -- varchar(500)
 					                        @wrongAnswers = 'Used to execute several queries', -- varchar(1000)
 					                        @crud = 'c'          -- varchar(1)
+
