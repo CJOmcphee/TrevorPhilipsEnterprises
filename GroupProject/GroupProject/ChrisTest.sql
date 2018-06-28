@@ -489,6 +489,10 @@ EXEC dbo.spSlides @slideID = '3-3-8',   -- varchar(50)
                   @slideinfo = 'An INNER JOIN is the default join operation used in SQL^ This JOIN combines  two tables based ON a common column^ If the common column values match on BOTH tables, a data row^ will return^ Example JOIN tbEmployee with tbStudent based on name^ ^ tbEmployee			tbStudent		Result of INNER JOIN ON name^<table><tr><td><table><tr><td>eID</td><td>Name</td></tr><tr><td>1</td><td>Scott</td></tr><tr><td>2</td><td>Matt</td></tr><tr><td>3</td><td>Len</td></tr><tr><td>4</td><td>Rob</td></tr></table></td><td><table><tr><td>sID</td><td>Name</td></tr><tr><td>1</td><td>Alan</td></tr><tr><td>2</td><td>James</td></tr><tr><td>3</td><td>Matt</td></tr><tr><td>4</td><td>George</td></tr></table></td><td>	<table><tr><td>eID</td><td>Name</td><td>sID</td><td>Name</tr><tr><td>2</td><td>Matt</td><td>3</td><td>Matt</td></tr></table></td></tr></table>', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-3-9',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = 'Example: INNER JOIN two tables tbEmployee and tbStudent^ ^ SELECT * FROM tbEmployee^ JOIN tbStudent^ ON tbEmployee.Name=tbStudent.Name^ --You can swap the key word JOIN with INNER JOIN if you want^ ^ Exmaple 2: INNER JOIN two tables tbEmployee and tbStudent^ ^ SELECT  *^ From tbEmployee, tbSTUDENT^ WHERE Employee.Name=Student.Name^ Without the join', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
 
 
