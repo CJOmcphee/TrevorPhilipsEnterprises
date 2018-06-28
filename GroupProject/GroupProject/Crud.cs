@@ -76,7 +76,7 @@ namespace GroupProject
             }
             if (Procedure == "spQuestions")
             {
-                mydal.AddParam("@questions", id.ToString());
+                mydal.AddParam("@QID", id.ToString());
             }
             if(Procedure == "spWrongAnswer")
             {
@@ -124,12 +124,13 @@ namespace GroupProject
             mydal.AddParam("@lessonID", lessonID);
             mydal.ExecuteProcedure("spExamples");
         }
-        public static void CreateUpdateQuestions(string crud, string question, string answer, string TestID)
+        public static void CreateUpdateQuestions(string crud, string question, string answer, string TestID, string QID)
         {
             mydal.AddParam("@crud", crud);
             mydal.AddParam("@quesions", question);
             mydal.AddParam("@answers", answer);
-            mydal.AddParam("tID", TestID);
+            mydal.AddParam("@tID", TestID);
+            mydal.AddParam("@QID", QID);
             mydal.ExecuteProcedure("spQuestions");
         }
         public static void CreateWrongAnswer(string crud, string question, string wronganswer)

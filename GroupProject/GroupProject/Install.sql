@@ -225,10 +225,9 @@ as begin
 	if @crud='u'
 		begin
 			update tbQuestions
-				set tID=@tID,
-					question=@questions,
+				set	question=@questions,
 					answers=@answers
-					where @QID=@QID
+					where QID=@QID
 		end
 	if @crud='d'
 		begin
