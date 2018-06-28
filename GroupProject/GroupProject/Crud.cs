@@ -57,6 +57,10 @@ namespace GroupProject
             {
                 mydal.AddParam("@TestID", id.ToString());
             }
+            if (Procedure == "spModule")
+            {
+                mydal.AddParam("moduleID", id.ToString());
+            }
             return mydal.ExecuteProcedure(Procedure);
         }
         public static void DeleteData(string Procedure, string id)
@@ -82,7 +86,19 @@ namespace GroupProject
             {
                 mydal.AddParam("@TestID", id.ToString());
             }
+            if(Procedure == "spModule")
+            {
+                mydal.AddParam("@moduleID",id.ToString());
+            }
             mydal.ExecuteProcedure(Procedure);
+        }
+        public static void CreatUpdateModule(string crud, string ModuleID, string ModuleSum)
+        {
+            mydal.AddParam("@crud", crud);
+            mydal.AddParam("@moduleID", ModuleID);
+            mydal.AddParam("@moduleSum", ModuleSum);
+            mydal.ExecuteProcedure("spModule");
+            mydal.AddParam("@crud,", crud);
         }
         public static DataSet CreateUpdateUser(string crud ,string UserEmail,string UserPassword,string FirstName,string LastName)
         {

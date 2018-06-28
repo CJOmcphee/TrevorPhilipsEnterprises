@@ -389,8 +389,7 @@ AS BEGIN
     IF @crud='u'
 		BEGIN
 			UPDATE dbo.tbModule
-				SET moduleID=@moduleID,
-					@moduleSum=@moduleSum
+				Set moduleSum=@moduleSum
 				WHERE moduleID=@moduleID
 		END
    IF @crud='d'
