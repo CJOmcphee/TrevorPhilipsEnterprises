@@ -35,7 +35,7 @@
 
 
         <asp:Panel ID="pnlEditQuestion" Visible="false" runat="server">
-                 <asp:GridView ID="gvWrongAnswers" PageSize="10" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="question" runat="server" >
+                 <asp:GridView ID="gvWrongAnswers" PageSize="10" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="wrongAnswers" runat="server" >
                       <Columns>
                         <asp:ButtonField HeaderText="Delete" ButtonType="Button" CommandName="Del" Text="Delete" />
                         <asp:ButtonField HeaderText="Update" ButtonType="Button" CommandName="Edi" Text="Edit" />
