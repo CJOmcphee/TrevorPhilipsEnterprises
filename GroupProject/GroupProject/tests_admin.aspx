@@ -52,7 +52,7 @@
                 <asp:TextBox ID="tbQuestionDetail" runat="server"></asp:TextBox>
                 Answer
                 <asp:TextBox ID="tbAnswerDetail" runat="server"></asp:TextBox>
-                <asp:Button ID="btnSave" runat="server" Text="Change Question" OnClick="btnSave_Click" />
+                <asp:Button ID="btnChangeQuestion" runat="server" Text="Change Question" OnClick="btnChangeQuestion_Click" />
             </asp:Panel>
             <asp:Panel ID="pnlAddWrongAnswer" Visible="false" runat="server">
                 Wrong Answer

@@ -43,7 +43,7 @@ namespace GroupProject.admin
 
         }
 
-        protected void btnSave_Click(object sender, EventArgs e)
+        protected void btnChangeQuestion_Click(object sender, EventArgs e)
         {
 
         }
@@ -124,6 +124,6 @@ namespace GroupProject.admin
             LoadWrongAnswer(Crud.ReadTable("spWrongAnswer", Question));
         }
 
-
+        
     }
 }
