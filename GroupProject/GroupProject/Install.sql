@@ -17,7 +17,7 @@ lastName varchar(50),
 studentEmail varchar(100) foreign key references tbLogin(sID)
 )
 create table tbModule(
-moduleID varchar(50) primary key
+moduleID varchar(50) primary key,
 )
 	insert into tbModule (moduleID)values
 							('Module 1'),('Module 2'),('Module 3'),('Module 4'),('Module 5'),('Module 6')
