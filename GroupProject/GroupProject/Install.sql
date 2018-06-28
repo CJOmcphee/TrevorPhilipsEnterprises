@@ -39,7 +39,7 @@ mID varchar(50) foreign key references tbModule(moduleID)
 create table tbSlides(
 slideID varchar(50),
 lessonid varchar(50) foreign key references tbLesson(lessonID),
-slideInfo varchar(1000) 
+slideInfo varchar(2000) 
 )
 
 create table tbExample(
@@ -307,7 +307,7 @@ go
 create procedure spSlides(
 @slideID varchar(50) = null,
 @lessonid varchar(50) =null,
-@slideinfo varchar(1000) =null,
+@slideinfo varchar(2000) =null,
 @crud varchar(1)
 )
 as begin
