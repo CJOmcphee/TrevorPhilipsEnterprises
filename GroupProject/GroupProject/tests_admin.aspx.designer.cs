@@ -13,15 +13,6 @@ namespace GroupProject.admin {
     public partial class tests_admin {
         
         /// <summary>
-        /// btnAddTest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddTest;
-        
-        /// <summary>
         /// pnlTestsList control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,24 @@ namespace GroupProject.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvTests;
+        
+        /// <summary>
+        /// btnAddTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddTest;
+        
+        /// <summary>
+        /// tbModuleSum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbModuleSum;
         
         /// <summary>
         /// pnlQuestion control.

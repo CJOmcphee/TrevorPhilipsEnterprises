@@ -29,10 +29,17 @@ namespace GroupProject.admin
                 LoadTest(Crud.ReadTable("spTest"));
             }
         }
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
 
+        }
         protected void btnAddTest_Click(object sender, EventArgs e)
         {
-            
+            DataSet ds = Crud.ReadTable("spModule");
+            int x = ds.Tables[0].Rows.Count +1;
+            string ModuleName = "Module" +" "+ x.ToString();
+            Crud.CreatUpdateModuleAndTest("c", ModuleName, tbModuleSum.Text);
+            LoadTest(Crud.ReadTable("spTest"));
         }
         protected void btnAddQuestion_Click(object sender, EventArgs e)
         {
