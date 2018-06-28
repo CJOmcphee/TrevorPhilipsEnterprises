@@ -57,7 +57,7 @@ testID varchar(50) primary key,
 )
 go
 insert into tbTest (testID)values
-					('Module 1'),('Module 2'),('Module 3'),('Module 4'),('Module 5'),('Module 6'),('Module 7'),('Module 8'),('Module 9')
+					('module1'),('module2'),('module3'),('module4'),('module5'),('module6'),('module7'),('module8'),('module9')
 
 go
 create table tbStudentTest(

@@ -92,18 +92,20 @@ namespace GroupProject
             }
             mydal.ExecuteProcedure(Procedure);
         }
-        public static void CreatUpdateModuleAndTest(string crud, string ModuleID, string ModuleSum)
+        public static void CreatUpdateModule(string crud, string ModuleID, string ModuleSum)
         {
             mydal.AddParam("@crud", crud);
             mydal.AddParam("@moduleID", ModuleID);
             mydal.AddParam("@moduleSum", ModuleSum);
             mydal.ExecuteProcedure("spModule");
-            if (crud == "c")
-            {
+        }
+
+        public static void CreateTest(string crud,string TestID)
+        {
+          
                 mydal.AddParam("@crud", crud);
-                mydal.AddParam("@TestID", ModuleID);
+                mydal.AddParam("@TestID", TestID);
                 mydal.ExecuteProcedure("spTest");
-            }
             
         }
         public static DataSet CreateUpdateUser(string crud ,string UserEmail,string UserPassword,string FirstName,string LastName)

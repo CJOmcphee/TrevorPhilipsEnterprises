@@ -34,12 +34,14 @@ namespace GroupProject.admin
             DataSet ds = Crud.ReadTable("spModule");
             int x = ds.Tables[0].Rows.Count +1;
             string ModuleName = "Module" +" "+ x.ToString();
-            Crud.CreatUpdateModuleAndTest("c", ModuleName, tbModuleSum.Text);
+            string TestName = "module" + x.ToString();
+            Crud.CreatUpdateModule("c", ModuleName, tbModuleSum.Text);
+            Crud.CreateTest("c", TestName);
             LoadTest(Crud.ReadTable("spTest"));
         }
         protected void btnChangeModule_Click(object sender, EventArgs e)
         {
-            Crud.CreatUpdateModuleAndTest("u", Test, tbModuleSum.Text);
+            Crud.CreatUpdateModule("u", Test, tbModuleSum.Text);
             LoadQuestion(Crud.GetTestQuestions(Test));
         }
         protected void btnAddQuestion_Click(object sender, EventArgs e)
