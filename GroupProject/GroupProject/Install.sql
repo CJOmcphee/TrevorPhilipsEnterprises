@@ -69,8 +69,9 @@ score int
 -- because there's going to be an absolute ton of questions - Darryl.
 
 create table tbQuestions(
+QID INT IDENTITY(1,1),
 tID varchar(50)foreign key references tbTest(testID),
-question varchar(500) primary key,
+question varchar(500) PRIMARY KEY,
 answers varchar(1000)
 )
 
@@ -205,6 +206,7 @@ select * from tbExample
 select * from tbTest
 go
 create procedure spQuestions(
+@QID INT =NULL,
 @questions varchar(1000) =null,
 @answers varchar(1000) =null,
 @tID varchar(50) =null,
@@ -226,13 +228,13 @@ as begin
 				set tID=@tID,
 					question=@questions,
 					answers=@answers
-					where question=@questions
+					where @QID=@QID
 		end
 	if @crud='d'
 		begin
 
 			delete from tbWrongAnswers where questions=@questions
-			delete from tbQuestions where question=@questions
+			delete from tbQuestions where QID=@QID
 		end
 end
 go
@@ -369,6 +371,50 @@ CREATE PROCEDURE spGetLessons(
 AS BEGIN
 	SELECT * FROM dbo.tbLesson WHERE mID= @moduleID
 END
+GO
 
+CREATE PROCEDURE spModule(
+@moduleID VARCHAR(50) =NULL,
+@moduleSum VARCHAR(1000)=NULL,
+@crud VARCHAR(1)
+)
+AS BEGIN
+	IF @crud ='c'
+		BEGIN
+			INSERT INTO  dbo.tbModule
+			(moduleID,moduleSum)VALUES (@moduleID,@moduleSum) 
+		END
+	IF @crud='r'
+		BEGIN
+			SELECT * FROM dbo.tbModule WHERE moduleID=ISNULL(@moduleID, moduleID)
+		END
+    IF @crud='u'
+		BEGIN
+			UPDATE dbo.tbModule
+				SET moduleID=@moduleID,
+					@moduleSum=@moduleSum
+				WHERE moduleID=@moduleID
+		END
+   IF @crud='d'
+		BEGIN
+			DELETE FROM dbo.tbModule   WHERE moduleID=@moduleID
+		END
+END
+GO
+EXEC dbo.spModule @moduleID = 'module10', -- int
+                  @moduleSum = 'module10',  -- varchar(1000)
+                  @crud = 'c'        -- varchar(1)
 
-
+EXEC dbo.spModule @moduleID = NULL,  -- varchar(50)
+                  @moduleSum = NULL, -- varchar(1000)
+                  @crud = 'r'         -- varchar(1)
+					
+			    
+				
+			
+		
+			
+			    
+            
+			    
+    
