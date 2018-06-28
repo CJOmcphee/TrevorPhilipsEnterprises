@@ -29,7 +29,7 @@ mID varchar(50) foreign key references tbModule(moduleID)
 						('1-1','Module 1'),('1-2','Module 1'),('1-3','Module 1'),('1-4','Module 1'),('1-5','Module 1'),
 						('2-1','Module 2'),('2-2','Module 2'),('2-3','Module 2'),('2-4','Module 2'),('2-5','Module 2'),
 						('3-1','Module 3'),('3-2','Module 3'),('3-3','Module 3'),('3-4','Module 3'),('3-5','Module 3'),
-						('4-1','Module 4'),('4-1-2','Module 4'),('4-3','Module 4'),('4-4','Module 4'),('4-5','Module 4'),
+						('4-1','Module 4'),('4-2','Module 4'),('4-3','Module 4'),('4-4','Module 4'),('4-5','Module 4'),
 						('5-1','Module 5'),('5-2','Module 5'),('5-3','Module 5'),('5-4','Module 5'),('5-5','Module 5')
 create table tbSlides(
 slideID varchar(50),
@@ -213,9 +213,7 @@ as begin
 		end
 	if @crud='r'
 		begin
-			
-			select * from tbQuestions where question=isnull(@questions, question)
-			
+			select question,answers,COUNT(wrongAnswers) as [wrongAnswers] from tbQuestions  inner join tbWrongAnswers on tbWrongAnswers.questions = tbQuestions.question where question=@questions group by question,answers
 		end
 	if @crud='u'
 		begin
@@ -249,6 +247,7 @@ as begin
 			select wrongAnswers into #Allanswer from tbWrongAnswers where questions = @question 
 			insert into #Allanswer select answers from tbQuestions where question = @question
 			select * from #Allanswer Order by newID();
+			select * from tbWrongAnswers where questions = @question
 		end
 	if @crud='d'
 		begin
@@ -260,7 +259,7 @@ create procedure spGetTestQuestions(
 @testID varchar(50)
 )
 as begin
-	select question, answers from tbQuestions where tID=@testID
+	select question,answers,COUNT(wrongAnswers) as [wrongAnswers] from tbQuestions  inner join tbWrongAnswers on tbWrongAnswers.questions = tbQuestions.question where tID=@testID group by question,answers
 	
 end
 go
@@ -318,9 +317,21 @@ end
 go
 
 create procedure spTest
-(@crud varchar(1))
+(
+@crud varchar(1),
+@TestID varchar(50) = null
+)
 as begin
-select * from tbTest
+	if @crud = 'r'
+	begin
+		select * from tbTest where testID = isnull(@TestID,testID)
+	end
+	if @crud ='d'
+	begin
+		delete from tbQuestions where tID = @TestID
+		delete from tbStudentTest where tID = @TestID
+		delete from tbTest where testID = @TestID
+	end
 end
 go
 exec spSlides @crud='c', @slideID='1-1-2', @lessonid='1-1', @slideinfo='Daryl and mike YOU WILL ^ MAKE SOME INFO ^ FOR THE TESTING OF THIS'
@@ -329,12 +340,30 @@ exec spSlides @crud='c', @slideID='1-1-3', @lessonid='1-1', @slideinfo='TJ ^ Thi
 exec spSlides @crud='c', @slideID='1-1-4', @lessonid='1-1', @slideinfo='Hardware: Equipment or physical device associated with a computer ^ SoftWare: For computers to be useful, it needs more  then ^ equipment; a computer needs to be given instructions ^ We refer to a set of instructions as software or a program'
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
-exec spGetTestQuestions @testID='module4'
+exec spGetTestQuestions @testID='module2'
+exec spTest @crud = 'r'
 
 select * from tbLesson
 
 exec spSlides @crud='r', @lessonid ='1-1'
 
 SELECT * FROM dbo.tbQuestions
+GO
+
+CREATE PROCEDURE spGetModule (
+@crud varchar(1)
+)
+AS BEGIN
+	SELECT * FROM dbo.tbModule
+END
+GO
+CREATE PROCEDURE spGetLessons(
+@crud varchar(1),
+@moduleID VARCHAR(50)
+)
+AS BEGIN
+	SELECT * FROM dbo.tbLesson WHERE mID= @moduleID
+END
+
 
 

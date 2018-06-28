@@ -7,54 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GroupProject.admin {
+namespace GroupProject {
     
     
-    public partial class tests_admin {
+    public partial class module_summary {
         
         /// <summary>
-        /// btnAddTest control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddTest;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// pnlTestsList control.
+        /// hTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlTestsList;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl hTitle;
         
         /// <summary>
-        /// gvTests control.
+        /// hSubTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvTests;
-        
-        /// <summary>
-        /// pnlQuestion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlQuestion;
-        
-        /// <summary>
-        /// gvQuestions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvQuestions;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl hSubTitle;
     }
 }

@@ -49,7 +49,15 @@ namespace GroupProject
             {
                 mydal.AddParam("@lessonid", id.ToString());
             }
-             return mydal.ExecuteProcedure(Procedure);
+            if(Procedure == "spGetLessons")
+            {
+                mydal.AddParam("@moduleID", id.ToString());
+            }
+            if (Procedure == "spTest")
+            {
+                mydal.AddParam("@TestID", id.ToString());
+            }
+            return mydal.ExecuteProcedure(Procedure);
         }
         public static void DeleteData(string Procedure, string id)
         {
@@ -69,6 +77,10 @@ namespace GroupProject
             if(Procedure == "spWrongAnswer")
             {
                 mydal.AddParam("@question", id.ToString());
+            }
+            if(Procedure == "spTest")
+            {
+                mydal.AddParam("@TestID", id.ToString());
             }
             mydal.ExecuteProcedure(Procedure);
         }
