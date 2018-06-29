@@ -21,7 +21,37 @@ moduleID varchar(50) primary key,
 moduleSum VARCHAR(MAX)
 )
 	insert into tbModule (moduleID, moduleSum)values
-							('Module 1','moduleSum1'),('Module 2','moduleSum2'),('Module 3','moduleSum3'),('Module 4','moduleSum4'),('Module 5','moduleSum4'),('Module 6','moduleSum6'),('Module 7','moduleSum7'),('Module 8','moduleSum8'),('Module 9','moduleSum9')
+							('Module 1','<h2>Intro to Programming Concepts</h2>
+The first module is an introduction to idea of programming.^
+In this module you may get understanding of generic concept when using the computer, logic and basic programming ideas, a bit of history and evolution of programming.^
+You will get understanding a basic syntax of C#, data types and variables, how to use operators(AND/OR/IF/CASE).^
+Learn to create “loops”. Be able to modularize a program.^'),
+							
+							('Module 2','<h2>C# & .NET Framework</h2>
+This module is an introduction to C# and .NET Framework.^
+During going through it you learn about Assembles(Libraries and Executables), difference between Objects and Classes.^
+You will learn how to create WebForm Applications, Form Controls, Events and Event Handlers.^
+Understand basics client/server interactions, basic HTML elements and basics of state management.^
+Get more deep understanding of Data Types, using operators, loops and modules.^'),
+							
+							('Module 3','<h2>Databases</h2>
+This module is an introduction to idea of databases.^
+Here will talk about generic concepts data storage, concepts of tables and columns^
+and how data is related to one another between tables.^
+You will get understanding of Structured Query Language (SQL), forms of normalization of a data, primary and foreign keys.^
+Learn SQL functions and how to get data from different tables (JOIN).^'),
+							
+							('Module 4','moduleSum4'),
+							
+							('Module 5','moduleSum4'),
+							
+							('Module 6','moduleSum6'),
+							
+							('Module 7','moduleSum7'),
+							
+							('Module 8','moduleSum8'),
+							
+							('Module 9','moduleSum9')
 create table tbLesson(
 lessonID varchar(50) primary key,
 mID varchar(50) foreign key references tbModule(moduleID)
@@ -345,10 +375,86 @@ as begin
 	end
 end
 go
-exec spSlides @crud='c', @slideID='1-1-2', @lessonid='1-1', @slideinfo='Daryl and mike YOU WILL ^ MAKE SOME INFO ^ FOR THE TESTING OF THIS'
-exec spSlides @crud='c', @slideID='1-1-2', @lessonid='1-1', @slideinfo='I Hope ^ This ^ Works'
-exec spSlides @crud='c', @slideID='1-1-3', @lessonid='1-1', @slideinfo='TJ ^ This ^ Works'
-exec spSlides @crud='c', @slideID='1-1-4', @lessonid='1-1', @slideinfo='Hardware: Equipment or physical device associated with a computer ^ SoftWare: For computers to be useful, it needs more  then ^ equipment; a computer needs to be given instructions ^ We refer to a set of instructions as software or a program'
+
+EXEC dbo.spSlides @slideID = '1-1-1',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Welcome to the Course!</h2>^<p>Module 1 is an introduction into the idea of programming^We will talk about: </p>^<p>Generic concepts when using a computer^Logic and basic programming ideas^A bit of history and the evolution of programming</p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '1-1-2',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>^<p>Here is a brief review of basic computer components and their definitions:</p>^<p>Hardware: Equipment or physical devices, associated with a computer. ^Software: For a computer to be useful, it needs more than equipment; a computer needs to be given instructions....</p>^<p> We refer a set of instructions as software or a program</p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '1-1-3',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>^<p>Input: Any piece of data recieved external to the software.</p>^Input is usually obtained from hardware devices such as keyboards, mice, touch screens, and game controllers.^Input can processed in many ways:^Moving the mouse cursors^Displayings the keyboard keystrokes onto the screen^Doing mathematics to numbers^Etc..', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '1-1-4',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>^<p>The Central Processing Unit (CPU) processes all instructions and is the primary piece of hardware in every computer.</p>^<p>After input data has been processed, the resulting information is sent to an output device</p>^<p>Example: Printer, monitor, speakers, etc</p>^<p>In other worsd, we are communicating with the user of the program!</p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-5',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>^<p>Sometimes, we want to store data for later, all computer systems need and have data storage.</p>^<p>There are two main categories of storage: Internal Storage & External Storage</p>^<p>Internal Storage is commonly called memory, main memory, or primary memory (RAM). Internal memory is volatile - meaning it loses content every time the computer loses power</p>^<p>External memory is permanent outside the main memory of the machine, external storage devices include: Hard drives, CDs, DVDs, and USB drives</p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-6',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>^<p>Software Applications are constructed from writing a set of logical instructions.</p>^<p>Computer instructions are written in programming languages such as:</p>^<p>Visual Basic, Pascal, COBOL, C#, C++, Java, Perl, Python, Lisp, Fortran... etc</p>^<p>Every language has its own rules governing word/symbol usage called SYNTAX</p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-7',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>^<p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-8',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-9',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-10',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-11',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-12',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-13',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-14',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-15',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
 exec spGetTestQuestions @testID='module2'
