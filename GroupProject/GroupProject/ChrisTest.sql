@@ -538,20 +538,73 @@ EXEC dbo.spSlides @slideID = '3-4-4',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '3-4-5',   -- varchar(50)
                   @lessonid = '3-4',  -- varchar(50)
-                  @slideinfo = 'SELECT * FROM tbBook^ RIGHT OUTER JOIN tbAUTHOR ON tbBook.pID = tbAuthor=p.ID^ ^<table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table</td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Dresden</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Dodex Alara</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td> </td><td>  </td><td> </td><td>3</td><td>Stephen King</td></tr></table></td></tr></table> ^ Note: The right table(tbAuthor) maintains all of its previous values,^ while the left(tbBooks) has Null where  there are no matches', -- varchar(1000)
+                  @slideinfo = 'SELECT * FROM tbBook^ RIGHT OUTER JOIN tbAUTHOR ON tbBook.pID = tbAuthor=p.ID^ ^<table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table</td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Dresden</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Dodex Alara</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>Null </td><td>Null  </td><td>Null </td><td>3</td><td>Stephen King</td></tr></table></td></tr></table> ^ Note: The right table(tbAuthor) maintains all of its previous values,^ while the left(tbBooks) has Null where  there are no matches', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-4-6',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'SELECT * FROM tbBook^ LEFT OUTER JOIN tbAUTHOR ON tbBook.pID = tbAuthor=p.ID^ ^<table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table</td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Dresden</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Dodex Alara</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>Some Book </td><td>Null  </td><td> </td><td></td><td></td></tr></table></td></tr></table> ^ Note: The right table(tbBook) maintains all of its previous values,^ while the left(tbAuthor) has Null where  there are no matches', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-4-7',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'SELECT * FROM tbBook^ FULL OUTER JOIN tbAUTHOR ON tbBook.pID = tbAuthor=p.ID^ ^<table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table</td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Dresden</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Dodex Alara</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>Some Book </td><td>Null  </td><td>Null </td><td></td><td></td></tr><tr><td>Null  </td><td>Null  </td><td>Null  </td><td>3</td><td>Stephen King </td></tr></table></td></tr></table> ^ Note: The left table  displays all of its contents first, mismatches on^ the right table are filled with Null Values, followed by the right^ table, with Null Values to the Left ', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-4-8',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'When we get a result set back  with NULL values, we can select^ based on that information, but keep in mind and exception to the^ normal rules here^ ^ Example: RIGHT OUTER JOIN with a WHERE clause that selects^ out NULLS^ SELECT * FROM tbBooks RIGH OUT JOIN tbAuthor ON tbBOOK.pID = tbAuthor.pID^ WHERE tbBook.pID <u>IS</u> NULL^ ^ Note:That we do not use an equal sign for NULL values!!^ ^ For values without a null: WHERE tbBook .pID <u>is NOT</u> NULL^ ^ ', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-4-9',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'SELECT * FROM tbBooks RIGHT OUTER JOIN tbAuthor ON^ tbBook.pID = tbAuthor.pID WHERE tbBooks.pID <u>IS</u> NULL^ ^ <table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table</td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>Null </td><td>Null  </td><td>Null </td><td>3</td><td>Stephen King</td></tr></table></td></tr></table>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-4-10',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'The SQL GROUP BY clause allows us to go trough a table^ and combine rows together( we can then perform simple^ math functions on the values where that would be applicable)^ ^ SUM, MIN, MAX are examples of aggregate  functions^ ^ Note: in order to combine multiple rows into a single row, we^ have to group by a specific column^ ', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-4-11',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'Example: Find the most expensive book for each author^ SELECT AuthorName,MAX(BookPrice)^ FROM tbAuthorBooks^ GROUP BY AuthorName^ ^  <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>Author Name</td><td>   </td></tr><tr><td>Scott</td><td>19.25</td></tr><tr><td>Matt</td><td>6.79</td></tr></table></td></tr></table>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-4-12',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'Example: Find the most expensive book for each author^ SELECT AuthorName,COUNT(*)^ FROM tbAuthorBooks^ GROUP BY AuthorName^ ^  <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>Author Name</td><td>   </td></tr><tr><td>Scott</td><td>3</td></tr><tr><td>Matt</td><td>1</td></tr></table></td></tr></table>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-4-13',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'Example: If we want to rename a generated column, we can do that^ like this:^ ^ SELECT AuthorName,^COUNT(BookPrice)  AS[Author Count]^ FROM tbAuthorBooks^ GROUP BY AuthorName^ ^  <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>Author Name</td><td>Author Count</td></tr><tr><td>Scott</td><td>3</td></tr><tr><td>Matt</td><td>1</td></tr></table></td></tr></table>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-4-14',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'Keep in mind tha aggreates can also be used in more^ interesting and complex ways.^ In the example below we want to multiply the price by the quantity to get a more accurate total price^ SELECT SUM(Price * Quantity) AS [Total Price]^ FROM tbAuthorBooks^ ^  <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>pID</td><td>Quantity</td><td>Price</td></tr><tr><td>1</td><td>S2</td><td>5.00</td></tr><tr><td>2</td><td>1</td><td>8.25</td></tr><tr><td>3</td><td>1</td><td>11.75</td></tr><tr><td>4</td><td>4</td><td>2.50</td></tr></table></td><td><table><tr><td>Total Price</td></tr><tr><td>40</td></tr></table></td></tr></table> ', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+--EXEC spSlides	@slideID = '',
+--				@lessonid = '',
+--				@slideinfo = '',
+--				@crud = 'c'
 
+EXEC spSlides	@slideID = '3-4-15',
+				@lessonid = '3-4',
+				@slideinfo = 'To Take this one more step futher, we can choose to only^  show results with author couts greater then 2:^ SELECT AuthorName, Count(*) AS [Author Count]^ From tbAuthorBooks^  GROUP BY AuthorName^ HAVING Count(*) >2^ ^ <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>Author Name</td><td>Author Count</td></tr><tr><td>Scott</td><td>3</td></tr></table> ',
+				@crud = 'c'
+				
+EXEC spSlides	@slideID = '3-4-16',
+				@lessonid = '3-4',
+				@slideinfo = 'Another cool option is "TOP", with this we can choose^ to diplay only the to X number of rows^ SELECT TOP 1^ AuthorName, BookName^ FROM tbAuthorBooks^ ^ <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>Author Name</td><td>Book Name</td></tr><tr><td>Scott</td><td>HelloWorld!</td></tr></table>',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '3-4-17',
+				@lessonid = '3-4',
+				@slideinfo = 'We can also choose to display a result based on an alpanumeric or number ordering, which is useful for reports^ ^ <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>Author Name</td><td>Book Name</td></tr><tr><td>Book Price</td><td>HelloWorld!</td></tr></table>',
+				@crud = 'c'
 
 
 
