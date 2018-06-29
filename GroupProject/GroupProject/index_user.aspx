@@ -25,7 +25,7 @@
 								<h2>Learn SQL Databases</h2>
 							</header>
 							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/pics14.jpg" alt=""></a></p>
+							<p><a href="#"><img src="images/sql.png" width="275" height="150" alt="SQL"></a></p>
 							<a href="#" class="button">More</a>
 						</section>
 					</div>
@@ -35,7 +35,7 @@
 								<h2>Get started with PHP</h2>
 							</header>
 							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/pics15.jpg" alt=""></a></p>
+							<p><a href="#"><img src="images/pics15.jpg" width="275" height="150" alt="PHP"></a></p>
 							<a href="#" class="button">More</a>
 						</section>
 					</div>
@@ -45,7 +45,7 @@
 								<h2>Javascript & HTML5</h2>
 							</header>
 							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/jswide.png" width="275" height="150" alt="Javascript" /></a></p>
+							<p><a href="#"><img src="images/logo-php.png" width="275" height="150" alt="Javascript" /></a></p>
 							<a href="#" class="button">More</a>
 						</section>
 					</div>
@@ -63,15 +63,16 @@
 								<span class="byline">Introduction:</span>
 							</header>
 							<p><a></a>.</p>
-							<p>Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget lorem ipsum dolor. Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat. Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat.</p>
-							<p>Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget lorem ipsum dolor. Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat. Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat.</p>
-							<a href="#" class="button">Begin Lesson 1</a>
+							<p>In this program, you will learn the basic fundamentals of becoming a full-stack Software Developer including SQL Databases, front-end and back-end technologies.</p>
+                            <p>This website is where you will be able to view all of your lessons, complete exercises and assignments.</p>
+							<p>Chris REALLY loves his vinegar.</p>
+							<a href="modules.aspx" class="button">Get Started</a>
 						</section>
 					</div>
 					<div class="3u">
 						<section class="sidebar">
 							<header>
-								<h2>What you will learn:</h2>
+								<h2>Placeholder:</h2>
 							</header>
 							<ul class="style2">
 								<li>

@@ -76,6 +76,15 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.WebControls.GridView gvQuestions;
         
         /// <summary>
+        /// btnNewQuestion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNewQuestion;
+        
+        /// <summary>
         /// pnlModuleDetails control.
         /// </summary>
         /// <remarks>
@@ -110,6 +119,15 @@ namespace GroupProject.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnChangeModule;
+        
+        /// <summary>
+        /// pnlNewQuestion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNewQuestion;
         
         /// <summary>
         /// tbNewQuestion control.
@@ -166,6 +184,15 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.WebControls.GridView gvWrongAnswers;
         
         /// <summary>
+        /// btnNewWrongAnswer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNewWrongAnswer;
+        
+        /// <summary>
         /// pnlQuestionDetails control.
         /// </summary>
         /// <remarks>
@@ -202,13 +229,13 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.WebControls.Button btnChangeQuestion;
         
         /// <summary>
-        /// pnlNew control.
+        /// pnlNewWrongAnswer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlNew;
+        protected global::System.Web.UI.WebControls.Panel pnlNewWrongAnswer;
         
         /// <summary>
         /// tbWrongAnswer control.
