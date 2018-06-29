@@ -59,7 +59,7 @@ namespace GroupProject
             }
             if (Procedure == "spModule")
             {
-                mydal.AddParam("moduleID", id.ToString());
+                mydal.AddParam("@moduleID", id.ToString());
             }
             return mydal.ExecuteProcedure(Procedure);
         }
