@@ -65,7 +65,13 @@ namespace GroupProject.admin
         {
             gvTests.DataSource = ds;
             gvTests.DataBind();
+            pnlEditQuestion.Visible = false;
+            pnlQuestionDetails.Visible = false;
+            pnlNewQuestion.Visible = false;
+            pnlNewWrongAnswer.Visible = false;
+            pnlQuestion.Visible = false;
             pnlTestsList.Visible = true;
+            pnlModuleDetails.Visible = false;
         }
         public void LoadQuestion(DataSet ds)
         {
@@ -74,12 +80,26 @@ namespace GroupProject.admin
             pnlQuestion.Visible = true;
             DataSet modDS = Crud.ReadTable("spModule", Test);
             tbModuleSumDetails.Text = modDS.Tables[0].Rows[0]["moduleSum"].ToString();
+            lblModuleName.Text = modDS.Tables[0].Rows[0]["moduleID"].ToString();
+            pnlEditQuestion.Visible = false;
+            pnlQuestionDetails.Visible = false;
+            pnlNewQuestion.Visible = false;
+            pnlNewWrongAnswer.Visible = false;
+            pnlQuestion.Visible = true;
+            pnlTestsList.Visible = false;
+            pnlModuleDetails.Visible = true;
         }
         public void LoadWrongAnswer(DataSet ds)
         {
             gvWrongAnswers.DataSource = ds.Tables[1];
             gvWrongAnswers.DataBind();
             pnlEditQuestion.Visible = true;
+            pnlQuestionDetails.Visible = true;
+            pnlNewQuestion.Visible = false;
+            pnlNewWrongAnswer.Visible = false;
+            pnlQuestion.Visible = false;
+            pnlTestsList.Visible = false;
+            pnlModuleDetails.Visible = false;
             DataSet QuestionDS = Crud.ReadTable("spQuestion", Question);
             tbQuestionDetail.Text = QuestionDS.Tables[0].Rows[0]["question"].ToString();
             tbAnswerDetail.Text = QuestionDS.Tables[0].Rows[0]["answers"].ToString();
@@ -145,22 +165,26 @@ namespace GroupProject.admin
 
         protected void btnToQuestion_Click(object sender, EventArgs e)
         {
-            pnlQuestion.Visible = true;
-            pnlQuestionDetails.Visible = false;
-            pnlModuleDetails.Visible = false;
-            pnlEditQuestion.Visible = false;
-            pnlTestsList.Visible = false;
+          
             LoadQuestion(Crud.GetTestQuestions(Test));
         }
 
         protected void btnToTest_Click(object sender, EventArgs e)
         {
-            pnlQuestion.Visible = false;
-            pnlQuestionDetails.Visible = false;
-            pnlModuleDetails.Visible = false;
-            pnlEditQuestion.Visible = false;
-            pnlTestsList.Visible = true;
+          
             LoadTest(Crud.ReadTable("spModule"));
+        }
+
+        protected void btnNewQuestion_Click(object sender, EventArgs e)
+        {
+            pnlQuestionDetails.Visible = false;
+            pnlNewQuestion.Visible = true;
+        }
+
+        protected void btnNewWrongAnswer_Click(object sender, EventArgs e)
+        {
+            pnlModuleDetails.Visible = false;
+            pnlNewWrongAnswer.Visible = true;
         }
     }
 }

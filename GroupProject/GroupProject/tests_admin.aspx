@@ -35,19 +35,20 @@
                         <asp:BoundField HeaderText="# Wrong Answers" DataField="wrongAnswers" />
                       </Columns>
                 </asp:GridView>
+                <asp:Button ID="btnNewQuestion" runat="server" Text="New Question" OnClick="btnNewQuestion_Click" />
                 <asp:Panel ID="pnlModuleDetails" runat="server">
-                <asp:Label ID="lblModuleName" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lblModuleName" runat="server" Text=""></asp:Label>
                 Summary
                 <asp:TextBox ID="tbModuleSumDetails" runat="server"></asp:TextBox>
                 <asp:Button ID="btnChangeModule" runat="server" Text="Change Module" OnClick="btnChangeModule_Click"/>
                 </asp:Panel>
-
+                <asp:Panel ID="pnlNewQuestion" runat="server">
                 Question
                 <asp:TextBox ID="tbNewQuestion" runat="server"></asp:TextBox>
                 Answer
                 <asp:TextBox ID="tbNewAnswer" runat="server"></asp:TextBox>
                 <asp:Button ID="btnAddQuestion" runat="server" Text="Add Question" OnClick="btnAddQuestion_Click" />
-
+                </asp:Panel>
             </asp:Panel>
 
 
@@ -59,6 +60,7 @@
                         <asp:BoundField HeaderText="Wrong Answers" DataField="wrongAnswers" />
                       </Columns>
                 </asp:GridView>
+            <asp:Button ID="btnNewWrongAnswer" runat="server" Text="Add Wrong Answer" OnClick="btnNewWrongAnswer_Click" />
             <asp:Panel ID="pnlQuestionDetails" runat="server">
                 Question
                 <asp:TextBox ID="tbQuestionDetail" runat="server"></asp:TextBox>
@@ -66,11 +68,11 @@
                 <asp:TextBox ID="tbAnswerDetail" runat="server"></asp:TextBox>
                 <asp:Button ID="btnChangeQuestion" runat="server" Text="Change Question" OnClick="btnChangeQuestion_Click" />
             </asp:Panel>
-            <asp:Panel ID="pnlNew" runat="server"></asp:Panel>
+            <asp:Panel ID="pnlNewWrongAnswer" runat="server">
                 Wrong Answer
                 <asp:TextBox ID="tbWrongAnswer" runat="server"></asp:TextBox>
                 <asp:Button ID="btnAddWrongAnswer" runat="server" Text="Add Wrong Answer" OnClick="btnAddWrongAnswer_Click" />
-
+            </asp:Panel>
             </asp:Panel>
    </div>
  
