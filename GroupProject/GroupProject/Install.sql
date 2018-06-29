@@ -39,7 +39,7 @@ mID varchar(50) foreign key references tbModule(moduleID)
 create table tbSlides(
 slideID varchar(50),
 lessonid varchar(50) foreign key references tbLesson(lessonID),
-slideInfo varchar(1000) 
+slideInfo varchar(2000) 
 )
 
 create table tbExample(
@@ -225,10 +225,9 @@ as begin
 	if @crud='u'
 		begin
 			update tbQuestions
-				set tID=@tID,
-					question=@questions,
+				set	question=@questions,
 					answers=@answers
-					where @QID=@QID
+					where QID=@QID
 		end
 	if @crud='d'
 		begin
@@ -307,7 +306,7 @@ go
 create procedure spSlides(
 @slideID varchar(50) = null,
 @lessonid varchar(50) =null,
-@slideinfo varchar(1000) =null,
+@slideinfo varchar(2000) =null,
 @crud varchar(1)
 )
 as begin
@@ -389,8 +388,7 @@ AS BEGIN
     IF @crud='u'
 		BEGIN
 			UPDATE dbo.tbModule
-				SET moduleID=@moduleID,
-					@moduleSum=@moduleSum
+				Set moduleSum=@moduleSum
 				WHERE moduleID=@moduleID
 		END
    IF @crud='d'
@@ -399,13 +397,6 @@ AS BEGIN
 		END
 END
 GO
-EXEC dbo.spModule @moduleID = 'module10', -- int
-                  @moduleSum = 'module10',  -- varchar(1000)
-                  @crud = 'c'        -- varchar(1)
-
-EXEC dbo.spModule @moduleID = NULL,  -- varchar(50)
-                  @moduleSum = NULL, -- varchar(1000)
-                  @crud = 'r'         -- varchar(1)
 					
 			    
 				

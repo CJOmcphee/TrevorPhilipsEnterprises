@@ -511,18 +511,35 @@ EXEC dbo.spSlides @slideID = '3-3-12',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '3-3-13',   -- varchar(50)
                   @lessonid = '3-3',  -- varchar(50)
-                  @slideinfo = '<table><tr><td>CourseID</td><td>Name</td><td>Description</td></tr><tr><td>1</td><td>Computer Science</td><td>Programming in C#</td></tr><tr><td>2</td><td>Networking</td><td>Connecting computers through networks</td></tr></table>  ^ <table><tr><td>TeacherID</td><td>Name</td><td>Address</td><td>Birthday</td><td>CourseID</td></tr><tr><td>1</td><td>Scott Wachal</td><td>555 Some place</td><td>1/1/1981</td><td>1</td></tr><tr><td>2</td><td>Len Ganetsky</td><td>333 Education Way</td><td>1/1/1970</td><td>2</td></tr></table>  ^ <table><tr><td>SessionID</td><td>CourseID</td><td>Grade Year</td><td>Start Date</td><td>End Date</td></tr><tr><td>1</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>2</td><td>2</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr></table> ^ <table><tr><td>Name</td><td>Name</td><td>Grade Year</td><td>Start Date</td><td>End Date</td></tr><tr><td>Scott Wachal</td><td>Computer Science</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>Len Ganetskey</td><td>Networking</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr></table>', -- varchar(1000)
+                  @slideinfo = '<table><tr><td>CourseID</td><td>Name</td><td>Description</td></tr><tr><td>1</td><td>Computer Science</td><td>Programming in C#</td></tr><tr><td>2</td><td>Networking</td><td>Connecting computers through networks</td></tr></table>^ <table><tr><td>TeacherID</td><td>Name</td><td>Address</td><td>Birthday</td><td>CourseID</td></tr><tr><td>1</td><td>Scott Wachal</td><td>555 Some place</td><td>1/1/1981</td><td>1</td></tr><tr><td>2</td><td>Len Ganetsky</td><td>333 Education Way</td><td>1/1/1970</td><td>2</td></tr></table>^ <table><tr><td>SessionID</td><td>CourseID</td><td>Grade Year</td><td>Start Date</td><td>End Date</td></tr><tr><td>1</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>2</td><td>2</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr></table> ^ <table><tr><td>Name</td><td>Name</td><td>Grade Year</td><td>Start Date</td><td>End Date</td></tr><tr><td>Scott Wachal</td><td>Computer Science</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>Len Ganetskey</td><td>Networking</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr></table>', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
+--MODULE 4
+ 
+EXEC dbo.spSlides @slideID = '3-4-1',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'There alot of interiesting things you can do with Dates^ in SQL and I wanted to point out a few short cuts before we^ move to far into this course^ ^ To enter the current day and time as a VALUE while using^ UPDATE or  INSERT just type: GETDATE()^ ^If you want to add or subtract a few days from today you can^ just use the + or - and a number^ ^ Example of getting 15 days from now: GETDATE() + 15', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+ 
+EXEC dbo.spSlides @slideID = '3-4-2',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'Using what we just saw in the last slide but in some working^ examples:^ ^ UPDATE tbTeacher^ SET Birthday = GETDATE()^  WHERE TeacherID =3^ ^ INSERT INTO tbTeacher(FirstName, LastName,Birthday,^ CourseID) VALUES (''Scott'',''Wachal'',GETDATE(),1)', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-4-3',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'When we covered JOINS in the revious module, we didnt^ go very far^ ^ ^ There are in fact a few kinds of JOINS in SQL:^ ^ INNER JOIN(default)^ RIGHT OUTER JOIN^  LEFT OUTER JOIN^ FUL OUTER JOIN', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-4-4',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'A query using an OUT JOIN will dispay ALL records from an "outer" table, and only the matching records from^ the other table^ ^ There are  three kinds of OUTER JOIN:^ LEFT,RIGHT,FULL^ ^ When the values do not match on BOTH tables, a data row may^ may return with NULL values', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
-
-
-
-
-
-
+EXEC dbo.spSlides @slideID = '3-4-5',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'SELECT * FROM tbBook^ RIGHT OUTER JOIN tbAUTHOR ON tbBook.pID = tbAuthor=p.ID^ ^<table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table</td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Dresden</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Dodex Alara</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td> </td><td>  </td><td> </td><td>3</td><td>Stephen King</td></tr></table></td></tr></table> ^ Note: The right table(tbAuthor) maintains all of its previous values,^ while the left(tbBooks) has Null where  there are no matches', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
 
 
 
