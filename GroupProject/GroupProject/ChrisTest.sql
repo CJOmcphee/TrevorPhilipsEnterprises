@@ -561,17 +561,41 @@ EXEC dbo.spSlides @slideID = '3-4-9',   -- varchar(50)
                   @slideinfo = 'SELECT * FROM tbBooks RIGHT OUTER JOIN tbAuthor ON^ tbBook.pID = tbAuthor.pID WHERE tbBooks.pID <u>IS</u> NULL^ ^ <table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table</td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>Null </td><td>Null  </td><td>Null </td><td>3</td><td>Stephen King</td></tr></table></td></tr></table>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '3-4-10',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'The SQL GROUP BY clause allows us to go trough a table^ and combine rows together( we can then perform simple^ math functions on the values where that would be applicable)^ ^ SUM, MIN, MAX are examples of aggregate  functions^ ^ Note: in order to combine multiple rows into a single row, we^ have to group by a specific column^ ', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-11',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'Example: Find the most expensive book for each author^ SELECT AuthorName,MAX(BookPrice)^ FROM tbAuthorBooks^ GROUP BY AuthorName^ ^  <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>Author Name</td><td>   </td></tr><tr><td>Scott</td><td>19.25</td></tr><tr><td>Matt</td><td>6.79</td></tr></table></td></tr></table>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-12',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'Example: Find the most expensive book for each author^ SELECT AuthorName,COUNT(*)^ FROM tbAuthorBooks^ GROUP BY AuthorName^ ^  <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>Author Name</td><td>   </td></tr><tr><td>Scott</td><td>3</td></tr><tr><td>Matt</td><td>1</td></tr></table></td></tr></table>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-13',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'Example: If we want to rename a generated column, we can do that^ like this:^ ^ SELECT AuthorName,^COUNT(BookPrice)  AS[Author Count]^ FROM tbAuthorBooks^ GROUP BY AuthorName^ ^  <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>Author Name</td><td>Author Count</td></tr><tr><td>Scott</td><td>3</td></tr><tr><td>Matt</td><td>1</td></tr></table></td></tr></table>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-14',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'Keep in mind tha aggreates can also be used in more^ interesting and complex ways.^ In the example below we want to multiply the price by the quantity to get a more accurate total price^ SELECT SUM(Price * Quantity) AS [Total Price]^ FROM tbAuthorBooks^ ^  <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>pID</td><td>Quantity</td><td>Price</td></tr><tr><td>1</td><td>S2</td><td>5.00</td></tr><tr><td>2</td><td>1</td><td>8.25</td></tr><tr><td>3</td><td>1</td><td>11.75</td></tr><tr><td>4</td><td>4</td><td>2.50</td></tr></table></td><td><table><tr><td>Total Price</td></tr><tr><td>40</td></tr></table></td></tr></table> ', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '3-4-15',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = '', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-15',   -- varchar(50)
                   @lessonid = '',  -- varchar(50)
                   @slideinfo = '', -- varchar(2000)
                   @crud = ''       -- varchar(1)
-
-
-
-
-
-
-
 
 
 
