@@ -753,6 +753,342 @@ EXEC dbo.spSlides @slideID = '2-2-13',   -- varchar(50)
                   @crud = 'c'       -- varchar(1)
 
 
+EXEC dbo.spSlides @slideID = '2-2-14',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Controls ^^ -Controls are classes ^ -Controls have properties ^ -Key properties are: <b>ID</b>,<b>Text</b>,<b> Visible</b> ^ -The <b>ID</b> of the control is the variable name we use in C# ^ -The <b>Text</b> of a control is usually the text which is to be displayed ^ on the form ^ The <b>Visibility</b> of a control is a boolean, value indicating if the control ^ should be visible on the form or not', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-2-15',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Controls ^^ -To create a control, we drag and drop a control from the ^ toolbox to our aspx, you will see something like this: ^ <b>< asp:Button ID="Button1" runat="server" Text="button1" / > </b> ^ -Above is an ASP server control and it is in the format of HTML ^ -All we need to know is that is it made up of the following: ^^ An <u>Element Name</u>: <b>< asp:Button ></b> ^ A series of <u>Attribute/Value Pairs</u>: <b>runat="server", ID="", Text-""</b>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-2-16',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Controls ^^ <b>< asp:Button ID="button1" runat="server" Text="button1"</b> ^ -The attributes are the equivalent to Properties we mentioned ^ earlier, you can add more attriubtes and modify the text as you ^ require ^^ NOTE: <b>runat="server"</b> is required on ALL asp server controls, so ^ for now we will just assume we need it and you can ignore it! Just ^ do not delete it please! ^^ Here is an example of changing the button to say "Submit" and ^ renaming the ID (note the naming convention): ^ <b>< asp:Button ID="btnSubmit" runat="server" Text="Submit" / ></b>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-2-17',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Controls ^^ A Note on naming convention, use the following Microsoft ^ approved naming convention when naming your controls. ^^ The key is to be consistent ^^ <asp:HyperLink ID="hlVisualBasicConcepts" NavigateUrl="https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-basic-6/aa263493(v=vs.60)" runat="server">http://msdn.microsoft.com/en-us/library/aa263493(v=vs.60).aspx</asp:HyperLink>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-2-18',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Controls ^^ -We can <u>modify the properties</u> of a control using the code ^ behind (ex. C#) ^^ -To do this, type the variable name of the object and type a ^ period to see your options (this is called intellisense) ^^ -Here is an example of assigning values to properties on a ^ button with an ID of btnSubmit: ^^ <b>btnSubmit.Text = "Submit!";</b> ^ <b>btnSubmit.Visible = true;</b> // makes the button visible', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-2-19',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Events ^^ -Learning how to work with events is a big part of windows/web ^ development ^^ -Controls (classes) "raise" events ^^ -We must write the code to handle (catch) those events ^^ -Each control has its own set of events to handle ^^ -In additionm each control has a <b>default event</b> ^ *An event is most commonly raised with a specific type of ^ control', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-2-20',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Events ^^ -When you double click on a control while in the design view ^ (through the split view), you will immediately generate an event ^^ -The default event for the control will also have been created ^ automatically for you in the code behind (C#) ^^ -Example: a buttons default event is the "click" event ^ *When you double click on a new button in design view you have ^ this code generated for you: ^ <b>protected void btnSubmit_Click(object sender, EventArgs e)</b> ^ <b>{</b> ^ <b>// write code here</b> ^ <b>}</b>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-2-21',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Events ^^ -You can also generate an event by clicking on the control ^ and going to your properties window ^^ -Find the Lightning Bolt tab in the properties window and click ^ it ^^ -This is the "Events" tab ^^ -From here if you double click in the appropriate field you will ^ also auto-generate your event', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-2-22',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'What is ASP.NET? ^^ -A framework used to build dynamic web sites, web ^ applications and web services ^^ -Uses the Common Language Runtime allowing any .NET ^ language to be used ^^ -ASP (Active Server Pages) is the predecessor to ASP.NET ^ *These two technologies are different ^ *We will be learning ASP.NET (.aspx pages)', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-2-23',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'ASP.NET ^^ -ASP.NET evolved out of the idea of separating <u>presentation</u> ^ <u>logic</u> from <u>content logic</u> ^^ -ASP.NETs Framework allows this separation by introducing ^ a code-behind model: ^ *Static text (presentation) remains on the <b>.aspx</b> page ^ (HTML) ^ *Dynamic code (content logic) is placed in the code-behind ^ <b>.aspx.cs</b> file', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-2-24',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Visual Studio and ASP.NET ^^ -The <b>.aspx</b> file looks very much like HTML, except a couple ^ differences: ^ *There is a page directive at the top: ^ <b>< %@ Page Title="Home Page" Language="C#" AutoEventWireup="true"</b> ^ <b>CodeBehind="Default.aspx.cs" Inherits="HelloWebForms._Default" % > </b> ^^ *The <u>runat="server"</u> as mentioned before is an ^ attribute/value pair which will be found on all asp server ^ controls: ^ <b>< asp:TextBox ID="TextBox1"</b> runat="server" > < /asp:TextBox > ^ <b>< asp:Button ID="Button1"</b> runat="server" <b>Text="Click Me ASP"</b> ^ <b>onclick="Button1_Click" /></b> ', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-2-25',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'ASP.NET ^^ -How does the <b>.aspx</b> file know where to run the code behind, ^ if the code is contained in a separate file? ^^ -The link to the code is found through an aptly named ^ "<b>CodeBehind</b>" property found at the top of the .aspx file: ^^ <b>< %@ Page Tile="Home Page" Language="C#"</b> ^ <b>AutoEventWireup="true"</b> ^ CodeBehind="Default.aspx.cs" ^ <b>Inherits="HelloWebForms._Default" % ></b>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-2-26',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Web Application Model ^^ -Whenever we deal with websites, we have to understand ^ the basics of the <b>client-server model</b> ^^ <b>-Servers</b>: Process <b>requests</b> and generate <b>responses</b> through ^ the execution of code ^ *Example: A web server generates and sends HTML files ^^ <b>-Clients</b>: Read responses and generate requests ^ *Example: A web browser requests and reads HTML files ^ -In practice, a client may also be part server', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-2-27',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Web Processing ^^ -Program code must be processed, this can happen in two ^ places: ^^ <b>1. Server</b>: C#, VB.NET an other CIL compliant code must be ^ compiled on the server before executing ^ <b>2.Client</b>: Javascript written in-line with HTML can be executed ^ by the browser ^^ Note: HTML does NOT need to be compiled, so we do not ^ need a server to interpret HTML in a browser.', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-2-28',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Stateless vs Stateful ^^ -HTML pages are typically static ^^ -You cannot interact with the page itself, you can only ^ request another page with new HTML ^^ -To make a page dynamic, program code must be written ^ <b>in-line</b> with HTML ^^ -Program code running withim HTML is called <b>scripting</b> ^^ -Example: JavaScript is a script specific language', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-2-29',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Stateless vs Stateful ^^ -To process certain code we may still need a web server ^^ -Example: C# and VB.NET code must be compiled by a ^ machine with the .NET framework installed, typically this is a ^ web server ^^ -If a browser requests a page from the server ^^ -The server can then process and send a new HTML page ^ back to the browser (potentially using C# code to generate ^ the page first)', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-2-30',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Stateless vs Stateful ^^ -Web applications are either <b>stateful</b> or <b>stateless</b> ^ -What is <b>state</b>? ^ -The state of an object is the current value of its properties', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-2-31',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Stateless vs Stateful ^^ -In an HTML page, "state" is defined as the values on the ^ page which were not hard-coded to the original HTML file ^^ -Example: Lets say we have an HTML page with TextBoxes ^ *If a user enters data into the HTML fields... ^ *The "state" of an HTML page, is considered to be all of ^ this local user data, not the original HTML file ^^ -HTML pages are considered stateless because of this', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-2-32',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Viewstate ^^ -In ASP.NET we have something called <b>View State</b> ^^ -With View State, values are automatically saved and ^ restored, between client-server interactions ^^ -This is another one of the benefits of using the .NET ^ framework ^^ -The code to maintain state is alrady generated for us', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-2-33',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'Stateless vs Stateful ^^ -To save the state of a webpage, the server must: ^ *Receive a browser request containing all user data ^ *Contain code to save these values ^ *Create a new HTML page with the saved values ^ *Send the new HTML page as a response back to the ^ browser ^^ -Example: When we click a button on a web page, we run C# ^ code on the server to save any values stored within <b>TextBox</b> ^ containers, returning a new page to the client with the saved ^ values written back into the <b>TextBox</b>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-2-34',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'PostBack ^^ -Whenever a browser requests an update to a page by ^ interacting with a control, this is called a <u>PostBack</u> ^^ -By default a button on the page will automatically PostBack ^ when clicked; requesting a new page from the server and ^ causing the Button click event method to run ^^ -Not all controls will cause an AutoPostBack (more on this in ^ the next lesson)', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-2-35',   -- varchar(50)
+                  @lessonid = '2-2',  -- varchar(50)
+                  @slideinfo = 'PostBack ^^ -For now in order to run our exercises we need to be able to run ^ C# code when a button is clicked ^^ -In the previous slides we have seen how to generate a button ^ click event (double clicking on the button in the design view, or ^ through the events tab in the properties window) ^^ -<u>Important Note</u>: when a control event is fired (example: button ^ click), the Page_Load() will fire first, then the button_click() will ^ fire second. This means the page_load() is firing quite often, so ^ be careful what you put in there!', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-3-1',   -- varchar(50)
+                  @lessonid = '2-1',  -- varchar(50)
+                  @slideinfo = 'Objectives ^^ Learn how to use three new common controls: ^ <b>DropDownList</b>, <b>ListBox</b>, <b>CheckBox</b> and <b>RadioButton</b> ^^ Use non-default control events ^^ Create more complex WebForm Applications', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-3-2',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'New Controls ^^ <b>DropDownList</b> ^ Displays an editable textbox with a drop-down list of ^ permitted values ^^ <b>ListBox</b> ^ Displays a list of text items which can be clicked on ^^ <b>CheckBox</b> ^ Enables the user to select or clear the associated option ^^ <b>RadioButton</b> ^ Enables the user to select a single option from a group of ^ choices when paired with other RadioButtons', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-3-3',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'ListBox / DropDownList ^^ <b> ListBox / DropDownList</b> ^ Default event: <u>SelectedIndexChanged()</u> ^^ Fires when an item in the ComboBox or ListBox is ^ clicked on ^^ Important properties: ^ <b>-Items</b> ^ <b>-SelectedItem</b> ^^ <b>ListItem</b>: ^ -Is the class which is used to represent each item in ^ a list, it has the properties of: <b>Text</b>, <b>Value</b> and ^ <b>Selected</b>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-3-4',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'ListBox / DropDownList ^^ <b>ListBox / DropDownList</b> Properties: ^^ <b>Items:</b> ^ -Represents a collection of the <b>ListItem</b> ^^ <b>SelectedItem:</b> ^ -Represents the selected ListItem in the list; assuming ^ one has been selected ^ -Note: if multiple items are selected, the top one is used', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-3-5',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'ListBox / DropDownList ^^ <u>ListItem</u> properties: ^ -<b>Text</b> is what shows up on the screen ^^ -<b>Value</b> is something we can use behind the scenes for our ^ C# (this will be used later when we have a database primary ^ key IDs, so for now it is not too important) ^^ -<b>Selected</b> is a Boolean that indicates whether the item is ^ selected (TRUE) or not (FALSE) ^^ -<b>Enabled</b> is a Boolean that indicates whether is enabled', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-3-6',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'ListBox / DropDownList ^^ <b>ListBox / DropDownList</b> Usage: ^^ Once you have added items to the collection, your aspx might look like this (keep in mind, you can just type this out instead ^ of using the properties window): ^^ <b>< asp:ListBox ID="lbCollection" runat="server" > ^ < asp:ListItem >< /asp:ListItem> ^ < asp:ListItem >Female< /asp:ListItem> ^ < asp:ListItem >Male< /asp:ListItem > ^ < /asp:ListBox >', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-3-7',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'ListBox / DropDownList ^^ <u>aspx control - Specifying values:</u> ^^ We can specify attribute/values on any server control, so ^ remember that ListItem has both Text and Value properties: ^^ < asp:DropDownList ID="cboMonths" runat="server"> ^ < asp:ListItem <b>Text="January" Value="1"</b>>< /asp:ListItem> ^ < asp:ListItem <b>Text="February" Value="2"</b>>< /asp:ListItem> ^ < asp:ListItem <b>Text="March" Value="3"</b>>< /asp:ListItem> ^ < /asp:DropDownList> ^^ This can be useful if you need to know that March is the 3rd ^ month in your program code!', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-3-8',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'ListBox / DropDownList ^^ <b>ListBox / DropDownList</b> Usage: ^ You can also add items from your C# code as follows: ^ <b>comboBox1.Items.Add("January"); ^^ Note: By using this code you are asking the collection of ListItems ^ to add another ListItem with the Text of "January". ^^ You could also do this by creating a ListItem object and populating ^ the properties like this: ^^ <b>ListItem item = new ListItem();</b> ^ <b>Item.Text = "January";</b> ^ <b>comboBox1.Items.Add(item);</b>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-3-9',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'ListBox / DropDownList ^^ <b>ListBox / DropDownList</b> ^^ By default, you can only select one item. ^^ To add multiselect, you must add the following ^ attribute/value pair to your aspx: ^^ < asp:ListBox ID="ddlGender" runat="server" ^ <b>SelectionMode="Multiple"> ^ < asp:ListItem Text="Male >< /asp:ListItem> ^ < asp:ListItem Text="Female" >< /asp:ListItem> ^ < /asp:ListItem>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-3-10',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'CheckBox / RadioButton ^^ <b>CheckBox / RadioButton </b> ^^ Default event: <b>CheckedChanged() ^ -Fires whenever the <b>CheckBox</b> or <b>RadioButton</b> is ^ clicked on ^^ Important properties: ^ <b>-Checked</b>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-3-11',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'CheckBox / RadioButton ^^ <b>CheckBox / RadioButton</b> ^^ Usage: ^ When the <b>CheckedChanged()</b> event fires, you can ^ evaluate the property: <b>Checked</b> ^^ If <b>Checked</b> is equal to </b>true</b>, the control is checked / active ^^ If <b>Checked</b> is equal to <b>false</b>, the control is unchecked / ^ deactive, ', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-3-12',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'CheckBox / RadioButton ^^ <b>CheckBox / RadioButton</b> ^^ if(checkBox1.Checked) ^ { ^ <b>//The control has a check mark ^ or is active</b> ^ } ^ else ^ { ^ <b>//The control does not have a ^ checkmark or is deactive</b> ^ }', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-3-13',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'CheckBox / RadioButton ^^ <b>CheckBox / RadioButton</b> ^ Keep in mind the difference between a Checkbox and ^ a Radiobutton. ^^ A Radio button that is checked shoud cause other ^ radio buttons in their grouping to be unchecked. ^^ This functionality does not happen automatically, you need to uncheck ^ other related RadioButtons during a CheckChanged() event.', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-3-14',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'CheckBox / RadioButton ^^ <b>RadioButtonList</b> ^^ -Another option is to use a RadioButtonList instead of ^ multiple RadioButtons ^ -Simply drag and drop this control on the screen and treat it ^ the same as a DropDown or ListBox ^ -Each ListItem will be another RadioButton ^ -Example; to get the text of the selected option in the list: ^ <b>radioButtonList1.Items.SelectedItem.Text</b>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-3-15',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'AutoPostBack ^^ <b>AutoPostBack</b> ^^ When you add a control to your page, you will need to decide ^ whether or not you want that control to cause a <b>PostBack</b> to ^ the page when the user interacts with it. ^^ Remember that by default a Button control wil <b>AutoPostBack</b> ^^ If you want to run C# code logic when a check has changed, ^ or when the selected item changes on a ListBox/DropDown ^ you have to add the appropriate attribute/value (see next ^ slide)', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-3-16',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'AutoPostBack ^^ <b>AutoPostBack</b> - Example aspx control: ^^ < asp:DropDownList ID="cboMonths" runat="server" ^ <b>AutoPostBack="true" ^ < asp:ListItem Text="January" >< /asp:ListItem> ^ < asp:ListItem Text="February">< /asp:ListItem> ^ < asp:ListItem Text="March">< /asp:ListItem> ^ < /asp:DropDownList>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-3-17',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'Non-Default Event Handlers ^^ -So far, we have only worked with the default events of ^ controls ^^ -There are many other events associated with controls ^^ -To find these other events, use the lightning bolt tab within ^ the properties window when you have a control selected.', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-3-18',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'Other Events ^^ <b>TextChanged() ^^ -Event is raised when the value of <b>Text</b> property is ^ changed on the control ^^ -Note: if you change the text of the control inside this ^ event it could cause an infinite loop ^^ -Take a few seconds and look at some of the other events ^ for yourself and see what they do', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-3-19',   -- varchar(50)
+                  @lessonid = '2-3',  -- varchar(50)
+                  @slideinfo = 'Gmail Code Snippet ^^ -To send an email from C#, Add: using <b>System.Net.Mail</b> to the top of ^ your code and use the following code snippet: ^^ <b>MailMessage message = new MailMessage(); ^ message.From = new MailAddress ("EMAIL_ADDRESS_HERE"); ^ message.To.Add(new MailAddress("EMAIL_ADDRESS_HERE"); ^ message.Subject = "This is an email from a C# Form App!"; ^ message.Body = "This is the content of the email!"; ^ SmtpClient client = new SmtpClient(); ^ client.Host = "smtp.gmail.com"; ^ client.Port = 587; ^ client.EnableSsl = true; ^ System.Net.NetworkCredential("ENTER_YOUR_EMAIL_ADDRESS_HERE", ^ "ENTER_YOUR_PASSWORD_HERE"); ^ client.DeliveryMethod = SmtpDeliveryMethod.Network; ^ client.Send(message);', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-4-1',   -- varchar(50)
+                  @lessonid = '2-4',  -- varchar(50)
+                  @slideinfo = 'Data Types ^^ <b>-Value Types</b> ^ <b>-Reference Types</b>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-4-2',   -- varchar(50)
+                  @lessonid = '2-4',  -- varchar(50)
+                  @slideinfo = 'Stack and Heap ^^ -There are only 4 things that go on the <b> stack and <b>heap</b>: ^^ -Value types ^ -Reference Types ^ -Pointers ^ -Instructions to be executed (your code)', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-4-3',   -- varchar(50)
+                  @lessonid = '2-4',  -- varchar(50)
+                  @slideinfo = 'Stack and Heap ^^ -In general: ^^ -Reference Types go on the <b>heap</b> ^^ -Value Types and <b>Pointers</b> gp wherever they are declared; heap or ^ stack ^ *However, everything ends up on the stack as its ^ being executed', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-4-4',   -- varchar(50)
+                  @lessonid = '2-4',  -- varchar(50)
+                  @slideinfo = 'Value Types ^^ -Value types can go on the stack because they have a finite ^ length ^^ -The Stack must be fast and compact ^^ -Examples of value types: ^^ <b>- bool, byte, char, decimal, double, enum, float, int, long, ^ sbyte, short, struct, uint, uint, ulong, ushort', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-4-5',   -- varchar(50)
+                  @lessonid = '2-4',  -- varchar(50)
+                  @slideinfo = 'Reference Types ^^ -Reference types must go on the heap because they have a ^ variable length ^^ -For each reference type, there exists a "Reference" pointer ^ on the stack ^^ -Pointers tell us where on the heap to look ^^ -When we instantiate a reference type, we use the "new" keyword ^^ -Examples: Class, interface, delegate, object, string', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-4-6',   -- varchar(50)
+                  @lessonid = '2-4',  -- varchar(50)
+                  @slideinfo = '.NET Framerwork Class Library ^^ -Contains over 7000 classes and data types ^^ -Organized by namespaces ^^ -The Root namespace is called "<b>System</b>" ^^ -The namespace is shared by all', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-5-1',   -- varchar(50)
+                  @lessonid = '2-5',  -- varchar(50)
+                  @slideinfo = 'Review', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-5-2',   -- varchar(50)
+                  @lessonid = '2-5',  -- varchar(50)
+                  @slideinfo = 'Data Types ^^ -When assignining one variable to another, they must be the ^ same data type: ^^ -Example: ^^ <b>int x = 9; ^ int y = 3; ^ x = y; ^^ string myName = "Scott"; ^ string myAddress = "99 St"; ^ myName = myAddress;</b>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-5-3',   -- varchar(50)
+                  @lessonid = '2-5',  -- varchar(50)
+                  @slideinfo = 'Data Types ^^ -Data Types must also match when assigning a variable to a ^ property: ^^ //Textbox1.Text is of type string ^ <b>Textbox1.Text = "hello";</b> //this is good ^ <b>Textbox1.Text = 123;</b> //data type mismatch ^^ -You cannot compile your code if the data types are ^ mismatched', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-5-4',   -- varchar(50)
+                  @lessonid = '2-5',  -- varchar(50)
+                  @slideinfo = 'Data Types ^^ -We often need to convert types so that they match ^^ -The Convert class is very handy for this... ^ <b>Decimal d = 123;</b> ^^ <b>Textbo1.Text = Convert.ToString(d);</b> ^^ Or ^^ <b>Textbox1.Text = d.ToString();</b> ^^ -All objects have a <b>.ToString()</b> built in which is a "shortcut" for ^ converting to string', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-5-5',   -- varchar(50)
+                  @lessonid = '2-5',  -- varchar(50)
+                  @slideinfo = 'If, AND, OR ^^ -IF Statement - Example: <b>If (txtFName.Text == "") ^ { ^ Console.WriteLine("Name cannot be blank."); ^ }</b> ^^ -IF Statement - Another Example: ^^ <b>If (String.IsNullOrWhiteSpace(txtFName.Text)) ^ { ^ Console.WriteLine("Name cannot be blank."); ^ }</b>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-5-6',   -- varchar(50)
+                  @lessonid = '2-5',  -- varchar(50)
+                  @slideinfo = 'If, AND, OR ^^ -OR Operator - Example: ^^ <b>If (myAge > 25 || hasGoldVisa == true) ^ { ^ lblMessage.Text = "You get a discount on a renting a car!"; ^ }</b> ^^ <b> -hasGoldVisa is a boolean variable with the value of true or ^ false', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-5-7',   -- varchar(50)
+                  @lessonid = '2-5',  -- varchar(50)
+                  @slideinfo = 'Looping ^^ -The <b>WHILE</b> loop (indefinite loop) ^^ <b>int x = 0; ^ while(x<=10) ^ { ^ Console.WriteLine(x.ToString()); ^ x++ ^ }</b> ^^ -This example assumes you are using a Console Application ^ and will display the numbers 0 up to 10', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-5-8',   -- varchar(50)
+                  @lessonid = '2-5',  -- varchar(50)
+                  @slideinfo = 'Looping ^^ -The <b>FOR</b> Next loop (definite loop) ^ for (int x=0;x<=10;x++) ^ { ^ Console.WriteLine(x.ToString()); ^ } </b> ^^ -This example assumes you are using a Console Application ^ and will display the numbers 0 up to 10', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-5-9',   -- varchar(50)
+                  @lessonid = '2-5',  -- varchar(50)
+                  @slideinfo = 'Modules ^^ -When a piece of code calls another piece of code, it is calling a ^ module ^^ --Other words for "module" include: "method", "subroutine", ^ "function", "procedure" ^^ -Example of an instantiated class and calling a method from it: ^^ <b>Vehicles.Car myCar = new Vehicles.Car(); ^ int maxSpeed = 100; ^ myCar.Accelerate(maxSpeed);</b> ^^ -We are calling the <b>Accelerate()</b> method of the Car class and ^ passing it a paramter of type integer', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '2-5-10',   -- varchar(50)
+                  @lessonid = '2-5',  -- varchar(50)
+                  @slideinfo = 'Modules ^^ -Example with a built in class which comes from the .NET ^ Framework Library: ^^ <b>Random r = new Random():</b> ^ <b>int iNextNumber = r.Net(1,100);</b> ^^ -We are calling the <b>Next()</b> method of the Random class, ^ passing it 2 parameters of type integer', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-5-11',   -- varchar(50)
+                  @lessonid = '2-5',  -- varchar(50)
+                  @slideinfo = 'Web Forms ^^ -Controls ^^ -Event Handlers ^^ -Properties of controls (e.g. "<b>Text</b>" pr "<b>Name</b>") ^^ -Remember to put your code in the correct event handler ^ where the user will interact with the application ^ *Example: clicking on a button, changing a selected item ^ in a dropdown.', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '2-5-12',   -- varchar(50)
+                  @lessonid = '2-5',  -- varchar(50)
+                  @slideinfo = 'QueryString ^^ -You can pass string values through your page links: ^ <b>MagazineDetails.aspx?magazineId=7</b> ^^ -On the <b>Page_Load</b> inside <b>MagazineDetails.aspx</b>, we ^ can get the number <b>7</b> out with the following code: ^^ <b>string ProductId = ^ Request.QueryString["magazineId"].ToString();</b>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
