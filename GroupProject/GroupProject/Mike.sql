@@ -1077,6 +1077,414 @@ EXEC dbo.spSlides @slideID = '2-5-12',   -- varchar(50)
 
 
 
+EXEC dbo.spSlides @slideID = '6-1-1',   -- varchar(50)
+                  @lessonid = '6-1',  -- varchar(50)
+                  @slideinfo = 'Cascading Style Sheets (CSS)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '6-1-2',   -- varchar(50)
+                  @lessonid = '6-1',  -- varchar(50)
+                  @slideinfo = 'Cascading Style Sheets ^^ -CSS = <b>Cascading Style Sheets</b> ^^ *Allow us to definse consisten appearances in a website ^ *We will be using style attributes to do this ^^ *Styles look like this: <u>attribute: value;</u>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '6-1-3',   -- varchar(50)
+                  @lessonid = '6-1',  -- varchar(50)
+                  @slideinfo = 'CSS Attributes ^^ -Here are some examples of style attributes and values: ^^ *font-size: xx-small; ^ *color: black; ^ *font-family: Verdana, Arial; ^ *padding: 10px; ^ *border: 1px solid; ^ *background-color: red;</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-1-4',   -- varchar(50)
+                  @lessonid = '6-1',  -- varchar(50)
+                  @slideinfo = 'CSS Atrributes ^^ -Styles can be associated with a category of elements: ^ <b>div { ^ font-size: large; ^ color:red; ^ }</b> ^^ -Here we see that all text inside of any <div>s on the page ^ will be large and red', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-1-5',   -- varchar(50)
+                  @lessonid = '6-1',  -- varchar(50)
+                  @slideinfo = 'CSS Attributes ^^ -Styles can also be associated with a particular element ^ based on the ID of the element: ^ <b>#Footer { ^ color:purple; ^ }>/b> ^ -Here we see that if there is an element on the page with: ^ ID="Footer", the text inside of that element will be purple!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '6-1-6',   -- varchar(50)
+                  @lessonid = '6-1',  -- varchar(50)
+                  @slideinfo = 'CSS Attributes ^^ -Styles can also be grouped together by a name, this is called a css class: ^ <b>.SmallGreenText{ ^ font-size: small; ^ color: green; ^ }</b> ^ -Here we see the css class name: SmallGreenText ^^ -HTML elements on the page can subscribe to a class and ^ take on all the attributes associated with it.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '6-1-7',   -- varchar(50)
+                  @lessonid = '6-1',  -- varchar(50)
+                  @slideinfo = 'CSS Attributes ^^ -Example: Create a custom style called "<b>SmallRedWithBorder</b>": ^ <b>.SmallRedWithBorder{ ^ border: 5px solid #F8CA37; ^ font-size: xx-small; ^ color: Red; ^ }</b> ^^ -And then apply it: ^ <b>< asp:Button ^ ID="btnSearch" runat="server" CssClass="SmallRedWithBorder" ^ OnClick="btnKeywordSearch_Click" Text="Search..." />< div ^ class="SmallRedWithBorder">This text will also use the same styles!< /div>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '6-1-8',   -- varchar(50)
+                  @lessonid = '6-1',  -- varchar(50)
+                  @slideinfo = 'CSS Attributes ^^ -Note that on the previous page we used CssClass and Class to do the ^ same thing ^ -The difference is that the first one is an ASP server control. The keyword ^ "class" is already reserved in C# (as you may know from Module ^ 2). <b>< asp:Button ^ ID="btnSearch" runat="server" <u>CssClass="SmallRedWithBorder"</u> /> </u> ^^ -The second one is just a regular html element, so the syntax is slightly ^ different. <b>< div <u>class="SmallRedWithBorder"</u>>This text will also use the ^ same styles!< /div></b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-1-9',   -- varchar(50)
+                  @lessonid = '6-1',  -- varchar(50)
+                  @slideinfo = 'Cascading Style Sheets ^^ -CSS = <b>Cascading Style Sheets</b> ^ *There are 4 ways to modify the css in our <b>.aspx</b> (or <b>.html</b>) ^ files: ^ 1. In a <b>< style ></b> tage in the page itself ^ 2. Directly in the tag using a style="" attributes ^ 3. In a separate referenced <b>.css</b> page ^ 4. Modifying from the server (in our case: C#)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-1-10',   -- varchar(50)
+                  @lessonid = '6-1',  -- varchar(50)
+                  @slideinfo = 'Cascading Style Sheets ^^ 1. In a <b>< style ></b> tag in the page: ^ <b>< style > ^ body{ ^ font-size: x-small; ^ color: black; ^ } ^ < /style ></b> ^^ -Usually this is placed between the head tags: ^ < head >*HERE*< /head >', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '6-1-11',   -- varchar(50)
+                  @lessonid = '6-1',  -- varchar(50)
+                  @slideinfo = 'Cascading Style Sheets ^^ 2. Directly in the tag, using the style=="" attribute: ^^ < body style="font-size: xx-small; color: black;" > ^^ < /body>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-1-12',   -- varchar(50)
+                  @lessonid = '6-1',  -- varchar(50)
+                  @slideinfo = 'Cascading Style Sheets ^^ 3. In a separate <b>.css</b> page (created by right clicking on the ^ project and creating a "StyleSheet"), we put the code there: ^ <b>body{ ^ font-size: xx-small; ^ color: black; ^ }</b> ^ -We can then click and drag the .css file from the solution ^ explorer into the < head > tag on our .aspx page and it should ^ create a line like this: <b>< link href="StyleSheet1.css" ^ rel="stylesheet" /></b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-1-13',   -- varchar(50)
+                  @lessonid = '6-1',  -- varchar(50)
+                  @slideinfo = 'Cascading Style Sheets ^^ -You should always endeavor to use a separate stylesheet ^ file where possible ^^ -If you use a separate file, it will be easier to modify the style ^ of your entire project after the fact ^^ -Good programing practice: ^^ -Heep your stylesheets stored in a directory called ^ "StyleSheets" or "CSS"', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-1-14',   -- varchar(50)
+                  @lessonid = '6-1',  -- varchar(50)
+                  @slideinfo = 'Cascading Style Sheets ^^ 4. Modifying from the server (in our case: C#) ^ <b>< div id="mainDiv" runat="server">Hello World!< /div></b> ^ If we ad the runat="server" attribute/value to a regular html ^ element, we are able to do modifications from the server ^ (note: you will need an ID, as this will be the variable name): ^ <b>mainDiv.Style.Add("color","purple"); ^ mainDiv.Style.Add("font-size","large");</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '6-1-15',   -- varchar(50)
+                  @lessonid = '6-1',  -- varchar(50)
+                  @slideinfo = 'Multiple Styles Per Tag ^^ -The Anchor tag has multiple states, here are some of them: ^ *Link (the default look before it is clicked on) ^ *Visited ^ *Hover ^ *Active (As the user clicks) ^^ -You can choose to set different styles for each state (see ^ next slide)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-1-16',   -- varchar(50)
+                  @lessonid = '6-1',  -- varchar(50)
+                  @slideinfo = 'Multiple Styles Per Tag ^^ <b>A:link ^ { ^ font-size: small; ^ color: green; ^ font-family: Verdana, Arial; ^ text-decoration: underline; ^ } ^^ A:hover ^ { ^ font-size: small; ^ color:Red; ^ font-family: Verdana, Arial; ^ text-decoration: underline overlinel ^ }</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-2-1',   -- varchar(50)
+                  @lessonid = '6-2',  -- varchar(50)
+                  @slideinfo = 'ViewState and Controls in ASP.NET', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-2-2',   -- varchar(50)
+                  @lessonid = '6-2',  -- varchar(50)
+                  @slideinfo = 'Application State ^^ -In Module 6 Lesson 1 we talked about Applications having a ^ "<b>state</b>" ^^ -This is an important concept in programming, especially in ^ web programming ^^ -Since the web model of Request/Response is naturally ^ stateless, ASP.NET has ways to maintain state', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-2-3',   -- varchar(50)
+                  @lessonid = '6-2',  -- varchar(50)
+                  @slideinfo = 'ViewState Review ^^ -ViewState is turned on by default in .NET ^ *State values (contents of a textbox, for example) are ^ passed back and forth on the request/response data ^^ -This is good because it gives us easy access to data, ^ however it can bloat our request/response and slow down ^ our app if used to extensively ^^ -Other ways to maintain state in a web app are through ^ cookies and server variables', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-2-4',   -- varchar(50)
+                  @lessonid = '6-2',  -- varchar(50)
+                  @slideinfo = 'HTML Controls ^^ -Traditional HTML controls are found on the toolbox under ^ HTML ^^ -We will not be using these controls in this class beyond this ^ brief discssion ^^ -Note: You could write javascript to access these controls, ^ but they are not accessible via the .NET code behind file ^ (<b>.aspx.cs</b>)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-2-5',   -- varchar(50)
+                  @lessonid = '6-2',  -- varchar(50)
+                  @slideinfo = 'HTML Server Controls ^^ -If we were to add a <b>runat=server</b> attribute to a regular HTML ^ control, it would make it a <u>HTML Server control</u> ^^ -Once this is done you can access the control via the code ^ behind ^^ -Note: You would also need to add the attribute: ^ <b>ID=< control_name ></b> ^^ -Where <b>< control_name ></b> is the variable name assigned to the ^ control', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-2-6',   -- varchar(50)
+                  @lessonid = '6-2',  -- varchar(50)
+                  @slideinfo = 'Web Controls ^^ -Now that we have seen what HTML controls are, we will ^ avoid them and use "<u>web controls</u>" (ASPX controls) ^^ -Web controls have the <b>runat=server</b> attribute and the name ^ is always prefixed with "<b>asp</b>:" ^^ -Example: <b>< asp:textbox ... /></b> ^^ -Web controls will have more features than html controls and ^ are intrinsically accessible via code behind', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-2-7',   -- varchar(50)
+                  @lessonid = '6-2',  -- varchar(50)
+                  @slideinfo = 'Button and Link Controls ^^ <b>-Button</b>,<b>ImageButton</b>, and <b>LinkButton</b> are all controls that can ^ be used to provide Button behavior ^^ -In addition to this, the HTML anchor tag is often used as a ^ button to send the user to a different page', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-2-8',   -- varchar(50)
+                  @lessonid = '6-2',  -- varchar(50)
+                  @slideinfo = 'Button and Link Controls ^^ -To switch from one page to another use the following C# ^ code: ^^ <b>Response.Redirect("nameOfYourPage.aspx"); ^ //OR ^ Server.Transfer("nameOfYourPage.aspx");</b> ^^ -NOTE: Use the second one only for local pages, not ^ external links!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-2-9',   -- varchar(50)
+                  @lessonid = '6-2',  -- varchar(50)
+                  @slideinfo = 'List Controls ^^ -Controls such as the <b>ComboBox</b> and <b>ListBox</b> are list ^ controls ^^ -There are 3 ways we can add items to these controls: ^ 1.During design time ^ 2.Manually with code (using the <b>add()</b> method) ^ 3.Bind the control to a <b>DataSource</b> ^ Example:<b>DataSet</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-2-10',   -- varchar(50)
+                  @lessonid = '6-2',  -- varchar(50)
+                  @slideinfo = 'IsPostBack ^^ -The Page_Load() event fires *BEFORE* all of your other ^ events ^^ -This includes events such as "Selection_Changed" ^^ -We have been populating our controls with data from inside ^ of our Page_Load() ^ *Note: when we load data, we lose all information about ^ selected items, this is a problem! ^^ -In order to prevent this issue we need to use: <b>IsPostBack</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-2-11',   -- varchar(50)
+                  @lessonid = '6-2',  -- varchar(50)
+                  @slideinfo = 'IsPostBack ^^ <b>-IsPostBack</b>: is a boolean variable which is automatically set ^ on the server (you do not need to manage the value of this ^ variable!) ^^ -IsPostBack = true, means the page has already been ^ loaded at least once ^^ -If (!IsPostBack) then this is the first time the page is being ^ loaded ^^ -We want to weap out data-loading code inside of an ^ if(!IsPostBack)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-2-12',   -- varchar(50)
+                  @lessonid = '6-2',  -- varchar(50)
+                  @slideinfo = 'IsPostBack ^ <b>-IsPostBack</b> Example: ^ <b>protected void Page_Load(object sender, EventArgs e) ^ { ^ if(!IsPostBack) ^ {</b> /* This only runs the very FIRST time you load a page, not ^ afterwards */ ^ <b>DataSet ds = new DataSet(); ^ SqlDataAdapter da = new SqlDataAdapter("select * from tbClient", ^ conn); ^ conn.Open(); ^ da.Fill(ds); ^ gv1.DataSource = ds; ^ gv1.DataBind(); ^ } ^ }', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-2-13',   -- varchar(50)
+                  @lessonid = '6-2',  -- varchar(50)
+                  @slideinfo = '', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-3-1',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'ASP Gridviews', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-3-2',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'GridViews ^^ -The ASP.NET <b>GridView</b> is a very useful control ^^ <b>< asp:GridView ID="GridView1" runat="server"> ^ < /asp:GridView> ^^ -Data is bound to the <b>GridView</b> just like we have seen with ^ <b>ListBox</b> and <b>DropDownList</b> ^^ <b>GridView1.DataSource = dataset; ^ GridView1.DataBind();</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-3-3',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'GridViews ^^ -By default, the type and number of columns displayed are based on the ^ <b>DataSet</b> you assigned to the <b>DataSource</b> ^ *In ohter words, the columns from your SQL SELECT ^^ -By setting the <b>AutoGenerateColumns</b> property to false, you can choose ^ which columns to display by using the following format: ^^ <b>< asp:GridView ID="GridView1" runat="server" DataKeyNames="CustomerID" ^ <u>AutoGenerateColumns="False"</u>> ^ <Columns> ^ < asp:BoundField DataField="FirstName" HeaderText="FirstName" /> ^ < asp:BoundField DataField="LastName" HeaderText="LastName" /> ^ < /asp:GridView>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-3-4',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'Gridviews -- NEED A PICTURE!!!!! --', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-3-5',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = '--NEED MORE PICTURES!!!!!!!!!!!!----', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '6-3-6',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'GridViews ^^ -On the previous screen there are several items of interest: ^ *You can disable the auto generated columns with the checkbox ^ in the bottom left hand corner ^^ *Each <b>BoundField</b> is a column: ^^ #Modify the <b>DataField</b> to match the column name you wish to ^ display ^^ #Modify the <b>HeaderText</b> to change the text displayed for this ^ column on the aspx page', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '6-3-7',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'GridViews ^^ -To add a button or link column, add a <b>ButtonField</b> ^^ *The <b>CommandName</b> property will be referenced in an ^ IF-statement later on in C# to determine which button was ^ clicked on from within the GridView ^ #Example value: "Delete Client" ^^ *Modify the <b>Text</b> to change the text displayed on this button ^^ *Modify the <b>ButtonType</b> to display a different kid of action button ^ (Link/Button/Image)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-3-8',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'GridViews ^^ -The <b>RowCommand()</b> is the most useful <b>GridView</b> event, it ^ will run just before a command (edit, delete, etc) is executed ^^ -There are two very important properties to be aware of: ^^ <b>*e.CommandArgument</b> ^ #Gets the index of the row clicked on ^^ <b>*e.CommandName</b> ^ #Gets the name of the command (button) clicked ^ #Example used on previous page: "Delete Client"', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-3-9',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'GridViews ^^ -With <b>ASP:Gridview</b> you have to assign the <b>SelectedIndex</b> ^^ //This should be your first line of code in RowCommand() ^ <b>GridView1.SelectedIndex = Convert.ToInt32(e.CommandArgument);</b> ^^ -By specifying which row is selected, we can then attempt to grab ^ information stored on that row ^^ -One way to get a value out of a row and cell: ^ <b>string FirstName = GridView1.SelectedRow.Cells[1].Text;</b> ^^ -Note: this is useful if you already have a populated GridView with the text you need on the screen!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-3-10',   -- varchar(50)
+                  @lessonid = '6-2',  -- varchar(50)
+                  @slideinfo = 'GridViews ^^ -The Primary Key column of a table is not always something you want ^ to show in your columns (typically, this value may be hidden and only ^ used in database interactions) ^^ -However, we can tell the GridView which column it is and afterwards, ^ we can grab out values associated with the selected row? ^ *Answer: It will if we tell the GridView which column to use for the ^ DataKey... (next slide)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-3-11',   -- varchar(50)
+                  @lessonid = '6-2',  -- varchar(50)
+                  @slideinfo = 'GridViews ^^ -Put the PRIMARY KEY column name into the <b>DataKeyNames</b> ^ property ^^ -We will need these values  when editing/deleting', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-3-12',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'GridViews ^^ -IMPORTANT NOTE: when you created a <b>ButtonField</b> on the ^ GridView, do not forget to set the <b>CommandName</b> property! ^^ -When a button is clicked on, the <b>RowCommand()</b> fires and we will ^ want to know which button was clicked on (especially when you have ^ more than one button to choose from) ^^ -On the next slide we will check the value of e.CommandName to ^ accomplish this ^^ -Example: The "DeletE" ButtonField has a CommandName value of: ^ "Delete Client"', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-3-13',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'GridViews ^^ -When you click on one of the <b>ButtonField</b>s on the GridView, the <b>RowCommand()</b> executes: (Example code) ^ <b>protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e) ^ { ^ GridView1.SelectedIndex = Convert.ToInt32(e.CommandArgument.ToString()); ^ int PrimaryKeyID = Convert.ToInt32(GridView1.SelectedValue.ToString()); ^ if(e.CommandName == "Delete Client") ^ {</b> ^ /*RUN DATABASE DELETE CODE HERE, USING THE PRIMARY KEY ID TO ^ SPECIFY WHICH CUSTOMER IS ABOUT TO BE DELETED! */ ^ <b>} ^ else if (e.CommandName == "Edit Client") ^ {</b> ^ /*POPULATE TEXTFIELDS AND DISPLAY THEM BASED ON THE SELECTED ^ ROWS CELL VALUES */ <b>} ^ }</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '6-3-14',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'GridViews ^^ -You should now be able to: ^ *Customize which columns are displayed ^^ *Bind the PRIMARY KEY data column to the <b>DataKeyNames</b> ^ property ^^ *Add buttons to the GridView which might: ^ Delete, Edit Select, etc ^^ *Determine which row was clicked on and set the ^ <b>SelectedIndex</b> property', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-3-15',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'GridViews - Edit Options ^^ -To design the input controls on the last slide, create them on your ^ <b>.aspx</b> page ^ *Set their <b>visible</b> property <b>False</b> ^ *I suggest using a Panel to hide them all at once! ^^ -When the edit link is clicked beside the appropriate <b>GridView</b> Row: ^ *Modify the input controls <b>visible</b> property to <b>True</b> ^ *Populate each control with appropriate data based on a ^ database call using the <b>DataKeyName</b> value (or using the text ^ values from the GridView) ^ *Create functionality behind the save an cancel button', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-3-16',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'GridViews - Edit Options ^^ -You must refresh your <b>Gridview</b>s <b>DataSource</b> after row ^ modifications ^^ -Example: ^ <b>GridView1.DataSource = dataset; ^ GridView1.DataBind();</b> ^^ -Do not forget to originally populate your GridView within a ^ if(!IsPostBack) block! Otherwise, every click you make will ^ be refreshing the grid (which may be okay for a simple grid)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-3-17',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'Web.config ^^ -The <u>Web.config file</u> is an <u>XML file</u> which can be very useful ^ for storing system wide values ^^ -Example: a connection string value ^^ -We used to write out the connection string every time we ^ wanted to use a database: ^^ <b>string connectionString = @"Data Source =localhost; Initial ^ Catalog=Commerce; Integrated Security=SSPI";</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+				  
+EXEC dbo.spSlides @slideID = '6-3-18',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'Web.config ^^ -With the <u>Web.config</u> we can just reference the XML tag name of the ^ connection string ^^ -In <b>Web.config</b>: ^ <connectionStrings> ^ <add name="<b>ConnectionStringName</b>" connectionString="Data ^ Source=localhost;Initial Catalog=Commerce;Integrated Security=True" ^ providerName="System.Data.SqlClient" /> ^ < /connectionStrings> ^^ -In your .cs code: ^ <b>string connectionString = ^ ConfigurationManager.ConnectionStrings["ConnectionStringName"]. ^ ConnectionString;</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-3-19',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'Good Practices ^^ -Certain patterns develop when building web applications ^^ -EXAMPLE 1: You need to run a SELECT * FROM ^ tbSomething to populate a GridView when you: ^ *First arrive at a page ^ *Edit an item in the GridView ^ *Delete an item in the GridView ^^ -Helpful Solution: Create a method which will query the ^ database and populate your controls with values, this method can be called in each of these situations', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-3-20',   -- varchar(50)
+                  @lessonid = '6-3',  -- varchar(50)
+                  @slideinfo = 'Good Practices ^^ -Certain patterns develop when building web applications ^ (continued) ^^ -EXAMPLE 2: Create a method called <b>ClearFields()</b> which will ^ clear all controls before you add new values to them ^^ *You may even want to call <b>ClearFields()</b> from within the ^ method which refreshes your GridView, but be careful ^ about resetting when you shouldnt!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-4-1',   -- varchar(50)
+                  @lessonid = '6-4',  -- varchar(50)
+                  @slideinfo = 'Dynamic-Link Libraries (DLL) and Validators', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-4-2',   -- varchar(50)
+                  @lessonid = '6-4',  -- varchar(50)
+                  @slideinfo = 'Creating DLLs ^^ -DLL (<u>Dynamic-Link Library</u>) ^ *A <b>.dll</b> is a file containing public classes, methods and ^ properties ^^ *There are no visual components to a <b>.dll</b> file ^^ *We create <b>.dll</b> files to share commonly used pieces of functional code ^^ #eg. Executing sql on a database and returning a ^ <b>DataSet</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-4-3',   -- varchar(50)
+                  @lessonid = '6-4',  -- varchar(50)
+                  @slideinfo = 'Creating DLLs ^^ -To create your own <b>.dll</b>, make a new project in Visual ^ Studio ^^ -Choose the "Class Library" project template ^^ -Mark your methods as <b>public</b> if you want them to be ^ available to othe prrojects using this <b>.dll</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-4-4',   -- varchar(50)
+                  @lessonid = '6-4',  -- varchar(50)
+                  @slideinfo = 'Creating DLLs ^^ -Test out your <b>.dll</b> by creating another project and adding a ^ reference: ^^ *Right click on the project and click on "add a reference" ^^ *A copy of the <b>.dll</b> file will be placed on the bin folder of that ^ application ^^ -Note: ^ <b>*.dll</b> files are used everywhere on Windows machines ^ *Take a look at <b>c:\windows\system32\</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-4-5',   -- varchar(50)
+                  @lessonid = '6-4',  -- varchar(50)
+                  @slideinfo = 'Calling a DLL ^^ -After you setup a referenfe, you can call the methods/classes and ^ properties of the .dll file using the following format: ^^ <b>DLLProjectName.ClassName varName = new ^ NameOfDLLProject.NameOfClass()</b> ^^ <b>varName.MethodName()</b> ^^ -Note: Substitute <b>DLLProjectName</b>,<b>ClassName</b>, and ^ <b>MethodName()</b> above for your project, class and method name', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-4-6',   -- varchar(50)
+                  @lessonid = '6-4',  -- varchar(50)
+                  @slideinfo = 'Validator Controls ^^ -Visual Studio has useful controls for validating user input ^^ -These controls can be found in your toolbox, under the ^ heading: "Validation" ^^ -After adding one of these controls, modify the ^ <b>ControlToValidate</b> property appropriately', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-4-7',   -- varchar(50)
+                  @lessonid = '6-4',  -- varchar(50)
+                  @slideinfo = 'Validator Controls ^^ <b>-RequiredFieldValidator</b> ^ *The specified control must contain a value ^^ <b>-RangeValidator</b> ^ *The controls value must lie within the range specified in ^ the <b>MaximumValue</b> and <b>MinimumValue</b> properties ^^ <b>-RegularExpressionValidator</b> ^ *The value of the control must match the format specified * in the <b>ValidationExpression</b> property ^ *Eg. An Email address, phone number, postal code', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-4-8',   -- varchar(50)
+                  @lessonid = '6-4',  -- varchar(50)
+                  @slideinfo = 'Validator Controls ^^ <b>-ValidationSummary</b> ^^ -The <b>HeaderText</b> property of this control is displayed if at ^ least one validator on the form fails ^^ -The <b>ErrorMessage</b> property of each failed validator is also ^ printed ^^ -This control should be used if you have more than one ^ validator on a form', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-4-9',   -- varchar(50)
+                  @lessonid = '6-4',  -- varchar(50)
+                  @slideinfo = 'Validator Controls ^^ -Page Layout Guidelines: ^^ -Typically you will place a validator control next to the control ^ being validated ^^ -The <b>ValidationSummary</b> control should then be placed at ^ the top of the page ^^ -Note: Validator controls can run on both the client or server ^ side', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-4-10',   -- varchar(50)
+                  @lessonid = '6-4',  -- varchar(50)
+                  @slideinfo = 'Validator Controls ^^ -Most toolbox controls have a property called: <b>CauseValidation</b> ^^ -If this property is set to <b>False</b>, the validator controls will not run ^^ -This is very useful for a "Cancel" button, which should not be ^ validating input when clicked', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-4-11',   -- varchar(50)
+                  @lessonid = '6-4',  -- varchar(50)
+                  @slideinfo = 'Validator Controls ^^ -In the newest version of the .Net framework, the validators are ^ used differently. You must add this to your web config: ^^^ <b>< appSettings> ^ <ass key="ValidationSettings:UnobtrusiveValidationMode" ^ value="None" /> ^ < /appSettings>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '6-4-12',   -- varchar(50)
+                  @lessonid = '6-4',  -- varchar(50)
+                  @slideinfo = 'Creating DLLs ^^ -<b>DAL</b> (<b>Data Access Layer</b>) ^ *A <u>DAL</u> is the layer of an application which strictly deals ^ with the database ^^ *In order to optimize our code, we should build a class ^ which executes our stored procedures', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-1',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-2',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'SQL Server ^^ -Discussed so far: ^^ *Tables, Views ^ *SQL Server data types ^ <b>*SELECT, INSERT, UPDATE, DELETE ^ * Where, Order By, Top, Join</b> ^ *Aggregate functions ^ *Built in functions - <b>getdate()</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-3',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -Think of a Stored Procedure (SP) as one or more SQL ^ statements which perform a common function ^^ -Just like C# functions, they have parameters ^^ -You can also have Optional parameters, which are ^ parameters that set default values unless a value is ^ provided when calling the stored procedure', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-4',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures Name ^^ -When creating a stored procedure, you need to give it a ^ name, just like in C# ^^ -Good naming conventions for Stored Procedures are: ^^ <b>spAddTableName ^ spUpdateTableName ^ spDeleteTableName ^ spGetTableName ^ spProcessTableName</b> ^ -You cannot use spaces or special character', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '4-1-5',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -Here is the format of a typical Stored procedure creation: ^ <b>CREATE PROCEDURE spProcedureName ^ ( ^ @ParameterOne DataType, ^ @ParamaterTwo DataType ^ ) ^ AS ^ BEGIN ^^ END ^ GO</b> ^ -We type any SQL we want between "BEGIN" and "END"', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
