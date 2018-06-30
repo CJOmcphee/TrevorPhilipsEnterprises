@@ -21,35 +21,35 @@ and how data is related to one another between tables. You will get understandin
 forms of normalization of a data, primary and foreign keys. Learn SQL functions and how to get data from different tables (JOIN).^
 
 Module 4 
-ADO.NET
+<h2>ADO.NET</h2>
 In this module you will dive more deep to work with SQL and learn how to operate with data from data base in C#.^
 In discussion will touch subjects of Stored Procedures, global and local variables in SQL, Transactions and Subqueries.^
 Further you may learn how to work with data from SQLdatabases in C#. How to use SQLConnection and SQLCommad Objects.^
 Also, you will know how to create and operate with Master Page for WebApp creation.^
 
 Module 5
-ASP.NET
+<h2>ASP.NET</h2>
 This module is introduction to ASP.NET.
 Here you can get understanding of what is Cascading Style Sheets(CSS), Application State, dive more deep with HTML Controls.^
 Understand way of representing data form database in GridView, editing Web.config, create and call Dynamic-Link Libraries(DLL)^
 and how to make controls validation.^
 
 Module 6
-CSS & Master Pages
+<h2>CSS & Master Pages</h2>
 In this module you continue your work with CSS and Master Page.^
 You will learn CSS Attributes, more about ASP.NET Controls. Get more knowledge about Master Page and connected Web Forms.^
 Will know how to store values in Sessions and Cookies and how to pass them with QueryString.You will back to presenting data^
 in GridView and Data List to learn how to manage this representation with sorting, paging, data binding and etc.^
 
 Module 7
-Object Oriented Programming (OOP)
+<h2>Object Oriented Programming (OOP)</h2>
 In this module you can get the main idea of Object Oriented Programming (OOP) philosophy,^
 understand the main difference from Procedural Programming. You can learn major concepts of OOP:^
 Inheritance, Polymorphism and Encapsulation. Get the understanding what is Array and how to operate with arrays.^
 You learn how Bussiness-Logic Access Layer (BAL) interact with Data Access Layer (DAL).^
 
 Module 8
-XML & Web Services
+<h2>XML & Web Services</h2>
 In this module we will talk about Extensible Markup Language(XML) and Web Services.^
 We look at them together because Web Services obvious use XML. XML is very similar to HTML.^
 Actually, XML has its own style sheet Extensible Stylesheet Language (XSL).^
@@ -58,7 +58,7 @@ You will learn how to use WebMethod to create yours own Web Services and learn W
 which has XML format. You will deal eith Siple Object Access Protocol (SOAP) to create interaction between Web Services. ^
 
 Module 9
-JavaScript, HTML5 & CSS3
+<h2>JavaScript, HTML5 & CSS3</h2>
 This module is introduction to JavaScript and using of HTML5 and CSS3.^
 You will learn about JavaScript and what that difference with JAVA.^
 Get some understanding about JSON, Jquery and AJAX. Get knowledge about Document Object Model (DOM)^
