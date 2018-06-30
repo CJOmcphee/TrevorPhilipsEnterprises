@@ -21,7 +21,7 @@ namespace GroupProject.user
 
         private void loadModules()
         {
-            DataSet module = Crud.ReadTable("spGetModule");
+            DataSet module = Crud.ReadTable("spModule");
             HtmlTable tbMod = new HtmlTable();
             dvModuleList.Controls.Add(tbMod);
 

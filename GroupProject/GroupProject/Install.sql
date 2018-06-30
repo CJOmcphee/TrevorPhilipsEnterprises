@@ -17,10 +17,11 @@ lastName varchar(50),
 studentEmail varchar(100) foreign key references tbLogin(sID)
 )
 create table tbModule(
-moduleID varchar(50) primary key
+moduleID varchar(50) primary key,
+moduleSum VARCHAR(MAX)
 )
-	insert into tbModule (moduleID)values
-							('Module 1'),('Module 2'),('Module 3'),('Module 4'),('Module 5'),('Module 6')
+	insert into tbModule (moduleID, moduleSum)values
+							('Module 1','moduleSum1'),('Module 2','moduleSum2'),('Module 3','moduleSum3'),('Module 4','moduleSum4'),('Module 5','moduleSum4'),('Module 6','moduleSum6'),('Module 7','moduleSum7'),('Module 8','moduleSum8'),('Module 9','moduleSum9')
 create table tbLesson(
 lessonID varchar(50) primary key,
 mID varchar(50) foreign key references tbModule(moduleID)
@@ -30,11 +31,15 @@ mID varchar(50) foreign key references tbModule(moduleID)
 						('2-1','Module 2'),('2-2','Module 2'),('2-3','Module 2'),('2-4','Module 2'),('2-5','Module 2'),
 						('3-1','Module 3'),('3-2','Module 3'),('3-3','Module 3'),('3-4','Module 3'),('3-5','Module 3'),
 						('4-1','Module 4'),('4-2','Module 4'),('4-3','Module 4'),('4-4','Module 4'),('4-5','Module 4'),
-						('5-1','Module 5'),('5-2','Module 5'),('5-3','Module 5'),('5-4','Module 5'),('5-5','Module 5')
+						('5-1','Module 5'),('5-2','Module 5'),('5-3','Module 5'),('5-4','Module 5'),('5-5','Module 5'),
+						('6-1','Module 6'),('6-2','Module 6'),('6-3','Module 6'),('6-4','Module 6'),('6-5','Module 6'),
+						('7-1','Module 7'),('7-2','Module 7'),('7-3','Module 7'),('7-4','Module 7'),('7-5','Module 7'),
+						('8-1','Module 8'),('8-2','Module 8'),('8-3','Module 8'),('8-4','Module 8'),('8-5','Module 8'),
+						('9-1','Module 9'),('9-2','Module 9'),('9-3','Module 9'),('9-4','Module 9'),('9-5','Module 9')
 create table tbSlides(
 slideID varchar(50),
 lessonid varchar(50) foreign key references tbLesson(lessonID),
-slideInfo varchar(1000) 
+slideInfo varchar(2000) 
 )
 
 create table tbExample(
@@ -64,8 +69,9 @@ score int
 -- because there's going to be an absolute ton of questions - Darryl.
 
 create table tbQuestions(
+QID INT IDENTITY(1,1),
 tID varchar(50)foreign key references tbTest(testID),
-question varchar(500) primary key,
+question varchar(500) PRIMARY KEY,
 answers varchar(1000)
 )
 
@@ -200,6 +206,7 @@ select * from tbExample
 select * from tbTest
 go
 create procedure spQuestions(
+@QID INT =NULL,
 @questions varchar(1000) =null,
 @answers varchar(1000) =null,
 @tID varchar(50) =null,
@@ -218,16 +225,15 @@ as begin
 	if @crud='u'
 		begin
 			update tbQuestions
-				set tID=@tID,
-					question=@questions,
+				set	question=@questions,
 					answers=@answers
-					where question=@questions
+					where QID=@QID
 		end
 	if @crud='d'
 		begin
 
 			delete from tbWrongAnswers where questions=@questions
-			delete from tbQuestions where question=@questions
+			delete from tbQuestions where QID=@QID
 		end
 end
 go
@@ -247,11 +253,11 @@ as begin
 			select wrongAnswers into #Allanswer from tbWrongAnswers where questions = @question 
 			insert into #Allanswer select answers from tbQuestions where question = @question
 			select * from #Allanswer Order by newID();
-			select * from tbWrongAnswers where questions = @question
+			select wrongAnswers from tbWrongAnswers where questions = @question
 		end
 	if @crud='d'
 		begin
-			delete from tbWrongAnswers where questions=@question
+			delete from tbWrongAnswers where wrongAnswers = @wrongAnswers
 		end
 end
 go
@@ -300,7 +306,7 @@ go
 create procedure spSlides(
 @slideID varchar(50) = null,
 @lessonid varchar(50) =null,
-@slideinfo varchar(1000) =null,
+@slideinfo varchar(2000) =null,
 @crud varchar(1)
 )
 as begin
@@ -322,6 +328,11 @@ create procedure spTest
 @TestID varchar(50) = null
 )
 as begin
+	if @crud = 'c'
+		begin
+			insert into tbTest(testID) values
+			(@TestID)
+		end
 	if @crud = 'r'
 	begin
 		select * from tbTest where testID = isnull(@TestID,testID)
@@ -350,13 +361,6 @@ exec spSlides @crud='r', @lessonid ='1-1'
 SELECT * FROM dbo.tbQuestions
 GO
 
-CREATE PROCEDURE spGetModule (
-@crud varchar(1)
-)
-AS BEGIN
-	SELECT * FROM dbo.tbModule
-END
-GO
 CREATE PROCEDURE spGetLessons(
 @crud varchar(1),
 @moduleID VARCHAR(50)
@@ -364,6 +368,42 @@ CREATE PROCEDURE spGetLessons(
 AS BEGIN
 	SELECT * FROM dbo.tbLesson WHERE mID= @moduleID
 END
+GO
 
-
-
+CREATE PROCEDURE spModule(
+@moduleID VARCHAR(50) =NULL,
+@moduleSum VARCHAR(1000)=NULL,
+@crud VARCHAR(1)
+)
+AS BEGIN
+	IF @crud ='c'
+		BEGIN
+			INSERT INTO  dbo.tbModule
+			(moduleID,moduleSum)VALUES (@moduleID,@moduleSum) 
+		END
+	IF @crud='r'
+		BEGIN
+			SELECT * FROM dbo.tbModule WHERE moduleID=ISNULL(@moduleID, moduleID)
+		END
+    IF @crud='u'
+		BEGIN
+			UPDATE dbo.tbModule
+				Set moduleSum=@moduleSum
+				WHERE moduleID=@moduleID
+		END
+   IF @crud='d'
+		BEGIN
+			DELETE FROM dbo.tbModule   WHERE moduleID=@moduleID
+		END
+END
+GO
+					
+			    
+				
+			
+		
+			
+			    
+            
+			    
+    

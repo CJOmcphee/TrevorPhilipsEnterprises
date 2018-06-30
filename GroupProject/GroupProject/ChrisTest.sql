@@ -489,32 +489,113 @@ EXEC dbo.spSlides @slideID = '3-3-8',   -- varchar(50)
                   @slideinfo = 'An INNER JOIN is the default join operation used in SQL^ This JOIN combines  two tables based ON a common column^ If the common column values match on BOTH tables, a data row^ will return^ Example JOIN tbEmployee with tbStudent based on name^ ^ tbEmployee			tbStudent		Result of INNER JOIN ON name^<table><tr><td><table><tr><td>eID</td><td>Name</td></tr><tr><td>1</td><td>Scott</td></tr><tr><td>2</td><td>Matt</td></tr><tr><td>3</td><td>Len</td></tr><tr><td>4</td><td>Rob</td></tr></table></td><td><table><tr><td>sID</td><td>Name</td></tr><tr><td>1</td><td>Alan</td></tr><tr><td>2</td><td>James</td></tr><tr><td>3</td><td>Matt</td></tr><tr><td>4</td><td>George</td></tr></table></td><td>	<table><tr><td>eID</td><td>Name</td><td>sID</td><td>Name</tr><tr><td>2</td><td>Matt</td><td>3</td><td>Matt</td></tr></table></td></tr></table>', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '3-3-9',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = 'Example: INNER JOIN two tables tbEmployee and tbStudent^ ^ SELECT * FROM tbEmployee^ JOIN tbStudent^ ON tbEmployee.Name=tbStudent.Name^ --You can swap the key word JOIN with INNER JOIN if you want^ ^ Exmaple 2: INNER JOIN two tables tbEmployee and tbStudent^ ^ SELECT  *^ From tbEmployee, tbSTUDENT^ WHERE Employee.Name=Student.Name^ Without the join', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-3-10',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = 'We can alos create psuedonames for our tables to save soace(if^ this isnt more confusing for you)^ ^ SELECT * FROM tbEmployee e^ JOIN tbStudent s^ ON e.Name= s.Name^ ^ Note that we didn;t have to rewrite tbStudent over again, just the^ letter s(it is psudo names), this woul have also applied to column names^ and WHERE clauses^ ^ SELECT s.Name FROM tbEmployee e^ JOIN tbStudent s^ ON e.Name = s.Name^ WHERE e.Name = ''Matt''', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-3-11',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = 'What if we wanted to join three tables? How does that work? The^ answer i: It is the same^ --This select would get all the tracher for each session:^ SELECT t.Name, c.Name *^ FROM tbTeacher t^ Join tbCourse c ON t.CourseID=c.CourseID^ Join tbSession s ON c.CourseID=s.CourseID ', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-3-12',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = 'On the next slide we will see example data for: tbCourse, tbTeacher,^ tbSession ^ ^ ^ The last(4th) table will be the result of the table below SQL:^ ^ SELECT t.Name, c.Name, s.GradeYear, s.StartDate, s.EndDate^ FROM tbTeacher t ^ JOIN tbCourse c ON t.CourseID = c.CourseID^ Join tbSession s ON c.CourseID = s.CourseID', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-3-13',   -- varchar(50)
+                  @lessonid = '3-3',  -- varchar(50)
+                  @slideinfo = '<table><tr><td>CourseID</td><td>Name</td><td>Description</td></tr><tr><td>1</td><td>Computer Science</td><td>Programming in C#</td></tr><tr><td>2</td><td>Networking</td><td>Connecting computers through networks</td></tr></table>^ <table><tr><td>TeacherID</td><td>Name</td><td>Address</td><td>Birthday</td><td>CourseID</td></tr><tr><td>1</td><td>Scott Wachal</td><td>555 Some place</td><td>1/1/1981</td><td>1</td></tr><tr><td>2</td><td>Len Ganetsky</td><td>333 Education Way</td><td>1/1/1970</td><td>2</td></tr></table>^ <table><tr><td>SessionID</td><td>CourseID</td><td>Grade Year</td><td>Start Date</td><td>End Date</td></tr><tr><td>1</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>2</td><td>2</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr></table> ^ <table><tr><td>Name</td><td>Name</td><td>Grade Year</td><td>Start Date</td><td>End Date</td></tr><tr><td>Scott Wachal</td><td>Computer Science</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>Len Ganetskey</td><td>Networking</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr></table>', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+--MODULE 4
+ 
+EXEC dbo.spSlides @slideID = '3-4-1',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'There alot of interiesting things you can do with Dates^ in SQL and I wanted to point out a few short cuts before we^ move to far into this course^ ^ To enter the current day and time as a VALUE while using^ UPDATE or  INSERT just type: GETDATE()^ ^If you want to add or subtract a few days from today you can^ just use the + or - and a number^ ^ Example of getting 15 days from now: GETDATE() + 15', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+ 
+EXEC dbo.spSlides @slideID = '3-4-2',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'Using what we just saw in the last slide but in some working^ examples:^ ^ UPDATE tbTeacher^ SET Birthday = GETDATE()^  WHERE TeacherID =3^ ^ INSERT INTO tbTeacher(FirstName, LastName,Birthday,^ CourseID) VALUES (''Scott'',''Wachal'',GETDATE(),1)', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-3',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'When we covered JOINS in the revious module, we didnt^ go very far^ ^ ^ There are in fact a few kinds of JOINS in SQL:^ ^ INNER JOIN(default)^ RIGHT OUTER JOIN^  LEFT OUTER JOIN^ FUL OUTER JOIN', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-4',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'A query using an OUT JOIN will dispay ALL records from an "outer" table, and only the matching records from^ the other table^ ^ There are  three kinds of OUTER JOIN:^ LEFT,RIGHT,FULL^ ^ When the values do not match on BOTH tables, a data row may^ may return with NULL values', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-5',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'SELECT * FROM tbBook^ RIGHT OUTER JOIN tbAUTHOR ON tbBook.pID = tbAuthor=p.ID^ ^<table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table</td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Dresden</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Dodex Alara</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>Null </td><td>Null  </td><td>Null </td><td>3</td><td>Stephen King</td></tr></table></td></tr></table> ^ Note: The right table(tbAuthor) maintains all of its previous values,^ while the left(tbBooks) has Null where  there are no matches', -- varchar(1000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-6',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'SELECT * FROM tbBook^ LEFT OUTER JOIN tbAUTHOR ON tbBook.pID = tbAuthor=p.ID^ ^<table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table</td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Dresden</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Dodex Alara</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>Some Book </td><td>Null  </td><td> </td><td></td><td></td></tr></table></td></tr></table> ^ Note: The right table(tbBook) maintains all of its previous values,^ while the left(tbAuthor) has Null where  there are no matches', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-7',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'SELECT * FROM tbBook^ FULL OUTER JOIN tbAUTHOR ON tbBook.pID = tbAuthor=p.ID^ ^<table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table</td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Dresden</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Dodex Alara</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>Some Book </td><td>Null  </td><td>Null </td><td></td><td></td></tr><tr><td>Null  </td><td>Null  </td><td>Null  </td><td>3</td><td>Stephen King </td></tr></table></td></tr></table> ^ Note: The left table  displays all of its contents first, mismatches on^ the right table are filled with Null Values, followed by the right^ table, with Null Values to the Left ', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-8',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'When we get a result set back  with NULL values, we can select^ based on that information, but keep in mind and exception to the^ normal rules here^ ^ Example: RIGHT OUTER JOIN with a WHERE clause that selects^ out NULLS^ SELECT * FROM tbBooks RIGH OUT JOIN tbAuthor ON tbBOOK.pID = tbAuthor.pID^ WHERE tbBook.pID <u>IS</u> NULL^ ^ Note:That we do not use an equal sign for NULL values!!^ ^ For values without a null: WHERE tbBook .pID <u>is NOT</u> NULL^ ^ ', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-9',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'SELECT * FROM tbBooks RIGHT OUTER JOIN tbAuthor ON^ tbBook.pID = tbAuthor.pID WHERE tbBooks.pID <u>IS</u> NULL^ ^ <table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table</td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>Null </td><td>Null  </td><td>Null </td><td>3</td><td>Stephen King</td></tr></table></td></tr></table>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-10',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'The SQL GROUP BY clause allows us to go trough a table^ and combine rows together( we can then perform simple^ math functions on the values where that would be applicable)^ ^ SUM, MIN, MAX are examples of aggregate  functions^ ^ Note: in order to combine multiple rows into a single row, we^ have to group by a specific column^ ', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-11',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'Example: Find the most expensive book for each author^ SELECT AuthorName,MAX(BookPrice)^ FROM tbAuthorBooks^ GROUP BY AuthorName^ ^  <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>Author Name</td><td>   </td></tr><tr><td>Scott</td><td>19.25</td></tr><tr><td>Matt</td><td>6.79</td></tr></table></td></tr></table>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-12',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'Example: Find the most expensive book for each author^ SELECT AuthorName,COUNT(*)^ FROM tbAuthorBooks^ GROUP BY AuthorName^ ^  <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>Author Name</td><td>   </td></tr><tr><td>Scott</td><td>3</td></tr><tr><td>Matt</td><td>1</td></tr></table></td></tr></table>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-13',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'Example: If we want to rename a generated column, we can do that^ like this:^ ^ SELECT AuthorName,^COUNT(BookPrice)  AS[Author Count]^ FROM tbAuthorBooks^ GROUP BY AuthorName^ ^  <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>Author Name</td><td>Author Count</td></tr><tr><td>Scott</td><td>3</td></tr><tr><td>Matt</td><td>1</td></tr></table></td></tr></table>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '3-4-14',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = 'Keep in mind tha aggreates can also be used in more^ interesting and complex ways.^ In the example below we want to multiply the price by the quantity to get a more accurate total price^ SELECT SUM(Price * Quantity) AS [Total Price]^ FROM tbAuthorBooks^ ^  <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>pID</td><td>Quantity</td><td>Price</td></tr><tr><td>1</td><td>S2</td><td>5.00</td></tr><tr><td>2</td><td>1</td><td>8.25</td></tr><tr><td>3</td><td>1</td><td>11.75</td></tr><tr><td>4</td><td>4</td><td>2.50</td></tr></table></td><td><table><tr><td>Total Price</td></tr><tr><td>40</td></tr></table></td></tr></table> ', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
 
+EXEC dbo.spSlides @slideID = '3-4-15',   -- varchar(50)
+                  @lessonid = '3-4',  -- varchar(50)
+                  @slideinfo = '', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+EXEC dbo.spSlides @slideID = '3-4-15',   -- varchar(50)
+                  @lessonid = '',  -- varchar(50)
+                  @slideinfo = '', -- varchar(2000)
+                  @crud = ''       -- varchar(1)
 
 
 

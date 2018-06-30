@@ -7,6 +7,12 @@
     <title></title>
 </head>
 <body>
+    <style>
+        h1 h2 p{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+    </style>
     <form id="form1" runat="server">
         <div>
             <table>

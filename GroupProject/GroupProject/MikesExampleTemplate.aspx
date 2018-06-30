@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>M1L1</title>
-    <style>
+    <%--<style>
         html, body {
             height: 100%;
             padding: 0;
@@ -50,11 +50,11 @@
             left:50%;
             background:#808080
         }
-    </style>
+    </style>--%>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="mainDiv">
+        <%--<div id="mainDiv">
             <div id="explanation">
             <h1>Explanation</h1>
                 <span>Copy the code into the CODE section and click the "Go" button.</span>
@@ -76,13 +76,16 @@
                 <br />
                 <p>}</p>
             </div>
-
+            
         </div>
         <br />
         <div id="button">
         <asp:Button ID="btnPrev" runat="server" Text="Prev" />
         <asp:Button ID="btnGo" runat="server" Text="Go" />
         <asp:Button ID="btnNext" runat="server" Text="Next" />
+        </div>--%>
+        <div>
+            <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
         </div>
     </form>
 </body>

@@ -57,6 +57,10 @@ namespace GroupProject
             {
                 mydal.AddParam("@TestID", id.ToString());
             }
+            if (Procedure == "spModule")
+            {
+                mydal.AddParam("@moduleID", id.ToString());
+            }
             return mydal.ExecuteProcedure(Procedure);
         }
         public static void DeleteData(string Procedure, string id)
@@ -72,17 +76,37 @@ namespace GroupProject
             }
             if (Procedure == "spQuestions")
             {
-                mydal.AddParam("@questions", id.ToString());
+                mydal.AddParam("@QID", id.ToString());
             }
             if(Procedure == "spWrongAnswer")
             {
-                mydal.AddParam("@question", id.ToString());
+                mydal.AddParam("@wrongAnswer", id.ToString());
             }
             if(Procedure == "spTest")
             {
                 mydal.AddParam("@TestID", id.ToString());
             }
+            if(Procedure == "spModule")
+            {
+                mydal.AddParam("@moduleID",id.ToString());
+            }
             mydal.ExecuteProcedure(Procedure);
+        }
+        public static void CreatUpdateModule(string crud, string ModuleID, string ModuleSum)
+        {
+            mydal.AddParam("@crud", crud);
+            mydal.AddParam("@moduleID", ModuleID);
+            mydal.AddParam("@moduleSum", ModuleSum);
+            mydal.ExecuteProcedure("spModule");
+        }
+
+        public static void CreateTest(string crud,string TestID)
+        {
+          
+                mydal.AddParam("@crud", crud);
+                mydal.AddParam("@TestID", TestID);
+                mydal.ExecuteProcedure("spTest");
+            
         }
         public static DataSet CreateUpdateUser(string crud ,string UserEmail,string UserPassword,string FirstName,string LastName)
         {
@@ -102,12 +126,13 @@ namespace GroupProject
             mydal.AddParam("@lessonID", lessonID);
             mydal.ExecuteProcedure("spExamples");
         }
-        public static void CreateUpdateQuestions(string crud, string question, string answer, string TestID)
+        public static void CreateUpdateQuestions(string crud, string question, string answer, string TestID, string QID)
         {
             mydal.AddParam("@crud", crud);
             mydal.AddParam("@quesions", question);
             mydal.AddParam("@answers", answer);
-            mydal.AddParam("tID", TestID);
+            mydal.AddParam("@tID", TestID);
+            mydal.AddParam("@QID", QID);
             mydal.ExecuteProcedure("spQuestions");
         }
         public static void CreateWrongAnswer(string crud, string question, string wronganswer)
