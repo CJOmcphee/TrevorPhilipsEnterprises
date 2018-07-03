@@ -603,10 +603,13 @@ EXEC spSlides	@slideID = '3-4-16',
 
 EXEC spSlides	@slideID = '3-4-17',
 				@lessonid = '3-4',
-				@slideinfo = 'We can also choose to display a result based on an alpanumeric or number ordering, which is useful for reports^ ^ <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>Author Name</td><td>Book Name</td></tr><tr><td>Book Price</td><td>HelloWorld!</td></tr></table>',
+				@slideinfo = 'We can also choose to display a result based on an alpanumeric or number ordering, which is useful for reports^ ^ <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>BookName</td><td>BookPrice</td></tr><tr><td>Byeworld</td><td>19.25!</td></tr><tr><td>Hello World</td><td>9.00</td></tr><tr><td>The Red Hat</td><td>6.79</td></tr><tr><td>OkayWorld</td><td>5.00</td></tr></table>',
 				@crud = 'c'
 
-
+EXEC spSlides	@slideID = '3-4-18',
+				@lessonid = '3-4',
+				@slideinfo = 'There are two options: ASC and DESC^ ASC is Ascending from lowest to highest, DESC is reversed^ SELECT BookName, BookPrice^ FROM tbAuthorBooks^ ORDER BY BookPrice ASC^ ^ <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>BookName</td><td>BookPrice</td></tr><tr><td>Okay World</td><td>5.00</td></tr><tr><td>The Red Hat</td><td>6.79</td></tr><tr><td>HelloWorld</td><td>9.00</td></tr><tr><td>ByeWorld</td><td>19.25</td></tr></table>', 
+				@crud = 'c'
 
 
 
