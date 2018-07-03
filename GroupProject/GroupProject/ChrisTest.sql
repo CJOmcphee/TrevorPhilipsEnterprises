@@ -612,11 +612,13 @@ EXEC spSlides	@slideID = '3-4-18',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '3-4-19',
-`				@lessonid = '3-4',
+				@lessonid = '3-4',
 				@slideinfo = 'If we use TOP and ORDER BY together, we can get a TOP^ 10list, or just seelect out of the highest or lowest row:^ SELECT TOP 1 BookName, BookPrice^ FROM tbAuthorBooks^ ORDER  BY BookPrice DESC^ ^ <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>BookName</td><td>BookPrice</td></tr><tr><td>ByeWorld</td><td>19.25</td></tr></table>',
 				@crud = 'c'
 
+--MODULE 7
 
+EXEC spSlides	@slideID=
 
 
 

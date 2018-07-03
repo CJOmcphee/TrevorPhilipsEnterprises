@@ -51,7 +51,9 @@ Learn SQL functions and how to get data from different tables (JOIN).^'),
 							
 							('Module 8','moduleSum8'),
 							
-							('Module 9','moduleSum9')
+							('Module 9','moduleSum9'),
+
+							('Module 10', 'moduleSum10')
 create table tbLesson(
 lessonID varchar(50) primary key,
 mID varchar(50) foreign key references tbModule(moduleID)
@@ -65,7 +67,9 @@ mID varchar(50) foreign key references tbModule(moduleID)
 						('6-1','Module 6'),('6-2','Module 6'),('6-3','Module 6'),('6-4','Module 6'),('6-5','Module 6'),
 						('7-1','Module 7'),('7-2','Module 7'),('7-3','Module 7'),('7-4','Module 7'),('7-5','Module 7'),
 						('8-1','Module 8'),('8-2','Module 8'),('8-3','Module 8'),('8-4','Module 8'),('8-5','Module 8'),
-						('9-1','Module 9'),('9-2','Module 9'),('9-3','Module 9'),('9-4','Module 9'),('9-5','Module 9')
+						('9-1','Module 9'),('9-2','Module 9'),('9-3','Module 9'),('9-4','Module 9'),('9-5','Module 9'),
+						('10-1','Module 10'),('10-2','Module 10')
+
 create table tbSlides(
 slideID varchar(50),
 lessonid varchar(50) foreign key references tbLesson(lessonID),
