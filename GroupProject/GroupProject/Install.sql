@@ -462,26 +462,36 @@ EXEC dbo.spSlides @slideID = '1-1-16',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '1-1-17',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p></p>', -- varchar(2000)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understand The Problem</h2><p>Step one involves understanding the problem that the future code will be used to solve</p>^For every piece of a program there will always be a client, that is the person or people who have a vested interest in the outcome of the particular piece of code^Note: The client can be YOU in some cases^But whoever this client is, they will likely have requirements', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-1-17',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p></p>', -- varchar(2000)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understand the Problem</h2><p>User Requirements must be gathered, understood and agreed upon</p>^Users who think they know what they want will frequently change their minds, especially after seeing sample output^A good programmer is often part counselor, part detective^In order to scope the time required for the various tasks involved in finishing a project, these requirements need to be fairly stable.', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 
 EXEC dbo.spSlides @slideID = '1-1-18',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p></p>', -- varchar(2000)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Planning the Logic</h2><p>Step two is to plan out your logic</p>^Note that in this course our problems may be small, realisitcally requiring limited planning^The two most common tools in planning logic are Flowcharts and Pseudo-code^Both tools involve writing the steps of the program in English (more on this later)', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-1-19',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p></p>', -- varchar(2000)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Code the Problem</h2><p>Step three is to code the problem, following the plan we made earlier</p>^ A good term paper needs planning before writing, so do most programs, so dont skimp out on the previous step!^Planning saves you time; practice proper planning now!', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-1-20',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Execute and Test the Program</h2><p>Once we have coded a solution, the next step is to do some proper testing</p>^There are many kinds of testing and each provides value^Check out the list on the next slide for a few of the different categories of testing^Note: we do not cover these topics in the program', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-21',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p>APPLICATION DEVELOPMENT TEST TYPES</p><table><tr><td>Defecit Testing</td><td>Path Testing</td><td>Data set testing</td></tr><tr><td>Unit Testing</td><td>System Testing</td><td>Integration Testing</td></tr><tr><td>Black Box Testing</td><td>White Box Testing</td><td>Regression Testing</td></tr><tr><td>Automation Testing</td><td>User Acceptance Testing</td><td>Performance Testing</td></tr></table>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-22',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p></p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
