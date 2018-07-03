@@ -411,49 +411,80 @@ EXEC dbo.spSlides @slideID = '1-1-6',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '1-1-7',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>^<p></p>', -- varchar(2000)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>^<p>Syntax helps the user and the computer agree on things like:</p>^<p>-When a "sentence" is finished (line of code)</p>^<p>-When capitalization is required</p>^<p>-When to use punctuation; and when not to use punctuation</p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-1-8',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>', -- varchar(2000)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Translating the Program into Machine Language</h2>^<p>When you write an incorrect programming statement the compiler issues a Syntax Error</p>^<p>Examples include: misspelling a word, using a word that does not exist in the language, or using illegal grammar.</p>^<p>All syntax errors are caught by the compiler (or interpreter), which is a piece of software that runs your programming level into a lower level of machine code that also lets you know if you have used langauge syntax correctly or not</p>^<p>Languages such as Java or C# are translated from high-level programming languages into low-level machine languages</p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-1-9',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>', -- varchar(2000)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Translating the Program into Machine Language</h2>^<p>In order to get languages to operate on the hardware of a computer, we need to communicate on-off circuitry (1 or 0). Machine Languages are designed to communicate directly to the hardware. Machine code is usually specific to the type of CPU in a computer</p>^<p>Here are the generations of programming languages we have so far:</p>^<p>1GL (1st Generatoin) - Machine Language (CPU Dependent)</p>^<p>2GL - Assembly Language (Also CPU dependent, cleaner machine language)</p>^<p>3GL - Englsih-like; Procedural (C# is a 3rd generation language)</p>^<p>4GL Graphical / Symbolic</p>^<p>5GL - Natural Language Recognition</p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-1-10',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>', -- varchar(2000)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Translating the Program into Machine Language</h2><p>When writing a program, you will be compiling your code before its able to work</p>^<p>Your program can only compile when free of syntax errors</p>^<p>Once translated to machine code, your programm will run/execute on your computer.</p>^<p>Once you have an executable program, you can use some sample input data to see whether the results are logically correct.</p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-1-11',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>', -- varchar(2000)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Translating the Program into Machine Language</h2><p>Having the right syntax, does not mean you have the right *logic*</p>^<p>The logic of a program is literally step by step instructions that you want to run</p>^<p>Logical errors are typically more difficult to find and more damaging than syntactial errors</p>^<p>Lets take a look at some logic examples...</p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-1-12',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '', -- varchar(2000)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Example Exercise</h2><p>Any task can be logically broken down</p>^<p>Baking a cake:</p>^Obtain mixing bowl^Add 3 Cups of flour into the bowl^Andd two eggs to the bowl^Etc..^Obtain cake pan^Pour contents into pan^Bake at 350 degrees for 45 minutes', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-1-13',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '', -- varchar(2000)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Syntax Vs. Logical Errors</h2><p>What if we use the right syntax, but the wrong logic?</p>^<p>Baking a cake:</p>^Stir^Add two eggs^**Add a gallon of gasoline^Bake at 350 degrees for 45 minutes^**Add 3 cups of flour^<p>Syntaxically, the above example is perfect; however I am sure you can see the problem!</p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-1-14',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '', -- varchar(2000)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Logic Exercise</h2><p>Write out the steps (logic)for one of the following tasks (or come up with a simple idea similar to these):</p>^Changing the tire on a car^Ordering Chinese food from home^Getting ready for work/school in the morning^Booking a hotel room for a weekend out of town^Preparing a table for a fancy dinner^<p>Note: This is not a graded exercise, it can be done on your own or you can email your instructor</p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-1-15',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '', -- varchar(2000)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p>Now that we have discussed the idea of programming languages and syntax, lets discuss the role of a programmer</p>^<p>There are many steps involved in making software above and beyond the making of syntactically correct and logically sound lines of code</p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
+
+EXEC dbo.spSlides @slideID = '1-1-16',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p>A typical programmers job can be broken down into these steps:</p>^1. Understand the problem^2. Plan the logic^3. Code the program^4. Execute and test the program^5. Put the program into production', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-17',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-17',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '1-1-18',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-19',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-20',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
