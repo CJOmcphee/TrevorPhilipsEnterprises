@@ -21,20 +21,20 @@ moduleID varchar(50) primary key,
 moduleSum VARCHAR(MAX)
 )
 	insert into tbModule (moduleID, moduleSum)values
-							('Module 1','<h2>Intro to Programming Concepts</h2>
+							('Module 1','<h2>Intro to Programming Concepts</h2>^
 The first module is an introduction to idea of programming.^
 In this module you may get understanding of generic concept when using the computer, logic and basic programming ideas, a bit of history and evolution of programming.^
 You will get understanding a basic syntax of C#, data types and variables, how to use operators(AND/OR/IF/CASE).^
 Learn to create “loops”. Be able to modularize a program.^'),
 							
-							('Module 2','<h2>C# & .NET Framework</h2>
+							('Module 2','<h2>C# & .NET Framework</h2>^
 This module is an introduction to C# and .NET Framework.^
 During going through it you learn about Assembles(Libraries and Executables), difference between Objects and Classes.^
 You will learn how to create WebForm Applications, Form Controls, Events and Event Handlers.^
 Understand basics client/server interactions, basic HTML elements and basics of state management.^
 Get more deep understanding of Data Types, using operators, loops and modules.^'),
 							
-							('Module 3','<h2>Databases</h2>
+							('Module 3','<h2>Databases</h2>^
 This module is an introduction to idea of databases.^
 Here will talk about generic concepts data storage, concepts of tables and columns^
 and how data is related to one another between tables.^
@@ -84,10 +84,19 @@ lID varchar(50) foreign key references tbLesson(lessonID)
 )
 create table tbTest(
 testID varchar(50) primary key,
+ModuleID varchar(50) foreign key references tbModule(ModuleID)
 )
 go
-insert into tbTest (testID)values
-					('module1'),('module2'),('module3'),('module4'),('module5'),('module6'),('module7'),('module8'),('module9')
+insert into tbTest (testID,ModuleID)values
+					('module1','Module 1'),
+					('module2','Module 2'),
+					('module3','Module 3'),
+					('module4','Module 4'),
+					('module5','Module 5'),
+					('module6','Module 6'),
+					('module7','Module 7'),
+					('module8','Module 8'),
+					('module9','Module 9')
 
 go
 create table tbStudentTest(
@@ -355,7 +364,8 @@ go
 create procedure spTest
 (
 @crud varchar(1),
-@TestID varchar(50) = null
+@TestID varchar(50) = null,
+@ModuleID varchar(50) = null
 )
 as begin
 	if @crud = 'c'
@@ -365,7 +375,7 @@ as begin
 		end
 	if @crud = 'r'
 	begin
-		select * from tbTest where testID = isnull(@TestID,testID)
+		select * from tbTest where ModuleID = isnull(@ModuleID,ModuleID)
 	end
 	if @crud ='d'
 	begin
@@ -503,6 +513,8 @@ AS BEGIN
 		END
 END
 GO
+
+exec spTest @crud = 'r', @ModuleID = 'Module 1'
 					
 			    
 				
