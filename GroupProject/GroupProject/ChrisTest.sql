@@ -693,7 +693,12 @@ EXEC spSlides	@slideID = '7-1-15',
 				@slideinfo = 'A; link^ {^ font-size:small^ color: green^ font-family: Verdana, Ariel;^ text-decoration: underline^ }^ A:hover^ {^ font-size: small;^ color:Red;^ font-family: Verdana, Ariel;^ text-decoration: underline overline',
 				@crud = 'c'
 
+--Lesson2
 
+EXEC spSlides	@slideID = '7-2-1',
+				@lessonid = '7-2',
+				@slideinfo = 'File upload control^ ^ There are many way to upload and display images^ ^ The following slides who two potential ways^ ^ 1. Upload and dsiplay a file to a web server using a directory^ path^ ^2. Upload a file to a database',
+				@crud = 'c'
 
 
 
