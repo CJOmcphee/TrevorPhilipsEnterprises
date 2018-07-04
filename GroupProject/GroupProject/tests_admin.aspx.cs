@@ -109,15 +109,16 @@ namespace GroupProject.admin
             gvTests.SelectedIndex = Convert.ToInt32(e.CommandArgument);
             Session["Test"] = gvTests.SelectedDataKey["moduleID"].ToString();
             Test = (string)Session["Test"];
+            DataSet ds = Crud.ReadTable("spTest", Test);
             switch (e.CommandName)
             {
                 case "Edi":
                     pnlTestsList.Visible = false;
-                    LoadQuestion(Crud.GetTestQuestions(Test));
+                    LoadQuestion(Crud.GetTestQuestions(ds.Tables[0].Rows[0]["testID"].ToString()));
                     break;
                 case "Del":
                     Crud.DeleteData("spTest", Test);
-                    LoadTest(Crud.ReadTable("spModule"));
+                    LoadTest(Crud.ReadTable(ds.Tables[0].Rows[0]["testID"].ToString()));
                     break;
             }
         }
