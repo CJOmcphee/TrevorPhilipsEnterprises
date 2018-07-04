@@ -31,12 +31,12 @@ namespace GroupProject {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl hTitle;
         
         /// <summary>
-        /// hSubTitle control.
+        /// tdContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl hSubTitle;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell tdContent;
     }
 }

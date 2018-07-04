@@ -538,17 +538,17 @@ EXEC dbo.spSlides @slideID = '3-4-4',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '3-4-5',   -- varchar(50)
                   @lessonid = '3-4',  -- varchar(50)
-                  @slideinfo = 'SELECT * FROM tbBook^ RIGHT OUTER JOIN tbAUTHOR ON tbBook.pID = tbAuthor=p.ID^ ^<table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table</td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Dresden</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Dodex Alara</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>Null </td><td>Null  </td><td>Null </td><td>3</td><td>Stephen King</td></tr></table></td></tr></table> ^ Note: The right table(tbAuthor) maintains all of its previous values,^ while the left(tbBooks) has Null where  there are no matches', -- varchar(1000)
+                  @slideinfo = 'SELECT * FROM tbBook^ RIGHT OUTER JOIN tbAUTHOR ON tbBook.pID = tbAuthor=p.ID^ ^<table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table></td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Dresden</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Dodex Alara</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>Null </td><td>Null  </td><td>Null </td><td>3</td><td>Stephen King</td></tr></table></td></tr></table> ^ Note: The right table(tbAuthor) maintains all of its previous values,^ while the left(tbBooks) has Null where  there are no matches', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '3-4-6',   -- varchar(50)
                   @lessonid = '3-4',  -- varchar(50)
-                  @slideinfo = 'SELECT * FROM tbBook^ LEFT OUTER JOIN tbAUTHOR ON tbBook.pID = tbAuthor=p.ID^ ^<table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table</td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Dresden</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Dodex Alara</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>Some Book </td><td>Null  </td><td> </td><td></td><td></td></tr></table></td></tr></table> ^ Note: The right table(tbBook) maintains all of its previous values,^ while the left(tbAuthor) has Null where  there are no matches', -- varchar(2000)
+                  @slideinfo = 'SELECT * FROM tbBook^ LEFT OUTER JOIN tbAUTHOR ON tbBook.pID = tbAuthor=p.ID^ ^<table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table></td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Dresden</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Dodex Alara</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>Some Book </td><td>Null  </td><td> </td><td></td><td></td></tr></table></td></tr></table> ^ Note: The right table(tbBook) maintains all of its previous values,^ while the left(tbAuthor) has Null where  there are no matches', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '3-4-7',   -- varchar(50)
                   @lessonid = '3-4',  -- varchar(50)
-                  @slideinfo = 'SELECT * FROM tbBook^ FULL OUTER JOIN tbAUTHOR ON tbBook.pID = tbAuthor=p.ID^ ^<table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table</td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Dresden</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Dodex Alara</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>Some Book </td><td>Null  </td><td>Null </td><td></td><td></td></tr><tr><td>Null  </td><td>Null  </td><td>Null  </td><td>3</td><td>Stephen King </td></tr></table></td></tr></table> ^ Note: The left table  displays all of its contents first, mismatches on^ the right table are filled with Null Values, followed by the right^ table, with Null Values to the Left ', -- varchar(2000)
+                  @slideinfo = 'SELECT * FROM tbBook^ FULL OUTER JOIN tbAUTHOR ON tbBook.pID = tbAuthor=p.ID^ ^<table><tr><td>tbBook</td><td>tbAuthor</td><td>Result</td></tr><tr><td><table><tr><td>bID</td><td>Title</td><td>pID</td></tr><tr><td>1</td><td>Twilight</td><td>1</td></tr><tr><td>2</td><td>Dresden</td><td>2</td></tr><tr><td>3</td><td>Codex Alara</td><td>2</td></tr><tr><td>4</td><td>  </td><td>  </td></tr></table></td><td><table><tr><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Stephen King</td></tr></table></td><td><table><tr><td>bID</td><td>Title</td><td>pID</td><td>pID</td><td>Name</td></tr><tr><td>1</td><td>Twilight</td><td>1</td><td>1</td><td>Stephanie Meyer</td></tr><tr><td>2</td><td>Dresden</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>3</td><td>Dodex Alara</td><td>2</td><td>2</td><td>Jim Butcher</td></tr><tr><td>Some Book </td><td>Null  </td><td>Null </td><td></td><td></td></tr><tr><td>Null  </td><td>Null  </td><td>Null  </td><td>3</td><td>Stephen King </td></tr></table></td></tr></table> ^ Note: The left table  displays all of its contents first, mismatches on^ the right table are filled with Null Values, followed by the right^ table, with Null Values to the Left ', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '3-4-8',   -- varchar(50)
@@ -586,51 +586,112 @@ EXEC dbo.spSlides @slideID = '3-4-14',   -- varchar(50)
                   @slideinfo = 'Keep in mind tha aggreates can also be used in more^ interesting and complex ways.^ In the example below we want to multiply the price by the quantity to get a more accurate total price^ SELECT SUM(Price * Quantity) AS [Total Price]^ FROM tbAuthorBooks^ ^  <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>pID</td><td>Quantity</td><td>Price</td></tr><tr><td>1</td><td>S2</td><td>5.00</td></tr><tr><td>2</td><td>1</td><td>8.25</td></tr><tr><td>3</td><td>1</td><td>11.75</td></tr><tr><td>4</td><td>4</td><td>2.50</td></tr></table></td><td><table><tr><td>Total Price</td></tr><tr><td>40</td></tr></table></td></tr></table> ', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
+--EXEC spSlides	@slideID = '',
+--				@lessonid = '',
+--				@slideinfo = '',
+--				@crud = 'c'
 
-EXEC dbo.spSlides @slideID = '3-4-15',   -- varchar(50)
-                  @lessonid = '3-4',  -- varchar(50)
-                  @slideinfo = '', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
+EXEC spSlides	@slideID = '3-4-15',
+				@lessonid = '3-4',
+				@slideinfo = 'To Take this one more step futher, we can choose to only^  show results with author couts greater then 2:^ SELECT AuthorName, Count(*) AS [Author Count]^ From tbAuthorBooks^  GROUP BY AuthorName^ HAVING Count(*) >2^ ^ <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>Author Name</td><td>Author Count</td></tr><tr><td>Scott</td><td>3</td></tr></table> ',
+				@crud = 'c'
+				
+EXEC spSlides	@slideID = '3-4-16',
+				@lessonid = '3-4',
+				@slideinfo = 'Another cool option is "TOP", with this we can choose^ to diplay only the to X number of rows^ SELECT TOP 1^ AuthorName, BookName^ FROM tbAuthorBooks^ ^ <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>Author Name</td><td>Book Name</td></tr><tr><td>Scott</td><td>HelloWorld!</td></tr></table>',
+				@crud = 'c'
 
-EXEC dbo.spSlides @slideID = '3-4-15',   -- varchar(50)
-                  @lessonid = '',  -- varchar(50)
-                  @slideinfo = '', -- varchar(2000)
-                  @crud = ''       -- varchar(1)
+EXEC spSlides	@slideID = '3-4-17',
+				@lessonid = '3-4',
+				@slideinfo = 'We can also choose to display a result based on an alpanumeric or number ordering, which is useful for reports^ SELECT BookBane,BookPrice ^ <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>BookName</td><td>BookPrice</td></tr><tr><td>Byeworld</td><td>19.25!</td></tr><tr><td>Hello World</td><td>9.00</td></tr><tr><td>The Red Hat</td><td>6.79</td></tr><tr><td>OkayWorld</td><td>5.00</td></tr></table>',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '3-4-18',
+				@lessonid = '3-4',
+				@slideinfo = 'There are two options: ASC and DESC^ ASC is Ascending from lowest to highest, DESC is reversed^ SELECT BookName, BookPrice^ FROM tbAuthorBooks^ ORDER BY BookPrice ASC^ ^ <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>BookName</td><td>BookPrice</td></tr><tr><td>Okay World</td><td>5.00</td></tr><tr><td>The Red Hat</td><td>6.79</td></tr><tr><td>HelloWorld</td><td>9.00</td></tr><tr><td>ByeWorld</td><td>19.25</td></tr></table>', 
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '3-4-19',
+				@lessonid = '3-4',
+				@slideinfo = 'If we use TOP and ORDER BY together, we can get a TOP^ 10list, or just seelect out of the highest or lowest row:^ SELECT TOP 1 BookName, BookPrice^ FROM tbAuthorBooks^ ORDER  BY BookPrice DESC^ ^ <table><tr><td>tbAuthorBooks</td><td>Result</td></tr><tr><td><table><tr><td>aID</td><td>AuthorName</td><td>BookName</td><td>BookPrice</td></tr><tr><td>1</td><td>Scott</td><td>Hello World</td><td>9.00</td></tr><tr><td>2</td><td>Matt</td><td>The Red Hat</td><td>6.79</td></tr><tr><td>3</td><td>Scott</td><td>ByeWorld</td><td>19.25</td></tr><tr><td>4</td><td>Scott</td><td>OkayWorld</td><td>5.00</td></tr></table></td><td><table><tr><td>BookName</td><td>BookPrice</td></tr><tr><td>ByeWorld</td><td>19.25</td></tr></table>',
+				@crud = 'c'
 
+--MODULE 7
 
+EXEC spSlides	@slideID = '7-1-1',
+				@lessonid = '7-1',
+				@slideinfo = 'CSS - Cascading Stlye Sheets^ ^ ^ Sloow us to define consistent appearances in a website ^ ^ ^ We will be ising style attributes to do this^ ^ ^ Styles loks like this: attribute: vallue;',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-1-2',
+				@lessonid = '7-1',
+				@slideinfo = 'Here are some example of style attributes and values^ font-size: xxsmall;^ color:black;^ font-family: Verdana, Arial;^ padding: 10px;^ border: 1px solid;^ background-color: red;',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-1-3',
+				@lessonid = '7-1',
+				@slideinfo = 'Styles can be associated with a category of elemtns:^ dev{^ font-size: large;^ color: red;^}^ Here we see that all text inside of any <div>''s on the page^ will be large and red',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-1-4',
+				@lessonid = '7-1',
+				@slideinfo = 'Style can also be associated with a particular element^ based on the id of the element:^ #Footer {^  coloe: purple;^ }^  Here we see that if there is an element on  the page with:^ id="Footer", the text inside of that element will be purple',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-1-5',
+				@lessonid = '7-1',
+				@slideinfo = 'Styles can alos be grouped together by a name, this^ called a css class:^ .SmallGreenText {^ font-size: small;^ color: green;^ }^ Here we see the css class name: SmallGreenText^ ^ HTML elements on the page can subscribe to a class and^ take on all the attributes associated with it',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-1-6',
+				@lessonid = '7-1',
+				@slideinfo = 'Example: Create a custom style called "SmallRedWithBorder":^  .SmallRedWithBorder {^ border: 5px solid #F8CA37;^ font-size: xx small;^ color: RED;^  }^ And then apply it^ <asp:Button^ ID="btnSearch" runat="server" CssClass="SmallRedWithBorder"^ OnClick="btnKeywordSearch_Click" Text="Search..."/>^ ^ <div class="SmallRedWithBorder"> This text will also use the same^ styles!</div>',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-1-7',
+				@lessonid = '7-1',
+				@slideinfo = 'Note that on the previous page we used CssCkass abd Ckass to do the^ same thing^ ^  The dufference is that the first one is an ASP server control. The keyword^ "class" is already reserved in C#( as you y know from Module 2).^ <asp: Button^ ID="tnSearch" runat server <u>CssClass="SmallRedWithBorder"</u>/>^ 6 The second one is just a regualr html element, so the syntax is slightly^ different^ <div <u>class="SmallRedWithBorder"</u>> This text will also use the same^ styles!</div> ',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-1-8',
+				@lessonid = '7-1',
+				@slideinfo = 'CSS- Cascading Style Sheets^ There are 4 ways to modify the css in our.aspx(or .html)^ files:^ In a <style> tag in the page itself^ Directly in the tag using a style"" attriute^ In a sperate referenced .css page^ Modifying from the server( in our case: C#)',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-1-9',
+				@lessonid = '7-1',
+				@slideinfo = '1. In a <stlye> tag in the page:^ <style>^ ^body {^  font-size: xx small;^ color: black^ </style>^ ^ ^ Usually this is the placed between the head tages:^ *HERE*</head>',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-1-10',
+				@lessonid = '7-1',
+				@slideinfo = '2. Directly  in the tag, using the style= "" attribute:^ ^ ^ <body stlye="font-size: xx small; color-black;"^ ^ </body>',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-1-11',
+				@lessonid = '7-1',
+				@slideinfo = '3. In a seperate .css page (created by right clicking on the project and creating a "StyleSheet"), we put the code there: ^ body {^ font-size: xx small;^ color: black^ }^ We can then click and drag the .css file from te solution^ exploerer into the <head> tag on our .aspx page and it should   ^ create a link like this^ <link href="StyleSheet1.css" rel="stylesheet" /> ',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-1-12',
+				@lessonid = '7-1',
+				@slideinfo = 'You should alwasy endeavor to use a seperate stylesheet^ file where possible^ ^ If you use a seperate file, it will be easier to modify the style^ of your project after the fact^ ^ Good programming practice^ ^ Keep your stylesheets stored in a directory called^"StyleSheets" or "CSS"',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-1-13',
+				@lessonid = '7-1',
+				@slideinfo = '4. Modifying from the server( in our case: C#)^ <div id="mainDiv" runat="server">Hello World</div>^  ^ If we add the runat="server" attribture/value to a regular html^ element, we are able to do modifications from the server^ (note: you will need an ID, as this will be the variable name)^  mainDiv.Style.Add("color", "purple");^ mainDiv.Style.Add("font-size", "large");',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-1-14',
+				@lessonid = '7-1',
+				@slideinfo = 'The Anchor tag has multiple states, here are some of them^ Link(the default look before it is clicked on)^ Visited^ Hover^ Active(As the user clicks)^ ^ You can chooose to set different styles for eaach state as well(seen on next slide)',
+				@crud = 'c'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+EXEC spSlides	@slideID = '7-1-15',
+				@lessonid = '7-1',
+				@slideinfo = 'A; link^ {^ font-size:small^ color: green^ font-family: Verdana, Ariel;^ text-decoration: underline^ }^ A:hover^ {^ font-size: small;^ color:Red;^ font-family: Verdana, Ariel;^ text-decoration: underline overline',
+				@crud = 'c'
 
 
 

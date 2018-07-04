@@ -14,19 +14,19 @@
 							<header>
 								<h2>The Basics of C#</h2>
 							</header>
-							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img width="275" height="150" src="images/csharp.jpg" alt="C Sharp" /></a></p>
+							<p class="subtitle">Learn about the basiscs from console commands to ASP.NET webpages.</p>
+							<p><a href="#"><img width="275" height="175" src="images/csharp.jpg" alt="C Sharp" /></a></p>
 							<a href="#" class="button">Learn</a>
 						</section>
 					</div>
 					<div class="3u">
 						<section>
 							<header>
-								<h2>Learn SQL Databases</h2>
+								<h2>SQL Server Databases</h2>
 							</header>
 							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/sql.png" width="275" height="150" alt="SQL"></a></p>
-							<a href="#" class="button">More</a>
+							<p><a href="#"><img src="images/sql.png" width="275" height="175" alt="SQL"></a></p>
+							<a href="#" class="button">Learn</a>
 						</section>
 					</div>
 					<div class="3u">
@@ -35,8 +35,8 @@
 								<h2>Get started with PHP</h2>
 							</header>
 							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/pics15.jpg" width="275" height="150" alt="PHP"></a></p>
-							<a href="#" class="button">More</a>
+							<p><a href="#"><img src="images/logo-php.png" width="275" height="175" alt="PHP"></a></p>
+							<a href="#" class="button">Learn</a>
 						</section>
 					</div>
 					<div class="3u">
@@ -45,8 +45,8 @@
 								<h2>Javascript & HTML5</h2>
 							</header>
 							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/logo-php.png" width="275" height="150" alt="Javascript" /></a></p>
-							<a href="#" class="button">More</a>
+							<p><a href="#"><img src="images/jswide.png" width="275" height="175" alt="Javascript" /></a></p>
+							<a href="modules.aspx" class="button">Learn</a>
 						</section>
 					</div>
 				</div>
