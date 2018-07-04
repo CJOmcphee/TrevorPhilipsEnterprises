@@ -350,6 +350,31 @@
             color: #FFF !important;
         }
 
+.login-button {
+    position: relative;
+    display: inline-block;
+    margin-top: 1.1em;
+    margin-left: 8em;
+    padding: 0.30em 1.3em;
+    background: #e95d3c;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    color: #FFF;
+    -moz-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+    -webkit-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+    -o-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+    -ms-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+    transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+    cursor: pointer;
+}
+
+        .login-button:hover {
+            background: #de3d27;
+            color: #FFF !important;
+        }
+
 /*********************************************************************************/
 /* Icons                                                                         */
 /* Powered by Font Awesome by Dave Gandy | http://fontawesome.io                 */
@@ -1056,7 +1081,7 @@
     background: #eceeee;
     border: 1px solid #42464b;
     border-radius: 6px;
-    height: 257px;
+    height: 287px;
     margin: 20px auto 0;
     width: 298px;
 }
@@ -1075,8 +1100,8 @@
         text-align: center;
         text-shadow: 0 -1px 0 rgba(0,0,0,0.2), 0 1px 0 #fff;
     }
-/*
-input[type="password"], input[type="text"] {
+
+   .box {
     background: url('http://i.minus.com/ibhqW9Buanohx2.png') center left no-repeat, linear-gradient(top, #d6d7d7, #dee0e0);
     border: 1px solid #a1a3a3;
     border-radius: 4px;
@@ -1090,6 +1115,7 @@ input[type="password"], input[type="text"] {
     width: 240px;
 }
 
+/*
     input[type="password"]:focus, input[type="text"]:focus {
         box-shadow: 0 0 4px 1px rgba(55, 166, 155, 0.3);
         outline: 0;
@@ -1141,6 +1167,21 @@ input[type="checkbox"]:checked + .toggle {
 }
 
     .forgot:hover {
+        color: #3b3b3b
+    }
+
+.noaccount {
+    color: #7f7f7f;
+    display: inline-block;
+    margin-left: 10em;
+    font: 12px/1 sans-serif;
+    left: -19px;
+    position: relative;
+    text-decoration: none;
+    top: 5px;
+    transition: color .4s;
+}
+    .noaccount:hover {
         color: #3b3b3b
     }
 /*
