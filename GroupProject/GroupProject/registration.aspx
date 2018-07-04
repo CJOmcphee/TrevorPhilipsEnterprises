@@ -5,19 +5,16 @@
     
     <div id="page">
         <div class="register">
-            <asp:Label ID="lblFirstName" runat="server" Text="First Name"></asp:Label>
-            <asp:TextBox ID="tbFirstName" runat="server"></asp:TextBox>
-            <asp:Label ID="lblLastName" runat="server" Text="Last Name"></asp:Label>
-            <asp:TextBox ID="tbLastName" runat="server"></asp:TextBox>
-            <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
-            <asp:TextBox ID="tbEmail" runat="server"></asp:TextBox>
-            <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
-            <asp:TextBox ID="tbPassword" runat="server"></asp:TextBox>
-
-            
-
-            <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />    
-
+            <h1>Registration</h1>
+            <h2>First Name</h2>
+            <asp:TextBox ID="tbFirstName" CssClass="box" runat="server"></asp:TextBox>
+            <h2>Last Name</h2>
+            <asp:TextBox ID="tbLastName" CssClass="box" runat="server"></asp:TextBox>
+            <h2>Email</h2>
+            <asp:TextBox ID="tbEmail" CssClass="box" runat="server"></asp:TextBox>
+            <h2>Password</h2>
+            <asp:TextBox ID="tbPassword" CssClass="box" runat="server"></asp:TextBox>
+            <asp:Button ID="btnRegister" CssClass="login-button" runat="server" Text="Register" OnClick="btnRegister_Click" />    
             <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label> 
         </div>
         <div class="shadow"></div>

@@ -7,12 +7,13 @@
        <div id="marketing" class="container">
         <a href="registration.aspx" class="button">Add Student</a>
         
+           <div id="table">
             <asp:Panel ID="pnlUsersList" runat="server">
               
                 <asp:GridView ID="gvUsers" PageSize="2" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="studentEmail" runat="server" OnPageIndexChanging="gvUsers_PageIndexChanging" OnRowCommand="gvUsers_RowCommand" >
                       <Columns>
-                        <asp:ButtonField HeaderText="Delete" ButtonType="Button" CommandName="Del" Text="Delete" />
-                        <asp:ButtonField HeaderText="Update" ButtonType="Button" CommandName="Up" Text="Update" />
+                        <asp:ButtonField HeaderText="Delete" ControlStyle-CssClass="button" ButtonType="Button" CommandName="Del" Text="Delete" />
+                        <asp:ButtonField HeaderText="Update" ControlStyle-CssClass="upd-button" ButtonType="Button" CommandName="Up" Text="Update" />
                         <asp:BoundField HeaderText="First Name" DataField="firstName" />
                         <asp:BoundField HeaderText="Last Name" DataField="lastName" />
                         <asp:BoundField HeaderText="Email" DataField="studentEmail" />
@@ -21,19 +22,21 @@
                 </asp:GridView>
               
             </asp:Panel>
+               </div>
          </div>
             <asp:Panel ID="pnlUserUpdate" runat="server">
                 <div class="register">
-                    <asp:Label ID="lblEmail" runat="server" Text=""></asp:Label>
+                    <h1>Update User</h1>
+                    <h2><asp:Label ID="lblEmail" runat="server" Text=""></asp:Label></h2>
                     <br />
-                    <asp:Label ID="lblFirstName" runat="server" Text="First Name"></asp:Label>
-                    <asp:TextBox ID="tbFirstName" runat="server"></asp:TextBox>
-                    <asp:Label ID="lblLastName" runat="server" Text="Last Name"></asp:Label>
-                    <asp:TextBox ID="tbLastName" runat="server"></asp:TextBox>
-                    <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
-                    <asp:TextBox ID="tbPassword" runat="server"></asp:TextBox>
+                    <h2>First Name</h2>
+                    <asp:TextBox ID="tbFirstName" CssClass="box" runat="server"></asp:TextBox>
+                    <h2>Last Name</h2>
+                    <asp:TextBox ID="tbLastName" CssClass="box" runat="server"></asp:TextBox>
+                    <h2>Password</h2>
+                    <asp:TextBox ID="tbPassword" CssClass="box" runat="server"></asp:TextBox>
                    
-                    <asp:Button ID="btnSave" CssClass="button" runat="server" Text="Save" OnClick="btnSave_Click" />
+                    <asp:Button ID="btnSave" CssClass="upd-button" runat="server" Text="Save" OnClick="btnSave_Click" />
                     <asp:Button ID="btnCancel" CssClass="button" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
                     <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label> 
                 </div>
