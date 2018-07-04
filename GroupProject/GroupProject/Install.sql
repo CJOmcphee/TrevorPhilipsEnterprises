@@ -492,12 +492,198 @@ EXEC dbo.spSlides @slideID = '1-1-20',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '1-1-21',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p>APPLICATION DEVELOPMENT TEST TYPES</p><table><tr><td>Defecit Testing</td><td>Path Testing</td><td>Data set testing</td></tr><tr><td>Unit Testing</td><td>System Testing</td><td>Integration Testing</td></tr><tr><td>Black Box Testing</td><td>White Box Testing</td><td>Regression Testing</td></tr><tr><td>Automation Testing</td><td>User Acceptance Testing</td><td>Performance Testing</td></tr></table>', -- varchar(2000)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Execute and Test the Program</h2><p>APPLICATION DEVELOPMENT TEST TYPES</p><table><tr><td>Defecit Testing</td><td>Path Testing</td><td>Data set testing</td></tr><tr><td>Unit Testing</td><td>System Testing</td><td>Integration Testing</td></tr><tr><td>Black Box Testing</td><td>White Box Testing</td><td>Regression Testing</td></tr><tr><td>Automation Testing</td><td>User Acceptance Testing</td><td>Performance Testing</td></tr></table>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-1-22',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p></p>', -- varchar(2000)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Put the Program into Production</h2><p>The fifth step is to deploy the code to a live environment - Typically, there are 3 stages before code gets to production:</p>^1. Development:^The program is coded and compiled^2. Quality Assurance^The program is checked for errors of all kinds^3. Live Production^The program is published and ready to be accessed', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-23',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Systems Development Life Cycle (SDLC)</h2><p>Investegation: What is the concept? Is it worth it?</p><p>Analysis: Who will use it? What do they want? Can we afford to make it?</p><p>Design: How will it work? What do we need to make it?</p><p>Implement: Plan it! Build it! Test it! Produce it!</p>^Note this is where the programming steps from the previous slides fit in^<p>Maintenance: Support it! Tune it, then Upgrade it!</p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-24',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p>We have discussed some basic programming conceptes including the higher level steps involved in making production code from the beginning of an applicaiton project to the finish</p>^<p>Next we will start discussing the data we will be working with in applications</p>^<p>The concept of the data hierarchy in the next few slides is just a framework for helping understand the layers of information we may deal with as a developer</p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-25',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p>When data is stored for use it is often stored in Data Hierarchy</p>^<p>Binary is a series of on and off switches physically located in a piece of hardware</p>^It is the smallest unit of data in the data hierarchy^Binary is represented symbolically by: 0 and 1^A series of binary numbers can be interpreted as a single character', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-26',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p>Characters are the smallest unit that we tend to care about</p>^<p>Characters are letters, numbers, and special symbols, such as "A", "7", and "$"</p>^<p>A field(variable) is a single data item made up of one or more characters</p>^<p>Example of fields: lastName, streetAddress, or annualSalary</p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-27',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p>Records (rows) are groups of fields that go together for some logical reason</p>^Example: A record of a person may have information concerning height, weight, age, etc.^Tables are groups of records that go together for some logical reason^ Example: A table may have records of many people', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-28',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p>A Database holds a group of tables</p>^Example: A customer database may include tables containing information about clients, purchases, returns, etc.^Database software establishes and maintains relationships between fields and tables^The lesson on Databases will get more into detail on that subject^<p>Users can also write queries to a database, which are requests for a specific record information</p>^Example: A query can be used to determine the number of clients who live in a certain city.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-29',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Evolution of Programming</h2><p>Currently, there are two major techniques used to develop programs:^Procedural Programming was the first method of programming and focuses on running a logically grouped series of functional actions called procedures</p>^<p>Object-Oriented Programming (OOP) is a newer concept and focuses on abstracting features and behaviours out of objects or "things", using them to perform fuctions (involves pieces of procedural programming to work usually)</p>^C#, Java and most of newer programming languages are Object-Oriented based', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-30',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Using Flowchart Symbols and Pseudocode Statements</h2><p>We mentioned earlier that you should plan your code before writing.</p>^To aid in planning out the logic of a program, you can use Flowcharts and Pseudocode^"Flowcharts" are pictoral/visual representations of program logic^"Pseudocode" is a casual English-like representation of program code', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '1-1-31',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Using Flowchart Symbols and Pseudocode Statements</h2><p>A lot of programmers prefer writing Pseudocode rather than drawing flowcharts, especially for quick explanations because..</p>^It is similar to writing the final code in a progamming language^Takes less time^It is less formal^There are no specific rules to writing Pseudocode.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-32',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Using Flowchart Symbols and Pseudocode Statements</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-33',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Using Flowchart Symbols and Pseudocode Statements</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-34',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-35',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-36',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-37',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-38',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-39',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-40',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-41',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-42',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-43',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-44',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-45',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-46',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-47',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-48',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-49',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-50',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-51',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-52',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-53',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-54',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-55',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-56',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-57',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-58',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-1-59',   -- varchar(50)
+                  @lessonid = '1-1',  -- varchar(50)
+                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 go
