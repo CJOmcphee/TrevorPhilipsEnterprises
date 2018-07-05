@@ -603,14 +603,48 @@ EXEC dbo.spSlides @slideID = '1-2-1',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '1-2-2',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
-                  @slideinfo = '<h1>C# Basics</h1><h2>C# Basics</h2><p></p>', -- varchar(2000)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Variables</h2><p>Variables are memeory locations, whose contents can vary or differ over time</p>^Variable names are also caleld Identifiers^In math, you often had to use variables in your algebra^For example X = Y + 10, where Y = 3^Here we can see the two variables X and Y, both X and Y are numbers^Since Y = 3, X will be 3 + 10 making the answer X = 13', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-2-3',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
-                  @slideinfo = '<h1>C# Basics</h1><h2>C# Basics</h2><p></p>', -- varchar(2000)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Naming Variables</h2><p>In C#, we will have to name our variables as we create them for our programs</p>^When naming variables, we must follow these rules:^1. Must NOT contain spaces^2. Should have some appropriate meaning^3. Must not contain invalid or special characters^4. Do NOT start a variable with a number', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '1-2-4',   -- varchar(50)
+                  @lessonid = '1-2',  -- varchar(50)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Naming Variables</h2><p>Examples of GOOD variable names:</p>^Cost^costAmount^costOfCurrentYear (Long, but we know what it means)^^Examples of BAD variable names:^Cost Amount^Cstofdngbsnss^co$st!n2018^2018costs', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-2-5',   -- varchar(50)
+                  @lessonid = '1-2',  -- varchar(50)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Assigning Values to Variables</h2><p>To assign a variable a value, we must use an assignment operator, which always requires the name of a memory location (variable name) on its left side:</p>^In C# it looks like this (assuming we already have a variable called X)^X=2^If the variable is an integer, we can perform any kind of math on the right hand side:^X= 2 * 8^X= 2 * Y', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-2-6',   -- varchar(50)
+                  @lessonid = '1-2',  -- varchar(50)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Assigning Values to Variables</h2><p>Note that there are many different kinds of math operators in C#, many of them are obvious:</p>^Addition: X + Y^Subrtraction: X - Y^Multiplication: X * Y^Division: X / Y^Modulus: X % Y (Computes the remainder after dividing ^Examples:^4 % 2 = 0, because 2 divides into 4 evenly, 0 remainder^3 % 2 = 1, because after division there is 1 remainder)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-2-7',   -- varchar(50)
+                  @lessonid = '1-2',  -- varchar(50)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Assigning Values to Variables</h2><p>More on Modulus: X % Y</p>^Note that you can detect whether a number is odd or even by using modulus! How?^WHat is the definition of an even? Answer: A number that is evenly divisible by 2^So 4 is divisible by 2 bevause if you divide 4/2 there is a remainder of 0^ Therefore if 4 % 2 equals 0, it is even.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-2-8',   -- varchar(50)
+                  @lessonid = '1-2',  -- varchar(50)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Declaring Variables</h2><p>When you create a variable, you must declare a aname as well as a datatype for a variable</p>^Examples of variable declarations in C#^int myAge; //int stands for "Integer"^char letterGrade // char stands for "Character"^string myName // a string is a series of Characters^The two forward slashes // denote a comment int C#, everything after these characters is ignored by the compiler and therefore used for documenting your program code^It is always a good idea to comment your code! This will be discussed later on.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-2-9',   -- varchar(50)
+                  @lessonid = '1-2',  -- varchar(50)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Declaring Variables</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-2-10',   -- varchar(50)
+                  @lessonid = '1-2',  -- varchar(50)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Declaring Variables</h2><p>When you create a variable, you must declare a aname as well as a datatype for a variable</p>^Examples of variable declarations in C#^int myAge; //int stands for "Integer"^char letterGrade // char stands for "Character"^string myName // a string is a series of Characters^The two forward slashes // denote a comment int C#, everything after these characters is ignored by the compiler and therefore used for documenting your program code^It is always a good idea to comment your code! This will be discussed later on.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
 go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
