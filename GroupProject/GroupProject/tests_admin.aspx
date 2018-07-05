@@ -7,22 +7,24 @@
        <div id="marketing" class="container">
           
            
-
+           <div id="table">
             <asp:Panel ID="pnlTestsList" runat="server">
               
                 <asp:GridView ID="gvTests" PageSize="5" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="moduleID" runat="server" OnRowCommand="gvTests_RowCommand" OnPageIndexChanging="gvTests_PageIndexChanging" >
                       <Columns>
-                        <asp:ButtonField HeaderText="Delete" ButtonType="Button" CommandName="Del" Text="Delete" />
-                        <asp:ButtonField HeaderText="Edit" ButtonType="Button" CommandName="Edi" Text="Edit" />
+                        <asp:ButtonField HeaderText="Delete" ControlStyle-CssClass="button" ButtonType="Button" CommandName="Del" Text="Delete" />
+                        <asp:ButtonField HeaderText="Edit" ControlStyle-CssClass="upd-button" ButtonType="Button" CommandName="Edi" Text="Edit" />
                         <asp:BoundField HeaderText="Module" DataField="moduleID" />
                         <asp:BoundField HeaderText="Summary" DataField="moduleSum" />
                       </Columns>
                 </asp:GridView>
-                <asp:Button ID="btnAddTest" runat="server" Text="Add Module" OnClick="btnAddTest_Click" />
+                <asp:Button ID="btnAddTest" CssClass="upd-button" runat="server" Text="Add Module" OnClick="btnAddTest_Click" />
                 Module Sum
                 <asp:TextBox ID="tbModuleSum" runat="server" Height="157px" Width="643px"></asp:TextBox>
             </asp:Panel>
+            </div>  
          </div>
+
           
             <asp:Panel ID="pnlQuestion" Visible="false" runat="server">
                 <asp:Button ID="btnToTest" runat="server" Text="Back" OnClick="btnToTest_Click" />
