@@ -22,8 +22,7 @@
                 Module Sum
                 <asp:TextBox ID="tbModuleSum" runat="server" Height="157px" Width="643px"></asp:TextBox>
             </asp:Panel>
-            </div>  
-         </div>
+           
 
           
             <asp:Panel ID="pnlQuestion" Visible="false" runat="server">
@@ -77,5 +76,6 @@
             </asp:Panel>
             </asp:Panel>
    </div>
- 
+  </div>  
+  </div>       
 </asp:Content>
