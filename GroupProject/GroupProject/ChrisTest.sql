@@ -700,51 +700,122 @@ EXEC spSlides	@slideID = '7-2-1',
 				@slideinfo = 'File upload control^ ^ There are many way to upload and display images^ ^ The following slides who two potential ways^ ^ 1. Upload and dsiplay a file to a web server using a directory^ path^ ^2. Upload a file to a database',
 				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-2-2',
+				@lessonid = '7-2',
+				@slideinfo = 'Upload file to a web server  using directoty path(FileIpload^ Control):^ ^ First, save the file to th web server:^ string serverPath=Server.MapPath(".")+ "\\files\\";^ string fileName= FileUpload1.FileName;^ string pathAndFule= serverPath + fileName;^ FileUpload.PostedFile.SaveAs(pathAndFile);^ ^ ',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-2-3',
+				@lessonid = '7-2',
+				@slideinfo = 'Second, save the text of the ath and fule to the database^ ^ The format of the pat should look lie: "Folder.FileName"^ ^ Tird, display the image from the web server using a directory path:^ Image.ImageURL = ds.Tables[0].Rows[0]["path"].ToString();',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-2-4',
+				@lessonid = '7-2',
+				@slideinfo = 'MAster pages allow you to create a consistent layout for the^ paes in your application^ ^ A single master page defines the look, feel and standed^ behaviour that wany for all off the  pages in your app^ ^ When users request content pages, they merge with the master page to procude output that combines the layut of^ the master page  ith the content from the content page ',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-2-5',
+				@lessonid = '7-2',
+				@slideinfo = 'Start by adding a master page to your website, this will be^ the "frame" around your web pages^ ^ The content of the pags in your site will appear within the^ <ContentPlaceHolder> tags^ ^ To create a master page:^ Right click on your perject solution^ Click" Add new item"^ Click "Master Page"',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-2-5',
+				@lessonid = '7-2',
+				@slideinfo = 'Now that we have a master page, we need to have a specific^ content pages (Web Content Forms)^ ^ To create a new content page: ^ Right click on your project solution^ Click "ass new item" => "Web Form using Master Page"^ You will have to specifiy which master page to use for this^ content page',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-2-6',
+				@lessonid = '7-2',
+				@slideinfo = 'Session objects hold user-specific information and are^ available in all pages of an application^ ^ Common values stored in Sesion are: name, id, and^ preferences^ ^ The server creates a new Session object for each new user,^ and destroys the Session object when the sssion expires ',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-2-7',
+				@lessonid = '7-2',
+				@slideinfo = 'Example of Session in C#^ ^ //Store the value "Joe Smith" in the session object, under the^ "UserName" label^ Session["UserName"] = "JoeSmith"^ ^ //Retreive the value from the Session object using the^ "UserName" label^  //Note: You have to cast the name value into a string^ String sUsername = (string) Session["UserName"];',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-2-7',
+				@lessonid = '7-2',
+				@slideinfo = 'A session start when^ ^ A new user equests a ASP file^ ^ A value is stored on a Session variable^ ^ A SessionID is generated and stored at the time of the session^ creation',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-2-7',
+				@lessonid = '7-3',
+				@slideinfo = 'A session end if a user has not requested or refreshed a^ page in the application for th specified period^ ^ By Default, This default time is 20 minutes^ ^ You can use  this knowledge for storing values that you want^ to expire^ ',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-2-8',
+				@lessonid = '7-2',
+				@slideinfo = 'A session alos ends if you type:^ ^ Session.Abandon();^ ^ Use the above line of code to reset al values in a Session^ ^ Storing values on the server is fast,  but should not be used^ carelessly',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-2-9',
+				@lessonid = '7-2',
+				@slideinfo = 'SessionID is the link between a particular user and thier^ requests/responeses^ ^ The SessionID value is stored and locally in your browser like a^ cookie^ ^ You must have cookues enavle to use the Session Object^ to store values^',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-2-10',
+				@lessonid = '7-2',
+				@slideinfo = 'Cookues are values that are stored locally on the users'' computer^ (usually the browser)^ ^ by default, cookues are stored in memory^ ^ If you set the "Expires" property ten the cookue can be written to the hard disk^ ^ More than one cookue can be stored  by a client per website^ & Note: all cookies are sent from the client with each request( alot of ^ overhead)',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-2-11',
+				@lessonid = '7-2',
+				@slideinfo = '//Write the cookie^ HttpCookue aCookue =   new = HttpCookue("LastVisited");^ aCookie.Value = DateTime.Now.ToString();^  aCookie.Expires = DateTime.Now.AddDays(1);^ Response.Cookies.add(aCookie);^ ^ //Read the cookie^ HttpCookie myCookie = Request.Cookis["lastVisited"];^ //Now that you have the cookie, check if it''s there^ if(myCookie != null)^ {^ txtLastVisited.Text= myCookie.Value.ToString();',
+				@crud = 'c'
 
+--Lesson 3
 
+EXEC spSlides	@slideID = '7-3-1',
+				@lessonid = '7-3',
+				@slideinfo = 'In order to make more interesting programs, we'' have to^ understnad how  to diplay and manipulate data in a grid better, by ^ utilizing^ ^ Sorting^ Pagination^ Totals^ RowCounter',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-3-2',
+				@lessonid = '7-3',
+				@slideinfo = '<h3>Sorting</h3>^ From the properties of your GridView, you must set the^ AllowSorting property to true^ ^ Use the Sorting() event to get to the column header^ clicked on by the user^ 6 Within the Sorting() event handler the paramenter e is passed^ with some usefyl information stored within it^ 6 e.SortExpression gold the value netered in the^ SortExpression attribute of the column tag',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-3-3',
+				@lessonid = '7-3',
+				@slideinfo = 'Befoe conintuing, you will need to determine how you will^ sort your data^ Currently you should be able to create your own stored^ procedure to do thi^ ^ The  procecure would take in a column name as a^ VARCHAR and return a sorted table ORDER BY the name^ of the column^ You can either use a series of IF/ELSE statements to do^ this, or a CASE, your choice',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-3-4',
+				@lessonid = '7-3',
+				@slideinfo = 'Alternativley, you can sort your data withou making a call^ to the database^ ^ There are several solutions to do this^ ^ DataSet^ DataTable^ Dataview',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-3-5',
+				@lessonid = '7-3',
+				@slideinfo = 'Example: Using the Sorting() event for a GridView^ protected void GridView1_Sorting(object sender,^ GridViewSortEventArgs e)^ {  /* 1.pass e.SortExpression(column name to sort by) to^ your stored proc or custom c# code^ 2. Assign the new sorted data to the GridView^ 3.Rebind the data using DataBind()^ GridView1.DataBind()^ }',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-3-6',
+				@lessonid = '7-3',
+				@slideinfo = 'What if we wanted to display only X number of items on a^ GridView?^ ^ To Enable Paging, you have to set the AllowPaging property ^ to True^ ^ Like the rest of the gridview options, the pagin has an^ event which fires, this one is called PageIndexChanging()^ To set thhe specific number of itesm o display, modify the PageSize Property',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-3-6',
+				@lessonid = '7-3',
+				@slideinfo = 'Te event RowCommand() will run just before executing^ Sorting()^ RowDeleting(), Row Editing() and PageIndexChanging()^ ^ The value stored e.CommandName will change dpednding on the action',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-3-7',
+				@lessonid = '7-3',
+				@slideinfo = 'Inside the PageIndexChanging() event the "e" variable ( of^ type GrdiViewPageEeventArgs) contains a property called^ "NewPageIndex"^ ^ The current page number is contained witin a property on^ the GridView itself, this property is called: PageIndex',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-3-8',
+				@lessonid = '7-3',
+				@slideinfo = 'Example: Using the PageIndexChaning() function:^ protected void GrdView1_PageIndexChanging(object sender,^ GridViewPageEventArgs e)^ {^ /* 1. Assign the DataSource to the GridView^ 2. Replace the PaheINdex with the value in e. NewPageIndex^ 3. Rebind the data using Databind() */^ GridView1.PageIndex = e.newPageIndex;^ GridView1.DataBind()',
+				@crud = 'c'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+EXEC spSlides	@slideID = '7-3-9',
+				@lessonid = '7-3',
+				@slideinfo = 'Whenever yoy ask a GridView to DataBind(), a series of^ events fire called RowDataBound()^ ^ This RowDataBound() event fire once for each row in your^ GridView including the column row at the top and the empty^ footer at the bottom^ ^ Why would we want to look at each row as it''s being^ populated from the Datasource into theGridView^ ^ We may want to tall a series of number in a column',
+				@crud = 'c'
 
 
 
