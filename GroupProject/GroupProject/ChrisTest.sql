@@ -697,7 +697,7 @@ EXEC spSlides	@slideID = '7-1-15',
 
 EXEC spSlides	@slideID = '7-2-1',
 				@lessonid = '7-2',
-				@slideinfo = 'File upload control^ ^ There are many way to upload and display images^ ^ The following slides who two potential ways^ ^ 1. Upload and dsiplay a file to a web server using a directory^ path^ ^2. Upload a file to a database',
+				@slideinfo = 'File upload control <input type="file" disabled/>^ ^ There are many way to upload and display images^ ^ The following slides who two potential ways^ ^ 1. Upload and dsiplay a file to a web server using a directory^ path^ ^2. Upload a file to a database',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '7-2-2',
@@ -871,7 +871,7 @@ EXEC spSlides	@slideID = '7-3-18',
 
 EXEC spSlides	@slideID = '7-4-1',
 				@lessonid = '7-4',
-				@slideinfo = 'Some asp.net controls support "Templates:, which allow^ you to insert TML on a "per row" basis^ ^ Example: Instead of a row with columns(GridView), we can^ write some HTML to visually customize how the database^ information is going ot be diplayed for each^ ^ <ItemTemplate>^<b>Item</b> <%# Eval("Name") %> <br />^<b>Price</b> <%# Eval("Price") %> <br />^ <ItemTemplate>',
+				@slideinfo = 'Some asp.net controls support "Templates:, which allow^ you to insert TML on a "per row" basis^ ^ Example: Instead of a row with columns(GridView), we can^ write some HTML to visually customize how the database^ information is going ot be diplayed for each^ ^ &ltItemTemplate>^<b>Item</b> <%# Eval("Name") %> <br />^<b>Price</b> <%# Eval("Price") %> <br />^ &ltItemTemplate>',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '7-4-2',
@@ -886,7 +886,7 @@ EXEC spSlides	@slideID = '7-4-3',
 
 EXEC spSlides	@slideID = '7-4-4',
 				@lessonid = '7-4',
-				@slideinfo = 'Here is an example of what your DataList might look like on your^ .aspx page:^ <asp:DataList ID="DataListProducts" runat="server"^ RepeatColumns="3">^ <ItemTemplate>^ <div>^ <asp:Image id="Image1" runat="server"^ ImageUrl=''<%# Eval("ImageUrl") %>''/>^ <b>Item</b> <%# Eval("Name") %> <br />^<b>Price</b> <%# Eval("Price") %> <br />^  </div>^ </ItemTemplate>^<asp:DataList>^ Note: YOU MUST TYPE OUT: <ItemTemplate></ItemTemplate>',
+				@slideinfo = 'Here is an example of what your DataList might look like on your^ .aspx page:^ &ltasp:DataList ID="DataListProducts" runat="server"^ RepeatColumns="3">^ &ltItemTemplate>^ <div>^ &ltasp:Image id="Image1" runat="server"^ ImageUrl=''<%# Eval("ImageUrl") %>''/>^ <b>Item</b> <%# Eval("Name") %> <br />^<b>Price</b> <%# Eval("Price") %> <br />^  </div>^ &lt/ItemTemplate>^&lt/asp:DataList>^ Note: YOU MUST TYPE OUT: <ItemTemplate></ItemTemplate>',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '7-4-5',
@@ -896,7 +896,7 @@ EXEC spSlides	@slideID = '7-4-5',
 
 EXEC spSlides	@slideID = '7-4-6',
 				@lessonid = '7-4',
-				@slideinfo = 'We can alos drop the asp.net controls inside of^ ItemTemplate area nd retreive any value changes from^ the server (through C# code) after a postback^ Example: Add a RadioButtonLiat and a button inside of the^ Item Template^ ^ ''<ItemTemplate> <asp:RadioButtonList ID="RadioButtonListOptions" runat="server">^ <asp:ListItem Text="Option 1" Value="1" Selected="True"></asp:ListItem>^ <asp:ListItem Text="Option 2" Value="2" Selected="False"></asp:ListItem>^ </asp:RadioButtonList>^ ^ <asp:Button ID="ImageMoreInfo" runat="server"^ CommandArguemtn=''<%# Eval("Product) %>''></asp:ImageButton>',
+				@slideinfo = 'We can alos drop the asp.net controls inside of^ ItemTemplate area nd retreive any value changes from^ the server (through C# code) after a postback^ Example: Add a RadioButtonLiat and a button inside of the^ Item Template^ ^ $ltItemTemplate> &ltasp:RadioButtonList ID="RadioButtonListOptions" runat="server">^ &ltasp:ListItem Text="Option 1" Value="1" Selected="True">&lt/asp:ListItem>^ &ltasp:ListItem Text="Option 2" Value="2" Selected="False">&lt/asp:ListItem>^ &lt/asp:RadioButtonList> ^ &ltasp:Button ID="ImageMoreInfo" runat="server"^ CommandArgument=''<%# Eval("Product) %>''>&lt/asp:ImageButton>',
 				@crud = 'c'
 
 
