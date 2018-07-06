@@ -899,7 +899,10 @@ EXEC spSlides	@slideID = '7-4-6',
 				@slideinfo = 'We can alos drop the asp.net controls inside of^ ItemTemplate area nd retreive any value changes from^ the server (through C# code) after a postback^ Example: Add a RadioButtonLiat and a button inside of the^ Item Template^ ^ $ltItemTemplate> &ltasp:RadioButtonList ID="RadioButtonListOptions" runat="server">^ &ltasp:ListItem Text="Option 1" Value="1" Selected="True">&lt/asp:ListItem>^ &ltasp:ListItem Text="Option 2" Value="2" Selected="False">&lt/asp:ListItem>^ &lt/asp:RadioButtonList> ^ &ltasp:Button ID="ImageMoreInfo" runat="server"^ CommandArgument=''<%# Eval("Product) %>''>&lt/asp:ImageButton>',
 				@crud = 'c'
 
-
+EXEC spSlides	@slideID = '7-4-7',
+				@lessonid = '7-4',
+				@slideinfo = 'On the previous slide, what is CommandArugment?^ &ltasp:Button ID="imageMoreINfo" runat="server"^ CommandArguent=''<%# Eval("Productid") %>''>&lt/asp:imageButton>^ ^ By clicking one of the buttons generated in the^ ItemTemplate the ItemCommand event is raised^ ^ This is an event you must set via the Events tab in the^ Properties of the DataList^ ^ The event always fires when an event is launched from^ within one of the Items in the DataList',
+				@crud = 'c'
 
 
 
