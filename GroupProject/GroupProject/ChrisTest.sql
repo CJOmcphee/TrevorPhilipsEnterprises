@@ -817,6 +817,132 @@ EXEC spSlides	@slideID = '7-3-9',
 				@slideinfo = 'Whenever yoy ask a GridView to DataBind(), a series of^ events fire called RowDataBound()^ ^ This RowDataBound() event fire once for each row in your^ GridView including the column row at the top and the empty^ footer at the bottom^ ^ Why would we want to look at each row as it''s being^ populated from the Datasource into theGridView^ ^ We may want to tall a series of number in a column',
 				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-3-10',
+				@lessonid = '7-3',
+				@slideinfo = 'Example: Count how many peoiple are from Winnipeg, by checking^ if the column "City" contains the value "wpg"^ ^ ^ To do this, we will have to:^ Create a sum variable and initialize it^ Check each row in the Gridview, ensure it''s not the header row or the footer row^ Determine if the value "wpg" is in the column "City"^ Add to the sum variable^ Finally< write our sum variable to  the footer^ ^ Note: Set the ShowFooter property to True if you are displaying totals in the footer of the GridView',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-11',
+				@lessonid = '7-3',
+				@slideinfo = 'To determine what row we are currently on while inside^ the RowDataBound() method, we can check the "e" variable^ ^ Example: Check if the current row is a typical DataRow ( not a^ Header and not a Footer row)^ if(e.Row.RowType == DataControlRowType.DataRow) {...}^ ^ The "e.Row.RowType" property contains a value indicating the^ type of row, to find out what values you can check for, please see:^ http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridviewrow.rowtype.aspx',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-12',
+				@lessonid = '7-3',
+				@slideinfo = 'To determine what value is stored within a specific column in a^ row, we can use the following code:^ r.Row.Cells[x].Text^ ^ Where the "x" is the column number you want to check^ ^ Remeber that in programming, specifically with arrays, the first^ value is often 0^ ^ Example: We have GridView with columns: Name and Province.^ To access Province we use the number 1...^ e.Row.Cells[1].Text',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-13',
+				@lessonid = '7-3',
+				@slideinfo = 'Example: c# code based on the previous slide^  Private int totalCityWpg;^ ^ protected void GridViewTotals_RowDataBound(object sender,^ GridViewRowEventArgs e)^ {^ if(e.Row.RowType == DataControlRowType.DataRow)^ {^ if(e.Row.Cells[3].Text.ToLower()=="wpg")^ totalCityWpg++;^ }^ else if(e. Row.RowType == DataControlRowType.Footer)^ {^ e.Row.Cells[3].Text = "From Wpg:" + totalCityWpg;^ }^ }',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-14',
+				@lessonid = '7-3',
+				@slideinfo = 'It is good practice to have the first column in a GridView be the line^ number - makes the data easier to work with^ ^ The TemplateField control allows you to create columns consisting of^ other controls^ ^ You can customize columns in your GridView by going to the GridView^ Tasks section  and clicking on edit columns',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-15',
+				@lessonid = '7-3',
+				@slideinfo = 'After creating a TemplateField, you will need to go to the^ ASPX page and manually add some code^ ^ The following is what your GridView might look like now:^ <asp:GridView ID="GridViewRowCount" runat="server">^ <Columns>^ <asp:TemplateField>^</asp:TemplateField>^</Columns>^ </asp:GridView>',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-15',
+				@lessonid = '7-3',
+				@slideinfo = 'You will have to write in a start and end tag for a new^ "ItemTemplate":^ <asp:GridView ID="GridViewRowCount" runat="server">^ <Columns>^ <asp:TemplateField>^<ItemTemplate>^ </ItemTemplate>^ </asp:TemplateField>^ </Columns>^ </asp:GridView>',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-16',
+				@lessonid = '7-3',
+				@slideinfo = 'Now we can click and drag any tool we want from the tool^ box, let''s put a ASP Label in there:^ <asp:GridView ID="GridViwRowCount" runat="server">^ <Columns>^ <asp:TemplateField>^ <ItemTemplate>^ <asp:Label runat="server" Text=""></asp:Label>^ </ItemTemplate?^ </asp:TemplateField>^ <Columns>^ </asp:GridView>',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-17',
+				@lessonid = '7-3',
+				@slideinfo = 'How can we dynamically grab a new value for each row(such as the^ current count of rows), from ASSP.NET tag?^ ^ We can do this through the use of DataBinding:^ <%# GridViewRowCount.Rows.Count + 1 %>^ Note: GridViewRowCount is th variable name of my gridview^ ^ <%# %> tag above is  used by ASP.NET to fetch values stored in C#^ variables on the sever dynamically (very useful)^ IN this case, we want the count of the GridView at each row, so that we^ might print a sequential row number^  Note: We start off with 0 rows when we are printing the first row, that is^  why it us +1 ',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-18',
+				@lessonid = '7-3',
+				@slideinfo = 'Let''s take a look at our code now:^ <asp:GridView ID="GridViewRowCount" runat="server">^ <Columns>^ <asp:TemplateField>^ <ItemTemplate>^ <asp:Label runat="server"^ Text="<%# GridViewRowCount.Rows.Count + 1 %>">^ </asp:Label>^ </ItemTemplate>^ </asp:TemplateField>^ </Columns>^ </asp:GridView>',
+				@crud = 'c'
+
+-- Lesson 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
