@@ -904,13 +904,25 @@ EXEC spSlides	@slideID = '7-4-7',
 				@slideinfo = 'On the previous slide, what is CommandArugment?^ &ltasp:Button ID="imageMoreINfo" runat="server"^ CommandArguent=''<%# Eval("Productid") %>''>&lt/asp:imageButton>^ ^ By clicking one of the buttons generated in the^ ItemTemplate the ItemCommand event is raised^ ^ This is an event you must set via the Events tab in the^ Properties of the DataList^ ^ The event always fires when an event is launched from^ within one of the Items in the DataList',
 				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-4-8',
+				@lessonid = '7-4',
+				@slideinfo = 'How can we tekk what Item was clicked on from within the^ context of the ItemCommand event?^ proctected void DataListProducts_ItemCommand(object source,^ DataListCommandEventArgs e)^ {^ RadioButtonList rList=^ (RadioButtonLit)e.Item.FindControl("RadioButtonListOptions");^ lblMessage.Text = "You Choose product" + e.CommandArgument + "<br />";^ if(rList.SelectedValue =="1"){lblMessage.Text +="Option 1";}^ else{lblMessage.Text += "Option2";}^ }',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-4-9',
+				@lessonid = '7-4',
+				@slideinfo = 'The following statement is how we can obtain the primary^ key value of  the row that was  being interacted with^ ^ Go back to the aspx slide and notice that we said the^ button would pass the CommandArgument^ ^ lblMessage.Text="You Choose product"^ + e.CommandArugment + <br />;',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-4-10',
+				@lessonid = '7-4',
+				@slideinfo = 'The DataListCommandEventArgs variable e contains everything we need^ to know about the specific item tat was clicked on^ From the propertires we can reach a DataListItem object, which we can^ the search to find the asp controls^ RadioButtonList rList^ (RadioButtonList)e.Item.FindControl("RadioButtonListOptions");^ ^ Three important facts about this: You must use of the ID of the control to find it using FindControl()^ You must CAST the control  back into a variable of the right class^ Once one, you can use te control as if it were any other asp^ control on the page, which measn yo can grab values out of properties',
+				@crud = 'c'
 
-
-
-
-
+EXEC spSlides	@slideID = '7-4-11',
+				@lessonid = '7-4',
+				@slideinfo = 'You can pass string values through your page links:^ MagazineDetails.aspx?magazineId=7^ ^ On te Page_Load() inside MagazineDetails.aspx, we^ ^ can get the number 7 out with the following code:^ ^ string Productid =^ Requst.QueryString["MagazineId"].ToString();',
+				@crud = 'c'
 
 
 
