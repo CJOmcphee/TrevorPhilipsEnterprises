@@ -869,17 +869,35 @@ EXEC spSlides	@slideID = '7-3-18',
 
 -- Lesson 4
 
+EXEC spSlides	@slideID = '7-4-1',
+				@lessonid = '7-4',
+				@slideinfo = 'Some asp.net controls support "Templates:, which allow^ you to insert TML on a "per row" basis^ ^ Example: Instead of a row with columns(GridView), we can^ write some HTML to visually customize how the database^ information is going ot be diplayed for each^ ^ <ItemTemplate>^<b>Item</b> <%# Eval("Name") %> <br />^<b>Price</b> <%# Eval("Price") %> <br />^ <ItemTemplate>',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-4-2',
+				@lessonid = '7-4',
+				@slideinfo = 'The syntax on the previous slide is called DataBinding:^ <%# Eval(:Name") %>^ ^ Note: we saw something like  this when we did the Row Count^ ^ The Syntax indicates thay we want to break out of regular HTML^ and to switch to server code to obtain values^ ^ Eval() is a method which takes a string parameter representing a^ column name and returns the value in that column^  ^ Example: ''Name'' is a column name in the datasource, the value^ may be something like ''Scott''',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-4-3',
+				@lessonid = '7-4',
+				@slideinfo = 'To use DataBinding, we need to define a control which^ allows an ItemTemplate^ ^ The ListView and DataList are two great controls for this^ ^ You can bind a DataSet to either control in the EXACT same^ way as a GridView^ ^ DataList1.DataSource = ds.Tables[0];^ DataList1.DataBind();',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-4-4',
+				@lessonid = '7-4',
+				@slideinfo = 'Here is an example of what your DataList might look like on your^ .aspx page:^ <asp:DataList ID="DataListProducts" runat="server"^ RepeatColumns="3">^ <ItemTemplate>^ <div>^ <asp:Image id="Image1" runat="server"^ ImageUrl=''<%# Eval("ImageUrl") %>''/>^ <b>Item</b> <%# Eval("Name") %> <br />^<b>Price</b> <%# Eval("Price") %> <br />^  </div>^ </ItemTemplate>^<asp:DataList>^ Note: YOU MUST TYPE OUT: <ItemTemplate></ItemTemplate>',
+				@crud = 'c'
 
+EXEC spSlides	@slideID = '7-4-5',
+				@lessonid = '7-4',
+				@slideinfo = 'From the previous two sludes, we can see how a DataList is^ able to repeat a set of html with injected data use the^ Eval() method^ ^Note: If you place the <%# %> inside double quotes, you^ will  not  be able to use double quotes within Eval()^ ^ Example: ImageUrl=''<%# Eval("ImageUrl") %>''^ As you can see, we use single quotes for the ImageUrl value',
+				@crud = 'c'
 
-
-
-
-
-
-
+EXEC spSlides	@slideID = '7-4-6',
+				@lessonid = '7-4',
+				@slideinfo = 'We can alos drop the asp.net controls inside of^ ItemTemplate area nd retreive any value changes from^ the server (through C# code) after a postback^ Example: Add a RadioButtonLiat and a button inside of the^ Item Template^ ^ ''<ItemTemplate> <asp:RadioButtonList ID="RadioButtonListOptions" runat="server">^ <asp:ListItem Text="Option 1" Value="1" Selected="True"></asp:ListItem>^ <asp:ListItem Text="Option 2" Value="2" Selected="False"></asp:ListItem>^ </asp:RadioButtonList>^ ^ <asp:Button ID="ImageMoreInfo" runat="server"^ CommandArguemtn=''<%# Eval("Product) %>''></asp:ImageButton>',
+				@crud = 'c'
 
 
 
