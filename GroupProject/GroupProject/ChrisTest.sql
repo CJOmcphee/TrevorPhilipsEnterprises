@@ -697,7 +697,7 @@ EXEC spSlides	@slideID = '7-1-15',
 
 EXEC spSlides	@slideID = '7-2-1',
 				@lessonid = '7-2',
-				@slideinfo = 'File upload control^ ^ There are many way to upload and display images^ ^ The following slides who two potential ways^ ^ 1. Upload and dsiplay a file to a web server using a directory^ path^ ^2. Upload a file to a database',
+				@slideinfo = 'File upload control <input type="file" disabled/>^ ^ There are many way to upload and display images^ ^ The following slides who two potential ways^ ^ 1. Upload and dsiplay a file to a web server using a directory^ path^ ^2. Upload a file to a database',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '7-2-2',
@@ -816,6 +816,165 @@ EXEC spSlides	@slideID = '7-3-9',
 				@lessonid = '7-3',
 				@slideinfo = 'Whenever yoy ask a GridView to DataBind(), a series of^ events fire called RowDataBound()^ ^ This RowDataBound() event fire once for each row in your^ GridView including the column row at the top and the empty^ footer at the bottom^ ^ Why would we want to look at each row as it''s being^ populated from the Datasource into theGridView^ ^ We may want to tall a series of number in a column',
 				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-10',
+				@lessonid = '7-3',
+				@slideinfo = 'Example: Count how many peoiple are from Winnipeg, by checking^ if the column "City" contains the value "wpg"^ ^ ^ To do this, we will have to:^ Create a sum variable and initialize it^ Check each row in the Gridview, ensure it''s not the header row or the footer row^ Determine if the value "wpg" is in the column "City"^ Add to the sum variable^ Finally< write our sum variable to  the footer^ ^ Note: Set the ShowFooter property to True if you are displaying totals in the footer of the GridView',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-11',
+				@lessonid = '7-3',
+				@slideinfo = 'To determine what row we are currently on while inside^ the RowDataBound() method, we can check the "e" variable^ ^ Example: Check if the current row is a typical DataRow ( not a^ Header and not a Footer row)^ if(e.Row.RowType == DataControlRowType.DataRow) {...}^ ^ The "e.Row.RowType" property contains a value indicating the^ type of row, to find out what values you can check for, please see:^ http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridviewrow.rowtype.aspx',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-12',
+				@lessonid = '7-3',
+				@slideinfo = 'To determine what value is stored within a specific column in a^ row, we can use the following code:^ r.Row.Cells[x].Text^ ^ Where the "x" is the column number you want to check^ ^ Remeber that in programming, specifically with arrays, the first^ value is often 0^ ^ Example: We have GridView with columns: Name and Province.^ To access Province we use the number 1...^ e.Row.Cells[1].Text',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-13',
+				@lessonid = '7-3',
+				@slideinfo = 'Example: c# code based on the previous slide^  Private int totalCityWpg;^ ^ protected void GridViewTotals_RowDataBound(object sender,^ GridViewRowEventArgs e)^ {^ if(e.Row.RowType == DataControlRowType.DataRow)^ {^ if(e.Row.Cells[3].Text.ToLower()=="wpg")^ totalCityWpg++;^ }^ else if(e. Row.RowType == DataControlRowType.Footer)^ {^ e.Row.Cells[3].Text = "From Wpg:" + totalCityWpg;^ }^ }',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-14',
+				@lessonid = '7-3',
+				@slideinfo = 'It is good practice to have the first column in a GridView be the line^ number - makes the data easier to work with^ ^ The TemplateField control allows you to create columns consisting of^ other controls^ ^ You can customize columns in your GridView by going to the GridView^ Tasks section  and clicking on edit columns',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-15',
+				@lessonid = '7-3',
+				@slideinfo = 'After creating a TemplateField, you will need to go to the^ ASPX page and manually add some code^ ^ The following is what your GridView might look like now:^ <asp:GridView ID="GridViewRowCount" runat="server">^ <Columns>^ <asp:TemplateField>^</asp:TemplateField>^</Columns>^ </asp:GridView>',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-15',
+				@lessonid = '7-3',
+				@slideinfo = 'You will have to write in a start and end tag for a new^ "ItemTemplate":^ <asp:GridView ID="GridViewRowCount" runat="server">^ <Columns>^ <asp:TemplateField>^<ItemTemplate>^ </ItemTemplate>^ </asp:TemplateField>^ </Columns>^ </asp:GridView>',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-16',
+				@lessonid = '7-3',
+				@slideinfo = 'Now we can click and drag any tool we want from the tool^ box, let''s put a ASP Label in there:^ <asp:GridView ID="GridViwRowCount" runat="server">^ <Columns>^ <asp:TemplateField>^ <ItemTemplate>^ <asp:Label runat="server" Text=""></asp:Label>^ </ItemTemplate?^ </asp:TemplateField>^ <Columns>^ </asp:GridView>',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-17',
+				@lessonid = '7-3',
+				@slideinfo = 'How can we dynamically grab a new value for each row(such as the^ current count of rows), from ASSP.NET tag?^ ^ We can do this through the use of DataBinding:^ <%# GridViewRowCount.Rows.Count + 1 %>^ Note: GridViewRowCount is th variable name of my gridview^ ^ <%# %> tag above is  used by ASP.NET to fetch values stored in C#^ variables on the sever dynamically (very useful)^ IN this case, we want the count of the GridView at each row, so that we^ might print a sequential row number^  Note: We start off with 0 rows when we are printing the first row, that is^  why it us +1 ',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-3-18',
+				@lessonid = '7-3',
+				@slideinfo = 'Let''s take a look at our code now:^ <asp:GridView ID="GridViewRowCount" runat="server">^ <Columns>^ <asp:TemplateField>^ <ItemTemplate>^ <asp:Label runat="server"^ Text="<%# GridViewRowCount.Rows.Count + 1 %>">^ </asp:Label>^ </ItemTemplate>^ </asp:TemplateField>^ </Columns>^ </asp:GridView>',
+				@crud = 'c'
+
+-- Lesson 4
+
+EXEC spSlides	@slideID = '7-4-1',
+				@lessonid = '7-4',
+				@slideinfo = 'Some asp.net controls support "Templates:, which allow^ you to insert TML on a "per row" basis^ ^ Example: Instead of a row with columns(GridView), we can^ write some HTML to visually customize how the database^ information is going ot be diplayed for each^ ^ &ltItemTemplate>^<b>Item</b> <%# Eval("Name") %> <br />^<b>Price</b> <%# Eval("Price") %> <br />^ &ltItemTemplate>',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-4-2',
+				@lessonid = '7-4',
+				@slideinfo = 'The syntax on the previous slide is called DataBinding:^ <%# Eval(:Name") %>^ ^ Note: we saw something like  this when we did the Row Count^ ^ The Syntax indicates thay we want to break out of regular HTML^ and to switch to server code to obtain values^ ^ Eval() is a method which takes a string parameter representing a^ column name and returns the value in that column^  ^ Example: ''Name'' is a column name in the datasource, the value^ may be something like ''Scott''',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-4-3',
+				@lessonid = '7-4',
+				@slideinfo = 'To use DataBinding, we need to define a control which^ allows an ItemTemplate^ ^ The ListView and DataList are two great controls for this^ ^ You can bind a DataSet to either control in the EXACT same^ way as a GridView^ ^ DataList1.DataSource = ds.Tables[0];^ DataList1.DataBind();',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-4-4',
+				@lessonid = '7-4',
+				@slideinfo = 'Here is an example of what your DataList might look like on your^ .aspx page:^ &ltasp:DataList ID="DataListProducts" runat="server"^ RepeatColumns="3">^ &ltItemTemplate>^ <div>^ &ltasp:Image id="Image1" runat="server"^ ImageUrl=''<%# Eval("ImageUrl") %>''/>^ <b>Item</b> <%# Eval("Name") %> <br />^<b>Price</b> <%# Eval("Price") %> <br />^  </div>^ &lt/ItemTemplate>^&lt/asp:DataList>^ Note: YOU MUST TYPE OUT: <ItemTemplate></ItemTemplate>',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-4-5',
+				@lessonid = '7-4',
+				@slideinfo = 'From the previous two sludes, we can see how a DataList is^ able to repeat a set of html with injected data use the^ Eval() method^ ^Note: If you place the <%# %> inside double quotes, you^ will  not  be able to use double quotes within Eval()^ ^ Example: ImageUrl=''<%# Eval("ImageUrl") %>''^ As you can see, we use single quotes for the ImageUrl value',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-4-6',
+				@lessonid = '7-4',
+				@slideinfo = 'We can alos drop the asp.net controls inside of^ ItemTemplate area nd retreive any value changes from^ the server (through C# code) after a postback^ Example: Add a RadioButtonLiat and a button inside of the^ Item Template^ ^ $ltItemTemplate> &ltasp:RadioButtonList ID="RadioButtonListOptions" runat="server">^ &ltasp:ListItem Text="Option 1" Value="1" Selected="True">&lt/asp:ListItem>^ &ltasp:ListItem Text="Option 2" Value="2" Selected="False">&lt/asp:ListItem>^ &lt/asp:RadioButtonList> ^ &ltasp:Button ID="ImageMoreInfo" runat="server"^ CommandArgument=''<%# Eval("Product) %>''>&lt/asp:ImageButton>',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-4-7',
+				@lessonid = '7-4',
+				@slideinfo = 'On the previous slide, what is CommandArugment?^ &ltasp:Button ID="imageMoreINfo" runat="server"^ CommandArguent=''<%# Eval("Productid") %>''>&lt/asp:imageButton>^ ^ By clicking one of the buttons generated in the^ ItemTemplate the ItemCommand event is raised^ ^ This is an event you must set via the Events tab in the^ Properties of the DataList^ ^ The event always fires when an event is launched from^ within one of the Items in the DataList',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-4-8',
+				@lessonid = '7-4',
+				@slideinfo = 'How can we tekk what Item was clicked on from within the^ context of the ItemCommand event?^ proctected void DataListProducts_ItemCommand(object source,^ DataListCommandEventArgs e)^ {^ RadioButtonList rList=^ (RadioButtonLit)e.Item.FindControl("RadioButtonListOptions");^ lblMessage.Text = "You Choose product" + e.CommandArgument + "<br />";^ if(rList.SelectedValue =="1"){lblMessage.Text +="Option 1";}^ else{lblMessage.Text += "Option2";}^ }',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-4-9',
+				@lessonid = '7-4',
+				@slideinfo = 'The following statement is how we can obtain the primary^ key value of  the row that was  being interacted with^ ^ Go back to the aspx slide and notice that we said the^ button would pass the CommandArgument^ ^ lblMessage.Text="You Choose product"^ + e.CommandArugment + <br />;',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-4-10',
+				@lessonid = '7-4',
+				@slideinfo = 'The DataListCommandEventArgs variable e contains everything we need^ to know about the specific item tat was clicked on^ From the propertires we can reach a DataListItem object, which we can^ the search to find the asp controls^ RadioButtonList rList^ (RadioButtonList)e.Item.FindControl("RadioButtonListOptions");^ ^ Three important facts about this: You must use of the ID of the control to find it using FindControl()^ You must CAST the control  back into a variable of the right class^ Once one, you can use te control as if it were any other asp^ control on the page, which measn yo can grab values out of properties',
+				@crud = 'c'
+
+EXEC spSlides	@slideID = '7-4-11',
+				@lessonid = '7-4',
+				@slideinfo = 'You can pass string values through your page links:^ MagazineDetails.aspx?magazineId=7^ ^ On te Page_Load() inside MagazineDetails.aspx, we^ ^ can get the number 7 out with the following code:^ ^ string Productid =^ Requst.QueryString["MagazineId"].ToString();',
+				@crud = 'c'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
