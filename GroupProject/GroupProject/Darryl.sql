@@ -271,171 +271,233 @@ EXEC dbo.spSlides @slideID = '1-1-17',   -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understand The Problem</h2><p>Step one involves understanding the problem that the future code will be used to solve</p>^For every piece of a program there will always be a client, that is the person or people who have a vested interest in the outcome of the particular piece of code^Note: The client can be YOU in some cases^But whoever this client is, they will likely have requirements', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-17',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-18',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understand the Problem</h2><p>User Requirements must be gathered, understood and agreed upon</p>^Users who think they know what they want will frequently change their minds, especially after seeing sample output^A good programmer is often part counselor, part detective^In order to scope the time required for the various tasks involved in finishing a project, these requirements need to be fairly stable.', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 
-EXEC dbo.spSlides @slideID = '1-1-18',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-19',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Planning the Logic</h2><p>Step two is to plan out your logic</p>^Note that in this course our problems may be small, realisitcally requiring limited planning^The two most common tools in planning logic are Flowcharts and Pseudo-code^Both tools involve writing the steps of the program in English (more on this later)', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-19',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-20',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Code the Problem</h2><p>Step three is to code the problem, following the plan we made earlier</p>^ A good term paper needs planning before writing, so do most programs, so dont skimp out on the previous step!^Planning saves you time; practice proper planning now!', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-20',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-21',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Execute and Test the Program</h2><p>Once we have coded a solution, the next step is to do some proper testing</p>^There are many kinds of testing and each provides value^Check out the list on the next slide for a few of the different categories of testing^Note: we do not cover these topics in the program', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-21',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-22',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Execute and Test the Program</h2><p>APPLICATION DEVELOPMENT TEST TYPES</p><table><tr><td>Defecit Testing</td><td>Path Testing</td><td>Data set testing</td></tr><tr><td>Unit Testing</td><td>System Testing</td><td>Integration Testing</td></tr><tr><td>Black Box Testing</td><td>White Box Testing</td><td>Regression Testing</td></tr><tr><td>Automation Testing</td><td>User Acceptance Testing</td><td>Performance Testing</td></tr></table>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-22',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-23',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Put the Program into Production</h2><p>The fifth step is to deploy the code to a live environment - Typically, there are 3 stages before code gets to production:</p>^1. Development:^The program is coded and compiled^2. Quality Assurance^The program is checked for errors of all kinds^3. Live Production^The program is published and ready to be accessed', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-23',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-24',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Systems Development Life Cycle (SDLC)</h2><p>Investegation: What is the concept? Is it worth it?</p><p>Analysis: Who will use it? What do they want? Can we afford to make it?</p><p>Design: How will it work? What do we need to make it?</p><p>Implement: Plan it! Build it! Test it! Produce it!</p>^Note this is where the programming steps from the previous slides fit in^<p>Maintenance: Support it! Tune it, then Upgrade it!</p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-24',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-25',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p>We have discussed some basic programming conceptes including the higher level steps involved in making production code from the beginning of an applicaiton project to the finish</p>^<p>Next we will start discussing the data we will be working with in applications</p>^<p>The concept of the data hierarchy in the next few slides is just a framework for helping understand the layers of information we may deal with as a developer</p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-25',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-26',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p>When data is stored for use it is often stored in Data Hierarchy</p>^<p>Binary is a series of on and off switches physically located in a piece of hardware</p>^It is the smallest unit of data in the data hierarchy^Binary is represented symbolically by: 0 and 1^A series of binary numbers can be interpreted as a single character', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-26',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-27',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p>Characters are the smallest unit that we tend to care about</p>^<p>Characters are letters, numbers, and special symbols, such as "A", "7", and "$"</p>^<p>A field(variable) is a single data item made up of one or more characters</p>^<p>Example of fields: lastName, streetAddress, or annualSalary</p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-27',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-28',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p>Records (rows) are groups of fields that go together for some logical reason</p>^Example: A record of a person may have information concerning height, weight, age, etc.^Tables are groups of records that go together for some logical reason^ Example: A table may have records of many people', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-28',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-29',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p>A Database holds a group of tables</p>^Example: A customer database may include tables containing information about clients, purchases, returns, etc.^Database software establishes and maintains relationships between fields and tables^The lesson on Databases will get more into detail on that subject^<p>Users can also write queries to a database, which are requests for a specific record information</p>^Example: A query can be used to determine the number of clients who live in a certain city.', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-29',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-30',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Evolution of Programming</h2><p>Currently, there are two major techniques used to develop programs:^Procedural Programming was the first method of programming and focuses on running a logically grouped series of functional actions called procedures</p>^<p>Object-Oriented Programming (OOP) is a newer concept and focuses on abstracting features and behaviours out of objects or "things", using them to perform fuctions (involves pieces of procedural programming to work usually)</p>^C#, Java and most of newer programming languages are Object-Oriented based', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-30',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-31',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Using Flowchart Symbols and Pseudocode Statements</h2><p>We mentioned earlier that you should plan your code before writing.</p>^To aid in planning out the logic of a program, you can use Flowcharts and Pseudocode^"Flowcharts" are pictoral/visual representations of program logic^"Pseudocode" is a casual English-like representation of program code', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 
-EXEC dbo.spSlides @slideID = '1-1-31',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-32',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Using Flowchart Symbols and Pseudocode Statements</h2><p>A lot of programmers prefer writing Pseudocode rather than drawing flowcharts, especially for quick explanations because..</p>^It is similar to writing the final code in a progamming language^Takes less time^It is less formal^There are no specific rules to writing Pseudocode.', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-32',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-33',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Using Flowchart Symbols and Pseudocode Statements</h2><p>Although flow charts will likely *not* be the preferable way to plan out your logic, it is still a useful skill to know how</p>^<p>Programmers are generally expected to learn the basics of flow chart construction</p>^<p>Therefore, we will cover the topic in the remainder of this course</p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-33',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-34',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Using Flowchart Symbols and Pseudocode Statements</h2><p>Every program involves the step of:</p>^Input^<p>Processing</p>^<p>Output</p>^When constructing flow charts we will need a way to graphically represent each of the above steps in a cohesive manner', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-34',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-35',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Using Flowchart Symbols and Pseudocode Statements</h2><p>There are various shapes that represent programming concepts when drawing out a flow chart:</p>^Oval: The Oval represents the start or an end point of a flow chart^Arrow: The arrow represents a connector that shows relationships between shapes^Parallelogram: Represents the Input and Output^Rectangle: Represents a process^Diamond: Indicates a decision^Circle: Followed by two corresponding numbers to connect one part of a page to the next^Square with pointed bottom: Connects from one page to the next', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-35',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-36',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Three Basic Structures</h2><p>All logic problems can be solved by using these three structures</p>^1. Sequence^2. Selection^3. Looping^^A Structure is a basic uinit of programming logic^Attaching structures end-to-end is called stacking structures^When a structure is located inside another structire it is called nesting^^The next kind of structure is called a Select Structure or Decision Structure^You ask a question and depending on the answer, you take one out of two or more courses of action', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-36',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-37',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Testing a Value</h2><p>Testing a value is also called making a decision</p>^Represented in flowcharts as a diamond shape; sometimes called a decision symbol^^For example: Test the value of the number we input called "TestScore" and see if it is over 70 or not to pass the test^We will start the program, the input (parallelagram) will read the test score, the decisison (diamond) will ask if the TestScore is above 70^If the Test Score is above 70, the student has passed the output will print "Pass", if not, then the output will print "Failed" and then the program stops.', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-37',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-38',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Three Basic Structures</h2><p>There are a few kinds of decision structures that we will discuss in the next few slides:</p>^The dual-alternative or binary selection structure^^The single-alternative or unary selection^The dual-alternate or binary selection structure has an action associated with two outcomes^It is also called an if-then-else becase it asks which action to take if the action is taken, then do an action, else do another action^The single-alternative or unary selection needs to do only one question, if the condition is true, then the process will activate.', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-38',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-39',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Three Basic Structuresy</h2><p>The last of the three basic structures is called the loop</p>^You may hear programmers refer to looping as iteration^An iteration is a single run through the loop^Example: a loop that runs 5 times is said to have 5 iterations^In a loop structure, you ask a question repeatedly until a condition is met^However, before the condition is asked for again, you will want to perform some action(s)^When the condition is met, you will exit the structure', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-1-39',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '1-1-40',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
                   @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Ending a Loop ny Using Sentinel Values</h2><p>If you arent careful with your loop, you may end up in an *infinite loop*</p>^This is when you enter a repeating flow of logic with no end^To end the program, set a predetermined value that means "STOP THE PROGRAM"^THe program can be then test variable input for this value^A pre-selected value that stops the execution of a loop is often called a dummy value or a sentinel value; because it represents an entry or exit point, like a sentinel who guards a fortress', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
+go
+
 
 EXEC dbo.spSlides @slideID = '1-2-1',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Objectives</h2><p>In this lesson we will learn:</p>^Basic C# Syntax^Declaring Variables^Assigning data types and values to variables^Recognize the prper format of variable assignment statements^Define two data types:^Numberic (Value)^Character(Reference)', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
+go
+
 EXEC dbo.spSlides @slideID = '1-2-2',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Variables</h2><p>Variables are memeory locations, whose contents can vary or differ over time</p>^Variable names are also caleld Identifiers^In math, you often had to use variables in your algebra^For example X = Y + 10, where Y = 3^Here we can see the two variables X and Y, both X and Y are numbers^Since Y = 3, X will be 3 + 10 making the answer X = 13', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
+go
 EXEC dbo.spSlides @slideID = '1-2-3',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Naming Variables</h2><p>In C#, we will have to name our variables as we create them for our programs</p>^When naming variables, we must follow these rules:^1. Must NOT contain spaces^2. Should have some appropriate meaning^3. Must not contain invalid or special characters^4. Do NOT start a variable with a number', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-4',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Naming Variables</h2><p>Examples of GOOD variable names:</p>^Cost^costAmount^costOfCurrentYear (Long, but we know what it means)^^Examples of BAD variable names:^Cost Amount^Cstofdngbsnss^co$st!n2018^2018costs', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-5',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Assigning Values to Variables</h2><p>To assign a variable a value, we must use an assignment operator, which always requires the name of a memory location (variable name) on its left side:</p>^In C# it looks like this (assuming we already have a variable called X)^X=2^If the variable is an integer, we can perform any kind of math on the right hand side:^X= 2 * 8^X= 2 * Y', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-6',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Assigning Values to Variables</h2><p>Note that there are many different kinds of math operators in C#, many of them are obvious:</p>^Addition: X + Y^Subrtraction: X - Y^Multiplication: X * Y^Division: X / Y^Modulus: X % Y (Computes the remainder after dividing ^Examples:^4 % 2 = 0, because 2 divides into 4 evenly, 0 remainder^3 % 2 = 1, because after division there is 1 remainder)', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-7',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Assigning Values to Variables</h2><p>More on Modulus: X % Y</p>^Note that you can detect whether a number is odd or even by using modulus! How?^WHat is the definition of an even? Answer: A number that is evenly divisible by 2^So 4 is divisible by 2 bevause if you divide 4/2 there is a remainder of 0^ Therefore if 4 % 2 equals 0, it is even.', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-8',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Declaring Variables</h2><p>When you create a variable, you must declare a aname as well as a datatype for a variable</p>^Examples of variable declarations in C#^int myAge; //int stands for "Integer"^char letterGrade // char stands for "Character"^string myName // a string is a series of Characters^The two forward slashes // denote a comment int C#, everything after these characters is ignored by the compiler and therefore used for documenting your program code^It is always a good idea to comment your code! This will be discussed later on.', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-9',   -- varchar(50)
+                  @lessonid = '1-2',  -- varchar(50)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Declaring Variables</h2><p>Computers deal with two basic types of data:</p>^1. Reference data types^2. Value data types^^You can declare a variable as a certain type of data, it can *ONLY EVER* be assigned that type of data^Examples of declaring a variable^int myAge;^myAge=30;^^string myName^myName="Scott"^^myName = myAge + myName; is a good example of declaring and assigning variables^**myAge= 30 + "Scott"; is NOT valid syntax, incompatible**', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+go
+
+EXEC dbo.spSlides @slideID = '1-2-10',   -- varchar(50)
+                  @lessonid = '1-2',  -- varchar(50)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Data Types</h2><p>Remember, information is stored into memory on the computer somehow, that is the smallest form of data we keep track of? Binary.</p>^Therefore, a value like 15 will be stored as a series of 1s and 0s that represent that number: 1111^This is not required to memorize, this is for those who are curous, here is an example of converting binary to decimal.^^10111 in binary is 31 because...^BINARY:1 0 1 1 1 =^16 + 0 + 4 + 2 + 1 = 23^Where did they come from?^2 to the power of 4 = 16, multiplied by 1 = 16^2 to the power of 3 = 8, multiplied by 0 = 0^2 to the power of 2 = 4, multiplied by 1 = 4^2 to the power of 1 = 2, multiplied by 1 = 2,^2 to the power of 0 = 1, multiplied by 1 = 1', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+go
+
+EXEC dbo.spSlides @slideID = '1-2-11',   -- varchar(50)
+                  @lessonid = '1-2',  -- varchar(50)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Data Types</h2><p>So in other words binary follows this pattern all the time:</p>^The number on the far right is by 2 to the power of 0 which any number to the power of 0 is always 1^ So the first number on the right is only ever 1 or 0, for example: 0 in binary is 0 in decimal, and 1 is 1 in decimal^You start from 0 and increase by 1 per digit in binary Ex: 0 1 2 3 4 5 and add up the numbers!^What does binary have to do with data types?^Each datatype can only hold a certain amount of information, so as you learn more about them, it might be interesting to find out what the limits are.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+go
+
+EXEC dbo.spSlides @slideID = '1-2-12',   -- varchar(50)
+                  @lessonid = '1-2',  -- varchar(50)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Data Types</h2><p>Value Types:</p>^Are a set of number of bits in memory reserved that can be reserved for a variable^Programming languages such as Pascal, C++, C# and Java^distinguish betewwn integer(whole number) and floating-point (fractional) numeric varialbes containing a decimal point^The common value types we will be using are interger (32 bits) and double (64 bits)^An example of a C# interger variable would be: int myAge = 25;^An example of a C# double variable would be: double myScore = 88.71;', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+go
+
+EXEC dbo.spSlides @slideID = '1-2-13',   -- varchar(50)
+                  @lessonid = '1-2',  -- varchar(50)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Data Types</h2><p>Once you declare a variable, in can ONLY EVER contain values of that type</p>^If you attempt to assign values from one type to another you will get syntax error from the compiler!^The above point is almost always true, but there are some exeptions to watch out for.. (and conversions)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+go
+
+EXEC dbo.spSlides @slideID = '1-2-14',   -- varchar(50)
+                  @lessonid = '1-2',  -- varchar(50)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Data Types</h2><p>Incompatible type error example:</p>^double myScore;^int myAge;^myScore = 88.13;^myAge = 21;^myScore = myScore + myAge; // This will work**^myAge = myScore + myAge;//This will not work!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+go
+
+EXEC dbo.spSlides @slideID = '1-2-15',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Declaring Variables</h2><p></p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '1-2-10',   -- varchar(50)
+go
+
+EXEC dbo.spSlides @slideID = '1-2-16',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
-                  @slideinfo = '<h1>C# Basics</h1><h2>Declaring Variables</h2><p>When you create a variable, you must declare a aname as well as a datatype for a variable</p>^Examples of variable declarations in C#^int myAge; //int stands for "Integer"^char letterGrade // char stands for "Character"^string myName // a string is a series of Characters^The two forward slashes // denote a comment int C#, everything after these characters is ignored by the compiler and therefore used for documenting your program code^It is always a good idea to comment your code! This will be discussed later on.', -- varchar(2000)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Declaring Variables</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+go
+
+EXEC dbo.spSlides @slideID = '1-2-17',   -- varchar(50)
+                  @lessonid = '1-2',  -- varchar(50)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Declaring Variables</h2><p></p>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+go
+
+EXEC dbo.spSlides @slideID = '1-2-18',   -- varchar(50)
+                  @lessonid = '1-2',  -- varchar(50)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Declaring Variables</h2><p></p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 go
