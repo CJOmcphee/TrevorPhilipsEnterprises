@@ -32,7 +32,7 @@ namespace GroupProject.user
                 Panel pnlModule = new Panel();
                 pnlModule.CssClass = "dropdown";
                 HyperLink hlModule = new HyperLink();
-                hlModule.Text = row["moduleID"].ToString();
+                hlModule.Text = row["moduleName"].ToString();
                 hlModule.NavigateUrl = "module_summary.aspx?Module=" + hlModule.Text;
                 hlModule.Target = "slide";
                 pnlModule.Controls.Add(hlModule);
