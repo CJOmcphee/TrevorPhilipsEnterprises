@@ -305,7 +305,7 @@ as begin
 		end
 	if @crud='d'
 		begin
-			delete from tbWrongAnswers where wrongAnswers = @wrongAnswers
+			delete from tbWrongAnswers where wrongAnswers = @wrongAnswers and questions = @question
 		end
 end
 go

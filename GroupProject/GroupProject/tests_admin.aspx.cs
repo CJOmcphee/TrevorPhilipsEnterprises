@@ -164,7 +164,8 @@ namespace GroupProject.admin
                 return;
             }
             gvWrongAnswers.SelectedIndex = Convert.ToInt32(e.CommandArgument);
-            Crud.DeleteData("spWrongAnser", gvWrongAnswers.SelectedDataKey["wrongAnswer"].ToString());
+            string wronganswer = gvWrongAnswers.SelectedDataKey["wrongAnswer"].ToString();
+            Crud.DeleteData("spWrongAnwser", gvWrongAnswers.SelectedDataKey["wrongAnswer"].ToString(),Question);
 
         }
         protected void gvTests_PageIndexChanging(object sender, GridViewPageEventArgs e)
