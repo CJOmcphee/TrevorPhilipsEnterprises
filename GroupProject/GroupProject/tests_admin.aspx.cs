@@ -38,7 +38,7 @@ namespace GroupProject.admin
         {
             DataSet ds = Crud.ReadTable("spModule");
             int x = ds.Tables[0].Rows.Count +1;
-            string ModuleName = "Module" +" "+ x.ToString() + " " + tbModuleName.Text;
+            string ModuleName = tbModuleName.Text;
             string TestName = "module" + x.ToString();
             Crud.CreatUpdateModule("c", ModuleName, tbModuleSum.Text,"");
             Crud.CreateTest("c", TestName);
@@ -46,7 +46,7 @@ namespace GroupProject.admin
         }
         protected void btnChangeModule_Click(object sender, EventArgs e)
         {
-            Crud.CreatUpdateModule("u", Module, tbModuleSum.Text,Module);
+            Crud.CreatUpdateModule("u", tbModuleNameDetails.Text, tbModuleSumDetails.Text,Module);
             LoadQuestion(Crud.GetTestQuestions(Test));
         }
         protected void btnAddQuestion_Click(object sender, EventArgs e)
@@ -62,8 +62,8 @@ namespace GroupProject.admin
 
         protected void btnChangeQuestion_Click(object sender, EventArgs e)
         {
-            DataSet ds = Crud.ReadTable("spQuestion", Question);
-            Crud.CreateUpdateQuestions("u", tbQuestionDetail.Text, tbAnswerDetail.Text, "", ds.Tables[0].Rows[0]["QID"].ToString());
+            DataSet ds = Crud.ReadTable("spQuestions", Question);
+            Crud.CreateUpdateQuestions("u", tbQuestionDetail.Text, tbAnswerDetail.Text, "", ds.Tables[0].Rows[0]["question"].ToString());
             LoadWrongAnswer(Crud.ReadTable("spWrongAnswer", Question));
         }
         public void LoadTest(DataSet ds)
@@ -85,7 +85,7 @@ namespace GroupProject.admin
             pnlQuestion.Visible = true;
             DataSet modDS = Crud.ReadTable("spModule", Module);
             tbModuleSumDetails.Text = modDS.Tables[0].Rows[0]["moduleSum"].ToString();
-            tbModuleName.Text = modDS.Tables[0].Rows[0]["moduleName"].ToString();
+            tbModuleNameDetails.Text = modDS.Tables[0].Rows[0]["moduleName"].ToString();
             pnlEditQuestion.Visible = false;
             pnlQuestionDetails.Visible = false;
             pnlNewQuestion.Visible = false;

@@ -365,7 +365,7 @@ as begin
 		end
 	if @crud='r' 
 		begin
-			select * from tbSlides where lessonid =@lessonid
+			select * from tbSlides where lessonid =@lessonid order by Len(lessonid), lessonid
 		end
 end
 go
