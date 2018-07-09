@@ -17,18 +17,19 @@ lastName varchar(50),
 studentEmail varchar(100) foreign key references tbLogin(sID)
 )
 create table tbModule(
-moduleID varchar(50) primary key,
+moduleID int primary key identity(1,1),
+moduleName varchar(50),
 moduleSum VARCHAR(MAX)
 )
-	insert into tbModule (moduleID, moduleSum)values
-							('Module 1','<h2>Intro to Programming Concepts</h2>^
-The first module is an introduction to idea of programming.^
+	insert into tbModule (moduleName, moduleSum)values
+							('Module 1',
+'The first module is an introduction to idea of programming.^
 In this module you may get understanding of generic concept when using the computer, logic and basic programming ideas, a bit of history and evolution of programming.^
 You will get understanding a basic syntax of C#, data types and variables, how to use operators(AND/OR/IF/CASE).^
 Learn to create “loops”. Be able to modularize a program.^'),
 							
-							('Module 2','<h2>C# & .NET Framework</h2>^
-This module is an introduction to C# and .NET Framework.^
+							('Module 2',
+'This module is an introduction to C# and .NET Framework.^
 During going through it you learn about Assembles(Libraries and Executables), difference between Objects and Classes.^
 You will learn how to create WebForm Applications, Form Controls, Events and Event Handlers.^
 Understand basics client/server interactions, basic HTML elements and basics of state management.^
@@ -56,19 +57,19 @@ Learn SQL functions and how to get data from different tables (JOIN).^'),
 							('Module 10', 'moduleSum10')
 create table tbLesson(
 lessonID varchar(50) primary key,
-mID varchar(50) foreign key references tbModule(moduleID)
+mID int foreign key references tbModule(moduleID)
 )
 	insert into tbLesson(lessonID, mID)values
-						('1-1','Module 1'),('1-2','Module 1'),('1-3','Module 1'),('1-4','Module 1'),('1-5','Module 1'),
-						('2-1','Module 2'),('2-2','Module 2'),('2-3','Module 2'),('2-4','Module 2'),('2-5','Module 2'),
-						('3-1','Module 3'),('3-2','Module 3'),('3-3','Module 3'),('3-4','Module 3'),
-						('4-1','Module 4'),('4-2','Module 4'),('4-3','Module 4'),('4-4','Module 4'),('4-5','Module 4'),
-						('5-1','Module 5'),('5-2','Module 5'),('5-3','Module 5'),('5-4','Module 5'),('5-5','Module 5'),
-						('6-1','Module 6'),('6-2','Module 6'),('6-3','Module 6'),('6-4','Module 6'),('6-5','Module 6'),
-						('7-1','Module 7'),('7-2','Module 7'),('7-3','Module 7'),('7-4','Module 7'),('7-5','Module 7'),
-						('8-1','Module 8'),('8-2','Module 8'),('8-3','Module 8'),('8-4','Module 8'),('8-5','Module 8'),
-						('9-1','Module 9'),('9-2','Module 9'),('9-3','Module 9'),('9-4','Module 9'),('9-5','Module 9'),
-						('10-1','Module 10'),('10-2','Module 10')
+						('1-1',1),('1-2',1),('1-3',1),('1-4',1),('1-5',1),
+						('2-1',2),('2-2',2),('2-3',2),('2-4',2),('2-5',2),
+						('3-1',3),('3-2',3),('3-3',3),('3-4',3),
+						('4-1',4),('4-2',4),('4-3',4),('4-4',4),('4-5',4),
+						('5-1',5),('5-2',5),('5-3',5),('5-4',5),('5-5',5),
+						('6-1',6),('6-2',6),('6-3',6),('6-4',6),('6-5',6),
+						('7-1',7),('7-2',7),('7-3',7),('7-4',7),('7-5',7),
+						('8-1',8),('8-2',8),('8-3',8),('8-4',8),('8-5',8),
+						('9-1',9),('9-2',9),('9-3',9),('9-4',9),('9-5',9),
+						('10-1',10),('10-2',10)
 
 create table tbSlides(
 slideID varchar(50),
@@ -88,19 +89,19 @@ lID varchar(50) foreign key references tbLesson(lessonID)
 )
 create table tbTest(
 testID varchar(50) primary key,
-ModuleID varchar(50) foreign key references tbModule(ModuleID)
+ModuleID int foreign key references tbModule(ModuleID)
 )
 go
 insert into tbTest (testID,ModuleID)values
-					('module1','Module 1'),
-					('module2','Module 2'),
-					('module3','Module 3'),
-					('module4','Module 4'),
-					('module5','Module 5'),
-					('module6','Module 6'),
-					('module7','Module 7'),
-					('module8','Module 8'),
-					('module9','Module 9')
+					('module1',1),
+					('module2',2),
+					('module3',3),
+					('module4',4),
+					('module5',5),
+					('module6',6),
+					('module7',7),
+					('module8',8),
+					('module9',9)
 
 go
 create table tbStudentTest(
@@ -248,6 +249,8 @@ go
 select * from tbExample
 select * from tbTest
 go
+
+
 create procedure spQuestions(
 @QID INT =NULL,
 @questions varchar(1000) =null,
@@ -263,7 +266,7 @@ as begin
 		end
 	if @crud='r'
 		begin
-			select question,answers,COUNT(wrongAnswers) as [wrongAnswers] from tbQuestions  inner join tbWrongAnswers on tbWrongAnswers.questions = tbQuestions.question where question=@questions group by question,answers
+			select question,answers,COUNT(wrongAnswers) as [wrongAnswers] from tbQuestions  left join tbWrongAnswers on tbWrongAnswers.questions = tbQuestions.question where question=@questions group by question,answers
 		end
 	if @crud='u'
 		begin
@@ -280,6 +283,8 @@ as begin
 		end
 end
 go
+
+
 create procedure spWrongAnswer(
 @question varchar(500) =null,
 @wrongAnswers varchar(1000) = null,
@@ -308,7 +313,7 @@ create procedure spGetTestQuestions(
 @testID varchar(50)
 )
 as begin
-	select question,answers,COUNT(wrongAnswers) as [wrongAnswers] from tbQuestions  inner join tbWrongAnswers on tbWrongAnswers.questions = tbQuestions.question where tID=@testID group by question,answers
+	select question,answers,COUNT(wrongAnswers) as [wrongAnswers] from tbQuestions  left join tbWrongAnswers on tbWrongAnswers.questions = tbQuestions.question where tbQuestions.tID=@testID group by question,answers
 	
 end
 go
@@ -369,7 +374,7 @@ create procedure spTest
 (
 @crud varchar(1),
 @TestID varchar(50) = null,
-@ModuleID varchar(50) = null
+@ModuleID int = null
 )
 as begin
 	if @crud = 'c'
@@ -392,7 +397,6 @@ go
 
 
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
-exec spGetTestQuestions @testID='module2'
 exec spTest @crud = 'r'
 
 select * from tbLesson
@@ -412,7 +416,8 @@ END
 GO
 
 CREATE PROCEDURE spModule(
-@moduleID VARCHAR(50) =NULL,
+@moduleID int = null,
+@moduleName VARCHAR(50) =NULL,
 @moduleSum VARCHAR(1000)=NULL,
 @crud VARCHAR(1)
 )
@@ -420,16 +425,17 @@ AS BEGIN
 	IF @crud ='c'
 		BEGIN
 			INSERT INTO  dbo.tbModule
-			(moduleID,moduleSum)VALUES (@moduleID,@moduleSum) 
+			(moduleName,moduleSum)VALUES (@moduleName,@moduleSum) 
 		END
 	IF @crud='r'
 		BEGIN
-			SELECT * FROM dbo.tbModule WHERE moduleID=ISNULL(@moduleID, moduleID)
+			SELECT * FROM dbo.tbModule WHERE moduleID=ISNULL(@moduleID, moduleID) order by moduleID
 		END
     IF @crud='u'
 		BEGIN
 			UPDATE dbo.tbModule
-				Set moduleSum=@moduleSum
+				Set moduleSum=@moduleSum,
+				moduleName = @moduleName
 				WHERE moduleID=@moduleID
 		END
    IF @crud='d'
@@ -439,8 +445,6 @@ AS BEGIN
 END
 GO
 
-exec spTest @crud = 'r', @ModuleID = 'Module 1'
-					
 			    
 				
 			

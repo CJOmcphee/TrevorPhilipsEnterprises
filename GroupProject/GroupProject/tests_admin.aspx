@@ -14,13 +14,15 @@
                       <Columns>
                         <asp:ButtonField HeaderText="Delete" ControlStyle-CssClass="button" ButtonType="Button" CommandName="Del" Text="Delete" />
                         <asp:ButtonField HeaderText="Edit" ControlStyle-CssClass="upd-button" ButtonType="Button" CommandName="Edi" Text="Edit" />
-                        <asp:BoundField HeaderText="Module" DataField="moduleID" />
+                        <asp:BoundField HeaderText="Module" DataField="moduleName" />
                         <asp:BoundField HeaderText="Summary" DataField="moduleSum" />
                       </Columns>
                 </asp:GridView>
-                <asp:Button ID="btnAddTest" CssClass="upd-button" runat="server" Text="Add Module" OnClick="btnAddTest_Click" />
-                Module Sum
-                <asp:TextBox ID="tbModuleSum" runat="server" Height="157px" Width="643px"></asp:TextBox>
+                <asp:Button ID="btnAddTest" runat="server" Text="Add Module" OnClick="btnAddTest_Click" />
+                Module Name
+                <asp:TextBox ID="tbModuleName" runat="server"></asp:TextBox>
+                Module Summary
+                <asp:TextBox ID="tbModuleSum" runat="server"></asp:TextBox>
             </asp:Panel>
            
 
@@ -38,7 +40,8 @@
                 </asp:GridView>
                 <asp:Button ID="btnNewQuestion" runat="server" CssClass="upd-button" Text="New Question" OnClick="btnNewQuestion_Click" />
                 <asp:Panel ID="pnlModuleDetails" runat="server">
-                <asp:Label ID="lblModuleName" runat="server" Text=""></asp:Label>
+                Name
+                <asp:TextBox ID="tbModuleNameDetails" runat="server"></asp:TextBox>
                 Summary
                 <asp:TextBox ID="tbModuleSumDetails" runat="server"></asp:TextBox>
                 <asp:Button ID="btnChangeModule" runat="server" CssClass="button" Text="Change Module" OnClick="btnChangeModule_Click"/>

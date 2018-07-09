@@ -40,6 +40,15 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.WebControls.Button btnAddTest;
         
         /// <summary>
+        /// tbModuleName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbModuleName;
+        
+        /// <summary>
         /// tbModuleSum control.
         /// </summary>
         /// <remarks>
@@ -94,13 +103,13 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.WebControls.Panel pnlModuleDetails;
         
         /// <summary>
-        /// lblModuleName control.
+        /// tbModuleNameDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblModuleName;
+        protected global::System.Web.UI.WebControls.TextBox tbModuleNameDetails;
         
         /// <summary>
         /// tbModuleSumDetails control.

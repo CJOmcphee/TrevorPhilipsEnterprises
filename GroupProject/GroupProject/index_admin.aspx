@@ -15,7 +15,7 @@
 							</header>
 							<p class="subtitle">You may add, edit or delete students</p>
 							<p><a href="#"><img src="images/pics13.jpg" alt=""></a></p>
-							<a href="#" class="button">More</a>
+							<a href="users_admin.aspx" class="button">More</a>
 						</section>
 					</div>
 					<div class="3u">
@@ -25,7 +25,7 @@
 							</header>
 							<p class="subtitle">You may create new, edit exists or delete Tests</p>
 							<p><a href="#"><img src="images/pics14.jpg" alt=""></a></p>
-							<a href="#" class="button">More</a>
+							<a href="tests_admin.aspx" class="button">More</a>
 						</section>
 					</div>
 					<div class="3u">
