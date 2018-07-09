@@ -19,8 +19,10 @@
                       </Columns>
                 </asp:GridView>
                 <asp:Button ID="btnAddTest" runat="server" Text="Add Module" OnClick="btnAddTest_Click" />
-                Module Sum
-                <asp:TextBox ID="tbModuleSum" runat="server" Height="157px" Width="643px"></asp:TextBox>
+                Module Name
+                <asp:TextBox ID="tbModuleName" runat="server"></asp:TextBox>
+                Module Summary
+                <asp:TextBox ID="tbModuleSum" runat="server"></asp:TextBox>
             </asp:Panel>
          </div>
           

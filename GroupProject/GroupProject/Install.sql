@@ -21,14 +21,14 @@ moduleID varchar(50) primary key,
 moduleSum VARCHAR(MAX)
 )
 	insert into tbModule (moduleID, moduleSum)values
-							('Module 1','<h2>Intro to Programming Concepts</h2>^
-The first module is an introduction to idea of programming.^
+							('Module 1',
+'The first module is an introduction to idea of programming.^
 In this module you may get understanding of generic concept when using the computer, logic and basic programming ideas, a bit of history and evolution of programming.^
 You will get understanding a basic syntax of C#, data types and variables, how to use operators(AND/OR/IF/CASE).^
 Learn to create “loops”. Be able to modularize a program.^'),
 							
-							('Module 2','<h2>C# & .NET Framework</h2>^
-This module is an introduction to C# and .NET Framework.^
+							('Module 2',
+'This module is an introduction to C# and .NET Framework.^
 During going through it you learn about Assembles(Libraries and Executables), difference between Objects and Classes.^
 You will learn how to create WebForm Applications, Form Controls, Events and Event Handlers.^
 Understand basics client/server interactions, basic HTML elements and basics of state management.^
@@ -558,8 +558,6 @@ AS BEGIN
 		END
 END
 GO
-
-exec spTest @crud = 'r', @ModuleID = 'Module 1'
 					
 			    
 				
