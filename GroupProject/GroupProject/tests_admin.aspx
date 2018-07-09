@@ -40,7 +40,8 @@
                 </asp:GridView>
                 <asp:Button ID="btnNewQuestion" runat="server" CssClass="upd-button" Text="New Question" OnClick="btnNewQuestion_Click" />
                 <asp:Panel ID="pnlModuleDetails" runat="server">
-                <asp:Label ID="lblModuleName" runat="server" Text=""></asp:Label>
+                Name
+                <asp:TextBox ID="tbModuleNameDetails" runat="server"></asp:TextBox>
                 Summary
                 <asp:TextBox ID="tbModuleSumDetails" runat="server"></asp:TextBox>
                 <asp:Button ID="btnChangeModule" runat="server" CssClass="button" Text="Change Module" OnClick="btnChangeModule_Click"/>
