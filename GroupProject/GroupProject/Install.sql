@@ -370,7 +370,7 @@ create procedure spTest
 (
 @crud varchar(1),
 @TestID varchar(50) = null,
-@ModuleID varchar(50) = null
+@ModuleID int = null
 )
 as begin
 	if @crud = 'c'
