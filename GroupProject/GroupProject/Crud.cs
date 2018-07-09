@@ -92,11 +92,12 @@ namespace GroupProject
             }
             mydal.ExecuteProcedure(Procedure);
         }
-        public static void CreatUpdateModule(string crud, string ModuleName, string ModuleSum)
+        public static void CreatUpdateModule(string crud, string ModuleName, string ModuleSum, string ModuleID)
         {
             mydal.AddParam("@crud", crud);
             mydal.AddParam("@moduleName", ModuleName);
             mydal.AddParam("@moduleSum", ModuleSum);
+            mydal.AddParam("@moduleID", ModuleID);
             mydal.ExecuteProcedure("spModule");
         }
 
@@ -129,7 +130,7 @@ namespace GroupProject
         public static void CreateUpdateQuestions(string crud, string question, string answer, string TestID, string QID)
         {
             mydal.AddParam("@crud", crud);
-            mydal.AddParam("@quesions", question);
+            mydal.AddParam("@questions", question);
             mydal.AddParam("@answers", answer);
             mydal.AddParam("@tID", TestID);
             mydal.AddParam("@QID", QID);
