@@ -564,22 +564,22 @@ EXEC dbo.spSlides @slideID = '1-2-30',   -- varchar(50)
 go
 EXEC dbo.spSlides @slideID = '1-2-31',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
-                  @slideinfo = '<h1>C# Basics</h1><h2>C# Code</h2><p>You may be wondering why we have a semi-colon " ; " at the end of every line of code.</p>^^Not all programming languages do this,^ but in C#, Java, JavaScript, and several others, this is a common syntax requirement.^^It is used by the compiler to determine when a line of code ends.', ---- varchar (2000)
+                  @slideinfo = '<h1>C# Basics</h1><h2>C# Code</h2><p>You may be wondering why we have a semi-colon " ; " at the end of every line of code.</p>^^Not all programming languages do this,^ but in C#, Java, JavaScript, and several others, this is a common syntax requirement.^^It is used by the compiler to determine when a line of code ends.^^Not all lines of code will end with a semi-colon, so be mindful when reading through these examples!', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 go
 EXEC dbo.spSlides @slideID = '1-2-32',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
-                  @slideinfo = '<h1>C# Basics</h1><h2>Reference Types</h2><p></p>', ---- varchar (2000)
+                  @slideinfo = '<h1>C# Basics</h1><h2>C# Code</h2><p>You may also be wondering what the Squiggle brackets are and when to use them.</p>^For now, we will not be needing to make our own, however in interest of learning I will say that they are used to determine the scope of a given area of code.^^If a variable is defined inside of brackets, it is not accessible outsode of those brackets!', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 go
 EXEC dbo.spSlides @slideID = '1-2-33',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
-                  @slideinfo = '<h1>C# Basics</h1><h2>Reference Types</h2><p></p>', ---- varchar (2000)
+                  @slideinfo = '<h1>C# Basics</h1><h2>Summary</h2><p>Variables must be declared with a proper name and data type</p>^^Variables must be on the left side of equations, while values must remain on the right side.^^Variable values can be tested to make decisions^^Data types determine the type of value and a variable can hold^^There are many ways to convert from one data type to another', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 go
 EXEC dbo.spSlides @slideID = '1-2-34',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
-                  @slideinfo = '<h1>C# Basics</h1><h2>Reference Types</h2><p></p>', ---- varchar (2000)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Part 2</h2><p></p>', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 go
 EXEC dbo.spSlides @slideID = '1-2-35',   -- varchar(50)
