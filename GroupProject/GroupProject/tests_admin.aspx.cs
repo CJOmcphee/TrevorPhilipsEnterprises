@@ -33,11 +33,11 @@ namespace GroupProject.admin
         {
             DataSet ds = Crud.ReadTable("spModule");
             int x = ds.Tables[0].Rows.Count +1;
-            string ModuleName = "Module" +" "+ x.ToString();
+            string ModuleName = "Module" +" "+ x.ToString() + " " + tbModuleName.Text;
             string TestName = "module" + x.ToString();
             Crud.CreatUpdateModule("c", ModuleName, tbModuleSum.Text);
             Crud.CreateTest("c", TestName);
-            LoadTest(Crud.ReadTable("spTest"));
+            LoadTest(Crud.ReadTable("spModule"));
         }
         protected void btnChangeModule_Click(object sender, EventArgs e)
         {
@@ -80,7 +80,7 @@ namespace GroupProject.admin
             pnlQuestion.Visible = true;
             DataSet modDS = Crud.ReadTable("spModule", Test);
             tbModuleSumDetails.Text = modDS.Tables[0].Rows[0]["moduleSum"].ToString();
-            lblModuleName.Text = modDS.Tables[0].Rows[0]["moduleID"].ToString();
+            lblModuleName.Text = modDS.Tables[0].Rows[0]["moduleName"].ToString();
             pnlEditQuestion.Visible = false;
             pnlQuestionDetails.Visible = false;
             pnlNewQuestion.Visible = false;
@@ -106,18 +106,24 @@ namespace GroupProject.admin
         }
         protected void gvTests_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            if(e.CommandName == "Page")
+            {
+                return;
+            }
             gvTests.SelectedIndex = Convert.ToInt32(e.CommandArgument);
-            Session["Test"] = gvTests.SelectedDataKey["moduleID"].ToString();
+            DataSet ds = Crud.ReadTable("spTest", gvTests.SelectedDataKey["moduleID"].ToString());
+            Session["Test"] = ds.Tables[0].Rows[0]["testID"].ToString();
             Test = (string)Session["Test"];
-            DataSet ds = Crud.ReadTable("spTest", Test);
             switch (e.CommandName)
             {
                 case "Edi":
                     pnlTestsList.Visible = false;
-                    LoadQuestion(Crud.GetTestQuestions(ds.Tables[0].Rows[0]["testID"].ToString()));
+                    LoadQuestion(Crud.GetTestQuestions(Test));
+                    
                     break;
                 case "Del":
                     Crud.DeleteData("spTest", Test);
+                    Crud.DeleteData("spModule", gvTests.SelectedDataKey["moduleID"].ToString());
                     LoadTest(Crud.ReadTable(ds.Tables[0].Rows[0]["testID"].ToString()));
                     break;
             }
@@ -149,7 +155,7 @@ namespace GroupProject.admin
         protected void gvTests_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvTests.PageIndex = e.NewPageIndex;
-            LoadTest(Crud.ReadTable("spModule"));
+            LoadQuestion(Crud.GetTestQuestions(Test));
         }
 
         protected void gvQuestions_PageIndexChanging(object sender, GridViewPageEventArgs e)

@@ -17,18 +17,19 @@ lastName varchar(50),
 studentEmail varchar(100) foreign key references tbLogin(sID)
 )
 create table tbModule(
-moduleID varchar(50) primary key,
+moduleID int primary key identity(1,1),
+moduleName varchar(50),
 moduleSum VARCHAR(MAX)
 )
-	insert into tbModule (moduleID, moduleSum)values
-							('Module 1','<h2>Intro to Programming Concepts</h2>^
-The first module is an introduction to idea of programming.^
+	insert into tbModule (moduleName, moduleSum)values
+							('Module 1',
+'The first module is an introduction to idea of programming.^
 In this module you may get understanding of generic concept when using the computer, logic and basic programming ideas, a bit of history and evolution of programming.^
 You will get understanding a basic syntax of C#, data types and variables, how to use operators(AND/OR/IF/CASE).^
 Learn to create “loops”. Be able to modularize a program.^'),
 							
-							('Module 2','<h2>C# & .NET Framework</h2>^
-This module is an introduction to C# and .NET Framework.^
+							('Module 2',
+'This module is an introduction to C# and .NET Framework.^
 During going through it you learn about Assembles(Libraries and Executables), difference between Objects and Classes.^
 You will learn how to create WebForm Applications, Form Controls, Events and Event Handlers.^
 Understand basics client/server interactions, basic HTML elements and basics of state management.^
@@ -56,19 +57,19 @@ Learn SQL functions and how to get data from different tables (JOIN).^'),
 							('Module 10', 'moduleSum10')
 create table tbLesson(
 lessonID varchar(50) primary key,
-mID varchar(50) foreign key references tbModule(moduleID)
+mID int foreign key references tbModule(moduleID)
 )
 	insert into tbLesson(lessonID, mID)values
-						('1-1','Module 1'),('1-2','Module 1'),('1-3','Module 1'),('1-4','Module 1'),('1-5','Module 1'),
-						('2-1','Module 2'),('2-2','Module 2'),('2-3','Module 2'),('2-4','Module 2'),('2-5','Module 2'),
-						('3-1','Module 3'),('3-2','Module 3'),('3-3','Module 3'),('3-4','Module 3'),
-						('4-1','Module 4'),('4-2','Module 4'),('4-3','Module 4'),('4-4','Module 4'),('4-5','Module 4'),
-						('5-1','Module 5'),('5-2','Module 5'),('5-3','Module 5'),('5-4','Module 5'),('5-5','Module 5'),
-						('6-1','Module 6'),('6-2','Module 6'),('6-3','Module 6'),('6-4','Module 6'),('6-5','Module 6'),
-						('7-1','Module 7'),('7-2','Module 7'),('7-3','Module 7'),('7-4','Module 7'),('7-5','Module 7'),
-						('8-1','Module 8'),('8-2','Module 8'),('8-3','Module 8'),('8-4','Module 8'),('8-5','Module 8'),
-						('9-1','Module 9'),('9-2','Module 9'),('9-3','Module 9'),('9-4','Module 9'),('9-5','Module 9'),
-						('10-1','Module 10'),('10-2','Module 10')
+						('1-1',1),('1-2',1),('1-3',1),('1-4',1),('1-5',1),
+						('2-1',2),('2-2',2),('2-3',2),('2-4',2),('2-5',2),
+						('3-1',3),('3-2',3),('3-3',3),('3-4',3),
+						('4-1',4),('4-2',4),('4-3',4),('4-4',4),('4-5',4),
+						('5-1',5),('5-2',5),('5-3',5),('5-4',5),('5-5',5),
+						('6-1',6),('6-2',6),('6-3',6),('6-4',6),('6-5',6),
+						('7-1',7),('7-2',7),('7-3',7),('7-4',7),('7-5',7),
+						('8-1',8),('8-2',8),('8-3',8),('8-4',8),('8-5',8),
+						('9-1',9),('9-2',9),('9-3',9),('9-4',9),('9-5',9),
+						('10-1',10),('10-2',10)
 
 create table tbSlides(
 slideID varchar(50),
@@ -88,19 +89,19 @@ lID varchar(50) foreign key references tbLesson(lessonID)
 )
 create table tbTest(
 testID varchar(50) primary key,
-ModuleID varchar(50) foreign key references tbModule(ModuleID)
+ModuleID int foreign key references tbModule(ModuleID)
 )
 go
 insert into tbTest (testID,ModuleID)values
-					('module1','Module 1'),
-					('module2','Module 2'),
-					('module3','Module 3'),
-					('module4','Module 4'),
-					('module5','Module 5'),
-					('module6','Module 6'),
-					('module7','Module 7'),
-					('module8','Module 8'),
-					('module9','Module 9')
+					('module1',1),
+					('module2',2),
+					('module3',3),
+					('module4',4),
+					('module5',5),
+					('module6',6),
+					('module7',7),
+					('module8',8),
+					('module9',9)
 
 go
 create table tbStudentTest(
@@ -369,7 +370,7 @@ create procedure spTest
 (
 @crud varchar(1),
 @TestID varchar(50) = null,
-@ModuleID varchar(50) = null
+@ModuleID int = null
 )
 as begin
 	if @crud = 'c'
@@ -390,313 +391,7 @@ as begin
 end
 go
 
-EXEC dbo.spSlides @slideID = '1-1-1',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Welcome to the Course!</h2>^<p>Module 1 is an introduction into the idea of programming^We will talk about: </p>^<p>Generic concepts when using a computer^Logic and basic programming ideas^A bit of history and the evolution of programming</p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
 
-
-EXEC dbo.spSlides @slideID = '1-1-2',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>^<p>Here is a brief review of basic computer components and their definitions:</p>^<p>Hardware: Equipment or physical devices, associated with a computer. ^Software: For a computer to be useful, it needs more than equipment; a computer needs to be given instructions....</p>^<p> We refer a set of instructions as software or a program</p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-
-EXEC dbo.spSlides @slideID = '1-1-3',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>^<p>Input: Any piece of data recieved external to the software.</p>^Input is usually obtained from hardware devices such as keyboards, mice, touch screens, and game controllers.^Input can processed in many ways:^Moving the mouse cursors^Displayings the keyboard keystrokes onto the screen^Doing mathematics to numbers^Etc..', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-
-EXEC dbo.spSlides @slideID = '1-1-4',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>^<p>The Central Processing Unit (CPU) processes all instructions and is the primary piece of hardware in every computer.</p>^<p>After input data has been processed, the resulting information is sent to an output device</p>^<p>Example: Printer, monitor, speakers, etc</p>^<p>In other worsd, we are communicating with the user of the program!</p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-5',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>^<p>Sometimes, we want to store data for later, all computer systems need and have data storage.</p>^<p>There are two main categories of storage: Internal Storage & External Storage</p>^<p>Internal Storage is commonly called memory, main memory, or primary memory (RAM). Internal memory is volatile - meaning it loses content every time the computer loses power</p>^<p>External memory is permanent outside the main memory of the machine, external storage devices include: Hard drives, CDs, DVDs, and USB drives</p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-6',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>^<p>Software Applications are constructed from writing a set of logical instructions.</p>^<p>Computer instructions are written in programming languages such as:</p>^<p>Visual Basic, Pascal, COBOL, C#, C++, Java, Perl, Python, Lisp, Fortran... etc</p>^<p>Every language has its own rules governing word/symbol usage called SYNTAX</p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-7',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding Computer Components & Operations</h2>^<p>Syntax helps the user and the computer agree on things like:</p>^<p>-When a "sentence" is finished (line of code)</p>^<p>-When capitalization is required</p>^<p>-When to use punctuation; and when not to use punctuation</p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-8',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Translating the Program into Machine Language</h2>^<p>When you write an incorrect programming statement the compiler issues a Syntax Error</p>^<p>Examples include: misspelling a word, using a word that does not exist in the language, or using illegal grammar.</p>^<p>All syntax errors are caught by the compiler (or interpreter), which is a piece of software that runs your programming level into a lower level of machine code that also lets you know if you have used langauge syntax correctly or not</p>^<p>Languages such as Java or C# are translated from high-level programming languages into low-level machine languages</p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-9',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Translating the Program into Machine Language</h2>^<p>In order to get languages to operate on the hardware of a computer, we need to communicate on-off circuitry (1 or 0). Machine Languages are designed to communicate directly to the hardware. Machine code is usually specific to the type of CPU in a computer</p>^<p>Here are the generations of programming languages we have so far:</p>^<p>1GL (1st Generatoin) - Machine Language (CPU Dependent)</p>^<p>2GL - Assembly Language (Also CPU dependent, cleaner machine language)</p>^<p>3GL - Englsih-like; Procedural (C# is a 3rd generation language)</p>^<p>4GL Graphical / Symbolic</p>^<p>5GL - Natural Language Recognition</p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-10',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Translating the Program into Machine Language</h2><p>When writing a program, you will be compiling your code before its able to work</p>^<p>Your program can only compile when free of syntax errors</p>^<p>Once translated to machine code, your programm will run/execute on your computer.</p>^<p>Once you have an executable program, you can use some sample input data to see whether the results are logically correct.</p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-11',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Translating the Program into Machine Language</h2><p>Having the right syntax, does not mean you have the right *logic*</p>^<p>The logic of a program is literally step by step instructions that you want to run</p>^<p>Logical errors are typically more difficult to find and more damaging than syntactial errors</p>^<p>Lets take a look at some logic examples...</p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-12',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Example Exercise</h2><p>Any task can be logically broken down</p>^<p>Baking a cake:</p>^Obtain mixing bowl^Add 3 Cups of flour into the bowl^Andd two eggs to the bowl^Etc..^Obtain cake pan^Pour contents into pan^Bake at 350 degrees for 45 minutes', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-13',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Syntax Vs. Logical Errors</h2><p>What if we use the right syntax, but the wrong logic?</p>^<p>Baking a cake:</p>^Stir^Add two eggs^**Add a gallon of gasoline^Bake at 350 degrees for 45 minutes^**Add 3 cups of flour^<p>Syntaxically, the above example is perfect; however I am sure you can see the problem!</p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-14',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Logic Exercise</h2><p>Write out the steps (logic)for one of the following tasks (or come up with a simple idea similar to these):</p>^Changing the tire on a car^Ordering Chinese food from home^Getting ready for work/school in the morning^Booking a hotel room for a weekend out of town^Preparing a table for a fancy dinner^<p>Note: This is not a graded exercise, it can be done on your own or you can email your instructor</p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-15',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p>Now that we have discussed the idea of programming languages and syntax, lets discuss the role of a programmer</p>^<p>There are many steps involved in making software above and beyond the making of syntactically correct and logically sound lines of code</p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-
-EXEC dbo.spSlides @slideID = '1-1-16',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>The Programming Process</h2><p>A typical programmers job can be broken down into these steps:</p>^1. Understand the problem^2. Plan the logic^3. Code the program^4. Execute and test the program^5. Put the program into production', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-17',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understand The Problem</h2><p>Step one involves understanding the problem that the future code will be used to solve</p>^For every piece of a program there will always be a client, that is the person or people who have a vested interest in the outcome of the particular piece of code^Note: The client can be YOU in some cases^But whoever this client is, they will likely have requirements', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-17',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understand the Problem</h2><p>User Requirements must be gathered, understood and agreed upon</p>^Users who think they know what they want will frequently change their minds, especially after seeing sample output^A good programmer is often part counselor, part detective^In order to scope the time required for the various tasks involved in finishing a project, these requirements need to be fairly stable.', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-
-EXEC dbo.spSlides @slideID = '1-1-18',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Planning the Logic</h2><p>Step two is to plan out your logic</p>^Note that in this course our problems may be small, realisitcally requiring limited planning^The two most common tools in planning logic are Flowcharts and Pseudo-code^Both tools involve writing the steps of the program in English (more on this later)', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-19',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Code the Problem</h2><p>Step three is to code the problem, following the plan we made earlier</p>^ A good term paper needs planning before writing, so do most programs, so dont skimp out on the previous step!^Planning saves you time; practice proper planning now!', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-20',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Execute and Test the Program</h2><p>Once we have coded a solution, the next step is to do some proper testing</p>^There are many kinds of testing and each provides value^Check out the list on the next slide for a few of the different categories of testing^Note: we do not cover these topics in the program', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-21',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Execute and Test the Program</h2><p>APPLICATION DEVELOPMENT TEST TYPES</p><table><tr><td>Defecit Testing</td><td>Path Testing</td><td>Data set testing</td></tr><tr><td>Unit Testing</td><td>System Testing</td><td>Integration Testing</td></tr><tr><td>Black Box Testing</td><td>White Box Testing</td><td>Regression Testing</td></tr><tr><td>Automation Testing</td><td>User Acceptance Testing</td><td>Performance Testing</td></tr></table>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-22',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Put the Program into Production</h2><p>The fifth step is to deploy the code to a live environment - Typically, there are 3 stages before code gets to production:</p>^1. Development:^The program is coded and compiled^2. Quality Assurance^The program is checked for errors of all kinds^3. Live Production^The program is published and ready to be accessed', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-23',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Systems Development Life Cycle (SDLC)</h2><p>Investegation: What is the concept? Is it worth it?</p><p>Analysis: Who will use it? What do they want? Can we afford to make it?</p><p>Design: How will it work? What do we need to make it?</p><p>Implement: Plan it! Build it! Test it! Produce it!</p>^Note this is where the programming steps from the previous slides fit in^<p>Maintenance: Support it! Tune it, then Upgrade it!</p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-24',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p>We have discussed some basic programming conceptes including the higher level steps involved in making production code from the beginning of an applicaiton project to the finish</p>^<p>Next we will start discussing the data we will be working with in applications</p>^<p>The concept of the data hierarchy in the next few slides is just a framework for helping understand the layers of information we may deal with as a developer</p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-25',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p>When data is stored for use it is often stored in Data Hierarchy</p>^<p>Binary is a series of on and off switches physically located in a piece of hardware</p>^It is the smallest unit of data in the data hierarchy^Binary is represented symbolically by: 0 and 1^A series of binary numbers can be interpreted as a single character', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-26',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p>Characters are the smallest unit that we tend to care about</p>^<p>Characters are letters, numbers, and special symbols, such as "A", "7", and "$"</p>^<p>A field(variable) is a single data item made up of one or more characters</p>^<p>Example of fields: lastName, streetAddress, or annualSalary</p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-27',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p>Records (rows) are groups of fields that go together for some logical reason</p>^Example: A record of a person may have information concerning height, weight, age, etc.^Tables are groups of records that go together for some logical reason^ Example: A table may have records of many people', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-28',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p>A Database holds a group of tables</p>^Example: A customer database may include tables containing information about clients, purchases, returns, etc.^Database software establishes and maintains relationships between fields and tables^The lesson on Databases will get more into detail on that subject^<p>Users can also write queries to a database, which are requests for a specific record information</p>^Example: A query can be used to determine the number of clients who live in a certain city.', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-29',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Evolution of Programming</h2><p>Currently, there are two major techniques used to develop programs:^Procedural Programming was the first method of programming and focuses on running a logically grouped series of functional actions called procedures</p>^<p>Object-Oriented Programming (OOP) is a newer concept and focuses on abstracting features and behaviours out of objects or "things", using them to perform fuctions (involves pieces of procedural programming to work usually)</p>^C#, Java and most of newer programming languages are Object-Oriented based', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-30',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Using Flowchart Symbols and Pseudocode Statements</h2><p>We mentioned earlier that you should plan your code before writing.</p>^To aid in planning out the logic of a program, you can use Flowcharts and Pseudocode^"Flowcharts" are pictoral/visual representations of program logic^"Pseudocode" is a casual English-like representation of program code', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-
-EXEC dbo.spSlides @slideID = '1-1-31',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Using Flowchart Symbols and Pseudocode Statements</h2><p>A lot of programmers prefer writing Pseudocode rather than drawing flowcharts, especially for quick explanations because..</p>^It is similar to writing the final code in a progamming language^Takes less time^It is less formal^There are no specific rules to writing Pseudocode.', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-32',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Using Flowchart Symbols and Pseudocode Statements</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-33',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Using Flowchart Symbols and Pseudocode Statements</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-34',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-35',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-36',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-37',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-38',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-39',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-40',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-41',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-42',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-43',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-44',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-45',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-46',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-47',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-48',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-49',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-50',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-51',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-52',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-53',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-54',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-55',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-56',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-57',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-58',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spSlides @slideID = '1-1-59',   -- varchar(50)
-                  @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = '<h1>An Overview of Computers and Logic</h1><h2>Understanding the Data Hierarchy</h2><p></p>', -- varchar(2000)
-                  @crud = 'c'       -- varchar(1)
-
-go
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
 exec spGetTestQuestions @testID='module2'
 exec spTest @crud = 'r'
@@ -718,7 +413,8 @@ END
 GO
 
 CREATE PROCEDURE spModule(
-@moduleID VARCHAR(50) =NULL,
+@moduleID int = null,
+@moduleName VARCHAR(50) =NULL,
 @moduleSum VARCHAR(1000)=NULL,
 @crud VARCHAR(1)
 )
@@ -726,16 +422,17 @@ AS BEGIN
 	IF @crud ='c'
 		BEGIN
 			INSERT INTO  dbo.tbModule
-			(moduleID,moduleSum)VALUES (@moduleID,@moduleSum) 
+			(moduleName,moduleSum)VALUES (@moduleName,@moduleSum) 
 		END
 	IF @crud='r'
 		BEGIN
-			SELECT * FROM dbo.tbModule WHERE moduleID=ISNULL(@moduleID, moduleID)
+			SELECT * FROM dbo.tbModule WHERE moduleID=ISNULL(@moduleID, moduleID) order by moduleID
 		END
     IF @crud='u'
 		BEGIN
 			UPDATE dbo.tbModule
-				Set moduleSum=@moduleSum
+				Set moduleSum=@moduleSum,
+				moduleName = @moduleName
 				WHERE moduleID=@moduleID
 		END
    IF @crud='d'
@@ -744,8 +441,6 @@ AS BEGIN
 		END
 END
 GO
-
-exec spTest @crud = 'r', @ModuleID = 'Module 1'
 					
 			    
 				

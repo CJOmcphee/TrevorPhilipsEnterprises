@@ -92,10 +92,10 @@ namespace GroupProject
             }
             mydal.ExecuteProcedure(Procedure);
         }
-        public static void CreatUpdateModule(string crud, string ModuleID, string ModuleSum)
+        public static void CreatUpdateModule(string crud, string ModuleName, string ModuleSum)
         {
             mydal.AddParam("@crud", crud);
-            mydal.AddParam("@moduleID", ModuleID);
+            mydal.AddParam("@moduleName", ModuleName);
             mydal.AddParam("@moduleSum", ModuleSum);
             mydal.ExecuteProcedure("spModule");
         }
