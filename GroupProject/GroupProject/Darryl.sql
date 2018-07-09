@@ -506,83 +506,85 @@ EXEC dbo.spSlides @slideID = '1-2-19',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Reference Types</h2><p>To assign a *string* of characters to a variable in C#, you must enclose the text within quotation marks:</p>^^string myName;^myName = "Darryl";^^Another Example of using C# string variables:^string myFirstName; //declare the variable^string myLastName;^string myFullName;^myFirstName = "Sam"; //Assign a value^myLastName = "Smith";^myFullName = myFirstName + " " + myLastName;^^The last line ends up as myFullName = "Sam Smith"', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-20',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Reference Types</h2><p>When you "add" a strign together it is called "String Cocentenation"</p>^myFullName = myFirstName + " " + myLastName;^^A number is NOT a string unless it has the double quotes around it, or if it is cocatenated with a string:^^string address;^int houseNumber;^address = "Cathedral Ave";^houseNumber= 555;^Address = houseNumber + address;^^The last line is fine! Because the number is automatically converted into a string!', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-21',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Reference Types</h2><p>Here is an incompatible strign error:</p>^string address;^int houseNumber;^houseNumber = 555;^***address = houseNumber;***^^The last line is not fine because we are not trying to convert,^we are just assigning directly, the compiler will not allow that to happen', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-22',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>The Three Basic Structures</h2><p>Here is an example of a logic sequence that you have seen in previous slides:</p>^Step 1. Declare the variables:^int X;^int Y;^int Z;^Step 2. Assign values into the memory locations(variables)^X = 2;^Y = 8;^Step 3. Sum the values of X and Y, then store it into the memery location of Z^Z = X + Y;^4. Print Z to the screen (console window)^Console.WriteLine("The value of Z is " + Z);', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-23',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Console</h2><p>On the previous slide we can see there is a line of code that uses Console.WriteLine() function.</p>^^What this does is output a string to the screen (a console is just a black terminal window like DOS)^^The syntax for writing to the screen is just to type out: Console.WriteLine()^^Between the brackets you need to have a string,^whether that is a varaible name or a concatenation of string values.', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-24',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Console</h2><p>As a side note, you can also use Console.Write() which does</p>^the same as Console.WriteLine, except instead of putting in a carriage return / line break^^In other words, only the first can be made by a Console.Write();^^ 1. Please enter a value: 42^^2. Please enter a value:^42', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-25',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Console</h2><p>Another function to look out for is the Console.ReadLine() function which</p>^<p>returns a string value from the keyboard that you can assign to a variable</p>^^Remember that because it returns a string, we cannot directly assign the value to a numeric variable^^The syntax for reading a value from the streen is:^string input;^input = Console.ReadLine();', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-26',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Console</h2><p>What if we need to read a number from the keyboard?</p>^In the previous slide I said the Console.ReadLine() returns a string value.^^The answer is, you have to convert the string to an integer:^string input;^int number;^input = Console.ReadLine();^number = Convert.ToInt32(input);', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-27',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Console</h2><p>In a real program we want to provide instructions for the user to follow</p>^^Here is an example of doing so:^string input;^int number;^Console.WriteLine("Please enter a while number: ");^input = Console.ReadLine();', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-28',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Console</h2><p>You can do a few shortcuts when you feel comfortabe doing so, here are some examples:</p>^^Console.WriteLine("Please enter a whole number: ");^int number = Convert.ToInt32(Console.ReadLine());^Console.WriteLine("You wrote {0}", number);^^What is done differently? Feel free to experiment!^^Do not forget, you can also convert doubles just the same as integers:^Convert.ToDouble();', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-29',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>C# Code</h2><p>Visual Studio is an IDE (Integrated Developement Environment)</p>^Thats a fancy term "A piece of software that helps us code!"^To create a new C# console project we always follow these steps:^1. Open Visual Studio^2. Click File -> New Project^3. On the left hierarchy choose Visual C#^4. Choose Console Application (choose a name)^5. Be sure to rename the project to soemthing meaningful before clicking "OK"^I suggest using a format like: Exercise121^1 for the Module, 2 for the Lesson, 1 for which Exercise.', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-30',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>C# Code</h2><p>In your new C# Console Application you will have a file called "Program.cs"</p>^If you take a look, you will find the namespace of your project,^ the class called "Program" of which we are working in, and Main^^We will only be writing code inside of the Main() function until we start making our own methods.^^Note: We should always leave a Console.ReadLine() at the end of the code inside the main, this will stop the program from suddenly ending and allow us to read what is on the screen (hitting enter will close the program)', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-31',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>C# Code</h2><p>You may be wondering why we have a semi-colon " ; " at the end of every line of code.</p>^^Not all programming languages do this,^ but in C#, Java, JavaScript, and several others, this is a common syntax requirement.^^It is used by the compiler to determine when a line of code ends.', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-32',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Reference Types</h2><p></p>', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-33',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Reference Types</h2><p></p>', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-34',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Reference Types</h2><p></p>', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
-
+go
 EXEC dbo.spSlides @slideID = '1-2-35',   -- varchar(50)
                   @lessonid = '1-2',  -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Reference Types</h2><p></p>', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
+exec spSlides @crud = 'r' , @lessonid= '1-2'
+go
