@@ -49,15 +49,6 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.WebControls.Label lblEmail;
         
         /// <summary>
-        /// lblFirstName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFirstName;
-        
-        /// <summary>
         /// tbFirstName control.
         /// </summary>
         /// <remarks>
@@ -67,15 +58,6 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.WebControls.TextBox tbFirstName;
         
         /// <summary>
-        /// lblLastName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLastName;
-        
-        /// <summary>
         /// tbLastName control.
         /// </summary>
         /// <remarks>
@@ -83,15 +65,6 @@ namespace GroupProject.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbLastName;
-        
-        /// <summary>
-        /// lblPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPassword;
         
         /// <summary>
         /// tbPassword control.

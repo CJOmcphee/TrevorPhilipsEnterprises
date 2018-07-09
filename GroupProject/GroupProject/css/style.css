@@ -324,6 +324,30 @@
 				color: #FFF !important;
 			}
 
+.upd-button {
+    position: relative;
+    display: inline-block;
+    margin-top: 0.5em;
+    padding: 0.50em 1.5em;
+    background: #4ae93c;
+    border-radius: 6px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    color: #FFF;
+    -moz-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+    -webkit-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+    -o-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+    -ms-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+    transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+    cursor: pointer;
+}
+
+    .upd-button:hover {
+        background: #228c19;
+        color: #FFF !important;
+    }
+
     .ld-button 
     {
     position: relative;
@@ -374,6 +398,35 @@
             background: #de3d27;
             color: #FFF !important;
         }
+
+        /* Tables */
+
+#table {
+    font-family: 'Roboto Condensed', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #table td, #table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #table tr:hover {
+        background-color: #ddd;
+    }
+
+    #table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
 
 /*********************************************************************************/
 /* Icons                                                                         */
