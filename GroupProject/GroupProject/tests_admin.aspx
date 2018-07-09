@@ -14,7 +14,7 @@
                       <Columns>
                         <asp:ButtonField HeaderText="Delete" ControlStyle-CssClass="button" ButtonType="Button" CommandName="Del" Text="Delete" />
                         <asp:ButtonField HeaderText="Edit" ControlStyle-CssClass="upd-button" ButtonType="Button" CommandName="Edi" Text="Edit" />
-                        <asp:BoundField HeaderText="Module" DataField="moduleID" />
+                        <asp:BoundField HeaderText="Module" DataField="moduleName" />
                         <asp:BoundField HeaderText="Summary" DataField="moduleSum" />
                       </Columns>
                 </asp:GridView>
