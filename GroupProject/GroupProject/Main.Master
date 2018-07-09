@@ -13,6 +13,19 @@
        	<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
+     
+    <script>
+        $(document).ready(function () {
+        var url = window.location;
+        $('#nav').find('.active').removeClass('active');
+        $('#nav li a').each(function () {
+            if (this.href == url) {
+                $(this).parent().addClass('active');
+            }
+        }); 
+    });
+    </script>
+   
        	<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -52,7 +65,7 @@
 
                	<nav id="nav">
                     	<ul>
-							<li><asp:HyperLink ID="hlHome" CssClass="active" NavigateUrl="~/index_user.aspx" runat="server">Home</asp:HyperLink></li>
+							<li class="active"><asp:HyperLink ID="hlHome" NavigateUrl="~/index_user.aspx" runat="server">Home</asp:HyperLink></li>
 				            <li><asp:HyperLink ID="hlLogin" NavigateUrl="~/login.aspx" runat="server">Login</asp:HyperLink></li>
 				            <li><asp:HyperLink ID="hlModules" NavigateUrl="~/modules.aspx" Visible="false" runat="server">Modules</asp:HyperLink></li>
 				            <li><asp:HyperLink ID="hlUsers" NavigateUrl="~/users_admin.aspx" Visible="false"  runat="server">Users</asp:HyperLink></li>
@@ -60,7 +73,9 @@
 				            <li><asp:HyperLink ID="hlTests" NavigateUrl="~/tests_admin.aspx" Visible="false" runat="server">Tests</asp:HyperLink></li>
                          </ul>
   				</nav>
-                
+               
+               
+
         	</div>
 		</div>
 	<!-- Header -->
