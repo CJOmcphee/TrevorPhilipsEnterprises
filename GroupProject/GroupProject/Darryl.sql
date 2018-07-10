@@ -594,10 +594,80 @@ EXEC dbo.spSlides @slideID = '1-3-3',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '1-3-4',   -- varchar(50)
                   @lessonid = '1-3',  -- varchar(50)
-                  @slideinfo = '<h1></h1>Decisions: (AND, OR, and CASE)<h2>Logical Comparison Operators</h2><p>Each programmign language supports its own set of logical comparison operators or comparison symbols</p>^^Most languages allow you to use the algebraic signs for ^greater than (&gt) and less than (&lt) to make the corresponding comparisons^^C# uses &gt and &lt symbols^^Example: X &lt Y, my age &gt 35', ---- varchar (2000)
+                  @slideinfo = '<h1></h1>Decisions: (AND, OR, and CASE)<h2>Logical Comparison Operators</h2><p>Each programming language supports its own set of logical comparison operators or comparison symbols</p>^^Most languages allow you to use the algebraic signs for ^greater than (&gt) and less than (&lt) to make the corresponding comparisons^^C# uses &gt and &lt symbols^^Example: X &lt Y, my age &gt 35, current year &lt 1980', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-3-5',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Logical Comparison Operators</h2><p>There are several types of logical comparison operators in a Boolean expression</p>^^Equal:  ==^^Not Equal:  !=^^Greater Than:  &gt ^^Greater Than or Equal: &gt=^^Less Than: &lt^^Less Than or Equal: &lt=', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-5',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Evaluating Boolean Expressions</h2><p>To evaluate this expression, we must assign a value to X</p>^^Assuming X = 8^^If X &lt= 3, the boolean expression (8 &lt= 3) is equal to FALSE^^If X &lt= 9, the boolean expression (8 &lt= 9) is equal to TRUE', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-5',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Evaluating Boolean Expressions</h2><p>You can only compare values that are the same type</p>^^Comparing numeric values to other numeric values^Example: 6 is less than 8^^Comparing character values to other characters^Example: A is equal to A', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-5',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Logical Comparison Operators</h2><p>The COBOL Language, allows you to spell out the comparison in expression like:</p>^dayPastDue is greater than 30?^^or^^packageWeight is less than maximumWeightAllowed?^^The "RPG" language uses letter abbreviatons like GT and LT to represent greater than or less than.', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-5',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Logical Comparison Operators</h2><p>Besides being awkward to use, the "not equal to" comparison operator is the one most likely</p>^to be different in various programming languages.^^COBOL allow you to write "not equal to"^^Pascal and SQL use a less-than sign followed immediately by a greater-than sign(&lt&gt)^^C#, C++, C and Java use an exclamation point followed by an equal sign (!=)', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-5',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Evaluating Boolean Expressions</h2><p>In code we use an "If Statement" to make a decision:</p>^^double currentBankAccountBalance = 50.25;^^if(currentBankAccountBalance &gt= 1.5)^{^Console.WriteLine("You can buy at least 1 litre of gas!");^}', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-6',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Evaluating Boolean Expressions</h2><p>Lets take a moment to look at the synax of an IF-statement:</p>^^if(currentBankAccountBalance &gt= 1.5)^^Note that we have the word if and immedately ^after we use round brackets called parenthesis ()^^We also DO NOT use a semi-colon on that first line!^^We also use these squiggle brackets, called braces {}^^These braces define the scope of our if-condition', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-7',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Evaluating Boolean Expressions</h2><p>Lets look what the scope of an if-condition means, instead of writing</p>^out a message in side the if, lets just set a string and print outside the if:^^if(currentBankAccountBalance &gt= 1.5)^{^ string output = "You can buy at least 1 litre of gas!";^}^***Console.WriteLine(output);***^^The last line will NOT work, the variable "output" was defined inside the braces of the IF,^ so "output" DOES NOT EXIST outside of the braces {}.^Be careful when you define your variables.', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-8',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Evaluating Boolean Expressions</h2><p>How do we fix the last sldies mistake? Put the variable</p>^above the IF-Condition:^^string output;^if(currentBankAccountBalance &lt= 1.5)^{^  output = "You can buy at least 1 litre of gas!";^}^Console.WriteLine(output);^^Now it works!^^This is because "output" is now between the same outer containing braces of the static void main(string args[]) {}', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-9',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Evaluating Boolean Expressions</h2><p>What else can we do with the IF-Conditions?</p>^We can add an ELSE condition like this:^if(currentBankAccountBalance &lt= 1.5)^{^Console.WriteLine("You can buy at least 1 litre of gas!");^}^else^{^Console.WriteLine("You cannot afford 1 litre of gas!");^}^^This way, if it DOESNT happen, we have a way to handle this situation.', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-9',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Evaluating Boolean Expressions</h2><p>We can also add as many more conditions as we like:</p>^if(someCondition)^{^^}^else if(someOtherCondition)^{^// You can keep adding else ifs if you want! No Limit!^}^else^{^^}', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-9',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2></h2><p></p>', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-9',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2></h2><p></p>', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-9',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2></h2><p></p>', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-9',   -- varchar(50)
                   @lessonid = '1-3',  -- varchar(50)
                   @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2></h2><p></p>', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
