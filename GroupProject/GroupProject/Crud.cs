@@ -49,7 +49,7 @@ namespace GroupProject
             {
                 mydal.AddParam("@lessonid", id.ToString());
             }
-            if(Procedure == "spGetLessons")
+            if(Procedure == "spLessons")
             {
                 mydal.AddParam("@moduleID", id.ToString());
             }

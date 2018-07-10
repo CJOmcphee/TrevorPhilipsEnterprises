@@ -15,11 +15,11 @@
 <style>
     div  {
         background-image:url(../img/red-wallpaper-13.jpg);
-        /*height: 180px;
-        width:900px;*/
+        height: 150px;
+        width: 700px;
         text-align:center;
-        font-size:14px;
-        font-weight:bold; 
+        font-size:1.5em;
+        
     }
     
 

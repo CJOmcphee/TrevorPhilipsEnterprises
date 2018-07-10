@@ -14,40 +14,51 @@ namespace GroupProject
     public partial class SlideshowTemplate : System.Web.UI.Page
     {
         List<Panel> Slideshow = new List<Panel>();
-        int x;
+        int x,b;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            HidePreviousButton();
+            
             if (!IsPostBack)
             {
+                btnPrev.Enabled = false;
                 string slide;
                 slide = Request.QueryString["Slide"];
                 LoadSlides(slide);
                 Slideshow[0].Visible = true;
                 Session["SlideShow"] = Slideshow;
                 Session["Navi"] = 0;
+                
+
             }
             else
             {
+                b = (int)Session["Navi"];
                 Slideshow = (List<Panel>)Session["SlideShow"];
                 foreach (var Slide in Slideshow)
                 {
                     FillDiv(Slide);
                 }
-                
-            }
 
+            }
         }
-        public void HidePreviousButton()
+        public void CheckNav()
         {
-            if (Session["Navi"] == null )
+            if ((int)Session["Navi"] == 0)
             {
                 btnPrev.Enabled = false;
             }
             else
             {
                 btnPrev.Enabled = true;
+            }
+            if ((int)Session["Navi"] == Slideshow.Count - 1)
+            {
+                btnNext.Enabled = false;
+            }
+            else
+            {
+                btnNext.Enabled = true;
             }
         }
         public void LoadSlides(string slide)
@@ -104,43 +115,30 @@ namespace GroupProject
         protected void btnPrev_Click(object sender, EventArgs e)
         {
             int y = (int)Session["Navi"];
-            if (y == 0)
-            {
-                //y = Slideshow.Count-1;
-                btnPrev.Enabled = false;
-            }
-            else
-            {
+
                 y--;
-            }
             foreach (Panel Slide in Slideshow)
             {
                 Slide.Visible = false;
             }
             Slideshow[y].Visible = true;
             Session["Navi"] = y;
+            CheckNav();
         }
 
         protected void btnNext_Click(object sender, EventArgs e)
         {
-
             int y = (int)Session["Navi"];
-           
-            if (y == Slideshow.Count -1)
-            {
-                y = 0;
-            }
-            else
-            {
+
                 y++;
-            }
             foreach (Panel Slide in Slideshow)
             {
                 Slide.Visible = false;
                 
             }
             Slideshow[y].Visible = true;
-            Session["Navi"] = y;        
+            Session["Navi"] = y;
+            CheckNav();
          }
     }
 }

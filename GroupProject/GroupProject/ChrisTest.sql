@@ -164,7 +164,7 @@ EXEC dbo.spSlides @slideID = '3-1-12',   -- varchar(50)
                   @slideinfo = 'Table Relationship are defined as other ^ ^ ^ One to Many ^ ^ ^ Many to Many', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spSlides @slideID = '3--1-13',   -- varchar(50)
+EXEC dbo.spSlides @slideID = '3-1-13',   -- varchar(50)
                   @lessonid = '3-1',  -- varchar(50)
                   @slideinfo = 'One to Many (1-M) relationship ^ A row in one table may be associated with many rows in another table ^ Example: A single tbCourseSubject can have multiple ^ sessions, howeveer sessions cannot have multiple ^ course subjects ^ tbCourseSubject to tbSession would be One to Many ', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
