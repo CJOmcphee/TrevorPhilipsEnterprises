@@ -11,6 +11,7 @@ namespace GroupProject.admin
 {
     public partial class tests_admin : System.Web.UI.Page
     {
+        public string Module;
         public string Test;
         public string Question;
         protected void Page_Load(object sender, EventArgs e)
@@ -23,7 +24,11 @@ namespace GroupProject.admin
             {
                 Question = (string)Session["Question"];
             }
-                   
+            if (Session["Module"] != null)
+            {
+                Module = (string)Session["Module"];
+            }
+
             if (!IsPostBack)
             {
                 LoadTest(Crud.ReadTable("spModule"));
@@ -33,15 +38,15 @@ namespace GroupProject.admin
         {
             DataSet ds = Crud.ReadTable("spModule");
             int x = ds.Tables[0].Rows.Count +1;
-            string ModuleName = "Module" +" "+ x.ToString() + " " + tbModuleName.Text;
+            string ModuleName = tbModuleName.Text;
             string TestName = "module" + x.ToString();
-            Crud.CreatUpdateModule("c", ModuleName, tbModuleSum.Text);
+            Crud.CreatUpdateModule("c", ModuleName, tbModuleSum.Text,"");
             Crud.CreateTest("c", TestName);
             LoadTest(Crud.ReadTable("spModule"));
         }
         protected void btnChangeModule_Click(object sender, EventArgs e)
         {
-            Crud.CreatUpdateModule("u", Test, tbModuleSum.Text);
+            Crud.CreatUpdateModule("u", tbModuleNameDetails.Text, tbModuleSumDetails.Text,Module);
             LoadQuestion(Crud.GetTestQuestions(Test));
         }
         protected void btnAddQuestion_Click(object sender, EventArgs e)
@@ -57,8 +62,8 @@ namespace GroupProject.admin
 
         protected void btnChangeQuestion_Click(object sender, EventArgs e)
         {
-            DataSet ds = Crud.ReadTable("spQuestion", Question);
-            Crud.CreateUpdateQuestions("u", tbQuestionDetail.Text, tbAnswerDetail.Text, "", ds.Tables[0].Rows[0]["QID"].ToString());
+            DataSet ds = Crud.ReadTable("spQuestions", Question);
+            Crud.CreateUpdateQuestions("u", tbQuestionDetail.Text, tbAnswerDetail.Text, "", ds.Tables[0].Rows[0]["question"].ToString());
             LoadWrongAnswer(Crud.ReadTable("spWrongAnswer", Question));
         }
         public void LoadTest(DataSet ds)
@@ -78,9 +83,9 @@ namespace GroupProject.admin
             gvQuestions.DataSource = ds;
             gvQuestions.DataBind();
             pnlQuestion.Visible = true;
-            DataSet modDS = Crud.ReadTable("spModule", Test);
+            DataSet modDS = Crud.ReadTable("spModule", Module);
             tbModuleSumDetails.Text = modDS.Tables[0].Rows[0]["moduleSum"].ToString();
-            lblModuleName.Text = modDS.Tables[0].Rows[0]["moduleName"].ToString();
+            tbModuleNameDetails.Text = modDS.Tables[0].Rows[0]["moduleName"].ToString();
             pnlEditQuestion.Visible = false;
             pnlQuestionDetails.Visible = false;
             pnlNewQuestion.Visible = false;
@@ -100,7 +105,7 @@ namespace GroupProject.admin
             pnlQuestion.Visible = false;
             pnlTestsList.Visible = false;
             pnlModuleDetails.Visible = false;
-            DataSet QuestionDS = Crud.ReadTable("spQuestion", Question);
+            DataSet QuestionDS = Crud.ReadTable("spQuestions", Question);
             tbQuestionDetail.Text = QuestionDS.Tables[0].Rows[0]["question"].ToString();
             tbAnswerDetail.Text = QuestionDS.Tables[0].Rows[0]["answers"].ToString();
         }
@@ -114,6 +119,8 @@ namespace GroupProject.admin
             DataSet ds = Crud.ReadTable("spTest", gvTests.SelectedDataKey["moduleID"].ToString());
             Session["Test"] = ds.Tables[0].Rows[0]["testID"].ToString();
             Test = (string)Session["Test"];
+            Session["Module"] = gvTests.SelectedDataKey["moduleID"].ToString();
+            Module = (string)Session["Module"];
             switch (e.CommandName)
             {
                 case "Edi":
@@ -123,14 +130,18 @@ namespace GroupProject.admin
                     break;
                 case "Del":
                     Crud.DeleteData("spTest", Test);
-                    Crud.DeleteData("spModule", gvTests.SelectedDataKey["moduleID"].ToString());
-                    LoadTest(Crud.ReadTable(ds.Tables[0].Rows[0]["testID"].ToString()));
+                    Crud.DeleteData("spModule", Module);
+                    LoadTest(Crud.ReadTable(Test));
                     break;
             }
         }
 
         protected void gvQuestions_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            if (e.CommandName == "Page")
+            {
+                return;
+            }
             gvQuestions.SelectedIndex = Convert.ToInt32(e.CommandArgument);
             Session["Question"] = gvQuestions.SelectedDataKey["question"].ToString();
             Question = (string)Session["Question"];
@@ -141,13 +152,17 @@ namespace GroupProject.admin
                     LoadWrongAnswer(Crud.ReadTable("spWrongAnswer",Question));
                     break;
                 case "Del":
-                    Crud.DeleteData("spQuestion", Question);
+                    Crud.DeleteData("spQuestions", Question);
                     LoadQuestion(Crud.GetTestQuestions(Test));
                     break;
             }
         }
         protected void gvWrongAnswers_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            if (e.CommandName == "Page")
+            {
+                return;
+            }
             gvWrongAnswers.SelectedIndex = Convert.ToInt32(e.CommandArgument);
             Crud.DeleteData("spWrongAnser", gvWrongAnswers.SelectedDataKey["wrongAnswer"].ToString());
 
@@ -155,7 +170,7 @@ namespace GroupProject.admin
         protected void gvTests_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvTests.PageIndex = e.NewPageIndex;
-            LoadQuestion(Crud.GetTestQuestions(Test));
+            LoadTest(Crud.ReadTable("spModule"));
         }
 
         protected void gvQuestions_PageIndexChanging(object sender, GridViewPageEventArgs e)

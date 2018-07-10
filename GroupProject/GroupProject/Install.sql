@@ -249,6 +249,8 @@ go
 select * from tbExample
 select * from tbTest
 go
+
+
 create procedure spQuestions(
 @QID INT =NULL,
 @questions varchar(1000) =null,
@@ -264,7 +266,7 @@ as begin
 		end
 	if @crud='r'
 		begin
-			select question,answers,COUNT(wrongAnswers) as [wrongAnswers] from tbQuestions  inner join tbWrongAnswers on tbWrongAnswers.questions = tbQuestions.question where question=@questions group by question,answers
+			select question,answers,COUNT(wrongAnswers) as [wrongAnswers] from tbQuestions  left join tbWrongAnswers on tbWrongAnswers.questions = tbQuestions.question where question=@questions group by question,answers
 		end
 	if @crud='u'
 		begin
@@ -281,6 +283,8 @@ as begin
 		end
 end
 go
+
+
 create procedure spWrongAnswer(
 @question varchar(500) =null,
 @wrongAnswers varchar(1000) = null,
@@ -309,7 +313,7 @@ create procedure spGetTestQuestions(
 @testID varchar(50)
 )
 as begin
-	select question,answers,COUNT(wrongAnswers) as [wrongAnswers] from tbQuestions  inner join tbWrongAnswers on tbWrongAnswers.questions = tbQuestions.question where tID=@testID group by question,answers
+	select question,answers,COUNT(wrongAnswers) as [wrongAnswers] from tbQuestions  left join tbWrongAnswers on tbWrongAnswers.questions = tbQuestions.question where tbQuestions.tID=@testID group by question,answers
 	
 end
 go
@@ -361,7 +365,7 @@ as begin
 		end
 	if @crud='r' 
 		begin
-			select * from tbSlides where lessonid =@lessonid
+			select * from tbSlides where lessonid =@lessonid order by Len(slideID), slideID asc
 		end
 end
 go
@@ -393,7 +397,6 @@ go
 
 
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
-exec spGetTestQuestions @testID='module2'
 exec spTest @crud = 'r'
 
 select * from tbLesson
@@ -441,7 +444,7 @@ AS BEGIN
 		END
 END
 GO
-					
+
 			    
 				
 			

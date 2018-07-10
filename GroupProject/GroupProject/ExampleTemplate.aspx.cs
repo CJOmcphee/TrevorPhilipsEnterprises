@@ -20,14 +20,12 @@ namespace GroupProject
         List<Object> Answer = new List<Object>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            loadExample("1-1-1");
+            loadExample("1-1");
            
             HidePreviousBtn();
             if(!IsPostBack)
             {
                 Session["Nav"] = 0;
-                
-
             }
             
             
