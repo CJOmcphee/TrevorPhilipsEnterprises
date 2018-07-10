@@ -654,20 +654,55 @@ EXEC dbo.spSlides @slideID = '1-3-9',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '1-3-9',   -- varchar(50)
                   @lessonid = '1-3',  -- varchar(50)
-                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2></h2><p></p>', ---- varchar (2000)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Logical Comparison Operators</h2><p>Comparing two amounts to decide if they are not equal to</p>^each other is the most confusing of all the comparisons^^Using "not equal to" in decision invovles thinking in double^negavives, which makes you prone to include logical errors in your program^^When dealing with decisions try to think positively instead!^^Example: if the user is NOT ineligible, then.. (not WHAT? theyre... eligible?)', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-3-9',   -- varchar(50)
                   @lessonid = '1-3',  -- varchar(50)
-                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2></h2><p></p>', ---- varchar (2000)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Evaluating Boolean Expressions</h2><p>Another Example using "if" and "else":</p>^int year= 2018;^^//The first "if statement" checks if the age value is below 18^if(year != 1999){^^}^else{^//code runs if the year is 1999^}^Note: In In our example, only the "else" block of code is run,^because we hard coded year as 1999, so its never going^to be another value unless we change our code.', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-3-9',   -- varchar(50)
                   @lessonid = '1-3',  -- varchar(50)
-                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2></h2><p></p>', ---- varchar (2000)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Evaluating Boolean Expressions</h2><p>Yout can also use a ternary operators to return a value based on the results of a boolean expression</p>^^In this example, we will reduce the price by discount amoutn if the age is less than 12:^double discount = 5.25;^double price = 10;^int age = Convert.ToInt32(Console.ReadLine());^price = (age &gt 12) ? (price - discount) : price;^6Note the ? separates the boolean expression from the values.', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-3-9',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Evaluating Boolean Expressions</h2><p>If we were to re-write the last slite with If-Else:</p>^double discount = 5.25;^double price = 10;^int age = Convert.ToInt32(Console.ReadLine());^^if(age < 12)^{^  price = price - discount^}^else^{^ price = price;^}^^We can delete everything from the else down, since theres no point assigning a variable to itself!', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-10',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2></h2><p></p>', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-11',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2></h2><p></p>', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-12',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2></h2><p></p>', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-13',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2></h2><p></p>', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-14',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2></h2><p></p>', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-15',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2></h2><p></p>', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-16',   -- varchar(50)
                   @lessonid = '1-3',  -- varchar(50)
                   @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2></h2><p></p>', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
