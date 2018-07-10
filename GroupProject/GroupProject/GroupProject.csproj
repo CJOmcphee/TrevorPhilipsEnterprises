@@ -73,6 +73,10 @@
     <Content Include="images\logo-php.png" />
     <Content Include="images\sql.png" />
     <Content Include="index_admin.aspx" />
+    <Content Include="LOTR\LOTRStyleSheet.css" />
+    <Content Include="LOTR\LOTRAdmin.aspx" />
+    <Content Include="LOTR\LOTRProducts.aspx" />
+    <Content Include="LOTR\LOTRHome.aspx" />
     <Content Include="Mike.sql" />
     <Content Include="module_summary.aspx" />
     <Content Include="SlideshowTemplate.aspx" />
@@ -229,6 +233,34 @@
     </Compile>
     <Compile Include="index_admin.aspx.designer.cs">
       <DependentUpon>index_admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LOTR\LOTRAdmin.aspx.cs">
+      <DependentUpon>LOTRAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LOTR\LOTRAdmin.aspx.designer.cs">
+      <DependentUpon>LOTRAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LOTR\LOTRProducts.aspx.cs">
+      <DependentUpon>LOTRProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LOTR\LOTRProducts.aspx.designer.cs">
+      <DependentUpon>LOTRProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LOTR\LOTRHome.aspx.cs">
+      <DependentUpon>LOTRHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LOTR\LOTRHome.aspx.designer.cs">
+      <DependentUpon>LOTRHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LOTR\LOTRMaster.Master.cs">
+      <DependentUpon>LOTRMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LOTR\LOTRMaster.Master.designer.cs">
+      <DependentUpon>LOTRMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="module_summary.aspx.cs">
       <DependentUpon>module_summary.aspx</DependentUpon>
@@ -390,6 +422,7 @@
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.min.map" />
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Main.Master" />
+    <Content Include="LOTR\LOTRMaster.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
