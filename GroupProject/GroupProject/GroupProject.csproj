@@ -438,7 +438,7 @@
   <ItemGroup>
     <Folder Include="DAL_Project\bin\Release\" />
     <Folder Include="DAL_Project\obj\Debug\TempPE\" />
-    <Folder Include="LOTR\PICTURES\" />
+    <Folder Include="LOTR\LOTRPICTURES\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>
