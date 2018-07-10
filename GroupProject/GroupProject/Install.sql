@@ -408,8 +408,8 @@ GO
 
 CREATE PROCEDURE spLessons(
 @crud varchar(1),
-@moduleID int,
-@lessonID varchar(50)
+@moduleID int= null,
+@lessonID varchar(50) = null
 )
 AS BEGIN
 	if @crud = 'r'
