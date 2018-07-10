@@ -13,18 +13,17 @@
        	<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
-     
-    <script>
-        $(document).ready(function () {
-        var url = window.location;
-        $('#nav').find('.active').removeClass('active');
-        $('#nav li a').each(function () {
-            if (this.href == url) {
-                $(this).parent().addClass('active');
-            }
-        }); 
-    });
-    </script>
+        <script>
+            $(document).ready(function () {
+            var url = window.location;
+            $('#nav').find('.active').removeClass('active');
+            $('#nav li a').each(function () {
+                if (this.href == url) {
+                    $(this).parent().addClass('active');
+                }
+            }); 
+        });
+        </script>
    
        	<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
@@ -39,15 +38,12 @@
 </head>
 <body class="homepage">
     <form id="form1" runat="server">
-   
-     
-   
+ 
         <!-- Header -->
 		<div id="header">
            
 			<div class="container">
-              
-
+    
 				<!-- Logo -->
                   
 					<div id="logo">
@@ -73,16 +69,10 @@
 				            <li><asp:HyperLink ID="hlTests" NavigateUrl="~/tests_admin.aspx" Visible="false" runat="server">Tests</asp:HyperLink></li>
                          </ul>
   				</nav>
-               
-               
-
+  
         	</div>
 		</div>
 	<!-- Header -->
-   
-           
-		
-
   
     <!-- Banner -->
 		<div id="banner">
