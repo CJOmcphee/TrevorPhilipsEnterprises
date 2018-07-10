@@ -26,7 +26,7 @@
                </div>
          </div>
             <asp:Panel ID="pnlUserUpdate" runat="server">
-                <div class="register">
+                <div class="registration">
                     <h1>Update User</h1>
                     <h2><asp:Label ID="lblEmail" runat="server" Text=""></asp:Label></h2>
                     <br />
@@ -37,10 +37,13 @@
                     <h2>Password</h2>
                     <asp:TextBox ID="tbPassword" CssClass="box" runat="server"></asp:TextBox>
                    
-                    <asp:Button ID="btnSave" CssClass="upd-button" runat="server" Text="Save" OnClick="btnSave_Click" />
-                    <asp:Button ID="btnCancel" CssClass="button" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
-                    <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label> 
+                    
+                    <asp:Button ID="btnSave" CssClass="save-button" runat="server" Text="Save" OnClick="btnSave_Click" />
+                    <asp:Button ID="btnCancel" CssClass="login-button" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
+                    <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label>
+                   
                 </div>
+                 <div class="shadow"></div>
             </asp:Panel>
    </div>
  

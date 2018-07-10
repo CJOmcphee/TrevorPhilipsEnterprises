@@ -18,7 +18,7 @@
                         <asp:BoundField HeaderText="Summary" DataField="moduleSum" />
                       </Columns>
                 </asp:GridView>
-                <asp:Button ID="btnAddTest" runat="server" Text="Add Module" OnClick="btnAddTest_Click" />
+                <asp:Button ID="btnAddTest" CssClass="button" runat="server" Text="Add Module" OnClick="btnAddTest_Click" />
                 Module Name
                 <asp:TextBox ID="tbModuleName" runat="server"></asp:TextBox>
                 Module Summary
