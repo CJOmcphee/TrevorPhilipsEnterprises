@@ -18,7 +18,7 @@
                         <asp:BoundField HeaderText="Summary" DataField="moduleSum" />
                       </Columns>
                 </asp:GridView>
-                <asp:Button ID="btnAddTest" runat="server" Text="Add Module" OnClick="btnAddTest_Click" />
+                <asp:Button ID="btnAddTest" CssClass="button" runat="server" Text="Add Module" OnClick="btnAddTest_Click" />
                 Module Name
                 <asp:TextBox ID="tbModuleName" runat="server"></asp:TextBox>
                 Module Summary
@@ -39,13 +39,6 @@
                       </Columns>
                 </asp:GridView>
                 <asp:Button ID="btnNewQuestion" runat="server" CssClass="upd-button" Text="New Question" OnClick="btnNewQuestion_Click" />
-                <asp:Panel ID="pnlModuleDetails" runat="server">
-                Name
-                <asp:TextBox ID="tbModuleNameDetails" runat="server"></asp:TextBox>
-                Summary
-                <asp:TextBox ID="tbModuleSumDetails" runat="server"></asp:TextBox>
-                <asp:Button ID="btnChangeModule" runat="server" CssClass="button" Text="Change Module" OnClick="btnChangeModule_Click"/>
-                </asp:Panel>
                 <asp:Panel ID="pnlNewQuestion" runat="server">
                 Question
                 <asp:TextBox ID="tbNewQuestion" runat="server"></asp:TextBox>
@@ -57,7 +50,7 @@
 
 
         <asp:Panel ID="pnlEditQuestion" Visible="false" runat="server">
-            <asp:Button ID="btnToQuestion" runat="server" Text="Back" OnClick="btnToQuestion_Click" />
+            <asp:Button ID="btnToQuestion" runat="server" Text="Back" CssClass="button" OnClick="btnToQuestion_Click" />
                  <asp:GridView ID="gvWrongAnswers" PageSize="10" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="wrongAnswers" runat="server" OnPageIndexChanging="gvWrongAnswers_PageIndexChanging" OnRowCommand="gvWrongAnswers_RowCommand" >
                       <Columns>
                         <asp:ButtonField HeaderText="Delete" ControlStyle-CssClass="button" ButtonType="Button" CommandName="Del" Text="Delete" />
@@ -79,6 +72,18 @@
             </asp:Panel>
             </asp:Panel>
    </div>
+           <asp:Panel ID="pnlnav" runat="server" Visible ="false">
+               <asp:Panel ID="pnlModuleDetails" runat="server">
+                Name
+                <asp:TextBox ID="tbModuleNameDetails" runat="server"></asp:TextBox>
+                Summary
+                <asp:TextBox ID="tbModuleSumDetails" runat="server"></asp:TextBox>
+                <asp:Button ID="btnChangeModule" runat="server" CssClass="button" Text="Change Module" OnClick="btnChangeModule_Click"/>
+                </asp:Panel>
+               <asp:Button ID="btnrestart" runat="server" Text="Back" CssClass="button" OnClick="btnrestart_Click" />
+               <asp:Button ID="btnGoToTest" runat="server" Text="Edit Test" CssClass="button" OnClick="btnGoToTest_Click" />
+               <asp:Button ID="btnGoToLessons" runat="server" Text="Edit Lessons" CssClass="button" OnClick="btnGoToLessons_Click" />
+           </asp:Panel>
   </div>  
   </div>       
 </asp:Content>

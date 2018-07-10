@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     
     <div id="page">
-        <div class="register">
+        <div class="registration">
             <h1>Registration</h1>
             <h2>First Name</h2>
             <asp:TextBox ID="tbFirstName" CssClass="box" runat="server"></asp:TextBox>

@@ -76,7 +76,7 @@ namespace GroupProject
             }
             if (Procedure == "spQuestions")
             {
-                mydal.AddParam("@QID", id.ToString());
+                mydal.AddParam("@questions", id.ToString());
             }
             
             if(Procedure == "spTest")
@@ -91,11 +91,13 @@ namespace GroupProject
         }
         public static void DeleteData(string Procedure, string ID, string SecondId)
         {
-            if (Procedure == "spWrongAnswer")
+            mydal.AddParam("crud","d");
+            if (Procedure == "spWrongAnwser")
             {
                 mydal.AddParam("@wrongAnswers", ID);
                 mydal.AddParam("@question", SecondId);
             }
+            mydal.ExecuteProcedure("spWrongAnswer");
         }
         public static void CreatUpdateModule(string crud, string ModuleName, string ModuleSum, string ModuleID)
         {
