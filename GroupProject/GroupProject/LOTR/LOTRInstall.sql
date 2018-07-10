@@ -44,4 +44,66 @@ AS BEGIN
 		BEGIN
 			SELECT productID, productName, productType, productPrice, '\LOTRPICTURES\'+ path as path FROM tbProducts where productID=isnull(@productID,productID)
 		END
+	IF @crud='u'
+		BEGIN
+			UPDATE tbProducts
+				SET productName=@productName,	
+					productType=@productType,
+					productPrice=@productPrice,
+					path=@path
+				WHERE productID=@productID
+		END
+	IF @crud='d'
+		BEGIN
+			DELETE FROM tbProducts WHERE productID=@productID
+		END
 END
+GO
+CREATE PROCEDURE spClients(
+@clientID int =null,
+@userID varchar(50) =null,
+@userPassword varchar(50) =null,
+@firstName varchar(50) =null,
+@lastName varchar(50) = null,
+@crud varchar(1)
+)
+AS BEGIN
+	IF @crud='c'
+		IF  exists(SELECT * FROM tbLogin WHERE uID=@userID)
+			BEGIN
+				SELECT 'exists' AS MESSAGE;
+			END
+		ELSE
+		BEGIN
+			INSERT INTO tbLogin(uID,userPassword,access)VALUES
+								(@userID,@userPassword,'u')
+			INSERT INTO tbClients(firstName, lastName)VALUES
+								 (@firstName,@lastName)
+						SELECT 'success' AS MESSAGE;
+		END
+	IF @crud='r'
+		BEGIN
+			SELECT * FROM tbClients WHERE clientID=isnull(@clientID, clientID)
+		END
+	IF @crud='u'
+		BEGIN
+			UPDATE tbClients
+				SET firstName=@firstName,
+					lastName=@lastName
+				WHERE clientID =@clientID
+		END
+	IF @crud='d'
+		BEGIN
+			DECLARE @uID varchar(50);
+			SELECT @uID=clientID from tbClients where clientID=@clientID
+			DELETE FROM tbClients WHERE clientID=@clientID
+			DELETE FROM tbLogin WHERE uID=@uID
+		END
+END
+GO
+INSERT INTO tbLogin(uID,userPassword,access)VALUES
+					('sauron','sauron','a')
+EXEC spClients @userID='Blondie', @userPassword='donttelltheelf',@firstName ='Legolas', @lastName='Thranduillion', @crud ='c'
+EXEC spClients @userID='pippin',@userPassword='secondbreakfast',@firstName ='Peregrin', @lastName='Took', @crud ='c'
+EXEC spClients @crud ='r'
+
