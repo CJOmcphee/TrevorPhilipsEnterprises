@@ -23,7 +23,8 @@ GO
 CREATE TABLE tbClients(
 clientID int identity(1,1) primary key,
 firstName varchar(50),
-lastName varchar(50)
+lastName varchar(50),
+userID varchar(50) foreign key references tbLogin(uID)
 )
 GO
 CREATE PROCEDURE spProducts(
@@ -77,8 +78,8 @@ AS BEGIN
 		BEGIN
 			INSERT INTO tbLogin(uID,userPassword,access)VALUES
 								(@userID,@userPassword,'u')
-			INSERT INTO tbClients(firstName, lastName)VALUES
-								 (@firstName,@lastName)
+			INSERT INTO tbClients(firstName, lastName,userID)VALUES
+								 (@firstName,@lastName,@userID)
 						SELECT 'success' AS MESSAGE;
 		END
 	IF @crud='r'
@@ -106,4 +107,25 @@ INSERT INTO tbLogin(uID,userPassword,access)VALUES
 EXEC spClients @userID='Blondie', @userPassword='donttelltheelf',@firstName ='Legolas', @lastName='Thranduillion', @crud ='c'
 EXEC spClients @userID='pippin',@userPassword='secondbreakfast',@firstName ='Peregrin', @lastName='Took', @crud ='c'
 EXEC spClients @crud ='r'
-
+GO
+CREATE PROCEDURE spLogin(
+@userID varchar(50) =null,
+@userPassword varchar(50) =null
+)
+AS BEGIN
+	DECLARE @access varchar(1);
+		IF exists(SELECT * FROM tbLogin WHERE uID=@userID AND
+											userPassword=@userPassword)
+	BEGIN
+		SELECT @access =access from tbLogin WHERE uID=@userID AND
+											userPassword=@userPassword
+		SELECT @access AS access
+			IF @access ='u'
+				BEGIN
+					SELECT firstName+' '+lastName AS fullname,clientID,firstName,lastName from tbClients where userID=@userID
+				END
+	END
+END
+GO
+select * from tbLogin
+EXEC spLogin @userID='Blondie', @userPassword='donttelltheelf'
