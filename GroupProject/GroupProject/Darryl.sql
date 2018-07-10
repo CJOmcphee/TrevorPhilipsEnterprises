@@ -577,14 +577,27 @@ EXEC dbo.spSlides @slideID = '1-2-33',   -- varchar(50)
                   @slideinfo = '<h1>C# Basics</h1><h2>Summary</h2><p>Variables must be declared with a proper name and data type</p>^^Variables must be on the left side of equations, while values must remain on the right side.^^Variable values can be tested to make decisions^^Data types determine the type of value and a variable can hold^^There are many ways to convert from one data type to another', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 go
-EXEC dbo.spSlides @slideID = '1-2-34',   -- varchar(50)
-                  @lessonid = '1-2',  -- varchar(50)
-                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Part 2</h2><p></p>', ---- varchar (2000)
+EXEC dbo.spSlides @slideID = '1-3-1',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Objectives</h2><p>List the comparison operators</p>^^Understand the IF/ ELSE IF/ ELSE decision structures ^^ Definte and describe a boolean variable ^^ Understand and use the AND operator', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 go
-EXEC dbo.spSlides @slideID = '1-2-35',   -- varchar(50)
-                  @lessonid = '1-2',  -- varchar(50)
-                  @slideinfo = '<h1>C# Basics</h1><h2>Reference Types</h2><p></p>', ---- varchar (2000)
+EXEC dbo.spSlides @slideID = '1-3-2',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Objectives</h2><p>Understand the Or operator</p>^^Understand and use range selections^^Understand and use Switch CASE statements^^Evaluate Boolean expression', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
-exec spSlides @crud = 'r' , @lessonid= '1-2'
-go
+
+EXEC dbo.spSlides @slideID = '1-3-3',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Evaluate Boolean Expression</h2><p>Every decision or comparison that we make in a computer program involves evaluating a Boolean expression</p>^^All boolean expressions resolve to either true or false^^Example boolean statement:^^I am younger than 100 years old.^^This is a true or false statement, no other option!', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-4',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1></h1>Decisions: (AND, OR, and CASE)<h2>Logical Comparison Operators</h2><p>Each programmign language supports its own set of logical comparison operators or comparison symbols</p>^^Most languages allow you to use the algebraic signs for ^greater than (&gt) and less than (&lt) to make the corresponding comparisons^^C# uses &gt and &lt symbols^^Example: X &lt Y, my age &gt 35', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-3-5',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2></h2><p></p>', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
