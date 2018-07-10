@@ -11,9 +11,7 @@ namespace GroupProject.admin
 {
     public partial class tests_admin : System.Web.UI.Page
     {
-        public string Module;
-        public string Test;
-        public string Question;
+        public string Module, Test, Question, QID;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Test"] != null)
@@ -76,23 +74,19 @@ namespace GroupProject.admin
             pnlNewWrongAnswer.Visible = false;
             pnlQuestion.Visible = false;
             pnlTestsList.Visible = true;
-            pnlModuleDetails.Visible = false;
         }
         public void LoadQuestion(DataSet ds)
         {
             gvQuestions.DataSource = ds;
             gvQuestions.DataBind();
             pnlQuestion.Visible = true;
-            DataSet modDS = Crud.ReadTable("spModule", Module);
-            tbModuleSumDetails.Text = modDS.Tables[0].Rows[0]["moduleSum"].ToString();
-            tbModuleNameDetails.Text = modDS.Tables[0].Rows[0]["moduleName"].ToString();
             pnlEditQuestion.Visible = false;
             pnlQuestionDetails.Visible = false;
             pnlNewQuestion.Visible = false;
             pnlNewWrongAnswer.Visible = false;
             pnlQuestion.Visible = true;
             pnlTestsList.Visible = false;
-            pnlModuleDetails.Visible = true;
+            pnlnav.Visible = false;
         }
         public void LoadWrongAnswer(DataSet ds)
         {
@@ -104,7 +98,6 @@ namespace GroupProject.admin
             pnlNewWrongAnswer.Visible = false;
             pnlQuestion.Visible = false;
             pnlTestsList.Visible = false;
-            pnlModuleDetails.Visible = false;
             DataSet QuestionDS = Crud.ReadTable("spQuestions", Question);
             tbQuestionDetail.Text = QuestionDS.Tables[0].Rows[0]["question"].ToString();
             tbAnswerDetail.Text = QuestionDS.Tables[0].Rows[0]["answers"].ToString();
@@ -125,10 +118,17 @@ namespace GroupProject.admin
             {
                 case "Edi":
                     pnlTestsList.Visible = false;
-                    LoadQuestion(Crud.GetTestQuestions(Test));
-                    
+                    pnlnav.Visible = true;
+                    DataSet modDS = Crud.ReadTable("spModule", Module);
+                    tbModuleSumDetails.Text = modDS.Tables[0].Rows[0]["moduleSum"].ToString();
+                    tbModuleNameDetails.Text = modDS.Tables[0].Rows[0]["moduleName"].ToString();
                     break;
                 case "Del":
+                    DataSet dsTest = Crud.GetTestQuestions(Test);
+                    foreach (DataRow row in dsTest.Tables[0].Rows)
+                    {
+                        Crud.DeleteData("spQuestions", row["question"].ToString());
+                    }
                     Crud.DeleteData("spTest", Test);
                     Crud.DeleteData("spModule", Module);
                     LoadTest(Crud.ReadTable(Test));
@@ -164,9 +164,8 @@ namespace GroupProject.admin
                 return;
             }
             gvWrongAnswers.SelectedIndex = Convert.ToInt32(e.CommandArgument);
-            string wronganswer = gvWrongAnswers.SelectedDataKey["wrongAnswer"].ToString();
-            Crud.DeleteData("spWrongAnwser", gvWrongAnswers.SelectedDataKey["wrongAnswer"].ToString(),Question);
-
+            Crud.DeleteData("spWrongAnwser", gvWrongAnswers.SelectedDataKey["wrongAnswers"].ToString(),Question);
+            LoadWrongAnswer(Crud.ReadTable("spWrongAnswer", Question));
         }
         protected void gvTests_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
@@ -192,10 +191,25 @@ namespace GroupProject.admin
             LoadQuestion(Crud.GetTestQuestions(Test));
         }
 
+        protected void btnGoToTest_Click(object sender, EventArgs e)
+        {
+            LoadQuestion(Crud.GetTestQuestions(Test));
+        }
+
+        protected void btnGoToLessons_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnrestart_Click(object sender, EventArgs e)
+        {
+            LoadTest(Crud.ReadTable("spModule"));
+        }
+
         protected void btnToTest_Click(object sender, EventArgs e)
         {
-          
-            LoadTest(Crud.ReadTable("spModule"));
+            pnlnav.Visible = true;
+            pnlQuestion.Visible = false;
         }
 
         protected void btnNewQuestion_Click(object sender, EventArgs e)
@@ -206,7 +220,6 @@ namespace GroupProject.admin
 
         protected void btnNewWrongAnswer_Click(object sender, EventArgs e)
         {
-            pnlModuleDetails.Visible = false;
             pnlNewWrongAnswer.Visible = true;
         }
     }

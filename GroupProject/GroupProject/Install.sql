@@ -266,7 +266,7 @@ as begin
 		end
 	if @crud='r'
 		begin
-			select question,answers,COUNT(wrongAnswers) as [wrongAnswers] from tbQuestions  left join tbWrongAnswers on tbWrongAnswers.questions = tbQuestions.question where question=@questions group by question,answers
+			select QID,question,answers,COUNT(wrongAnswers) as [wrongAnswers] from tbQuestions  left join tbWrongAnswers on tbWrongAnswers.questions = tbQuestions.question where question=@questions group by question,answers,QID
 		end
 	if @crud='u'
 		begin
@@ -278,8 +278,8 @@ as begin
 	if @crud='d'
 		begin
 
-			delete from tbWrongAnswers where questions=@questions
-			delete from tbQuestions where QID=@QID
+			delete from tbWrongAnswers where questions = @questions
+			delete from tbQuestions where question = @questions
 		end
 end
 go
@@ -313,7 +313,7 @@ create procedure spGetTestQuestions(
 @testID varchar(50)
 )
 as begin
-	select question,answers,COUNT(wrongAnswers) as [wrongAnswers] from tbQuestions  left join tbWrongAnswers on tbWrongAnswers.questions = tbQuestions.question where tbQuestions.tID=@testID group by question,answers
+	select QID,question,answers,COUNT(wrongAnswers) as [wrongAnswers] from tbQuestions  left join tbWrongAnswers on tbWrongAnswers.questions = tbQuestions.question where tbQuestions.tID=@testID group by question,answers,QID
 	
 end
 go
@@ -406,12 +406,22 @@ exec spSlides @crud='r', @lessonid ='1-1'
 SELECT * FROM dbo.tbQuestions
 GO
 
-CREATE PROCEDURE spGetLessons(
+CREATE PROCEDURE spLessons(
 @crud varchar(1),
-@moduleID VARCHAR(50)
+@moduleID int,
+@lessonID varchar(50)
 )
 AS BEGIN
-	SELECT * FROM dbo.tbLesson WHERE mID= @moduleID
+	if @crud = 'r'
+		begin
+			SELECT * FROM dbo.tbLesson WHERE mID= @moduleID
+		end
+	if @crud = 'd'
+		begin
+			delete from tbExample where lID = @lessonID
+			delete from tbSlides where lessonid = @lessonID
+			delete from tbLesson where lessonID = @lessonID
+		end
 END
 GO
 
@@ -440,17 +450,8 @@ AS BEGIN
 		END
    IF @crud='d'
 		BEGIN
+			delete from tbLesson where mID = @moduleID
 			DELETE FROM dbo.tbModule   WHERE moduleID=@moduleID
 		END
 END
 GO
-
-			    
-				
-			
-		
-			
-			    
-            
-			    
-    
