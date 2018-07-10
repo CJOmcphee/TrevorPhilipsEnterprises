@@ -235,6 +235,7 @@
     <Compile Include="index_admin.aspx.designer.cs">
       <DependentUpon>index_admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LOTR\LOTRSecurity.cs" />
     <Compile Include="LOTR\LOTRAdmin.aspx.cs">
       <DependentUpon>LOTRAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
