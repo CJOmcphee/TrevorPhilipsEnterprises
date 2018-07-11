@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-    <link href="StyleSheet1.css" rel="LOTRStyleSheet" />
+    <link href="LOTRStyleSheet.css" rel="stylesheet" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
