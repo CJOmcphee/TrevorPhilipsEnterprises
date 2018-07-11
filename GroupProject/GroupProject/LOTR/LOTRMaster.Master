@@ -4,6 +4,7 @@
 
 <html>
 <head runat="server">
+    <link href="StyleSheet1.css" rel="LOTRStyleSheet" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -11,7 +12,7 @@
 <body>
     <form id="form1" runat="server">
         
-            <div>
+            <div class="topnav">
         <asp:HyperLink ID="hlHome" NavigateUrl="~/LOTR/LOTRHome.aspx" runat="server">Home</asp:HyperLink>
         <asp:HyperLink ID="hlProducts" NavigateUrl="~/LOTR/LOTRProducts.aspx" runat="server">Products</asp:HyperLink>
         <asp:HyperLink ID="hlAdmin" NavigateUrl="~/LOTR/LOTRAdmin.aspx" runat="server">Admin</asp:HyperLink>

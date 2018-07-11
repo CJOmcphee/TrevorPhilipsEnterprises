@@ -5,7 +5,7 @@
      <asp:DataList ID="dlProducts" DataKeyField="productID"    RepeatColumns="3" runat="server" >
         <ItemTemplate>
             <div class="DataList">
-                <asp:Image ID="ImgProd" CssClass="DataList" runat="server" 
+                <asp:Image ID="ImgProd"  runat="server" 
                     ImageUrl='<%#Eval("path") %>'
                      />
                     <br />
@@ -19,6 +19,5 @@
                          CommandArgument=<%#Eval("productID")%>/>
             </div>
         </ItemTemplate>
-
     </asp:DataList>
 </asp:Content>

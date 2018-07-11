@@ -43,7 +43,7 @@ AS BEGIN
 		END
 	IF @crud='r'
 		BEGIN
-			SELECT productID, productName, productType, productPrice, '\LOTRPICTURES\'+ path as path FROM tbProducts where productID=isnull(@productID,productID)
+			SELECT productID, productName, productType, productPrice, '.\LOTRPICTURES\'+ path as path FROM tbProducts where productID=isnull(@productID,productID)
 		END
 	IF @crud='u'
 		BEGIN
