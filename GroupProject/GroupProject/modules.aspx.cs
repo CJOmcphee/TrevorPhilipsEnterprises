@@ -32,7 +32,7 @@ namespace GroupProject.user
                 Panel pnlModule = new Panel();
                 pnlModule.CssClass = "dropdown";
                 HyperLink hlModule = new HyperLink();
-                hlModule.Text = row["moduleID"].ToString();
+                hlModule.Text = row["moduleName"].ToString();
                 hlModule.NavigateUrl = "module_summary.aspx?Module=" + hlModule.Text;
                 hlModule.Target = "slide";
                 pnlModule.Controls.Add(hlModule);
@@ -43,7 +43,7 @@ namespace GroupProject.user
                 HtmlTable tbLess = new HtmlTable();
                 pnlLesson.Controls.Add(tbLess);
                 pnlModule.Controls.Add(pnlLesson);
-                DataSet Lessons = Crud.ReadTable("spGetLessons", hlModule.Text);
+                DataSet Lessons = Crud.ReadTable("spGetLessons", row["moduleID"].ToString());
                 foreach(DataRow lessRow in Lessons.Tables[0].Rows)
                 {
                     HtmlTableRow trLess = new HtmlTableRow();
