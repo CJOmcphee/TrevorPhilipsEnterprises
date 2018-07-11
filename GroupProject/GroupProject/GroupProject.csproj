@@ -74,6 +74,7 @@
     <Content Include="images\sql.png" />
     <Content Include="index_admin.aspx" />
     <Content Include="LOTR\LOTRInstall.sql" />
+    <Content Include="LOTR\LOTRPICTURES\Glamdring.jpg" />
     <Content Include="LOTR\LOTRStyleSheet.css" />
     <Content Include="LOTR\LOTRAdmin.aspx" />
     <Content Include="LOTR\LOTRProducts.aspx" />
@@ -439,7 +440,6 @@
   <ItemGroup>
     <Folder Include="DAL_Project\bin\Release\" />
     <Folder Include="DAL_Project\obj\Debug\TempPE\" />
-    <Folder Include="LOTR\LOTRPICTURES\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>

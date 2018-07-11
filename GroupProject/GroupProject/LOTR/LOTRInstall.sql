@@ -60,6 +60,9 @@ AS BEGIN
 		END
 END
 GO
+EXEC spProducts @crud='c',@productName='Glamdring',@productType='Sword',@productPrice=945.35,@path='Glamdring.jpg'
+EXEC spProducts @crud='r'
+GO
 CREATE PROCEDURE spClients(
 @clientID int =null,
 @userID varchar(50) =null,
