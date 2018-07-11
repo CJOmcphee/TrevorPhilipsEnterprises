@@ -10,15 +10,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-    <div>
-        <asp:HyperLink ID="hlHome" NavigateUrl="~/LOTR/LOTRHome.aspx" runat="server">HyperLink</asp:HyperLink>
-        <asp:HyperLink ID="hlProducts" NavigateUrl="~/LOTR/LOTRProducts.aspx" runat="server">HyperLink</asp:HyperLink>
-        <asp:HyperLink ID="hlAdmin" NavigateUrl="~/LOTR/LOTRAdmin.aspx" runat="server">HyperLink</asp:HyperLink>
+        
+            <div>
+        <asp:HyperLink ID="hlHome" NavigateUrl="~/LOTR/LOTRHome.aspx" runat="server">Home</asp:HyperLink>
+        <asp:HyperLink ID="hlProducts" NavigateUrl="~/LOTR/LOTRProducts.aspx" runat="server">Products</asp:HyperLink>
+        <asp:HyperLink ID="hlAdmin" NavigateUrl="~/LOTR/LOTRAdmin.aspx" runat="server">Admin</asp:HyperLink>
     </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
     </form>
 </body>
 </html>
