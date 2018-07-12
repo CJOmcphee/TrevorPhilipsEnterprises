@@ -89,6 +89,7 @@ AS BEGIN
 	IF @crud='r'
 		BEGIN
 			SELECT * FROM tbClients WHERE clientID=isnull(@clientID, clientID)
+		
 		END
 	IF @crud='u'
 		BEGIN
@@ -133,3 +134,4 @@ END
 GO
 select * from tbLogin
 EXEC spLogin @userID='Blondie', @userPassword='donttelltheelf'
+EXEC spClients @crud='r',@clientID=2, @userID='pippin'
