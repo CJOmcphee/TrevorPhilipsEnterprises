@@ -59,6 +59,7 @@ namespace GroupProject
             txtFirstName.Text = ds.Tables[0].Rows[0]["firstName"].ToString();
             txtLastName.Text = ds.Tables[0].Rows[0]["lastName"].ToString();
             txtUserName.Text = ds.Tables[0].Rows[0]["userID"].ToString();
+            txtUserPassword.Text = ds.Tables[0].Rows[0]["userPassword"].ToString();
            
         }
         public void LoadClients()
@@ -90,6 +91,7 @@ namespace GroupProject
             txtFirstName.Text = "";
             txtLastName.Text = "";
             txtUserName.Text = "";
+            txtUserPassword.Text = "";
         }
         protected void gvClients_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -131,7 +133,7 @@ namespace GroupProject
 
             LoadClients();
         }
-    }
+    
        
         public void UpdateProducts(string id)
         {

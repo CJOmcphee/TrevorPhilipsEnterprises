@@ -89,7 +89,7 @@ AS BEGIN
 	IF @crud='r'
 		BEGIN
 			SELECT clientID, firstName, lastName, userID, userPassword FROM tbClients C inner join
-			tbLogin L on C.userID = L.uID where clientID= @clientID
+			tbLogin L on C.userID = L.uID where clientID=isnull( @clientID,clientID)
 		END
 	IF @crud='u'
 		BEGIN
