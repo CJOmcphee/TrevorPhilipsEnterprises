@@ -54,6 +54,15 @@ namespace GroupProject
                 lblWelcome.Visible = true;
             }
 
+            if(mySecurity.Access == "a")
+            {
+                hlHome.NavigateUrl = "~/index_admin.aspx";
+            }
+            else
+            {
+                hlHome.NavigateUrl = "~/index_user.aspx";
+            }
+
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
