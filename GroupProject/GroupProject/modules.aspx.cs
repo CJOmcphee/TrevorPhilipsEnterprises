@@ -43,7 +43,7 @@ namespace GroupProject.user
                 HtmlTable tbLess = new HtmlTable();
                 pnlLesson.Controls.Add(tbLess);
                 pnlModule.Controls.Add(pnlLesson);
-                DataSet Lessons = Crud.ReadTable("spGetLessons", row["moduleID"].ToString());
+                DataSet Lessons = Crud.ReadTable("spLessons", row["moduleID"].ToString());
                 foreach(DataRow lessRow in Lessons.Tables[0].Rows)
                 {
                     HtmlTableRow trLess = new HtmlTableRow();

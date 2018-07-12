@@ -23,7 +23,8 @@ GO
 CREATE TABLE tbClients(
 clientID int identity(1,1) primary key,
 firstName varchar(50),
-lastName varchar(50)
+lastName varchar(50),
+userID varchar(50) foreign key references tbLogin(uID)
 )
 GO
 CREATE PROCEDURE spProducts(
@@ -42,7 +43,7 @@ AS BEGIN
 		END
 	IF @crud='r'
 		BEGIN
-			SELECT productID, productName, productType, productPrice, '\LOTRPICTURES\'+ path as path FROM tbProducts where productID=isnull(@productID,productID)
+			SELECT productID, productName, productType, productPrice, '.\LOTRPICTURES\'+ path as path FROM tbProducts where productID=isnull(@productID,productID)
 		END
 	IF @crud='u'
 		BEGIN
@@ -58,6 +59,10 @@ AS BEGIN
 			DELETE FROM tbProducts WHERE productID=@productID
 		END
 END
+GO
+EXEC spProducts @crud='c',@productName='Glamdring',@productType='Sword',@productPrice=945.35,@path='Glamdring.jpg'
+EXEC spProducts @crud='c',@productName='Uruk Hai Armour',@productType='Armour',@productPrice=2375.99,@path='UrukaiArmour.jpg'
+EXEC spProducts @crud='r'
 GO
 CREATE PROCEDURE spClients(
 @clientID int =null,
@@ -77,13 +82,14 @@ AS BEGIN
 		BEGIN
 			INSERT INTO tbLogin(uID,userPassword,access)VALUES
 								(@userID,@userPassword,'u')
-			INSERT INTO tbClients(firstName, lastName)VALUES
-								 (@firstName,@lastName)
+			INSERT INTO tbClients(firstName, lastName,userID)VALUES
+								 (@firstName,@lastName,@userID)
 						SELECT 'success' AS MESSAGE;
 		END
 	IF @crud='r'
 		BEGIN
-			SELECT * FROM tbClients WHERE clientID=isnull(@clientID, clientID)
+			SELECT clientID, firstName, lastName, userID, userPassword FROM tbClients C inner join
+			tbLogin L on C.userID = L.uID where clientID=isnull( @clientID,clientID)
 		END
 	IF @crud='u'
 		BEGIN
@@ -106,4 +112,26 @@ INSERT INTO tbLogin(uID,userPassword,access)VALUES
 EXEC spClients @userID='Blondie', @userPassword='donttelltheelf',@firstName ='Legolas', @lastName='Thranduillion', @crud ='c'
 EXEC spClients @userID='pippin',@userPassword='secondbreakfast',@firstName ='Peregrin', @lastName='Took', @crud ='c'
 EXEC spClients @crud ='r'
-
+GO
+CREATE PROCEDURE spLogin(
+@userID varchar(50) =null,
+@userPassword varchar(50) =null
+)
+AS BEGIN
+	DECLARE @access varchar(1);
+		IF exists(SELECT * FROM tbLogin WHERE uID=@userID AND
+											userPassword=@userPassword)
+	BEGIN
+		SELECT @access =access from tbLogin WHERE uID=@userID AND
+											userPassword=@userPassword
+		SELECT @access AS access
+			IF @access ='u'
+				BEGIN
+					SELECT firstName+' '+lastName AS fullname,clientID,firstName,lastName from tbClients where userID=@userID
+				END
+	END
+END
+GO
+select * from tbLogin
+EXEC spLogin @userID='Blondie', @userPassword='donttelltheelf'
+EXEC spClients @crud='r', @clientID='2'
