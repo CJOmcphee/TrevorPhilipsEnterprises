@@ -74,6 +74,16 @@ namespace GroupProject
             gvClients.DataSource = ds.Tables[0];
             gvClients.DataBind();
         }
+        public void DeleteClients(string id)
+        {
+            SqlCommand cmd = new SqlCommand("spClients", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@crud", "d");
+            cmd.Parameters.AddWithValue("@clientID", id);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
         protected void btnCreateClient_Click(object sender, EventArgs e)
         {
             lblClientID.Text = "";
@@ -97,16 +107,31 @@ namespace GroupProject
                     break;
             }
         }
-        public void DeleteClients(string id)
+        protected void btnClientSave_Click(object sender, EventArgs e)
         {
             SqlCommand cmd = new SqlCommand("spClients", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@crud", "d");
-            cmd.Parameters.AddWithValue("@clientID", id);
+            cmd.Parameters.AddWithValue("@firstName", txtFirstName.Text);
+            cmd.Parameters.AddWithValue("@lastname", txtLastName.Text);
+            cmd.Parameters.AddWithValue("@userID", txtUserName.Text);
+
+            if (lblClientID.Text != "")
+            {
+                cmd.Parameters.AddWithValue("@crud", "u");
+                cmd.Parameters.AddWithValue("@clientID", lblClientID.Text);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@crud", "c");
+            }
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
+
+            LoadClients();
         }
+    }
+       
         public void UpdateProducts(string id)
         {
             DataSet ds = new DataSet();
@@ -149,7 +174,36 @@ namespace GroupProject
             }
         }
 
-       
+        protected void btnProductSave_Click(object sender, EventArgs e)
+        {
+            string path = Server.MapPath(@".\Pictures\");
+            string name = flPicture.FileName;
+            flPicture.PostedFile.SaveAs(path + name);
+
+            SqlCommand cmd = new SqlCommand("spProducts", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@productName", txtProductName.Text);
+            cmd.Parameters.AddWithValue("@productType", txtProductType.Text);
+            cmd.Parameters.AddWithValue("@productPrice", txtProductPrice.Text);
+            cmd.Parameters.AddWithValue("@path", name);
+
+            if (lblProductID.Text != "")
+            {
+                cmd.Parameters.AddWithValue("@crud", "u");
+                cmd.Parameters.AddWithValue("@productID", lblProductID.Text);
+
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@crud", "c");
+            }
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            LoadProducts();
+        }
 
         
     }

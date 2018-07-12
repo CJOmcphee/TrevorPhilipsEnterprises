@@ -47,6 +47,9 @@
             <td>Picture</td>
             <td> <asp:FileUpload ID="flPicture" runat="server" /> </td>
         </tr>
+        <tr>
+            <td> <asp:Button ID="btnProductSave" runat="server" Text="Save Product" OnClick="btnProductSave_Click" />  <asp:Button ID="btnProductCancel" runat="server" Text="Cancel" /> </td>
+        </tr>
     </table>
     <table>
         <tr>
@@ -68,6 +71,9 @@
         <tr>
             <td>UserPassword</td>
             <td> <asp:TextBox ID="txtUserPassword" runat="server"></asp:TextBox> </td>
+        </tr>
+        <tr>
+            <td> <asp:Button ID="btnClientSave" runat="server" Text="Client Save" OnClick="btnClientSave_Click" />  <asp:Button ID="btnClientCancel" runat="server" Text="Cancel" /> </td>
         </tr>
     </table>
 </asp:Content>

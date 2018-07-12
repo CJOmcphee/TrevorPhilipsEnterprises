@@ -94,6 +94,24 @@ namespace GroupProject {
         protected global::System.Web.UI.WebControls.FileUpload flPicture;
         
         /// <summary>
+        /// btnProductSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnProductSave;
+        
+        /// <summary>
+        /// btnProductCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnProductCancel;
+        
+        /// <summary>
         /// lblClientID control.
         /// </summary>
         /// <remarks>
@@ -137,5 +155,23 @@ namespace GroupProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUserPassword;
+        
+        /// <summary>
+        /// btnClientSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClientSave;
+        
+        /// <summary>
+        /// btnClientCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClientCancel;
     }
 }
