@@ -78,11 +78,11 @@
                 <asp:TextBox ID="tbModuleNameDetails" runat="server"></asp:TextBox>
                 Summary
                 <asp:TextBox ID="tbModuleSumDetails" runat="server"></asp:TextBox>
-                <asp:Button ID="btnChangeModule" runat="server" CssClass="button" Text="Change Module" OnClick="btnChangeModule_Click"/>
+                <asp:Button ID="btnChangeModule" runat="server" CssClass="upd-button" Text="Change Module" OnClick="btnChangeModule_Click"/>
                 </asp:Panel>
                <asp:Button ID="btnrestart" runat="server" Text="Back" CssClass="button" OnClick="btnrestart_Click" />
-               <asp:Button ID="btnGoToTest" runat="server" Text="Edit Test" CssClass="button" OnClick="btnGoToTest_Click" />
-               <asp:Button ID="btnGoToLessons" runat="server" Text="Edit Lessons" CssClass="button" OnClick="btnGoToLessons_Click" />
+               <asp:Button ID="btnGoToTest" runat="server" Text="Edit Test" CssClass="upd-button" OnClick="btnGoToTest_Click" />
+               <asp:Button ID="btnGoToLessons" runat="server" Text="Edit Lessons" CssClass="upd-button" OnClick="btnGoToLessons_Click" />
            </asp:Panel>
   </div>  
   </div>       

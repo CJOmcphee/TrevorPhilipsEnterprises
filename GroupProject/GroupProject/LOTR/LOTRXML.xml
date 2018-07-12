@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<catalog>
+  <cd>
+    <Hero>Gimli</Hero>
+    <Status>Awesome</Status>
+  </cd>
+  <cd>
+    <Hero>Frodo Baggins</Hero>
+    <Status>Sucks</Status>
+  </cd>
+  <cd>
+    <Hero>Gandalf the Grey</Hero>
+    <Status>Awesome</Status>
+  </cd>
+  <cd>
+    <Hero>Elrond</Hero>
+    <Status>Awesome</Status>
+  </cd>
+
+</catalog>
+
