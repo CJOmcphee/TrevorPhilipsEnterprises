@@ -132,6 +132,13 @@ AS BEGIN
 	END
 END
 GO
+create procedure spAddCart(
+@prodID int =null
+)
+as begin
+	select productID,productName, productType,productPrice from tbProducts where productID =@prodID
+end
+GO
 select * from tbLogin
 EXEC spLogin @userID='Blondie', @userPassword='donttelltheelf'
 EXEC spClients @crud='r', @clientID='2'

@@ -7,7 +7,7 @@ namespace GroupProject
 {
     public class LOTRArmour:LOTRProp
     {
-        public LOTRArmour(int _id, string _name, string _type, double _price)
+        public LOTRArmour(int _id, string _name, double _price, string _type)
         {
             base.name = _name;
             base.type = _type;
