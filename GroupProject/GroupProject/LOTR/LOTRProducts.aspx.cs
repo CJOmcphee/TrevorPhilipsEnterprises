@@ -13,6 +13,8 @@ namespace GroupProject
     {
         SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
         LOTRProps props;
+        double total;
+        double final;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -71,6 +73,26 @@ namespace GroupProject
         {
             gvCart.DataSource = props.Get();
             gvCart.DataBind();
+        }
+
+        protected void gvCart_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            switch (e.Row.RowType)
+            {
+                case DataControlRowType.Header:
+                    total = 0.0;
+                    break;
+                case DataControlRowType.DataRow:
+                    double amount = Convert.ToDouble(e.Row.Cells[3].Text);
+                    total += amount;
+                    break;
+                case DataControlRowType.Footer:
+                    e.Row.Cells[3].Text = total.ToString();
+                    e.Row.Cells[2].Text = "<b>Total Bill<b>";
+                    total = final;
+                    break;
+
+            }
         }
     }
 }
