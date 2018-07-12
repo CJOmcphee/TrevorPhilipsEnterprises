@@ -75,6 +75,7 @@
     <Content Include="index_admin.aspx" />
     <Content Include="LOTR\LOTRInstall.sql" />
     <Content Include="LOTR\LOTRPICTURES\Glamdring.jpg" />
+    <Content Include="LOTR\LOTRPICTURES\UrukaiArmour.jpg" />
     <Content Include="LOTR\LOTRStyleSheet.css" />
     <Content Include="LOTR\LOTRAdmin.aspx" />
     <Content Include="LOTR\LOTRProducts.aspx" />
