@@ -240,6 +240,8 @@
     <Compile Include="index_admin.aspx.designer.cs">
       <DependentUpon>index_admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LOTR\LOTRArmour.cs" />
+    <Compile Include="LOTR\LOTRSword.cs" />
     <Compile Include="LOTR\LOTRProp.cs" />
     <Compile Include="LOTR\LOTRProps.cs" />
     <Compile Include="LOTR\LOTRExtraPage.aspx.cs">
