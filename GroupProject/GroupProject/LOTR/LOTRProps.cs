@@ -12,7 +12,7 @@ namespace GroupProject
         List<LOTRProp> _LOTRProps;
         public LOTRProps()
         {
-            if (HttpContext.Current.Session["Product"] != null)
+            if (HttpContext.Current.Session["LOTRProp"] != null)
             {
                 _LOTRProps = (List<LOTRProp>)HttpContext.Current.Session["LOTRProp"];
             }
@@ -35,6 +35,15 @@ namespace GroupProject
         {
             _LOTRProps.Add(sword);
             Save();
+        }
+        public double GetTotal()
+        {
+            double total = 0;
+            foreach (LOTRProp p in _LOTRProps)
+            {
+                total += p.price;
+            }
+            return total;
         }
         public void RemoveProd(int ID)
         {
