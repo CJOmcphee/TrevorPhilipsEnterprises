@@ -1418,27 +1418,111 @@ EXEC dbo.spSlides @slideID = '4-1-5',   -- varchar(50)
                   @slideinfo = 'Stored Procedures ^^ -Here is the format of a typical Stored procedure creation: ^ <b>CREATE PROCEDURE spProcedureName ^ ( ^ @ParameterOne DataType, ^ @ParamaterTwo DataType ^ ) ^ AS ^ BEGIN ^^ END ^ GO</b> ^ -We type any SQL we want between "BEGIN" and "END"', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-1-6',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -Here is the format of typical Stored procedure creation: ^^ <b>CREATE PROCEDURE spGetBookById ^ ( ^ @ISBN VARCHAR(20) ^ ) ^ AS ^ BEGIN ^ SELECT * FROM tbBooks WHERE ISBN = @ISBN ^ END ^ GO</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-7',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -To execute a stored procedure, we simply state the name of ^ the stored procedure and assign balues to each of its ^ parameter variables: ^^ <b>EXEC spGetBookById @ISBN = ''AB212C07'' ^^ -Note: See the previous slide to compare the execution ^ above to the creation of the stored procedure', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-8',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ <b>CREATE PROCEDURE spGetBooks ^ AS ^ BEGIN ^ SELECT * FROM tbBooks ^ END ^ GO</b> ^^ -Note, in this example we do not have any parameters! That is fine ^ too!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
 
+EXEC dbo.spSlides @slideID = '4-1-9',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ <b>EXEC spGetBooks</b> ^^ -Note: See the previous to compare the execution ^ above to the creation of the stored procedure (note that here ^ we do not have parameters to declare!)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-1-10',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -Example of a more complex stored procedure: ^^ <b>CREATE PROCEDURE spGetBooksOverDueByLoaner ^ ( ^ @LoanerId INT, ^ @DueDate DATE ^ ) ^ AS ^ BEGIN ^ SELECT * FROM tbBooks ^ JOIN tbLoans ON tbBooks.ISBN = tbLoans.ISBN ^ WHERE DueDate < @DueDate ^ AND LoanerId = @LoanerId ^ END ^ GO</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-1-11',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ <b>EXEC spGetBooksOverDueByLoaner ^ @LoanerId = 3, ^ @DueDate = ''2013-01-15'' ^^ -Note: See the previous slide to compare the execution ^ above to the creation of the stored procedure (note that we ^ comma separate the parameter/values)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-1-12',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -If we try to execute a stored procedure without assigning ^ values to all the parameters, we will get an error message: ^^ <b>EXEC spGetBooksOverDueByLoaner @LoanerID = 3</b> ^^ ERROR: Procedure or function ^ ''spGetBooksOverDueByLoaner'' expects parameter ^ ''@DueDate'', which was not supplied.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-1-13',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -What if we want to assign a default value to a parameter? ^^ -As we saw on the last slide, if you do not provide a value, it ^ will error! ^^ -Instead, if a value is not provided, we could choose a default ^ value to use (see next slide)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-1-14',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -Here we assign the value of 0 to @Age if a value is not supplied ^ <b>CREATE PROCEDURE spGetPeopleOverAnAge</b> ^ <b>(</b>@Age INT - 0 <b>)</b> ^ <b>AS ^ BEGIN ^ SELECT * FROM tbPerson WHERE Age > @Age ^ END ^ GO</b> ^ <u>--This next line returns only people over 25!</u> ^ <b>EXEC spGetPeopleOverAnAge @Age=25</b> ^ <u>--This next one returns everyone!</u> ^ <b>EXEC spGetPeopleOverAnAge</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-1-15',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -Here we default to NULL and use ISNULL() to default to a 0: ^ <b>CREATE PROCEDURE spGetPeopleOverAnAge</b> ^ <b>(</b>@Age INT = NULL<b>)</b> ^ <b>AS ^ BEGIN ^ SELECT * FROM tbPerson WHERE Age > ISNULL(@AGE,0) ^ END ^ GO</b> ^ <u>--This next line returns only people over 25!</u> ^ <b>EXEC spGetPeopleOverAnAge @Age = 25</b> ^ <u>--This next one returns everyone!</u> ^ <b>EXEC spGetPeopleOverAnAge</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-1-16',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -More on ISNULL() ^ <b>CREATE PROCEDURE spGetPersonById</b> ^ <b>(</b>@PersonID INT = NULL<b>)</b> ^ <b>AS ^ BEGIN ^ SELECT * FROM tbPerson ^ WHERE PersonID = ISNULL(@PersonID, PersonID) ^ END ^ GO</b> ^ <u>--This next line returns only the person with ID of 2!</u> ^ <b>EXEC spGetPersonById @PersonID = 2</b> ^ <u>--This next one returns everyone!</u> ^ <b>EXEC spGetPersonById</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-1-17',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -We can even use IF and ELSE statements just like C#: ^ <b>CREATE PROCEDURE spGetPeopleOverAnAge</b> ^ <b>(</b>@Age INT = NULL<b>)</b> ^ <b>AS ^ BEGIN ^ IF @Age IS NOT NULL ^ SELECT * FROM tbPerson WHERE Age > @Age ^ ELSE ^ SELECT * FROM tbPerson ^ END ^ GO</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-1-18',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -On the previous slides we saw: ^^ <b>*@Age INT = NULL</b> ^ #This line tells us that <b>@Age</b> is an <b>INT</b> parameter variable, ^ which is automatically set to <b>NULL</b> if no value is passed to it ^ #Now when we execute the procedure and forget to assign ^ @Age, it will not give an error! ^^^ <b>*IF @Age IS NOT NULL ^ #This line checks if <b>@Age</b> contains the value <b>NULL</b>, if it ^ does not, the SQL below it will run', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-1-19',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -It is good practice to create CRUD procedures for each of ^ your tables: ^ <b>*C - Create (INSERT) ^ *R - Request (SELECT) ^ *U - UPDATE ^ *D - DELETE</b> ^^ -Example CRUD operations for a table called tbUser: ^ <b>INSERT INTO tbUser... ^ SELECT * FROM tbUser ^ UPDATE tbUser... ^ DELETE FROM tbUser...</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-2-1',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^ Part II', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-2-2',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'Variables in SQL ^^ -When creating stored procedures, we are not limited to the ^ SQL we have seen so far ^^ -The following slides show us how to use SQL to: ^ *Declare, set and compare local variables ^ *Check useful global variables ^ *Nest multiple queries inside one another ^ *Use IF and decision statements ^ *Use Transactions to ROLLBACK changes', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-2-3',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'Local Variables ^^ -To use SQL <u>local variables</u>, we must declare them: ^^ <b>DECLARE @Amount int</b> ^^ -The "<b>SET</b>" or "<b>SELECT</b>" keyword is used to assign values: ^^ <b>SELECT @amount = 100</b> ^^ OR ^^ <b>SET @amount - 100</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-2-4',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'Local Variables ^^ -To assign a value into a local variable FROM a specific ^ row/column, you can use the following method: ^^ <b>SELECT @amount = amount ^ FROM tbAccounts ^ WHERE AccountId = @AccountId</b> ^^ -NOTE: The above result is ONE row in a table, therefore the ^ value of "amount" is assigned to the local variable @amount', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-2-5',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'Global Variables ^^ -There are many <u>global variables</u> available in SQL, here are ^ a few useful ones: ^^ <b>-@@RowCount</b> ^ *Number of rown affected by last SQL statements ^^ <b>-Error number generated by last SQL statement</b> ^ *Error number generated by last SQL statement ^^ <b>@@Identity or SCOPE_IDENTITY()</b> ^ *The last generated IDENTITY value', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-2-6',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'Subqueries ^^ -The following query contains another query inside of itself ^^ -The inner query is called a <u>Subquery</u> ^^ <b>SELECT * FROM tbOrders ^ WHERE PrePurchaseID IN ^ (SELECT PrePurchaseID FROM tbPrePurchased ^ WHERE PurchaseDate ^ BETWEEN ''Jan 1, 2009'' AND ''Jan 31, 2009'')', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
-
-
+EXEC dbo.spSlides @slideID = '4-2-7',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = '', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
 
 
