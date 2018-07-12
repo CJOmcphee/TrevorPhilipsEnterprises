@@ -3,11 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
-        <asp:HyperLink ID="hlHome" NavigateUrl="~/LOTR/LOTRHome.aspx" runat="server">HyperLink</asp:HyperLink>
-        <asp:HyperLink ID="hlProducts" NavigateUrl="~/LOTR/LOTRProducts.aspx" runat="server">HyperLink</asp:HyperLink>
-        <asp:HyperLink ID="hlAdmin" NavigateUrl="~/LOTR/LOTRAdmin.aspx" runat="server">HyperLink</asp:HyperLink>
-    </div>
+    
     <div>
         <table>
             <tr>
