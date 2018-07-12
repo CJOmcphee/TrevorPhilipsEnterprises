@@ -89,7 +89,7 @@ AS BEGIN
 	IF @crud='r'
 		BEGIN
 			SELECT * FROM tbClients WHERE clientID=isnull(@clientID, clientID)
-		
+			SELECT userPassword from tbLogin uID=@userID 
 		END
 	IF @crud='u'
 		BEGIN

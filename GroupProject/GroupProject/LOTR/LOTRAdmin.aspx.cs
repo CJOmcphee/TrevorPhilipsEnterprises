@@ -114,6 +114,7 @@ namespace GroupProject
             cmd.Parameters.AddWithValue("@firstName", txtFirstName.Text);
             cmd.Parameters.AddWithValue("@lastname", txtLastName.Text);
             cmd.Parameters.AddWithValue("@userID", txtUserName.Text);
+            cmd.Parameters.AddWithValue("@userPassword", txtUserPassword.Text);
 
             if (lblClientID.Text != "")
             {
