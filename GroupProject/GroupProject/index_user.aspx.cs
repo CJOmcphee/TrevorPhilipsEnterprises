@@ -11,7 +11,7 @@ namespace GroupProject.user
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Security mySecurity = new Security();
         }
     }
 }
