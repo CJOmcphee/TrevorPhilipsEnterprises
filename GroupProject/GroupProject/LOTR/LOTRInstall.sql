@@ -88,8 +88,8 @@ AS BEGIN
 		END
 	IF @crud='r'
 		BEGIN
-			SELECT * FROM tbClients WHERE clientID=isnull(@clientID, clientID)
-			SELECT userPassword from tbLogin uID=@userID 
+			SELECT clientID, firstName, lastName, userID, userPassword FROM tbClients C inner join
+			tbLogin L on C.userID = L.uID where clientID= @clientID
 		END
 	IF @crud='u'
 		BEGIN
@@ -134,4 +134,4 @@ END
 GO
 select * from tbLogin
 EXEC spLogin @userID='Blondie', @userPassword='donttelltheelf'
-EXEC spClients @crud='r',@clientID=2, @userID='pippin'
+EXEC spClients @crud='r', @clientID='2'
