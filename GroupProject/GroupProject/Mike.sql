@@ -1667,30 +1667,114 @@ EXEC dbo.spSlides @slideID = '4-3-20',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '4-3-21',   -- varchar(50)
                   @lessonid = '4-3',  -- varchar(50)
-                  @slideinfo = 'Gridview slide 27 - ', -- varchar(2000)
+                  @slideinfo = 'Gridview ^^ -Another control to check out is the GridView, it will show a table on ^ the website based on the data you assign to it, you do not need to ^ specify a text/value as it will show all columns: ^^ <b>gvClients.DataSource = ds.Tables[0]; ^ gvClients.DataBind();</b> ^^ -Try it out for yourself! ^ -Note: we will learn to manipulate GridViews later in the course, but ^ for now you can display a table easily with it ^^ (It is found under "Data" instead of "Standard" in your ToolBox)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-1',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Master Pages, State Management, and DataGrids', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-2',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Master Pages ^^ -<u>Master Pages</u> allow you to create a consisten layout for the ^ pages in your application ^^ -A single master page defines the look, feel, and standard ^ behavior that you want for all of the pages in your app ^^ -When users request content pages, they merge with the ^ master page to produce output that combines the layout of ^ the master page with the content from the content page', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-3',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Master Pages ^^ -Start by adding a master page to your website, this will be ^ the "frame" around your web pages ^^ -The content of the pages in your site will appear within the ^ <b>< ContentPlaceHolder > </b> tags ^^ -To create a master page: ^ ^ *Right click on your project solution ^ *Click "<b>Add new item</b>" ^ *Click "<b>Master Page</b>"', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-4',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Content {ages ^^ -Now that we have a master page, we need to have specific ^ content pages (<u>Web Content Forms</u>) ^^ -To create a new content page: ^ *Right click on your project solution ^ *Click "<b>add new item</b>" => "<b>Web Form using Master Page</b>" ^ *You ill have to specify which master page to use for this ^ content page', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-5',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Content Pages ^^ -To access the master page from the content page the ^ <b>MasterType</b> directive is automatically added to the top of the ^ Web Form: ^ <b>MasterPageFile="~/Site1.Master"</b> ^^ -Your code can access the master page through the ^ "<b>Master</b>" object: ^^ //Modify the LinkButton from the Master Page to be bold text ^ <b>LinkButton 1 = (LinkButton)Master.FindControl("LinkButton3"); ^ l1.Style.Add("font-weight", "bold");</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-6',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'State Management ^^ -There are several ways that we can maintain state ^ throughout a web application: ^^ 1. <b>ViewState</b> Object (Review: Module 6 Lesson 1 & 2) ^ *Values passed in the text of the page ^ 2. <b>Session</b> Object ^ *Values are stored in the server''s memory  ^ 3. Cookies ^ *Values are stored in the client''s memory (temporary) or ^ disk (permanent)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-7',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Session Object ^^ -<u>Session objects</u> hold user-specific information and are ^ available in all pages of an application ^^ -Common values stored in <b>Session</b> are: name, id, and ^ preferences ^^ -The server creates a new <b>Session</b> object for each new user, ^ and destroys the Session object when the session expires', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-8',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Session Object ^^ -Example Session usage in C#: ^^ //Store the value "Joe Smith" in the session object, under the ^ "UserName" label ^ <b>Session["UserName"] = "JoeSmith";</b> ^^ //Retrieve the value from the Session object using the "UserName" label ^ //Note: You have to cast the name value into a string ^^ <b>String sUserName = (<u>string</u>)Session["UserName"];</b>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 
+EXEC dbo.spSlides @slideID = '4-4-9',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Session Object ^^ -A session starts when: ^^ -A new user requests an ASP file ^^ -A value is stored in a Session variable ^^ -A <b>SessionID</b> is generated and stored at the time of session ^ creation', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-4-10',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Session Object ^^ -A session ends if a user has not requested or refreshed a ^ poage in the application for a specific period ^^ -By default, this default time is 20 minutes ^^ -You can use this knowledge for storing values that you want ^ to expire ^^ *Example: a boolean <b>IsLoggedIn</b> flag ^^ -Note: Use the property <b>Timeoutproperty</b> to customize', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-4-11',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Session Object ^^ -A session also ends if you type: ^ <b>Session.Abandon();</b> ^^ -Use the above line of code to reset all values in a Session ^^ -This would be very useful to put in a "Log Out" click event! ^^ -NOTE: You might also want to remove the cookie associated with ^ the Session with this line of code: ^^ <b>Response.Cookies["ASP.NET_SessionId"].Expires = ^ DateTime.Now.AddDays(-1);</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-4-12',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Sessions and Storage ^^ -Storing values on the server is fast, but should not be used ^ carelessly ^^ -Example: If your app ends up with 1000 active sessions, with each of these sessions using up 50K of memory, You ^ will quickly run out of memory on your server ^^ -Tip: avoid using <b>Session</b> for large values ^^ -Alternatively, <b>Session</b> values can be stored in SQL ^ Server', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-4-13',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'SessionID ^^ <b>-SessionID</b> is the link between a particular user and their ^ request/responses ^^ -The <b>SessionID</b> value is stored locally in your browser like a ^ cookie ^^ -You must have cookies enabled to use the <b>Session</b> Object ^ to store values', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-4-14',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Cookies ^^ <b>-Cookies</b> are values that are stored locally on the user''s computer ^ (usually the browser) ^^ -By default, cookies are stored in memory ^^ -If you set the "Expires" property then the cookie can be written to ^ the hard disk ^^ -More than one cookie can be stored by a client per website ^^ -Note: All cookies are sent from the client with each request (a lot of ^ overhead)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-4-15',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Cookies ^^ //Write the cookie ^ <b>HttpCookie aCookie = new HttpCookie("LastVisited"); ^ aCookie.Value = DateTime.Now.ToString(); ^ aCookie.Expires = DateTime.Now.AddDays(1); ^ Response.Cookies.Add(aCookie);</b> ^^ //Read the cookie ^ <b>HttpCookie myCookie = Request.Cookies["LastVisited"];</b> ^ //Now that you have the cookie, check if it is there! ^ <b>if(myCookie != null) ^ { ^ txtLastVisited.Text = myCookie.Value; ^ }</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-4-16',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'SqlDataAdapter Review ^^ -Example of using the <b>SQLDataAdapter</b> in C# to run any type of SQL statement: ^ <b>String connString = @"Data Source=localhost;Inital ^ Catalog=DbName;Integrated Security=SSPI"; ^ DataSet ds = new DataSet(); ^ SqlConnection conn = new SqlConnection(connString); ^ conn.Open();</b> ^ //sqlCmd is a String variable holding the SQL statement ^ <b>SqlDataAdapter da = new SqlDataAdapter(sqlCmd, conn);</b> ^ //Fill() causes the SQL statement to execute ^ //The DataSet object will now hold the resulting table (if any) ^ <b>da.Fill(ds); ^ conn.Close();</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-4-17',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'SqlDataAdapter Review ^^ -We have been using Stored Procedures inside of the ^ Constructor of the SqlDataAdapter with parameters, here is ^ an alternative (cleaner) method: ^ <b>SqlDataAdapter da = new SqlDataAdapter(); ^^ <u>da.SelectCommand = new SqlCommand("spGetClients", conn); ^ da.SelectCommand.CommandType = ^ CommandType.StoredProcedure; ^ da.SelectCommand.Parameters.Add(new SqlParameter("@ClientId", ^ clientId));</u> ^^ conn.Open(); ^ da.Fill(ds); ^ conn.Close();</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-4-18',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'SqlDataAdapter Review ^^ -SQL for spGetClients: ^ <b>GO ^ CREATE PROCEDURE spGetClients ^ ( ^ @ClientId INT = NULL ^ ) ^ AS ^ BEGIN ^ SELECT * FROM tbClient ^ WHERE ClientID = ISNULL(@ClientId, ClientID) ^ END ^ GO</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-4-19',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'SqlDataAdapter Review ^^ -The interesting part of this new way is the use of the class ^ called: SqlParameter ^^ -The class is designed to define parameters used in SQL ^^ -You simply specify the name of the variable and then the ^ value that you want that variable to hold when you execute ^ your SQL', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '4-4-20',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Proper Commenting ^^ -Now that we have a basic understanding of coding and ^ SQL, we need to know how to make proper documentations ^ for our projects ^ -Here are some general guidelines for commenting: ^ *At the top of every file (summary, author, date created) ^ *In front of *<b>every</b>* function/method, stored procedure ^ *Right before code which may not be clear to others ^ *Explaining known defects or short falls that have not been ^ resolved yet ^ *Providing suggestions as to how to make a section of ^ code better, if you had more time to spend on it', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
-
-
-
-
-
-
-
-
+EXEC dbo.spSlides @slideID = '12-1-1',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript & DOM', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
 
 

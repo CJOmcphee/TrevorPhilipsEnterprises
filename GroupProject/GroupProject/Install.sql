@@ -71,6 +71,8 @@ mID int foreign key references tbModule(moduleID)
 						('9-1',9),('9-2',9),('9-3',9),('9-4',9),('9-5',9),
 						('10-1',10),('10-2',10)
 
+						--('12-1',12),('12-2',12),('12-3',12),('12-4',12)
+
 create table tbSlides(
 slideID varchar(50),
 lessonid varchar(50) foreign key references tbLesson(lessonID),
