@@ -13,33 +13,6 @@ namespace GroupProject {
     public partial class LOTRHome {
         
         /// <summary>
-        /// hlHome control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlHome;
-        
-        /// <summary>
-        /// hlProducts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlProducts;
-        
-        /// <summary>
-        /// hlAdmin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlAdmin;
-        
-        /// <summary>
         /// txtUsername control.
         /// </summary>
         /// <remarks>

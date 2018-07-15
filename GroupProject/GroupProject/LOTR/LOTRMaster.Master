@@ -4,16 +4,22 @@
 
 <html>
 <head runat="server">
+    <link href="LOTRStyleSheet.css" rel="stylesheet" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        
+            <div class="topnav">
+        <asp:HyperLink ID="hlHome" NavigateUrl="~/LOTR/LOTRHome.aspx" runat="server">Home</asp:HyperLink>
+        <asp:HyperLink ID="hlProducts" NavigateUrl="~/LOTR/LOTRProducts.aspx" runat="server">Products</asp:HyperLink>
+        <asp:HyperLink ID="hlAdmin" NavigateUrl="~/LOTR/LOTRAdmin.aspx" runat="server">Admin</asp:HyperLink>
+        <asp:HyperLink ID="Xml" NavigateUrl="~/LOTR/LOTRExtraPage.aspx" runat="server">XML</asp:HyperLink>
+    </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
     </form>
 </body>
 </html>

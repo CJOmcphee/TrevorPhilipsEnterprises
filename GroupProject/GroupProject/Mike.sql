@@ -1418,79 +1418,363 @@ EXEC dbo.spSlides @slideID = '4-1-5',   -- varchar(50)
                   @slideinfo = 'Stored Procedures ^^ -Here is the format of a typical Stored procedure creation: ^ <b>CREATE PROCEDURE spProcedureName ^ ( ^ @ParameterOne DataType, ^ @ParamaterTwo DataType ^ ) ^ AS ^ BEGIN ^^ END ^ GO</b> ^ -We type any SQL we want between "BEGIN" and "END"', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+EXEC dbo.spSlides @slideID = '4-1-6',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -Here is the format of typical Stored procedure creation: ^^ <b>CREATE PROCEDURE spGetBookById ^ ( ^ @ISBN VARCHAR(20) ^ ) ^ AS ^ BEGIN ^ SELECT * FROM tbBooks WHERE ISBN = @ISBN ^ END ^ GO</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-7',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -To execute a stored procedure, we simply state the name of ^ the stored procedure and assign balues to each of its ^ parameter variables: ^^ <b>EXEC spGetBookById @ISBN = ''AB212C07'' ^^ -Note: See the previous slide to compare the execution ^ above to the creation of the stored procedure', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-8',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ <b>CREATE PROCEDURE spGetBooks ^ AS ^ BEGIN ^ SELECT * FROM tbBooks ^ END ^ GO</b> ^^ -Note, in this example we do not have any parameters! That is fine ^ too!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '4-1-9',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ <b>EXEC spGetBooks</b> ^^ -Note: See the previous to compare the execution ^ above to the creation of the stored procedure (note that here ^ we do not have parameters to declare!)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-10',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -Example of a more complex stored procedure: ^^ <b>CREATE PROCEDURE spGetBooksOverDueByLoaner ^ ( ^ @LoanerId INT, ^ @DueDate DATE ^ ) ^ AS ^ BEGIN ^ SELECT * FROM tbBooks ^ JOIN tbLoans ON tbBooks.ISBN = tbLoans.ISBN ^ WHERE DueDate < @DueDate ^ AND LoanerId = @LoanerId ^ END ^ GO</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-11',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ <b>EXEC spGetBooksOverDueByLoaner ^ @LoanerId = 3, ^ @DueDate = ''2013-01-15'' ^^ -Note: See the previous slide to compare the execution ^ above to the creation of the stored procedure (note that we ^ comma separate the parameter/values)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-12',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -If we try to execute a stored procedure without assigning ^ values to all the parameters, we will get an error message: ^^ <b>EXEC spGetBooksOverDueByLoaner @LoanerID = 3</b> ^^ ERROR: Procedure or function ^ ''spGetBooksOverDueByLoaner'' expects parameter ^ ''@DueDate'', which was not supplied.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-13',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -What if we want to assign a default value to a parameter? ^^ -As we saw on the last slide, if you do not provide a value, it ^ will error! ^^ -Instead, if a value is not provided, we could choose a default ^ value to use (see next slide)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-14',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -Here we assign the value of 0 to @Age if a value is not supplied ^ <b>CREATE PROCEDURE spGetPeopleOverAnAge</b> ^ <b>(</b>@Age INT - 0 <b>)</b> ^ <b>AS ^ BEGIN ^ SELECT * FROM tbPerson WHERE Age > @Age ^ END ^ GO</b> ^ <u>--This next line returns only people over 25!</u> ^ <b>EXEC spGetPeopleOverAnAge @Age=25</b> ^ <u>--This next one returns everyone!</u> ^ <b>EXEC spGetPeopleOverAnAge</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-15',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -Here we default to NULL and use ISNULL() to default to a 0: ^ <b>CREATE PROCEDURE spGetPeopleOverAnAge</b> ^ <b>(</b>@Age INT = NULL<b>)</b> ^ <b>AS ^ BEGIN ^ SELECT * FROM tbPerson WHERE Age > ISNULL(@AGE,0) ^ END ^ GO</b> ^ <u>--This next line returns only people over 25!</u> ^ <b>EXEC spGetPeopleOverAnAge @Age = 25</b> ^ <u>--This next one returns everyone!</u> ^ <b>EXEC spGetPeopleOverAnAge</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-16',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -More on ISNULL() ^ <b>CREATE PROCEDURE spGetPersonById</b> ^ <b>(</b>@PersonID INT = NULL<b>)</b> ^ <b>AS ^ BEGIN ^ SELECT * FROM tbPerson ^ WHERE PersonID = ISNULL(@PersonID, PersonID) ^ END ^ GO</b> ^ <u>--This next line returns only the person with ID of 2!</u> ^ <b>EXEC spGetPersonById @PersonID = 2</b> ^ <u>--This next one returns everyone!</u> ^ <b>EXEC spGetPersonById</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-17',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -We can even use IF and ELSE statements just like C#: ^ <b>CREATE PROCEDURE spGetPeopleOverAnAge</b> ^ <b>(</b>@Age INT = NULL<b>)</b> ^ <b>AS ^ BEGIN ^ IF @Age IS NOT NULL ^ SELECT * FROM tbPerson WHERE Age > @Age ^ ELSE ^ SELECT * FROM tbPerson ^ END ^ GO</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-18',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -On the previous slides we saw: ^^ <b>*@Age INT = NULL</b> ^ #This line tells us that <b>@Age</b> is an <b>INT</b> parameter variable, ^ which is automatically set to <b>NULL</b> if no value is passed to it ^ #Now when we execute the procedure and forget to assign ^ @Age, it will not give an error! ^^^ <b>*IF @Age IS NOT NULL ^ #This line checks if <b>@Age</b> contains the value <b>NULL</b>, if it ^ does not, the SQL below it will run', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-1-19',   -- varchar(50)
+                  @lessonid = '4-1',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^^ -It is good practice to create CRUD procedures for each of ^ your tables: ^ <b>*C - Create (INSERT) ^ *R - Request (SELECT) ^ *U - UPDATE ^ *D - DELETE</b> ^^ -Example CRUD operations for a table called tbUser: ^ <b>INSERT INTO tbUser... ^ SELECT * FROM tbUser ^ UPDATE tbUser... ^ DELETE FROM tbUser...</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-2-1',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'Stored Procedures ^ Part II', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-2-2',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'Variables in SQL ^^ -When creating stored procedures, we are not limited to the ^ SQL we have seen so far ^^ -The following slides show us how to use SQL to: ^ *Declare, set and compare local variables ^ *Check useful global variables ^ *Nest multiple queries inside one another ^ *Use IF and decision statements ^ *Use Transactions to ROLLBACK changes', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-2-3',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'Local Variables ^^ -To use SQL <u>local variables</u>, we must declare them: ^^ <b>DECLARE @Amount int</b> ^^ -The "<b>SET</b>" or "<b>SELECT</b>" keyword is used to assign values: ^^ <b>SELECT @amount = 100</b> ^^ OR ^^ <b>SET @amount - 100</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-2-4',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'Local Variables ^^ -To assign a value into a local variable FROM a specific ^ row/column, you can use the following method: ^^ <b>SELECT @amount = amount ^ FROM tbAccounts ^ WHERE AccountId = @AccountId</b> ^^ -NOTE: The above result is ONE row in a table, therefore the ^ value of "amount" is assigned to the local variable @amount', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-2-5',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'Global Variables ^^ -There are many <u>global variables</u> available in SQL, here are ^ a few useful ones: ^^ <b>-@@RowCount</b> ^ *Number of rown affected by last SQL statements ^^ <b>-Error number generated by last SQL statement</b> ^ *Error number generated by last SQL statement ^^ <b>@@Identity or SCOPE_IDENTITY()</b> ^ *The last generated IDENTITY value', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-2-6',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'Subqueries ^^ -The following query contains another query inside of itself ^^ -The inner query is called a <u>Subquery</u> ^^ <b>SELECT * FROM tbOrders ^ WHERE PrePurchaseID IN ^ (SELECT PrePurchaseID FROM tbPrePurchased ^ WHERE PurchaseDate ^ BETWEEN ''Jan 1, 2009'' AND ''Jan 31, 2009'')', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-2-7',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'IF Exists ^^ -The following SQL query runs two potential outcomes just like a C# IF ^ statement ^ *1)If at least one row returns from the first SELECT statement, the ^ select query inside the IF runs ^ *2)Else, an error is printed and returned ^^ <b>IF EXISTS ^ (SELECT * FROM tbOrders WHERE customerid = @CustID) ^ BEGIN ^ SELECT * ^ FROM tbOrders ^ WHERE customerid = @CustID ^ END ^ ELSE ^ BEGIN ^ PRINT ''Customer does not exist.'' ^ END', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-2-8',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'SQL IF Statements ^^ -Example of a complicated IF statement in SQL: ^ <b>CREATE PROCEDURE spUpdateDeleteBook ^ (@decision CHAR(6),@ISBN VARCHAR(@), ^ @BookTitle VARCHAR(50) = NULL) ^ AS ^ BEGIN ^ IF (@decision = ''update'') ^ BEGIN ^ UPDATE tbBooks ^ SET BookTitle = @BookTitle ^ WHERE ISBN = @ISBN ^ END ^ ELSE IF (@decision = ''delete'') ^ BEGIN ^ DELETE tbBooks WHERE ISBN = @ISBN ^ END ^ END', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-2-8',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'SQL IF Statements ^^ -To run the procedure on the previous slide, your SQL might ^ look something like: ^ <u>--To Delete a book:</u> ^ <b>EXEC spUpdateDeleteBook @decision=''delete'', ^ @ISBN=''123-12ABSA''</b> ^^ <u>--To Update a book with a new name:</u> ^ <b>EXEC spUpdateDeleteBook @decision=''update'', ^ @ISBN=''1233-2B1GSB'', @BookTitle=''Learn SQL in 8 days''</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-2-9',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'Messages and Converts ^^ -When you want to combine one or more column values into ^ a single column, you can do so with syntax like this: ^^ <b>SELECT (FirstName + '' '' + LastName) AS FullName ^ FROM tbCustomer</b> ^^ -However, if you want to add values of different datatypes, ^ you will have to convert them to be the same datatype first!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-2-10',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'Messages and Converts ^^ -What happens when we have AGE (an INT) added into our column: ^^ <b>SELECT (FirstName + '''' + LastName + ''is'' + Age + ''Years ^ old!'') AS [Full Name and Age] ^ FROM tbCustomer ^^ -We will get an error! To fix it we need to use the CONVERT() method', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-2-11',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'Messages and Converts ^^ -What happens when we have AGE (an INT) added into our ^ column: ^^ <b>SELECT (FirstName + '''' + LastName + ''is'' + ^ CONVERT(VARCHAR(MAX), AGE) + ''Years old!'') AS [Full ^ Name and Age] ^ FROM tbCustomer ^^ -CONVERT() accepts two parameters, the first is what ^ datatype to convert to, the second is the value we are converting... now that everything is a varchar, we are ok!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-2-12',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'SQL - SELECT CASE ^^ -CASE is used in place of a column name and ust be given a column name ^^ -The resulting value of CASE will be determined by the conditions we give it ^ <b>SELECT <u>ColName</u>,<u>ColName2</u>, ^ (CASE ^ WHEN < condition > THEN < value> ^ WHEN < condition > THEN < value > ^ ... ^ ELSE < value > ^ END) AS <u>ColName3</u> ^ FROM tbName ^ WHERE < condition >', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-2-13',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'SQL - SELECT CASE ^^ -Example: Modify the Book prices depending on Author ^^ <b>SELECT <u>BookTitle</u>, <u>BookPrice</u>, ^ (CASE ^ WHEN BookAuthor=''Stephen King'' THEN BookPrice*1.2 ^ WHEN BookAuthor=''Stephenie Meyer'' THEN ^ BookPrice*0.25 ^ ELSE BookPrice ^ END) AS <u>NewPrice</u> ^ FROM tbBooks</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-2-14',   -- varchar(50)
+                  @lessonid = '4-2',  -- varchar(50)
+                  @slideinfo = 'SQL - SELECT CASE ^^ -Example 2: We have a table called <b>tbRockPaperScissors</b> ^ with one column; <b>Hand</b>. The current value of <b>Hand</b> is a ^ description of what a hand might look like. We want to return ^ the value of ''<b>rock</u>'', ''<b>paper</b>'' depending on the ^ value of the column <b>Hand</u> ^^ <b>SELECT ^ (CASE ^ WHEN Hand=''Flat'' THEN ''Paper'' ^ WHEN Hand=''First'' THEN ''Rock'' ^ ELSE ''Scissors'' ^^ END) AS <u>GameResult</u> ^ FROM tbRockPaperScissors</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+				  
+EXEC dbo.spSlides @slideID = '4-3-1',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'ADO.NET', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-2',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'Objectives ^^ -To Understand: ^ *What ADO.NET is ^ *The Data Provider ^ *The <b>Connection</b> object ^ *The <b>Command</b> object ^ *The <b>DataReader</b> object ^ *The <b>DataSet</b> object ^ *The <b>DataAdapter</b> object', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-3',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'ADO.NET ^^ -A subset of classes in the .NET Framework Class Library ^^ -The <u>Data Provider</u> tells us which subset of classes under ^ ADO.NET we are going to use - typically defined by the type of ^ database we are connecting to ^^^ -ADO.NET Classes (objects) ^ <b>*SqlConnection ^ *SqlCommand ^ *SqlDataReader ^ *DataSet ^ *SqlDataAdapter', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-4',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'SqlConnection Object ^^ <b>-Connection</b> object is where we use our <u>connection string</u> ^^ -The connection string holds all the information we need to ^ connect to the correct database ^^ Example Connection String: ^^ "<b>Data Source=(local);Initial Catalog=dbDatabase;Integrated ^ Security=SSPI</b>"', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-5',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'SqlConnection Object ^^ -After setting the connection string, call the <b>Open()</b> method to ^ connect ^^ -This is the line that will fail if the connection string is not ^ correct ^^ -When you are finished with your database connection, you ^ must run a corresponding <b>Close()</b> method to disconnect ^^ -The next slide has an example of the connection string, ^ <b>Close()</b> and <b>Open()</b> methods in action', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-6',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'SqlCommand Object ^^ -Once your connection object is opened, use the <b>SqlCommand</b> ^ object''s 3 methods to execute database statements ^ appropriately: ^^ 1. <b>ExecuteReader()</b> ^ *Used to execute queries that return data (SELECT''s) ^ *Returns type <b>SqlDataReader</b> ^^ 2. <b>ExecuteNonQuery()</b> ^ *Used to execute queries that do not return any data ^ (<b>INSERT</b>,<b>UPDATE</b>,<b>DELETE</b>) ^^ 3.<b>ExecuteScalar()</b> ^ *Used to execute queries that return only 1 value', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-7',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'ExecuteReader() ^^ <u>// 1. Instantiate a new command with a query and connection:</u> ^ <b>SqlCommand cmd = new SqlCommand("select CategoryName ^ from Categories", conn);</b> ^^ <u>// 2. Call Execute reader to get query results:</u> ^ <b>SqlDataReader rdr = cmd.ExecuteReader();</b> ^^ <b>-We now have an object called <b>rdr</b> of type <b>SqlDataReader</b> ^^ -There are a number of ways we can display the data that is ^ inside <b>rdr</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-8',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'ExecuteNonQuery() ^^ <u>// prepare command string:</u> ^ <b>string insertString = @"insert into Categories (CategoryName, ^ Description) values (''Miscellaneous'', ''Does not fit elsewhere'')"; ^^ <u>// 1.Instantiate a new command with a query and connection</u> ^ <b>SqlCommand cmd = new SqlCommand(insertString, conn);</b> ^ <u>// 2. Call ExecuteNonQuery to send a command</u> ^ <b>cmd.ExecuteNonQuery();</b> ^^ -The insert statement has been executed (Since it does not return ^ any values, we are finished) ^^ -This type of execute is typically used with <b>INSERT</b>, <b>UPDATE</b> and ^ <b>DELETE</b> statements', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-9',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = '@-Quote ^^ -In the previous slide, we used an <b>@</b> symbol in front of the ^ quotes ^^ -The advantage of @-quoting is that escape dequences ^ are not processed ^^ -Example: Write a fully qualified fule name in a string: ^^ <b>@"c:\Docs\Source\a.txt" ^ <u>// rather than "c:\\Docs\\Source\\a.txt"</u>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-10',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'ExecuteScalar() ^^ <u>// 1. Instantiate a new command:</u> ^ <b>SqlCommand cmd = new SqlCommand("select count(*) from ^ Categories", conn);</b> ^^ <u>// 2. Call ExecuteScalar to run the command, returning a value:</u> ^ <b>int count = (int)cmd.ExecuteScalar();</b> ^^ <b>-ExecuteScalar()</b> will return a single value, in this example ^ we cast that value into an integer called "<b>count</b>"', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-11',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'SqlDataReader Object ^^ -The <b>SqlCommand</b> object''s <b>ExecuteReader()</b> method returns ^ an object of type <b>SqlDataReader</b> ^^ -This object contains data returned from our SQL query', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '4-3-12',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'SqlDataReader Object ^^ -In the following example, we are writing the data out to the ^ console window, but you could just as easily write the data ^ out to a label or some other sort of Windows control ^^ <b>while (rdr.Read()) ^ { ^ string contact = (string)rdr["ContactName"]; ^ string company = (string)rdr["CompanyName"]; ^ string city = rdr["City"].ToString();</b> <u>// Alternative way</u> ^^ <b>Console.WriteLine(contact + ", " + city + ", " + company); ^ }</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-13',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'SqlDataAdapter and DataSet ^^ -The <b>DataReader</b> object is great, but it is ''<u>forward-only</u>'' and ^ ''<u>read only</u>'' ^^ -If we want to have a bit more flexibility with our data, we will ^ need to use a <b>DataSet</b> ^^ <b>-DataSet</b> works in a "<u>disconnected</u>" manner, which means ^ that once it is populated with data we can disconnect from ^ our database and still have access to the data through the ^ <b>DataSet</b> ^^ -The <b>DataAdapter</b> is an object whose sole purpose to help ^ us create <b>DataSets</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-14',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'SqlDataAdapter and DataSet ^^ -To use the <b>DataAdapter</b> to populate a <b>DataSet</b> with a table from ^ our database: ^^ <b>SqlConnection conn = new SqlConnection(@"Data ^ Source=localhost;Initial Catalog=DATABASE_HERE;Integrated ^ Security=SSPI"); ^^ <b>string sql = "select * from tbCustomers"; ^ SqlDataAdapter daCustomers = new SqlDataAdapter(sql, conn); ^ DataSet dsCustomers = new DataSet(); ^ conn.Open(); ^ daCustomers.Fill(dsCustomers);</b> <u>// this populates the dataset ^ <b>conn.Close();</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-15',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'SqlDataAdapter and DataSet ^^ -The <b>Fill()</b> method on the <b>SqlDataAdapter</b> fills a <b>DataSet</b> with ^ all the information from the sql command ^^ -But what is a <b>DataSet</b>? ^^ -A <b>DataSet</b> is a collection of <b>DataTable</b> (Tables) ^^ -A <b>DataTable</b> is a collection of <b>DataRow</b> (Rows) ^^ -A <b>DataRow</b> is an array of <b>object</b> (column values) ^^ -Knowing this helps us get data from our populated <b>DataSet</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-16',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'SqlDataAdapter and DataSet ^^ -Example: (pretend we have a SELECT * in the data ^ adapter) ^ <b>DataSet ds = new DataSet(); ^ dataAdapter.Fill(ds); //We populate the ds ^ DataTableCollection tables = ds.Tables; ^ DataTable table = tables[0]; ^ DataRowCollection rows = table.Rows; ^ DataRow row = rows[0]; ^ object columnValue = row[0]; ^ string value = columnValue.ToString();</b> ^^ -That is a lot of code just to grab a value from a DataSet, if ^ only there was a shortcut.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-17',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'SqlDataAdapter and DataSet ^^ -Ok, here is the shortcut: ^ <b>DataSet ds = new DataSet(); ^ string value = ds.Tables[0].Rows[0][0].ToString();</b> ^^ -The important thing to note here, is that we can access any ^ row and any column by changing the values in the square ^ brackets ^^ -Example: Access the 3rd row, get the value in the column ^ labelled "FirstName" ^ <b>string firstName = ^ ds.Tables[0].Rows[2]["FirstName"].ToString();</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-18',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'SqlDataAdapter and DataSet ^^ -You should be aware of some of the other common ^ properties used in a <b>DataSet</b> besides accessing the ^ column value information ^^ -Number of rows in a table: ^ <b>int rowCount = ds.Tables[0].Rows.Count;</b> ^^ -Number of columns in a row: ^ <b>int columnCount = ds.Tables[0].Columns.Count;</b> ', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-19',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'SqlDataAdapter and DataSet ^^ -Once you have a populated DataSet, you can loop through it ^ and get out any information you need (here we populate a ^ ListBox): ^ <b>if(ds.Tables[0].Count > 0) ^ { ^ for (int i = 0; i < ds.Tables[0].Rows.Count; i++) ^ { ^ DataRow row = ds.Tables[0].Rows[i]; ^ ListItem item = new ListItem(); ^ item.Text = row["Name"].ToString(); ^ item.Value = row["ClientID"].ToString(); ^ cboClients.Items.Add(item); ^ } ^ }</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-20',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'SqlDataAdapter and DataSet ^^ -Once you have a populated DataSet, you can bind it to a ^ control without needing to loop using the following code: ^ (Where cboClients is a ListBox control on an aspx page and ^ "Name"/"ClientID" are the names of columns in a resulting ^ table) ^^ <b>cboClients.DataSource = ds.Tables[0]; ^ cboClients.DataTextField = "Name"; ^ cboClients.DataValueField = "ClientID"; ^ cboClients.DataBind();</b> ^^ -DataBind() causes the Control to populate itself using the ^ columns specified above from the table above.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-3-21',   -- varchar(50)
+                  @lessonid = '4-3',  -- varchar(50)
+                  @slideinfo = 'Gridview ^^ -Another control to check out is the GridView, it will show a table on ^ the website based on the data you assign to it, you do not need to ^ specify a text/value as it will show all columns: ^^ <b>gvClients.DataSource = ds.Tables[0]; ^ gvClients.DataBind();</b> ^^ -Try it out for yourself! ^ -Note: we will learn to manipulate GridViews later in the course, but ^ for now you can display a table easily with it ^^ (It is found under "Data" instead of "Standard" in your ToolBox)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-1',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Master Pages, State Management, and DataGrids', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-2',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Master Pages ^^ -<u>Master Pages</u> allow you to create a consisten layout for the ^ pages in your application ^^ -A single master page defines the look, feel, and standard ^ behavior that you want for all of the pages in your app ^^ -When users request content pages, they merge with the ^ master page to produce output that combines the layout of ^ the master page with the content from the content page', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-3',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Master Pages ^^ -Start by adding a master page to your website, this will be ^ the "frame" around your web pages ^^ -The content of the pages in your site will appear within the ^ <b>< ContentPlaceHolder > </b> tags ^^ -To create a master page: ^ ^ *Right click on your project solution ^ *Click "<b>Add new item</b>" ^ *Click "<b>Master Page</b>"', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-4',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Content {ages ^^ -Now that we have a master page, we need to have specific ^ content pages (<u>Web Content Forms</u>) ^^ -To create a new content page: ^ *Right click on your project solution ^ *Click "<b>add new item</b>" => "<b>Web Form using Master Page</b>" ^ *You ill have to specify which master page to use for this ^ content page', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-5',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Content Pages ^^ -To access the master page from the content page the ^ <b>MasterType</b> directive is automatically added to the top of the ^ Web Form: ^ <b>MasterPageFile="~/Site1.Master"</b> ^^ -Your code can access the master page through the ^ "<b>Master</b>" object: ^^ //Modify the LinkButton from the Master Page to be bold text ^ <b>LinkButton 1 = (LinkButton)Master.FindControl("LinkButton3"); ^ l1.Style.Add("font-weight", "bold");</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-6',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'State Management ^^ -There are several ways that we can maintain state ^ throughout a web application: ^^ 1. <b>ViewState</b> Object (Review: Module 6 Lesson 1 & 2) ^ *Values passed in the text of the page ^ 2. <b>Session</b> Object ^ *Values are stored in the server''s memory  ^ 3. Cookies ^ *Values are stored in the client''s memory (temporary) or ^ disk (permanent)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-7',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Session Object ^^ -<u>Session objects</u> hold user-specific information and are ^ available in all pages of an application ^^ -Common values stored in <b>Session</b> are: name, id, and ^ preferences ^^ -The server creates a new <b>Session</b> object for each new user, ^ and destroys the Session object when the session expires', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-8',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Session Object ^^ -Example Session usage in C#: ^^ //Store the value "Joe Smith" in the session object, under the ^ "UserName" label ^ <b>Session["UserName"] = "JoeSmith";</b> ^^ //Retrieve the value from the Session object using the "UserName" label ^ //Note: You have to cast the name value into a string ^^ <b>String sUserName = (<u>string</u>)Session["UserName"];</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '4-4-9',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Session Object ^^ -A session starts when: ^^ -A new user requests an ASP file ^^ -A value is stored in a Session variable ^^ -A <b>SessionID</b> is generated and stored at the time of session ^ creation', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-10',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Session Object ^^ -A session ends if a user has not requested or refreshed a ^ poage in the application for a specific period ^^ -By default, this default time is 20 minutes ^^ -You can use this knowledge for storing values that you want ^ to expire ^^ *Example: a boolean <b>IsLoggedIn</b> flag ^^ -Note: Use the property <b>Timeoutproperty</b> to customize', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-11',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Session Object ^^ -A session also ends if you type: ^ <b>Session.Abandon();</b> ^^ -Use the above line of code to reset all values in a Session ^^ -This would be very useful to put in a "Log Out" click event! ^^ -NOTE: You might also want to remove the cookie associated with ^ the Session with this line of code: ^^ <b>Response.Cookies["ASP.NET_SessionId"].Expires = ^ DateTime.Now.AddDays(-1);</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-12',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Sessions and Storage ^^ -Storing values on the server is fast, but should not be used ^ carelessly ^^ -Example: If your app ends up with 1000 active sessions, with each of these sessions using up 50K of memory, You ^ will quickly run out of memory on your server ^^ -Tip: avoid using <b>Session</b> for large values ^^ -Alternatively, <b>Session</b> values can be stored in SQL ^ Server', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-13',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'SessionID ^^ <b>-SessionID</b> is the link between a particular user and their ^ request/responses ^^ -The <b>SessionID</b> value is stored locally in your browser like a ^ cookie ^^ -You must have cookies enabled to use the <b>Session</b> Object ^ to store values', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-14',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Cookies ^^ <b>-Cookies</b> are values that are stored locally on the user''s computer ^ (usually the browser) ^^ -By default, cookies are stored in memory ^^ -If you set the "Expires" property then the cookie can be written to ^ the hard disk ^^ -More than one cookie can be stored by a client per website ^^ -Note: All cookies are sent from the client with each request (a lot of ^ overhead)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-15',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Cookies ^^ //Write the cookie ^ <b>HttpCookie aCookie = new HttpCookie("LastVisited"); ^ aCookie.Value = DateTime.Now.ToString(); ^ aCookie.Expires = DateTime.Now.AddDays(1); ^ Response.Cookies.Add(aCookie);</b> ^^ //Read the cookie ^ <b>HttpCookie myCookie = Request.Cookies["LastVisited"];</b> ^ //Now that you have the cookie, check if it is there! ^ <b>if(myCookie != null) ^ { ^ txtLastVisited.Text = myCookie.Value; ^ }</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-16',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'SqlDataAdapter Review ^^ -Example of using the <b>SQLDataAdapter</b> in C# to run any type of SQL statement: ^ <b>String connString = @"Data Source=localhost;Inital ^ Catalog=DbName;Integrated Security=SSPI"; ^ DataSet ds = new DataSet(); ^ SqlConnection conn = new SqlConnection(connString); ^ conn.Open();</b> ^ //sqlCmd is a String variable holding the SQL statement ^ <b>SqlDataAdapter da = new SqlDataAdapter(sqlCmd, conn);</b> ^ //Fill() causes the SQL statement to execute ^ //The DataSet object will now hold the resulting table (if any) ^ <b>da.Fill(ds); ^ conn.Close();</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-17',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'SqlDataAdapter Review ^^ -We have been using Stored Procedures inside of the ^ Constructor of the SqlDataAdapter with parameters, here is ^ an alternative (cleaner) method: ^ <b>SqlDataAdapter da = new SqlDataAdapter(); ^^ <u>da.SelectCommand = new SqlCommand("spGetClients", conn); ^ da.SelectCommand.CommandType = ^ CommandType.StoredProcedure; ^ da.SelectCommand.Parameters.Add(new SqlParameter("@ClientId", ^ clientId));</u> ^^ conn.Open(); ^ da.Fill(ds); ^ conn.Close();</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-18',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'SqlDataAdapter Review ^^ -SQL for spGetClients: ^ <b>GO ^ CREATE PROCEDURE spGetClients ^ ( ^ @ClientId INT = NULL ^ ) ^ AS ^ BEGIN ^ SELECT * FROM tbClient ^ WHERE ClientID = ISNULL(@ClientId, ClientID) ^ END ^ GO</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-19',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'SqlDataAdapter Review ^^ -The interesting part of this new way is the use of the class ^ called: SqlParameter ^^ -The class is designed to define parameters used in SQL ^^ -You simply specify the name of the variable and then the ^ value that you want that variable to hold when you execute ^ your SQL', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '4-4-20',   -- varchar(50)
+                  @lessonid = '4-4',  -- varchar(50)
+                  @slideinfo = 'Proper Commenting ^^ -Now that we have a basic understanding of coding and ^ SQL, we need to know how to make proper documentations ^ for our projects ^ -Here are some general guidelines for commenting: ^ *At the top of every file (summary, author, date created) ^ *In front of *<b>every</b>* function/method, stored procedure ^ *Right before code which may not be clear to others ^ *Explaining known defects or short falls that have not been ^ resolved yet ^ *Providing suggestions as to how to make a section of ^ code better, if you had more time to spend on it', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-1',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript & DOM', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
 
 
 

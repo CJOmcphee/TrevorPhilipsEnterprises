@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace GroupProject.user
+namespace GroupProject
 {
-    public partial class index1 : System.Web.UI.Page
+    public partial class LOTRExtraPage : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Security mySecurity = new Security();
+
         }
     }
 }

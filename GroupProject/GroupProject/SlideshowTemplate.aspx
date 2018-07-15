@@ -18,8 +18,8 @@
         height: 150px;
         width: 700px;
         text-align:center;
-        font-size:4vw;
-        font-size:4vh;
+        font-size:1.5em;
+        
     }
     
 

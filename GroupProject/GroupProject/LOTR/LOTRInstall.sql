@@ -43,7 +43,7 @@ AS BEGIN
 		END
 	IF @crud='r'
 		BEGIN
-			SELECT productID, productName, productType, productPrice, '\LOTRPICTURES\'+ path as path FROM tbProducts where productID=isnull(@productID,productID)
+			SELECT productID, productName, productType, productPrice, '.\LOTRPICTURES\'+ path as path FROM tbProducts where productID=isnull(@productID,productID)
 		END
 	IF @crud='u'
 		BEGIN
@@ -59,6 +59,10 @@ AS BEGIN
 			DELETE FROM tbProducts WHERE productID=@productID
 		END
 END
+GO
+EXEC spProducts @crud='c',@productName='Glamdring',@productType='Sword',@productPrice=945.35,@path='Glamdring.jpg'
+EXEC spProducts @crud='c',@productName='Uruk Hai Armour',@productType='Armour',@productPrice=2375.99,@path='UrukaiArmour.jpg'
+EXEC spProducts @crud='r'
 GO
 CREATE PROCEDURE spClients(
 @clientID int =null,
@@ -84,7 +88,8 @@ AS BEGIN
 		END
 	IF @crud='r'
 		BEGIN
-			SELECT * FROM tbClients WHERE clientID=isnull(@clientID, clientID)
+			SELECT clientID, firstName, lastName, userID, userPassword FROM tbClients C inner join
+			tbLogin L on C.userID = L.uID where clientID=isnull( @clientID,clientID)
 		END
 	IF @crud='u'
 		BEGIN
@@ -127,5 +132,13 @@ AS BEGIN
 	END
 END
 GO
+create procedure spAddCart(
+@prodID int =null
+)
+as begin
+	select productID,productName, productType,productPrice from tbProducts where productID =@prodID
+end
+GO
 select * from tbLogin
 EXEC spLogin @userID='Blondie', @userPassword='donttelltheelf'
+EXEC spClients @crud='r', @clientID='2'
