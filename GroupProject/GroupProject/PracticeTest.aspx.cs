@@ -53,8 +53,8 @@ namespace GroupProject
                 HtmlTableCell tCell = new HtmlTableCell();
                 HtmlTableCell tCell1 = new HtmlTableCell();
                 HtmlTableCell tCell2 = new HtmlTableCell();
-                DataSet dsQuestion = Crud.ReadTable("spQuestions", Row[0].ToString());
-                DataSet dsAnswers = Crud.ReadTable("spWrongAnswer", Row[0].ToString());
+                DataSet dsQuestion = Crud.ReadTable("spQuestions", Row["question"].ToString());
+                DataSet dsAnswers = Crud.ReadTable("spWrongAnswer", Row["question"].ToString());
 
                 Label number = new Label();
                 number.Text = count.ToString() +") ";
