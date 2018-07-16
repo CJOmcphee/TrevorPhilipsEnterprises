@@ -91,7 +91,45 @@
                            <asp:BoundField HeaderText="Slide" DataField="slideInfo" />
                        </Columns>
                    </asp:GridView>
-                   
+                   <asp:Panel ID="pnlSlideEditor" CssClass="slide-Panel" Visible="false" runat="server">
+                       <div class="slide-Preview">
+
+                       </div>
+                       <div class="slide-Editor" id="dvEditor">
+                           <table>
+                               <tr>
+                                   <td>
+                                       <asp:TextBox ID="tbTitle" CssClass="slide-TextBox" runat="server"></asp:TextBox>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>
+                                       <asp:TextBox ID="TextBox2" CssClass="slide-TextBox" runat="server"></asp:TextBox>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>
+                                       <asp:TextBox ID="TextBox3" CssClass="slide-TextBox" runat="server"></asp:TextBox>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>
+                                       <asp:TextBox ID="TextBox4" CssClass="slide-TextBox" runat="server"></asp:TextBox>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>
+                                       <asp:TextBox ID="TextBox5" CssClass="slide-TextBox" runat="server"></asp:TextBox>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>
+                                       <asp:Label ID="lblSlideID" runat="server" Text=""></asp:Label>
+                                   </td>
+                               </tr>
+                           </table>
+                       </div>
+                   </asp:Panel>
                </asp:Panel>
                <asp:Panel ID="pnlExamples" runat="server">
                <asp:Button ID="btnExampleBack" runat="server" Text="Back" OnClick="btnGoToLessons_Click" />

@@ -1334,30 +1334,32 @@
 /*********************Slide Editor*************************/
 /**********************************************************/
 .slide-Panel {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    position: fixed;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    height: 500px;
+    width: 1250px;
+    
+
 }
 
 .slide-Panel div{
     width:50%;
-    height:50%;
+    height:100%;
 }
 
-.slide-Editor{
-    background-color:red;
-    left:50%;
-    top:100%;
-    position:fixed;
+.slide-Editor {
+    background-color: gray;
+    height: 500px;
+    width: 512.5px;
+    float:right;
+}
+
+.slide-TextBox {
+    width: 510px;
 }
 
 .slide-Preview {
-    background-color: brown;
-    left: 0%;
-    top: 100%;
-    position: fixed;
+    background-color: red;
+    height:500px;
+    width:512.5px;
+    float:left;
 }
 

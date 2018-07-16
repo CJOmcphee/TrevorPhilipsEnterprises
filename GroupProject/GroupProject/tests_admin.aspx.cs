@@ -304,7 +304,9 @@ namespace GroupProject.admin
             switch(e.CommandName)
             {
                 case "Edi":
-                    
+                    pnlSlideEditor.Visible = true;
+                    tbTitle.Text = "New Title";
+                    lblSlideID.Text = gvSlides.SelectedDataKey["slideID"].ToString();
                     break;
                 case "Del":
 
