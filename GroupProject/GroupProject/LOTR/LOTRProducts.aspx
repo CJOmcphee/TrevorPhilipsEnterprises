@@ -2,7 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:GridView ID="gvCart" runat="server" OnRowDataBound="gvCart_RowDataBound" ShowFooter="True"></asp:GridView>
+    <asp:GridView ID="gvCart" runat="server" OnRowDataBound="gvCart_RowDataBound"  ShowFooter="True" OnRowCommand="gvCart_RowCommand" DataKeyNames="id" >
+        <Columns>
+            <asp:ButtonField ButtonType="Button" CommandName="Remove Product" HeaderText="Remove" Text="Remove" />
+        </Columns>
+    </asp:GridView>
      <asp:DataList ID="dlProducts" DataKeyField="productID"    RepeatColumns="3" runat="server" OnItemCommand="dlProducts_ItemCommand" >
         <ItemTemplate>
             <div class="DataList">
@@ -16,7 +20,7 @@
                     <br />
                     <a><%#Eval("productPrice")%></a>
                     <br />
-                    <asp:Button ID="btnBuy" runat="server" Text="Buy"
+                    <asp:Button ID="btnBuy" CssClass="clickbutton" runat="server" Text="Buy"
                          CommandArgument=<%#Eval("productID")%>/>
             </div>
         </ItemTemplate>
