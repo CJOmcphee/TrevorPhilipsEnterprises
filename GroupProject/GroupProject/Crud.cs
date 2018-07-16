@@ -51,7 +51,7 @@ namespace GroupProject
             }
             if(Procedure == "spLessons")
             {
-                mydal.AddParam("@lID", id.ToString());
+                mydal.AddParam("@moduleID", id.ToString());
             }
             if (Procedure == "spTest")
             {
