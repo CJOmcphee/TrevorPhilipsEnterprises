@@ -35,7 +35,7 @@ You will learn how to create WebForm Applications, Form Controls, Events and Eve
 Understand basics client/server interactions, basic HTML elements and basics of state management.^
 Get more deep understanding of Data Types, using operators, loops and modules.^'),
 							
-							('Module 3','<h2>Databases</h2>^
+							('Module 3','Databases
 This module is an introduction to idea of databases.^
 Here will talk about generic concepts data storage, concepts of tables and columns^
 and how data is related to one another between tables.^
@@ -70,6 +70,8 @@ mID int foreign key references tbModule(moduleID)
 						('8-1',8),('8-2',8),('8-3',8),('8-4',8),('8-5',8),
 						('9-1',9),('9-2',9),('9-3',9),('9-4',9),('9-5',9),
 						('10-1',10),('10-2',10)
+
+						--('12-1',12),('12-2',12),('12-3',12),('12-4',12)
 
 create table tbSlides(
 slideID varchar(50),
@@ -204,6 +206,7 @@ go
 exec spLogin @studentEmail='bruce.banner@robertsoncollege.net',@studentPassword='password'
 go
 create procedure spExamples(
+@exampleID int = null,
 @example varchar(1000) =null,
 @solutions varchar(1000) =null,
 @lID varchar(50) =null,
@@ -221,8 +224,11 @@ as begin
 		end
 	if @crud='r'
 		begin
-			select * from tbExample WHERE lID = ISNULL(@lID,lID)
-			
+			if @lID != null
+				begin
+					select * from tbExample WHERE lID = ISNULL(@lID,lID)
+				end
+					select * from tbExample where exampleID = isnull(@exampleID, exampleID)
 		end
 	if @crud='u'
 		begin
@@ -234,11 +240,11 @@ as begin
 					explanation = @explanation,
 					slide = @slide,
 					showSolution = @showSolution
-					where  example=@example
+					where  exampleID=@exampleID
 			end
 	if @crud='d'
 		begin
-			delete from tbExample where lID=@lID
+			delete from tbExample where exampleID = @exampleID
 		end
 end
 go
@@ -365,7 +371,17 @@ as begin
 		end
 	if @crud='r' 
 		begin
-			select * from tbSlides where lessonid =@lessonid order by Len(slideID), slideID asc
+			if @lessonid != ''
+			begin
+				select * from tbSlides where lessonid =@lessonid order by Len(slideID), slideID asc
+			end
+			else begin
+				select * from tbSlides where slideID = @slideID
+			end
+		end
+	if @crud ='d'
+		begin
+			delete from tbSlides where slideID = @slideID
 		end
 end
 go
@@ -418,6 +434,7 @@ AS BEGIN
 		end
 	if @crud = 'd'
 		begin
+			delete from tbSlides where lessonid = @lessonID
 			delete from tbExample where lID = @lessonID
 			delete from tbSlides where lessonid = @lessonID
 			delete from tbLesson where lessonID = @lessonID
@@ -455,3 +472,5 @@ AS BEGIN
 		END
 END
 GO
+Exec spSlides @crud ='r', @lessonid ='3-1'
+select * from tbSlides

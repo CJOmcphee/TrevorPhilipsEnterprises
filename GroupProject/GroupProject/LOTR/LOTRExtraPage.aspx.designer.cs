@@ -10,24 +10,15 @@
 namespace GroupProject {
     
     
-    public partial class LOTRProducts {
+    public partial class LOTRExtraPage {
         
         /// <summary>
-        /// gvCart control.
+        /// Xml2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvCart;
-        
-        /// <summary>
-        /// dlProducts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dlProducts;
+        protected global::System.Web.UI.WebControls.Xml Xml2;
     }
 }

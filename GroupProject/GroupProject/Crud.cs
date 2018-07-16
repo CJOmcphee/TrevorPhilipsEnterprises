@@ -35,7 +35,7 @@ namespace GroupProject
             }
             if (Procedure == "spExamples")
             {
-                mydal.AddParam("@lID", id.ToString());
+                mydal.AddParam("@exampleID", id.ToString());
             }
             if (Procedure == "spQuestions")
             {
@@ -47,11 +47,11 @@ namespace GroupProject
             }
             if(Procedure == "spSlides")
             {
-                mydal.AddParam("@lessonid", id.ToString());
+                mydal.AddParam("@slideID", id.ToString());
             }
             if(Procedure == "spLessons")
             {
-                mydal.AddParam("@moduleID", id.ToString());
+                mydal.AddParam("@lID", id.ToString());
             }
             if (Procedure == "spTest")
             {
@@ -86,6 +86,10 @@ namespace GroupProject
             if(Procedure == "spModule")
             {
                 mydal.AddParam("@moduleID",id.ToString());
+            }
+            if (Procedure == "spLessons")
+            {
+                mydal.AddParam("@lessonID", id.ToString());
             }
             mydal.ExecuteProcedure(Procedure);
         }
@@ -181,6 +185,24 @@ namespace GroupProject
         {
             mydal.AddParam("@testID", test);
             return mydal.ExecuteProcedure("spGetTestQuestions");
+        }
+        public static DataSet GetLessons(string moduleID)
+        {
+            mydal.AddParam("@moduleID", moduleID);
+            mydal.AddParam("@crud", "r");
+            return mydal.ExecuteProcedure("spLessons");
+        }
+        public static DataSet GetExamples(string LessonID)
+        {
+            mydal.AddParam("@lID", LessonID);
+            mydal.AddParam("@crud", "r");
+            return mydal.ExecuteProcedure("spExamples");
+        }
+        public static DataSet GetSlides(string LessonID)
+        {
+            mydal.AddParam("@lessonid", LessonID);
+            mydal.AddParam("@crud", "r");
+            return mydal.ExecuteProcedure("spSlides");
         }
     }
 }

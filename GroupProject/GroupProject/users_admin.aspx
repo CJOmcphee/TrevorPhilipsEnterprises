@@ -38,8 +38,8 @@
                     <asp:TextBox ID="tbPassword" CssClass="box" runat="server"></asp:TextBox>
                    
                     
-                    <asp:Button ID="btnSave" CssClass="save-button" runat="server" Text="Save" OnClick="btnSave_Click" />
-                    <asp:Button ID="btnCancel" CssClass="login-button" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
+                    <asp:Button ID="btnSave"  runat="server" CssClass="upd-button" Text="Save" OnClick="btnSave_Click" />
+                    <asp:Button ID="btnCancel"  runat="server" CssClass="button" Text="Cancel" OnClick="btnCancel_Click" />
                     <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label>
                    
                 </div>

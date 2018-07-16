@@ -11,7 +11,7 @@ namespace GroupProject.admin
 {
     public partial class tests_admin : System.Web.UI.Page
     {
-        public string Module, Test, Question, QID;
+        public string Module, Test, Question,Lesson;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Test"] != null)
@@ -25,6 +25,10 @@ namespace GroupProject.admin
             if (Session["Module"] != null)
             {
                 Module = (string)Session["Module"];
+            }
+            if (Session["Lesson"] != null)
+            {
+                Lesson = (string)Session["Lesson"];
             }
 
             if (!IsPostBack)
@@ -64,6 +68,27 @@ namespace GroupProject.admin
             Crud.CreateUpdateQuestions("u", tbQuestionDetail.Text, tbAnswerDetail.Text, "", ds.Tables[0].Rows[0]["question"].ToString());
             LoadWrongAnswer(Crud.ReadTable("spWrongAnswer", Question));
         }
+        public void LoadSlides(DataSet ds)
+        {
+            gvSlides.DataSource = ds;
+            gvSlides.DataBind();
+            pnlSlides.Visible = true;
+            pnllessons.Visible = false;
+        }
+        public void LoadExamples(DataSet ds)
+        {
+            gvExamples.DataSource = ds;
+            gvExamples.DataBind();
+            pnllessons.Visible = false;
+            pnlExamples.Visible = true;
+        }
+        public void LoadLessons(DataSet ds)
+        {
+            gvLessons.DataSource = ds;
+            gvLessons.DataBind();
+            pnllessons.Visible = true;
+            pnlnav.Visible = false;
+        }
         public void LoadTest(DataSet ds)
         {
             gvTests.DataSource = ds;
@@ -74,6 +99,9 @@ namespace GroupProject.admin
             pnlNewWrongAnswer.Visible = false;
             pnlQuestion.Visible = false;
             pnlTestsList.Visible = true;
+            pnllessons.Visible = false;
+            pnlExamples.Visible = false;
+            pnlSlides.Visible = false;
         }
         public void LoadQuestion(DataSet ds)
         {
@@ -129,9 +157,16 @@ namespace GroupProject.admin
                     {
                         Crud.DeleteData("spQuestions", row["question"].ToString());
                     }
+
+                    DataSet dsLessons = Crud.GetLessons(Module);
+                    foreach (DataRow row in dsLessons.Tables[0].Rows)
+                    {
+                        Crud.DeleteData("spLessons", row["lessonID"].ToString());
+                    }
+                        
                     Crud.DeleteData("spTest", Test);
                     Crud.DeleteData("spModule", Module);
-                    LoadTest(Crud.ReadTable(Test));
+                    LoadTest(Crud.ReadTable("spModule"));
                     break;
             }
         }
@@ -198,7 +233,7 @@ namespace GroupProject.admin
 
         protected void btnGoToLessons_Click(object sender, EventArgs e)
         {
-
+            LoadLessons(Crud.GetLessons(Module));
         }
 
         protected void btnrestart_Click(object sender, EventArgs e)
@@ -206,10 +241,81 @@ namespace GroupProject.admin
             LoadTest(Crud.ReadTable("spModule"));
         }
 
+        protected void gvLessons_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvLessons.PageIndex = e.NewPageIndex;
+            LoadLessons(Crud.GetLessons(Module));
+        }
+
+        protected void gvExamples_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvExamples.PageIndex = e.NewPageIndex;
+
+        }
+
+        protected void gvSlides_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvSlides.PageIndex = e.NewPageIndex;
+            LoadSlides(Crud.GetSlides(Lesson));
+        }
+
+        protected void gvLessons_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            gvLessons.SelectedIndex = Convert.ToInt32(e.CommandArgument);
+            if (e.CommandName == "Page")
+            {
+                return;
+            }
+            Session["Lesson"] = gvLessons.SelectedDataKey["lessonID"].ToString();
+            Lesson = (string)Session["Lesson"];
+            switch (e.CommandName)
+            {
+                case "Del":
+                    Crud.DeleteData("spLessons", gvLessons.SelectedDataKey["lessonID"].ToString());
+                    LoadLessons(Crud.GetLessons(Module));
+                    break;
+                case "EditSlides":
+                    LoadSlides(Crud.GetSlides(gvLessons.SelectedDataKey["lessonID"].ToString()));
+                    break;
+                case "EditExamples":
+                    LoadExamples(Crud.GetExamples(gvLessons.SelectedDataKey["lessonID"].ToString()));
+                    break;
+
+            }
+        }
+
+        protected void gvExamples_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Page")
+            {
+                return;
+            }
+
+        }
+
+        protected void gvSlides_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Page")
+            {
+                return;
+            }
+            gvSlides.SelectedIndex = Convert.ToInt32(e.CommandArgument);
+            switch(e.CommandName)
+            {
+                case "Edi":
+
+                    break;
+                case "Del":
+
+                    break;
+            }
+        }
+
         protected void btnToTest_Click(object sender, EventArgs e)
         {
             pnlnav.Visible = true;
             pnlQuestion.Visible = false;
+            pnllessons.Visible = false;
         }
 
         protected void btnNewQuestion_Click(object sender, EventArgs e)

@@ -71,6 +71,41 @@
                 <asp:Button ID="btnAddWrongAnswer" runat="server" CssClass="upd-button" Text="Add Wrong Answer" OnClick="btnAddWrongAnswer_Click" />
             </asp:Panel>
             </asp:Panel>
+               <asp:Panel ID="pnllessons" runat="server">
+                   <asp:Button ID="btnBackToNav" CssClass="button" runat="server" Text="Back" OnClick="btnToTest_Click" />
+                   <asp:GridView ID="gvLessons" AutoGenerateColumns="False" DataKeyNames="lessonID" runat="server" AllowPaging="true" PageSize="5" OnPageIndexChanging="gvLessons_PageIndexChanging" OnRowCommand="gvLessons_RowCommand">
+                       <Columns>
+                           <asp:ButtonField HeaderText="Delete" ControlStyle-CssClass="button" ButtonType="Button" CommandName="Del" Text="Delete" />
+                           <asp:ButtonField HeaderText="Edit Slides" ControlStyle-CssClass="upd-button" ButtonType="Button" CommandName="EditSlides" Text="Edit Slides" />
+                           <asp:ButtonField HeaderText="Edit Examples" ControlStyle-CssClass="upd-button" ButtonType="Button" CommandName="EditExamples" Text="Edit Examples" />
+                           <asp:BoundField HeaderText="Lesson" DataField="lessonID" />
+                       </Columns>
+                   </asp:GridView>
+               </asp:Panel>
+               <asp:Panel ID="pnlSlides" runat="server">
+                   <asp:Button ID="btnSlideBack" runat="server" Text="Back" OnClick="btnGoToLessons_Click"/>
+                  <asp:GridView ID="gvSlides" AutoGenerateColumns="False" DataKeyNames="slideID" runat="server" AllowPaging="true" PageSize="5" OnPageIndexChanging="gvSlides_PageIndexChanging" OnRowCommand="gvSlides_RowCommand">
+                       <Columns>
+                           <asp:ButtonField HeaderText="Delete" ControlStyle-CssClass="button" ButtonType="Button" CommandName="Del" Text="Delete" />
+                           <asp:ButtonField HeaderText="Edit" ControlStyle-CssClass="upd-button" ButtonType="Button" CommandName="Edi" Text="Edit" />
+                           <asp:BoundField HeaderText="Slide" DataField="slideInfo" />
+                       </Columns>
+                   </asp:GridView>
+               </asp:Panel>
+               <asp:Panel ID="pnlExamples" runat="server">
+               <asp:Button ID="btnExampleBack" runat="server" Text="Back" OnClick="btnGoToLessons_Click" />
+                <asp:GridView ID="gvExamples" AutoGenerateColumns="False" DataKeyNames="exampleID" runat="server" AllowPaging="true" PageSize="5" OnPageIndexChanging="gvExamples_PageIndexChanging" OnRowCommand="gvExamples_RowCommand">
+                       <Columns>
+                           <asp:ButtonField HeaderText="Delete" ControlStyle-CssClass="button" ButtonType="Button" CommandName="Del" Text="Delete" />
+                           <asp:ButtonField HeaderText="Edit" ControlStyle-CssClass="upd-button" ButtonType="Button" CommandName="Edi" Text="Edit" />
+                           <asp:BoundField HeaderText="Example" DataField="example" />
+                           <asp:BoundField HeaderText="Solution" DataField="solution" />
+                           <asp:BoundField HeaderText="Example" DataField="example" />
+                           <asp:BoundField HeaderText="Code" DataField="code" />
+                           <asp:BoundField HeaderText="Explanation" DataField="explanation" />
+                       </Columns>
+                   </asp:GridView>
+               </asp:Panel>
    </div>
            <asp:Panel ID="pnlnav" runat="server" Visible ="false">
                <asp:Panel ID="pnlModuleDetails" runat="server">
@@ -78,12 +113,16 @@
                 <asp:TextBox ID="tbModuleNameDetails" runat="server"></asp:TextBox>
                 Summary
                 <asp:TextBox ID="tbModuleSumDetails" runat="server"></asp:TextBox>
-                <asp:Button ID="btnChangeModule" runat="server" CssClass="button" Text="Change Module" OnClick="btnChangeModule_Click"/>
+                <asp:Button ID="btnChangeModule" runat="server" CssClass="upd-button" Text="Change Module" OnClick="btnChangeModule_Click"/>
                 </asp:Panel>
                <asp:Button ID="btnrestart" runat="server" Text="Back" CssClass="button" OnClick="btnrestart_Click" />
-               <asp:Button ID="btnGoToTest" runat="server" Text="Edit Test" CssClass="button" OnClick="btnGoToTest_Click" />
-               <asp:Button ID="btnGoToLessons" runat="server" Text="Edit Lessons" CssClass="button" OnClick="btnGoToLessons_Click" />
+               <asp:Button ID="btnGoToTest" runat="server" Text="Edit Test" CssClass="upd-button" OnClick="btnGoToTest_Click" />
+               <asp:Button ID="btnGoToLessons" runat="server" Text="Edit Lessons" CssClass="upd-button" OnClick="btnGoToLessons_Click" />
            </asp:Panel>
+           <asp:Panel ID="pnlNewSlide" runat="server">
+             Slide Info :  <asp:TextBox ID="tbSlideInfo" runat="server"></asp:TextBox>
+           </asp:Panel>
+
   </div>  
   </div>       
 </asp:Content>

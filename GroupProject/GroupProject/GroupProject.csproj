@@ -73,6 +73,9 @@
     <Content Include="images\logo-php.png" />
     <Content Include="images\sql.png" />
     <Content Include="index_admin.aspx" />
+    <Content Include="LOTR\LOTRExtraPage.aspx" />
+    <Content Include="LOTR\LOTRXSL.xslt" />
+    <Content Include="LOTR\LOTRXML.xml" />
     <Content Include="LOTR\LOTRInstall.sql" />
     <Content Include="LOTR\LOTRPICTURES\Glamdring.jpg" />
     <Content Include="LOTR\LOTRPICTURES\UrukaiArmour.jpg" />
@@ -236,6 +239,17 @@
     </Compile>
     <Compile Include="index_admin.aspx.designer.cs">
       <DependentUpon>index_admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LOTR\LOTRArmour.cs" />
+    <Compile Include="LOTR\LOTRSword.cs" />
+    <Compile Include="LOTR\LOTRProp.cs" />
+    <Compile Include="LOTR\LOTRProps.cs" />
+    <Compile Include="LOTR\LOTRExtraPage.aspx.cs">
+      <DependentUpon>LOTRExtraPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LOTR\LOTRExtraPage.aspx.designer.cs">
+      <DependentUpon>LOTRExtraPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="LOTR\LOTRSecurity.cs" />
     <Compile Include="LOTR\LOTRAdmin.aspx.cs">
