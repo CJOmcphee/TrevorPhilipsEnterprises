@@ -20,7 +20,7 @@ namespace GroupProject
         List<Object> Answer = new List<Object>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            loadExample("1-1");
+            loadExample(Request.QueryString["Lesson"]);
            
             HidePreviousBtn();
             if(!IsPostBack)

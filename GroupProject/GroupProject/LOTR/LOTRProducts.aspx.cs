@@ -84,12 +84,12 @@ namespace GroupProject
                     total = 0.0;
                     break;
                 case DataControlRowType.DataRow:
-                    double amount = Convert.ToDouble(e.Row.Cells[3].Text);
+                    double amount = Convert.ToDouble(e.Row.Cells[4].Text);
                     total += amount;
                     break;
                 case DataControlRowType.Footer:
-                    e.Row.Cells[3].Text = total.ToString();
-                    e.Row.Cells[2].Text = "<b>Total Bill<b>";
+                    e.Row.Cells[4].Text = total.ToString();
+                    e.Row.Cells[3].Text = "<b>Total Bill<b>";
                     total = final;
                     break;
 
@@ -97,12 +97,20 @@ namespace GroupProject
         }
         public void Sales()
         {
-            final = final * .10;        
+            total = total * .10;        
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             Sales();
+        }
+
+        protected void gvCart_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            gvCart.SelectedIndex = Convert.ToInt32(e.CommandArgument);
+            int ID = Convert.ToInt32(gvCart.SelectedDataKey["id"]);
+            props.RemoveProd(ID);
+            LoadCart();
         }
     }
 }

@@ -55,15 +55,17 @@ namespace GroupProject
             if ((int)Session["Navi"] == Slideshow.Count - 1)
             {
                 btnNext.Enabled = false;
+                btnGoToExample.Visible = true;
             }
             else
             {
                 btnNext.Enabled = true;
+                btnGoToExample.Visible = true;
             }
         }
         public void LoadSlides(string slide)
         {
-            DataSet dsSlides = Crud.ReadTable("spSlides", slide);
+            DataSet dsSlides = Crud.GetSlides(slide);
 
             foreach (DataRow Row in dsSlides.Tables[0].Rows)
             {
@@ -124,6 +126,11 @@ namespace GroupProject
             Slideshow[y].Visible = true;
             Session["Navi"] = y;
             CheckNav();
+        }
+
+        protected void btnGoToExample_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ExampleTemplate.aspx?Lesson="+Request.QueryString["slide"]);
         }
 
         protected void btnNext_Click(object sender, EventArgs e)

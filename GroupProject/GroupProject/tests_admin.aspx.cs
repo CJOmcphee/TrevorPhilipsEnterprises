@@ -87,6 +87,7 @@ namespace GroupProject.admin
             gvLessons.DataSource = ds;
             gvLessons.DataBind();
             pnllessons.Visible = true;
+            pnlSlides.Visible = false;
             pnlnav.Visible = false;
         }
         public void LoadTest(DataSet ds)
@@ -303,7 +304,7 @@ namespace GroupProject.admin
             switch(e.CommandName)
             {
                 case "Edi":
-
+                    
                     break;
                 case "Del":
 
