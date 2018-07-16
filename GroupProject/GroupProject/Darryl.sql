@@ -923,26 +923,227 @@ EXEC dbo.spSlides @slideID = '1-5-6',   -- varchar(50)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-5-7',   -- varchar(50)
-                  @lessonid = '1-3',  -- varchar(50)
-                  @slideinfo = '<h1>Modules/Functions</h1><h2>Modularization - Abstraction</h2><p>Fifty years ago, an understanding of low-level circuitry instructions was necessary</p>^^Now, newere high-level programming languages allow you to use English-like vocabulary in which one broad^statement corresponds to dozens of machine instructions^^Modules provide nother way to achieve abstraction', ---- varchar (2000)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Abstraction</h2><p>Fifty years ago, an understanding of low-level circuitry instructions was necessary</p>^^Now, newere high-level programming languages allow you to use English-like vocabulary in which one broad^statement corresponds to dozens of machine instructions^^Modules provide nother way to achieve abstraction', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-5-8',   -- varchar(50)
-                  @lessonid = '1-3',  -- varchar(50)
-                  @slideinfo = '<h1>Modules/Functions</h1><h2>Modularization - Abstraction</h2><p>When you dissect any large task into modules, you gain the^ability to divide the task among various people</p>^^Rarely does a single programmer write a commercial program that you buy off the shelf^^Modularization thus allows professional software^to write new programs in weeks or months, instead of years', ---- varchar (2000)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Abstraction</h2><p>When you dissect any large task into modules, you gain the^ability to divide the task among various people</p>^^Rarely does a single programmer write a commercial program that you buy off the shelf^^Modularization thus allows professional software^to write new programs in weeks or months, instead of years', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-5-9',   -- varchar(50)
-                  @lessonid = '1-3',  -- varchar(50)
-                  @slideinfo = '<h1>Modules/Functions</h1><h2>Modularization - Abstraction</h2><p>If a subroutine or function is useful and well-writen, you may</p>^want to use it more than once within a program or in other programs^^You can find many real-world examples of reusability where^systems with proven designs are incorporated, rather than^newly invented, by individuals beginning a certain task', ---- varchar (2000)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Abstraction</h2><p>If a subroutine or function is useful and well-writen, you may</p>^want to use it more than once within a program or in other programs^^You can find many real-world examples of reusability where^systems with proven designs are incorporated, rather than^newly invented, by individuals beginning a certain task', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-5-10',   -- varchar(50)
-                  @lessonid = '1-3',  -- varchar(50)
-                  @slideinfo = '<h1>Modules/Functions</h1><h2>Modularization - Abstraction</h2><p></p>', ---- varchar (2000)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Modularization</h2><p>When you create a module (subroutine, function or Method)</p>^you give it a name^^Module names follow the same rules used for variable names:^^-Cannot contain spaces^-Should have some meaning^-Cannot contain special characters^-Cannot start with a number', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-5-11',   -- varchar(50)
-                  @lessonid = '1-3',  -- varchar(50)
-                  @slideinfo = '<h1></h1><h2></h2><p></p>', ---- varchar (2000)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Modularization</h2><p>When a program uses a module, you can refer to the main</p>^program as the calling program^^Whenever a main program calls a module, the logic^transfers to the module^^When the module ends, the logical flow transfers back to the^main calling program and resumes where it left off', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-12',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Modules in C#</h2><p>Properties of a Method/Module/Function/Subroutine:</p>^^-Name^-Parameters^-Return Type^-Return Statement^-Scope', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-13',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Example C#</h2><p>static int MyFunction(int intParameter)</p>^{^  int intResult = intParameter + 1;^  return intResult;^}^ -Name: MyFunction^ -Parameters: int intParameter^- Return Type: int^ -Return Statement: return intResult^^The scope of the method is everythign inside the { }^^Note: The return type must be the same as the method type', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-14',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Modules in C#</h2><p>Another example of a method in C#:</p>^static void MySubroutine()^{^ Console.WriteLine("MySubroutine() ran!");^}^^ -Name: MySubroutine^ -Parameters: NONE^ -Return Type: void^ -Return Statement: NONE^^Note: When a methods return type is void, it does not contain a return statement', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-15',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Modules in C#</h2><p>When you create your own Module, you must place it inside</p>^the class starting and ending braces: { }^^Up until now, your code has all been placed between the^start and stop of your main() module^^static void main(string[] args)^{^  //Modules should *NOT* be defined here!^ //..Rather, they may be "called" from here^}', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-16',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Modules in C#</h2><p>Example Module placement:</p>^static void main(string[] args)^{^ PrintHello();^}^^static void PrintHello()^{^ Console.WriteLine("Hello World!"):^}', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-17',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Modules Calling Other Modules</h2><p>Determining when to break down a particular module into its own</p>^subroutine is an art^^Companies may have arbitrary rules, such as:^^"A subroutine should never take more than a page."^^"A module should never have more than 30 statements in it."^^"Never have a method with only one statement in it"', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-18',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Modules Calling Other Modules</h2><p>A better policy is to place together statemetns that</p>^contribute to one specific task^^The more the statements contribute to the same job, the^greater the "functional cohesion" of the module^^The goal is to have a module with the highest functional cohesion!', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-19',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Variable Scope</h2><p>Global Variables:</p>^^Variables that can be used in all modules of the program^These variables must be declared outside(usually above)^your main() module^^Local Variables^^Variables which are used in the current module only', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-20',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Variable Scope</h2><p>class Program</p>^{^ static string class variable = "1";^ static void Main(string[] args)^ {^  string methodVaraible = "2";^  for(int x = 0; x &gt; 10; x++)^  {^   strong blockVariable = "3";^  }^ }^}', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-21',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Variable Scope</h2><p>Variables are only active between the { and } symbols in</p>^which they are declared^^In the previous slide:^^classVariable is an example of a global varaible because^it is available everywhere in the class^^blockVariable (and the counter varaible x) will not exist^outside of the loop which it is declared.', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-22',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Parameters</h2><p>Modules become much more useful when we can pass^values in and out of them (without class/global variables)^^To do this, we use a type of variable called a *parameter*^^Parameters are declared in the signature of the module</p>', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-23',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Parameters</h2><p>Example: Create a subroutine caleld DisplayName() which</p>^accepts a single string parameter called firstName^static void DisplayName(string firstName)^{^ Console.WriteLine("Your fist name is " + firstName);^}^^static void main(string[] args)^{^ DisplayName("Scott"); //Example calling of above method^}', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-24',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Parameters</h2><p>You can use multiple parameters by separating them with commas</p>^^When you use more than one parameter, you need to use the^EXACT order they are defined when calling them^^If you call a method and pass variables in the wrong order, the^values will be used incorrectly in your logic^^Also, these values have to match the right datatypes as defined', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-25',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Parameters</h2><p>Example: parameters are firstName and lastName</p>^static void DisplayNames(string firstName, string lastName)^{^ Console.WriteLine("firstName: {0}, lastName: {1}", firstName,lastName);^}^^static void main(string[] args)^{^ DisplayName("Scott","Wachal");^}', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-26',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Arguments</h2><p>When you want to call a method with parameters, you have</p>^to pass appropriately matching values^^Example:^We declare a method called DisplayNameAndAge()^static void DisplayNameAndAge(string firstName, int age)^{...}^^In order to call tihs method, our code will have to passa^strign value for firstName and an int value for age^DisplayNameAndAge("Scott",18);', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-27',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Arguments</h2><p></p>', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-28',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Arguments</h2><p>Values passed to a method are called arguments</p>^^The number, order and datatype of arguments must match appropriately^to the method that is being called^^Example: //We call the method by passing arguments^string strArgumentValue = "Scott";^int intArgumentValue = 18;^methodName(strArgumentValue, intArgumentValue);^^//Elsewhere, the method is declared by accepting parameters^static void methodName(string strParaValue, int intParaValue) {...}', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-29',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Arguments</h2><p>Example: parameters are firstName and age</p>^static void DisplayNameAndAge(string firstName, int age)^{^ Console.WriteLine("firstName: {0}, age:{1}", firstName, age);^}^static void main(string[] args)^{^ DisplayNameAndAge("Scott",19);^ //If the values are reversed, the compiler will throw a syntax error^ **DisplayNameAndAge(18,"Scott");^}^You cant pass an integer into a string vairable! 18 is an integer and the^string firstName cannot accept that value! The datatypes are incompatible!', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-30',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Return Value</h2><p>A value that is returned to the calling module is called a:</p>^return value^^The signature of a function must have a data type:^static int addTwoInts(int num1, int num2)^{^ return(num1+num2);^}^^In C#, we use the return statement to return a value, you can grab^a returned value like this:^int sum = addTwoInts(8,5);', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-31',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Return Value Examples</h2><p>static void main(string[] args) {</p>^ string input = GetInputFromUser();^ Console.WriteLine("You wrote: " + input);^ Console.ReadLine();^}^^static string GetInputFromUser(){^ string userInput = "";^ Console.WriteLine("Enter a Value:");^ userInput = Console.ReadLine();^ return userInput:^}', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '1-6-1',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>Objectives</h2><p>These slides review over the major concepts covered in Module 1 thus far</p>^^Test yourself by thinking about the definitions and terms^used in the next few slides^^If you are unsure about a specific item, review the previous^lecture notes as required', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-2',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>What to Review:</h2><p>- SDLC - Systems Development Life Cycle</p>^^- Flowcharts: Input, Output, Process, Decision^^- What is Pseudocode?^^- The 3 basic structures in all code: Sequence, Decision, Loop', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-3',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>Variables</h2><p>What are data types? Are all types compatible? Numeric (int) vs Character(string)</p>^^Numeric (int) variables:^^Can be maniupalted with the follwing math operators:^^Addition: +^Subtraction: -^Multiplication: *^Division: /^Modulo ("remainder"): %^ Example: 9 % 3 = 0, because 9/3 = 3 remainder 0^ Note: You can determine even or odd using Modulo..^if(myAge % 2 == 0){Console.WriteLine("Even"); }', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-4',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>Variables</h2><p>Numberic (int) variables (Advanced):</p>^^You can use the Math class to perform many complex operations^(https://msdn.microsoft.com/en-us/library/system.math.aspx)^^Example: We want to find out what 15 to the power of 7 is.^^int num = 15;^int power = 7;^int result = Math.Pow(num,power);', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-5',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>Variables</h2><p>Character(string) varaibles</p>^Are a series of characters in an array^^Can be converted into a number:^string myAgeInText = "30";^int myAge = Convert.ToInt32(myAgeInText);^^Can be concatenated with other strings:^string myFirstName = "Scott;^string myLastName = "Smith";^string myFullName = myFirstName+ " " +myLastName;', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-6',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>Variables</h2><p>Character(string) variables - Advanced</p>^Can be manipulated with a series of useful methods^(https://www.developerfusion.com/code/4398/string-manipulation-in-c/)^^It is very useful to convert a string to lowercase letters before^comparing to a value:^^string myInput= "sCOtT";^if(myInput.ToLower() == "scott")^{^ //We can ignore capitals this way^}', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-7',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>Variables</h2><p>Data types are defined by..</p>^^-The storage spacce that a varaible of the type requres^-The maximum and minimum values that it can represent^-The location where the memory for variables will be allocated at run-time^-The kinds of operations that are permitted^^Exmple: Strings can have methods run on them^string name = "Sam";^name= name.ToUpper();', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-8',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>Variables</h2><p>Declaring Variables:</p>^  int myAge;^  string myName;^Assigning a value to a varaible:^  myAge = 15;^  myName = "Jake"; //declare & assign together^Proper variable names should:^ -Have no spaces or special characters^ -Must be meaningful names^ -Use Camel casing: thisIsCamelCasing', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-9',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>IF Statements</h2><p>if (x == y)</p>^{^  //A: if this code runs, B & C do not run^}^else if (x &lt; y)^{ // B: if this code runs, A & B have not run and will not^}^else^{^ // C: If this code runs, all code above it have not run, and will not by default^}', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-10',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>IF Statements</h2><p>Remember: An IF statement is a question, you can only have</p>^one answer to a question.^^ELSE statements are like follow up questions, they are^only asked if you were satisfied with the first question^^You may use two separate IF statements without an ELSE,^but remember, you may get two separate answers.', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-11',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>Boolean Logic</h2><p>Boolean Logic can only hold the value of TRUE or FALSE</p>^Conditions which effect a Boolean statement:^AND: &&^OR: ||^Equal To: ==^Less Than: &lt; ^ Greater Than: &gt; ^Less Than Or Equal To: &lt;=^Greater Than or Equal To: &gt;=^Not Equal to: !=^^NOTE: in SQL, not equal to is &lt;&gt;', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-12',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>Boolean Logic</h2><p>Boolean Logic Example:</p>^The value of myAge and movieRating must both meet the criteria below,^if either is wrong, AllowEntrane will be FALSE^^bool AllowEntrance = false;^if(myAge>= 18 && movieRating == "R")^{^  AllowEntrance= true;^}^if(AllowEntrance)^  Console.WriteLine("You are allowed in!");^}', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-13',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>Boolean Logic</h2><p>Alternative Boolean Logic Example:</p>^bool AllowEntrance:^^AllowEntrance = (myAge >= 18 && movieRating == "R");^^if(AllowEntrance)^{^ Console.WriteLine("You are allowed in!");^}^The above code is perfectly valid,you are always allowed to^assign a boolean variable something that will result in either^TRUE or FALSE, pretty neat, eh?', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-14',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>Switch Case</h2><p>Case (Switch Statement):</p>^int caseSwitch = 1;^switch (caseSwitch)^{^ case 1:^   Console.WriteLine("Case 1");^   break;^ case 2:^   Console.WriteLine("Case 2");^   break;^ default:^   Console.WriteLine(Default case");^   break;^}', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-15',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>Modules</h2><p>- Modules</p>^^- Abstraction^^- Subroutine vs. Function^^- Parameters vs. Arguments^^Main() Module', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-16',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>Modules</h2><p>Abstraction is..</p>^  Selective Ignorance^  Hiding details while highlighting the important stuff^^Subroutine vs. Function^  Subroutines are of type VOID and do not return values^  public static void PrintWelcome()^  {^   Console.WriteLine("Hello World!");^  }^  Functions have a type and return a value of that type^  public static string GetWelcome()^  {^   return "Hello World!";^  }', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-17',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>Modules</h2><p>Parameters are variables that are accepted into a module:</p>^^/*This method has 2 parameters both of type in, called:^param1 and param2 */^public int MyFunct(int param1, int param2)^{^  return(param1 + param2);^}^/*This method has 1 parameter of type string, called: param1 */^public void mySub(string param1)^{ ... }', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-18',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>Modules</h2><p>The Main Module</p>^^ All programs must have a starting point^^ In C# Console applicatoins, the main module looks like^this:^^static void Main(string[] args)^{^  //Your code starts here...^}', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-19',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50)
+                  @slideinfo = '<h1>Review</h1><h2>Loops</h2><p>Looping - WHILE, FOR, DO WHILE^^WHILE Loop:</p>^^int i; // Declare the loop control variable^i = 0; //Initialize the loop control variable^^while (i < 10) // Check the ending condition^{^  //Loop Body Code ..^  i++;//Increment the control variable^}', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-6-20',   -- varchar(50)
+                  @lessonid = '1-6',  -- varchar(50);
+                  @slideinfo = '<h1>Review</h1><h2>Loops</h2><p>FOR next Loop:</p>^For ( int i=1; i<10; i++) // declare/initialize/check/increment^{^  //Loop Body Code^}^^DO WHILE Loop:^int i = 0; // Declare and initialize the loop control variable^DO^{^  //Loop Body Code^  i++; //Increment the control variable^}WHILE (i < 10);//Increment the control variable', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
