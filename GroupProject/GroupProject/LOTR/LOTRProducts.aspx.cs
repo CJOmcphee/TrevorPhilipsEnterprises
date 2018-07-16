@@ -14,6 +14,7 @@ namespace GroupProject
         SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
         LOTRProps props;
         double total;
+        double price;
         double final;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -52,7 +53,7 @@ namespace GroupProject
 
             int ID = Convert.ToInt32(ds.Tables[0].Rows[0]["productID"]);
             string type = ds.Tables[0].Rows[0]["productType"].ToString();
-            double price = Convert.ToDouble(ds.Tables[0].Rows[0]["productPrice"]);
+                   price = Convert.ToDouble(ds.Tables[0].Rows[0]["productPrice"]);
             string name = ds.Tables[0].Rows[0]["productName"].ToString();
 
             switch (type)
@@ -93,6 +94,15 @@ namespace GroupProject
                     break;
 
             }
+        }
+        public void Sales()
+        {
+            final = final * .10;        
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Sales();
         }
     }
 }

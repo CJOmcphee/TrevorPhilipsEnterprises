@@ -17,6 +17,9 @@
             <tr>
                 <td colspan="2"> <asp:Button ID="txtLogin" runat="server" Text="Button" /> </td>
             </tr>
+            <tr>
+                <td colspan="2"> <asp:HyperLink ID="hlAccountRecovery" NavigateUrl="~/LOTR/LOTRAccountRecovery.aspx" runat="server">Forgot Password/Forgot Username</asp:HyperLink> </td>
+            </tr>
         </table>
     </div>
 </asp:Content>
