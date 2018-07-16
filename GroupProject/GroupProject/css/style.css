@@ -1329,3 +1329,35 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/**********************************************************/
+/*********************Slide Editor*************************/
+/**********************************************************/
+.slide-Panel {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.slide-Panel div{
+    width:50%;
+    height:50%;
+}
+
+.slide-Editor{
+    background-color:red;
+    left:50%;
+    top:100%;
+    position:fixed;
+}
+
+.slide-Preview {
+    background-color: brown;
+    left: 0%;
+    top: 100%;
+    position: fixed;
+}
+
