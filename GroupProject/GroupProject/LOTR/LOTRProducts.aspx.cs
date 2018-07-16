@@ -14,6 +14,7 @@ namespace GroupProject
         SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
         LOTRProps props;
         double total;
+        double price;
         double final;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -52,7 +53,7 @@ namespace GroupProject
 
             int ID = Convert.ToInt32(ds.Tables[0].Rows[0]["productID"]);
             string type = ds.Tables[0].Rows[0]["productType"].ToString();
-            double price = Convert.ToDouble(ds.Tables[0].Rows[0]["productPrice"]);
+                   price = Convert.ToDouble(ds.Tables[0].Rows[0]["productPrice"]);
             string name = ds.Tables[0].Rows[0]["productName"].ToString();
 
             switch (type)
@@ -83,16 +84,33 @@ namespace GroupProject
                     total = 0.0;
                     break;
                 case DataControlRowType.DataRow:
-                    double amount = Convert.ToDouble(e.Row.Cells[3].Text);
+                    double amount = Convert.ToDouble(e.Row.Cells[4].Text);
                     total += amount;
                     break;
                 case DataControlRowType.Footer:
-                    e.Row.Cells[3].Text = total.ToString();
-                    e.Row.Cells[2].Text = "<b>Total Bill<b>";
+                    e.Row.Cells[4].Text = total.ToString();
+                    e.Row.Cells[3].Text = "<b>Total Bill<b>";
                     total = final;
                     break;
 
             }
+        }
+        public void Sales()
+        {
+            total = total * .10;        
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Sales();
+        }
+
+        protected void gvCart_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            gvCart.SelectedIndex = Convert.ToInt32(e.CommandArgument);
+            int ID = Convert.ToInt32(gvCart.SelectedDataKey["id"]);
+            props.RemoveProd(ID);
+            LoadCart();
         }
     }
 }
