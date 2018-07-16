@@ -894,10 +894,55 @@ EXEC dbo.spSlides @slideID = '1-4-22',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '1-5-1',   -- varchar(50)
                   @lessonid = '1-5',  -- varchar(50)
-                  @slideinfo = '<h1>Loops</h1><h2></h2><p></p>', ---- varchar (2000)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Objects</h2><p>Describe the advantage of modularization</p>^^Modularize a program^^Understand how a module can call another module^^Discuss how to use parameters to pass values into a module^^Understand the differences between a subroutine and a function', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-5-2',   -- varchar(50)
                   @lessonid = '1-5',  -- varchar(50)
-                  @slideinfo = '<h1>Loops</h1><h2></h2><p></p>', ---- varchar (2000)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>About Modules</h2><p>Programmers seldom write programs as one long series of steps</p>^^Instead, they break the programming problem down into^reasonable units, and tackle one small task at a time^^These reasonable units are called modules^^Programmers also refer to them as:^^Subroutines,Procedures, Functions, or Methods', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-3',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>About Modules</h2><p>The process of breaking a large program into modules is called Modularization</p>^^Provides abstraction (show, dont tell)^^Allows mutliple programemrs to work on a problem^^Allows you to reuse your work so you can focus on other things^^Makes it easier to identify structures', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-4',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>About Modules</h2><p>Programmers seldom write progarms as one long series of steps</p>^^Instead, they break the programming problem down into^reasonable units, and tackle one small task at a time^^These reasonable units are called modules^^Programmers also refer to them as:^^Subroutines, Procedures, Functions or Methods', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-5',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Abstraction</h2><p>Abstraction is the process of ignoring nonessential details (selective ignorance)</p>^^Allows you to pay attention to important details^^Makes complex tasks look simple^^Some level of abstraction occurs in every computer program', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-6',   -- varchar(50)
+                  @lessonid = '1-5',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Abstraction</h2><p>Abstraction example in C# Code</p>^^Console.Write("Enter a number: ");^int numOne = Convert.ToInt32(console.ReadLine());^Console.Write("Enter a number: ");^int numTwo = ConvertWriteLine("You wrote the numbers {0} and {1}", numOne, numTwo);^^The above code can be reduced to something more readable using abstraction^^int numOne = GetNumberInput();^int numTwo = GetNumberInput();^PrintMessage(numOne,numTwo);', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-7',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Modularization - Abstraction</h2><p>Fifty years ago, an understanding of low-level circuitry instructions was necessary</p>^^Now, newere high-level programming languages allow you to use English-like vocabulary in which one broad^statement corresponds to dozens of machine instructions^^Modules provide nother way to achieve abstraction', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-8',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Modularization - Abstraction</h2><p>When you dissect any large task into modules, you gain the^ability to divide the task among various people</p>^^Rarely does a single programmer write a commercial program that you buy off the shelf^^Modularization thus allows professional software^to write new programs in weeks or months, instead of years', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-9',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Modularization - Abstraction</h2><p>If a subroutine or function is useful and well-writen, you may</p>^want to use it more than once within a program or in other programs^^You can find many real-world examples of reusability where^systems with proven designs are incorporated, rather than^newly invented, by individuals beginning a certain task', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-10',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1>Modules/Functions</h1><h2>Modularization - Abstraction</h2><p></p>', ---- varchar (2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '1-5-11',   -- varchar(50)
+                  @lessonid = '1-3',  -- varchar(50)
+                  @slideinfo = '<h1></h1><h2></h2><p></p>', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
