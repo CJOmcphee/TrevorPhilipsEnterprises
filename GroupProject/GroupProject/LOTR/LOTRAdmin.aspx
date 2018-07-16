@@ -2,6 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <style>
+        body{
+            background-image:url("./LOTRPICTURES/Mordor.jpg");
+            background-size: 1400px
+            
+        }
+    </style>
     <asp:Button ID="btnCreateProduct" runat="server" Text="Create Product" OnClick="btnCreateProduct_Click" />
     <asp:Button ID="btnCreateClient" runat="server" Text="Create Client" OnClick="btnCreateClient_Click" />
 

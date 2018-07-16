@@ -7,8 +7,7 @@
   <style>
         body{
             background-image:url("./LOTRPICTURES/Shire.png");
-            background-size: 1400px;
-            
+            background-size: 1400px;   
         }
     </style>
     <div>
