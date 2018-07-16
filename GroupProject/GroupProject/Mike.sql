@@ -1776,6 +1776,175 @@ EXEC dbo.spSlides @slideID = '12-1-1',   -- varchar(50)
                   @slideinfo = 'JavaScript & DOM', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '12-1-2',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Java is not JavaScript? ^^ <b>-JavaScript</b> is *NOT* <u>Java</u> ^^ -<u>Java</u> is a programming language similar to C# and C++ ^ whereas <b>JavaScript</b> is a scripting language similar to PHP, ^ Python and Rub on Rails ^^ <b>-JavaScript</b> was never intended to be a standalone ^ programming language, rather to mimic the feel of a ^ desktop application on the web', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-3',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'What is JavaScript? ^^ <b>-JavaScript</b> is a scripting language ^^ -It was created to augent HTML, it''s original name was: ^ ECMA Script (but due to the ugly sounding name it ^ changed) ^^ -Since HTML is not dynamic by itself, JavaScript is used ^ from the browser to increase the interactivity of web ^ forms through dynamic results ^^ -JavaScript is considered THE scripting language of the ^ web; understanding the fundamentals, gives you that ^ much more advantage', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-4',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Debugging JavaScript ^^ -One of the key concepts you will need to understand while ^ working with JavaScript is how to debug it. ^^ -When JavaScript doesn not work, it will not let you knowm unless ^ you control the errors and the error messages. ^^ -If you want to see some information, you will need to display it in an alert, log it to the console, or display it in an ^ element.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-5',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Debugging JavaScript ^^ -Anytime you want to log something to the browser''s ^ console window, you can write this code: ^^ <b>console.log(''Some information'');</b> ^^ -A great debugger for JavaScript is already built into the ^ Google Chrome browser ^^ -These are called the "Developer Tools."', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-6',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Debugging JavaScript ^^ 1. Open your web page in Google Chrome. ^^ 2.Hit F12 to open the Developer''s panel. ^^ 3. Select "Sources" at the top of the panel. ^^ 4. On the left side, you will either see a window pane witha  folder structure ^^ 5. If there is no folder structure, click the arrow to show the ^ folder structure', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-7',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Debugging JavaScript ^^ 6. Find the script file or web page you are working on and ^ select it. It will then be displayed in the middle window pane. ^^ 7. In the middle window, set a breakpoint on the left side ^ where the line numbers are, just like in C#. ^^ -As long as this panel is open, the debugger will run. ^^ -Note: If you close the panel, it will not break.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-8',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Debugging JavaScript ^^ -Breakpoint one of your JavaScript functions and hover over ^ some variables to get familiar with them ^^ -Use the Console window to interact with your page ^ dynamically ^^ This window is similar to the immediate Window in C#, ^ which allows you to execute cod while the code is paused ^ on a breakpoint ^^ -Experiment with these debugging techniques as much as ^ possible!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-9',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Introduction ^^ You will run all JavaScript between the aptly named HTML ^ < script > tags: ^^ Example: ^ <b> < script type="text/javascript"> ^ *INSERT YOUR JavaScript CODE HERE* ^ </ script ></b> ^^ NOTE: In HTML5, you do not need to say: ^ <b>type="text/javascript"</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '12-1-10',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Introduction ^^ -You can create your own JavaScript file with the extension ^ .js and reference the file from a script tag (usually placed ^ in the < head >); example: ^^ <b>< script type="text/javascript" src=''js\MyJScript.js''> ^ < /script ></b> ^^ -Your js files should be placed into a directory called "<b>js</b>" or ^ "<b>scripts</b>" ^^ -Note: Like CSS, creating a separate folder for <b>.js</b> files is ^ only a suggestion, not a requirement', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-11',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Syntax ^^ -JavaScript is similar to C#, however, there are differences: ^^ *JavaScript is not type-safe ^^ #Example: You can assign an integer to a string variable ^ without conversion ^^ *Variables do not need to be declared, their data types ^ are inferred by the compiler', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-12',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Syntax - Variables ^^ -Example variable declaration (these are all <u>valid</u>): ^ <b>var myAge = 30; ^ var myName = "Scott"; ^ var canIVote = true; ^ var array = new Object(); ^ array[0] = myAge; ^ array["myName"] = myAge; ^ myAge = myAge = myName;</b> ^ -A lot of these would cause syntax errors in C# ^ -In JavaScript you do not have to declare a datatype ^ -Semi-colons(;) are optional ^ -You can switch from datatype on the fly (Example: from ^ number to string even after the first assignment)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-13',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Syntax - Data Types ^^ -There are only 4 types of data types: ^ 1. Numbers ^ 2. Strings ^ 3. Booleans ^ 4. Objects ^^ -Note you can use the "<b>typeof()</b>" method to determine the ^ type of a variable ^^ -Example: ^ <b>var myAge = 30.0; ^ alert(typeof(myAge));</b> ^ // Prints the word: "number" on the screen', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-14',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Syntax - Data Types Numbers ^^ -Numbers are a value type ^^ -There is only one type of number, no need to convert ^ between integer and double ^^ -Numbers in JavaScript are 64bit "Real Numbers" ^^ *All numbers can use decimals can be positive or negative ^^ -Numbers can end up as either <b>NaN (Not a number)</b> or ^ <b>Infinity</b> (eg. divide by zero)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-15',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Syntax - Data Types Strings ^^ -Strings in JavaScript are value types, not reference types ^ like in C# ^^ -You can start a string with either double quotes or single ^^ -If you start with double quotes, you must end with double ^ quotes ^^ -Example: ^ <b>var myString = "Hello World!"; ^ var myOtherString = ''Hello World!'';</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-16',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Syntax - Data Types Booleans ^^ -Booleans are value types ^^ -Be aware that boolean expressions can be run on ^ non-boolean values (neither "<b>true</b>" nor "<b>false</b>") ^^ -The following values are equivalent to <b>false</b> in JavaScript: ^^ *<b>"", null, undefined, 0, false</b> ^^ -Note: Every other value will evaluate to <b>true</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-17',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Operators ^^ -The operators we are familiar with (<b>=</b>,<b>+</b>,<b>*</b>,<b>/</b>,<b>%</b>,<b>++</b>,<b>--</b>) are used the same ^ in JavaScript as C#; when dealing with comparison, things are slightly ^ different: ^ <b>== : is equal to ^ === : is exactly equal to (value and type) ^ != : is not equal to ^ !== : is not equal to (neither value nor type) ^ > : is greater than ^ < : is less than ^ >= : is greater than or equal to ^ <= : is less than or equal to ^ && : logical AND ^ || : logical OR ^ ! : logical NOT</b> ^^ <b>ableToVote = (age>18) ? true : false;</b> //This is an example of a conditional ^ operator. This also works in C#. It is similar to an if, else statement.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-18',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Conditional Statements ^^ -Conditional statements in JavaScript are the exact same: ^ <b>if (true) {</b> /* ... */ <b>}</b> ^ <b>else if (true) {</b> /* ... */<b>}</b> ^ <b>else {</b> /* ... */<b>}</b> ^^ <b>Switch (num) ^ { ^ case 1: alert("1"); break; ^ case 2: alert("2"); break; ^ Default: alert("Not found"); break; ^ }</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-18',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Comments ^^ -Comments have a similar syntax to C# ^^ -This is the same for both single line and multi line ^ comments ^^ -Example: ^ <b>//This is a comment</b> ^^ <b>/*This is also ^ a comment that expans ^ across multiple lines */</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-19',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Variable Scope ^^ -Similar to C#, the scope of your variables is important ^^ -To have global variables, declare them right inside the ^ <b>< script >< /script ></b> tags ^^ -If you assign a value to a variable that has not been ^ declared, it will become a global variable ^^ -See next slide for an example:', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-20',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Variable Scope ^^ <b>< script > ^^ var globalVariable = 10;</b>  //This is a global variable ^^ <b>function newFunction() ^ { ^ var localVariable = "Hello World!";</b> //This is <u>local</u> variable ^ <b>anotherGlobalVariable = 150;</b>  //This is a global variable ^ <b>alert(globalVariable + anohterGlobalVariable); ^ } ^^ < /script ></b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-21',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Arrays ^^ -Arrays can be defined and used in many ways; here are ^ some examples: ^ <b>var myArray = new Array(); ^ myArray["key"] = "value"; ^^ var mySecondArray = [2,3,6,7,15,27]; ^ alert(mySecondArray[1] + mySecondArray[3]);</b> //prints 10 ^^ <b>Var myThirdArray = []; ^ myThirdArray[-10] = "I can pick any spot I want randomly"; ^ myThirdArray[2] = "JavaScript is NOT picky!";</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-22',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Arrays ^^ -You may have noticed that we did not set a length for the ^ array; by default the array will be expanded as needed ^^ -We do not set a consistent datatype for all vaues inside of ^ an array (be careful when doing this) ^^ *JavaScript is type insensitive, meanings that if we add ^ strings and numbers randomly into an array, it will let us', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-23',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript ^^ -The "for loop" syntax in JavaScript is identical to a C# "for ^ loop": ^ <b>var sum = 0.0; ^^ for (var i = 0; i <someArray.length; i++) ^ { ^ sum = sum + someArray[i]; ^ }</b> ^^ -You might think this is C# but it isn''t. The only difference ^ is the length property does not have a capital like in C#', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-24',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Loops ^^ -One major difference between C# loops and JavaScript is ^ the <b>foreach</b> statement; which is now called a <b>for / in</b> loop: ^^ <b>var sum = 0.0; ^ for (var i in someArray) ^ { ^ sum = sum + someArray[i]; ^ } ^^ alert(sum);</b> ^^ -Note: the "<b>i</b>" variable is the <u>index</u>, NOT the value', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-25',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Loops ^^ -There is also a while loop and "do while" loop which are ^ structured the exact same as C#: ^^ <b>while(true) { ^ alert("Hello World!"); ^ } ^^ do { ^ alert("Hello World!"); ^ } while(true);</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-26',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Loops ^^ -There are two keywords to be aware of with loops that are ^ used in C# as well, <b>break</b> and <b>continue</b> ^^ -<b>Break</b> will exit the loop immediately and continue ^ executing the code below the loop structure ^^ -<b>Continue</b> will skip the current iteration in the loop and ^ continue to the next iteration', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-27',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Functions ^^ -Functions are defined as follows: ^^ <b>function nameOfFunction (paramName1, paramName2, etc...) ^ { ^ var someReturnValue = "Hello World!"; ^ return someReturnValue; ^ }</b> ^^ Major differences (NO DATA TYPES): ^ 1. Return DataType is not defined ^ 2. Parameters do bot have DataTypes ^ 3. If you do not want to return anything, just leave out the ^ return statement!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-28',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Functions ^^ -Here is an exampe of using a JavaScript function: ^ <b>function sumTwoNums (num1,num2) ^ { ^ var suml ^ sum = num1 + num2; ^ return sum; ^ } ^^ var sum = sumTwoNums(3,2); ^ alert(sum);</b> // Will display "5" ^^ <b>alert(sumTwoNums(3,2));</b> // Also valid, same result', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-28',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Functions ^^ -If you do not have a return statement in your function, but ^ you assign the value of the function to a variable, the ^ result will be "<b>undefined</b>": ^^ <b>function sumTwoNumsButDontReturn(num1,num2) ^ { ^ var sum; ^ sum = num1 + num2;</b> // Note: this is not a return! ^ <b>} ^ var sum = sumTwoNumbsButDontReturn(3,2); ^ alert(sum);</b> // Will display "undefined"', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-29',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Functions ^^ -We can assign a function directly to a variable name in ^ code ^^ -You can think of a function as an object in this specific ^ scenario ^^ -We can also pass a function as a parameter variavle (see ^ next slide for example) ^^ -When you pass a function as a variable, you want to check ^ if the variable is <b>null</b> before executing code; for good error ^ handling', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-30',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Functions ^^ -Example; Passing a function as a parameter: ^ <b>function addTwoNums(num1,num2) {return num1 + num2; } ^^ function subtractTwoNums(n1,n2) { return n1 - n2; } ^^ function performMathOnTwoNums(F,numOne,numTwo) ^ { ^ if(F != null) { return F(numOne, numTwo); } ^ } ^^ alert(performMathOnTwoNums(addTwoNums,8,2)); ^ alert(performMathOnTwoNums(subtractTwoNums,8,2));</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
