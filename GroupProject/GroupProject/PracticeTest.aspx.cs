@@ -85,6 +85,7 @@ namespace GroupProject
 
                 radioButtonLists.Add(myrb, new Tuple<Label, Label>(myLabel,answerLabel));
                 count++;
+                
             }
         }
         protected void btnSubmit_Click(object sender, EventArgs e)

@@ -94,6 +94,7 @@ namespace GroupProject
                     break;
 
             }
+            Session["Final"] = total;
         }
         public void Sales()
         {
