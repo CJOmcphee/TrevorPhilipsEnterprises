@@ -122,6 +122,7 @@ namespace GroupProject
         }
         protected void Button2_Click(object sender, EventArgs e)
         {
+            GetDiscount();
             Label2.Text = discount.ToString();
         }
     }

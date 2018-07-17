@@ -51,6 +51,7 @@ namespace GroupProject
             foreach (LOTRProp p in _LOTRProps)
             {
                 p.price -= 100;
+                discountPrice = p.price;
                 
             }
             return discountPrice; 
