@@ -16,6 +16,7 @@ namespace GroupProject
         double total;
         double price;
         double final;
+        double discount;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -94,16 +95,18 @@ namespace GroupProject
                     break;
 
             }
-            Session["Final"] = total;
+           
         }
         public void Sales()
         {
-            total = total * .10;        
+             total=props.GetTotal();       
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
             Sales();
+            Label1.Text = total.ToString();
         }
 
         protected void gvCart_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -112,6 +115,14 @@ namespace GroupProject
             int ID = Convert.ToInt32(gvCart.SelectedDataKey["id"]);
             props.RemoveProd(ID);
             LoadCart();
+        }
+        public void GetDiscount()
+        {
+            discount = props.GetDiscount();
+        }
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Label2.Text = discount.ToString();
         }
     }
 }

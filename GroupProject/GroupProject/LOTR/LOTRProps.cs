@@ -45,6 +45,16 @@ namespace GroupProject
             }
             return total;
         }
+        public double GetDiscount()
+        {
+            double discountPrice=0;
+            foreach (LOTRProp p in _LOTRProps)
+            {
+                p.price -= 100;
+                
+            }
+            return discountPrice; 
+        }
         public void RemoveProd(int ID)
         {
 
@@ -59,6 +69,7 @@ namespace GroupProject
                 }
             }
         }
+       
         public DataTable Get()
         {
             DataTable dt = new DataTable();
