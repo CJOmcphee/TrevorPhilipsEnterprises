@@ -1932,6 +1932,165 @@ EXEC dbo.spSlides @slideID = '12-1-30',   -- varchar(50)
                   @slideinfo = 'JavaScript Functions ^^ -Example; Passing a function as a parameter: ^ <b>function addTwoNums(num1,num2) {return num1 + num2; } ^^ function subtractTwoNums(n1,n2) { return n1 - n2; } ^^ function performMathOnTwoNums(F,numOne,numTwo) ^ { ^ if(F != null) { return F(numOne, numTwo); } ^ } ^^ alert(performMathOnTwoNums(addTwoNums,8,2)); ^ alert(performMathOnTwoNums(subtractTwoNums,8,2));</b>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '12-1-31',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Labels ^^ -You can declare a label at any time with start and stop brackets which ^ will then define a block of code ^^ -You can then use the <b>breal</b> statement (followed by the name of the ^ label) to "jump out of" any code block ^^ Note: It is good to be aware of the syntax when reading another ^ developer''s code, however, this is NOT suggested to be used ever ^ <b>var car=["Chevy","Toyota","Honda","Ford"]; ^ list: ^ { ^ document.write(cars[0] + "<br>"); ^ break list; ^ document.write(cars[1] + "<br>"); ^ }</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-32',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript <b>setInterval()</b> ^^ -We can setup a timer (using <b>setInterval()</b>) to run functions ^ at set intervals: ^ <b>function myMethod() { alert("Hello World!"); } ^^ intID = setInterval(myMethod,5000,null); ^ window.clearInterval(intID);</b> ^^^ -The first parameter is the method to be called ^ -The second is how often it should be called in milliseconds ^ -The last one you can pass to the function as an object array ^ -The fuction <b>window.clearInterval(ID)</b> will clear the specified interval ^ -<b>intID</b> is the value returned when you set a new interval ^ -There are many other pre-set browser objects available', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-33',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Error Handling ^^ -Error handling in JavaScript is similar to C# as well; we can ^ use <b>try</b>, <b>catch</b> and <b>throw</b> ^^^ -Example 1: ^ <b>try { alert("Hello World"); } ^ catch (err) { alert("An error has occured: " + err.message); } </b> ^^ -Example 2 using <b>throw</b>: ^ <b>var example = "Hello World!"; ^ try { if(isNaN(example)) throw "Is not a number"; } ^ catch (err) { alert(err.message); } </b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-34',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Syntax - Data Types Objects ^^ -Every variable in JavaScript is an <b>Object</b>, even though ^ there are specific types such as <b>Number</b>, <b>Boolean</b> and ^ <b>String</b> ^^ -In JavaScript, the definition of an <b>Object</b> is data with ^ properties and methods; similar to a C# object ^^ -<b>Array</b> and <b>Date</b> are also objects', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-35',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Objects ^^ -Here is a basic example of a JavaScript object, similar to C# ^ constructor: ^^ <b>function Person(age) ^ { ^ this.Age = age; ^ } ^^ var person = new Person(5); ^^ alert(person.Age);</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-36',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Objects ^^ -You can declare objects in JavaScript in many ways; On the ^ previous slide we saw just one way. ^^ -The keyword "this" on the previous slide is referring to the ^ new Person object that will be created. ^^ -"this" will change depending on the current object that is being ^ assigned. ^^ -Think of "this" similarly to how we assigned our object''s ^ properties in C#, when calling the object''s constructor. ^^ -"this" is an advanced concept, and will slowly make more ^ sense over time.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-37',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Objects ^^ -If we want to declare a method on our Person object: ^ <b>function Person(age) ^ { ^ this.Age = age; ^ this.sayHello = function() ^ { ^ alert("Hello World"); ^ } ^ } ^ var person = new Person(5); ^ alert(person.Age); ^ person.sayHello();</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-38',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Objects ^^ -It is important to be careful with the <b>this</b> keyword in ^ JavaScript ^^ -It might not be waht you think it is in the current scenario ^^ -When calling a method on an object, from within an ^ object''s method, we need to pass the reference to the ^ current object in order to access it. ^ -By convention, the name of this object is <b>self</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-39',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = '<b>function Person(name) ^ { ^ this.Name = name ^^ this.sayHello = function() { ^ alert("Hello:" + this.Name); ^ } ^^ this.sayGoodbye = function(self) { ^ self.sayHello(); ^ } ^ } </b> ^^ //Define a new Person named "Scott" ^ <b>var person = new Person("Scott"); ^^ person.sayGoodbye(person);</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-40',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Objects ^^ -What would happen if we used the previous slide''s code, ^ but wrote this line of code at the end? ^^ <b>person.sayGoodbye(this);</b> ^^ -The ''this'' here would actually refer to the object that ^ initiated the call (ex: a button) ^^ -In our car it would be the window object of the browser ^^ -Which would bomb because the window object doesn''t ^ have a method for sayHello()', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+				  
+
+EXEC dbo.spSlides @slideID = '12-1-41',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Object ^^ -Note: When you call an object instance function from within ^ an object instance function, you will need to pass the ^ reference to the object. ^^ -An object instance function is any function that is within an ^ object''s instance. ^^ -We declared sayHello() as an object instance function in ^ this example ^^ -This example calls sayHello() on the current object "self" ^ after calling sayGoodbye() and passing the current ^ object''s reference. (this)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '12-1-42',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Form Validation ^^ -HTML forms are used to send information from one page to ^ another ^^ -ASP.NET has been doing this for us, but now that we are ^ manipulating HTML tags ourselves we need to understand ^ how to do this ourselves ^^ -Below is a simple HTML form with a textbox and a button: ^ <b> < form action="form.aspx" method="post" > ^ First name: < input type="text" name="fName" > ^ Last name: < input type="text" name="lName" > ^ < input type="submit" value="Submit" > ^ < /form > </b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-43',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Form Validation ^^ -To access the values inside of: <b> < input type="text" ^ name="fName"> </b> and <b> < input type="text" name="lName"> </b> ^ we can use the following C# code from form.aspx: ^^ string firstName = Request.Form["<b>fName</b>"]; ^ string lastName = Request.Form["<b>lName</b>"]; ^^ -Note: it''s the name="" that is required when the form ^ is submitted from the < input type="submit"> element ^ (not the id)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-44',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Form Validation ^^ -JavaScript is useful for validating data in HTML forms ^ before dubmitting to the server ^ -The following would be called when you submit the form ^ -Returning <b>true</b> means that the form is valid ^^^ -Example: ^ <b> < form name="myForm" action="form.aspx" onsubmit="return validateForm()" ^ method="post"> ^ First name: < input type="text" name="fName"> ^ < input type="submit" value="Submit"> ^ < /form> ^ function validateForm() { ^ var firstName = document.forms["myForm"]["fName"].value; ^ if(firstName == null || firstName == "") ^ { alert("First name is a required field."); return false; } ^ }', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-45',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Form Validation ^^ -For finer tuned validation, you will need to use a regular ^ expression ^^ -Regular expressions are an advanced topic; we will not be ^ teaching them as part of this course, but it is good to be familiar ^ with them ^^ -Example: You need to make sure a phone number is in the ^ correct format ^ <b>var phoneRegex = /((\(\d{3}\))|(\d{3}-\d{4}/; ^ var phoneNumber = "204-123-4567"; ^ if( phoneRegex.test(phoneNumber)) { alert("valid"); } ^ else { alert("invalid"); } </b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '12-1-46',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM ^^ -The Document Object Model (DOM) is the representation of ^ HTML elements in a document (page) ^^ -Since HTML pages are formatted in a very specific way, we ^ can think of the elements as being stored in a "<b>child</b>" - ^ "<b>parent</b>" relationship ^^ -For example: ^ <b> < html >< head >< /head >< body >< body >< /html > </b> ^^ -The <b> < html > element </b> is the parent <u>node</u> of <b>< body ></b> ^ -The <b>< html > element </b> is the parent <u>node</u> of <b>< head ></b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-47',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Terminology ^^ -From the previous slide, we can see that the <b>< html ></b> node ^ is the <u>parent</u> with one <u>child</u>:<b>< body ></b> ^^ <b>< body ></b> has 4 children: <b>< h1 ></b>, <b>< p ></b>, <b> h2 ></b>, <b>< p ></b> ^^ -These children are considered <u>siblings</u> to one another ^^ -You can think of the DOM/HTML in a similar manner to XML ^ with open and ending tags ^^ -All HTML elements are defined as objects, while the ^ programming interface is the object methods and properties, similar to C#', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-48',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Nodes ^^ -The DOM structure is referred to as a Node Tree ^^ -The nodes in a node tree have a hierarchical relationship to ^ each other ^^ -We use the terms: parent, child, and siblings to describe ^ relationships between the noes', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-49',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Nodes ^^ -Similar to real life, parent nodes have children nodes and ^ children nodes have sibling nodes: ^^ *In a node tree, the top node is called a root node ^^ *Every node has only one parent, except the root ^ node which has no parent ^^ *Nodes can have an unlimited number of children ^^ *Siblings can be referred to as nodes with the same ^ parent', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '12-1-50',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Common Methods ^^ Here are some comonly used <u>DOM Methods</u>: ^ Note: you need to run these from <b><u>document</u></b> ^^ -<b>getElementById(id)</b> - get the node (element) with a specified id ^ -<b>getElementsByTagName(tag)</b> - Returns a node list ^ (collection/array of nodes) containing all elements with a ^ specified tag name ^ -<b>getElementsByClassName(class)</b> - Returns a node list containing ^ all elements with a specified class ^ -<b>appendChild(node)</b> - insert a new child node (element) ^ -<b>removeChild(node) -remove a child node (element) ^ -<b>replaceChild(newNode,oldNode)</b> - Replaces a child node ^ -<b>createElement(element)<.b< - Creates an Element node ^ -<b>node.getAttribute()</b>/<b>node.setAttribute()</b> - Gets or Sets an ^ attribute on a node, respectively', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-51',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Common Properties ^^ -Here are some commonly used <u>DOM Properties</u>: ^^ *<b>innerHTML</b> - the text value of a node (element) ^ *<b>parentNode</b> - the parent node of a node (element) ^ *<b>childNodes</b> - the child nodes of a node (element) ^ *<b>attributes</b> - the attributes nodes of a node (element)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-52',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Node Properties ^^ -Here are a few common <u>Node Properties</u> to be aware of: ^^^ *<b>nodeName</b> - specifies the name of the node ^ *is read-only ^ *of an element node is the same as the tag name ^ *of an attribute node is the attribute name ^ *of a text node is always #text ^ *of the document mode is always #document ^^^ *<b>nodeValue</b> - specifies the value of the node ^ *for element nodes is undefined ^ *for text nodes is the text itself ^ *for attribute nodes is the attribute value', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-53',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Node properties = slide 58', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
