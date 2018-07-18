@@ -139,6 +139,23 @@ as begin
 	select productID,productName, productType,productPrice from tbProducts where productID =@prodID
 end
 GO
+CREATE TABLE tbCheckout(
+checkOutID int primary key identity(1,1),
+customerID int foreign key references tbClients(clientID),
+bill decimal(10,2)
+)
+GO
+CREATE PROCEDURE spCheckOut(
+@checkOutID int =null,
+@customerID int =null,
+@bill decimal(10,2) =null
+)
+AS BEGIN
+	INSERT INTO tbCheckOut(customerID,bill)values
+						  (@customerID,@bill)
+END
+GO
 select * from tbLogin
-EXEC spLogin @userID='Blondie', @userPassword='donttelltheelf'
+EXEC spLogin @userID='pippin', @userPassword='secondbrekfast'
 EXEC spClients @crud='r', @clientID='2'
+
