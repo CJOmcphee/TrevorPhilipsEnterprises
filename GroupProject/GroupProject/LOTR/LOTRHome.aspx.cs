@@ -62,5 +62,10 @@ namespace GroupProject
                 conn.Close();
             }
         }
+
+        protected void cbRemeberme_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

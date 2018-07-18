@@ -158,4 +158,4 @@ GO
 select * from tbLogin
 EXEC spLogin @userID='pippin', @userPassword='secondbrekfast'
 EXEC spClients @crud='r', @clientID='2'
-
+select * from tbCheckout

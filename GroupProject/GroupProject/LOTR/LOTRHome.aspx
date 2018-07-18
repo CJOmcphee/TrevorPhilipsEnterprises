@@ -21,7 +21,7 @@
                 <td> <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox> </td>
             </tr>
             <tr>
-                <td> <asp:RadioButton ID="cbRemeberme" runat="server" /> </td>
+                <td> <asp:RadioButton ID="cbRemeberme" runat="server" OnCheckedChanged="cbRemeberme_CheckedChanged" /> </td>
             </tr>
             <tr>
                 <td colspan="2"> <asp:Button ID="txtLogin" runat="server" Text="Button" OnClick="txtLogin_Click" /> </td>

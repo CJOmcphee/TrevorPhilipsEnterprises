@@ -112,12 +112,10 @@ namespace GroupProject
         protected void btnCheckout_Click(object sender, EventArgs e)
         {
             LOTRSecurity security = new LOTRSecurity();
-            Security mySecurity = new Security();
             SqlCommand cmd = new SqlCommand("spCheckout", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@crud", "c");
             cmd.Parameters.AddWithValue("@customerID", security.clientID);
-            cmd.Parameters.AddWithValue("@totalPrice", props.GetTotal());
+            cmd.Parameters.AddWithValue("@bill", props.GetTotal());
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
