@@ -19,11 +19,15 @@ namespace GroupProject
         double discount;
         protected void Page_Load(object sender, EventArgs e)
         {
+            LOTRSecurity security = new LOTRSecurity();
+            security.checkAccess("u");
             if (!IsPostBack)
             {
                 LoadProducts();
             }
             props = new LOTRProps();
+
+            
         }
         public void LoadProducts()
         {
@@ -97,18 +101,6 @@ namespace GroupProject
             }
            
         }
-        public void Sales()
-        {
-             total=props.GetTotal();       
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-
-            Sales();
-            Label1.Text = total.ToString();
-        }
-
         protected void gvCart_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             gvCart.SelectedIndex = Convert.ToInt32(e.CommandArgument);
@@ -116,14 +108,17 @@ namespace GroupProject
             props.RemoveProd(ID);
             LoadCart();
         }
-        public void GetDiscount()
+
+        protected void btnCheckout_Click(object sender, EventArgs e)
         {
-            discount = props.GetDiscount();
-        }
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            GetDiscount();
-            Label2.Text = discount.ToString();
+            LOTRSecurity security = new LOTRSecurity();
+            SqlCommand cmd = new SqlCommand("spCheckout", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@customerID", security.clientID);
+            cmd.Parameters.AddWithValue("@bill", props.GetTotal());
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }

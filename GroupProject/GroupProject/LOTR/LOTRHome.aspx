@@ -17,11 +17,14 @@
                 <td> <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox> </td>
             </tr>
             <tr>
-                <td>Password:</td>
+                <td>PaPassword:</td>
                 <td> <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox> </td>
             </tr>
             <tr>
-                <td colspan="2"> <asp:Button ID="txtLogin" runat="server" Text="Button" /> </td>
+                <td> <asp:RadioButton ID="cbRemeberme" runat="server" OnCheckedChanged="cbRemeberme_CheckedChanged" /> </td>
+            </tr>
+            <tr>
+                <td colspan="2"> <asp:Button ID="txtLogin" runat="server" Text="Button" OnClick="txtLogin_Click" /> </td>
             </tr>
             <tr>
                 <td colspan="2"> <asp:HyperLink ID="hlAccountRecovery" NavigateUrl="~/LOTR/LOTRAccountRecovery.aspx" runat="server">Forgot Password/Forgot Username</asp:HyperLink> </td>
@@ -31,7 +34,7 @@
     <div>
         <table>
             <tr>
-                <td> Who is your favorite character from lord of the rings</td>
+                <td> Who is your favorite character from lord of the ringstd>
             </tr>
             <tr>
                 <td>
