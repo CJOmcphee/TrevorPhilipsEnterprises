@@ -69,10 +69,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\csharp.jpg" />
+    <Content Include="images\CustomerService.jpg" />
+    <Content Include="images\GitHub.jpg" />
     <Content Include="images\jswide.png" />
     <Content Include="images\logo-php.png" />
+    <Content Include="images\MSSQL.jpg" />
     <Content Include="images\MVC.jpg" />
+    <Content Include="images\Pen.jpg" />
     <Content Include="images\sql.png" />
+    <Content Include="images\XML.jpg" />
     <Content Include="index_admin.aspx" />
     <Content Include="LOTR\LOTRExtraPage.aspx" />
     <Content Include="LOTR\LOTRPICTURES\Mordor.jpg" />
