@@ -17,9 +17,7 @@ namespace GroupProject
         {
             mydal.AddParam("@studentEmail", UserEmail);
             mydal.AddParam("@studentPassword", UserPassword);
-            DataSet blah = mydal.ExecuteProcedure("spLogin");
-            //return mydal.ExecuteProcedure("spLogin");
-            return blah;
+            return mydal.ExecuteProcedure("spLogin");
         }
         // gets whole dataset of table
         public static DataSet ReadTable(string Procedure)
