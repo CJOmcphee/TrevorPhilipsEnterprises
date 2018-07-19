@@ -63,9 +63,21 @@ namespace GroupProject
             }
         }
 
-        protected void cbRemeberme_CheckedChanged(object sender, EventArgs e)
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+            if(DropDownList1.SelectedValue == "Gandalf")
+            {
+                Label1.Text = "You picked the best character";
+            }
+            else if(DropDownList1.SelectedValue == "Please Select a Character")
+            {
+                Label1.Text = "";
+            }
+            else
+            {
+                Label1.Text = "The character you picked is terrible and you should choose again";
+            }
         }
     }
 }

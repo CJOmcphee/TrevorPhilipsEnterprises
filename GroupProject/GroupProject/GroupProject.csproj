@@ -71,9 +71,9 @@
     <Content Include="images\csharp.jpg" />
     <Content Include="images\jswide.png" />
     <Content Include="images\logo-php.png" />
+    <Content Include="images\MVC.jpg" />
     <Content Include="images\sql.png" />
     <Content Include="index_admin.aspx" />
-    <Content Include="LOTR\LOTRAccountRecovery.aspx" />
     <Content Include="LOTR\LOTRExtraPage.aspx" />
     <Content Include="LOTR\LOTRPICTURES\Mordor.jpg" />
     <Content Include="LOTR\LOTRPICTURES\Shire.png" />
@@ -242,13 +242,6 @@
     </Compile>
     <Compile Include="index_admin.aspx.designer.cs">
       <DependentUpon>index_admin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="LOTR\LOTRAccountRecovery.aspx.cs">
-      <DependentUpon>LOTRAccountRecovery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LOTR\LOTRAccountRecovery.aspx.designer.cs">
-      <DependentUpon>LOTRAccountRecovery.aspx</DependentUpon>
     </Compile>
     <Compile Include="LOTR\LOTRArmour.cs" />
     <Compile Include="LOTR\LOTRSword.cs" />

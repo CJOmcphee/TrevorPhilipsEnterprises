@@ -22,11 +22,11 @@
 					<div class="3u">
 						<section>
 							<header>
-								<h2>SQL Server Databases</h2>
+								<h2>MVC and Entity FrameWork</h2>
 							</header>
-							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/sql.png" width="275" height="175" alt="SQL"></a></p>
-							<a href="#" class="button">Learn</a>
+							<p class="subtitle">Learn how to use MVC and Entiry Framework step by step by creating Contoso University.</p>
+							<p><a href="#"><img src="images/MVC.jpg" width="275" height="175" alt="SQL"></a></p>
+							<a href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-2.1" class="button">Learn</a>
 						</section>
 					</div>
 					<div class="3u">
