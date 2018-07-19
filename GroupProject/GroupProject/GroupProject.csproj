@@ -69,12 +69,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\csharp.jpg" />
+    <Content Include="images\CustomerService.jpg" />
+    <Content Include="images\GitHub.jpg" />
     <Content Include="images\jswide.png" />
     <Content Include="images\logo-php.png" />
+    <Content Include="images\MSSQL.jpg" />
+    <Content Include="images\MVC.jpg" />
+    <Content Include="images\Pen.jpg" />
     <Content Include="images\sql.png" />
+    <Content Include="images\XML.jpg" />
     <Content Include="index_admin.aspx" />
-    <Content Include="LOTR\LOTRAccountRecovery.aspx" />
     <Content Include="LOTR\LOTRExtraPage.aspx" />
+    <Content Include="LOTR\LOTRPICTURES\Mordor.jpg" />
+    <Content Include="LOTR\LOTRPICTURES\Shire.png" />
     <Content Include="LOTR\LOTRXSL.xslt" />
     <Content Include="LOTR\LOTRXML.xml" />
     <Content Include="LOTR\LOTRInstall.sql" />
@@ -240,13 +247,6 @@
     </Compile>
     <Compile Include="index_admin.aspx.designer.cs">
       <DependentUpon>index_admin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="LOTR\LOTRAccountRecovery.aspx.cs">
-      <DependentUpon>LOTRAccountRecovery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LOTR\LOTRAccountRecovery.aspx.designer.cs">
-      <DependentUpon>LOTRAccountRecovery.aspx</DependentUpon>
     </Compile>
     <Compile Include="LOTR\LOTRArmour.cs" />
     <Compile Include="LOTR\LOTRSword.cs" />

@@ -16,13 +16,18 @@ namespace GroupProject
         double total;
         double price;
         double final;
+        double discount;
         protected void Page_Load(object sender, EventArgs e)
         {
+            LOTRSecurity security = new LOTRSecurity();
+            security.checkAccess("u");
             if (!IsPostBack)
             {
                 LoadProducts();
             }
             props = new LOTRProps();
+
+            
         }
         public void LoadProducts()
         {
@@ -94,23 +99,26 @@ namespace GroupProject
                     break;
 
             }
+           
         }
-        public void Sales()
-        {
-            total = total * .10;        
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Sales();
-        }
-
         protected void gvCart_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             gvCart.SelectedIndex = Convert.ToInt32(e.CommandArgument);
             int ID = Convert.ToInt32(gvCart.SelectedDataKey["id"]);
             props.RemoveProd(ID);
             LoadCart();
+        }
+
+        protected void btnCheckout_Click(object sender, EventArgs e)
+        {
+            LOTRSecurity security = new LOTRSecurity();
+            SqlCommand cmd = new SqlCommand("spCheckout", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@customerID", security.clientID);
+            cmd.Parameters.AddWithValue("@bill", props.GetTotal());
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }

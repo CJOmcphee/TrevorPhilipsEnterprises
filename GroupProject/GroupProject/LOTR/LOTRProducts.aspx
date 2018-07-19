@@ -7,6 +7,7 @@
             <asp:ButtonField ButtonType="Button" CommandName="Remove Product" HeaderText="Remove" Text="Remove" />
         </Columns>
     </asp:GridView>
+    <asp:Button ID="btnCheckout" runat="server" Text="Checkout" OnClick="btnCheckout_Click" />
      <asp:DataList ID="dlProducts" CssClass="Datalist" DataKeyField="productID"    RepeatColumns="3" runat="server" OnItemCommand="dlProducts_ItemCommand" >
         <ItemTemplate>
             <div class="DataList">
@@ -25,5 +26,6 @@
             </div>
         </ItemTemplate>
     </asp:DataList>
-    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+   
+
 </asp:Content>

@@ -83,7 +83,7 @@
                    </asp:GridView>
                </asp:Panel>
                <asp:Panel ID="pnlSlides" runat="server">
-                   <asp:Button ID="btnSlideBack" runat="server" Text="Back" OnClick="btnGoToLessons_Click"/>
+                   <asp:Button ID="btnSlideBack" runat="server" CssClass="button" Text="Back" OnClick="btnGoToLessons_Click"/>
                   <asp:GridView ID="gvSlides" AutoGenerateColumns="False" DataKeyNames="slideID" runat="server" AllowPaging="true" PageSize="5" OnPageIndexChanging="gvSlides_PageIndexChanging" OnRowCommand="gvSlides_RowCommand">
                        <Columns>
                            <asp:ButtonField HeaderText="Delete" ControlStyle-CssClass="button" ButtonType="Button" CommandName="Del" Text="Delete" />
@@ -91,6 +91,7 @@
                            <asp:BoundField HeaderText="Slide" DataField="slideInfo" />
                        </Columns>
                    </asp:GridView>
+                   
                </asp:Panel>
                <asp:Panel ID="pnlExamples" runat="server">
                <asp:Button ID="btnExampleBack" runat="server" Text="Back" OnClick="btnGoToLessons_Click" />

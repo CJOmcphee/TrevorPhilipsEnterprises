@@ -14,6 +14,8 @@ namespace GroupProject
         SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
         protected void Page_Load(object sender, EventArgs e)
         {
+            LOTRSecurity security = new LOTRSecurity();
+            security.checkAccess("a");
             if (!IsPostBack)
             {
                 LoadProducts();
