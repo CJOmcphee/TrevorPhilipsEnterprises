@@ -19,7 +19,7 @@ namespace GroupProject.user
         protected void btnSignIn_Click(object sender, EventArgs e)
         {
             DataSet ds = Crud.Login(tbEmail.Text.ToString(), tbPassword.Text.ToString());
-            if (ds.Tables.Count == 0)
+            if (ds == null)
             {
                 lblDisplay.Text = "Unsuccessful";
             }else
@@ -30,7 +30,7 @@ namespace GroupProject.user
                     security.Login(tbEmail.Text,ds.Tables[1].Rows[0]["fullname"].ToString(), "u");
                     HttpContext.Current.Response.Redirect("~/index_user.aspx");
                 }
-                else
+                else 
                 {
                     security.Login(tbEmail.Text, "Admin", "a");
                     HttpContext.Current.Response.Redirect("~/index_admin.aspx");
