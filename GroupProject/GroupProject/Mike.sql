@@ -2225,8 +2225,303 @@ EXEC dbo.spSlides @slideID = '12-2-25',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '12-2-26',   -- varchar(50)
                   @lessonid = '12-2',  -- varchar(50)
-                  @slideinfo = 'jQuery - Fade Effects ----- Slide 26', -- varchar(2000)
+                  @slideinfo = 'jQuery - Fade Effects ^^ Fades: ^ //<u>Selects the body element</u> ^ <b>var element = $(document.body);</b> ^^ //<u>Fades in the element over the specified speed</u> ^ <b>element.fadeIn(speed.callback);</b> ^^ //<u>Fades out the element over the specified speed</u> ^ <b>element.fadeOut(speed,callback);</b> ^^ //<u>Toggles between fadeIn() and fadeOut()</u> ^ <b>element.fadeToggle(speed,callback);</b> ^^ //<u>Fades to a given opacity between 0 and 1</u> ^ <b>element.fadeTo(speed,opacity,callback);</b>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-27',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Slide Effects ^^ Slides: ^^ //<u>Animates a slide down on an element</u> ^ <b>element.slideDown(speed,callback);</b> ^^ //<u>Animates a slide up on an element</u> ^ <b>element.slideUp(speed,callback);</b> ^^ //<u>Toggles between slideDown() and slideUp()</u> ^ <b>element.slideToggle(speed, callback);</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-28',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Custom Animations ^^ -We can use jQuery <b>.animate</b> to write custom animations ^^ -This is a powerful function, which can manipulate most of ^ the CSS values dynamically ^^ -All HTML elements by default have a static position', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-29',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Custom Animations ^^ -To manipulate the <b>position</b> property of an element, you ^ will need to set the property to <b>relative</b>,<b>fixed</b>, or <b>absolute</b> ^^ <b>$(selector).animate({params},speed,callback);</b> ^^ -The required <b>params</b> parameter defines the CSS properties ^ to be animated (We can separate multiple values by ^ commas) ^^ *Example: <b>{height:''150px'', width:''200px''}</b> ^^ -The <b>speed</b> and <b>callback</b> parameter are optional', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '12-2-30',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Custom Animations ^^ <b>var panel = $(''#panel'');</b> //The div to animate ^ <b>var submitButton = $(''#submitButton'');</b> //The button to click ^^ <b>$(submitButton).click(function() { ^ $(panel).animate({height:''250px'', width:''300px''}); });</b> ^^ -In this example we will find the element with id <b>''panel''</b> ^ and the element with id <b>''submitButton''</b> ^^ -We then wire up a <b>click</b> event that animates dimensions of ^ the <b>''panel''</b> to <b>250px</b> by <b>300px</b> ^^ Note: This is object literal syntax', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-31',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQeury - Custom Animations ^^ We can animate using relative values as well using the += and -= ^ operators (add to the height by a certain amount of pixels) ^^ <b>var panel = $(''#panel''); ^ var submitButton = $(''#submitButton''); ^ $(submitButton).click(function() { ^ $(panel).animate({height:''+=250px'', width:''+=300px''}); });</b> ^^ You can also set a property''s animation value to "show", "hide", ^ or "toggle" ^ <b>$(submitButton).click(function() { ^ $(panel).animate({height:''toggle'', width:''toggle''}); ^ });</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-32',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Custom Animations ^^ -jQuery has queue functionality for animations by default ^^ -If ypou write mutiple animation calls after each other, jQuery ^ creates an internal queue with the method calls and calls them ^ individually ^^ -We can take advantage of the queue functionality to play ^ different animations after each other: ^^ <b>var panel = $(''#panel''); ^ var submitButton = $(''#submitButton''); ^ $(submitButton).click(function() { ^ $(panel).animate({height:''toggle'', width:''toggle''}); ^ $(panel).animate({height:''50px'', width:''700px''}); });</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-33',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery <b>.Stop()</b> ^^ -We can use the .stop() command on an animation to stop it ^ before it is finished; there are 2 optional parameters: ^^ <b>$(selector).stop(stopAll,goToEnd);</b> ^^ <b>stopAll -</b> When false, the active animation stops and the ^ queue continues running animations ^^ <b>goToEnd -</b> specifies whether or not to complete the ^ animation immediately; the default option is false.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '12-2-34',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery Callback functions ^^ -A callback function can be executed after the effect is completed ^^ - JavaScript is run line by line, however with effects the next ^ line of code can be run even though the effect has not ^ finished; which may create errors ^^ -We use callback functions to prevent this (Typuical ^ syntax): <b>$(selector).show(speed,callback);</b> ^^ -On the next slide is an example with a callback function ^ that executes once the effect completes', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-35',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery Callback Functions ^^ <b>< html >< head > ^ < script > ^ $(document.ready)function(){ ^ var para = $("#paragraph"); ^^ para.animate({ fontSize: "70px" }, function () { ^ alert("Paragraph animated callback"); ^ }); ^ }); ^ < /script > ^ < /head > ^ < body >< p id="paragraph" >This text gets larger.< /p >< /body >< /html >', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-36',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQeury Chaining Events ^^ -Using jQuery we cna chain events to run multiple methods on ^ the same element ^^ -To chain an action, just append a method call to the previous ^ method call; we can add as many method calls as needed: ^ <b>var divElement = $("#myDiv");</b> ^^ <b>divElement.css(''backgroundColor'',''green'').animate({width:''200px'', ^ height:''300px''}).fadeToggle().fadeToggle(); ^^ -''backgroundColor'' changes the background color to green ^^ -''animate'' Animates the height and width to 300px ^^ -First fadeToggle() fades out ^^ -Second fadeToggle() Fades back in', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '12-2-37',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Modifying the DOM ^^ -Here are some methods to mamipulate HTML elements and attributes ^ (This is one of the most important parts of jQuery): ^ <u>.text</u> - Sets or returns the text content of selected elements ^ <b>var textElement = $("#mySpan"); ^ textElement.text("This assigns text to the span");</b> ^^ <u>.html()</u> - Sets or returns the content of selected elements (including ^ HTML markup) ^ <b>var divElement = $("#myDiv"); ^ divElement.html("This adds HTML to the div element <br />");</b> ^^ <u>.val()</u> - Sets or returns the value of form fields ^ <b>var textboxElement = $("#myTextbox"); ^ textboxElement.val("This assigns to the textbox value");</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-38',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Modifying the DOM ^^ -The three methods <b>.text(), .val(), and .html()</b> have a callback ^ function option ^^ -The function has two parameters: the index of the current ^ element in the list of elements selected and the original value ^^ -In the function, you will return the string you want to use as the ^ new value ^ <b>var spanElement = $("#mySpan"); ^^ spanElement.text(function(i,oldText){ ^ return "Modified text at index: " + i + "<br/><br/>" ^ +oldText; ^ });</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-39',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Modifying the DOM ^^ -The method <b>.attr()</b> has a callback function as well, but has ^ a different syntax ^^ -It returns the string with the value as well ^^^ <b>var anchor = $(''#myAnchor''); ^ anchor.attr("href",function(i,current) { ^ return current + "#"; ^ });</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-40',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Modifying the DOM ^^ We can add elements/content to the DOM using jQuery with ease: ^^ -<b>append()</b> - Inserts content at the end of the selected elements ^ <b>$("span").append("Some text to append to all spans");</b> ^^ -<b>prepend()</b> - Inserts content at th beginning of the elements ^ <b>$("span").prepend("Some text to prepend to all spans");</b> ^^ -<b>after()</b> - Inserts content after the selected elements ^ <b>$("img").after("Image description after all images");</b> ^^ -<b>before()</b> - Inserts content before the selected elements ^ <b>$("img").before("Image description before all images");</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-41',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Creating DOM Elements ^^ Here are a few different ways to create elements in the DOM ^ using jQuery, the DOM, and with HTML: ^ //<u>Create with HTML</u> ^ <b>var paragraph = "< p >Text< /p >" ^^ //<u>Create with jQuery</u> ^ <b>var paragraphTwo = $("< p >< /p >").text("Text");</b> ^^ //<u>Create with DOM</u> ^ <b>var paragraphThree = document.createElement("p");</b> ^^ //<u>Appends the elements after all images</u> ^ <b>$("img").after(paragraph,paragraphTwo,paragraphThree);</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-42',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Removing DOM Elements ^^ -Removing elements with jQuery is similar to how we added ^ theml we mainly use two methods: ^ -<b>remove()</b> - Removes the selected element and its ^ children ^ <b>$(''body'').remove();</b> ^ //<u>Removes the body</u> ^^ -<b>empty()</b> - Removes the children from the selected ^ element ^ <b>$(''body'').empty();</b> ^ //<u>Removes the children elements from the body</u>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-43',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Removing DOM Elements ^^ -We can also filter the elements to be removed ^^ -The remove() method accepts one parameter, which allows ^ you to specify any of the jQuery selector syntax: ^^ <b>$(''span'').remove(".myClass");</b> ^ //<u>Removes all span elements with the myClass class</u>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-1',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = 'AJAX', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-2',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '<u>AJAX Introduction</u> ^^ -What is AJAX? ^ *AJAX stands for Asynchronous JavaScript and XML) ^^ -AJAX is about exchanging data with a server and updating ^ parts of a web page without reloading the whole page ^^ -We can request text, HTML< XML< or JSON from a remote ^ server using both HTTP GET and HTTP POST ^^ -After receiving information from a remote server we then ^ load the data directly into jQuery selected elements on ^ the web page', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-3',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '<u>AJAX Introduction</u> ^^ -How does AJAX Work? ^^ *When we make an AJAX request from within an event, ^ the browser creates an <b>XMLHttpRequest</b> object and ^ sends it to the server ^^ *The server then processes the <b>HTTPRequest</b> and ^ formulates a response to send back to the client ^^ *The client then receives the data and processes it using ^ JavaScript/jQuery to update page content ^^ -Remember, this all happens without a full page PostBack!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-4',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '-In the next slides, we are going to talk about using: ^^ <b>.get() ^ .post() ^ .load()</b> ^^ -These are all shortcuts to the main jQuery <b>.ajax()</b> function ^^ -These shortcuts save time, but if you need to fine-tune ^ AJAX, you may need to use the <b>.ajax()</b> function', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-5',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '<u>jQuery - .load()</u> ^^ -We use the <b>.load()</b> method to load data from a server and ^ put the returned data into an element ^^ Syntax: ^ <b>$(selector).load(URL,data,callback);</b> ^^ -The URL is required and specifies the URL to load ^^ -The optional data parameter specifies a set of QueryString ^ key/value pairs to send with the request ^^ -The last parameter is an optional callback function', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-6',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '<u>Example:jQuery - .load()</u> ^^ -Test file contents: test.txt ^ <b>< h2 >Hello AJAX< /h2 > ^ < p id="myParagraph" >This content will be loaded using an ^ AJAX call< /p ></b> ^^ -Load in the contents of the file into an element: ^ <b>$("#myDiv").load("test.txt");</b> ^^ -We can also add a jQuery selector to the URL parameter, ^ This will load the content of the element with the <b>id ^ myParagraph</b> from the file <b>test.txt</b> ^ <b>$("#myDiv").load("test.txt $myParagraph");</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-7',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '<u>jQuery - .load()</u> ^^ -We can execute a function when the AJAX request finishes ^^ -There a few parameters we can use: ^^ *<b>responseTxt</b> - contains the resulting content if the call ^ succeeds ^^ *<b>statusTxt</b> - contains the status of the call ^ *<b>xhr</b> - contains the XMLHttpRequest object', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-8',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '<u>jQuery - .load()</u> ^^ -Here is an example that displays an alert with the result of ^ an AJAX call using <b>test.txt</b> from the previous slide: ^ <b>$(document).ready(function(){ ^ $("#myDiv").load("test.txt #myParagraph", ^ function (responseTxt, statusTxt, xhr) ^ { ^ if(statusTxt == "success") ^ alert("File loaded successfully"); ^ else if(statusTxt == "error") ^ alert("Error occursed: " + xhr.status + "," + ^ xhr.statusText); ^ }); ^ });', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-9',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '<u>jQuery - AJAX<b>.get()/.post()</b></u> ^^ -We use the <b>.get()</b> and <b>.post()</b> methods to request data from a server with an HTTP GET or HTTP POST request ^^ -<b>HTTP GET</b> is whem you request data from a server resource; ^ when you request a URL from your browser (may return ^ cached data) ^^ -<b>HTTP POST</b> is when you submit data to be processed by a ^ server; you click a button to send data to a server (POST ^ never caches data, normally used to send data along with a ^ request)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-10',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '<u>jQuery - AJAX<b>.get()/.post()</b></u> ^^ <b>.get()</b> Syntax: <b>$.get(URL, callback);</b> ^^ <b>.post(URL,data,callback)</b> ^^ -URL is required and defines which URL to request ^^ -Data is an optional parameter which allows you to pass ^ data along with your POST request ^^ -Callback is an optional parameter where you can specify a ^ function that will execute when the AJAX call completes', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-11',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '<u>jQuery - AJAX<b>.get()/.post</b></u> ^ -Here is an example that loads a generic handler ^ (<u>Handler.ashx</u>): ^ <b>public void ProcessRequest (HttpContext context) { ^ context.Response.ContentType = "text/pain"; ^ context.Response.Write("Hello World!"); ^ } ^^ $(document).ready(function(){ ^ $.get("Handler.ashx", function (data, status) { ^ alert("Received from handler: "+ data + " Status: " ^ + status); ^ }); ^ });</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-12',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '<u>AJAX Ecample - Part 1/2</u> ^ -Here is an example that uses <b>$.post()</b> to <b>POST</b> to a ^ genderic handler with JSON data: ^^ <b>var jsonObj = { "firstName": "Joe", "lastName":"Smith" }; ^^ $("#btnSubmit").click(function() { ^ $.post("Handler.ashx", jsonObj, function (data, status) { ^ alert("Received from handler: " + data ^ + " Status: " + status); ^ }); ^ });</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-13',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '<u>AJAX Example - Part 2/2</u> ^^ -Handler.ashx: ^ <b>public void ProcessRequest (HttpContext context){ ^ context.Response.ContentType = "text/plain"; ^ if(context.Request.HttpMethod == "GET") ^ { ^ context.Response.Write("Received GET request"); ^ } ^ else if(context.Request.HttpMethod == "POST") ^ { ^ context.Response.Write("Handler received: " ^ + context.Request.For,["firstName"].ToString() + " " ^ + context.Request.Form["lastName"].ToString()); ^ } ^ }</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-14',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '<u>Example - $.ajax() & JSON</u> ^^ -Example of passing JSON with <b>$.ajax()</b> to Handler.ashx: ^ <b>$("#btnSubmit").click(function () { ^ $.ajax({ ^ type:"POST" ^ url: "Handler.ashx", ^ cache:false, ^ data: { "firstName":"John", "lastName":"Smith" }, ^ success: function(data,status){ ^ alert("Status: " + status + " Data: " + data); ^ }, ^ error: function (error) { ^ alert("Error: " + error.status + " " + ^ error.statusText); ^ } ^ }); ^ });</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-15',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '<u><b>$.ajax()</b></u> ^^ -There are many settings available as parameters for <b>$.ajax()</b> ^^ -We send settings as JSON syntax in the AJAX request', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-16',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '<u><b>$.ajax()</b></u> ^^ -The main ones to be faimiliar with are: ^^ <b>URL</b> - URL being requested ^ <b>Type</b> - type of HTTP request (GET,POST,PUT,DELETE) ^ <b>Cache</b> - defines whether to cache the data requested ^ <b>Data</b> - the data to be passed along with the request ^ <b>Success</b> - the function to be run on successful request ^ <b>Error</b> - the function to be run when an error occurs', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-17',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = 'AJAX <u>ScriptManager/UpdatePanel</u> ^^ -We can take advantage of a few ASP.NET AJAX ^ controls called the <b>ScriptManager</b> and <b>UpdatePanel</b> ^ which will generate JavaScript for us to assist with ^ the AJAX calls. ^^ -This is an easier way to use AJAX without having ^ extensive knowledge of JavaScript ^^ -You can start by fragging and dropping a ^ <b>ScriptManager</b> tool and <b>UpdatePanel</b> onto your page ^ inside a form with <b>runat="server"</b> attribute', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-18',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = 'AJAX <u>ScriptManager/UpdatePaneel</u> ^^ -The <b>UpdatePanel</b> has two tage available: ^ <b>ContentTemplate</b> and Trigger ^^ -The <b>Triggers</b> tag allows you to set which controls will ^ trigger the <b>UpdatePanel</b> to refresh ^^ -The <b>ContentTemplate</b> tag is the template that the ^ <b>UpdatePanel</b> will send when processing the AJAX ^ request. ^^ -The next slide will have an example of how to setup a ^ basic request', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-19',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = 'AJAX <u>ScriptManager/UpdatePanel</u> ^^ -The <b>ScriptManager</b> takes care of the JavaScript for us behind the ^ scenes. It writes them to the DOM when the page is requested. ^^ -If we wanted one of the items in the <b>ContentTemplate</b> to trigger the ^ asynchronous request, we can set a property on the <b>UpdatePanel</b> called ^ <b>ChildrenAsTriggers = true</b>. Then when we have a button inside the ^ <b>UpdatePanel</b>, its <b>POST</b> request will trigger the AJAX request to the ^ page. ^^ <b>UpdatePanels</b> are useful when we want to query a database and get ^ back results without reloading the entire page. We can put a <b>GridView</b> ^ inside of an <b>UpdatePanel</b> and then trigger an event that causes a <b>POST</b> ^ to update the <b>GridView</b> asynchronously. The next slide will show an ^ example of this.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-20',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '<u>Generic Handler Example</u> ^^ -Here is an example of setting up a button click to send a ^ message to a generic handler (note, it is assumed you have html ^ to match the controls below): ^ <b>$(document).ready(function() { ^ $("#btnAddMsg").click(function() { ^ $.ajax({ ^ url: "/GenericHandler1.ashx", ^ cache: false, ^ type: ''POST'', ^ data: { Message: $("#txtMsg").val()};, ^ success: function (response) {}, ^ error: function (data, status, jqXHR) {} }) });});</b> ^ -Note: you should have code in the success or error if you want ^ feedback!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-3-21',   -- varchar(50)
+                  @lessonid = '12-3',  -- varchar(50)
+                  @slideinfo = '<u>Generic Handler Example</u> ^ -In the generic handler (just add a gneric handler through the ^ menu, you can search for it the same place you make a new web ^ form!): ^ <b>public class GenericHandler1 : IHttpHandler, ^ <u>System.Web.SessionState.IRequiresSessionState</u> ^ { ^ public void ProcessRequest(HttpContext context) { ^ string username = context.Session["UserName"].ToString(); ^ string message = context.Request.Form["Message"]; ^ } ^ }</b> ^ Note: if you want to use the session in the nadler, you have to ^ implement the "IRequiresSessionState" as indicated above! Also ^ note "Message" was the json vairable name from the last slide!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-4-1',   -- varchar(50)
+                  @lessonid = '12-4',  -- varchar(50)
+                  @slideinfo = 'HTML/CSS3', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-4-2',   -- varchar(50)
+                  @lessonid = '12-4',  -- varchar(50)
+                  @slideinfo = 'What is HTML5? ^^ -HTML5 is the new page markup standard for the web. There are ^ many new features available that we are going to talk about: ^^ *Local Databases ^ *Full CSS3 support ^ *2D and 3D graphics with canvas element ^ *Video and Audio tags for simplicity ^ *New elements ^ *Form controls ^^ -All of these features and more make HTML5 a rapidly growing ^ technology. Now is a good time to start learning HTML5 since the ^ transition is just beginning. ^^ -HTML5 reduces the need for external plugins such as Flash ^ because it can already perform the majority of task internally.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-4-3',   -- varchar(50)
+                  @lessonid = '12-4',  -- varchar(50)
+                  @slideinfo = 'What is the same in HTML5? ^^ -A lot of the elements in previous versions of HTML are still ^ available. The main structure of the document is still the same: ^^ <b> < !DOCTYPE > ^ < html > ^ < head > ^ < title >Document Title< /title > ^ < /head > ^ < body > ^ Document Content ^ < /body > ^ < /html > </b> ^^ -The !DOCTYPE declaration has been shortened. All you need to ^ say is the !DOCTYPE is HTML and we can begin working with ^ HTML5.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-4-4',   -- varchar(50)
+                  @lessonid = '12-4',  -- varchar(50)
+                  @slideinfo = 'HTML5 Features ^^ -All the major browser (Chrome, Firefox, Opera, Safari, Internet ^ Explorer) support HTML5 and continue to add new HTML5 feature. If ^ the tag is not supported in Chrome, it will not be discussed. ^^ -Some new structure elements include: ^ <b>*< article > - Defines an article of information ^ *< aside > - Used for content aside from the main page content ^ *< bdi > - Used to isolate a part of some text that might be formatted in a ^ different direction from other text around it. ^ *< command > - Defines a command button that a user can trigger ^ *< details > - Defines a command button that a user can trigger ^ *< dialog > - Used to define a dialog box or window ^ *< summary > - Defines a visible description for a < details > element</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-4-5',   -- varchar(50)
+                  @lessonid = '12-4',  -- varchar(50)
+                  @slideinfo = 'HTML5 Features ^^ -When to use <b>< article ></b>: ^ *If the content can make sense by itself when its in a feed reader. ^^ -When to use <b>< section ></b>: ^ *If the content has no relationship, <b>< div ></b> is the best choice. ^^ -The standard structure for an article consists of a <b>< header ></b>, a content ^ area, and sometimes a <b>< footer ></b>. Articles can also contain nested ^ <b>< section ></b> elements with articles inside them or vice-versa. An example ^ of an <b>< article ></b> structure is on the next slide.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-4-6',   -- varchar(50)
+                  @lessonid = '12-4',  -- varchar(50)
+                  @slideinfo = 'HTML5 Features ^^ <b>< article > ^ < h1 >My Content< /h1 > ^ < section > ^ < h2 >Comment Section< /h2 > ^ < article > ^ < header > ^ < h3 >By: Joe Smith< /h3 > ^ < /header > ^ < p >Nice site! < /p > ^ < footer > ^ < p >Posted: April 3rd, 2013< /p > ^ < /footer > ^ < /article > ^ < /section > ^ < /article > </b> ^ -We can have multipe <b>< section ></b> elements to group related information together in a ^ single article. This splits up the information logically.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-4-7',   -- varchar(50)
+                  @lessonid = '12-4',  -- varchar(50)
+                  @slideinfo = 'What is CSS3? ---- Slide 27', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
