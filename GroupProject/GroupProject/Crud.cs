@@ -204,5 +204,12 @@ namespace GroupProject
             mydal.AddParam("@crud", "r");
             return mydal.ExecuteProcedure("spSlides");
         }
+        public static DataSet EditSlide(string SlideID, string SlideInfo)
+        {
+            mydal.AddParam("@slideID", SlideID);
+            mydal.AddParam("@slideinfo", SlideInfo);
+            mydal.AddParam("@crud", "u");
+            return mydal.ExecuteProcedure("spSlides");
+        }
     }
 }

@@ -384,12 +384,20 @@ as begin
 				select * from tbSlides where slideID = @slideID
 			end
 		end
+	if @crud = 'u'
+		begin
+			update tbSlides set slideInfo = @slideinfo, lessonid=lessonid where slideID = @slideID
+		end
 	if @crud ='d'
 		begin
 			delete from tbSlides where slideID = @slideID
 		end
 end
 go
+
+--exec spSlides @crud='u',@slideID='1-1-1',@slideinfo='test'-----
+--exec spSlides @crud='r',@slideID='1-1-1'  --------------------- Testing the Slide Update - Darryl
+--go
 
 create procedure spTest
 (
