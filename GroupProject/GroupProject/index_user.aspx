@@ -104,7 +104,7 @@
 		<div id="featured">
 			<div class="container">
 				<div class="row">
-					<section>
+					<section class="4u">
 						<div class="box">
 							<a class="image left"><img src="images/MVC.jpg" alt=""></a>
 							<h3>MVC and Entity Framework</h3>
