@@ -10,6 +10,9 @@ using System.Web.UI.HtmlControls;
 using System.Drawing;
 
 
+
+
+
 namespace GroupProject
 {
     public partial class PracticeTest : System.Web.UI.Page
@@ -20,6 +23,7 @@ namespace GroupProject
         Dictionary<RadioButtonList,Tuple<Label, Label>> radioButtonLists = new Dictionary<RadioButtonList, Tuple<Label,Label>>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            System.Windows.Forms.MessageBox.Show("NO CHEATING");
             switch(ddlTestChoice.SelectedItem.Text)
             {
                 case "Module 1":

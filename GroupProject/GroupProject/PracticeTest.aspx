@@ -4,11 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+
     <title></title>
 </head>
 <body>
+  
     <form id="form1" runat="server">
         <div>
+            <div class="topnav">
             <asp:DropDownList ID="ddlTestChoice" AutoPostBack="true" runat="server">
                 <asp:ListItem>Module 1</asp:ListItem>
                 <asp:ListItem>Module 2</asp:ListItem>
@@ -20,6 +23,7 @@
                 <asp:ListItem>Module 8</asp:ListItem>
                 <asp:ListItem>Module 9</asp:ListItem>
             </asp:DropDownList>
+            </div>
             <table id="table1" runat="server">    
             </table>
             <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
