@@ -87,7 +87,6 @@ namespace GroupProject
                     myCell.Controls.Add(mylabel);
                     myRow.Controls.Add(myCell);
                     myTable.Controls.Add(myRow);
-
                 }
                 slidePanel.Controls.Add(myTable);
                 FillDiv(slidePanel);

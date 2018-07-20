@@ -13,6 +13,7 @@
        	<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
+        <script src="Scripts/angular.min.js"></script>
         <script>
             $(document).ready(function () {
             var url = window.location;
