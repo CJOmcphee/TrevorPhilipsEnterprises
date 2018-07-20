@@ -14,7 +14,7 @@
 							<header>
 								<h2>The Basics of C#</h2>
 							</header>
-							<p class="subtitle"> You Learn about the basiscs from console commands to ASP.NET webpages.</p>
+							<p class="subtitle">Learn about the basiscs from console commands to ASP.NET webpages.</p>
 							<p><a><img width="275" height="175" src="images/csharp.jpg" alt="C Sharp" /></a></p>
 							<a href="#" class="button">Learn</a>
 						</section>
