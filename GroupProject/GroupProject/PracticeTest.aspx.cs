@@ -38,16 +38,16 @@ namespace GroupProject
                     LoadQuestion("module5");
                     break;
                 case "Module 6":
-                    LoadQuestion("module5");
+                    LoadQuestion("module6");
                     break;
                 case "Module 7":
-                    LoadQuestion("module5");
+                    LoadQuestion("module7");
                     break;
                 case "Module 8":
-                    LoadQuestion("module5");
+                    LoadQuestion("module8");
                     break;
                 case "Module 9":
-                    LoadQuestion("module5");
+                    LoadQuestion("module9");
                     break;
             }
 
