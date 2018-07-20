@@ -1107,7 +1107,7 @@
 	#featured
 	{
 		position: relative;
-	}
+    }
 	
 	#featured .divider
 	{
@@ -1116,9 +1116,11 @@
 	
 	#featured .box
 	{
-		background: #FFF;
+		background: none;
 		padding: 1.4em;
 		font-size: 0.95em;
+        border: none;
+        box-shadow: none;
 	}
 	
 	blockquote
