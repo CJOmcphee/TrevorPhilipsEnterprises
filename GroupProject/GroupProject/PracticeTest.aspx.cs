@@ -22,19 +22,31 @@ namespace GroupProject
         {
             switch(ddlTestChoice.SelectedItem.Text)
             {
-                case "module1":
+                case "Module 1":
                     LoadQuestion("module1");
                     break;
-                case "module2":
+                case "Module 2":
                     LoadQuestion("module2");
                     break;
-                case "module3":
+                case "Module 3":
                     LoadQuestion("module3");
                     break;
-                case "module4":
+                case "Module 4":
                     LoadQuestion("module4");
                     break;
-                case "module5":
+                case "Module 5":
+                    LoadQuestion("module5");
+                    break;
+                case "Module 6":
+                    LoadQuestion("module5");
+                    break;
+                case "Module 7":
+                    LoadQuestion("module5");
+                    break;
+                case "Module 8":
+                    LoadQuestion("module5");
+                    break;
+                case "Module 9":
                     LoadQuestion("module5");
                     break;
             }
