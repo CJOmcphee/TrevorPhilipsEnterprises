@@ -133,6 +133,11 @@ namespace GroupProject
             Response.Redirect("ExampleTemplate.aspx?Lesson="+Request.QueryString["slide"]);
         }
 
+        protected void btnGoTest_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PracticeTest.aspx");
+        }
+
         protected void btnNext_Click(object sender, EventArgs e)
         {
             int y = (int)Session["Navi"];
