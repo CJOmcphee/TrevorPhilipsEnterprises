@@ -69,10 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\csharp.jpg" />
+    <Content Include="images\CSS.jpg" />
     <Content Include="images\CustomerService.jpg" />
     <Content Include="images\GitHub.jpg" />
     <Content Include="images\jswide.png" />
     <Content Include="images\logo-php.png" />
+    <Content Include="images\MicroSoftCert.png" />
     <Content Include="images\MSSQL.jpg" />
     <Content Include="images\MVC.jpg" />
     <Content Include="images\Pen.jpg" />

@@ -114,18 +114,18 @@
 					</section>
 					<section class="4u">
 						<div class="box">
-							<a class="image left"><img src="images/pics05.jpg" alt=""></a>
-							<h3>Etiam posuere augue</h3>
-							<p>Donec nonummy magna quis risus eleifend. </p>
-							<a href="#" class="button">More</a>
+							<a class="image left"><img src="images/CSS.jpg" alt=""></a>
+							<h3>CSS and CSS3</h3>
+							<p>Learn how to style web applications and controls through the online source of W3 schools. </p>
+							<a href="https://www.w3schools.com/Css/" class="button">Learn</a>
 						</div>
 					</section>
 					<section class="4u">
 						<div class="box">
-							<a class="image left"><img src="images/pics06.jpg" alt=""></a>
-							<h3>Etiam posuere augue</h3>
-							<p>Donec nonummy magna quis risus eleifend. </p>
-							<a href="#" class="button">More</a>
+							<a class="image left"><img src="images/MicroSoftCert.png" alt=""></a>
+							<h3>Microsoft Certifaction</h3>
+							<p>At the end of the course you are given 3 tokens to aquire Microsoft Certifcations </p>
+							
 						</div>
 					</section>
 				</div>	
