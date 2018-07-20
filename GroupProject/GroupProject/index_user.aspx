@@ -15,17 +15,17 @@
 								<h2>The Basics of C#</h2>
 							</header>
 							<p class="subtitle">Learn about the basiscs from console commands to ASP.NET webpages.</p>
-							<p><a href="#"><img width="275" height="175" src="images/csharp.jpg" alt="C Sharp" /></a></p>
+							<p><a><img width="275" height="175" src="images/csharp.jpg" alt="C Sharp" /></a></p>
 							<a href="#" class="button">Learn</a>
 						</section>
 					</div>
 					<div class="3u">
 						<section>
 							<header>
-								<h2>SQL Server Databases</h2>
+								<h2>MS SQL Server </h2>
 							</header>
-							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/sql.png" width="275" height="175" alt="SQL"></a></p>
+							<p class="subtitle">Learn how to create crud class and how to use stored procedures.</p>
+							<p><a><img src="images/MSSQL.jpg" width="275" height="175" alt="SQL"></a></p>
 							<a href="#" class="button">Learn</a>
 						</section>
 					</div>
@@ -35,7 +35,7 @@
 								<h2>Get started with PHP</h2>
 							</header>
 							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/logo-php.png" width="275" height="175" alt="PHP"></a></p>
+							<p><a><img src="images/logo-php.png" width="275" height="175" alt="PHP"></a></p>
 							<a href="#" class="button">Learn</a>
 						</section>
 					</div>
@@ -44,8 +44,8 @@
 							<header>
 								<h2>Javascript & HTML5</h2>
 							</header>
-							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/jswide.png" width="275" height="175" alt="Javascript" /></a></p>
+							<p class="subtitle">Learn how to use Jquery, Json, Ajax calls and HTML5 controls.</p>
+							<p><a><img src="images/jswide.png" width="275" height="175" alt="Javascript" /></a></p>
 							<a href="modules.aspx" class="button">Learn</a>
 						</section>
 					</div>
@@ -65,31 +65,30 @@
 							<p><a></a>.</p>
 							<p>In this program, you will learn the basic fundamentals of becoming a full-stack Software Developer including SQL Databases, front-end and back-end technologies.</p>
                             <p>This website is where you will be able to view all of your lessons, complete exercises and assignments.</p>
-							<p>Chris REALLY loves his vinegar.</p>
 							<a href="modules.aspx" class="button">Get Started</a>
 						</section>
 					</div>
 					<div class="3u">
 						<section class="sidebar">
 							<header>
-								<h2>Placeholder:</h2>
+								<h2>You'll learn</h2>
 							</header>
 							<ul class="style2">
 								<li>
-									<a href="#"><img src="images/pics07.jpg" alt=""></a>
-									<p>Donec leo, vivamus fermentum augue praesent a lacus at urna rutrum.</p>
+									<a><img src="images/Pen.jpg" height="100" width="100" alt=""></a>
+									<p>Write a cover letter and resume</p>
 								</li>
 								<li>
-									<a href="#"><img src="images/pics08.jpg" alt=""></a>
-									<p>Donec leo, vivamus fermentum augue praesent a lacus at urna rutrum.</p>
+									<a><img src="images/CustomerService.jpg" height="75" width="100" alt=""></a>
+									<p>Customer Service and User Experience </p>
 								</li>
 								<li>
-									<a href="#"><img src="images/pics09.jpg" alt=""></a>
-									<p>Donec leo, vivamus fermentum augue praesent a lacus at urna rutrum.</p>
+									<a><img src="images/XML.jpg" height="75" width="100" alt=""></a>
+									<p>XML&XSL and Web Services</p>
 								</li>
 								<li>
-									<a href="#"><img src="images/pics10.jpg" alt=""></a>
-									<p>Donec leo, vivamus fermentum augue praesent a lacus at urna rutrum.</p>
+									<a><img src="images/GitHub.jpg" alt="" height="75" width="100"></a>
+									<p>Learn how to use GitHub </p>
 								</li>
 							</ul>						
 						</section>
@@ -107,104 +106,29 @@
 				<div class="row">
 					<section class="4u">
 						<div class="box">
-							<a href="#" class="image left"><img src="images/pics04.jpg" alt=""></a>
-							<h3>Etiam posuere augue</h3>
-							<p>Donec nonummy magna quis risus eleifend. </p>
-							<a href="#" class="button">More</a>
+							<a class="image left"><img src="images/MVC.jpg" alt=""></a>
+							<h3>MVC and Entity Framework</h3>
+							<p>Learn step by stpe to create Contoso University. </p>
+							<a href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-2.1" class="button">Learn MVC</a>
 						</div>
 					</section>
 					<section class="4u">
 						<div class="box">
-							<a href="#" class="image left"><img src="images/pics05.jpg" alt=""></a>
-							<h3>Etiam posuere augue</h3>
-							<p>Donec nonummy magna quis risus eleifend. </p>
-							<a href="#" class="button">More</a>
+							<a class="image left"><img src="images/CSS.jpg" alt=""></a>
+							<h3>CSS and CSS3</h3>
+							<p>Learn how to style web applications and controls through the online source of W3 schools. </p>
+							<a href="https://www.w3schools.com/Css/" class="button">Learn</a>
 						</div>
 					</section>
 					<section class="4u">
 						<div class="box">
-							<a href="#" class="image left"><img src="images/pics06.jpg" alt=""></a>
-							<h3>Etiam posuere augue</h3>
-							<p>Donec nonummy magna quis risus eleifend. </p>
-							<a href="#" class="button">More</a>
+							<a class="image left"><img src="images/MicroSoftCert.png" alt=""></a>
+							<h3>Microsoft Certifaction</h3>
+							<p>At the end of the course you are given 3 tokens to aquire Microsoft Certifcations </p>
+							
 						</div>
 					</section>
-				</div>
-				<div class="divider"></div>
+				</div>	
 			</div>
 		</div>
-	<!-- /Featured -->
-
-	<!-- Footer -->
-		<div id="footer">
-			<div class="container">
-				<div class="row">
-					<div class="3u">
-						<section>
-							<h2>Maecenas lectus</h2>
-							<div class="balloon">
-								<blockquote>&ldquo;&nbsp;&nbsp;Donec leo, vivamus ullamcorper fermentum nibh in augue pulvinar ullamcorper metus praesent a lacus at urna congue ullamcorper  rutrum.&nbsp;&nbsp;&rdquo;<br>
-									<br>
-									<strong>&ndash;&nbsp;&nbsp;John Smith</strong></blockquote>
-							</div>
-							<div class="ballon-bgbtm">&nbsp;</div>
-						</section>
-					</div>
-					<div class="3u">
-						<section>
-							<h2>Donec dictum</h2>
-							<ul class="default">
-								<li>
-									<h3>Mauris vulputate dolor sit amet</h3>
-									<p><a href="#">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</a></p>
-								</li>
-								<li>
-									<h3>Fusce ultrices fringilla metus</h3>
-									<p><a href="#">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</a></p>
-								</li>
-								<li>
-									<h3>Donec dictum metus in sapien</h3>
-									<p><a href="#">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</a></p>
-								</li>
-							</ul>
-						</section>
-					</div>
-					<div class="3u">
-						<section>
-							<h2>Nulla leifend</h2>
-							<p>Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat.</p>
-							<ul class="style5">
-								<li><a href="#"><img src="images/pics07.jpg" alt=""></a></li>
-								<li><a href="#"><img src="images/pics08.jpg" alt=""></a></li>
-								<li><a href="#"><img src="images/pics09.jpg" alt=""></a></li>
-								<li><a href="#"><img src="images/pics10.jpg" alt=""></a></li>
-								<li><a href="#"><img src="images/pics11.jpg" alt=""></a></li>
-								<li><a href="#"><img src="images/pics12.jpg" alt=""></a></li>
-							</ul>
-							<a href="#" class="button">More Collections</a>
-						</section>
-					</div>
-					<div class="3u">
-						<section>
-							<h2>Luctus eleifend</h2>
-							<p><strong>Aliquam erat volutpat. Pellentesque tristique ante ut risus. </strong></p>
-							<p>Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum congue, nibh. Suspendisse dictum porta lectus. Donec placerat odio vel elit.</p>
-							<p>Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat.</p>
-							<a href="#" class="button">More Collections</a>
-						</section>
-					</div>
-				</div>
-			</div>
-		</div>
-	<!-- /Footer -->
-
-	<!-- Copyright -->
-		<div id="copyright" class="container">
-			Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
-		</div>
-
-           
-
-
- 
 </asp:Content>

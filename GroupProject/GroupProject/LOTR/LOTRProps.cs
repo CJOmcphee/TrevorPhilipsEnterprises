@@ -45,6 +45,7 @@ namespace GroupProject
             }
             return total;
         }
+    
         public void RemoveProd(int ID)
         {
 
@@ -59,6 +60,7 @@ namespace GroupProject
                 }
             }
         }
+       
         public DataTable Get()
         {
             DataTable dt = new DataTable();

@@ -1776,6 +1776,475 @@ EXEC dbo.spSlides @slideID = '12-1-1',   -- varchar(50)
                   @slideinfo = 'JavaScript & DOM', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '12-1-2',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Java is not JavaScript? ^^ <b>-JavaScript</b> is *NOT* <u>Java</u> ^^ -<u>Java</u> is a programming language similar to C# and C++ ^ whereas <b>JavaScript</b> is a scripting language similar to PHP, ^ Python and Rub on Rails ^^ <b>-JavaScript</b> was never intended to be a standalone ^ programming language, rather to mimic the feel of a ^ desktop application on the web', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-3',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'What is JavaScript? ^^ <b>-JavaScript</b> is a scripting language ^^ -It was created to augent HTML, it''s original name was: ^ ECMA Script (but due to the ugly sounding name it ^ changed) ^^ -Since HTML is not dynamic by itself, JavaScript is used ^ from the browser to increase the interactivity of web ^ forms through dynamic results ^^ -JavaScript is considered THE scripting language of the ^ web; understanding the fundamentals, gives you that ^ much more advantage', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-4',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Debugging JavaScript ^^ -One of the key concepts you will need to understand while ^ working with JavaScript is how to debug it. ^^ -When JavaScript doesn not work, it will not let you knowm unless ^ you control the errors and the error messages. ^^ -If you want to see some information, you will need to display it in an alert, log it to the console, or display it in an ^ element.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-5',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Debugging JavaScript ^^ -Anytime you want to log something to the browser''s ^ console window, you can write this code: ^^ <b>console.log(''Some information'');</b> ^^ -A great debugger for JavaScript is already built into the ^ Google Chrome browser ^^ -These are called the "Developer Tools."', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-6',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Debugging JavaScript ^^ 1. Open your web page in Google Chrome. ^^ 2.Hit F12 to open the Developer''s panel. ^^ 3. Select "Sources" at the top of the panel. ^^ 4. On the left side, you will either see a window pane witha  folder structure ^^ 5. If there is no folder structure, click the arrow to show the ^ folder structure', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-7',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Debugging JavaScript ^^ 6. Find the script file or web page you are working on and ^ select it. It will then be displayed in the middle window pane. ^^ 7. In the middle window, set a breakpoint on the left side ^ where the line numbers are, just like in C#. ^^ -As long as this panel is open, the debugger will run. ^^ -Note: If you close the panel, it will not break.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-8',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Debugging JavaScript ^^ -Breakpoint one of your JavaScript functions and hover over ^ some variables to get familiar with them ^^ -Use the Console window to interact with your page ^ dynamically ^^ This window is similar to the immediate Window in C#, ^ which allows you to execute cod while the code is paused ^ on a breakpoint ^^ -Experiment with these debugging techniques as much as ^ possible!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-9',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Introduction ^^ You will run all JavaScript between the aptly named HTML ^ < script > tags: ^^ Example: ^ <b> < script type="text/javascript"> ^ *INSERT YOUR JavaScript CODE HERE* ^ </ script ></b> ^^ NOTE: In HTML5, you do not need to say: ^ <b>type="text/javascript"</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '12-1-10',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Introduction ^^ -You can create your own JavaScript file with the extension ^ .js and reference the file from a script tag (usually placed ^ in the < head >); example: ^^ <b>< script type="text/javascript" src=''js\MyJScript.js''> ^ < /script ></b> ^^ -Your js files should be placed into a directory called "<b>js</b>" or ^ "<b>scripts</b>" ^^ -Note: Like CSS, creating a separate folder for <b>.js</b> files is ^ only a suggestion, not a requirement', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-11',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Syntax ^^ -JavaScript is similar to C#, however, there are differences: ^^ *JavaScript is not type-safe ^^ #Example: You can assign an integer to a string variable ^ without conversion ^^ *Variables do not need to be declared, their data types ^ are inferred by the compiler', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-12',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Syntax - Variables ^^ -Example variable declaration (these are all <u>valid</u>): ^ <b>var myAge = 30; ^ var myName = "Scott"; ^ var canIVote = true; ^ var array = new Object(); ^ array[0] = myAge; ^ array["myName"] = myAge; ^ myAge = myAge = myName;</b> ^ -A lot of these would cause syntax errors in C# ^ -In JavaScript you do not have to declare a datatype ^ -Semi-colons(;) are optional ^ -You can switch from datatype on the fly (Example: from ^ number to string even after the first assignment)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-13',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Syntax - Data Types ^^ -There are only 4 types of data types: ^ 1. Numbers ^ 2. Strings ^ 3. Booleans ^ 4. Objects ^^ -Note you can use the "<b>typeof()</b>" method to determine the ^ type of a variable ^^ -Example: ^ <b>var myAge = 30.0; ^ alert(typeof(myAge));</b> ^ // Prints the word: "number" on the screen', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-14',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Syntax - Data Types Numbers ^^ -Numbers are a value type ^^ -There is only one type of number, no need to convert ^ between integer and double ^^ -Numbers in JavaScript are 64bit "Real Numbers" ^^ *All numbers can use decimals can be positive or negative ^^ -Numbers can end up as either <b>NaN (Not a number)</b> or ^ <b>Infinity</b> (eg. divide by zero)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-15',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Syntax - Data Types Strings ^^ -Strings in JavaScript are value types, not reference types ^ like in C# ^^ -You can start a string with either double quotes or single ^^ -If you start with double quotes, you must end with double ^ quotes ^^ -Example: ^ <b>var myString = "Hello World!"; ^ var myOtherString = ''Hello World!'';</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-16',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Syntax - Data Types Booleans ^^ -Booleans are value types ^^ -Be aware that boolean expressions can be run on ^ non-boolean values (neither "<b>true</b>" nor "<b>false</b>") ^^ -The following values are equivalent to <b>false</b> in JavaScript: ^^ *<b>"", null, undefined, 0, false</b> ^^ -Note: Every other value will evaluate to <b>true</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-17',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Operators ^^ -The operators we are familiar with (<b>=</b>,<b>+</b>,<b>*</b>,<b>/</b>,<b>%</b>,<b>++</b>,<b>--</b>) are used the same ^ in JavaScript as C#; when dealing with comparison, things are slightly ^ different: ^ <b>== : is equal to ^ === : is exactly equal to (value and type) ^ != : is not equal to ^ !== : is not equal to (neither value nor type) ^ > : is greater than ^ < : is less than ^ >= : is greater than or equal to ^ <= : is less than or equal to ^ && : logical AND ^ || : logical OR ^ ! : logical NOT</b> ^^ <b>ableToVote = (age>18) ? true : false;</b> //This is an example of a conditional ^ operator. This also works in C#. It is similar to an if, else statement.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-18',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Conditional Statements ^^ -Conditional statements in JavaScript are the exact same: ^ <b>if (true) {</b> /* ... */ <b>}</b> ^ <b>else if (true) {</b> /* ... */<b>}</b> ^ <b>else {</b> /* ... */<b>}</b> ^^ <b>Switch (num) ^ { ^ case 1: alert("1"); break; ^ case 2: alert("2"); break; ^ Default: alert("Not found"); break; ^ }</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-18',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Comments ^^ -Comments have a similar syntax to C# ^^ -This is the same for both single line and multi line ^ comments ^^ -Example: ^ <b>//This is a comment</b> ^^ <b>/*This is also ^ a comment that expans ^ across multiple lines */</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-19',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Variable Scope ^^ -Similar to C#, the scope of your variables is important ^^ -To have global variables, declare them right inside the ^ <b>< script >< /script ></b> tags ^^ -If you assign a value to a variable that has not been ^ declared, it will become a global variable ^^ -See next slide for an example:', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-20',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Variable Scope ^^ <b>< script > ^^ var globalVariable = 10;</b>  //This is a global variable ^^ <b>function newFunction() ^ { ^ var localVariable = "Hello World!";</b> //This is <u>local</u> variable ^ <b>anotherGlobalVariable = 150;</b>  //This is a global variable ^ <b>alert(globalVariable + anohterGlobalVariable); ^ } ^^ < /script ></b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-21',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Arrays ^^ -Arrays can be defined and used in many ways; here are ^ some examples: ^ <b>var myArray = new Array(); ^ myArray["key"] = "value"; ^^ var mySecondArray = [2,3,6,7,15,27]; ^ alert(mySecondArray[1] + mySecondArray[3]);</b> //prints 10 ^^ <b>Var myThirdArray = []; ^ myThirdArray[-10] = "I can pick any spot I want randomly"; ^ myThirdArray[2] = "JavaScript is NOT picky!";</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-22',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Arrays ^^ -You may have noticed that we did not set a length for the ^ array; by default the array will be expanded as needed ^^ -We do not set a consistent datatype for all vaues inside of ^ an array (be careful when doing this) ^^ *JavaScript is type insensitive, meanings that if we add ^ strings and numbers randomly into an array, it will let us', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-23',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript ^^ -The "for loop" syntax in JavaScript is identical to a C# "for ^ loop": ^ <b>var sum = 0.0; ^^ for (var i = 0; i <someArray.length; i++) ^ { ^ sum = sum + someArray[i]; ^ }</b> ^^ -You might think this is C# but it isn''t. The only difference ^ is the length property does not have a capital like in C#', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-24',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Loops ^^ -One major difference between C# loops and JavaScript is ^ the <b>foreach</b> statement; which is now called a <b>for / in</b> loop: ^^ <b>var sum = 0.0; ^ for (var i in someArray) ^ { ^ sum = sum + someArray[i]; ^ } ^^ alert(sum);</b> ^^ -Note: the "<b>i</b>" variable is the <u>index</u>, NOT the value', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-25',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Loops ^^ -There is also a while loop and "do while" loop which are ^ structured the exact same as C#: ^^ <b>while(true) { ^ alert("Hello World!"); ^ } ^^ do { ^ alert("Hello World!"); ^ } while(true);</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-26',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Loops ^^ -There are two keywords to be aware of with loops that are ^ used in C# as well, <b>break</b> and <b>continue</b> ^^ -<b>Break</b> will exit the loop immediately and continue ^ executing the code below the loop structure ^^ -<b>Continue</b> will skip the current iteration in the loop and ^ continue to the next iteration', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-27',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Functions ^^ -Functions are defined as follows: ^^ <b>function nameOfFunction (paramName1, paramName2, etc...) ^ { ^ var someReturnValue = "Hello World!"; ^ return someReturnValue; ^ }</b> ^^ Major differences (NO DATA TYPES): ^ 1. Return DataType is not defined ^ 2. Parameters do bot have DataTypes ^ 3. If you do not want to return anything, just leave out the ^ return statement!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-28',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Functions ^^ -Here is an exampe of using a JavaScript function: ^ <b>function sumTwoNums (num1,num2) ^ { ^ var suml ^ sum = num1 + num2; ^ return sum; ^ } ^^ var sum = sumTwoNums(3,2); ^ alert(sum);</b> // Will display "5" ^^ <b>alert(sumTwoNums(3,2));</b> // Also valid, same result', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-28',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Functions ^^ -If you do not have a return statement in your function, but ^ you assign the value of the function to a variable, the ^ result will be "<b>undefined</b>": ^^ <b>function sumTwoNumsButDontReturn(num1,num2) ^ { ^ var sum; ^ sum = num1 + num2;</b> // Note: this is not a return! ^ <b>} ^ var sum = sumTwoNumbsButDontReturn(3,2); ^ alert(sum);</b> // Will display "undefined"', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-29',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Functions ^^ -We can assign a function directly to a variable name in ^ code ^^ -You can think of a function as an object in this specific ^ scenario ^^ -We can also pass a function as a parameter variavle (see ^ next slide for example) ^^ -When you pass a function as a variable, you want to check ^ if the variable is <b>null</b> before executing code; for good error ^ handling', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-30',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Functions ^^ -Example; Passing a function as a parameter: ^ <b>function addTwoNums(num1,num2) {return num1 + num2; } ^^ function subtractTwoNums(n1,n2) { return n1 - n2; } ^^ function performMathOnTwoNums(F,numOne,numTwo) ^ { ^ if(F != null) { return F(numOne, numTwo); } ^ } ^^ alert(performMathOnTwoNums(addTwoNums,8,2)); ^ alert(performMathOnTwoNums(subtractTwoNums,8,2));</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-31',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Labels ^^ -You can declare a label at any time with start and stop brackets which ^ will then define a block of code ^^ -You can then use the <b>breal</b> statement (followed by the name of the ^ label) to "jump out of" any code block ^^ Note: It is good to be aware of the syntax when reading another ^ developer''s code, however, this is NOT suggested to be used ever ^ <b>var car=["Chevy","Toyota","Honda","Ford"]; ^ list: ^ { ^ document.write(cars[0] + "<br>"); ^ break list; ^ document.write(cars[1] + "<br>"); ^ }</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-32',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript <b>setInterval()</b> ^^ -We can setup a timer (using <b>setInterval()</b>) to run functions ^ at set intervals: ^ <b>function myMethod() { alert("Hello World!"); } ^^ intID = setInterval(myMethod,5000,null); ^ window.clearInterval(intID);</b> ^^^ -The first parameter is the method to be called ^ -The second is how often it should be called in milliseconds ^ -The last one you can pass to the function as an object array ^ -The fuction <b>window.clearInterval(ID)</b> will clear the specified interval ^ -<b>intID</b> is the value returned when you set a new interval ^ -There are many other pre-set browser objects available', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-33',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Error Handling ^^ -Error handling in JavaScript is similar to C# as well; we can ^ use <b>try</b>, <b>catch</b> and <b>throw</b> ^^^ -Example 1: ^ <b>try { alert("Hello World"); } ^ catch (err) { alert("An error has occured: " + err.message); } </b> ^^ -Example 2 using <b>throw</b>: ^ <b>var example = "Hello World!"; ^ try { if(isNaN(example)) throw "Is not a number"; } ^ catch (err) { alert(err.message); } </b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-34',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'Syntax - Data Types Objects ^^ -Every variable in JavaScript is an <b>Object</b>, even though ^ there are specific types such as <b>Number</b>, <b>Boolean</b> and ^ <b>String</b> ^^ -In JavaScript, the definition of an <b>Object</b> is data with ^ properties and methods; similar to a C# object ^^ -<b>Array</b> and <b>Date</b> are also objects', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-35',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Objects ^^ -Here is a basic example of a JavaScript object, similar to C# ^ constructor: ^^ <b>function Person(age) ^ { ^ this.Age = age; ^ } ^^ var person = new Person(5); ^^ alert(person.Age);</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-36',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Objects ^^ -You can declare objects in JavaScript in many ways; On the ^ previous slide we saw just one way. ^^ -The keyword "this" on the previous slide is referring to the ^ new Person object that will be created. ^^ -"this" will change depending on the current object that is being ^ assigned. ^^ -Think of "this" similarly to how we assigned our object''s ^ properties in C#, when calling the object''s constructor. ^^ -"this" is an advanced concept, and will slowly make more ^ sense over time.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-37',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Objects ^^ -If we want to declare a method on our Person object: ^ <b>function Person(age) ^ { ^ this.Age = age; ^ this.sayHello = function() ^ { ^ alert("Hello World"); ^ } ^ } ^ var person = new Person(5); ^ alert(person.Age); ^ person.sayHello();</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-38',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Objects ^^ -It is important to be careful with the <b>this</b> keyword in ^ JavaScript ^^ -It might not be waht you think it is in the current scenario ^^ -When calling a method on an object, from within an ^ object''s method, we need to pass the reference to the ^ current object in order to access it. ^ -By convention, the name of this object is <b>self</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-39',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = '<b>function Person(name) ^ { ^ this.Name = name ^^ this.sayHello = function() { ^ alert("Hello:" + this.Name); ^ } ^^ this.sayGoodbye = function(self) { ^ self.sayHello(); ^ } ^ } </b> ^^ //Define a new Person named "Scott" ^ <b>var person = new Person("Scott"); ^^ person.sayGoodbye(person);</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-40',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Objects ^^ -What would happen if we used the previous slide''s code, ^ but wrote this line of code at the end? ^^ <b>person.sayGoodbye(this);</b> ^^ -The ''this'' here would actually refer to the object that ^ initiated the call (ex: a button) ^^ -In our car it would be the window object of the browser ^^ -Which would bomb because the window object doesn''t ^ have a method for sayHello()', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+				  
+
+EXEC dbo.spSlides @slideID = '12-1-41',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Object ^^ -Note: When you call an object instance function from within ^ an object instance function, you will need to pass the ^ reference to the object. ^^ -An object instance function is any function that is within an ^ object''s instance. ^^ -We declared sayHello() as an object instance function in ^ this example ^^ -This example calls sayHello() on the current object "self" ^ after calling sayGoodbye() and passing the current ^ object''s reference. (this)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '12-1-42',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Form Validation ^^ -HTML forms are used to send information from one page to ^ another ^^ -ASP.NET has been doing this for us, but now that we are ^ manipulating HTML tags ourselves we need to understand ^ how to do this ourselves ^^ -Below is a simple HTML form with a textbox and a button: ^ <b> < form action="form.aspx" method="post" > ^ First name: < input type="text" name="fName" > ^ Last name: < input type="text" name="lName" > ^ < input type="submit" value="Submit" > ^ < /form > </b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-43',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Form Validation ^^ -To access the values inside of: <b> < input type="text" ^ name="fName"> </b> and <b> < input type="text" name="lName"> </b> ^ we can use the following C# code from form.aspx: ^^ string firstName = Request.Form["<b>fName</b>"]; ^ string lastName = Request.Form["<b>lName</b>"]; ^^ -Note: it''s the name="" that is required when the form ^ is submitted from the < input type="submit"> element ^ (not the id)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-44',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Form Validation ^^ -JavaScript is useful for validating data in HTML forms ^ before dubmitting to the server ^ -The following would be called when you submit the form ^ -Returning <b>true</b> means that the form is valid ^^^ -Example: ^ <b> < form name="myForm" action="form.aspx" onsubmit="return validateForm()" ^ method="post"> ^ First name: < input type="text" name="fName"> ^ < input type="submit" value="Submit"> ^ < /form> ^ function validateForm() { ^ var firstName = document.forms["myForm"]["fName"].value; ^ if(firstName == null || firstName == "") ^ { alert("First name is a required field."); return false; } ^ }', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-45',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'JavaScript Form Validation ^^ -For finer tuned validation, you will need to use a regular ^ expression ^^ -Regular expressions are an advanced topic; we will not be ^ teaching them as part of this course, but it is good to be familiar ^ with them ^^ -Example: You need to make sure a phone number is in the ^ correct format ^ <b>var phoneRegex = /((\(\d{3}\))|(\d{3}-\d{4}/; ^ var phoneNumber = "204-123-4567"; ^ if( phoneRegex.test(phoneNumber)) { alert("valid"); } ^ else { alert("invalid"); } </b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '12-1-46',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM ^^ -The Document Object Model (DOM) is the representation of ^ HTML elements in a document (page) ^^ -Since HTML pages are formatted in a very specific way, we ^ can think of the elements as being stored in a "<b>child</b>" - ^ "<b>parent</b>" relationship ^^ -For example: ^ <b> < html >< head >< /head >< body >< body >< /html > </b> ^^ -The <b> < html > element </b> is the parent <u>node</u> of <b>< body ></b> ^ -The <b>< html > element </b> is the parent <u>node</u> of <b>< head ></b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-47',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Terminology ^^ -From the previous slide, we can see that the <b>< html ></b> node ^ is the <u>parent</u> with one <u>child</u>:<b>< body ></b> ^^ <b>< body ></b> has 4 children: <b>< h1 ></b>, <b>< p ></b>, <b> h2 ></b>, <b>< p ></b> ^^ -These children are considered <u>siblings</u> to one another ^^ -You can think of the DOM/HTML in a similar manner to XML ^ with open and ending tags ^^ -All HTML elements are defined as objects, while the ^ programming interface is the object methods and properties, similar to C#', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-48',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Nodes ^^ -The DOM structure is referred to as a Node Tree ^^ -The nodes in a node tree have a hierarchical relationship to ^ each other ^^ -We use the terms: parent, child, and siblings to describe ^ relationships between the noes', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-49',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Nodes ^^ -Similar to real life, parent nodes have children nodes and ^ children nodes have sibling nodes: ^^ *In a node tree, the top node is called a root node ^^ *Every node has only one parent, except the root ^ node which has no parent ^^ *Nodes can have an unlimited number of children ^^ *Siblings can be referred to as nodes with the same ^ parent', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '12-1-50',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Common Methods ^^ Here are some comonly used <u>DOM Methods</u>: ^ Note: you need to run these from <b><u>document</u></b> ^^ -<b>getElementById(id)</b> - get the node (element) with a specified id ^ -<b>getElementsByTagName(tag)</b> - Returns a node list ^ (collection/array of nodes) containing all elements with a ^ specified tag name ^ -<b>getElementsByClassName(class)</b> - Returns a node list containing ^ all elements with a specified class ^ -<b>appendChild(node)</b> - insert a new child node (element) ^ -<b>removeChild(node) -remove a child node (element) ^ -<b>replaceChild(newNode,oldNode)</b> - Replaces a child node ^ -<b>createElement(element)<.b< - Creates an Element node ^ -<b>node.getAttribute()</b>/<b>node.setAttribute()</b> - Gets or Sets an ^ attribute on a node, respectively', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-51',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Common Properties ^^ -Here are some commonly used <u>DOM Properties</u>: ^^ *<b>innerHTML</b> - the text value of a node (element) ^ *<b>parentNode</b> - the parent node of a node (element) ^ *<b>childNodes</b> - the child nodes of a node (element) ^ *<b>attributes</b> - the attributes nodes of a node (element)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-52',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Node Properties ^^ -Here are a few common <u>Node Properties</u> to be aware of: ^^^ *<b>nodeName</b> - specifies the name of the node ^ *is read-only ^ *of an element node is the same as the tag name ^ *of an attribute node is the attribute name ^ *of a text node is always #text ^ *of the document mode is always #document ^^^ *<b>nodeValue</b> - specifies the value of the node ^ *for element nodes is undefined ^ *for text nodes is the text itself ^ *for attribute nodes is the attribute value', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-53',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Node properties ^^ -<b>nodeType</b> - returns the type of node, read-only ^^^ -The most important node types are: ^ <b>*Element : NodeType - 1 ^ *Attribute : NodeType - 2 ^ *Text : NodeType - 3 ^ *Comment : NodeType - 8 ^ *Document : NodeType - 9</b> ^^ -Accessing an HTML element is the same as accessing a node', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-54',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Accessing an Element ^^^ <b>< html > ^ < body id="MyBody" > ^ <p id="MyParagraph" >p1< /p > ^ < p id="MySecondParagraph" >p2< /p > ^ < /body > ^ < /html > ^^ -To access a specific element from within JavaScript, we ^ can use the id: ^^ <b>var bodyElement = document.getElementById("MyBody");</b> ^^ // Now that we have the body element, we can manipulate it', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-55',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Accessing an Element ^^ -What can we do with elements in JavaScript? ^^ *Answer: Anything we want! ^^ -We can create, remove or modify elements on a page ^ dynamically ^^ -We can also change any of the style properties available ^^ -This is the true power of JavaScript and the reason why it ^ will be a very useful skill in your career', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-56',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Creating an Element ^^ -Example: Let us create a new element and give it some ^ text, the insert it as a child of the <b>< body ></b> element ^^^ <b>var newElement = document.createElement(''h3''); ^ newElement.setAttribute(''id'', ''myNewElementName''); ^ var txt = document.createTextNode(''My New Heading3!''); ^ newElement.appendChild(txt); ^^^ var body = document.getElemenById(''MyBody''); ^ body.appendChild(newElement); </b> ^^^ -In the above code, we have created a new node <b>< h3 ></b> with ^ text in it and added it as a child to the <b>< body ></b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-57',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Modifying an Element ^^ -Example: Using the previous code, let us adjust the new ^ element''s text by adding this line: ^^ <b>document.getElementById(''newElement'').innerHTML=Date();</b> ^^ -If you run this code, you will see the current time instead ^ of the text: ''My New Heading3!'' ^^ -The property called "<b>innerHTML</b>" can be used to modify ^ the HTML markup of any HTML element.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-58',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Removing an Element ^^ -Example: Lastly, let us remove the new element by adding ^ this line of code to our example: ^^^ <b>body.removeChild(document.getElementById(''newElement''));</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-59',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Events ^^ -The HTML DOM allows you to execute code when an event ^ is fired. ^^^ <b>< input type="button" value="Click Me" ^ onclick="alert(''Hello World'')" /> ^^ -The <b>onclick</b> event is the most common event for a button ^^ -There are many other events that are available, which you ^ should research and look into, but we will not cover in this course', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-60',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Events ^^ -We can also assign events to our HTML elements using ^ JavaScript for a more dynamic feel: ^^ <b>var input = document.createElement("input"); ^ input.value = "Click me"; ^ input.type = "button"; ^ input.addEventListener("click", function() { ^ alert("Hello World!");}, false); ^ document.body.appendChild(input);</b> ^^ -We need to put this code at the bottom of the html/aspx ^ page because the body must load before we are able to add ^ a child to it', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '12-1-61',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = 'The DOM - Navigation ^^ -We can navigate the DOM using node relationships ^^ -When we use the method <b>getElementsByTagName()</b> it returns a ^ node list which is an array of nodes; we can access the nodes ^ using a loop: ^ <b>var nodes = document.getElementsByTagName("div"); ^ for(var i=0; i<nodes.length; i++) ^ { ^ alert(nodes[i].innerHTML); ^ }</b> ^^ -There are two properties we can use to access the whole ^ document element: ^ <b>document.documentElement</b> or <b>document.body</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-1-62',   -- varchar(50)
+                  @lessonid = '12-1',  -- varchar(50)
+                  @slideinfo = '', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-1',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'JSON and jQuery', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-2',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'What is JSON? ^^ -JSON stands for JavaScript Object Notation ^^ -JSON is language independent ^^ -JSON uses JavaScript syntax for describing data objects ^^ -JSON parsers and JSON libraries exists for many different ^ programming languages ^^ -JSON is a syntax for storing and exchanging information, ^ similar to XML, yet it is smaller/easier to parse', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-3',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'JavaScript <b>eval()</b> ^^ -JSON is a text format syntactically identical to the code for creating JavaScript ^ objects ^^ -You can use the built-in <b>eval()</b> functon to parse the JSON data into JavaScript objects ^^ -The syntax for JSON data is: "(variable)" : (value). JSON strings must encase ^ their keys in quotes. If we specify the key without quotes, we are defining an ^ object literal. A key difference between the two is that JSON strings are only ^ for structuring data, whereas, an object literal can have a function as a ^ variable. ^^ -We can use commas to separate the variable and value pairs. ^ -When an object is defined statically, Visual Studio will add intellisense for its ^ properties.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-4',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(5c0)
+                  @slideinfo = 'JavaScript <b>eval()</b> ^^ Here is an example of an object with JSON syntax an object literal: ^^ <b>var personOne = ^ { ^ "Name":"John Smith", ^ "Age": 20 ^ } ^ var personTwo = ^ { ^ Name : "John Smith", ^ Age : 20 ^ } ^ alert(personOne.Name + " " + personOne.Age); ^ alert(personTwo.Name + " " + personTwo.Age);</b> ^^ Note the difference is there are no quotes on the second object''s keys. We only ^ need to use eval on a JSON string to turn it into a readable JavaScript object.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-5',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'JavaScript/XML ^ Compare and Contrast ^^ -XML needs to use the XML DOM to loop through the ^ document whereas JSON just needs to <b>eval()</b> the JSON ^ string; making XML much slower ^^ -Similarities to XML: ^ *JSON is plain text ^ *JSON is descriptive (human readable) ^ *JSON is hierarchical ^ *JSON can be parsed using JavaScript ^ *JSON data can be transported using AJAX', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-6',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'JavaScript/XML ^ Compare and Contrast ^^ -Differences to XML: ^^ *No end tag ^ *Shorter ^ *Quicker to read and write ^ *Can be parsed using <b>eval()</b> in JavaScript ^ *Uses arrays ^ *No reserved keywords', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-7',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'JSON - Syntax Rules ^^ Here are some syntax rules for JSON to keep in mind: ^^ -Json values can be: ^ <b>number, string, boolean, array, object, null</b> ^^ -Data is in name/value pairs similar to a C# Dictionary: ^ <b>"Name" : "John Smith"</b> ^^ -Data is separated using commas: ^ <b>"Name" : "John Smith", "Age" : 20</b> ^^ -Curly brackets hold objects: ^ <b>var person = {"Name" : "John Smith", "Age" : 20 };</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-8',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'JSON - Syntax Rules ^^ Square brackets are used to hold array: ^ <b>var people = { "Curstomers" : ^ [ { "Name" : "John Smith", "Age" : 20 }, ^ { "Name" : "Jack Jones", "Age" : 35 } ] } ^^^ fir (var i = 0; i < people.Customers.length; i++) ^ { ^ var cust = people.Customers[i]; ^ alert(cust.Name + " " + cust.Age); ^ }</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-9',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'JSON Security Concerns ^^ -The JavaScript <b>eval()</b> function can compile and execute any ^ JavaScript ^^ -This creates a potential security problem ^^ -It is safer to use a JSON parser to convert a JSON text to a ^ JavaScript object because it will only recognize JSON ^ syntax and ignore scripts ^^ -In browsers that support native JSON support, their JSON ^ parsers are faster', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-10',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'JSON Security Concerns ^^ -Here is an example: ^ <b>var JSONstring - ''{ "Employees" : ['' + ^ ''{ "firstName":"John" , "lastName":"Doe" },'' + ^ ''{ "firstName":"Anna" , "lastName":"Smith" },'' + ^ ''{ "firstName":"Peter" , "lastName":"Jones" } ]}''; ^^^ var JSONSecureObject = JSON.parse(JSONstring); ^^ for(var i = 0; i < JSONSecureObject.Employees.length; i++) { ^ alert(JSONSecureObject.Employees[i].firstName + ^ "" + JSONSecureObject.Employees[i].lastName); ^ }</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-11',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'What is jQuery? ^^ -jQuery is a JavaScript library that has been created by ^ other developers to minimize the amount of repetitive ^ code needed to perform routine tasks ^^ -In C#, we have <b>using</b> statements that import libraries for us; ^ jQuery can be thought of as just anothe rone of these ^ libraries, except for JavaScript ^^ -jQuery also simplifies complicated JavaScript, like AJAX ^ calls and DOM manipulation ^^ jQuery works in all browsers, including Internet Explorer 6!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-12',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'Using jQuery ^^ -The first thing we need to do to get started with jQuery is ^ reference the jQuery JavaScript file in our webpage ^^ -You can place this code in the <b>< head ></b> section of your page: ^^ <b><script type="text/javascript" ^ src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"> ^ </script></b> ^^ -This will always reference the latest jQuery build that is hosted ^ online ^^ -You need to reference jQuery first to ensure that it is not ^ <b>undefined</b> when you go to use it in your code', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-13',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'Installing Intellisense ^^ -After creating a new web project. ^^ -Click on Tools -> NuGet Package Manager -> Package ^ Manager Console ^^ Then type the following and hit enter: ^ Install-Package jQuery-vsdoc ^^ -This will install the intellisense for the latest supported version ^ of jQuery.', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-14',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Simple Example ^^ -Here is a simple jQuery example that throws an alert to the client ^ when the page (document) is finished loading ^^ -The most common event you will handle is: <b>$(document).ready ^^^ $(document).ready(function() { ^ alert("Hello jQuery!"); ^ });</b> ^ The syntax is <b>$(selector).action()</b> ^^ -When using jQuery, you start your statement with the <u>$</u> sign along ^ with a <u>selector</u> in the brackets <b>()</b> ^^ -The selector is the element we are going to select and manipulate', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-15',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Simple Example ^^ -The <b>document.ready</b> event fires once all other elements on the ^ page have loaded into the DOM ^^ -We pass a function to run as a parameter to the Ready() function ^^ -Recall: The function inside is called an anonymous function ^ because we did not give it a name ^^ -It is a good practice to wait for the document to finish loading ^ before modifying it ^^ -Example of a shorthand ready function: ^ <b>$(function){ alert("Hello jQuery!"); });</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-16',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - CSS Selectors ^^ <b>< body > ^ < form id="form1" runat="server" > ^ < div > ^ < ul id="myList" class="listClass" > ^ < li > ^ < a id="myAnchor" href="#" >This is a link.< /a > ^ < /li > ^ < /ul > ^ < /div > ^ < /form > ^ < /body > ^^ To select the element with id <b>myAnchor</b>, the syntax could look like: ^ <b>$("body form div ul li #myAnchor")</b> //Select starting from body ^ <b>$("#form1 div ul li #myAnchor")</b> //Select starting from form ^ <b>$("#myList li #myAnchor")</b> //Select starting from list ^ <b>$("#myAnchor")</b> //Find the exact Id matching: myAnchor', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-17',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - CSS Selectors ^^ -If you wanted to apply a <b>click</b> event to all<b>list item</b> elements ^ within the <b>unordered list</b> named <b>myList</b>, it would look like ^ this: ^^ <b>$(document).ready(function () { ^ $("#myList li").click(function () { alert("Hello ^ jQuery!"); }); });</b> ^^ -Using jQuery makes this super easy especially if the amount ^ of list items changes dynamically at runtime', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-18',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - CSS Selectors ^^ <b>< ul id="myList" class="listClass" > ^^ When we want to select a class we put a <b>.</u> sign before the ^ name: ^ <b>.listClass</b> ^^ To Select an id, we put a <b>#</b> sign before the name: ^ <b>#myList</b> ^^ To select all elements, we use the element name: ^ <b>ul</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-19',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Selector Examples ^^ <b>$("*") - Selects all elements ^^ $(this) - Selects the current HTML element or object ^^ $("p,a,span") - Selects all p, a, and span elements ^^ $("p.intro") - Selects all < p > elements with class="intro" ^^ $("p:first") - Selects the first < p > elements ^^ $("ul li:first") - Selects the first < li > element of the first < ul > ^^ $("ul li: furst-child") - Selects the first < li > element of every < ul > ^^ $("[href]") - Selects all elements with an href attribute</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-20',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Selector Examples ^^ <b>$("a[target=''_blank'']") ^ -Selects all < a > elements with a target attribute value equal to "_blank" ^^ $("a[target!=''_blank'']") ^ -Selects all < a > elements with a target attribute valyue NOT equal to "_blank" ^^ $(":button") ^ -Selects all < button > elements and < input > elements of type="button" ^^ $("tr:even") ^ -Selects all even < tr > elements ^^ $("tr:odd") ^ -Selects all odd < tr > elements', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-21',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Events ^^ -Event handling methods are core functions in the jQuery library ^ *Note: <b>jQuery</b> uses the <b>$</b> sign as a shortcut for jQuery ^^ -Other JavaScript libraries use the dollar sign for their functions ^^ -The jQuery <b>noConflict()</b> method specifies a custom name (like jq), ^ instead of using the dollar sign ^^ The following code applies a click event to every button on the page: <b>var jq = jQuery.noConflict(); ^ jq(document).ready(function () { ^ jq(":button").click(function(){ ^ alert("Hello jQuery!"); ^ }); });</b>', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-22',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Events ^^ -You can use the <b>.bind</b> method to specify an event to ^ subscribe a function to ^^ -jQuery has shorthand functions such as <b>.click</b> and <b>.dbclick ^ $(document).ready(function() { ^ $(":button").dbclick(function(){ ^ alert("Hello jQuery!"); ^ }); ^ });</b< ^^ This code will throw an alert to the client when a button ^ is double clicked', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-23',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Events ^^ -To bind to an event without a short hand, use this syntax: ^^^ <b>$(document).ready(function() { ^ $(":button").bind("mouseenter", function() { ^ alert("Hello jQuery!"); ^ }); ^ }); </b> ^^ -This code will throw an alert to the client when a button is ^ hovered over', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-24',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Events ^^ -If you wanted to run a function against an entire collection ^ of elements returned from a jQuery selector, it would ^ follow this syntax: ^^ <b>$(document).ready(function() { ^ $("div").each(function() { ^ alert($(this).html()); ^ }); ^ }); </b> ^^ -This will grab the inner HTML from every div on the page ^ and display it in an alert box', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '12-2-25',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Effects ^^ -jQuery has built-in methods for applying effects to your ^ elements; here are a few common ones: ^ <b>var element = $(document.body);</b> //Selects the body element ^^ <b>element.hide(speed,callback);</b> //Hide the body, parameters are optional ^^ <b>element.show(speed,callback);</b> //Show the body parameters are optional ^^ <b>element.toggle(speed,callback);</b> //This is used to toggle between ^ hide() and show() ^^^ -The optional callback parameter is the name of a function ^ to be executed after the method completes', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '12-2-26',   -- varchar(50)
+                  @lessonid = '12-2',  -- varchar(50)
+                  @slideinfo = 'jQuery - Fade Effects ----- Slide 26', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

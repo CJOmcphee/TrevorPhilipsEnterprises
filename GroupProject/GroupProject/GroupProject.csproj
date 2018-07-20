@@ -54,6 +54,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -69,11 +70,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\csharp.jpg" />
+    <Content Include="images\CSS.jpg" />
+    <Content Include="images\CustomerService.jpg" />
+    <Content Include="images\GitHub.jpg" />
     <Content Include="images\jswide.png" />
     <Content Include="images\logo-php.png" />
+    <Content Include="images\MicroSoftCert.png" />
+    <Content Include="images\MSSQL.jpg" />
+    <Content Include="images\MVC.jpg" />
+    <Content Include="images\Pen.jpg" />
     <Content Include="images\sql.png" />
+    <Content Include="images\XML.jpg" />
     <Content Include="index_admin.aspx" />
-    <Content Include="LOTR\LOTRAccountRecovery.aspx" />
     <Content Include="LOTR\LOTRExtraPage.aspx" />
     <Content Include="LOTR\LOTRPICTURES\Mordor.jpg" />
     <Content Include="LOTR\LOTRPICTURES\Shire.png" />
@@ -927,7 +935,6 @@
     <Content Include="GroupProjectLayout.txt" />
     <Content Include="img\red-wallpaper-13.jpg" />
     <Content Include="Install.sql" />
-    <Content Include="MikesExampleTemplate.aspx" />
     <Content Include="Module2\M2L1.aspx" />
     <Content Include="Module2\M2L1EX.aspx" />
     <Content Include="ModuleOne.html" />
@@ -1007,13 +1014,6 @@
     </Compile>
     <Compile Include="index_admin.aspx.designer.cs">
       <DependentUpon>index_admin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="LOTR\LOTRAccountRecovery.aspx.cs">
-      <DependentUpon>LOTRAccountRecovery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LOTR\LOTRAccountRecovery.aspx.designer.cs">
-      <DependentUpon>LOTRAccountRecovery.aspx</DependentUpon>
     </Compile>
     <Compile Include="LOTR\LOTRArmour.cs" />
     <Compile Include="LOTR\LOTRSword.cs" />
@@ -1099,13 +1099,6 @@
     </Compile>
     <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MikesExampleTemplate.aspx.cs">
-      <DependentUpon>MikesExampleTemplate.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MikesExampleTemplate.aspx.designer.cs">
-      <DependentUpon>MikesExampleTemplate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module2\M2L1.aspx.cs">
       <DependentUpon>M2L1.aspx</DependentUpon>
