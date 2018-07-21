@@ -113,7 +113,6 @@ namespace GroupProject
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            Security security = new Security();
             
             foreach (KeyValuePair<RadioButtonList, Tuple<Label, Label>> radioButton in radioButtonLists)
             {
@@ -132,6 +131,9 @@ namespace GroupProject
             }
             Total = (score / radioButtonLists.Count) * 100;
             Label1.Text = Math.Round(Total, 2).ToString();
+
+            Security security = new Security();
+            DataSet dsStudentName = Crud.ReadTable("spStudent", security.Email);
         }
     }
 }
