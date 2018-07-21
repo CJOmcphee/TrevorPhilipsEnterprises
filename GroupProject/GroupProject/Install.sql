@@ -349,6 +349,11 @@ create procedure spScore(
 @crud  varchar(1)
 )
 as  begin
+	if @crud='c'
+		begin
+			insert into tbStudentTest(sID,tID,score)values
+									 (@sID,@tID,@score)
+		end
 	if @crud='r'
 		begin
 			select * from tbStudentScore where sID=isnull(@sID,sID) and tID=isnull(@tID,tID)
