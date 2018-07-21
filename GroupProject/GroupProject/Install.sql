@@ -52,14 +52,9 @@ Learn SQL functions and how to get data from different tables (JOIN).^'),
 							
 							('Module 8','moduleSum8'),
 							
-							('Module 9','moduleSum9'),
-
-							('Module 10', 'moduleSum10'),
-
-							('Module 11', 'moduleSum11'),
+							('Module 9','moduleSum9')
 
 
-							('Module 12', 'moduleSum12')
 create table tbLesson(
 lessonID varchar(50) primary key,
 mID int foreign key references tbModule(moduleID)

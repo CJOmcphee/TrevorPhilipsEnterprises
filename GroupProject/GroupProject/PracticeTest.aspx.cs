@@ -14,6 +14,8 @@ using System.Drawing;
 
 
 
+
+
 namespace GroupProject
 {
     public partial class PracticeTest : System.Web.UI.Page
@@ -111,6 +113,8 @@ namespace GroupProject
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            Security security = new Security();
+            
             foreach (KeyValuePair<RadioButtonList, Tuple<Label, Label>> radioButton in radioButtonLists)
             {
                 DataSet dsQuestion = Crud.ReadTable("spQuestions", radioButton.Value.Item1.Text);
