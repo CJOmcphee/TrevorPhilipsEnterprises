@@ -1147,3 +1147,14 @@ EXEC dbo.spSlides @slideID = '1-6-20',   -- varchar(50)
                   @lessonid = '1-6',  -- varchar(50);
                   @slideinfo = '<h1>Review</h1><h2>Loops</h2><p>FOR next Loop:</p>^For ( int i=1; i<10; i++) // declare/initialize/check/increment^{^  //Loop Body Code^}^^DO WHILE Loop:^int i = 0; // Declare and initialize the loop control variable^DO^{^  //Loop Body Code^  i++; //Increment the control variable^}WHILE (i < 10);//Increment the control variable', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
+
+
+exec spExamples 
+@crud='c',
+@lID='1-1',
+@example='Show 2 plus 2',
+@solutions='2+2',
+@code='int answer = 2+2',
+@explanation='you create a int called answer and assing it 1+1',
+@slide=0, 
+@showSolution = 1

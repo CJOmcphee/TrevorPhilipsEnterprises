@@ -248,6 +248,16 @@ as begin
 end
 go
 
+exec spExamples @crud='c',
+				@lID='1-1',
+				@example='<table><tr><td>Username:</td><td>&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox></td></tr></table>',
+				@solutions='<table><tr><td>Username:</td><td><asp:TextBox ID="txtUsername" runat="server"></asp:TextBox></td></tr></table>',
+				@code='&lt;!DOCTYPE html>^&lt;html xmlns="http://www.w3.org/1999/xhtml">^&lt;head runat="server">^&nbsp;&nbsp;&nbsp;&lt;title>My Page&lt;/title>^&lt;/head>^&lt;body>^&nbsp;&nbsp;&nbsp;&nbsp;&lt;form id="form1" runat="server">^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div>^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table>^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr>^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table>^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>^&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form>^&lt;/body>^&lt;/html>',
+				@explanation='Create a table for your LOGIN page, in each row, use TD tags to display the USERNAME and PASSWORD respectively, and TD tags for the actual TEXTBOXES',
+				@slide=0, 
+				@showSolution = 0
+
+
 exec spExamples @crud='c',@lID='1-1',@example='Show 1 plus 1',@solutions='1+1',@code='int answer = 1+1',@explanation='you create a int called answer and assing it 1+1',@slide=0, @showSolution = 0
 exec spExamples @crud='c',@lID='1-1',@example='Show 2 plus 2',@solutions='2+2',@code='int answer = 2+2',@explanation='you create a int called answer and assing it 1+1',@slide=0, @showSolution = 1
 go
