@@ -258,10 +258,10 @@ EXEC dbo.spWrongAnswer @question = 'Which SQL statement is used to create a tabl
                        @crud = 'c'          -- varchar(1)
 
 
--- Module 7, Question 1
+-- Module 9, Question 1
 EXEC dbo.spQuestions @questions = 'What does CSS stand for?', -- varchar(1000)
                      @answers = 'Cascading Style Sheets',   -- varchar(1000)
-                     @tID = 'Module 7',       -- varchar(50)
+                     @tID = 'Module 9',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spWrongAnswer @question = 'What does CSS stand for?',     -- varchar(500)
@@ -281,30 +281,30 @@ EXEC dbo.spWrongAnswer @question = 'What does CSS stand for?',     -- varchar(50
 
 
 
--- Module 7, Question 2
+-- Module 9, Question 2
 EXEC dbo.spQuestions @questions = 'Font-size, Color, and Border are some examples of style attributes and values.', -- varchar(1000)
                      @answers = 'True',   -- varchar(1000)
-                     @tID = 'Module 7',       -- varchar(50)
+                     @tID = 'Module 9',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spWrongAnswer @question = 'Font-size, Color, and Border are some examples of style attributes and values.',     -- varchar(500)
                        @wrongAnswers = 'False', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
 
--- Module 7, Question 3
+-- Module 9, Question 3
 EXEC dbo.spQuestions @questions = 'You make a CSS class by using a Pound(#) symbol.', -- varchar(1000)
                      @answers = 'False',   -- varchar(1000)
-                     @tID = 'Module 7',       -- varchar(50)
+                     @tID = 'Module 9',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spWrongAnswer @question = 'You make a CSS class by using a Pound(#) symbol.',     -- varchar(500)
                        @wrongAnswers = 'True', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
 
--- Module 7, Question 4
+-- Module 9, Question 4
 EXEC dbo.spQuestions @questions = 'What way can you modify the CSS in an ASP or HTML file?', -- varchar(1000)
                      @answers = 'All of these options are applicable.',   -- varchar(1000)
-                     @tID = 'Module 7',       -- varchar(50)
+                     @tID = 'Module 9',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spWrongAnswer @question = 'What way can you modify the CSS in an ASP or HTML file?',     -- varchar(500)
@@ -323,40 +323,40 @@ EXEC dbo.spWrongAnswer @question = 'What way can you modify the CSS in an ASP or
                        @wrongAnswers = 'Modifying from the server (In our case: C#)', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
 
--- Module 7, Question 5
+-- Module 9, Question 5
 EXEC dbo.spQuestions @questions = 'Master Pages allow you to create a consistent layout for the pages in your application.', -- varchar(1000)
                      @answers = 'True',   -- varchar(1000)
-                     @tID = 'Module 7',       -- varchar(50)
+                     @tID = 'Module 9',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spWrongAnswer @question = 'Master Pages allow you to create a consistent layout for the pages in your application.',     -- varchar(500)
                        @wrongAnswers = 'False', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
 
--- Module 7, Question 6
+-- Module 9, Question 6
 EXEC dbo.spQuestions @questions = 'The Master Page layout must nest within the "ContentPlaceHolder" tags.', -- varchar(1000)
                      @answers = 'False',   -- varchar(1000)
-                     @tID = 'Module 7',       -- varchar(50)
+                     @tID = 'Module 9',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spWrongAnswer @question = 'The Master Page layout must nest within the "ContentPlaceHolder" tags.',     -- varchar(500)
                        @wrongAnswers = 'True', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
 
--- Module 7, Question 7
+-- Module 9, Question 7
 EXEC dbo.spQuestions @questions = 'The three main ways we can maintain state are Session, Cookies, and Viewstate.', -- varchar(1000)
                      @answers = 'True',   -- varchar(1000)
-                     @tID = 'Module 7',       -- varchar(50)
+                     @tID = 'Module 9',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spWrongAnswer @question = 'The three main ways we can maintain state are Session, Cookies, and Viewstate.',     -- varchar(500)
                        @wrongAnswers = 'False', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
 
--- Module 7, Question 8
+-- Module 9, Question 8
 EXEC dbo.spQuestions @questions = 'Session ___ hold user-specific information and are available in all pages of an application.', -- varchar(1000)
                      @answers = 'Objects',   -- varchar(1000)
-                     @tID = 'Module 7',       -- varchar(50)
+                     @tID = 'Module 9',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spWrongAnswer @question = 'Session ___ hold user-specific information and are available in all pages of an application.',     -- varchar(500)
@@ -371,11 +371,11 @@ EXEC dbo.spWrongAnswer @question = 'Session ___ hold user-specific information a
                        @wrongAnswers = 'Initializers', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
 
---Module 7, Lesson 9
+--Module 9, Lesson 9
 
 EXEC dbo.spQuestions @questions = '"Session["Username"] = "JoeSmith";" is an example of a Session.', -- varchar(1000)
                      @answers = 'True',   -- varchar(1000)
-                     @tID = 'Module 7',       -- varchar(50)
+                     @tID = 'Module 9',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spWrongAnswer @question = '"Session["Username"] = "JoeSmith";" is an example of a Session.',     -- varchar(500)
@@ -383,10 +383,10 @@ EXEC dbo.spWrongAnswer @question = '"Session["Username"] = "JoeSmith";" is an ex
                        @crud = 'c'          -- varchar(1)
 
 
--- Module 7, Question 10
+-- Module 9, Question 10
 EXEC dbo.spQuestions @questions = 'What does "Session.Abandon()" do?', -- varchar(1000)
                      @answers = 'Ends the session.',   -- varchar(1000)
-                     @tID = 'Module 7',       -- varchar(50)
+                     @tID = 'Module 9',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spWrongAnswer @question = 'What does "Session.Abandon()" do?',     -- varchar(500)
@@ -401,11 +401,11 @@ EXEC dbo.spWrongAnswer @question = 'What does "Session.Abandon()" do?',     -- v
                        @wrongAnswers = 'Exits the webpage.', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
 
--- Module 7, Question 11
+-- Module 9, Question 11
 
 EXEC dbo.spQuestions @questions = '___ are values that are stored locally on the users computer (usually the browser)', -- varchar(1000)
                      @answers = 'Cookies',   -- varchar(1000)
-                     @tID = 'Module 7',       -- varchar(50)
+                     @tID = 'Module 9',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spWrongAnswer @question = '___ are values that are stored locally on the users computer (usually the browser)',     -- varchar(500)
@@ -420,30 +420,30 @@ EXEC dbo.spWrongAnswer @question = '___ are values that are stored locally on th
                        @wrongAnswers = 'Style sheets', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
 
--- Module 7, Question 12
+-- Module 9, Question 12
 EXEC dbo.spQuestions @questions = 'Cookies cant be expired.', -- varchar(1000)
                      @answers = 'False',   -- varchar(1000)
-                     @tID = 'Module 7',       -- varchar(50)
+                     @tID = 'Module 9',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spWrongAnswer @question = 'Cookies cant be expired.',     -- varchar(500)
                        @wrongAnswers = 'True', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
 
--- Module 7, Question 13
+-- Module 9, Question 13
 EXEC dbo.spQuestions @questions = '"<%# Eval("Name") %>" is an example of a DataBind', -- varchar(1000)
                      @answers = 'True',   -- varchar(1000)
-                     @tID = 'Module 7',       -- varchar(50)
+                     @tID = 'Module 9',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spWrongAnswer @question = '"<%# Eval("Name") %>" is an example of a DataBind',     -- varchar(500)
                        @wrongAnswers = 'False', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
 
--- Module 7, Question 14
+-- Module 9, Question 14
 EXEC dbo.spQuestions @questions = 'A(n) ___ must be used to display each item separately on a DataList.', -- varchar(1000)
                      @answers = 'ItemTemplate',   -- varchar(1000)
-                     @tID = 'Module 7',       -- varchar(50)
+                     @tID = 'Module 9',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spWrongAnswer @question = 'A(n) ___ must be used to display each item separately on a DataList.',     -- varchar(500)
@@ -458,8 +458,53 @@ EXEC dbo.spWrongAnswer @question = 'A(n) ___ must be used to display each item s
                        @wrongAnswers = 'Gridview', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
 
--- -- Module 7, Question 15
+-- -- Module 9, Question 15
 
+-- Module 7, Question 1
+EXEC dbo.spQuestions --@QID = 0,        -- int
+                     @questions = 'What is a Class?', -- varchar(1000)
+                     @answers = 'Blueprint',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is a Class?',     -- varchar(500)
+                       @wrongAnswers = 'Object', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is a Class?',     -- varchar(500)
+                       @wrongAnswers = 'Template', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is a Class?',     -- varchar(500)
+                       @wrongAnswers = 'Web Form', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+
+
+-- Module 7, Question 2
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Inheritance, Polymorphism, and Encapsulation are all Major concepts of OOP.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Inheritance, Polymorphism, and Encapsulation are all Major concepts of OOP.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+
+-- Module 7, Question 3
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Static Classes do not have to be instantiated.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Static Classes do not have to be instantiated.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
 
 
 -- Slides
