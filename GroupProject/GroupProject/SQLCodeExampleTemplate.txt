@@ -1,4 +1,6 @@
-﻿'&lt;!DOCTYPE html>
+﻿--- HTML/ASP with Table ---
+
+'&lt;!DOCTYPE html>
 ^&lt;html xmlns="http://www.w3.org/1999/xhtml">
 ^&lt;head runat="server">
 ^&nbsp;&nbsp;&nbsp;&lt;title>My Page&lt;/title>
@@ -17,3 +19,24 @@
 ^&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form>
 ^&lt;/body>
 ^&lt;/html>',
+
+
+--- C# ---
+
+'using System;
+^using System.Collections.Generic;
+^using System.Linq;
+^using System.Web;
+^using System.Web.UI;
+^using System.Web.UI.WebControls;
+^
+^namespace MyProgram
+^{
+^&nbsp;&nbsp;&nbsp;&nbsp;public partial class WebForm1 : System.Web.UI.Page
+^&nbsp;&nbsp;&nbsp;&nbsp;{
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected void Page_Load(object sender, EventArgs e)
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+^
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+^&nbsp;&nbsp;&nbsp;&nbsp;}
+^}
