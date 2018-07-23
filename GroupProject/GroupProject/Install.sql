@@ -336,9 +336,9 @@ as begin
 end
 go
 create procedure spScore(
-@score decimal(10,2),
-@tID varchar(50),
-@sID varchar(50),
+@score decimal(10,2) =null,
+@tID varchar(50) =null,
+@sID varchar(50)  =null,
 @crud  varchar(1)
 )
 as  begin
