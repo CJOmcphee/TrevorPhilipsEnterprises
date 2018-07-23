@@ -485,3 +485,6 @@ GO
 Exec spSlides @crud ='r', @lessonid ='3-1'
 select * from tbSlides
 select * from tbStudentTest
+exec spScore @crud='c', @sID='bruce.banner@robertsoncollege.net', @tID='Module 1', @score='67.45'
+exec spScore @crud='c', @sID='bruce.banner@robertsoncollege.net', @tID='Module 2', @score='87.45'
+select * from tbStudentTest
