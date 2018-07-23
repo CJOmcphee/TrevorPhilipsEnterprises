@@ -194,14 +194,18 @@ exec spSlides
 	@lessonid = '8-1',
 	@slideinfo = 
 	'<Customers>^
-		<Customer ID = "1">^
-			<FirstName>Joe</FirstName>^
-			<LastName>Smith</LastName>^
-		</Customer>^
-		<Customer ID = "2">^
-			<FirstName>Sean</FirstName>^
-			<LastName>Young</LastName>^
-		</Customer>^
+		<male>^
+			<Customer ID = "1">^
+				<FirstName>Joe</FirstName>^
+				<LastName>Smith</LastName>^
+			</Customer>^
+		</male>^
+		<female>^
+			<Customer ID = "2">^
+				<FirstName>Sean</FirstName>^
+				<LastName>Young</LastName>^
+			</Customer>^
+		</female>
 	</Customers>^'
 go
 exec spSlides 
@@ -210,10 +214,10 @@ exec spSlides
 	@lessonid = '8-1',
 	@slideinfo = 'The following is a basic XPath query to select the first customer''s^ 
 	first name in the following XML structure:^
-	<xsl:value-of select="Customers/Customer/FirstName"/>^
+	<xsl:value-of select="Customers/male/Customer/FirstName"/>^
 	This would get Joe from the previous slide.^
 	To select the an attribute of a certain element you would do this:^
-	<xsl:value-of select ="Customers/Customer@ID"/>^
+	<xsl:value-of select ="Customers/male/Customer/@ID"/>^
 	This would get 1 as the ID from the previous slide.'
 go
 exec spSlides 
@@ -222,7 +226,7 @@ exec spSlides
 	@lessonid = '8-1',
 	@slideinfo = 'Absoulte location pathing is selecting a specific element where^
 	you start from the root of the document:^
-	Customers/Cutomer/FirstName^
+	Customers/male/Customer/FirstName^
 	Relative location pathing is selecting a specific element where you^
 	start from any point of the document:^
 	Customer/FirstName or FirstName would select all FirstNames'
@@ -230,17 +234,6 @@ go
 exec spSlides 
 	@crud = 'c', 
 	@slideID = '8-1-20', 
-	@lessonid = '8-1',
-	@slideinfo = 'Absoulte location pathing is selecting a specific element where^
-	you start from the root of the document:^
-	Customers/Cutomer/FirstName^
-	Relative location pathing is selecting a specific element where you^
-	start from any point of the document:^
-	Customer/FirstName'
-go
-exec spSlides 
-	@crud = 'c', 
-	@slideID = '8-1-21', 
 	@lessonid = '8-1',
 	@slideinfo = 'To select all descendants of an element we can use two slashes : //^
 	This is useful when we have multiple descendants within an element like^
@@ -250,7 +243,21 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
+	@slideID = '8-1-21', 
+	@lessonid = '8-1',
+	@slideinfo = 'Using the * is a weildcard which is used after the path^
+	selects all children of the parent element.^
+	Using Customs/* would get the first customer, /* would get all the customers.^
+	Becoming familiar with wildcards will be tricky, start out writing^
+	expressions and try shortening them with wildcards.^'
+go
+exec spSlides 
+	@crud = 'c', 
 	@slideID = '8-1-22', 
 	@lessonid = '8-1',
-	@slideinfo = 'Using the * after the path'
+	@slideinfo = 'We can use "|" as "and" which allows us to combine two^
+	or more expressions into one. An example of this^
+	Customs/male/* | Customs/female/* this is needed when you^
+	want both female and male^'
 go
+
