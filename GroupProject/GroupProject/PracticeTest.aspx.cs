@@ -137,6 +137,10 @@ namespace GroupProject
             string Test = ddlTestChoice.SelectedItem.Text;
 
             Crud.CreateTestScore("c", Test, security.Email,Total);
+            if(Total >=70)
+            {
+                System.Windows.Forms.MessageBox.Show("Congratulations you have passed");
+            }
         }
     }
 }
