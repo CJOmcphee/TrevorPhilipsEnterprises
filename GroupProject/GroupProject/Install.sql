@@ -42,52 +42,19 @@ and how data is related to one another between tables.^
 You will get understanding of Structured Query Language (SQL), forms of normalization of a data, primary and foreign keys.^
 Learn SQL functions and how to get data from different tables (JOIN).^'),
 							
-							('Module 4','ADO.NET
-In this module you will dive more deep to work with SQL and learn how to operate with data from data base in C#.^
-In discussion will touch subjects of Stored Procedures, global and local variables in SQL, Transactions and Subqueries.^
-Further you may learn how to work with data from SQLdatabases in C#. How to use SQLConnection and SQLCommad Objects.^
-Also, you will know how to create and operate with Master Page for WebApp creation.^'),
+							('Module 4','moduleSum4'),
 							
-							('Module 5','ASP.NET
-This module is introduction to ASP.NET.
-Here you can get understanding of what is Cascading Style Sheets(CSS), Application State, dive more deep with HTML Controls.^
-Understand way of representing data form database in GridView, editing Web.config, create and call Dynamic-Link Libraries(DLL)^
-and how to make controls validation.^'),
+							('Module 5','moduleSum4'),
 							
-							('Module 6','CSS & Master Pages
-In this module you continue your work with CSS and Master Page.^
-You will learn CSS Attributes, more about ASP.NET Controls. Get more knowledge about Master Page and connected Web Forms.^
-Will know how to store values in Sessions and Cookies and how to pass them with QueryString.You will back to presenting data^
-in GridView and Data List to learn how to manage this representation with sorting, paging, data binding and etc.^'),
+							('Module 6','moduleSum6'),
 							
-							('Module 7','Object Oriented Programming (OOP)
-In this module you can get the main idea of Object Oriented Programming (OOP) philosophy,^
-understand the main difference from Procedural Programming. You can learn major concepts of OOP:^
-Inheritance, Polymorphism and Encapsulation. Get the understanding what is Array and how to operate with arrays.^
-You learn how Bussiness-Logic Access Layer (BAL) interact with Data Access Layer (DAL).^
-'),
+							('Module 7','moduleSum7'),
 							
-							('Module 8','XML & Web Services
-In this module we will talk about Extensible Markup Language(XML) and Web Services.^
-We look at them together because Web Services obvious use XML. XML is very similar to HTML.^
-Actually, XML has its own style sheet Extensible Stylesheet Language (XSL).^
-You will know about XPath(navigation), XSLT(transformation) and XSL-FO(formatting).^
-You will learn how to use WebMethod to create yours own Web Services and learn Web Services Description Language (WSDL)^
-which has XML format. You will deal eith Siple Object Access Protocol (SOAP) to create interaction between Web Services. ^
-'),
+							('Module 8','moduleSum8'),
 							
-							('Module 9','JavaScript, HTML5 & CSS3
-This module is introduction to JavaScript and using of HTML5 and CSS3.^
-You will learn about JavaScript and what that difference with JAVA.^
-Get some understanding about JSON, Jquery and AJAX. Get knowledge about Document Object Model (DOM)^
-which is representation of HTML elements in document (page).^'),
-
-							('Module 10', 'moduleSum10'),
-
-							('Module 11', 'moduleSum11'),
+							('Module 9','moduleSum9')
 
 
-							('Module 12', 'moduleSum12')
 create table tbLesson(
 lessonID varchar(50) primary key,
 mID int foreign key references tbModule(moduleID)
@@ -101,10 +68,8 @@ mID int foreign key references tbModule(moduleID)
 						('6-1',6),('6-2',6),('6-3',6),('6-4',6),('6-5',6),
 						('7-1',7),('7-2',7),('7-3',7),('7-4',7),('7-5',7),
 						('8-1',8),('8-2',8),('8-3',8),('8-4',8),('8-5',8),
-						('9-1',9),('9-2',9),('9-3',9),('9-4',9),('9-5',9),
-						('10-1',10),('10-2',10),
+						('9-1',9),('9-2',9),('9-3',9),('9-4',9),('9-5',9)
 
-						('12-1',12),('12-2',12),('12-3',12),('12-4',12)
 
 create table tbSlides(
 slideID varchar(50),
@@ -379,6 +344,11 @@ create procedure spScore(
 @crud  varchar(1)
 )
 as  begin
+	if @crud='c'
+		begin
+			insert into tbStudentTest(sID,tID,score)values
+									 (@sID,@tID,@score)
+		end
 	if @crud='r'
 		begin
 			select * from tbStudentScore where sID=isnull(@sID,sID) and tID=isnull(@tID,tID)

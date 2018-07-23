@@ -14,6 +14,8 @@ using System.Drawing;
 
 
 
+
+
 namespace GroupProject
 {
     public partial class PracticeTest : System.Web.UI.Page
@@ -111,6 +113,7 @@ namespace GroupProject
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            
             foreach (KeyValuePair<RadioButtonList, Tuple<Label, Label>> radioButton in radioButtonLists)
             {
                 DataSet dsQuestion = Crud.ReadTable("spQuestions", radioButton.Value.Item1.Text);
@@ -128,6 +131,9 @@ namespace GroupProject
             }
             Total = (score / radioButtonLists.Count) * 100;
             Label1.Text = Math.Round(Total, 2).ToString();
+
+            Security security = new Security();
+            DataSet dsStudentName = Crud.ReadTable("spStudent", security.Email);
         }
     }
 }

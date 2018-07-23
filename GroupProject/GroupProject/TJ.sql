@@ -2,16 +2,16 @@
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-1', 
-	@lessonid = '10-1',
+	@slideID = '8-1-1', 
+	@lessonid = '8-1',
 	@slideinfo = 'XML stands for eXtensible Markup Language.^ 
 				XML is a universal format for structuring data on the web.^
 				XML can be consumed using a variety of^ different programming languages.'
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-2', 
-	@lessonid = '10-1',
+	@slideID = '8-1-2', 
+	@lessonid = '8-1',
 	@slideinfo = '<student>^
 					<name>John Smith</name>^
 					<age>27</age>^
@@ -23,8 +23,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-3', 
-	@lessonid = '10-1',
+	@slideID = '8-1-3', 
+	@lessonid = '8-1',
 	@slideinfo = 'The first line in an XML document is declaring the^
 				element which XML version you''re using.^
 				Ex : <?xml version="1.0" encoding="utf-8"?>.^
@@ -38,8 +38,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-4', 
-	@lessonid = '10-1',
+	@slideID = '8-1-4', 
+	@lessonid = '8-1',
 	@slideinfo = 'You can give an XML element any attribute name^
 					The value entered must be enclosed in quotes^
 					Deciding when to use attributes and elements^
@@ -48,8 +48,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-5', 
-	@lessonid = '10-1',
+	@slideID = '8-1-5', 
+	@lessonid = '8-1',
 	@slideinfo = 'If you need to put double quotes in your attribute^
 					encase it in the entire attribute in single qutoes.^
 					<customer id=''Hello "1" ''^
@@ -58,8 +58,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-6', 
-	@lessonid = '10-1',
+	@slideID = '8-1-6', 
+	@lessonid = '8-1',
 	@slideinfo = 'Certain characters mean somethin in XML and must be typed differently^
 				  For an apostrophe to be rendered to the page ''&apos;'' is used instead^
 				  The technical name for ths is an XML Entity.^
@@ -68,8 +68,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-7', 
-	@lessonid = '10-1',
+	@slideID = '8-1-7', 
+	@lessonid = '8-1',
 	@slideinfo = 'Example of an XML Entity^
 					<lastName>O&apos;Reilly</lastName>^
 					Example for a custom XML Entity^
@@ -82,16 +82,16 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-8', 
-	@lessonid = '10-1',
+	@slideID = '8-1-8', 
+	@lessonid = '8-1',
 	@slideinfo = 'To comment inside of xml place "<!--" infront of the^
 					comment and "-->" at the end.^
 					<!-- This is a comment in XML -->'
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-9', 
-	@lessonid = '10-1',
+	@slideID = '8-1-9', 
+	@lessonid = '8-1',
 	@slideinfo = 'Descendants are children nested inside of the root element.^
 					<customer id = "1">^
 					<firstName>John</firstName>^
@@ -101,8 +101,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-10', 
-	@lessonid = '10-1',
+	@slideID = '8-1-10', 
+	@lessonid = '8-1',
 	@slideinfo = 'XSL stands for: eXtensible Stylesheet Language^
 					Three important parts make up XSL:^
 					1. XPath - a language used to navigate XML documents^
@@ -111,8 +111,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-11', 
-	@lessonid = '10-1',
+	@slideID = '8-1-11', 
+	@lessonid = '8-1',
 	@slideinfo = 'We have used XML before(web.config file)^
 					Using XSL allows us an XML file to be viewed in a^
 					viewable state^
@@ -121,8 +121,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-12', 
-	@lessonid = '10-1',
+	@slideID = '8-1-12', 
+	@lessonid = '8-1',
 	@slideinfo = '<?xml version="1.0"?>^
 					<?xml-stylesheet type="text/xsl" href="Employees.xsl"?>^
 					<Employees>^
@@ -138,8 +138,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-13', 
-	@lessonid = '10-1',
+	@slideID = '8-1-13', 
+	@lessonid = '8-1',
 	@slideinfo = '<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"?>^
 					<xsl:template match ="/">^
 					&ltHTML><BODY><Table border ="1"<TR><TD>First</TD><TD>Last</TD></TR>^
@@ -156,8 +156,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-14', 
-	@lessonid = '10-1',
+	@slideID = '8-1-14', 
+	@lessonid = '8-1',
 	@slideinfo = 'In the XSL file we can see how the XML is transformed:^
 				  Points us to the root of the XML document:^
 				  <xsl:template match="/"^
@@ -168,8 +168,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-15', 
-	@lessonid = '10-1',
+	@slideID = '8-1-15', 
+	@lessonid = '8-1',
 	@slideinfo = 'To begin working with XSL we need to learn XPath.^
 	XPath allows us to select certain elements based on a query that^
 	we ask the XML file.^
@@ -180,8 +180,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-16', 
-	@lessonid = '10-1',
+	@slideID = '8-1-16', 
+	@lessonid = '8-1',
 	@slideinfo = 'Xpath can be used to locate any type of information^
 	in an XML document using one line of code.^
 	These are referred to as expressions.^
@@ -190,8 +190,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-17', 
-	@lessonid = '10-1',
+	@slideID = '8-1-17', 
+	@lessonid = '8-1',
 	@slideinfo = 
 	'<Customers>^
 		<Customer ID = "1">^
@@ -206,8 +206,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-18', 
-	@lessonid = '10-1',
+	@slideID = '8-1-18', 
+	@lessonid = '8-1',
 	@slideinfo = 'The following is a basic XPath query to select the first customer''s^ 
 	first name in the following XML structure:^
 	<xsl:value-of select="Customers/Customer/FirstName"/>^
@@ -218,8 +218,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-19', 
-	@lessonid = '10-1',
+	@slideID = '8-1-19', 
+	@lessonid = '8-1',
 	@slideinfo = 'Absoulte location pathing is selecting a specific element where^
 	you start from the root of the document:^
 	Customers/Cutomer/FirstName^
@@ -229,8 +229,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-20', 
-	@lessonid = '10-1',
+	@slideID = '8-1-20', 
+	@lessonid = '8-1',
 	@slideinfo = 'Absoulte location pathing is selecting a specific element where^
 	you start from the root of the document:^
 	Customers/Cutomer/FirstName^
@@ -240,8 +240,8 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-21', 
-	@lessonid = '10-1',
+	@slideID = '8-1-21', 
+	@lessonid = '8-1',
 	@slideinfo = 'To select all descendants of an element we can use two slashes : //^
 	This is useful when we have multiple descendants within an element like^
 	the previous example: Customers//Customer^
@@ -250,7 +250,7 @@ exec spSlides
 go
 exec spSlides 
 	@crud = 'c', 
-	@slideID = '10-1-22', 
-	@lessonid = '10-1',
+	@slideID = '8-1-22', 
+	@lessonid = '8-1',
 	@slideinfo = 'Using the * after the path'
 go
