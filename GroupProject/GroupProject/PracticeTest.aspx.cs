@@ -30,8 +30,8 @@ namespace GroupProject
             {
                 System.Windows.Forms.MessageBox.Show("NO CHEATING DARRYL");
             }
-            
-            switch(ddlTestChoice.SelectedItem.Text)
+            DataSet dsStudentName = Crud.ReadTable("spScore", "bruce.banner@robertsoncollege.net");
+            switch (ddlTestChoice.SelectedItem.Text)
             {
                 case "Module 1":
                     LoadQuestion("MOdule 1");
