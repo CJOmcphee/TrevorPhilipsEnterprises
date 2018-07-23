@@ -484,3 +484,4 @@ END
 GO
 Exec spSlides @crud ='r', @lessonid ='3-1'
 select * from tbSlides
+select * from tbStudentTest
