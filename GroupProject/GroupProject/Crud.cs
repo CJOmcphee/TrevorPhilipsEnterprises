@@ -120,6 +120,14 @@ namespace GroupProject
                 mydal.ExecuteProcedure("spTest");
             
         }
+        public static void CreateTestScore( string crud, string TestID, string StudentID, decimal Score)
+        {
+            mydal.AddParam("@crud", crud);
+            mydal.AddParam("@tID", TestID);
+            mydal.AddParam("@sID", StudentID);
+            mydal.AddParam("@score", Score.ToString());
+            mydal.ExecuteProcedure("spScore");
+        }
         public static DataSet CreateUpdateUser(string crud ,string UserEmail,string UserPassword,string FirstName,string LastName)
         {
             mydal.AddParam("@crud", crud);

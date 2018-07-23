@@ -93,24 +93,22 @@ ModuleID int foreign key references tbModule(ModuleID)
 )
 go
 insert into tbTest (testID,ModuleID)values
-					('module1',1),
-					('module2',2),
-					('module3',3),
-					('module4',4),
-					('module5',5),
-					('module6',6),
-					('module7',7),
-					('module8',8),
-					('module9',9)
+					('Module 1',1),
+					('Module 2',2),
+					('MOdule 3',3),
+					('MOdule 4',4),
+					('Module 5',5),
+					('Module 6',6),
+					('Module 7',7),
+					('Module 8',8),
+					('Module 9',9)
 
 go
 create table tbStudentTest(
 tID varchar(50) foreign key references tbTest(testID),
 sID varchar(100) foreign key references tbLogin (sID),
-score int 
+score decimal(10,2)
 )
--- You COULD put in a test ID for the sake of easier coding, you would just have to know what individual questions are
--- because there's going to be an absolute ton of questions - Darryl.
 
 create table tbQuestions(
 QID INT IDENTITY(1,1),
@@ -338,7 +336,7 @@ as begin
 end
 go
 create procedure spScore(
-@score int,
+@score decimal(10,2),
 @tID varchar(50),
 @sID varchar(50),
 @crud  varchar(1)
