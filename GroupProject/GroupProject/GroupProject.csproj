@@ -925,7 +925,6 @@
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="bin\GroupProject.dll.config" />
-    <Content Include="WebForm1.aspx" />
     <None Include="DAL_Project\Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.js" />
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.min.js" />
@@ -1133,13 +1132,6 @@
     </Compile>
     <Compile Include="registration.aspx.designer.cs">
       <DependentUpon>registration.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
