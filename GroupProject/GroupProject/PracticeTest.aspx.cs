@@ -30,35 +30,35 @@ namespace GroupProject
             {
                 System.Windows.Forms.MessageBox.Show("NO CHEATING DARRYL");
             }
-            
-            switch(ddlTestChoice.SelectedItem.Text)
+
+            switch (ddlTestChoice.SelectedItem.Text)
             {
                 case "Module 1":
-                    LoadQuestion("module1");
+                    LoadQuestion("Module 1");
                     break;
                 case "Module 2":
-                    LoadQuestion("module2");
+                    LoadQuestion("Module 2");
                     break;
                 case "Module 3":
-                    LoadQuestion("module3");
+                    LoadQuestion("Module 3");
                     break;
                 case "Module 4":
-                    LoadQuestion("module4");
+                    LoadQuestion("Module 4");
                     break;
                 case "Module 5":
-                    LoadQuestion("module5");
+                    LoadQuestion("Module 5");
                     break;
                 case "Module 6":
-                    LoadQuestion("module6");
+                    LoadQuestion("MOdule 6");
                     break;
                 case "Module 7":
-                    LoadQuestion("module7");
+                    LoadQuestion("MOdule 7");
                     break;
                 case "Module 8":
-                    LoadQuestion("module8");
+                    LoadQuestion("Module 8");
                     break;
                 case "Module 9":
-                    LoadQuestion("module9");
+                    LoadQuestion("Module 9");
                     break;
             }
 
@@ -133,7 +133,14 @@ namespace GroupProject
             Label1.Text = Math.Round(Total, 2).ToString();
 
             Security security = new Security();
-            DataSet dsStudentName = Crud.ReadTable("spStudent", security.Email);
+            DataSet dsStudentName = Crud.ReadTable("spStudents", security.Email);
+            string Test = ddlTestChoice.SelectedItem.Text;
+
+            Crud.CreateTestScore("c", Test, security.Email,Total);
+            if(Total >=70)
+            {
+                System.Windows.Forms.MessageBox.Show("Congratulations you have passed");
+            }
         }
     }
 }

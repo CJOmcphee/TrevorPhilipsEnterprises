@@ -19,7 +19,7 @@ namespace GroupProject.user
         protected void btnSignIn_Click(object sender, EventArgs e)
         {
             DataSet ds = Crud.Login(tbEmail.Text.ToString(), tbPassword.Text.ToString());
-            if (ds == null)
+            if (ds.Tables.Count == 0)
             {
                 lblDisplay.Text = "Unsuccessful";
             }else
