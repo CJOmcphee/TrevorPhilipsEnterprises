@@ -862,6 +862,7 @@
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
     <Content Include="Scripts\sitemap.xml" />
     <Content Include="SlideshowTemplate.aspx" />
+    <Content Include="SQLCodeExampleTemplate.txt" />
     <Content Include="summaries.txt" />
     <Content Include="tests_admin.aspx" />
     <Content Include="users_admin.aspx" />
