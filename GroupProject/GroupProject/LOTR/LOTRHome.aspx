@@ -32,7 +32,7 @@
     <div>
         <table>
             <tr>
-                <td> Who is your favorite character from lord of the ringstd>
+                <td> Who is your favorite character from lord of the rings?</td>
             </tr>
             <tr>
                 <td>
