@@ -726,8 +726,363 @@ EXEC dbo.spWrongAnswer @question = 'Objects make programming easier.',     -- va
                        @crud = 'c'          -- varchar(1)
 
 
+-- Module 9, Question 1
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'JavaScript and Java the same thing.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'JavaScript and Java the same thing.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+--  Module 9, Question 2
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'JavaScript is a Scripting language.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'JavaScript is a Scripting language.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
 
 
+-- Module 9, Question 3
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'The compiler will debug JavaScript for you.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The compiler will debug JavaScript for you.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 4
+EXEC dbo.spQuestions  --@QID = 0,        -- int
+                     @questions = 'The code for JavaScript goes between the < script > tags.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The code for JavaScript goes between the < script > tags.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 5
+EXEC dbo.spQuestions  --@QID = 0,        -- int
+                     @questions = 'JavaScript is exactly like C#', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'JavaScript is exactly like C#',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 6
+EXEC dbo.spQuestions  --@QID = 0,        -- int
+                     @questions = 'The four datatypes in JavaScript are Numbers, Strings, Booleans, and Objects.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The four datatypes in JavaScript are Numbers, Strings, Booleans, and Objects.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 7
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Strings in JavaScript are value types, not reference types like in C#', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Strings in JavaScript are value types, not reference types like in C#',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 8
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Comments in JavaScript can be written the same as in C# ( // Comment )', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Comments in JavaScript can be written the same as in C# ( // Comment )',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 9
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'We can assign a function directly to a variable name in code.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'We can assign a function directly to a variable name in code.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 10
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'You can use TRY, CATCH, and THROW in JavaScript the same way you can in C#', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'You can use TRY, CATCH, and THROW in JavaScript the same way you can in C#',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 11
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'The Document Object Model (DOM) is the representation of HTML elements in a document (page)', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The Document Object Model (DOM) is the representation of HTML elements in a document (page)',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 12
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'The DOM structure is referred to as a Node Tree.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The DOM structure is referred to as a Node Tree.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 13
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What event is the most comon event for a BUTTON?', -- varchar(1000)
+                     @answers = 'onclick',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What event is the most comon event for a BUTTON?',     -- varchar(500)
+                       @wrongAnswers = 'getElementById', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What event is the most comon event for a BUTTON?',     -- varchar(500)
+                       @wrongAnswers = 'alert', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What event is the most comon event for a BUTTON?',     -- varchar(500)
+                       @wrongAnswers = 'ButtonClick', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+--Module 9, Question 14
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'JavaScript cannot be used in C# ASP.NET pages.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'JavaScript cannot be used in C# ASP.NET pages.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 15
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'JSON stands for JavaScript Organ Notation', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'JSON stands for JavaScript Organ Notation',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+--Module 6, Question 1
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What does CSS stand for?', -- varchar(1000)
+                     @answers = 'Cascading Style Sheets',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does CSS stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Cascading Sheet Styles', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does CSS stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Cascade Style Sheets', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does CSS stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Cascading Stile Seheets', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 2
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'CSS makes pages look pretty.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'CSS makes pages look pretty.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+--Module 6, Question 3
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Link, Visited, Hover, and Active are all states for the Anchor tag.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = ''       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Link, Visited, Hover, and Active are all states for the Anchor tag.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 4
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Master Pages allow you to create a consistent layout for the pages in your application', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Master Pages allow you to create a consistent layout for the pages in your application',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 5
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'A single Master Page defines the look, feel and standard behavior that you want for all of the pages in your app.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A single Master Page defines the look, feel and standard behavior that you want for all of the pages in your app.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 5
+EXEC dbo.spQuestions  --@QID = 0,        -- int
+                     @questions = 'The content of the Master Pages must stay within the < ContentPlaceHolder > tags.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The content of the Master Pages must stay within the < ContentPlaceHolder > tags.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 6
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Session Objects hold user-specific information and are available in all pages of an application.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Session Objects hold user-specific information and are available in all pages of an application.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 7
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'ID, Name, and Preferences are all common values stored in a Session.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'ID, Name, and Preferences are all common values stored in a Session.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 8
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'An Example of a Session looks like this: "Session[Username] = JoeSmith;"', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'An Example of a Session looks like this: "Session[Username] = JoeSmith;"',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 9
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'A SessionID is generated and stored at the time of session creation.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A SessionID is generated and stored at the time of session creation.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 10
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Session.End() ends the session.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Session.End() ends the session.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 11
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Storing values on the server should be used carelessly.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Storing values on the server should be used carelessly.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 12
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Session values can be stored in SQL Server.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Session values can be stored in SQL Server.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 13
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'SessionID is the link between a particular user and their requests/responses.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'SessionID is the link between a particular user and their requests/responses.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 14
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Cookies are values that are stored locally on the user''s computer.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Cookies are values that are stored locally on the user''s computer.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 15
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'This is the correct syntax to DataBind: < %#Eval("Name")% >', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'This is the correct syntax to DataBind: < %#Eval("Name")% >',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
 
 -- Slides
 
