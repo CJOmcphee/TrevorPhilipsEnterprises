@@ -137,6 +137,23 @@ namespace GroupProject
             string Test = ddlTestChoice.SelectedItem.Text;
 
             Crud.CreateTestScore("c", Test, security.Email,Total);
+
+            if (Total >= 70)
+            {
+                System.Windows.Forms.MessageBox.Show("Congratulations you passed with a score of %" + " " + score);
+                Response.Write("<script>window.open('index_user.aspx','_parent');</script>");
+            }
+            else
+            {
+                lblRetry.Visible = true;
+                btnRetry.Visible = true;
+                lblRetry.Text = "You only got a score of" + " " + Total + " " + ".  This is considered a fail if you would like to retry. Please click button below";
+            }
+        }
+
+        protected void btnRetry_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PracticeTest.aspx");
         }
     }
 }
