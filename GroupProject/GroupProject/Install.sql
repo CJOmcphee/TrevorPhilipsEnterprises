@@ -42,17 +42,43 @@ and how data is related to one another between tables.^
 You will get understanding of Structured Query Language (SQL), forms of normalization of a data, primary and foreign keys.^
 Learn SQL functions and how to get data from different tables (JOIN).^'),
 							
-							('Module 4','moduleSum4'),
+							('Module 4','ADO.NET ^
+In this module you will dive more deep to work with SQL and learn how to operate with data from data base in C#.^
+In discussion will touch subjects of Stored Procedures, global and local variables in SQL, Transactions and Subqueries.^
+Further you may learn how to work with data from SQLdatabases in C#. How to use SQLConnection and SQLCommad Objects.^
+Also, you will know how to create and operate with Master Page for WebApp creation.^'),
 							
-							('Module 5','moduleSum4'),
+							('Module 5','ASP.NET ^
+This module is introduction to ASP.NET.
+Here you can get understanding of what is Cascading Style Sheets(CSS), Application State, dive more deep with HTML Controls.^
+Understand way of representing data form database in GridView, editing Web.config, create and call Dynamic-Link Libraries(DLL)^
+and how to make controls validation.^'),
 							
-							('Module 6','moduleSum6'),
+							('Module 6','CSS & Master Pages ^
+In this module you continue your work with CSS and Master Page.^
+You will learn CSS Attributes, more about ASP.NET Controls. Get more knowledge about Master Page and connected Web Forms.^
+Will know how to store values in Sessions and Cookies and how to pass them with QueryString.You will back to presenting data^
+in GridView and Data List to learn how to manage this representation with sorting, paging, data binding and etc.^'),
 							
-							('Module 7','moduleSum7'),
+							('Module 7','Object Oriented Programming (OOP) ^
+In this module you can get the main idea of Object Oriented Programming (OOP) philosophy,^
+understand the main difference from Procedural Programming. You can learn major concepts of OOP:^
+Inheritance, Polymorphism and Encapsulation. Get the understanding what is Array and how to operate with arrays.^
+You learn how Bussiness-Logic Access Layer (BAL) interact with Data Access Layer (DAL).^'),
 							
-							('Module 8','moduleSum8'),
+							('Module 8','XML & Web Services ^
+In this module we will talk about Extensible Markup Language(XML) and Web Services.^
+We look at them together because Web Services obvious use XML. XML is very similar to HTML.^
+Actually, XML has its own style sheet Extensible Stylesheet Language (XSL).^
+You will know about XPath(navigation), XSLT(transformation) and XSL-FO(formatting).^
+You will learn how to use WebMethod to create yours own Web Services and learn Web Services Description Language (WSDL)^
+which has XML format. You will deal eith Siple Object Access Protocol (SOAP) to create interaction between Web Services. ^'),
 							
-							('Module 9','moduleSum9')
+							('Module 9','JavaScript, HTML5 & CSS3 ^
+This module is introduction to JavaScript and using of HTML5 and CSS3.^
+You will learn about JavaScript and what that difference with JAVA.^
+Get some understanding about JSON, Jquery and AJAX. Get knowledge about Document Object Model (DOM)^
+which is representation of HTML elements in document (page).^')
 
 
 create table tbLesson(
@@ -246,6 +272,73 @@ as begin
 end
 go
 
+exec spExamples @crud='c',
+@lID='1-1',
+@example='<table><tr><td>Username:</td><td>&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox></td></tr></table>',
+@solutions='<asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>',
+@code='&lt;!DOCTYPE html>
+^&lt;html xmlns="http://www.w3.org/1999/xhtml">
+^&lt;head runat="server">
+^&nbsp;&nbsp;&nbsp;&lt;title>My Page&lt;/title>
+^&lt;/head>
+^&lt;body>
+^&nbsp;&nbsp;&nbsp;&nbsp;&lt;form id="form1" runat="server">
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username:
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>^^
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
+^&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form>
+^&lt;/body>
+^&lt;/html>',
+@explanation='Creating a table for your LOGIN page, we will have you create the ASP textbox underneath the TD containing: USERNAME',
+@slide=0, 
+@showSolution = 0
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='&lt;asp:Button ID="btnLogin" runat="server" Text="Login"/>',
+@solutions='<asp:Button ID="btnLogin" runat="server" Text="Login"/>',
+@code='&lt;body>
+^&nbsp;&nbsp;&nbsp;&nbsp;&lt;form id="form1" runat="server">
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username:
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password:
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table>
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
+^&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form>
+^&lt;/body>
+^&lt;/html>',
+@explanation='We will now have you create a button for your LOGIN page with the ID of btnLogin, we already created a password field for your code.',
+@slide=0, 
+@showSolution = 0
+
+
 exec spExamples @crud='c',@lID='1-1',@example='Show 1 plus 1',@solutions='1+1',@code='int answer = 1+1',@explanation='you create a int called answer and assing it 1+1',@slide=0, @showSolution = 0
 exec spExamples @crud='c',@lID='1-1',@example='Show 2 plus 2',@solutions='2+2',@code='int answer = 2+2',@explanation='you create a int called answer and assing it 1+1',@slide=0, @showSolution = 1
 go
@@ -336,9 +429,9 @@ as begin
 end
 go
 create procedure spScore(
-@score decimal(10,2),
-@tID varchar(50),
-@sID varchar(50),
+@score decimal(10,2) =null,
+@tID varchar(50) =null,
+@sID varchar(50)  =null,
 @crud  varchar(1)
 )
 as  begin

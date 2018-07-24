@@ -26,15 +26,12 @@ namespace GroupProject
         Dictionary<RadioButtonList,Tuple<Label, Label>> radioButtonLists = new Dictionary<RadioButtonList, Tuple<Label,Label>>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
-            {
-                System.Windows.Forms.MessageBox.Show("NO CHEATING DARRYL");
-            }
-            DataSet dsStudentName = Crud.ReadTable("spScore", "bruce.banner@robertsoncollege.net");
+            
+
             switch (ddlTestChoice.SelectedItem.Text)
             {
                 case "Module 1":
-                    LoadQuestion("MOdule 1");
+                    LoadQuestion("Module 1");
                     break;
                 case "Module 2":
                     LoadQuestion("Module 2");
@@ -137,6 +134,23 @@ namespace GroupProject
             string Test = ddlTestChoice.SelectedItem.Text;
 
             Crud.CreateTestScore("c", Test, security.Email,Total);
+
+            if (Total >= 70)
+            {
+                System.Windows.Forms.MessageBox.Show("Congratulations you passed with a score of %" + " " + score);
+                Response.Write("<script>window.open('index_user.aspx','_parent');</script>");
+            }
+            else
+            {
+                lblRetry.Visible = true;
+                btnRetry.Visible = true;
+                lblRetry.Text = "You only got a score of" + " " + Total + " " + ".  This is considered a fail if you would like to retry. Please click button below";
+            }
+        }
+
+        protected void btnRetry_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PracticeTest.aspx");
         }
     }
 }
