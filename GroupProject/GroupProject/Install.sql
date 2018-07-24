@@ -706,8 +706,55 @@ go
 
 exec spExamples @crud='c',
 @lID='1-1',
-@example='HttpContext.Current.Session[....',
-@solutions='HttpContext.Current.Session["Access"] != null',
+@example='conn.',
+@solutions='conn.Open();',
+@code='using System;
+^using System.Collections.Generic;
+^using System.Linq;
+^using System.Web;
+^using System.Data;
+^using System.Data.SqlClient;
+^`
+^namespace LOTRWebsite
+^{
+^````public class LOTRSecurity
+^````{
+^```````SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
+^```````
+^```````public string Access { get; set; }
+^```````
+^```````public LOTRSecurity()
+^```````{
+^```````````if( HttpContext.Current.Session["Access"] != null )
+^```````````{
+^``````````````Access = HttpContext.Current.Session["Access"].ToString();
+^```````````}
+^```````````else
+^```````````{
+^``````````````Access = "";
+^```````````}
+^```````}
+^public bool Login(string userID, string userPassword)
+^````````{
+^````````````DataSet ds = new DataSet();
+^````````````SqlDataAdapter da = new SqlDataAdapter("spLogin", conn);
+^````````````da.SelectCommand.CommandType = CommandType.StoredProcedure;
+^````````````da.SelectCommand.Parameters.AddWithValue("@userID", userID);
+^````````````da.SelectCommand.Parameters.AddWithValue("@userPassword", userPassword);
+^````````````conn.....
+^`
+^`
+^`````````}
+^````}
+^}',
+@explanation='Now its time to open up the connection, and prepare to fill the dataset in that instance. Typing on conn.Open(); will open the SQL connection until it is closed, it is usually advisable to close it immediately once you have grabbed the data.',
+@slide=0, 
+@showSolution = 0
+go
+exec spExamples @crud='c',
+@lID='1-1',
+@example='ds.Fill(',
+@solutions='ds.Fill(da);',
 @code='using System;
 ^using System.Collections.Generic;
 ^using System.Linq;
@@ -742,16 +789,15 @@ exec spExamples @crud='c',
 ^````````````da.SelectCommand.Parameters.AddWithValue("@userID", userID);
 ^````````````da.SelectCommand.Parameters.AddWithValue("@userPassword", userPassword);
 ^````````````conn.Open();
-^````````````da.Fill(ds);
+^````````````.....
 ^````````````conn.Close();
 ^`````````}
 ^````}
 ^}',
-@explanation='',
+@explanation='We now need to FILL the dataset with the data where it opens and closes, using ds.Fill() and plugging the DataAdapter within the parenthesis.',
 @slide=0, 
 @showSolution = 0
 go
-
 go
 select * from tbExample
 select * from tbTest
