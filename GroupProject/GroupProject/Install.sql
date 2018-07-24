@@ -658,6 +658,54 @@ exec spExamples @crud='c',
 go
 exec spExamples @crud='c',
 @lID='1-1',
+@example='@..',
+@solutions='@uID',
+@code='using System;
+^using System.Collections.Generic;
+^using System.Linq;
+^using System.Web;
+^using System.Data;
+^using System.Data.SqlClient;
+^`
+^namespace LOTRWebsite
+^{
+^````public class LOTRSecurity
+^````{
+^```````SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
+^```````
+^```````public string Access { get; set; }
+^```````
+^```````public LOTRSecurity()
+^```````{
+^```````````if( HttpContext.Current.Session["Access"] != null )
+^```````````{
+^``````````````Access = HttpContext.Current.Session["Access"].ToString();
+^```````````}
+^```````````else
+^```````````{
+^``````````````Access = "";
+^```````````}
+^```````}
+^public bool Login(string userID, string userPassword)
+^````````{
+^````````````DataSet ds = new DataSet();
+^````````````SqlDataAdapter da = new SqlDataAdapter("spLogin", conn);
+^````````````da.SelectCommand.CommandType = CommandType.StoredProcedure;
+^````````````da.SelectCommand.Parameters.AddWithValue( .... , userID);
+^````````````
+^````````````
+^````````````
+^````````````
+^`````````}
+^````}
+^}',
+@explanation='And now, using the parameter we made within that stored procedure, we will use the userID string to find any users in uID within the database, insert the parameter to continue.',
+@slide=0, 
+@showSolution = 0
+go
+
+exec spExamples @crud='c',
+@lID='1-1',
 @example='HttpContext.Current.Session[....',
 @solutions='HttpContext.Current.Session["Access"] != null',
 @code='using System;
