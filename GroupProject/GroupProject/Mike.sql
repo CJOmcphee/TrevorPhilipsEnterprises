@@ -507,6 +507,228 @@ EXEC dbo.spWrongAnswer @question = 'Static Classes do not have to be instantiate
                        @crud = 'c'          -- varchar(1)
 
 
+
+-- Module 7, Question 4
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which of the following statements is not true regarding Objects?', -- varchar(1000)
+                     @answers = 'Objects can only have one constructor',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which of the following statements is not true regarding Objects?',     -- varchar(500)
+                       @wrongAnswers = 'Objects are just "instantiated" classes', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which of the following statements is not true regarding Objects?',     -- varchar(500)
+                       @wrongAnswers = 'They contain real values', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+EXEC dbo.spWrongAnswer @question = 'Which of the following statements is not true regarding Objects?',     -- varchar(500)
+                       @wrongAnswers = 'Objects only exist after a program is running', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 7, Question 5
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Constructors are instantiated when the keyword "new" is typed.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Constructors are instantiated when the keyword "new" is typed.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 7, Question 6
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'When you instantiate a new object, the number of parameters used will not determine which constructor code to run.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'When you instantiate a new object, the number of parameters used will not determine which constructor code to run.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 7, Question 7
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'How many parameters can a constructor have?', -- varchar(1000)
+                     @answers = 'Unlimited',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many parameters can a constructor have?',     -- varchar(500)
+                       @wrongAnswers = 'Two', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many parameters can a constructor have?',     -- varchar(500)
+                       @wrongAnswers = 'Six', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many parameters can a constructor have?',     -- varchar(500)
+                       @wrongAnswers = 'One Billion', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 8
+
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Inheritance enables new objects to take on the properties of existing objects.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spWrongAnswer @question = 'Inheritance enables new objects to take on the properties of existing objects.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 9
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'In inheritance, the DERIVED class is automatically instantiated before the DERIVED class.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'In inheritance, the DERIVED class is automatically instantiated before the DERIVED class.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 10
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'The keyword "base" can access any of the base class''s public or protected members.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The keyword "base" can access any of the base class''s public or protected members.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7 , Question 11
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'This is the correct way to Instantiate an object = "Object myObject = new myObject();"', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'This is the correct way to Instantiate an object = "Object myObject = new myObject();"',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 12
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'The "virtual" modifier indicates to derived classes that they can override a method.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The "virtual" modifier indicates to derived classes that they can override a method.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 13
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'An Array is a list in its most basic form.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'An Array is a list in its most basic form.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 14
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'A List is a class which manages the addition, removal and sorting of items in a list.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A List is a class which manages the addition, removal and sorting of items in a list.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 15
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What types of items can a List hold?', -- varchar(1000)
+                     @answers = 'Anything',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What types of items can a List hold?',     -- varchar(500)
+                       @wrongAnswers = 'Only ints.', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What types of items can a List hold?',     -- varchar(500)
+                       @wrongAnswers = 'Only decimals.', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What types of items can a List hold?',     -- varchar(500)
+                       @wrongAnswers = 'Only bananas', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 16
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Queues, Stacks, Nodes, and LinkedLists are all forms of common Data Structures.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Queues, Stacks, Nodes, and LinkedLists are all forms of common Data Structures.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 17
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'A Queue is a letter of the alphabet.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A Queue is a letter of the alphabet.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 18
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'A Stack is a type of data structure which acts like stack of plates in terms of handling data', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A Stack is a type of data structure which acts like stack of plates in terms of handling data',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 19
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'The Business-Logic Access Layer (BAL) is the ection of your code that interacts with the Data Access Layer (DAL)', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The Business-Logic Access Layer (BAL) is the ection of your code that interacts with the Data Access Layer (DAL)',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 20
+EXEC dbo.spQuestions --@QID = 0,        -- int
+                     @questions = 'Objects make programming easier.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Objects make programming easier.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+
+
+
 -- Slides
 
 EXEC dbo.spSlides @slideID = '2-1-1',   -- varchar(50)

@@ -28,6 +28,8 @@
             </table>
             <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
             <asp:Button ID="btnSubmit" runat="server" Text="Submit"   OnClick="btnSubmit_Click" />
+            <br /> <asp:Label ID="lblRetry" Visible="false" runat="server" Text=""></asp:Label>
+            <br />  <asp:Button ID="btnRetry" Visible="false" runat="server" Text="Retry" OnClick="btnRetry_Click" />
         </div>
     </form>
 </body>
