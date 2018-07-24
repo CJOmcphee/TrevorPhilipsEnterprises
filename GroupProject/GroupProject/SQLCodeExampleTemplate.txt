@@ -3,20 +3,20 @@
 '&lt;!DOCTYPE html>
 ^&lt;html xmlns="http://www.w3.org/1999/xhtml">
 ^&lt;head runat="server">
-^&nbsp;&nbsp;&nbsp;&lt;title>My Page&lt;/title>
+^```;&lt;title>My Page&lt;/title>
 ^&lt;/head>
 ^&lt;body>
-^&nbsp;&nbsp;&nbsp;&nbsp;&lt;form id="form1" runat="server">
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;****Content****
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
-^&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form>
+^````&lt;form id="form1" runat="server">
+^````````&lt;div>
+^```````````&lt;table>
+^`````````````````&lt;tr>
+^```````````````````&lt;td>
+^``````````````````````  **** TABLE CONTENT ****
+^```````````````````&lt;/td>
+^`````````````````&lt;/tr>
+^```````````&lt;/table>
+^````````&lt;/div>
+^````&lt;/form>
 ^&lt;/body>
 ^&lt;/html>',
 
@@ -32,11 +32,22 @@
 ^
 ^namespace MyProgram
 ^{
-^&nbsp;&nbsp;&nbsp;&nbsp;public partial class WebForm1 : System.Web.UI.Page
-^&nbsp;&nbsp;&nbsp;&nbsp;{
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected void Page_Load(object sender, EventArgs e)
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+^````public partial class WebForm1 : System.Web.UI.Page
+^````{
+^````````protected void Page_Load(object sender, EventArgs e)
+^````````{
 ^
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-^&nbsp;&nbsp;&nbsp;&nbsp;}
+^````````}
+^````}
 ^}
+
+------ SQL TEMPLATE TO INSERT EXAMPLE-------
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='',
+@solutions='',
+@code='',
+@explanation='',
+@slide=0, 
+@showSolution = 0

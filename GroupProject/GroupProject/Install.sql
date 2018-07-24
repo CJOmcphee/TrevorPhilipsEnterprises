@@ -276,28 +276,22 @@ exec spExamples @crud='c',
 @lID='1-1',
 @example='<table><tr><td>Username:</td><td>&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox></td></tr></table>',
 @solutions='<asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>',
-@code='&lt;!DOCTYPE html>
-^&lt;html xmlns="http://www.w3.org/1999/xhtml">
-^&lt;head runat="server">
-^&nbsp;&nbsp;&nbsp;&lt;title>My Page&lt;/title>
-^&lt;/head>
-^&lt;body>
-^&nbsp;&nbsp;&nbsp;&nbsp;&lt;form id="form1" runat="server">
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username:
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>^^
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
-^&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form>
+@code='&lt;asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+^````````&lt;div>
+^```````````&lt;table>
+^`````````````````&lt;tr>
+^```````````````````&lt;td>
+^``````````````````````Username:
+^```````````````````&lt;/td>
+^```````````````````&lt;td>^^
+^```````````````````&lt;/td>
+^`````````````````&lt;/tr>
+^```````````&lt;/table>
+^````````&lt;/div>
+^````&lt;/form>
 ^&lt;/body>
 ^&lt;/html>',
-@explanation='Creating a table for your LOGIN page, we will have you create the ASP textbox underneath the TD containing: USERNAME',
+@explanation='Creating a table for your LOGIN page in your Webform with Masterpage (we will get to the masterpage later), we will have you create the ASP textbox underneath the TD containing: USERNAME',
 @slide=0, 
 @showSolution = 0
 
@@ -305,38 +299,219 @@ exec spExamples @crud='c',
 @lID='1-1',
 @example='&lt;asp:Button ID="btnLogin" runat="server" Text="Login"/>',
 @solutions='<asp:Button ID="btnLogin" runat="server" Text="Login"/>',
-@code='&lt;body>
-^&nbsp;&nbsp;&nbsp;&nbsp;&lt;form id="form1" runat="server">
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username:
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password:
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
-^&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form>
+@code='<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+^````````&lt;div>
+^```````````&lt;table>
+^`````````````````&lt;tr>
+^```````````````````&lt;td>
+^``````````````````````Username:
+^```````````````````&lt;/td>
+^```````````````````&lt;td>
+^``````````````````````&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox>
+^```````````````````&lt;/td>
+^`````````````````&lt;/tr>
+^`````````````````&lt;tr>
+^```````````````````&lt;td>
+^``````````````````````Password:
+^```````````````````&lt;/td>
+^```````````````````&lt;td>
+^``````````````````````&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox>
+^```````````````````&lt;/td>
+^`````````````````&lt;/tr>
+^`````````````````&lt;tr>
+^```````````````````&lt;td>^^
+^```````````````````&lt;/td>
+^`````````````````&lt;/tr>
+^```````````&lt;/table>
+^````````&lt;/div>
+^````&lt;/form>
 ^&lt;/body>
 ^&lt;/html>',
 @explanation='We will now have you create a button for your LOGIN page with the ID of btnLogin, we already created a password field for your code.',
 @slide=0, 
 @showSolution = 0
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='if (txtUsername.Text == ...){}',
+@solutions='if(txtUsername.Text == ""){Response.Redirect(Home.aspx);}',
+@code='using System;
+^using System.Collections.Generic;
+^using System.Linq;
+^using System.Web;
+^using System.Web.UI;
+^using System.Web.UI.WebControls;
+^
+^namespace LOTRWebsite
+^{
+^````public partial class WebForm1 : System.Web.UI.Page
+^````{
+^````````protected void Page_Load(object sender, EventArgs e)
+^````````{^
+^````````}
+^````````protected void btnLogin_Click(object sender, EventArgs e)
+^```````{
+^```````
+^```````}
+^````}
+^}',
+@explanation='Assuming you have double-clicked on your button to assign it, we will begin to put values for this button to look for. We will begin by simply checking IF the textbox "txtUsername" is empty (""), if it is, we will respond by redirecting them back to the Home.aspx page.',
+@slide=0, 
+@showSolution = 0
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='create table tbLogin',
+@solutions='create table tbLogin',
+@code='use master;
+^go
+^drop database dbLOTR;
+^go
+^create database dbLOTR
+^`
+^',
+@explanation='Now, we are unable to do anything else with the login page until we have a database for our usernames and passwords, in this example we have already created the database "dbLOTR" to stick with the Lord of the Rings theme. We just need to CREATE the TABLE "tbLogin"',
+@slide=0, 
+@showSolution = 0
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='uID varchar(50) primary key',
+@solutions='uID varchar(50) primary key',
+@code='USE master;
+^go
+^drop database dbLOTR;
+^go
+^create database dbLOTR
+^`
+^create table tbLogin(
+^`
+^)',
+@explanation='And now we will start filling the table with relevant data to reference. We will begin by filling the table with a user ID so we can track the username of each login, we will call it "uID" for the sake of simplicity, giving it a maximum character of 50, and each username will be given their own idividual identity to ensure no 2 users are the same.',
+@slide=0, 
+@showSolution = 0
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='@uID = varchar(50)',
+@solutions='@uID = varchar(50)',
+@code='USE master;
+^go
+^drop database dbLOTR;
+^go
+^create database dbLOTR
+^`
+^create table tbLogin(
+^uID varchar(50) primary key,
+^userPassword varchar(50),
+^access varchar(1)
+^)
+^`
+^go
+^create procedure spLogin(
+^`
+^)',
+@explanation='We have already provided a password and an access level, because access levels will either be "u" for user or "a" for admin and passwords can be anything, so we dont need to worry about them. But we need to interact with the back-end of our login page with a stored procedure we will call "spLogin", creating a stored procedure is fairly straight forward, but we will have you create a parameter that will refer to the uID we had you previously create with the same data size and datatype.',
+@slide=0, 
+@showSolution = 0
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='SELECT * FROM tbLogin WHERE ...',
+@solutions='SELECT * FROM tbLogin WHERE uID=@userID AND userPassword=@userPassword',
+@code='USE master;
+^go
+^drop database dbLOTR;
+^go
+^create database dbLOTR
+^`
+^create table tbLogin(
+^uID varchar(50) primary key,
+^userPassword varchar(50),
+^access varchar(1)
+^)
+^`
+^go
+^create procedure spLogin(
+^@uID = varchar(50) = null,
+^@userPassword = varchar(50) = null
+^)
+^as begin
+^```declare @access varchar(1);
+^````````IF exists( ... )
+^````````BEGIN
+^`
+^````````END
+^end',
+@explanation='We have already filled the rest of the parameters for you, the password is the only other parameter that you need because you wont ever insert your access level. But, we have already put an IF EXISTS statement to find an existing user. Enter in the SQL code to select from the tbLogin table where the uID is the parameter @uID and the userPassword is the @userPassword.',
+@slide=0, 
+@showSolution = 0
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='SELECT @access = ...',
+@solutions='SELECT @access = access from tbLogin WHERE uID=@userID AND userPassword = @userPassword',
+@code='USE master;
+^go
+^drop database dbLOTR;
+^go
+^create database dbLOTR
+^`
+^create table tbLogin(
+^uID varchar(50) primary key,
+^userPassword varchar(50),
+^access varchar(1)
+^)
+^`
+^go
+^create procedure spLogin(
+^@uID = varchar(50) = null,
+^@userPassword = varchar(50) = null
+^)
+^as begin
+^```declare @access varchar(1);
+^````````IF exists(SELECT * FROM tbLogin WHERE uID=@userID AND userPassword=@userPassword)
+^````````BEGIN
+^``````````SELECT ....
+^````````END
+^end',
+@explanation='Alright, we are halfway done with this stored procedure! Once we have found an existing user, we will then select our declared variable @access to equal the access where the same existing user and password are found',
+@slide=0, 
+@showSolution = 0
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='SELECT @access ...',
+@solutions='SELECT @access as access',
+@code='USE master;
+^go
+^drop database dbLOTR;
+^go
+^create database dbLOTR
+^`
+^create table tbLogin(
+^uID varchar(50) primary key,
+^userPassword varchar(50),
+^access varchar(1)
+^)
+^`
+^go
+^create procedure spLogin(
+^@uID = varchar(50) = null,
+^@userPassword = varchar(50) = null
+^)
+^as begin
+^```declare @access varchar(1);
+^````````IF exists(SELECT * FROM tbLogin WHERE uID=@userID AND userPassword=@userPassword)
+^````````BEGIN
+^``````````SELECT @access = access from tbLogin WHERE uID=@userID AND userPassword = @userPassword
+^```````` ....
+^````````END
+^end',
+@explanation='We will now finally use the access level to give whoever logs in with a valid account their proper permissions by selecting @access as access, pretty straight forward, but this is very vital. (We will do some more login details for the client users later on)',
+@slide=0, 
+@showSolution = 0
+
 
 
 exec spExamples @crud='c',@lID='1-1',@example='Show 1 plus 1',@solutions='1+1',@code='int answer = 1+1',@explanation='you create a int called answer and assing it 1+1',@slide=0, @showSolution = 0

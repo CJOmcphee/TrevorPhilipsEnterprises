@@ -100,7 +100,8 @@ namespace GroupProject
                 Panel pnlCode = new Panel();
                 Table tblCode = new Table();
                 pnlCode.Controls.Add(tblCode);
-                string codeTxt = Row["code"].ToString();
+                string rawText = Row["code"].ToString();
+                string codeTxt = rawText.Replace("`", "&nbsp;");
                 Char delimiter = '^';
                 String[] substrings = codeTxt.Split(delimiter);
                 foreach (string substring in substrings)
