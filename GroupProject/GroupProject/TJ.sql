@@ -198,12 +198,14 @@ exec spSlides
 			<Customer ID = "1">^
 				<FirstName>Joe</FirstName>^
 				<LastName>Smith</LastName>^
+				<TestScore>40</TestScore>
 			</Customer>^
 		</male>^
 		<female>^
 			<Customer ID = "2">^
 				<FirstName>Sean</FirstName>^
 				<LastName>Young</LastName>^
+				<TestScore>67</TestScore>
 			</Customer>^
 		</female>
 	</Customers>^'
@@ -247,7 +249,7 @@ exec spSlides
 	@lessonid = '8-1',
 	@slideinfo = 'Using the * is a weildcard which is used after the path^
 	selects all children of the parent element.^
-	Using Customs/* would get the first customer, /* would get all the customers.^
+	Using Customers/* would get the first customer, /* would get all the customers.^
 	Becoming familiar with wildcards will be tricky, start out writing^
 	expressions and try shortening them with wildcards.^'
 go
@@ -257,7 +259,222 @@ exec spSlides
 	@lessonid = '8-1',
 	@slideinfo = 'We can use "|" as "and" which allows us to combine two^
 	or more expressions into one. An example of this^
-	Customs/male/* | Customs/female/* this is needed when you^
-	want both female and male^'
+	Customers/male/* | Customers/female/* this is needed when you^
+	want both female and male.^'
 go
-
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-1-23', 
+	@lessonid = '8-1',
+	@slideinfo = 'Predicates are used to specify restrictions when selecting^
+	an XPath. Imagine an example where we want to select any product with a^
+	testscore less than 50. We can use an if/else statement,^
+	if the if statement returns true we will use it if not exclude it.^
+	Customers/*/*[TestScore &lt; 50]. This also works with attributes^
+	Customers/*/*[@ID ="2"].'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-1-24', 
+	@lessonid = '8-1',
+	@slideinfo = 'We can use single periods to refer to the current element.^
+	This is mandatory when we want to select an element and use^
+	a predicate : Customers/male/Customer/TestScore[. &lt; 50].^
+	The above gets all the male customers with a testscore less than 50.'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-1-25', 
+	@lessonid = '8-1',
+	@slideinfo = 'XSLT Example : <?xml version="1.0"?>^
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">^
+	<h2>
+      <xsl:value-of select ="name(.)"/>^
+    </h2>^
+  <xsl:template match="Customers/*">^
+  <table>^
+      <tr style="background-color:#ccff00">^
+        <th>ID</th>^
+        <th>First Name</th>^
+        <th>Last Name</th>^
+        <th>Test Score</th>^
+      </tr>^
+        <xsl:for-each select="Customer[TestScore &lt; ''50'']">^
+          <tr style="background-color:#00cc00">^
+            <td>^'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-1-26', 
+	@lessonid = '8-1',
+	@slideinfo ='
+<xsl:value-of select="@ID"/>^
+            </td>^
+            <td>^
+              <xsl:value-of select="FirstName"/>^
+            </td>^
+            <td>^
+              <xsl:value-of select="LastName"/>^
+            </td>^
+            <td>^
+              <xsl:value-of select="TestScore"/>^
+            </td>^
+          </tr>^
+      </xsl:for-each>^
+    </table>^
+  </xsl:template>^
+</xsl:stylesheet>^'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-1-27', 
+	@lessonid = '8-1',
+	@slideinfo ='XSLT is a language derived from XML.^
+	The root element of the XSLT document is <xsl:stylesheet>^
+	The version and namespace attributes must be declared but^
+	are set by default whne you first create it.^
+	The match attribute on the <xsl:template match="Customers/*">^ 
+	element will associate an XML element with a template using^
+	and XPath expression.^'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-1-28', 
+	@lessonid = '8-1',
+	@slideinfo ='In the previous example we performed a simple loop to create^
+	our table. <xsl:for-each select="Customer[TestScore &lt; ''50'']">.^
+	Loops through our data and finds the customers where TestScore is^
+	smaller than 50. We can also use <xsl:if> statement the same way.^
+	<xsl:if test="ScoreTest &gt; 50">.There is also a sort which can also^
+	come in handy. <xsl:sort select="LastName"/>.^'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-1-29', 
+	@lessonid = '8-1',
+	@slideinfo = 'If you''re trying to imitate an if/else statement from c#,
+	you wouldn''t use <xsl:if>, you would use the <xsl:choose>, <xsl:when> and^
+	<xsl:otherwise>. Example of using one of these would be:^
+	<xsl:choose>^
+	<xsl:when test ="ScoreTest &lt 50"^
+	<td style = "background-color:red;">^
+	<xsl:value-of select="TestScore"/>^
+	</td>^
+	</xsl:when>^
+	<xsl:otherwise>^
+	<td style = "background-color:red;">^
+	<xsl:value-of select="TestScore"/>^
+	</td>
+	</xsl:otherwise>^
+	</xsl:choose>'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-1-30', 
+	@lessonid = '8-1',
+	@slideinfo = 'We can use more than one template on an xsl. To do this we use^
+	<xsl:apply-templates>, to use this replace your^
+	<xsl:value-of select ="FirstName"/> with^
+	<xsl:apply-templates select="FirstName"/>.^'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-1-31', 
+	@lessonid = '8-1',
+	@slideinfo = 'Now that we learnt how to use XSL to display the XML file we^
+	are going to take a class and a DataSet and convert^
+	them into an XML file.^ 
+	To start off with we''re going to begin with a class than^
+	move on to the DataSet.'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-1-32', 
+	@lessonid = '8-1',
+	@slideinfo = 'public class Student^
+	{^
+	public int ID {get; set;}^
+	public string Name {get; set;}^
+	public Student() : this(0,"") {}^
+	public Student(int id, string name)^
+	{^
+	ID = id; Name = name^
+	}^
+	'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-1-33', 
+	@lessonid = '8-1',
+	@slideinfo = 'Now that we have a simple class we are going to create a^
+	Save() method in the same script. First we add "using System.IO;"^
+	and "using System.Xml.Serialization". This now allows us to use^
+	the following classes : Stream, File, XmlSerializer'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-1-34', 
+	@lessonid = '8-1',
+	@slideinfo = 'Stream : Used to handle the transfer of data.^
+	In our first example we will assign a specific file to the stream^
+	in order to save and load or file.^
+	File : Provides static methosd for the creation, copying, deletion,^
+	moving and opening of files.^
+	XmlSerializer : Serializes and deserializes objects into and^
+	from XML documents.'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-1-35', 
+	@lessonid = '8-1',
+	@slideinfo = 'public void Save(string fileName)^
+	{^
+	^using (Stream stream = File.Create(fileName))^
+	{^
+	XmlSerializer ser = new XmlSerializer(this.GetType());^
+	ser.Serialize(stream, this);^
+	}^
+	}^'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-1-36', 
+	@lessonid = '8-1',
+	@slideinfo = 'we''re going to dissect the code we just created.^
+	The "using" word forces the "stream" object to close() usually^
+	you would have to tell it close with stream.close()^
+	We use the File classes static methods to create a new file^
+	with a path and name.^
+	The "ser" object we created is assigned the current^
+	object''s class type, this case that is "Student".^
+	The .Serialize() method, takes all of the properties^
+	of Student and converts them into XML.^'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-1-37', 
+	@lessonid = '8-1',
+	@slideinfo = 'public static Student Load(string fileName)^
+	{^
+	if(!File.Exists(fileName))^
+	return null;^
+	using (Stream stream = File.OpenRead(fileName))^
+	try^
+	{^
+	XmlSerializer ser = new XmlSerializer(typeof(Student));^
+	return (Student)ser.Deserialize(stream);
+	}^
+	catch^
+	{^
+	stream.Close();^
+	File.Delete(fileName);^
+	return null;^
+	}^
+	}^'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-1-38', 
+	@lessonid = '8-1',
+	@slideinfo = 'We'
+go
