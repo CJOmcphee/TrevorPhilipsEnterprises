@@ -137,7 +137,7 @@ namespace GroupProject
 
             if (Total >= 70)
             {
-                System.Windows.Forms.MessageBox.Show("Congratulations you passed with a score of %" + " " + score);
+                System.Windows.Forms.MessageBox.Show("Congratulations you passed with a score of %" + " " + Total);
                 Response.Write("<script>window.open('index_user.aspx','_parent');</script>");
             }
             else
