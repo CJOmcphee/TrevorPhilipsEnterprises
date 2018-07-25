@@ -382,10 +382,8 @@ exec spSlides
 	@slideID = '8-1-31', 
 	@lessonid = '8-1',
 	@slideinfo = 'Now that we learnt how to use XSL to display the XML file we^
-	are going to take a class and a DataSet and convert^
-	them into an XML file.^ 
-	To start off with we''re going to begin with a class than^
-	move on to the DataSet.'
+	are going to take a class and convert them into an XML file.^ 
+	To start off with we''re going to begin with creating a class.'
 go
 exec spSlides 
 	@crud = 'c', 
@@ -476,5 +474,179 @@ exec spSlides
 	@crud = 'c', 
 	@slideID = '8-1-38', 
 	@lessonid = '8-1',
-	@slideinfo = 'We'
+	@slideinfo = 'We start the Load() method by checking if the File we want to load^
+	actually exists, if it doesn''t we have to handle that problem.^
+	We also use the File.OpenRead() method as well when ever using that method^
+	make sure to use a try/catch.^
+	If there is no problems loading the file we get the type again and^
+	return the file contents by casting it back into a Student Class.^
+	If there is a problem we want to close the stream(needed) and delete the file^
+	that failed to load.(Not needed)'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-1', 
+	@lessonid = '8-2',
+	@slideinfo = 'A web service is like a self-describing entity with methods and^
+	properties.^
+	Web Services accept and send XML formatted data^
+	This is a common web format that all applications and browers^
+	can deal with easily.^
+	What this means is that any application can make method calls to a^
+	web service, even if it is built with a different programmng language.^
+	As well as different platforms such as windows and linux.
+	'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-2', 
+	@lessonid = '8-2',
+	@slideinfo = 'A web service is like a self-describing entity with methods and^
+	properties.^
+	Web Services accept and send XML formatted data^
+	This is a common web format that all applications and browers^
+	can deal with easily.^
+	What this means is that any application can make method calls to a^
+	web service, even if it is built with a different programmng language.^
+	'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-3', 
+	@lessonid = '8-2',
+	@slideinfo = 'Web services can be made available across the internet.^
+	Some commmon we service examples :^
+	Weather service - provides weather information, and does the necessary conversions.
+	AirPort service - can tell us airfare and fight details, does necessary time^
+	and price conversions.^
+	Financial services are useful for current stock qutoes and interest rates.^'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-4', 
+	@lessonid = '8-2',
+	@slideinfo = 'The two main reasons to use a web service is :^
+	To check for the newest version of a process or piece of data.^
+	Help two applications that built on different platforms communicate^
+	with each other.^
+	We will talk about two knds of services : WCF Services and ASP.Net.^
+	When adding a web service in ASP.Net a new .asmx file will be made.^
+	There is an attribute at the top of our web sevice methods called^
+	[WebMethod]. This tells the compiler this method will be treated as^
+	a web service method'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-5', 
+	@lessonid = '8-2',
+	@slideinfo = 'Add a new web service file to your project, once added there will be^
+	default code supplied for you.^
+	This basic web service allows us to call upon the HelloWorld()^
+	method which can be modified or removed.^
+	When programming a web service, it is important to think about the data^
+	you are exposing. You can authenticate users on a web service as well^
+	if you are exposing important data.^
+	The service is publicly hosted on a network. An appliaction communicates^
+	with the web service by senfing properly formatted XML files.^
+	A ".wsdl" file is used by the app to fomat these files.^
+	SOAP (simple onject access protocol) is then used to transport the^
+	data over a network.'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-6', 
+	@lessonid = '8-2',
+	@slideinfo = 'WSDL is an XML format used to describe web serices^
+	A .wsdl file defines the XML grammar used to communicate^
+	with an XML web service.^
+	In other words a wsdl file tells us : ^ 
+	where to find the web service (URL)
+	A definition of each method, including the expected^
+	parameters and return data types.^
+	The wsdl file is created automatically for us in C#, but^
+	doesnt mean we shoudnt know what theyre used for.^
+	https://www.w3schools.com/xml/xml_wsdl.asp'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-7', 
+	@lessonid = '8-2',
+	@slideinfo = 'SOAP is an industry standard protocol for interacting with^
+	web services.^
+	SOAP is a particular XML "grammar"^
+	SOAP allows complex objects to be sent to and from web services^
+	(not just name/value pair; like in the Session object)^
+	SOAP messages contain a body and an optional header,^
+	the header can be used to send additional data.'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-8', 
+	@lessonid = '8-2',
+	@slideinfo = 'A SOAP message is sent to a web site, with the parameters^
+	needed for a search. A search on the database is performed^
+	and the result is saved into a dataset. The site would then^
+	return an XML-formatted document with the resulting DataSet.^
+	Just like .wsdl files, we don''t need to know how SOAP^
+	messages are created/sent/received. However, you may^
+	come across SOAP messages in your future carerr and it^
+	be helpful to have a basic understanding.'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-9', 
+	@lessonid = '8-2',
+	@slideinfo = 'The main difference between both services is that ASP.Net web^
+	services only communicate using HTTP protocol, where WCF can^
+	communicate on other protocols such as TCP as well.^
+	To add a WCF Service to your app: create a new porject^
+	and choose "WCF Service Library" under the WCF section^
+	Delete the following two files from the project:^
+	IService1.cs and Service1.cs (we are going to create our own)^'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-10', 
+	@lessonid = '8-2',
+	@slideinfo = 'The first class will be an interface class, which defines^
+	the public methods we want to expose.^
+	The second class will contain the code which implements^
+	the methods defined in the interface class.^
+	Right-click on the project and select "add" -> "new item" ->^
+	"WCF Service". Name it with something with "service" in it.'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-11', 
+	@lessonid = '8-2',
+	@slideinfo = 'So what is an interface? An interface is a definition^ 
+	of methods and variables that any class can use.^
+	Inside of an interface we can define the shell of methods such^
+	as their return types, name and parameters.^
+	The implementation of the method is NOT defined in an^
+	interface file.'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-12', 
+	@lessonid = '8-2',
+	@slideinfo = 'Why use interfaces? As said in the last slide an interface^
+	can be used by multiple classes.^
+	Each class would then have to implement methods with the^
+	exact same names.^
+	You usually want to do this with classes which would otherwise^
+	not be in the same class hierarchy.'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-13', 
+	@lessonid = '8-2',
+	@slideinfo = 'Example of how to make an interface:^
+	public interface IMyInterface^
+	{^
+	string SayHello();^
+	int AnotherAddMethod(int x, int y);^
+	}^
+	The code above defines a few methods, but contains^
+	no real code to use them.'
 go
