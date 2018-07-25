@@ -1073,6 +1073,272 @@ EXEC dbo.spWrongAnswer @question = 'This is the correct syntax to DataBind: < %#
 
 
 -- Module 8, Question 1
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What does XML stand for?', -- varchar(1000)
+                     @answers = 'Extensive Markup Language',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XML stand for?',     -- varchar(500)
+                       @wrongAnswers = 'X-rays Make Love', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XML stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Exhibitioning More Languages', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XML stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Example Markup Language', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+
+-- Module 8, Question 2
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML''s goal is to replace HTML', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML''s goal is to replace HTML',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 8, Question 3
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What is the correct syntax of the declaration which define the XML version?', -- varchar(1000)
+                     @answers = '<?xml version="1.0" />',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is the correct syntax of the declaration which define the XML version?',     -- varchar(500)
+                       @wrongAnswers = '<?xml version="1.0"?>', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+EXEC dbo.spWrongAnswer @question = 'What is the correct syntax of the declaration which define the XML version?',     -- varchar(500)
+                       @wrongAnswers = '<xml version="1.0" />', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 4
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What does DTD stand for?', -- varchar(1000)
+                     @answers = 'Document Type Definition',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does DTD stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Dynamic Type Definition', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does DTD stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Direct Type Definition', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does DTD stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Do The Dance', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 5
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML preserves white spaces', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML preserves white spaces',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 6
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML elements cannot be empty', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML elements cannot be empty',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 8, Question 7
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML attribute values must always be enclosed in quotes', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML attribute values must always be enclosed in quotes',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 8
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What does XSL stand for?', -- varchar(1000)
+                     @answers = 'eXtensible Stylesheet Language',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XSL stand for?',     -- varchar(500)
+                       @wrongAnswers = 'eXtensible Style Listing', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XSL stand for?',     -- varchar(500)
+                       @wrongAnswers = 'eXtra Style Language', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XSL stand for?',     -- varchar(500)
+                       @wrongAnswers = 'eXpandable Style Language', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 9
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'There is a way of describing XML data, how?', -- varchar(1000)
+                     @answers = 'XML uses a DTD to describe the data',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'There is a way of describing XML data, how?',     -- varchar(500)
+                       @wrongAnswers = 'XML uses XSL to describe data', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'There is a way of describing XML data, how?',     -- varchar(500)
+                       @wrongAnswers = 'XML uses a description node to describe data', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 8, Question 10
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'How many root elements can we have in XML?', -- varchar(1000)
+                     @answers = '1',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many root elements can we have in XML?',     -- varchar(500)
+                       @wrongAnswers = '2', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many root elements can we have in XML?',     -- varchar(500)
+                       @wrongAnswers = '3', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many root elements can we have in XML?',     -- varchar(500)
+                       @wrongAnswers = '0', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 11
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which special character is NOT used in XML?', -- varchar(1000)
+                     @answers = '$',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which special character is NOT used in XML?',     -- varchar(500)
+                       @wrongAnswers = '&', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which special character is NOT used in XML?',     -- varchar(500)
+                       @wrongAnswers = '<', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which special character is NOT used in XML?',     -- varchar(500)
+                       @wrongAnswers = '>', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 12
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML is: ', -- varchar(1000)
+                     @answers = 'Free and Extensible',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is: ',     -- varchar(500)
+                       @wrongAnswers = 'Not Extensible', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is: ',     -- varchar(500)
+                       @wrongAnswers = 'A stylesheet', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is: ',     -- varchar(500)
+                       @wrongAnswers = 'None of these', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 13
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML is a _______ Recommendation.', -- varchar(1000)
+                     @answers = 'W3C',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is a _______ Recommendation.',     -- varchar(500)
+                       @wrongAnswers = 'Microsoft', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is a _______ Recommendation.',     -- varchar(500)
+                       @wrongAnswers = 'Sun', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is a _______ Recommendation.',     -- varchar(500)
+                       @wrongAnswers = 'None of these', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 14
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which is not a correct name for an XML element?', -- varchar(1000)
+                     @answers = '< first name >',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which is not a correct name for an XML element?',     -- varchar(500)
+                       @wrongAnswers = '< NAME >', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which is not a correct name for an XML element?',     -- varchar(500)
+                       @wrongAnswers = '< age >', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which is not a correct name for an XML element?',     -- varchar(500)
+                       @wrongAnswers = 'All three names are incorrect.', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 15
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which statement is true?', -- varchar(1000)
+                     @answers = 'XML tags are case sensitive.',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which statement is true?',     -- varchar(500)
+                       @wrongAnswers = 'XML tags are case sensitive', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which statement is true?',     -- varchar(500)
+                       @wrongAnswers = 'XML documents must have a root tag', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which statement is true?',     -- varchar(500)
+                       @wrongAnswers = 'XML elements must be properly closed', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -- Slides
 
