@@ -650,3 +650,183 @@ exec spSlides
 	The code above defines a few methods, but contains^
 	no real code to use them.'
 go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-14', 
+	@lessonid = '8-2',
+	@slideinfo = 'Example how to use those interfaces we just made:^
+	public MyClass : IMyInterace^
+	{^
+	string SayHello() { return "Hello World!";}^
+	int AnotherAddMethod(int x, int y) {return x+y;}^
+	}^
+	The above code uses (implements) the defined methods from^
+	the interface.'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-15', 
+	@lessonid = '8-2',
+	@slideinfo = 'Now back to the pre-generated interface class:^
+	[ServiceContract]^
+	public interface IHelloWorldService^
+	{^
+	[OperationContract]^
+	void DoWork();^
+	}^
+	The [attributes] added before the interface and method^
+	definitions help the framework recognize that we are^
+	going to use these in web services.'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-16', 
+	@lessonid = '8-2',
+	@slideinfo = 'In this interface class you can delete the line:^
+	void DoWork();^
+	Replace it with:^
+	string SayHelloWorld();^'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-17', 
+	@lessonid = '8-2',
+	@slideinfo = 'Here''s what the pre-generated code looks like in the^
+	service class:^
+	public class HelloWorldService : IHelloWorldService^
+	{^
+	public void DoWork()^
+	{^
+	}^
+	}^
+	Just like in the previous slide, we have to delete the pre-made method^
+	DoWork() and replace it with an implementation of any^
+	 method we define in the interface.'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-18', 
+	@lessonid = '8-2',
+	@slideinfo = 'Now we need a service reference from the web project to^
+	the WCF service library, so we can call the methods of^
+	the service from the web form^.
+	Right-click on the web project and click on "Add Service Reference"^
+	From the next form, press "Discover"^
+	Click on your service^
+	Name the reference, you will use this name from your web^
+	forms application.'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-19', 
+	@lessonid = '8-2',
+	@slideinfo = 'Rebuild your project before adding a refernce to the^
+	ASP.Net web service. To add a reference to an ASP.Net web^
+	service, select the advanced option on the previous window.^
+	Then select Add web reference at the bottom. There will be^
+	an option to find web services on this machine, or speciify a^
+	URL to seach.
+	After you select the service you are looking for, hit OK and the^
+	service reference will be generated for you.
+	We can follow the same steps in calling the web service from^
+	C# code as we would for a WCF service. The next few slides^
+	talk about how to invoke a web service call.'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-20', 
+	@lessonid = '8-2',
+	@slideinfo = 'Now that you have a web reference, you can call the methods^
+	of the wev service from your web application. Whether you are calling a WCF^
+	service or ASP.Net service, the code looks similar.^
+	Example assigning a string from WCF web method to a label:^
+	ServiceReference1.ServiceClient client = new ^
+	Service.Reference1.ServiceClient();^
+	Label1.Text = client.HelloWorld();^
+	Example assigning a string froma web service method to a label:^
+	MyWebReference.WebService ws = new MyWebReference.WebService();^
+	Label1.Text = ws.HelloWorld();^'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-21', 
+	@lessonid = '8-2',
+	@slideinfo = 'If you change the WCF Service code. AFTER adding a^
+	reference to it from your running application.^
+	You MUST refresh the reference (delete it and re-add it or^
+	right-click the reference and hit update reference)^
+	This is because your application downloads the .wsdl file^ 
+	from the WCF service.^
+	The .wsdl file is updated as the code in the WCF service^
+	is updated.'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-22', 
+	@lessonid = '8-2',
+	@slideinfo = 'You can add Connection string to the app.config file^
+	instead of the web.config^
+	If ConfigurationManager does not work for you, you may have^
+	to add the reference to System.Configuration manually^
+	through this process:^
+	In your WCF Service Library project, right-click and^
+	add reference^
+	In the assemblies/framework tab, search for^
+	"System.Configuration", check it off and click OK'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-23', 
+	@lessonid = '8-2',
+	@slideinfo = 'You can also make the asmx files which are effectively^
+	web services without all the overhead of the WCF service library^
+	To do this, have a Web Application project open and create a^ 
+	new ASMX and give it a name.^
+	'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-24', 
+	@lessonid = '8-2',
+	@slideinfo = 'The file will default to this code:^
+	[WebService(Namespace = "http://tempuri.org/")]^
+	[WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]^
+	[System.ComponentModel.ToolboxItem(false)]^
+	//To allow this web service to be called from script, using^
+	ASP.NET AJAX, uncomment the following line^
+	//[Sytsetm.Web.Script.Services.ScriptService]^
+	public class WebService1 : System.Web.Services.WebService^
+	{^
+	[WebMethod]^
+	public string HelloWorld()^
+	{^
+	return "Hello World";^
+	}^
+	}^'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-25', 
+	@lessonid = '8-2',
+	@slideinfo = 'To make your own methods, just make a method the way you^
+	usually would but be sure to add the [WebMethod]^
+	attribute above the name of the method.^
+	Example:^
+	[WebMethod]^
+	public int AddTwoNums(int num1, int num2)^
+	{^
+	return num1 + num2;^
+	}^'
+go
+exec spSlides 
+	@crud = 'c', 
+	@slideID = '8-2-26', 
+	@lessonid = '8-2',
+	@slideinfo = 'You can add a reference to the asmx through the^
+	discovery method of "Add service reference"^
+	To call the webservice from your project (code behind^
+	in C#), it is the same as WCF service:^
+	ServiceReference1.WebService1SoapClient client;^
+	client = new ServiceReference1.WebService1SoapClient();^
+	lblOutput.Text = client.HelloWorld();'
+go
