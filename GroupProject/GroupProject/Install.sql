@@ -753,8 +753,8 @@ exec spExamples @crud='c',
 go
 exec spExamples @crud='c',
 @lID='1-1',
-@example='ds.Fill(',
-@solutions='ds.Fill(da);',
+@example='da.Fill(',
+@solutions='da.Fill(ds);',
 @code='using System;
 ^using System.Collections.Generic;
 ^using System.Linq;
@@ -794,11 +794,547 @@ exec spExamples @crud='c',
 ^`````````}
 ^````}
 ^}',
-@explanation='We now need to FILL the dataset with the data where it opens and closes, using ds.Fill() and plugging the DataAdapter within the parenthesis.',
+@explanation='We now need to FILL the dataset with the data where it opens and closes, using da.Fill() and plugging the DataSet within the parenthesis.',
 @slide=0, 
 @showSolution = 0
 go
+exec spExamples @crud='c',
+@lID='1-1',
+@example='ds.Tables[...Rows[...[...',
+@solutions='ds.Tables[0].Rows[0]["access"].ToString();',
+@code='^namespace LOTRWebsite
+^{
+^````public class LOTRSecurity
+^````{
+^```````SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
+^```````
+^```````public string Access { get; set; }
+^```````
+^```````public LOTRSecurity()
+^```````{
+^```````````if( HttpContext.Current.Session["Access"] != null )
+^```````````{
+^``````````````Access = HttpContext.Current.Session["Access"].ToString();
+^```````````}
+^```````````else
+^```````````{
+^``````````````Access = "";
+^```````````}
+^```````}
+^public bool Login(string userID, string userPassword)
+^````````{
+^````````````DataSet ds = new DataSet();
+^````````````SqlDataAdapter da = new SqlDataAdapter("spLogin", conn);
+^````````````da.SelectCommand.CommandType = CommandType.StoredProcedure;
+^````````````da.SelectCommand.Parameters.AddWithValue("@userID", userID);
+^````````````da.SelectCommand.Parameters.AddWithValue("@userPassword", userPassword);
+^````````````conn.Open();
+^````````````da.Fill(ds)
+^````````````conn.Close();
+^````````````
+^````````````Access =
+^`````````}
+^````}
+^}',
+@explanation='We will now give our public string "Access" a value from our database, we will do so by calling in our filled dataset called ds find the tables starting from the first one, which in any array starts with 0, we will also find the rows in the same way, from 0, we will then plug in the value of rows with the navigation value of [0] with any row in our SQL Database with the name of ["access"] within that table, but of course, since Access is a string, we will have to make it into a string by calling the ToString(); method to make sure it returns a string.',
+@slide=0, 
+@showSolution = 0
 go
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='return ...',
+@solutions='return false;',
+@code='^namespace LOTRWebsite
+^{
+^````public class LOTRSecurity
+^````{
+^```````SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
+^```````
+^```````public string Access { get; set; }
+^```````
+^```````public LOTRSecurity()
+^```````{
+^```````````if( HttpContext.Current.Session["Access"] != null )
+^```````````{
+^``````````````Access = HttpContext.Current.Session["Access"].ToString();
+^```````````}
+^```````````else
+^```````````{
+^``````````````Access = "";
+^```````````}
+^```````}
+^public bool Login(string userID, string userPassword)
+^````````{
+^````````````DataSet ds = new DataSet();
+^````````````SqlDataAdapter da = new SqlDataAdapter("spLogin", conn);
+^````````````da.SelectCommand.CommandType = CommandType.StoredProcedure;
+^````````````da.SelectCommand.Parameters.AddWithValue("@userID", userID);
+^````````````da.SelectCommand.Parameters.AddWithValue("@userPassword", userPassword);
+^````````````conn.Open();
+^````````````da.Fill(ds)
+^````````````conn.Close();
+^````````````
+^````````````Access = ds.Tables[0].Rows[0]["access"].ToString();
+^````````````switch(Access)
+^````````````{
+^````````````````case "x":
+^````````````````````.....
+^````````````}
+^`````````}
+^````}
+^}',
+@explanation='Because each access level has a special character, "x" means an invalid login access attempt. So because this class is a boolean, we need to return true or false. But because "x" is our false value, it is fair to say we can return false; with this option.',
+@slide=0, 
+@showSolution = 0
+go
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='HttpContext.Current. ....',
+@solutions='HttpContext.Current.Session["Access"] = Access;',
+@code='^namespace LOTRWebsite
+^{
+^````public class LOTRSecurity
+^````{
+^```````SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
+^```````
+^```````public string Access { get; set; }
+^```````
+^```````public string FullName { get; set; }
+^```````
+^```````public LOTRSecurity()
+^```````{
+^```````````if( HttpContext.Current.Session["Access"] != null )
+^```````````{
+^``````````````Access = HttpContext.Current.Session["Access"].ToString();
+^```````````}
+^```````````else
+^```````````{
+^``````````````Access = "";
+^```````````}
+^```````}
+^public bool Login(string userID, string userPassword)
+^````````{
+^````````````DataSet ds = new DataSet();
+^````````````SqlDataAdapter da = new SqlDataAdapter("spLogin", conn);
+^````````````da.SelectCommand.CommandType = CommandType.StoredProcedure;
+^````````````da.SelectCommand.Parameters.AddWithValue("@userID", userID);
+^````````````da.SelectCommand.Parameters.AddWithValue("@userPassword", userPassword);
+^````````````conn.Open();
+^````````````da.Fill(ds)
+^````````````conn.Close();
+^````````````
+^````````````Access = ds.Tables[0].Rows[0]["access"].ToString();
+^````````````switch(Access)
+^````````````{
+^````````````````case "x":
+^````````````````````return false;
+^````````````````case "a":
+^````````````````FullName = "Administrator";
+^````````````````break;
+^````````````}
+^````````````
+^````````````HttpContext. .....
+^````````````
+^````````````return true;
+^`````````}
+^````}
+^}',
+@explanation='Because we already had a "return false", I have already provided a "return true" statement, as well as a new public string called "FullName" which will be in use later. For right now, we will be assigning the current session for Access like we have checked for in the above constructor.',
+@slide=0, 
+@showSolution = 0
+go
+
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='if (.... == "u"',
+@solutions='if(levelRequired == "u")',
+@code='^namespace LOTRWebsite
+^{
+^````public class LOTRSecurity
+^````{
+^```````SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
+^```````
+^```````public string Access { get; set; }
+^```````
+^```````public string FullName { get; set; }
+^```````
+^```````public LOTRSecurity()
+^```````{
+^```````````if( HttpContext.Current.Session["Access"] != null )
+^```````````{
+^``````````````Access = HttpContext.Current.Session["Access"].ToString();
+^```````````}
+^```````````else
+^```````````{
+^``````````````Access = "";
+^```````````}
+^```````}
+^public bool Login(string userID, string userPassword)
+^````````{
+^````````````DataSet ds = new DataSet();
+^````````````SqlDataAdapter da = new SqlDataAdapter("spLogin", conn);
+^````````````da.SelectCommand.CommandType = CommandType.StoredProcedure;
+^````````````da.SelectCommand.Parameters.AddWithValue("@userID", userID);
+^````````````da.SelectCommand.Parameters.AddWithValue("@userPassword", userPassword);
+^````````````conn.Open();
+^````````````da.Fill(ds)
+^````````````conn.Close();
+^````````````
+^````````````Access = ds.Tables[0].Rows[0]["access"].ToString();
+^````````````switch(Access)
+^````````````{
+^````````````````case "x":
+^````````````````````return false;
+^````````````````case "a":
+^````````````````FullName = "Administrator";
+^````````````````break;
+^````````````}
+^````````````
+^````````````HttpContext.Current.Session["Access"] = Access;
+^````````````
+^````````````return true;
+^`````````}
+^`````````public void checkAccess(string levelRequired)
+^`````````{
+^````````````bool isInvalid = false;
+^````````````if( ...
+^````````````{
+^`````````````
+^````````````}
+^`````````}
+^````}
+^}',
+@explanation='We will now create a new method called "checkAccess" that will be on every page to keep every pages in our website secure. The bool value of isInvalid will be false, meaning that as long as there is no reason for it to be invalid, then the page can be accessed. Using the string levelRequired, we are going to check for the level required for each website, and check our string "Access" to see if they match.',
+@slide=0, 
+@showSolution = 0
+go
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='isInvalid = ..',
+@solutions='isInvalid = true;',
+@code='^namespace LOTRWebsite
+^{
+^````public class LOTRSecurity
+^````{
+^```````SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
+^```````
+^```````public string Access { get; set; }
+^```````
+^```````public string FullName { get; set; }
+^```````
+^```````public LOTRSecurity()
+^```````{
+^```````````if`( HttpContext.Current.Session["Access"] != null )
+^```````````{
+^``````````````Access = HttpContext.Current.Session["Access"].ToString();
+^```````````}
+^```````````else
+^```````````{
+^``````````````Access = "";
+^```````````}
+^```````}
+^public bool Login(string userID, string userPassword)
+^````````{
+^````````````DataSet ds = new DataSet();
+^````````````SqlDataAdapter da = new SqlDataAdapter("spLogin", conn);
+^````````````da.SelectCommand.CommandType = CommandType.StoredProcedure;
+^````````````da.SelectCommand.Parameters.AddWithValue("@userID", userID);
+^````````````da.SelectCommand.Parameters.AddWithValue("@userPassword", userPassword);
+^````````````conn.Open();
+^````````````da.Fill(ds)
+^````````````conn.Close();
+^````````````
+^````````````Access = ds.Tables[0].Rows[0]["access"].ToString();
+^````````````switch(Access)
+^````````````{
+^````````````````case "x":
+^````````````````````return false;
+^````````````````case "a":
+^````````````````FullName = "Administrator";
+^````````````````break;
+^````````````}
+^````````````
+^````````````HttpContext.Current.Session["Access"] = Access;
+^````````````
+^````````````return true;
+^`````````}
+^`````````public void checkAccess(string levelRequired)
+^`````````{
+^````````````bool isInvalid = false;
+^````````````if`(levelRequired == "u")
+^````````````{
+^```````````````if`(Access == "")
+^```````````````{
+^``````````````````.....
+^```````````````}
+^````````````}
+^````````````else if`(levelRequired == "a")
+^````````````{
+^```````````````if`(Access != "a")
+^```````````````{
+^``````````````````.....
+^```````````````}
+^````````````}
+^`````````}
+^````}
+^}',
+@explanation='When they find that the value is not appropriate for the page, then the isInvalid will become true.',
+@slide=0, 
+@showSolution = 0
+go
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='HttpContext.Current.Session ...',
+@solutions='HttpContext.Current.Session.Abandon();',
+@code='^namespace LOTRWebsite
+^{
+^````public class LOTRSecurity
+^````{
+^```````SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
+^```````
+^```````public string Access { get; set; }
+^```````
+^```````public string FullName { get; set; }
+^```````
+^```````public LOTRSecurity()
+^```````{
+^```````````if`( HttpContext.Current.Session["Access"] != null )
+^```````````{
+^``````````````Access = HttpContext.Current.Session["Access"].ToString();
+^```````````}
+^```````````else
+^```````````{
+^``````````````Access = "";
+^```````````}
+^```````}
+^public bool Login(string userID, string userPassword)
+^````````{
+^````````````DataSet ds = new DataSet();
+^````````````SqlDataAdapter da = new SqlDataAdapter("spLogin", conn);
+^````````````da.SelectCommand.CommandType = CommandType.StoredProcedure;
+^````````````da.SelectCommand.Parameters.AddWithValue("@userID", userID);
+^````````````da.SelectCommand.Parameters.AddWithValue("@userPassword", userPassword);
+^````````````conn.Open();
+^````````````da.Fill(ds)
+^````````````conn.Close();
+^````````````
+^````````````Access = ds.Tables[0].Rows[0]["access"].ToString();
+^````````````switch(Access)
+^````````````{
+^````````````````case "x":
+^````````````````````return false;
+^````````````````case "a":
+^````````````````FullName = "Administrator";
+^````````````````break;
+^````````````}
+^````````````
+^````````````HttpContext.Current.Session["Access"] = Access;
+^````````````
+^````````````return true;
+^`````````}
+^`````````public void checkAccess(string levelRequired)
+^`````````{
+^````````````bool isInvalid = false;
+^````````````if`(levelRequired == "u")
+^````````````{
+^```````````````if`(Access == "")
+^```````````````{
+^``````````````````isInvalid = true;
+^```````````````}
+^````````````}
+^````````````else if`(levelRequired == "a")
+^````````````{
+^```````````````if`(Access != "a")
+^```````````````{
+^``````````````````isInvalid = true;
+^```````````````}
+^````````````}
+^````````````if`(isInvalid)
+^````````````{
+^```````````````HttpContext. ....
+^```````````````HttpContext.Current.Response.Redirect("Home.aspx");
+^````````````}
+^`````````}
+^````}
+^}',
+@explanation='When working with a boolean value, we can simply state "if(isInvalid)" which is equivellent to if(isInvalid == true). So once this value becomes true, we Abandon the session and re-locate them to the homepage.',
+@slide=0, 
+@showSolution = 0
+go
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='<asp:RadioButton ID="cbRemeberme" runat="server" Text="Remeber Me" />',
+@solutions='<asp:RadioButton ID="cbRemeberme" runat="server" Text="Remeber Me" />',
+@code='<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+^````````&lt;div>
+^```````````&lt;table>
+^`````````````````&lt;tr>
+^```````````````````&lt;td>
+^``````````````````````Username:
+^```````````````````&lt;/td>
+^```````````````````&lt;td>
+^``````````````````````&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox>
+^```````````````````&lt;/td>
+^`````````````````&lt;/tr>
+^`````````````````&lt;tr>
+^```````````````````&lt;td>
+^``````````````````````Password:
+^```````````````````&lt;/td>
+^```````````````````&lt;td>
+^``````````````````````&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox>
+^```````````````````&lt;/td>
+^`````````````````&lt;/tr>
+^`````````````````&lt;tr>
+^```````````````````&lt;td> 
+^``````````````````````&lt;asp:RadioButton ...
+^```````````````````&lt;/td>
+^`````````````````&lt;/tr>
+^`````````````````&lt;tr>
+^```````````````````&lt;td colspan="2"> 
+^``````````````````````&lt;asp:Button ID="txtLogin" runat="server" Text="Button" OnClick="txtLogin_Click" />
+^```````````````````&lt;/td>
+^`````````````````&lt;/tr>
+^```````````&lt;/table>
+^````````&lt;/div>
+^````&lt;/form>
+^&lt;/body>
+^&lt;/html>',
+@explanation='Going back to the ASP side of your login page, we will quickly put in an ASP Radio Button so that we can have a "remember me" function, in case you want to be logged in immediately on startup.',
+@slide=0, 
+@showSolution = 0
+go
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='LOTRSecurity security = n....',
+@solutions='LOTRSecurity security = new LOTRSecurity();',
+@code='namespace LOTRWebsite
+^{
+^````public partial class WebForm1 : System.Web.UI.Page
+^````{
+^````````protected void Page_Load(object sender, EventArgs e)
+^````````{^
+^````````}
+^````````protected void btnLogin_Click(object sender, EventArgs e)
+^```````{
+^```````````if (txtUsername.Text == "")
+^```````````{
+^```````````````Response.Redirect("Home.aspx");
+^```````````}
+^```````````if (txtPassword.Text == "")
+^```````````{
+^```````````````Response.Redirect("Home.aspx");
+^```````````}
+^````````````
+^```````````LOTRSecurity ....
+^```````}
+^````}
+^}',
+@explanation='Now that we are back in the C# for the webpage once more, it is time to link everything up. Now we must call the LOTRSecurity class, and because we are calling it every time we push login, its always a new LOTRSecurity call.',
+@slide=0, 
+@showSolution = 0
+go
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='HttpCookie mycookie = = n....',
+@solutions='HttpCookie mycookie = new HttpCookie("username");',
+@code='namespace LOTRWebsite
+^{
+^````public partial class WebForm1 : System.Web.UI.Page
+^````{
+^````````protected void Page_Load(object sender, EventArgs e)
+^````````{^
+^````````}
+^````````protected void btnLogin_Click(object sender, EventArgs e)
+^```````{
+^```````````if (txtUsername.Text == "")
+^```````````{
+^```````````````Response.Redirect("Home.aspx");
+^```````````}
+^```````````if (txtPassword.Text == "")
+^```````````{
+^```````````````Response.Redirect("Home.aspx");
+^```````````}
+^````````````
+^```````````LOTRSecurity security = new LOTRSecurity();
+^```````````
+^```````````if (security.Login(txtUsername.Text, txtPassword.Text))
+^```````````{
+^```````````````if (cbRemeberme.Checked)
+^```````````````{
+^````````````````HttpCookie mycookie = ....
+^````````````````
+^```````````````}
+^```````````}
+^```````}
+^````}
+^}',
+@explanation='We have done more than plenty of if statements, but using the called security. Login in your new securty class will call for a login, but we must check for when the radiobutton has been checked. And when it does, we will create a new cookie, saving the value of the login once the user successfully logs in.',
+@slide=0, 
+@showSolution = 0
+go
+
+exec spExamples @crud='c',
+@lID='1-1',
+@example='Response.Cookies["username"].Expires = DateTime.Now....',
+@solutions='Response.Cookies["username"].Expires = DateTime.Now.AddHours(-1);',
+@code='namespace LOTRWebsite
+^{
+^````public partial class WebForm1 : System.Web.UI.Page
+^````{
+^````````protected void Page_Load(object sender, EventArgs e)
+^````````{^
+^````````}
+^````````protected void btnLogin_Click(object sender, EventArgs e)
+^```````{
+^```````````if (txtUsername.Text == "")
+^```````````{
+^```````````````Response.Redirect("Home.aspx");
+^```````````}
+^```````````if (txtPassword.Text == "")
+^```````````{
+^```````````````Response.Redirect("Home.aspx");
+^```````````}
+^````````````
+^```````````LOTRSecurity security = new LOTRSecurity();
+^```````````
+^```````````if (security.Login(txtUsername.Text, txtPassword.Text))
+^```````````{
+^```````````````if (cbRemeberme.Checked)
+^```````````````{
+^````````````````HttpCookie mycookie = new HttpCookie("username");
+^````````````````mycookie.Expires.AddHours(1);
+^````````````````mycookie.Value = txtUsername.Text;
+^````````````````Response.Cookies.Add(mycookie);
+^```````````````}
+^```````````````
+^```````````````else
+^```````````````{
+^````````````````Response.Cookies["username"]. ...
+^```````````````}
+^```````````````Response.Redirect("LOTRHome.aspx");
+^```````````}
+^```````````else
+^```````````{
+^```````````````Response.Redirect("LOTRHome.aspx");
+^```````````}
+^```````}
+^````}
+^}',
+@explanation='Finally, considering the fact we will have a cookie, if they DONT want to be remembered, we want to make sure this cookie Expires with the date time of -1',
+@slide=0, 
+@showSolution = 0
+go
+
+
+
 select * from tbExample
 select * from tbTest
 go
