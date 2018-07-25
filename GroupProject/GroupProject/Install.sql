@@ -276,71 +276,528 @@ exec spExamples @crud='c',
 @lID='1-1',
 @example='<table><tr><td>Username:</td><td>&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox></td></tr></table>',
 @solutions='<asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>',
-@code='&lt;!DOCTYPE html>
-^&lt;html xmlns="http://www.w3.org/1999/xhtml">
-^&lt;head runat="server">
-^&nbsp;&nbsp;&nbsp;&lt;title>My Page&lt;/title>
-^&lt;/head>
-^&lt;body>
-^&nbsp;&nbsp;&nbsp;&nbsp;&lt;form id="form1" runat="server">
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username:
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>^^
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
-^&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form>
+@code='&lt;asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+^````````&lt;div>
+^```````````&lt;table>
+^`````````````````&lt;tr>
+^```````````````````&lt;td>
+^``````````````````````Username:
+^```````````````````&lt;/td>
+^```````````````````&lt;td>^^
+^```````````````````&lt;/td>
+^`````````````````&lt;/tr>
+^```````````&lt;/table>
+^````````&lt;/div>
+^````&lt;/form>
 ^&lt;/body>
 ^&lt;/html>',
-@explanation='Creating a table for your LOGIN page, we will have you create the ASP textbox underneath the TD containing: USERNAME',
+@explanation='Creating a table for your LOGIN page in your Webform with Masterpage (we will get to the masterpage later), we will have you create the ASP textbox underneath the TD containing: USERNAME',
 @slide=0, 
 @showSolution = 0
-
+go
 exec spExamples @crud='c',
 @lID='1-1',
 @example='&lt;asp:Button ID="btnLogin" runat="server" Text="Login"/>',
 @solutions='<asp:Button ID="btnLogin" runat="server" Text="Login"/>',
-@code='&lt;body>
-^&nbsp;&nbsp;&nbsp;&nbsp;&lt;form id="form1" runat="server">
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username:
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password:
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table>
-^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
-^&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form>
+@code='<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+^````````&lt;div>
+^```````````&lt;table>
+^`````````````````&lt;tr>
+^```````````````````&lt;td>
+^``````````````````````Username:
+^```````````````````&lt;/td>
+^```````````````````&lt;td>
+^``````````````````````&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox>
+^```````````````````&lt;/td>
+^`````````````````&lt;/tr>
+^`````````````````&lt;tr>
+^```````````````````&lt;td>
+^``````````````````````Password:
+^```````````````````&lt;/td>
+^```````````````````&lt;td>
+^``````````````````````&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox>
+^```````````````````&lt;/td>
+^`````````````````&lt;/tr>
+^`````````````````&lt;tr>
+^```````````````````&lt;td>^^
+^```````````````````&lt;/td>
+^`````````````````&lt;/tr>
+^```````````&lt;/table>
+^````````&lt;/div>
+^````&lt;/form>
 ^&lt;/body>
 ^&lt;/html>',
 @explanation='We will now have you create a button for your LOGIN page with the ID of btnLogin, we already created a password field for your code.',
 @slide=0, 
 @showSolution = 0
+go
+exec spExamples @crud='c',
+@lID='1-1',
+@example='if (txtUsername.Text == ...){}',
+@solutions='if(txtUsername.Text == ""){Response.Redirect(Home.aspx);}',
+@code='using System;
+^using System.Collections.Generic;
+^using System.Linq;
+^using System.Web;
+^using System.Web.UI;
+^using System.Web.UI.WebControls;
+^`
+^namespace LOTRWebsite
+^{
+^````public partial class WebForm1 : System.Web.UI.Page
+^````{
+^````````protected void Page_Load(object sender, EventArgs e)
+^````````{^
+^````````}
+^````````protected void btnLogin_Click(object sender, EventArgs e)
+^```````{
+^```````
+^```````}
+^````}
+^}',
+@explanation='Assuming you have double-clicked on your button to assign it, we will begin to put values for this button to look for. We will begin by simply checking IF the textbox "txtUsername" is empty (""), if it is, we will respond by redirecting them back to the Home.aspx page.',
+@slide=0, 
+@showSolution = 0
+go
+exec spExamples @crud='c',
+@lID='1-1',
+@example='create table tbLogin',
+@solutions='create table tbLogin',
+@code='use master;
+^go
+^drop database dbLOTR;
+^go
+^create database dbLOTR
+^`
+^',
+@explanation='Now, we are unable to do anything else with the login page until we have a database for our usernames and passwords, in this example we have already created the database "dbLOTR" to stick with the Lord of the Rings theme. We just need to CREATE the TABLE "tbLogin"',
+@slide=0, 
+@showSolution = 0
+go
 
+exec spExamples @crud='c',
+@lID='1-1',
+@example='uID...',
+@solutions='uID varchar(50) primary key',
+@code='USE master;
+^go
+^drop database dbLOTR;
+^go
+^create database dbLOTR
+^`
+^create table tbLogin(
+^`
+^)',
+@explanation='And now we will start filling the table with relevant data to reference. We will begin by filling the table with a user ID so we can track the username of each login, we will call it "uID" for the sake of simplicity, giving it a maximum character of 50, and each username will be given their own idividual identity to ensure no 2 users are the same.',
+@slide=0, 
+@showSolution = 0
+go
+exec spExamples @crud='c',
+@lID='1-1',
+@example='@uID = varchar(50)',
+@solutions='@uID = varchar(50)',
+@code='USE master;
+^go
+^drop database dbLOTR;
+^go
+^create database dbLOTR
+^`
+^create table tbLogin(
+^uID varchar(50) primary key,
+^userPassword varchar(50),
+^access varchar(1)
+^)
+^`
+^go
+^create procedure spLogin(
+^`
+^)',
+@explanation='We have already provided a password and an access level, because access levels will either be "u" for user or "a" for admin and passwords can be anything, so we dont need to worry about them. But we need to interact with the back-end of our login page with a stored procedure we will call "spLogin", creating a stored procedure is fairly straight forward, but we will have you create a parameter that will refer to the uID we had you previously create with the same data size and datatype.',
+@slide=0, 
+@showSolution = 0
+go
+exec spExamples @crud='c',
+@lID='1-1',
+@example='SELECT * FROM tbLogin WHERE ...',
+@solutions='SELECT * FROM tbLogin WHERE uID=@userID AND userPassword=@userPassword',
+@code='USE master;
+^go
+^drop database dbLOTR;
+^go
+^create database dbLOTR
+^`
+^create table tbLogin(
+^uID varchar(50) primary key,
+^userPassword varchar(50),
+^access varchar(1)
+^)
+^`
+^go
+^create procedure spLogin(
+^@uID = varchar(50) = null,
+^@userPassword = varchar(50) = null
+^)
+^as begin
+^```declare @access varchar(1);
+^````````IF exists( ... )
+^````````BEGIN
+^`
+^````````END
+^end',
+@explanation='We have already filled the rest of the parameters for you, the password is the only other parameter that you need because you wont ever insert your access level. But, we have already put an IF EXISTS statement to find an existing user. Enter in the SQL code to select from the tbLogin table where the uID is the parameter @uID and the userPassword is the @userPassword.',
+@slide=0, 
+@showSolution = 0
+go
+exec spExamples @crud='c',
+@lID='1-1',
+@example='SELECT @access = ...',
+@solutions='SELECT @access = access from tbLogin WHERE uID=@userID AND userPassword = @userPassword',
+@code='USE master;
+^go
+^drop database dbLOTR;
+^go
+^create database dbLOTR
+^`
+^create table tbLogin(
+^uID varchar(50) primary key,
+^userPassword varchar(50),
+^access varchar(1)
+^)
+^`
+^go
+^create procedure spLogin(
+^@uID = varchar(50) = null,
+^@userPassword = varchar(50) = null
+^)
+^as begin
+^```declare @access varchar(1);
+^````````IF exists(SELECT * FROM tbLogin WHERE uID=@userID AND userPassword=@userPassword)
+^````````BEGIN
+^``````````SELECT ....
+^````````END
+^end',
+@explanation='Alright, we are halfway done with this stored procedure! Once we have found an existing user, we will then select our declared variable @access to equal the access where the same existing user and password are found',
+@slide=0, 
+@showSolution = 0
+go
+exec spExamples @crud='c',
+@lID='1-1',
+@example='SELECT @access ...',
+@solutions='SELECT @access as access',
+@code='USE master;
+^go
+^drop database dbLOTR;
+^go
+^create database dbLOTR
+^`
+^create table tbLogin(
+^uID varchar(50) primary key,
+^userPassword varchar(50),
+^access varchar(1)
+^)
+^`
+^go
+^create procedure spLogin(
+^@uID = varchar(50) = null,
+^@userPassword = varchar(50) = null
+^)
+^as begin
+^```declare @access varchar(1);
+^````````IF exists(SELECT * FROM tbLogin WHERE uID=@userID AND userPassword=@userPassword)
+^````````BEGIN
+^``````````SELECT @access = access from tbLogin WHERE uID=@userID AND userPassword = @userPassword
+^```````` ....
+^````````END
+^end',
+@explanation='We will now finally use the access level to give whoever logs in with a valid account their proper permissions by selecting @access as access, pretty straight forward, but this is very vital. (We will do some more login details for the client users later on)',
+@slide=0, 
+@showSolution = 0
+go
+exec spExamples @crud='c',
+@lID='1-1',
+@example='System. ....',
+@solutions='System.Data.SqlClient',
+@code='using System;
+^using System.Collections.Generic;
+^using System.Linq;
+^` ....
+^using System.Web;
+^`
+^namespace LOTRWebsite
+^{
+^````public class LOTRSecurity
+^````{
+^`````
+^````}
+^}',
+@explanation='Now that we are all done with the SQL and everything is ready to go for the login, we will now create a Security class for our website so that we can always check if they are logged in as a user, and whether or not their login is valid. Right now we will need to enter System.Data.SqlClient, I will enter System.Data; for you in the next slide.',
+@slide=0, 
+@showSolution = 0
+go
+exec spExamples @crud='c',
+@lID='1-1',
+@example='SqlConnection conn = new SqlConnection( ...',
+@solutions='SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");',
+@code='using System;
+^using System.Collections.Generic;
+^using System.Linq;
+^using System.Web;
+^using System.Data;
+^using System.Data.SqlClient;
+^`
+^namespace LOTRWebsite
+^{
+^````public class LOTRSecurity
+^````{
+^`````.....
+^````}
+^}',
+@explanation='We can now use the SqlClient to create a new SqlConnection string, so we will have to call the Data Source local host, the Initial Catalog will be our created database dbLOTR, and of course our Integrated Security is SSPI (Security Support Provider Interface).',
+@slide=0, 
+@showSolution = 0
+go
+exec spExamples @crud='c',
+@lID='1-1',
+@example='public string Access {...',
+@solutions='public string Access { get; set; }',
+@code='using System;
+^using System.Collections.Generic;
+^using System.Linq;
+^using System.Web;
+^using System.Data;
+^using System.Data.SqlClient;
+^`
+^namespace LOTRWebsite
+^{
+^````public class LOTRSecurity
+^````{
+^```````SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
+^```````
+^```````
+^````}
+^}',
+@explanation='Now that we have a SQL connection, we will create a public string that will affect other parts of the security class later on, it will get the value and set the value.',
+@slide=0, 
+@showSolution = 0
+go
+exec spExamples @crud='c',
+@lID='1-1',
+@example='HttpContext.Current.Session[....',
+@solutions='HttpContext.Current.Session["Access"] != null',
+@code='using System;
+^using System.Collections.Generic;
+^using System.Linq;
+^using System.Web;
+^using System.Data;
+^using System.Data.SqlClient;
+^`
+^namespace LOTRWebsite
+^{
+^````public class LOTRSecurity
+^````{
+^```````SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
+^```````
+^```````public string Access { get; set; }
+^```````
+^```````public LOTRSecurity()
+^```````{
+^`````````if( .... )
+^```````````{
+^````````````
+^```````````}
+^```````}
+^````}
+^}',
+@explanation='While we are at it, we can use the default constructor to check if the current session we will call "Access" is NOT null so our constructor Access will equal access.',
+@slide=0, 
+@showSolution = 0
+go
+exec spExamples @crud='c',
+@lID='1-1',
+@example='sp...',
+@solutions='spLogin',
+@code='using System;
+^using System.Collections.Generic;
+^using System.Linq;
+^using System.Web;
+^using System.Data;
+^using System.Data.SqlClient;
+^`
+^namespace LOTRWebsite
+^{
+^````public class LOTRSecurity
+^````{
+^```````SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
+^```````
+^```````public string Access { get; set; }
+^```````
+^```````public LOTRSecurity()
+^```````{
+^```````````if( HttpContext.Current.Session["Access"] != null )
+^```````````{
+^``````````````Access = HttpContext.Current.Session["Access"].ToString();
+^```````````}
+^```````````else
+^```````````{
+^``````````````Access = "";
+^```````````}
+^```````}
+^public bool Login(string userID, string userPassword)
+^````````{
+^````````````DataSet ds = new DataSet();
+^````````````SqlDataAdapter da = new SqlDataAdapter( ... , conn);
+^````````````da.SelectCommand.CommandType = CommandType.StoredProcedure;
+^```````
+^```````
+^````````}
+^````}
+^}',
+@explanation='I have prepared for you ahead of time a bool class that will determine if the access is VALID or INVALID, letting the user access further into the website or not. We will now call our stored procedure spLogin that we have prepared ahead of time by putting it in the SQL Adapter with the connection.',
+@slide=0, 
+@showSolution = 0
+go
+exec spExamples @crud='c',
+@lID='1-1',
+@example='@..',
+@solutions='@uID',
+@code='using System;
+^using System.Collections.Generic;
+^using System.Linq;
+^using System.Web;
+^using System.Data;
+^using System.Data.SqlClient;
+^`
+^namespace LOTRWebsite
+^{
+^````public class LOTRSecurity
+^````{
+^```````SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
+^```````
+^```````public string Access { get; set; }
+^```````
+^```````public LOTRSecurity()
+^```````{
+^```````````if( HttpContext.Current.Session["Access"] != null )
+^```````````{
+^``````````````Access = HttpContext.Current.Session["Access"].ToString();
+^```````````}
+^```````````else
+^```````````{
+^``````````````Access = "";
+^```````````}
+^```````}
+^public bool Login(string userID, string userPassword)
+^````````{
+^````````````DataSet ds = new DataSet();
+^````````````SqlDataAdapter da = new SqlDataAdapter("spLogin", conn);
+^````````````da.SelectCommand.CommandType = CommandType.StoredProcedure;
+^````````````da.SelectCommand.Parameters.AddWithValue( .... , userID);
+^````````````
+^````````````
+^````````````
+^````````````
+^`````````}
+^````}
+^}',
+@explanation='And now, using the parameter we made within that stored procedure, we will use the userID string to find any users in uID within the database, insert the parameter to continue.',
+@slide=0, 
+@showSolution = 0
+go
 
-exec spExamples @crud='c',@lID='1-1',@example='Show 1 plus 1',@solutions='1+1',@code='int answer = 1+1',@explanation='you create a int called answer and assing it 1+1',@slide=0, @showSolution = 0
-exec spExamples @crud='c',@lID='1-1',@example='Show 2 plus 2',@solutions='2+2',@code='int answer = 2+2',@explanation='you create a int called answer and assing it 1+1',@slide=0, @showSolution = 1
+exec spExamples @crud='c',
+@lID='1-1',
+@example='conn.',
+@solutions='conn.Open();',
+@code='using System;
+^using System.Collections.Generic;
+^using System.Linq;
+^using System.Web;
+^using System.Data;
+^using System.Data.SqlClient;
+^`
+^namespace LOTRWebsite
+^{
+^````public class LOTRSecurity
+^````{
+^```````SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
+^```````
+^```````public string Access { get; set; }
+^```````
+^```````public LOTRSecurity()
+^```````{
+^```````````if( HttpContext.Current.Session["Access"] != null )
+^```````````{
+^``````````````Access = HttpContext.Current.Session["Access"].ToString();
+^```````````}
+^```````````else
+^```````````{
+^``````````````Access = "";
+^```````````}
+^```````}
+^public bool Login(string userID, string userPassword)
+^````````{
+^````````````DataSet ds = new DataSet();
+^````````````SqlDataAdapter da = new SqlDataAdapter("spLogin", conn);
+^````````````da.SelectCommand.CommandType = CommandType.StoredProcedure;
+^````````````da.SelectCommand.Parameters.AddWithValue("@userID", userID);
+^````````````da.SelectCommand.Parameters.AddWithValue("@userPassword", userPassword);
+^````````````conn.....
+^`
+^`
+^`````````}
+^````}
+^}',
+@explanation='Now its time to open up the connection, and prepare to fill the dataset in that instance. Typing on conn.Open(); will open the SQL connection until it is closed, it is usually advisable to close it immediately once you have grabbed the data.',
+@slide=0, 
+@showSolution = 0
+go
+exec spExamples @crud='c',
+@lID='1-1',
+@example='ds.Fill(',
+@solutions='ds.Fill(da);',
+@code='using System;
+^using System.Collections.Generic;
+^using System.Linq;
+^using System.Web;
+^using System.Data;
+^using System.Data.SqlClient;
+^`
+^namespace LOTRWebsite
+^{
+^````public class LOTRSecurity
+^````{
+^```````SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=dbLOTR;Integrated Security=SSPI;");
+^```````
+^```````public string Access { get; set; }
+^```````
+^```````public LOTRSecurity()
+^```````{
+^```````````if( HttpContext.Current.Session["Access"] != null )
+^```````````{
+^``````````````Access = HttpContext.Current.Session["Access"].ToString();
+^```````````}
+^```````````else
+^```````````{
+^``````````````Access = "";
+^```````````}
+^```````}
+^public bool Login(string userID, string userPassword)
+^````````{
+^````````````DataSet ds = new DataSet();
+^````````````SqlDataAdapter da = new SqlDataAdapter("spLogin", conn);
+^````````````da.SelectCommand.CommandType = CommandType.StoredProcedure;
+^````````````da.SelectCommand.Parameters.AddWithValue("@userID", userID);
+^````````````da.SelectCommand.Parameters.AddWithValue("@userPassword", userPassword);
+^````````````conn.Open();
+^````````````.....
+^````````````conn.Close();
+^`````````}
+^````}
+^}',
+@explanation='We now need to FILL the dataset with the data where it opens and closes, using ds.Fill() and plugging the DataAdapter within the parenthesis.',
+@slide=0, 
+@showSolution = 0
+go
 go
 select * from tbExample
 select * from tbTest
