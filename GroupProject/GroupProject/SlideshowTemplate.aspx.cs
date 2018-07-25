@@ -134,7 +134,7 @@ namespace GroupProject
 
         protected void btnGoTest_Click(object sender, EventArgs e)
         {
-            Response.Redirect("PracticeTest.aspx");
+            Response.Redirect("PracticeTest.aspx?Lesson=" + Request.QueryString["slide"]);
         }
 
         protected void btnNext_Click(object sender, EventArgs e)

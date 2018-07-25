@@ -26,9 +26,9 @@ namespace GroupProject
         Dictionary<RadioButtonList,Tuple<Label, Label>> radioButtonLists = new Dictionary<RadioButtonList, Tuple<Label,Label>>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            string ModID = Request.QueryString["Lesson"].ToString();
 
-            switch (ddlTestChoice.SelectedItem.Text)
+            switch (ModID)
             {
                 case "Module 1":
                     LoadQuestion("Module 1");
@@ -36,7 +36,7 @@ namespace GroupProject
                 case "Module 2":
                     LoadQuestion("Module 2");
                     break;
-                case "Module 3":
+                case "3-1 ||3-2||3-3||3-4":
                     LoadQuestion("Module 3");
                     break;
                 case "Module 4":
@@ -137,7 +137,7 @@ namespace GroupProject
 
             if (Total >= 70)
             {
-                System.Windows.Forms.MessageBox.Show("Congratulations you passed with a score of %" + " " + score);
+                System.Windows.Forms.MessageBox.Show("Congratulations you passed with a score of %" + " " + Total);
                 Response.Write("<script>window.open('index_user.aspx','_parent');</script>");
             }
             else
