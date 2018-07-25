@@ -22,39 +22,40 @@ namespace GroupProject
     {
         public Decimal score;
         public Decimal Total;
+        public string ModID;
         
         Dictionary<RadioButtonList,Tuple<Label, Label>> radioButtonLists = new Dictionary<RadioButtonList, Tuple<Label,Label>>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+             ModID = Request.QueryString["Lesson"].ToString();
 
-            switch (ddlTestChoice.SelectedItem.Text)
+            switch (ModID)
             {
-                case "Module 1":
+                case "1-6":
                     LoadQuestion("Module 1");
                     break;
-                case "Module 2":
+                case "2-5":
                     LoadQuestion("Module 2");
                     break;
-                case "Module 3":
+                case "3-4":
                     LoadQuestion("Module 3");
                     break;
-                case "Module 4":
+                case "4-5":
                     LoadQuestion("Module 4");
                     break;
-                case "Module 5":
+                case "5-5":
                     LoadQuestion("Module 5");
                     break;
-                case "Module 6":
+                case "6-5":
                     LoadQuestion("MOdule 6");
                     break;
-                case "Module 7":
+                case "7-5":
                     LoadQuestion("MOdule 7");
                     break;
-                case "Module 8":
+                case "8-5":
                     LoadQuestion("Module 8");
                     break;
-                case "Module 9":
+                case "9-5":
                     LoadQuestion("Module 9");
                     break;
             }
@@ -137,7 +138,7 @@ namespace GroupProject
 
             if (Total >= 70)
             {
-                System.Windows.Forms.MessageBox.Show("Congratulations you passed with a score of %" + " " + score);
+                System.Windows.Forms.MessageBox.Show("Congratulations you passed with a score of %" + " " + Total);
                 Response.Write("<script>window.open('index_user.aspx','_parent');</script>");
             }
             else
@@ -150,7 +151,7 @@ namespace GroupProject
 
         protected void btnRetry_Click(object sender, EventArgs e)
         {
-            Response.Redirect("PracticeTest.aspx");
+            Response.Redirect("PracticeTest.aspx?Lesson=" +ModID);
         }
     }
 }
