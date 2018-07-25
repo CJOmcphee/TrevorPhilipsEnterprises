@@ -22,11 +22,12 @@ namespace GroupProject
     {
         public Decimal score;
         public Decimal Total;
+        public string ModID;
         
         Dictionary<RadioButtonList,Tuple<Label, Label>> radioButtonLists = new Dictionary<RadioButtonList, Tuple<Label,Label>>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            string ModID = Request.QueryString["Lesson"].ToString();
+             ModID = Request.QueryString["Lesson"].ToString();
 
             switch (ModID)
             {
@@ -186,7 +187,7 @@ namespace GroupProject
 
         protected void btnRetry_Click(object sender, EventArgs e)
         {
-            Response.Redirect("PracticeTest.aspx");
+            Response.Redirect("PracticeTest.aspx?Lesson=" +ModID);
         }
     }
 }
