@@ -3,22 +3,6 @@ GO
 
 
 -- Module 3, Question 1
-EXEC dbo.spQuestions @questions = 'What does SQL stand for?', -- varchar(1000)
-                     @answers = 'Structured Query Language',   -- varchar(1000)
-                     @tID = 'Module 3',       -- varchar(50)
-                     @crud = 'c'       -- varchar(1)
-
-EXEC dbo.spWrongAnswer @question = 'What does SQL stand for?',     -- varchar(500)
-                       @wrongAnswers = 'Structured Question Language', -- varchar(1000)
-                       @crud = 'c'          -- varchar(1)
-
-EXEC dbo.spWrongAnswer @question = 'What does SQL stand for?',     -- varchar(500)
-                       @wrongAnswers = 'Strong Question Language', -- varchar(1000)
-                       @crud = 'c'          -- varchar(1)
-
-EXEC dbo.spWrongAnswer @question = 'What does SQL stand for?',     -- varchar(500)
-                       @wrongAnswers = 'Stop Questioning Leonard', -- varchar(1000)
-                       @crud = 'c'          -- varchar(1)
 
 
 
@@ -901,23 +885,23 @@ EXEC dbo.spWrongAnswer @question = 'JSON stands for JavaScript Organ Notation', 
                        @crud = 'c'          -- varchar(1)
 
 --Module 6, Question 1
-EXEC dbo.spQuestions -- @QID = 0,        -- int
-                     @questions = 'What does CSS stand for?', -- varchar(1000)
-                     @answers = 'Cascading Style Sheets',   -- varchar(1000)
-                     @tID = 'Module 6',       -- varchar(50)
-                     @crud = 'c'       -- varchar(1)
+--EXEC dbo.spQuestions -- @QID = 0,        -- int
+--                     @questions = 'What does CSS stand for?', -- varchar(1000)
+--                     @answers = 'Cascading Style Sheets',   -- varchar(1000)
+--                     @tID = 'Module 6',       -- varchar(50)
+--                     @crud = 'c'       -- varchar(1)
 
-EXEC dbo.spWrongAnswer @question = 'What does CSS stand for?',     -- varchar(500)
-                       @wrongAnswers = 'Cascading Sheet Styles', -- varchar(1000)
-                       @crud = 'c'          -- varchar(1)
+--EXEC dbo.spWrongAnswer @question = 'What does CSS stand for?',     -- varchar(500)
+--                       @wrongAnswers = 'Cascading Sheet Styles', -- varchar(1000)
+--                       @crud = 'c'          -- varchar(1)
 
-EXEC dbo.spWrongAnswer @question = 'What does CSS stand for?',     -- varchar(500)
-                       @wrongAnswers = 'Cascade Style Sheets', -- varchar(1000)
-                       @crud = 'c'          -- varchar(1)
+--EXEC dbo.spWrongAnswer @question = 'What does CSS stand for?',     -- varchar(500)
+--                       @wrongAnswers = 'Cascade Style Sheets', -- varchar(1000)
+--                       @crud = 'c'          -- varchar(1)
 
-EXEC dbo.spWrongAnswer @question = 'What does CSS stand for?',     -- varchar(500)
-                       @wrongAnswers = 'Cascading Stile Seheets', -- varchar(1000)
-                       @crud = 'c'          -- varchar(1)
+--EXEC dbo.spWrongAnswer @question = 'What does CSS stand for?',     -- varchar(500)
+--                       @wrongAnswers = 'Cascading Stile Seheets', -- varchar(1000)
+--                       @crud = 'c'          -- varchar(1)
 
 -- Module 6, Question 2
 EXEC dbo.spQuestions -- @QID = 0,        -- int
@@ -935,7 +919,7 @@ EXEC dbo.spQuestions -- @QID = 0,        -- int
                      @questions = 'Link, Visited, Hover, and Active are all states for the Anchor tag.', -- varchar(1000)
                      @answers = 'True',   -- varchar(1000)
                      @tID = 'Module 6',       -- varchar(50)
-                     @crud = ''       -- varchar(1)
+                     @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spWrongAnswer @question = 'Link, Visited, Hover, and Active are all states for the Anchor tag.',     -- varchar(500)
                        @wrongAnswers = 'False', -- varchar(1000)
