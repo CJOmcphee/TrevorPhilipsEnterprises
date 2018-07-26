@@ -27,6 +27,8 @@ namespace GroupProject
                     hlTests.Visible = false;
                     hlExercises.Enabled = false;
                     hlExercises.Visible = false;
+                    hlGrades.Enabled = true;
+                    hlGrades.Visible = true;
                     break;
                 case "a":
                     hlLogin.Visible = false;
@@ -39,6 +41,8 @@ namespace GroupProject
                     hlTests.Visible = true;
                     hlExercises.Enabled = true;
                     hlExercises.Visible = true;
+                    hlGrades.Visible = false;
+                    hlGrades.Enabled = false;
                     break;
             }
 
