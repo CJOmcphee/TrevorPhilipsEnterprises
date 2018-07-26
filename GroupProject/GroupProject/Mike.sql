@@ -1322,24 +1322,43 @@ EXEC dbo.spWrongAnswer @question = 'Which statement is true?',     -- varchar(50
 EXEC dbo.spWrongAnswer @question = 'Which statement is true?',     -- varchar(500)
                        @wrongAnswers = 'XML elements must be properly closed', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+------------------------------------o-------------------------------------------------
+----------------------------------o--o-------------------------------------------------
+--------------------------------o------o-----------------------------------------------
+------------------------------o---------o----------------------------------------------
+----------------------------o------------o---------------------------------------------
+--------------------------o---------------o--------------------------------------------
+------------------------o------------------o-------------------------------------------
+----------------------o---------------------o------------------------------------------
+--------------------o------------------------o-----------------------------------------
+------------------o---------------------------o----------------------------------------
+-----------------o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-----------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 -- Slides
 
 EXEC dbo.spSlides @slideID = '2-1-1',   -- varchar(50)
@@ -3334,28 +3353,132 @@ EXEC dbo.spSlides @slideID = '9-4-7',   -- varchar(50)
                   @slideinfo = 'What is CSS3? ---- Slide 27', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '7-4-1',   -- varchar(50)
+                  @lessonid = '7-4',  -- varchar(50)
+                  @slideinfo = 'Data Structures ^ (Queues, Stacks, LinkLists, and Nodes)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '7-4-2',   -- varchar(50)
+                  @lessonid = '7-4',  -- varchar(50)
+                  @slideinfo = 'Data Structures ^^ -In the previous Lesson we made our own MyList class ^ which has methods used to Add/Remove/Print an array of ^ integers ^^ -In this lesson we will discuss a few other types of common ^ Data Structures such as: ^^ *Queues ^ *Stacks ^ *Nodes and LinkedLists', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '7-4-3',   -- varchar(50)
+                  @lessonid = '7-4',  -- varchar(50)
+                  @slideinfo = 'Queues ^^ -A Queue is a type of data structure which has a particular ^ way of handling adding/removing items in a list ^^ -Just like the line up at a fast food restaurant, a Queue is ^ First In First Out(FIFO) ^^ -When you add values to the Queue, they Enqueue() (or ^ Push) behind the values that came before them ^^ -When you remove values from a Queue, they Dequeue() (or ^ Pop) from the list based on who was added first!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '7-4-4',   -- varchar(50)
+                  @lessonid = '7-4',  -- varchar(50)
+                  @slideinfo = 'Stacks ^^ -A Stack is a type of data structure which acts like a stack of ^ plates in terms of handling data ^^ -A Stack is First In Last Out (FILO) ^^ -When you add values to the Stack, they Push() behind the ^ values that came before them ^^ -When you remove values from a Stack, they Pop() from the ^ list based on who was added first!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '7-4-5',   -- varchar(50)
+                  @lessonid = '7-4',  -- varchar(50)
+                  @slideinfo = 'LinkedListNode ^^ -A LinkedListNode is a class which contains only a few ^ properties: ^^ *Value: an object such as an int/string/class ^ *Next: A reference to the Next Node ^ *Previous: A reference to the Previous Node ^^ -We can make a list of values by chaining each Node ^ together ^^ -C# already has a built in data structure which handles ^ adding and removing Nodes in a list...', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '7-4-6',   -- varchar(50)
+                  @lessonid = '7-4',  -- varchar(50)
+                  @slideinfo = 'LinkedList ^^ -A LinkedList is a type of data structure which allows you to ^ add/remove easily from either end ^^ -When you add values to a LinkedList, you can choose to ^ add values to the end or the front: ^ *AddLast(), AddFirst() ^^ -When you remove values from a LinkedList, you can again ^ remove from the front or the back: ^ *RemoveLast(), RemoveFirst()', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '7-4-7',   -- varchar(50)
+                  @lessonid = '7-4',  -- varchar(50)
+                  @slideinfo = 'Nodes ^^ -We should understand how Nodes are connected on a more ^ fundamental level ^^ -If we were to make our own Node class with just two ^ properties: ^ *Value ^ *NextNode ^^ -How would we connext the nodes without a LinkedList ^ class?', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '7-4-8',   -- varchar(50)
+                  @lessonid = '7-4',  -- varchar(50)
+                  @slideinfo = 'Nodes ^^ -As you can see from the last slide, the first node has a ^ reference to the second node ^^ -If we were to make a third node, we should be able to make ^ a reference to it from the second node (and so forth to ^ forever) ^^ -As you can see, as ong as we can start at the first node ^ (RootNode), we can loop through the nodes using the ^ "NextNode" property', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-9',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+
+--EXEC dbo.spSlides @slideID = '7-4-10',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-11',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-12',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+
+--EXEC dbo.spSlides @slideID = '7-4-13',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-14',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-15',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+
+--EXEC dbo.spSlides @slideID = '7-4-16',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-17',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-18',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
 
 
 
+--EXEC dbo.spSlides @slideID = '7-4-19',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-20',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-21',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
 
 
+--EXEC dbo.spSlides @slideID = '7-4-22',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
 
+--EXEC dbo.spSlides @slideID = '7-4-23',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+--EXEC dbo.spSlides @slideID = '7-4-24',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
 
 
 
