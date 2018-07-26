@@ -5,7 +5,7 @@
     <div id="page">
          <div id="marketing" class="container">
             <div id="table">
-                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+                <asp:GridView ID="GridView1" DataKeyNames="sID" runat="server"></asp:GridView>
             </div>
          </div>
     </div>
