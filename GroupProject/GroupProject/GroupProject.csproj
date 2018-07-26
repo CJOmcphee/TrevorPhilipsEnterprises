@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Anton.sql" />
     <Content Include="images\csharp.jpg" />
     <Content Include="images\CSS.jpg" />
     <Content Include="images\CustomerService.jpg" />
