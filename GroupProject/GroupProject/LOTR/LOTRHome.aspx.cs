@@ -35,7 +35,6 @@ namespace GroupProject
             {
                 if (cbRemeberme.Checked)
                 {
-
                     HttpCookie mycookie = new HttpCookie("username");
                     mycookie.Expires.AddHours(1);
                     mycookie.Value = txtUsername.Text;
@@ -51,15 +50,7 @@ namespace GroupProject
 
             else
             {
-                SqlCommand cmd = new SqlCommand("spLogin", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@userID", txtUsername.Text);
-                cmd.Parameters.AddWithValue("@Userpassword", txtPassword.Text);
-
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                Response.Redirect("LOTRHome.aspx");
             }
         }
 

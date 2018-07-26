@@ -61,6 +61,14 @@ namespace GroupProject
             {
                 mydal.AddParam("@moduleID", id.ToString());
             }
+            if (Procedure == "spScore")
+            {
+                mydal.AddParam("@sID", id.ToString());
+            }
+            if (Procedure == "spStudentTopTests")
+            {
+                mydal.AddParam("@sID", id.ToString());
+            }
             return mydal.ExecuteProcedure(Procedure);
         }
         public static void DeleteData(string Procedure, string id)
@@ -119,6 +127,14 @@ namespace GroupProject
                 mydal.AddParam("@TestID", TestID);
                 mydal.ExecuteProcedure("spTest");
             
+        }
+        public static void CreateTestScore( string crud, string TestID, string StudentID, decimal Score)
+        {
+            mydal.AddParam("@crud", crud);
+            mydal.AddParam("@tID", TestID);
+            mydal.AddParam("@sID", StudentID);
+            mydal.AddParam("@score", Score.ToString());
+            mydal.ExecuteProcedure("spScore");
         }
         public static DataSet CreateUpdateUser(string crud ,string UserEmail,string UserPassword,string FirstName,string LastName)
         {
@@ -202,6 +218,13 @@ namespace GroupProject
         {
             mydal.AddParam("@lessonid", LessonID);
             mydal.AddParam("@crud", "r");
+            return mydal.ExecuteProcedure("spSlides");
+        }
+        public static DataSet EditSlide(string SlideID, string SlideInfo)
+        {
+            mydal.AddParam("@slideID", SlideID);
+            mydal.AddParam("@slideinfo", SlideInfo);
+            mydal.AddParam("@crud", "u");
             return mydal.ExecuteProcedure("spSlides");
         }
     }

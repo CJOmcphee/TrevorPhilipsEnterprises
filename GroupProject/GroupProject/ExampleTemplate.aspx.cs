@@ -20,7 +20,8 @@ namespace GroupProject
         List<Object> Answer = new List<Object>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            loadExample(Request.QueryString["Lesson"]);
+
+            loadExample("1-1");
            
             HidePreviousBtn();
             if(!IsPostBack)
@@ -48,7 +49,7 @@ namespace GroupProject
         }
         public void loadExample(string Lesson)
         {
-            ds = Crud.ReadTable("spExamples",Lesson);
+            ds = Crud.GetExamples(Lesson);
             count = ds.Tables[0].Rows.Count;
             foreach(DataRow Row in ds.Tables[0].Rows)
             {
@@ -66,7 +67,6 @@ namespace GroupProject
                     pnlExp.Visible = false;
                     Explanation.Add(pnlExp);
                 }
-
 
                 Panel pnlExm = new Panel();
                 Label lblExample = new Label();
@@ -87,8 +87,6 @@ namespace GroupProject
 
                 }
                 
-                
-                
                 if (Example.Count == 0)
                 {
                     Example.Add(pnlExm);
@@ -100,9 +98,23 @@ namespace GroupProject
                 }
 
                 Panel pnlCode = new Panel();
-                Label lblCode = new Label();
-                lblCode.Text = Row["code"].ToString();
-                pnlCode.Controls.Add(lblCode);
+                Table tblCode = new Table();
+                pnlCode.Controls.Add(tblCode);
+                string rawText = Row["code"].ToString();
+                string codeTxt = rawText.Replace("`", "&nbsp;");
+                Char delimiter = '^';
+                String[] substrings = codeTxt.Split(delimiter);
+                foreach (string substring in substrings)
+                {
+                    TableRow myRow = new TableRow();
+                    TableCell myCell = new TableCell();
+                    Label mylabel = new Label();
+                    mylabel.ForeColor = System.Drawing.Color.Black;
+                    mylabel.Text = substring;
+                    myCell.Controls.Add(mylabel);
+                    myRow.Controls.Add(myCell);
+                    tblCode.Controls.Add(myRow);
+                }
                 if (Code.Count == 0)
                 {
                     Code.Add(pnlCode);
@@ -116,13 +128,6 @@ namespace GroupProject
                 dvExplaination.Controls.Add(pnlExp);
                 dvExample.Controls.Add(pnlExm);
                 dvCode.Controls.Add(pnlCode);
-
-                
-
-               
-
-                
-
             }
         }
 
@@ -159,6 +164,7 @@ namespace GroupProject
             {
                 TextBox mytb = (TextBox)Answer[x];
                 HideNextButton(mytb.Enabled);
+                btnGo.Enabled = true;
             }
         }
         public void HideNextButton(bool enabled)
@@ -200,5 +206,6 @@ namespace GroupProject
             Example[index].Visible = false;
             Code[index].Visible = false;
         }
+
     }
 }

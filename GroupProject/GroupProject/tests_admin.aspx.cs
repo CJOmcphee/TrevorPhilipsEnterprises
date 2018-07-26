@@ -6,19 +6,20 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.UI.HtmlControls;
 
 namespace GroupProject.admin
 {
     public partial class tests_admin : System.Web.UI.Page
     {
-        public string Module, Test, Question,Lesson;
+        public string Module, Test, Question, Lesson;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Test"] != null)
             {
                 Test = (string)Session["Test"];
             }
-            if(Session["Question"] != null)
+            if (Session["Question"] != null)
             {
                 Question = (string)Session["Question"];
             }
@@ -39,16 +40,16 @@ namespace GroupProject.admin
         protected void btnAddTest_Click(object sender, EventArgs e)
         {
             DataSet ds = Crud.ReadTable("spModule");
-            int x = ds.Tables[0].Rows.Count +1;
+            int x = ds.Tables[0].Rows.Count + 1;
             string ModuleName = tbModuleName.Text;
             string TestName = "module" + x.ToString();
-            Crud.CreatUpdateModule("c", ModuleName, tbModuleSum.Text,"");
+            Crud.CreatUpdateModule("c", ModuleName, tbModuleSum.Text, "");
             Crud.CreateTest("c", TestName);
             LoadTest(Crud.ReadTable("spModule"));
         }
         protected void btnChangeModule_Click(object sender, EventArgs e)
         {
-            Crud.CreatUpdateModule("u", tbModuleNameDetails.Text, tbModuleSumDetails.Text,Module);
+            Crud.CreatUpdateModule("u", tbModuleNameDetails.Text, tbModuleSumDetails.Text, Module);
             LoadQuestion(Crud.GetTestQuestions(Test));
         }
         protected void btnAddQuestion_Click(object sender, EventArgs e)
@@ -133,7 +134,7 @@ namespace GroupProject.admin
         }
         protected void gvTests_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if(e.CommandName == "Page")
+            if (e.CommandName == "Page")
             {
                 return;
             }
@@ -164,7 +165,7 @@ namespace GroupProject.admin
                     {
                         Crud.DeleteData("spLessons", row["lessonID"].ToString());
                     }
-                        
+
                     Crud.DeleteData("spTest", Test);
                     Crud.DeleteData("spModule", Module);
                     LoadTest(Crud.ReadTable("spModule"));
@@ -185,7 +186,7 @@ namespace GroupProject.admin
             {
                 case "Edi":
                     pnlQuestion.Visible = false;
-                    LoadWrongAnswer(Crud.ReadTable("spWrongAnswer",Question));
+                    LoadWrongAnswer(Crud.ReadTable("spWrongAnswer", Question));
                     break;
                 case "Del":
                     Crud.DeleteData("spQuestions", Question);
@@ -200,7 +201,7 @@ namespace GroupProject.admin
                 return;
             }
             gvWrongAnswers.SelectedIndex = Convert.ToInt32(e.CommandArgument);
-            Crud.DeleteData("spWrongAnwser", gvWrongAnswers.SelectedDataKey["wrongAnswers"].ToString(),Question);
+            Crud.DeleteData("spWrongAnwser", gvWrongAnswers.SelectedDataKey["wrongAnswers"].ToString(), Question);
             LoadWrongAnswer(Crud.ReadTable("spWrongAnswer", Question));
         }
         protected void gvTests_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -223,7 +224,7 @@ namespace GroupProject.admin
 
         protected void btnToQuestion_Click(object sender, EventArgs e)
         {
-          
+
             LoadQuestion(Crud.GetTestQuestions(Test));
         }
 
@@ -301,10 +302,15 @@ namespace GroupProject.admin
                 return;
             }
             gvSlides.SelectedIndex = Convert.ToInt32(e.CommandArgument);
-            switch(e.CommandName)
+            switch (e.CommandName)
             {
                 case "Edi":
-                    
+                    pnlSlideEditor.Visible = true;
+                    lblSlideID.Text = gvSlides.SelectedDataKey["slideID"].ToString();
+                    DataSet slideDS = Crud.ReadTable("spSlides", lblSlideID.Text);
+                    string editContent = slideDS.Tables[0].Rows[0]["slideInfo"].ToString();
+                    Editslide(editContent);
+                    taSlideEditText.InnerText = editorContent(editContent);
                     break;
                 case "Del":
 
@@ -319,6 +325,17 @@ namespace GroupProject.admin
             pnllessons.Visible = false;
         }
 
+        protected void btnPreviewGen_Click(object sender, EventArgs e)
+        {
+            string newContent = taSlideEditText.InnerText;
+            char newLine = '\n';
+            String[] substrings = newContent.Split(newLine);
+            foreach (string substring in substrings)
+            {
+                Editslide(substring.Replace("\n", "^"));
+            }
+        }
+
         protected void btnNewQuestion_Click(object sender, EventArgs e)
         {
             pnlQuestionDetails.Visible = false;
@@ -329,5 +346,69 @@ namespace GroupProject.admin
         {
             pnlNewWrongAnswer.Visible = true;
         }
+
+        protected void btnCreate_Click(object sender, EventArgs e)
+        {
+            
+            if (Convert.ToInt32(tbTableNum.Text) >= 0 && Convert.ToInt32(tbRowTblNum.Text) >= 0 && Convert.ToInt32(tbRowSlideNum.Text) >= 0 && Convert.ToInt32(tbTblCellNum.Text) >= 0)
+            {
+                char newLine = '\n';
+                String[] substrings = taSlideEditText.InnerText.Split(newLine);
+                List<string> list = substrings.OfType<string>().ToList();
+                TextTable text = new TextTable();
+                string table = text.newTable(Convert.ToInt32(tbTableNum.Text), Convert.ToInt32(tbRowTblNum.Text), Convert.ToInt32(tbTblCellNum.Text));
+                list.Insert(Convert.ToInt32(tbRowSlideNum.Text), table);
+                string insertedList = string.Join("\n", list.ToArray());
+                taSlideEditText.InnerText = insertedList;
+                Editslide(insertedList.Replace("\n", "^"));
+            }
+            else
+            {
+                lblMessage.Text = "You must fill in all the fields to continue";
+            }
+        }
+
+        protected void btnClose_Click(object sender, EventArgs e)
+        {
+            pnlSlideEditor.Visible = false;
+            taSlideEditText.InnerText = "";
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string slideContent = taSlideEditText.InnerText;
+            Crud.EditSlide(lblSlideID.Text, slideContent.Replace("\n", "^"));
+            pnlSlideEditor.Visible = false;
+            taSlideEditText.InnerText = "";
+        }
+
+        protected void tbTable_Click(object sender, EventArgs e)
+        {
+            pnlTableEditor.Visible = true;
+        }
+
+        private void Editslide(string slideInfo)
+        {
+            Char delimiter = '^';
+            String[] substrings = slideInfo.Split(delimiter);
+            foreach (string substring in substrings)
+            {
+                HtmlTableRow myRow = new HtmlTableRow();
+                HtmlTableCell myCell = new HtmlTableCell();
+                Label mylabel = new Label();
+                mylabel.ForeColor = System.Drawing.Color.Black;
+                mylabel.Text = substring;
+                myCell.Controls.Add(mylabel);
+                myRow.Controls.Add(myCell);
+                tbSlidePrev.Controls.Add(myRow);
+            }
+        }
+
+        public string editorContent(string content)
+        {
+            string NewContent = content.Replace("^", "\n");
+            return NewContent;
+        }
+
     }
 }

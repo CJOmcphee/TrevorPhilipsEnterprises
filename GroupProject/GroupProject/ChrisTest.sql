@@ -3,23 +3,23 @@
 --MODULE 1 Test
 -- Module 1 Questions Right Answer
 
-exec spQuestions @crud='c', @tID='module1', @questions='______ is equipment or physical devices associted with a computer?', @answers='Hardware'
-exec spQuestions @crud='c', @tID='module1', @questions='______ are designed to communicate directly to hardware?', @answers='Machine Language'
-exec spQuestions @crud='c', @tID='module1', @questions='All syntax errors are caught by the _____ ?', @answers='compiler'
-exec spQuestions @crud='c', @tID='module1', @questions='CDs and USB drives are types of _____?', @answers='external storage'
-exec spQuestions @crud='c', @tID='module1', @questions='What is the correct order in the Systems Development Life Cycle?', @answers='Investigation, Analysis, Design, Implement, Maintenance'
-exec spQuestions @crud='c', @tID='module1', @questions='Pseudo-code and Flowcharts are the two most common tools in planning logic?', @answers='True'
-exec spQuestions @crud='c', @tID='module1', @questions='When you add a string together it is called?', @answers='String Concatenation'
-exec spQuestions @crud='c', @tID='module1', @questions='Data is not often stored in a data hierarchy', @answers='False'
-exec spQuestions @crud='c', @tID='module1', @questions='The three major techniques used to develop programs are Procedural, Object Oriented and Control Oriented', @answers='False'
-exec spQuestions @crud='c', @tID='module1', @questions='Boolean expressions are either true or false?', @answers='True'
-exec spQuestions @crud='c', @tID='module1', @questions='A decision inside of another decision is a _____?', @answers='Nested Decision'
-exec spQuestions @crud='c', @tID='module1', @questions='IF and Case constructs can both be used for descions?', @answers='True'
-exec spQuestions @crud='c', @tID='module1', @questions='The process of ignoring noneessential details  is called ____?', @answers='Abstraction'
-exec spQuestions @crud='c', @tID='module1', @questions='Values passed to a method are called?', @answers='Arguments'
-exec spQuestions @crud='c', @tID='module1', @questions='Internal memory is _____?', @answers='Volatile'
-exec spQuestions @crud='c', @tID='module1', @questions='Every language has it owns rules governing word/symbols usage called Syntax?', @answers='True'
-exec spQuestions @crud='c', @tID='module1', @questions='C# is a 3rd generation language?', @answers='True'
+exec spQuestions @crud='c', @tID='Module 1', @questions='______ is equipment or physical devices associted with a computer?', @answers='Hardware'
+exec spQuestions @crud='c', @tID='Module 1', @questions='______ are designed to communicate directly to hardware?', @answers='Machine Language'
+exec spQuestions @crud='c', @tID='Module 1', @questions='All syntax errors are caught by the _____ ?', @answers='compiler'
+exec spQuestions @crud='c', @tID='Module 1', @questions='CDs and USB drives are types of _____?', @answers='external storage'
+exec spQuestions @crud='c', @tID='Module 1', @questions='What is the correct order in the Systems Development Life Cycle?', @answers='Investigation, Analysis, Design, Implement, Maintenance'
+exec spQuestions @crud='c', @tID='Module 1', @questions='Pseudo-code and Flowcharts are the two most common tools in planning logic?', @answers='True'
+exec spQuestions @crud='c', @tID='Module 1', @questions='When you add a string together it is called?', @answers='String Concatenation'
+exec spQuestions @crud='c', @tID='Module 1', @questions='Data is not often stored in a data hierarchy', @answers='False'
+exec spQuestions @crud='c', @tID='Module 1', @questions='The three major techniques used to develop programs are Procedural, Object Oriented and Control Oriented', @answers='False'
+exec spQuestions @crud='c', @tID='Module 1', @questions='Boolean expressions are either true or false?', @answers='True'
+exec spQuestions @crud='c', @tID='Module 1', @questions='A decision inside of another decision is a _____?', @answers='Nested Decision'
+exec spQuestions @crud='c', @tID='Module 1', @questions='IF and Case constructs can both be used for descions?', @answers='True'
+exec spQuestions @crud='c', @tID='Module 1', @questions='The process of ignoring noneessential details  is called ____?', @answers='Abstraction'
+exec spQuestions @crud='c', @tID='Module 1', @questions='Values passed to a method are called?', @answers='Arguments'
+exec spQuestions @crud='c', @tID='Module 1', @questions='Internal memory is _____?', @answers='Volatile'
+exec spQuestions @crud='c', @tID='Module 1', @questions='Every language has it owns rules governing word/symbols usage called Syntax?', @answers='True'
+exec spQuestions @crud='c', @tID='Module 1', @questions='C# is a 3rd generation language?', @answers='True'
 --Module 1 Wrong Answers
 exec spWrongAnswer @crud='c', @question='Every language has it owns rules governing word/symbols usage called Syntax?', @wrongAnswers='False'
 exec spWrongAnswer @crud='c', @question='The process of ignoring noneessential details  is called ____?', @wrongAnswers='Modularization'
@@ -60,16 +60,16 @@ exec spWrongAnswer @crud='c', @question='A decision inside of another decision i
 exec spWrongAnswer @crud='c', @question='A decision inside of another decision is a _____?', @wrongAnswers='Compound Join'
 
 --Module 2 Questions
-exec spQuestions @crud='c', @tID='module2', @questions='CIL is an object-oriented language?', @answers='True'
-exec spQuestions @crud='c', @tID='module2', @questions='Which of these does the CLR provide?', @answers='All of the Above'
-exec spQuestions @crud='c', @tID='module2', @questions='EXE and DLL are the two type of assemblies?', @answers='True'
-exec spQuestions @crud='c', @tID='module2', @questions='_____ is the blueprint or schematic for an object?', @answers='Class'
-exec spQuestions @crud='c', @tID='module2', @questions='Objects are a varied instances of a class?', @answers='False'
-exec spQuestions @crud='c', @tID='module2', @questions='Static is used to describe an object that can have many values', @answers='False'
-exec spQuestions @crud='c', @tID='module2', @questions='Controls  have properties', @answers='True'
-exec spQuestions @crud='c', @tID='module2', @questions='An _____ is your compiled "Project" code', @answers='Assembly'
-exec spQuestions @crud='c', @tID='module2', @questions='What is the root namespace for the .NET Framework Class Library?', @answers='System'
-exec spQuestions @crud='c', @tID='module2', @questions='Is this a proper variable     public string FirstName (get; set;)?', @answers='False'
+exec spQuestions @crud='c', @tID='Module 2', @questions='CIL is an object-oriented language?', @answers='True'
+exec spQuestions @crud='c', @tID='Module 2', @questions='Which of these does the CLR provide?', @answers='All of the Above'
+exec spQuestions @crud='c', @tID='Module 2', @questions='EXE and DLL are the two type of assemblies?', @answers='True'
+exec spQuestions @crud='c', @tID='Module 2', @questions='_____ is the blueprint or schematic for an object?', @answers='Class'
+exec spQuestions @crud='c', @tID='Module 2', @questions='Objects are a varied instances of a class?', @answers='False'
+exec spQuestions @crud='c', @tID='Module 2', @questions='Static is used to describe an object that can have many values', @answers='False'
+exec spQuestions @crud='c', @tID='Module 2', @questions='Controls  have properties', @answers='True'
+exec spQuestions @crud='c', @tID='Module 2', @questions='An _____ is your compiled "Project" code', @answers='Assembly'
+exec spQuestions @crud='c', @tID='Module 2', @questions='What is the root namespace for the .NET Framework Class Library?', @answers='System'
+exec spQuestions @crud='c', @tID='Module 2', @questions='Is this a proper variable     public string FirstName (get; set;)?', @answers='False'
 
 --Mondule 2 Wrong Answers
 exec spWrongAnswer @crud='c', @question='Is this a proper variable     public string FirstName (get; set;)?', @wrongAnswers='True'
@@ -226,7 +226,7 @@ EXEC dbo.spSlides @slideID = '3-1-24',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '3-1-25',   -- varchar(50)
                   @lessonid = '3-1',  -- varchar(50)
-                  @slideinfo = 'tbSession now looks like this : ^ table><tr><td>SessionID></td><td>CourseID </td> <td>Grade Year </td> <td>Start Date</td><td>End Date</td></tr> <tr><td>1</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>2</td><td>3</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>3</td><td>2</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>4</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>5</td><td>3</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>6</td><td>2</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr></table> ^ Just remeber, tbCourseSubject looks like this: ^ <table><tr><td>CourseID</td><td>Name</td><td>Description</td></tr><tr><td>1</td><td>Computer Science</td><td>Programming in C# </td></tr><tr><td>2</td><td>Networking</td><td>Connecting computers though networks</td></tr><tr><td>3</td><td>English</td><td>Learning the rules of the English Language</td></tr></table> ', -- varchar(1000)
+                  @slideinfo = 'tbSession now looks like this : ^  </td><td>CourseID </td> <td>Grade Year </td> <td>Start Date</td><td>End Date</td></tr> <tr><td>1</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>2</td><td>3</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>3</td><td>2</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>4</td><td>1</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>5</td><td>3</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr><tr><td>6</td><td>2</td><td>11</td><td>1/1/2014</td><td>10/1/2014</td></tr></table> ^ Just remeber, tbCourseSubject looks like this: ^ <table><tr><td>CourseID</td><td>Name</td><td>Description</td></tr><tr><td>1</td><td>Computer Science</td><td>Programming in C# </td></tr><tr><td>2</td><td>Networking</td><td>Connecting computers though networks</td></tr><tr><td>3</td><td>English</td><td>Learning the rules of the English Language</td></tr></table> ', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
 
@@ -618,309 +618,309 @@ EXEC spSlides	@slideID = '3-4-19',
 
 --MODULE 7
 
-EXEC spSlides	@slideID = '7-1-1',
-				@lessonid = '7-1',
+EXEC spSlides	@slideID = '6-1-1',
+				@lessonid = '6-1',
 				@slideinfo = 'CSS - Cascading Stlye Sheets^ ^ ^ Sloow us to define consistent appearances in a website ^ ^ ^ We will be ising style attributes to do this^ ^ ^ Styles loks like this: attribute: vallue;',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-1-2',
-				@lessonid = '7-1',
+EXEC spSlides	@slideID = '6-1-2',
+				@lessonid = '6-1',
 				@slideinfo = 'Here are some example of style attributes and values^ font-size: xxsmall;^ color:black;^ font-family: Verdana, Arial;^ padding: 10px;^ border: 1px solid;^ background-color: red;',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-1-3',
-				@lessonid = '7-1',
+EXEC spSlides	@slideID = '6-1-3',
+				@lessonid = '6-1',
 				@slideinfo = 'Styles can be associated with a category of elemtns:^ dev{^ font-size: large;^ color: red;^}^ Here we see that all text inside of any <div>''s on the page^ will be large and red',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-1-4',
-				@lessonid = '7-1',
+EXEC spSlides	@slideID = '6-1-4',
+				@lessonid = '6-1',
 				@slideinfo = 'Style can also be associated with a particular element^ based on the id of the element:^ #Footer {^  coloe: purple;^ }^  Here we see that if there is an element on  the page with:^ id="Footer", the text inside of that element will be purple',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-1-5',
-				@lessonid = '7-1',
+EXEC spSlides	@slideID = '6-1-5',
+				@lessonid = '6-1',
 				@slideinfo = 'Styles can alos be grouped together by a name, this^ called a css class:^ .SmallGreenText {^ font-size: small;^ color: green;^ }^ Here we see the css class name: SmallGreenText^ ^ HTML elements on the page can subscribe to a class and^ take on all the attributes associated with it',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-1-6',
-				@lessonid = '7-1',
+EXEC spSlides	@slideID = '6-1-6',
+				@lessonid = '6-1',
 				@slideinfo = 'Example: Create a custom style called "SmallRedWithBorder":^  .SmallRedWithBorder {^ border: 5px solid #F8CA37;^ font-size: xx small;^ color: RED;^  }^ And then apply it^ <asp:Button^ ID="btnSearch" runat="server" CssClass="SmallRedWithBorder"^ OnClick="btnKeywordSearch_Click" Text="Search..."/>^ ^ <div class="SmallRedWithBorder"> This text will also use the same^ styles!</div>',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-1-7',
-				@lessonid = '7-1',
+EXEC spSlides	@slideID = '6-1-7',
+				@lessonid = '6-1',
 				@slideinfo = 'Note that on the previous page we used CssCkass abd Ckass to do the^ same thing^ ^  The dufference is that the first one is an ASP server control. The keyword^ "class" is already reserved in C#( as you y know from Module 2).^ <asp: Button^ ID="tnSearch" runat server <u>CssClass="SmallRedWithBorder"</u>/>^ 6 The second one is just a regualr html element, so the syntax is slightly^ different^ <div <u>class="SmallRedWithBorder"</u>> This text will also use the same^ styles!</div> ',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-1-8',
-				@lessonid = '7-1',
+EXEC spSlides	@slideID = '6-1-8',
+				@lessonid = '6-1',
 				@slideinfo = 'CSS- Cascading Style Sheets^ There are 4 ways to modify the css in our.aspx(or .html)^ files:^ In a <style> tag in the page itself^ Directly in the tag using a style"" attriute^ In a sperate referenced .css page^ Modifying from the server( in our case: C#)',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-1-9',
-				@lessonid = '7-1',
+EXEC spSlides	@slideID = '6-1-9',
+				@lessonid = '6-1',
 				@slideinfo = '1. In a <stlye> tag in the page:^ <style>^ ^body {^  font-size: xx small;^ color: black^ </style>^ ^ ^ Usually this is the placed between the head tages:^ *HERE*</head>',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-1-10',
-				@lessonid = '7-1',
+EXEC spSlides	@slideID = '6-1-10',
+				@lessonid = '6-1',
 				@slideinfo = '2. Directly  in the tag, using the style= "" attribute:^ ^ ^ <body stlye="font-size: xx small; color-black;"^ ^ </body>',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-1-11',
-				@lessonid = '7-1',
+EXEC spSlides	@slideID = '6-1-11',
+				@lessonid = '6-1',
 				@slideinfo = '3. In a seperate .css page (created by right clicking on the project and creating a "StyleSheet"), we put the code there: ^ body {^ font-size: xx small;^ color: black^ }^ We can then click and drag the .css file from te solution^ exploerer into the <head> tag on our .aspx page and it should   ^ create a link like this^ <link href="StyleSheet1.css" rel="stylesheet" /> ',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-1-12',
-				@lessonid = '7-1',
+EXEC spSlides	@slideID = '6-1-12',
+				@lessonid = '6-1',
 				@slideinfo = 'You should alwasy endeavor to use a seperate stylesheet^ file where possible^ ^ If you use a seperate file, it will be easier to modify the style^ of your project after the fact^ ^ Good programming practice^ ^ Keep your stylesheets stored in a directory called^"StyleSheets" or "CSS"',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-1-13',
-				@lessonid = '7-1',
+EXEC spSlides	@slideID = '6-1-13',
+				@lessonid = '6-1',
 				@slideinfo = '4. Modifying from the server( in our case: C#)^ <div id="mainDiv" runat="server">Hello World</div>^  ^ If we add the runat="server" attribture/value to a regular html^ element, we are able to do modifications from the server^ (note: you will need an ID, as this will be the variable name)^  mainDiv.Style.Add("color", "purple");^ mainDiv.Style.Add("font-size", "large");',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-1-14',
-				@lessonid = '7-1',
+EXEC spSlides	@slideID = '6-1-14',
+				@lessonid = '6-1',
 				@slideinfo = 'The Anchor tag has multiple states, here are some of them^ Link(the default look before it is clicked on)^ Visited^ Hover^ Active(As the user clicks)^ ^ You can chooose to set different styles for eaach state as well(seen on next slide)',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-1-15',
-				@lessonid = '7-1',
+EXEC spSlides	@slideID = '6-1-15',
+				@lessonid = '6-1',
 				@slideinfo = 'A; link^ {^ font-size:small^ color: green^ font-family: Verdana, Ariel;^ text-decoration: underline^ }^ A:hover^ {^ font-size: small;^ color:Red;^ font-family: Verdana, Ariel;^ text-decoration: underline overline',
 				@crud = 'c'
 
 --Lesson2
 
-EXEC spSlides	@slideID = '7-2-1',
-				@lessonid = '7-2',
+EXEC spSlides	@slideID = '6-2-1',
+				@lessonid = '6-2',
 				@slideinfo = 'File upload control <input type="file" disabled/>^ ^ There are many way to upload and display images^ ^ The following slides who two potential ways^ ^ 1. Upload and dsiplay a file to a web server using a directory^ path^ ^2. Upload a file to a database',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-2-2',
-				@lessonid = '7-2',
+EXEC spSlides	@slideID = '6-2-2',
+				@lessonid = '6-2',
 				@slideinfo = 'Upload file to a web server  using directoty path(FileIpload^ Control):^ ^ First, save the file to th web server:^ string serverPath=Server.MapPath(".")+ "\\files\\";^ string fileName= FileUpload1.FileName;^ string pathAndFule= serverPath + fileName;^ FileUpload.PostedFile.SaveAs(pathAndFile);^ ^ ',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-2-3',
-				@lessonid = '7-2',
+EXEC spSlides	@slideID = '6-2-3',
+				@lessonid = '6-2',
 				@slideinfo = 'Second, save the text of the ath and fule to the database^ ^ The format of the pat should look lie: "Folder.FileName"^ ^ Tird, display the image from the web server using a directory path:^ Image.ImageURL = ds.Tables[0].Rows[0]["path"].ToString();',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-2-4',
-				@lessonid = '7-2',
+EXEC spSlides	@slideID = '6-2-4',
+				@lessonid = '6-2',
 				@slideinfo = 'MAster pages allow you to create a consistent layout for the^ paes in your application^ ^ A single master page defines the look, feel and standed^ behaviour that wany for all off the  pages in your app^ ^ When users request content pages, they merge with the master page to procude output that combines the layut of^ the master page  ith the content from the content page ',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-2-5',
-				@lessonid = '7-2',
+EXEC spSlides	@slideID = '6-2-5',
+				@lessonid = '6-2',
 				@slideinfo = 'Start by adding a master page to your website, this will be^ the "frame" around your web pages^ ^ The content of the pags in your site will appear within the^ <ContentPlaceHolder> tags^ ^ To create a master page:^ Right click on your perject solution^ Click" Add new item"^ Click "Master Page"',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-2-5',
-				@lessonid = '7-2',
+EXEC spSlides	@slideID = '6-2-5',
+				@lessonid = '6-2',
 				@slideinfo = 'Now that we have a master page, we need to have a specific^ content pages (Web Content Forms)^ ^ To create a new content page: ^ Right click on your project solution^ Click "ass new item" => "Web Form using Master Page"^ You will have to specifiy which master page to use for this^ content page',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-2-6',
-				@lessonid = '7-2',
+EXEC spSlides	@slideID = '6-2-6',
+				@lessonid = '6-2',
 				@slideinfo = 'Session objects hold user-specific information and are^ available in all pages of an application^ ^ Common values stored in Sesion are: name, id, and^ preferences^ ^ The server creates a new Session object for each new user,^ and destroys the Session object when the sssion expires ',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-2-7',
-				@lessonid = '7-2',
+EXEC spSlides	@slideID = '6-2-7',
+				@lessonid = '6-2',
 				@slideinfo = 'Example of Session in C#^ ^ //Store the value "Joe Smith" in the session object, under the^ "UserName" label^ Session["UserName"] = "JoeSmith"^ ^ //Retreive the value from the Session object using the^ "UserName" label^  //Note: You have to cast the name value into a string^ String sUsername = (string) Session["UserName"];',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-2-7',
-				@lessonid = '7-2',
+EXEC spSlides	@slideID = '6-2-7',
+				@lessonid = '6-2',
 				@slideinfo = 'A session start when^ ^ A new user equests a ASP file^ ^ A value is stored on a Session variable^ ^ A SessionID is generated and stored at the time of the session^ creation',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-2-7',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-2-7',
+				@lessonid = '6-3',
 				@slideinfo = 'A session end if a user has not requested or refreshed a^ page in the application for th specified period^ ^ By Default, This default time is 20 minutes^ ^ You can use  this knowledge for storing values that you want^ to expire^ ',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-2-8',
-				@lessonid = '7-2',
+EXEC spSlides	@slideID = '6-2-8',
+				@lessonid = '6-2',
 				@slideinfo = 'A session alos ends if you type:^ ^ Session.Abandon();^ ^ Use the above line of code to reset al values in a Session^ ^ Storing values on the server is fast,  but should not be used^ carelessly',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-2-9',
-				@lessonid = '7-2',
+EXEC spSlides	@slideID = '6-2-9',
+				@lessonid = '6-2',
 				@slideinfo = 'SessionID is the link between a particular user and thier^ requests/responeses^ ^ The SessionID value is stored and locally in your browser like a^ cookie^ ^ You must have cookues enavle to use the Session Object^ to store values^',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-2-10',
-				@lessonid = '7-2',
+EXEC spSlides	@slideID = '6-2-10',
+				@lessonid = '6-2',
 				@slideinfo = 'Cookues are values that are stored locally on the users'' computer^ (usually the browser)^ ^ by default, cookues are stored in memory^ ^ If you set the "Expires" property ten the cookue can be written to the hard disk^ ^ More than one cookue can be stored  by a client per website^ & Note: all cookies are sent from the client with each request( alot of ^ overhead)',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-2-11',
-				@lessonid = '7-2',
+EXEC spSlides	@slideID = '6-2-11',
+				@lessonid = '6-2',
 				@slideinfo = '//Write the cookie^ HttpCookue aCookue =   new = HttpCookue("LastVisited");^ aCookie.Value = DateTime.Now.ToString();^  aCookie.Expires = DateTime.Now.AddDays(1);^ Response.Cookies.add(aCookie);^ ^ //Read the cookie^ HttpCookie myCookie = Request.Cookis["lastVisited"];^ //Now that you have the cookie, check if it''s there^ if(myCookie != null)^ {^ txtLastVisited.Text= myCookie.Value.ToString();',
 				@crud = 'c'
 
 --Lesson 3
 
-EXEC spSlides	@slideID = '7-3-1',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-1',
+				@lessonid = '6-3',
 				@slideinfo = 'In order to make more interesting programs, we'' have to^ understnad how  to diplay and manipulate data in a grid better, by ^ utilizing^ ^ Sorting^ Pagination^ Totals^ RowCounter',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-2',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-2',
+				@lessonid = '6-3',
 				@slideinfo = '<h3>Sorting</h3>^ From the properties of your GridView, you must set the^ AllowSorting property to true^ ^ Use the Sorting() event to get to the column header^ clicked on by the user^ 6 Within the Sorting() event handler the paramenter e is passed^ with some usefyl information stored within it^ 6 e.SortExpression gold the value netered in the^ SortExpression attribute of the column tag',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-3',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-3',
+				@lessonid = '6-3',
 				@slideinfo = 'Befoe conintuing, you will need to determine how you will^ sort your data^ Currently you should be able to create your own stored^ procedure to do thi^ ^ The  procecure would take in a column name as a^ VARCHAR and return a sorted table ORDER BY the name^ of the column^ You can either use a series of IF/ELSE statements to do^ this, or a CASE, your choice',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-4',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-4',
+				@lessonid = '6-3',
 				@slideinfo = 'Alternativley, you can sort your data withou making a call^ to the database^ ^ There are several solutions to do this^ ^ DataSet^ DataTable^ Dataview',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-5',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-5',
+				@lessonid = '6-3',
 				@slideinfo = 'Example: Using the Sorting() event for a GridView^ protected void GridView1_Sorting(object sender,^ GridViewSortEventArgs e)^ {  /* 1.pass e.SortExpression(column name to sort by) to^ your stored proc or custom c# code^ 2. Assign the new sorted data to the GridView^ 3.Rebind the data using DataBind()^ GridView1.DataBind()^ }',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-6',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-6',
+				@lessonid = '6-3',
 				@slideinfo = 'What if we wanted to display only X number of items on a^ GridView?^ ^ To Enable Paging, you have to set the AllowPaging property ^ to True^ ^ Like the rest of the gridview options, the pagin has an^ event which fires, this one is called PageIndexChanging()^ To set thhe specific number of itesm o display, modify the PageSize Property',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-6',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-6',
+				@lessonid = '6-3',
 				@slideinfo = 'Te event RowCommand() will run just before executing^ Sorting()^ RowDeleting(), Row Editing() and PageIndexChanging()^ ^ The value stored e.CommandName will change dpednding on the action',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-7',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-7',
+				@lessonid = '6-3',
 				@slideinfo = 'Inside the PageIndexChanging() event the "e" variable ( of^ type GrdiViewPageEeventArgs) contains a property called^ "NewPageIndex"^ ^ The current page number is contained witin a property on^ the GridView itself, this property is called: PageIndex',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-8',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-8',
+				@lessonid = '6-3',
 				@slideinfo = 'Example: Using the PageIndexChaning() function:^ protected void GrdView1_PageIndexChanging(object sender,^ GridViewPageEventArgs e)^ {^ /* 1. Assign the DataSource to the GridView^ 2. Replace the PaheINdex with the value in e. NewPageIndex^ 3. Rebind the data using Databind() */^ GridView1.PageIndex = e.newPageIndex;^ GridView1.DataBind()',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-9',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-9',
+				@lessonid = '6-3',
 				@slideinfo = 'Whenever yoy ask a GridView to DataBind(), a series of^ events fire called RowDataBound()^ ^ This RowDataBound() event fire once for each row in your^ GridView including the column row at the top and the empty^ footer at the bottom^ ^ Why would we want to look at each row as it''s being^ populated from the Datasource into theGridView^ ^ We may want to tall a series of number in a column',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-10',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-10',
+				@lessonid = '6-3',
 				@slideinfo = 'Example: Count how many peoiple are from Winnipeg, by checking^ if the column "City" contains the value "wpg"^ ^ ^ To do this, we will have to:^ Create a sum variable and initialize it^ Check each row in the Gridview, ensure it''s not the header row or the footer row^ Determine if the value "wpg" is in the column "City"^ Add to the sum variable^ Finally< write our sum variable to  the footer^ ^ Note: Set the ShowFooter property to True if you are displaying totals in the footer of the GridView',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-11',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-11',
+				@lessonid = '6-3',
 				@slideinfo = 'To determine what row we are currently on while inside^ the RowDataBound() method, we can check the "e" variable^ ^ Example: Check if the current row is a typical DataRow ( not a^ Header and not a Footer row)^ if(e.Row.RowType == DataControlRowType.DataRow) {...}^ ^ The "e.Row.RowType" property contains a value indicating the^ type of row, to find out what values you can check for, please see:^ http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridviewrow.rowtype.aspx',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-12',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-12',
+				@lessonid = '6-3',
 				@slideinfo = 'To determine what value is stored within a specific column in a^ row, we can use the following code:^ r.Row.Cells[x].Text^ ^ Where the "x" is the column number you want to check^ ^ Remeber that in programming, specifically with arrays, the first^ value is often 0^ ^ Example: We have GridView with columns: Name and Province.^ To access Province we use the number 1...^ e.Row.Cells[1].Text',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-13',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-13',
+				@lessonid = '6-3',
 				@slideinfo = 'Example: c# code based on the previous slide^  Private int totalCityWpg;^ ^ protected void GridViewTotals_RowDataBound(object sender,^ GridViewRowEventArgs e)^ {^ if(e.Row.RowType == DataControlRowType.DataRow)^ {^ if(e.Row.Cells[3].Text.ToLower()=="wpg")^ totalCityWpg++;^ }^ else if(e. Row.RowType == DataControlRowType.Footer)^ {^ e.Row.Cells[3].Text = "From Wpg:" + totalCityWpg;^ }^ }',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-14',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-14',
+				@lessonid = '6-3',
 				@slideinfo = 'It is good practice to have the first column in a GridView be the line^ number - makes the data easier to work with^ ^ The TemplateField control allows you to create columns consisting of^ other controls^ ^ You can customize columns in your GridView by going to the GridView^ Tasks section  and clicking on edit columns',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-15',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-15',
+				@lessonid = '6-3',
 				@slideinfo = 'After creating a TemplateField, you will need to go to the^ ASPX page and manually add some code^ ^ The following is what your GridView might look like now:^ <asp:GridView ID="GridViewRowCount" runat="server">^ <Columns>^ <asp:TemplateField>^</asp:TemplateField>^</Columns>^ </asp:GridView>',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-15',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-15',
+				@lessonid = '6-3',
 				@slideinfo = 'You will have to write in a start and end tag for a new^ "ItemTemplate":^ <asp:GridView ID="GridViewRowCount" runat="server">^ <Columns>^ <asp:TemplateField>^<ItemTemplate>^ </ItemTemplate>^ </asp:TemplateField>^ </Columns>^ </asp:GridView>',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-16',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-16',
+				@lessonid = '6-3',
 				@slideinfo = 'Now we can click and drag any tool we want from the tool^ box, let''s put a ASP Label in there:^ <asp:GridView ID="GridViwRowCount" runat="server">^ <Columns>^ <asp:TemplateField>^ <ItemTemplate>^ <asp:Label runat="server" Text=""></asp:Label>^ </ItemTemplate?^ </asp:TemplateField>^ <Columns>^ </asp:GridView>',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-17',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-17',
+				@lessonid = '6-3',
 				@slideinfo = 'How can we dynamically grab a new value for each row(such as the^ current count of rows), from ASSP.NET tag?^ ^ We can do this through the use of DataBinding:^ <%# GridViewRowCount.Rows.Count + 1 %>^ Note: GridViewRowCount is th variable name of my gridview^ ^ <%# %> tag above is  used by ASP.NET to fetch values stored in C#^ variables on the sever dynamically (very useful)^ IN this case, we want the count of the GridView at each row, so that we^ might print a sequential row number^  Note: We start off with 0 rows when we are printing the first row, that is^  why it us +1 ',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-3-18',
-				@lessonid = '7-3',
+EXEC spSlides	@slideID = '6-3-18',
+				@lessonid = '6-3',
 				@slideinfo = 'Let''s take a look at our code now:^ <asp:GridView ID="GridViewRowCount" runat="server">^ <Columns>^ <asp:TemplateField>^ <ItemTemplate>^ <asp:Label runat="server"^ Text="<%# GridViewRowCount.Rows.Count + 1 %>">^ </asp:Label>^ </ItemTemplate>^ </asp:TemplateField>^ </Columns>^ </asp:GridView>',
 				@crud = 'c'
 
 -- Lesson 4
 
-EXEC spSlides	@slideID = '7-4-1',
-				@lessonid = '7-4',
+EXEC spSlides	@slideID = '6-4-1',
+				@lessonid = '6-4',
 				@slideinfo = 'Some asp.net controls support "Templates:, which allow^ you to insert TML on a "per row" basis^ ^ Example: Instead of a row with columns(GridView), we can^ write some HTML to visually customize how the database^ information is going ot be diplayed for each^ ^ &ltItemTemplate>^<b>Item</b> <%# Eval("Name") %> <br />^<b>Price</b> <%# Eval("Price") %> <br />^ &ltItemTemplate>',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-4-2',
-				@lessonid = '7-4',
+EXEC spSlides	@slideID = '6-4-2',
+				@lessonid = '6-4',
 				@slideinfo = 'The syntax on the previous slide is called DataBinding:^ <%# Eval(:Name") %>^ ^ Note: we saw something like  this when we did the Row Count^ ^ The Syntax indicates thay we want to break out of regular HTML^ and to switch to server code to obtain values^ ^ Eval() is a method which takes a string parameter representing a^ column name and returns the value in that column^  ^ Example: ''Name'' is a column name in the datasource, the value^ may be something like ''Scott''',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-4-3',
-				@lessonid = '7-4',
+EXEC spSlides	@slideID = '6-4-3',
+				@lessonid = '6-4',
 				@slideinfo = 'To use DataBinding, we need to define a control which^ allows an ItemTemplate^ ^ The ListView and DataList are two great controls for this^ ^ You can bind a DataSet to either control in the EXACT same^ way as a GridView^ ^ DataList1.DataSource = ds.Tables[0];^ DataList1.DataBind();',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-4-4',
-				@lessonid = '7-4',
+EXEC spSlides	@slideID = '6-4-4',
+				@lessonid = '6-4',
 				@slideinfo = 'Here is an example of what your DataList might look like on your^ .aspx page:^ &ltasp:DataList ID="DataListProducts" runat="server"^ RepeatColumns="3">^ &ltItemTemplate>^ <div>^ &ltasp:Image id="Image1" runat="server"^ ImageUrl=''<%# Eval("ImageUrl") %>''/>^ <b>Item</b> <%# Eval("Name") %> <br />^<b>Price</b> <%# Eval("Price") %> <br />^  </div>^ &lt/ItemTemplate>^&lt/asp:DataList>^ Note: YOU MUST TYPE OUT: <ItemTemplate></ItemTemplate>',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-4-5',
-				@lessonid = '7-4',
+EXEC spSlides	@slideID = '6-4-5',
+				@lessonid = '6-4',
 				@slideinfo = 'From the previous two sludes, we can see how a DataList is^ able to repeat a set of html with injected data use the^ Eval() method^ ^Note: If you place the <%# %> inside double quotes, you^ will  not  be able to use double quotes within Eval()^ ^ Example: ImageUrl=''<%# Eval("ImageUrl") %>''^ As you can see, we use single quotes for the ImageUrl value',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-4-6',
-				@lessonid = '7-4',
+EXEC spSlides	@slideID = '6-4-6',
+				@lessonid = '6-4',
 				@slideinfo = 'We can alos drop the asp.net controls inside of^ ItemTemplate area nd retreive any value changes from^ the server (through C# code) after a postback^ Example: Add a RadioButtonLiat and a button inside of the^ Item Template^ ^ $ltItemTemplate> &ltasp:RadioButtonList ID="RadioButtonListOptions" runat="server">^ &ltasp:ListItem Text="Option 1" Value="1" Selected="True">&lt/asp:ListItem>^ &ltasp:ListItem Text="Option 2" Value="2" Selected="False">&lt/asp:ListItem>^ &lt/asp:RadioButtonList> ^ &ltasp:Button ID="ImageMoreInfo" runat="server"^ CommandArgument=''<%# Eval("Product) %>''>&lt/asp:ImageButton>',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-4-7',
-				@lessonid = '7-4',
+EXEC spSlides	@slideID = '6-4-7',
+				@lessonid = '6-4',
 				@slideinfo = 'On the previous slide, what is CommandArugment?^ &ltasp:Button ID="imageMoreINfo" runat="server"^ CommandArguent=''<%# Eval("Productid") %>''>&lt/asp:imageButton>^ ^ By clicking one of the buttons generated in the^ ItemTemplate the ItemCommand event is raised^ ^ This is an event you must set via the Events tab in the^ Properties of the DataList^ ^ The event always fires when an event is launched from^ within one of the Items in the DataList',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-4-8',
-				@lessonid = '7-4',
+EXEC spSlides	@slideID = '6-4-8',
+				@lessonid = '6-4',
 				@slideinfo = 'How can we tekk what Item was clicked on from within the^ context of the ItemCommand event?^ proctected void DataListProducts_ItemCommand(object source,^ DataListCommandEventArgs e)^ {^ RadioButtonList rList=^ (RadioButtonLit)e.Item.FindControl("RadioButtonListOptions");^ lblMessage.Text = "You Choose product" + e.CommandArgument + "<br />";^ if(rList.SelectedValue =="1"){lblMessage.Text +="Option 1";}^ else{lblMessage.Text += "Option2";}^ }',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-4-9',
-				@lessonid = '7-4',
+EXEC spSlides	@slideID = '6-4-9',
+				@lessonid = '6-4',
 				@slideinfo = 'The following statement is how we can obtain the primary^ key value of  the row that was  being interacted with^ ^ Go back to the aspx slide and notice that we said the^ button would pass the CommandArgument^ ^ lblMessage.Text="You Choose product"^ + e.CommandArugment + <br />;',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-4-10',
-				@lessonid = '7-4',
+EXEC spSlides	@slideID = '6-4-10',
+				@lessonid = '6-4',
 				@slideinfo = 'The DataListCommandEventArgs variable e contains everything we need^ to know about the specific item tat was clicked on^ From the propertires we can reach a DataListItem object, which we can^ the search to find the asp controls^ RadioButtonList rList^ (RadioButtonList)e.Item.FindControl("RadioButtonListOptions");^ ^ Three important facts about this: You must use of the ID of the control to find it using FindControl()^ You must CAST the control  back into a variable of the right class^ Once one, you can use te control as if it were any other asp^ control on the page, which measn yo can grab values out of properties',
 				@crud = 'c'
 
-EXEC spSlides	@slideID = '7-4-11',
-				@lessonid = '7-4',
+EXEC spSlides	@slideID = '6-4-11',
+				@lessonid = '6-4',
 				@slideinfo = 'You can pass string values through your page links:^ MagazineDetails.aspx?magazineId=7^ ^ On te Page_Load() inside MagazineDetails.aspx, we^ ^ can get the number 7 out with the following code:^ ^ string Productid =^ Requst.QueryString["MagazineId"].ToString();',
 				@crud = 'c'
 

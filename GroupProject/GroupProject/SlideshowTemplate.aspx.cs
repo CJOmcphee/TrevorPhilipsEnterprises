@@ -15,20 +15,20 @@ namespace GroupProject
     {
         List<Panel> Slideshow = new List<Panel>();
         int x,b;
-
+        public string slide;
         protected void Page_Load(object sender, EventArgs e)
         {
             
             if (!IsPostBack)
             {
                 btnPrev.Enabled = false;
-                string slide;
+                
                 slide = Request.QueryString["Slide"];
                 LoadSlides(slide);
                 Slideshow[0].Visible = true;
                 Session["SlideShow"] = Slideshow;
                 Session["Navi"] = 0;
-                
+                CheckSlide();
 
             }
             else
@@ -40,6 +40,14 @@ namespace GroupProject
                     FillDiv(Slide);
                 }
 
+            }
+        }
+        public void CheckSlide()
+        {
+            if(slide == "1-6" ||  slide=="2-5" || slide == "3-4" || slide == "4-5"
+                    || slide == "5-5" || slide == "6-5" || slide == "7-5" || slide == "8-5" || slide == "9-5")
+            {
+                btnGoTest.Visible = true;
             }
         }
         public void CheckNav()
@@ -62,6 +70,7 @@ namespace GroupProject
                 btnNext.Enabled = true;
                 btnGoToExample.Visible = true;
             }
+            
         }
         public void LoadSlides(string slide)
         {
@@ -87,7 +96,6 @@ namespace GroupProject
                     myCell.Controls.Add(mylabel);
                     myRow.Controls.Add(myCell);
                     myTable.Controls.Add(myRow);
-
                 }
                 slidePanel.Controls.Add(myTable);
                 FillDiv(slidePanel);
@@ -131,6 +139,11 @@ namespace GroupProject
         protected void btnGoToExample_Click(object sender, EventArgs e)
         {
             Response.Redirect("ExampleTemplate.aspx?Lesson="+Request.QueryString["slide"]);
+        }
+
+        protected void btnGoTest_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PracticeTest.aspx?Lesson=" + Request.QueryString["slide"]);
         }
 
         protected void btnNext_Click(object sender, EventArgs e)

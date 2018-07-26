@@ -10,44 +10,53 @@ using System.Web.UI.HtmlControls;
 using System.Drawing;
 
 
+
+
+
+
+
+
 namespace GroupProject
 {
     public partial class PracticeTest : System.Web.UI.Page
     {
         public Decimal score;
         public Decimal Total;
+        public string ModID;
         
         Dictionary<RadioButtonList,Tuple<Label, Label>> radioButtonLists = new Dictionary<RadioButtonList, Tuple<Label,Label>>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            switch(ddlTestChoice.SelectedItem.Text)
+             ModID = Request.QueryString["Lesson"].ToString();
+
+            switch (ModID)
             {
-                case "Module 1":
-                    LoadQuestion("module1");
+                case "1-6":
+                    LoadQuestion("Module 1");
                     break;
-                case "Module 2":
-                    LoadQuestion("module2");
+                case "2-5":
+                    LoadQuestion("Module 2");
                     break;
-                case "Module 3":
-                    LoadQuestion("module3");
+                case "3-4":
+                    LoadQuestion("Module 3");
                     break;
-                case "Module 4":
-                    LoadQuestion("module4");
+                case "4-5":
+                    LoadQuestion("Module 4");
                     break;
-                case "Module 5":
-                    LoadQuestion("module5");
+                case "5-5":
+                    LoadQuestion("Module 5");
                     break;
-                case "Module 6":
-                    LoadQuestion("module5");
+                case "6-5":
+                    LoadQuestion("MOdule 6");
                     break;
-                case "Module 7":
-                    LoadQuestion("module5");
+                case "7-5":
+                    LoadQuestion("MOdule 7");
                     break;
-                case "Module 8":
-                    LoadQuestion("module5");
+                case "8-5":
+                    LoadQuestion("Module 8");
                     break;
-                case "Module 9":
-                    LoadQuestion("module5");
+                case "9-5":
+                    LoadQuestion("Module 9");
                     break;
             }
 
@@ -102,6 +111,7 @@ namespace GroupProject
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            
             foreach (KeyValuePair<RadioButtonList, Tuple<Label, Label>> radioButton in radioButtonLists)
             {
                 DataSet dsQuestion = Crud.ReadTable("spQuestions", radioButton.Value.Item1.Text);
@@ -119,6 +129,29 @@ namespace GroupProject
             }
             Total = (score / radioButtonLists.Count) * 100;
             Label1.Text = Math.Round(Total, 2).ToString();
+
+            Security security = new Security();
+            DataSet dsStudentName = Crud.ReadTable("spStudents", security.Email);
+            string Test = ddlTestChoice.SelectedItem.Text;
+
+            Crud.CreateTestScore("c", Test, security.Email,Total);
+
+            if (Total >= 70)
+            {
+                System.Windows.Forms.MessageBox.Show("Congratulations you passed with a score of %" + " " + Total);
+                Response.Write("<script>window.open('index_user.aspx','_parent');</script>");
+            }
+            else
+            {
+                lblRetry.Visible = true;
+                btnRetry.Visible = true;
+                lblRetry.Text = "You only got a score of" + " " + Total + " " + ".  This is considered a fail if you would like to retry. Please click button below";
+            }
+        }
+
+        protected void btnRetry_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PracticeTest.aspx?Lesson=" +ModID);
         }
     }
 }

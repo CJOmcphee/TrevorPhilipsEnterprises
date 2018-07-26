@@ -39,6 +39,7 @@
             <asp:Button ID="btnPrev" runat="server" Text="Previous Slide" OnClick="btnPrev_Click" />
             <asp:Button ID="btnNext" runat="server" Text="Next Slide" OnClick="btnNext_Click" />
             <asp:Button ID="btnGoToExample"  Visible="false" runat="server" Text="Start Example" OnClick="btnGoToExample_Click" />
+            <asp:Button ID="btnGoTest" runat="server" Visible="false" Text="Start Test" OnClick="btnGoTest_Click" />
             </form>
       
    
