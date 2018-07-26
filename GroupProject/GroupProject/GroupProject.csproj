@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Anton.sql" />
+    <Content Include="DataEntry.sql" />
     <Content Include="Grades.aspx" />
     <Content Include="images\csharp.jpg" />
     <Content Include="images\CSS.jpg" />
