@@ -5,7 +5,7 @@
     <div id="page">
          <div id="marketing" class="container">
             <div id="table">
-                <asp:GridView ID="GridView1" DataKeyNames="sID" runat="server" AutoGenerateColumns="False">
+                <asp:GridView ID="GridView1" DataKeyNames="tID" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand">
                     <Columns>
                         <asp:BoundField DataField="tID" HeaderText="Test" />
                         <asp:BoundField DataField="score" HeaderText="Score" />

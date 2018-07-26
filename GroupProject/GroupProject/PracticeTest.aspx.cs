@@ -47,10 +47,10 @@ namespace GroupProject
                     LoadQuestion("Module 5");
                     break;
                 case "6-5":
-                    LoadQuestion("MOdule 6");
+                    LoadQuestion("Module 6");
                     break;
                 case "7-5":
-                    LoadQuestion("MOdule 7");
+                    LoadQuestion("Module 7");
                     break;
                 case "8-5":
                     LoadQuestion("Module 8");
@@ -152,6 +152,11 @@ namespace GroupProject
         protected void btnRetry_Click(object sender, EventArgs e)
         {
             Response.Redirect("PracticeTest.aspx?Lesson=" +ModID);
+        }
+
+        protected void btniQuit_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>window.open('index_user.aspx','_parent');</script>");
         }
     }
 }
