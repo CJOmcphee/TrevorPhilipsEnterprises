@@ -1573,4 +1573,32 @@ select * from tbSlides
 select * from tbStudentTest
 exec spScore @crud='c', @sID='bruce.banner@robertsoncollege.net', @tID='Module 1', @score='67.45'
 exec spScore @crud='c', @sID='bruce.banner@robertsoncollege.net', @tID='Module 2', @score='87.45'
+exec spScore @crud='c', @sID='bruce.banner@robertsoncollege.net', @tID='Module 3', @score='8.45'
+exec spScore @crud='c', @sID='bruce.banner@robertsoncollege.net', @tID='Module 1', @score='0'
+exec spScore @crud='c', @sID='bruce.banner@robertsoncollege.net', @tID='Module 2', @score='0'
+exec spScore @crud='c', @sID='bruce.banner@robertsoncollege.net', @tID='Module 3', @score='8.45'
+exec spScore @crud='c', @sID='tony.stark@robertsoncollege.net', @tID='Module 1', @score='67.45'
+exec spScore @crud='c', @sID='tony.stark@robertsoncollege.net', @tID='Module 2', @score='87.45'
+exec spScore @crud='c', @sID='tony.stark@robertsoncollege.net', @tID='Module 3', @score='8.45'
+exec spScore @crud='c', @sID='tony.stark@robertsoncollege.net', @tID='Module 5', @score='100'
+exec spScore @crud='c', @sID='tony.stark@robertsoncollege.net', @tID='Module 6', @score='97.45'
+exec spScore @crud='c', @sID='tony.stark@robertsoncollege.net', @tID='Module 4', @score='80.45'
+exec spScore @crud='c', @sID='tony.stark@robertsoncollege.net', @tID='Module 1', @score='0'
+exec spScore @crud='c', @sID='tony.stark@robertsoncollege.net', @tID='Module 2', @score='0'
+exec spScore @crud='c', @sID='tony.stark@robertsoncollege.net', @tID='Module 3', @score='8.45'
+
 select * from tbStudentTest
+GO
+Create procedure spStudentTopTests(
+@sID varchar(50) = null
+)
+As begin
+	Select tID, sID, max(score) as 'Score' from tbStudentTest 
+	where sID=isnull(@sId,sID)
+	group by sID,tID 
+	order by sID, tID
+	
+
+END
+GO
+EXEC spStudentTopTests @sID='tony.stark@robertsoncollege.net'

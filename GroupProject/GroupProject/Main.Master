@@ -68,6 +68,7 @@
 				            <li><asp:HyperLink ID="hlUsers" NavigateUrl="~/users_admin.aspx" Visible="false"  runat="server">Users</asp:HyperLink></li>
 				            <li><asp:HyperLink ID="hlExercises" NavigateUrl="#" Visible="false" runat="server">Exercises</asp:HyperLink></li>
 				            <li><asp:HyperLink ID="hlTests" NavigateUrl="~/tests_admin.aspx" Visible="false" runat="server">Modules</asp:HyperLink></li>
+                            <li><asp:HyperLink ID="hlGrades" NavigateUrl="~/Grades.aspx" Visible="false" runat="server">Grades</asp:HyperLink></li>
                          </ul>
   				</nav>
   
