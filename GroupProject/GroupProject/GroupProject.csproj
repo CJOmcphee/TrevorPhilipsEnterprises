@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Anton.sql" />
+    <Content Include="Grades.aspx" />
     <Content Include="images\csharp.jpg" />
     <Content Include="images\CSS.jpg" />
     <Content Include="images\CustomerService.jpg" />
@@ -244,6 +245,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Grades.aspx.cs">
+      <DependentUpon>Grades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grades.aspx.designer.cs">
+      <DependentUpon>Grades.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index_admin.aspx.cs">
       <DependentUpon>index_admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
