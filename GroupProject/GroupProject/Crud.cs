@@ -65,6 +65,10 @@ namespace GroupProject
             {
                 mydal.AddParam("@sID", id.ToString());
             }
+            if (Procedure == "spStudentTopTests")
+            {
+                mydal.AddParam("@sID", id.ToString());
+            }
             return mydal.ExecuteProcedure(Procedure);
         }
         public static void DeleteData(string Procedure, string id)
