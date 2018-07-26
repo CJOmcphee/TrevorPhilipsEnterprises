@@ -938,7 +938,6 @@
     <Content Include="GroupProjectLayout.txt" />
     <Content Include="img\red-wallpaper-13.jpg" />
     <Content Include="Install.sql" />
-    <Content Include="ModuleOne.html" />
     <Content Include="PracticeTest.aspx" />
     <Content Include="Modules.css" />
     <Content Include="TJ.sql" />
