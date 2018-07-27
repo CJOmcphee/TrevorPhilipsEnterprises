@@ -143,11 +143,6 @@ EXEC dbo.spWrongAnswer @question = 'With SQL, how do you select all the columns 
                        @crud = 'c'          -- varchar(1)
 
 
--- Start here
-
-
-
-
 -- Module 3, Question 10
 EXEC dbo.spQuestions @questions = 'The OR operator displays a record if ANY conditions listed are true. The AND operator displays a record if ALL the conditions listed are true.', -- varchar(1000)
                      @answers = 'True',   -- varchar(1000)

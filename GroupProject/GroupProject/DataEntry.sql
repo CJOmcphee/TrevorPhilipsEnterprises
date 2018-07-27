@@ -4630,14 +4630,506 @@ EXEC dbo.spSlides @slideID = '9-4-7',   -- varchar(50)
 
 --Module 1 Test
 
+exec spQuestions @crud='c', @tID='Module 1', @questions='______ is equipment or physical devices associted with a computer?', @answers='Hardware'
+exec spQuestions @crud='c', @tID='Module 1', @questions='______ are designed to communicate directly to hardware?', @answers='Machine Language'
+exec spQuestions @crud='c', @tID='Module 1', @questions='All syntax errors are caught by the _____ ?', @answers='compiler'
+exec spQuestions @crud='c', @tID='Module 1', @questions='CDs and USB drives are types of _____?', @answers='external storage'
+exec spQuestions @crud='c', @tID='Module 1', @questions='What is the correct order in the Systems Development Life Cycle?', @answers='Investigation, Analysis, Design, Implement, Maintenance'
+exec spQuestions @crud='c', @tID='Module 1', @questions='Pseudo-code and Flowcharts are the two most common tools in planning logic?', @answers='True'
+exec spQuestions @crud='c', @tID='Module 1', @questions='When you add a string together it is called?', @answers='String Concatenation'
+exec spQuestions @crud='c', @tID='Module 1', @questions='Data is not often stored in a data hierarchy', @answers='False'
+exec spQuestions @crud='c', @tID='Module 1', @questions='The three major techniques used to develop programs are Procedural, Object Oriented and Control Oriented', @answers='False'
+exec spQuestions @crud='c', @tID='Module 1', @questions='Boolean expressions are either true or false?', @answers='True'
+exec spQuestions @crud='c', @tID='Module 1', @questions='A decision inside of another decision is a _____?', @answers='Nested Decision'
+exec spQuestions @crud='c', @tID='Module 1', @questions='IF and Case constructs can both be used for descions?', @answers='True'
+exec spQuestions @crud='c', @tID='Module 1', @questions='The process of ignoring noneessential details  is called ____?', @answers='Abstraction'
+exec spQuestions @crud='c', @tID='Module 1', @questions='Values passed to a method are called?', @answers='Arguments'
+exec spQuestions @crud='c', @tID='Module 1', @questions='Internal memory is _____?', @answers='Volatile'
+exec spQuestions @crud='c', @tID='Module 1', @questions='Every language has it owns rules governing word/symbols usage called Syntax?', @answers='True'
+exec spQuestions @crud='c', @tID='Module 1', @questions='C# is a 3rd generation language?', @answers='True'
+--Module 1 Wrong Answers
+exec spWrongAnswer @crud='c', @question='Every language has it owns rules governing word/symbols usage called Syntax?', @wrongAnswers='False'
+exec spWrongAnswer @crud='c', @question='The process of ignoring noneessential details  is called ____?', @wrongAnswers='Modularization'
+exec spWrongAnswer @crud='c', @question='The process of ignoring noneessential details  is called ____?', @wrongAnswers='Ignoring'
+exec spWrongAnswer @crud='c', @question='The process of ignoring noneessential details  is called ____?', @wrongAnswers='Simpleifaction'
+exec spWrongAnswer @crud='c', @question='______ is equipment or physical devices associted with a computer?', @wrongAnswers='Software'
+exec spWrongAnswer @crud='c', @question='______ is equipment or physical devices associted with a computer?', @wrongAnswers='Computer'
+exec spWrongAnswer @crud='c', @question='______ is equipment or physical devices associted with a computer?', @wrongAnswers='Input'
+exec spWrongAnswer @crud='c', @question='Values passed to a method are called?', @wrongAnswers='Parameters'
+exec spWrongAnswer @crud='c', @question='Values passed to a method are called?', @wrongAnswers='Modules'
+exec spWrongAnswer @crud='c', @question='Values passed to a method are called?', @wrongAnswers='Variable'
+exec spWrongAnswer @crud='c', @question='C# is a 3rd generation language?', @wrongAnswers='False'
+exec spWrongAnswer @crud='c', @question='______ are designed to communicate directly to hardware?', @wrongAnswers='Machine Code'
+exec spWrongAnswer @crud='c', @question='______ are designed to communicate directly to hardware?', @wrongAnswers='Procedural Language'
+exec spWrongAnswer @crud='c', @question='______ are designed to communicate directly to hardware?', @wrongAnswers='Compiler'
+exec spWrongAnswer @crud='c', @question='Internal memory is _____?', @wrongAnswers='Permanent'
+exec spWrongAnswer @crud='c', @question='Internal memory is _____?', @wrongAnswers='Main Memory'
+exec spWrongAnswer @crud='c', @question='Internal memory is _____?', @wrongAnswers='INvolatile'
+exec spWrongAnswer @crud='c', @question='All syntax errors are caught by the _____ ?', @wrongAnswers='trapper keeper'
+exec spWrongAnswer @crud='c', @question='All syntax errors are caught by the _____ ?', @wrongAnswers='interpreter'
+exec spWrongAnswer @crud='c', @question='All syntax errors are caught by the _____ ?', @wrongAnswers='input data'
+exec spWrongAnswer @crud='c', @question='CDs and USB drives are types of _____?', @wrongAnswers='Permanent Storage'
+exec spWrongAnswer @crud='c', @question='CDs and USB drives are types of _____?', @wrongAnswers='Storage'
+exec spWrongAnswer @crud='c', @question='CDs and USB drives are types of _____?', @wrongAnswers='Internal Storage'
+exec spWrongAnswer @crud='c', @question='Pseudo-code and Flowcharts are the two most common tools in planning logic?', @wrongAnswers='False'
+exec spWrongAnswer @crud='c', @question='The three major techniques used to develop programs are Procedural, Object Oriented and Control Oriented', @wrongAnswers='True'
+exec spWrongAnswer @crud='c', @question='Data is not often stored in a data hierarchy', @wrongAnswers='True'
+exec spWrongAnswer @crud='c', @question='When you add a string together it is called?', @wrongAnswers='Joint String'
+exec spWrongAnswer @crud='c', @question='When you add a string together it is called?', @wrongAnswers='String Addition'
+exec spWrongAnswer @crud='c', @question='When you add a string together it is called?', @wrongAnswers='Inner Join'
+exec spWrongAnswer @crud='c', @question='What is the correct order in the Systems Development Life Cycle?', @wrongAnswers='Investigation, Design, Analysis, Implement, Maintenance'
+exec spWrongAnswer @crud='c', @question='What is the correct order in the Systems Development Life Cycle?', @wrongAnswers='Investigation, Design, Analysis, Bannana, Maintenance'
+exec spWrongAnswer @crud='c', @question='What is the correct order in the Systems Development Life Cycle?', @wrongAnswers='Investigation, Design, Analysis, Implement, Error-Reporting'
+exec spWrongAnswer @crud='c', @question='IF and Case constructs can both be used for descions?', @wrongAnswers='False'
+exec spWrongAnswer @crud='c', @question='Boolean expressions are either true or false?', @wrongAnswers='False'
+exec spWrongAnswer @crud='c', @question='A decision inside of another decision is a _____?', @wrongAnswers='Compound Decision'
+exec spWrongAnswer @crud='c', @question='A decision inside of another decision is a _____?', @wrongAnswers='Nester'
+exec spWrongAnswer @crud='c', @question='A decision inside of another decision is a _____?', @wrongAnswers='Compound Join'
+
 
 --Module 2 Test
 
+exec spQuestions @crud='c', @tID='Module 2', @questions='CIL is an object-oriented language?', @answers='True'
+exec spQuestions @crud='c', @tID='Module 2', @questions='Which of these does the CLR provide?', @answers='All of the Above'
+exec spQuestions @crud='c', @tID='Module 2', @questions='EXE and DLL are the two type of assemblies?', @answers='True'
+exec spQuestions @crud='c', @tID='Module 2', @questions='_____ is the blueprint or schematic for an object?', @answers='Class'
+exec spQuestions @crud='c', @tID='Module 2', @questions='Objects are a varied instances of a class?', @answers='False'
+exec spQuestions @crud='c', @tID='Module 2', @questions='Static is used to describe an object that can have many values', @answers='False'
+exec spQuestions @crud='c', @tID='Module 2', @questions='Controls  have properties', @answers='True'
+exec spQuestions @crud='c', @tID='Module 2', @questions='An _____ is your compiled "Project" code', @answers='Assembly'
+exec spQuestions @crud='c', @tID='Module 2', @questions='What is the root namespace for the .NET Framework Class Library?', @answers='System'
+exec spQuestions @crud='c', @tID='Module 2', @questions='Is this a proper variable     public string FirstName (get; set;)?', @answers='False'
+
+--Mondule 2 Wrong Answers
+exec spWrongAnswer @crud='c', @question='Is this a proper variable     public string FirstName (get; set;)?', @wrongAnswers='True'
+exec spWrongAnswer @crud='c', @question='CIL is an object-oriented language?', @wrongAnswers='False'
+exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Security'
+exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Garbage collection'
+exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Exception Handling'
+exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Thread Managment'
+exec spWrongAnswer @crud='c', @question='Which of these does the CLR provide?', @wrongAnswers='Memory Managment'
+exec spWrongAnswer @crud='c', @question='EXE and DLL are the two type of assemblies?', @wrongAnswers='False'
+exec spWrongAnswer @crud='c', @question='_____ is the blueprint or schematic for an object?', @wrongAnswers='Variable'
+exec spWrongAnswer @crud='c', @question='_____ is the blueprint or schematic for an object?', @wrongAnswers='Method'
+exec spWrongAnswer @crud='c', @question='_____ is the blueprint or schematic for an object?', @wrongAnswers='Parameter'
+exec spWrongAnswer @crud='c', @question='Objects are a varied instances of a class?', @wrongAnswers='True'
+exec spWrongAnswer @crud='c', @question='Static is used to describe an object that can have many values', @wrongAnswers='True'
+exec spWrongAnswer @crud='c', @question='Controls  have properties', @wrongAnswers='False'
+exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='Library'
+exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='CLR'
+exec spWrongAnswer @crud='c', @question='An _____ is your compiled "Project" code', @wrongAnswers='Process'
+exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Framework Class Library?', @wrongAnswers='using'
+exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Framework Class Library?', @wrongAnswers='Namespace'
+exec spWrongAnswer @crud='c', @question='What is the root namespace for the .NET Framework Class Library?', @wrongAnswers='Module'
+
+EXEC dbo.spWrongAnswer @question = 'What is the root namespace for the .NET Framework Class Library?',     -- varchar(500)
+                       @wrongAnswers = 'test', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
 
 --Module 3 Test
 
+EXEC dbo.spQuestions @questions = 'A database is a system intended to ___, ___, and ___ large amounts of data easily.', -- varchar(1000)
+                     @answers = 'Organize, Store, and Retrieve',   -- varchar(1000)
+                     @tID = 'Module 3',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A database is a system intended to ___, ___, and ___ large amounts of data easily.',     -- varchar(500)
+                       @wrongAnswers = 'Insert, Update, and Delete', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A database is a system intended to ___, ___, and ___ large amounts of data easily.',     -- varchar(500)
+                       @wrongAnswers = 'Get, Organize, and Retrieve', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A database is a system intended to ___, ___, and ___ large amounts of data easily.',     -- varchar(500)
+                       @wrongAnswers = 'Store, Retrieve, and Display', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+
+-- Module 3, Question 3
+EXEC dbo.spQuestions @questions = 'Databases are made up of tables and columns.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 3',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Databases are made up of tables and columns.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 3, Question 4
+EXEC dbo.spQuestions @questions = 'The main identifier is called the ___ key.', -- varchar(1000)
+                     @answers = 'Primary',   -- varchar(1000)
+                     @tID = 'Module 3',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The main identifier is called the ___ key.',     -- varchar(500)
+                       @wrongAnswers = 'Foreign', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The main identifier is called the ___ key.',     -- varchar(500)
+                       @wrongAnswers = 'Secondary', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The main identifier is called the ___ key.',     -- varchar(500)
+                       @wrongAnswers = 'Main', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Start here
+
+
+-- Module 3, Question 5
+EXEC dbo.spQuestions @questions = 'A Primary Key isnt unique and its value can be duplicated.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 3',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A Primary Key isnt unique and its value can be duplicated.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 3, Question 6
+EXEC dbo.spQuestions @questions = 'Which SQL statement is used to extract data from a database?', -- varchar(1000)
+                     @answers = 'SELECT',   -- varchar(1000)
+                     @tID = 'Module 3',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which SQL statement is used to extract data from a database?',     -- varchar(500)
+                       @wrongAnswers = 'OPEN', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which SQL statement is used to extract data from a database?',     -- varchar(500)
+                       @wrongAnswers = 'GET', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which SQL statement is used to extract data from a database?',     -- varchar(500)
+                       @wrongAnswers = 'EXTRACT', -- varchar(1000)
+                       @crud = ' '          -- varchar(1)
+
+-- Module 3, Question 7
+EXEC dbo.spQuestions @questions = 'Which SQL statement is used to update data in a database.', -- varchar(1000)
+                     @answers = 'UPDATE',   -- varchar(1000)
+                     @tID = 'Module 3',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which SQL statement is used to update data in a database.',     -- varchar(500)
+                       @wrongAnswers = 'EDIT', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which SQL statement is used to update data in a database.',     -- varchar(500)
+                       @wrongAnswers = 'MODIFY', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which SQL statement is used to update data in a database.',     -- varchar(500)
+                       @wrongAnswers = 'RE-CREATE', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 3, Question 8
+EXEC dbo.spQuestions @questions = 'Which SQL statement is used to delete data from a database?', -- varchar(1000)
+                     @answers = 'DELETE',   -- varchar(1000)
+                     @tID = 'Module 3',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which SQL statement is used to delete data from a database?',     -- varchar(500)
+                       @wrongAnswers = 'REMOVE', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which SQL statement is used to delete data from a database?',     -- varchar(500)
+                       @wrongAnswers = 'COLLAPSE', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which SQL statement is used to delete data from a database?',     -- varchar(500)
+                       @wrongAnswers = 'DESTROY', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 3, Question 9
+EXEC dbo.spQuestions @questions = 'With SQL, how do you select all the columns from a table named "Persons"?', -- varchar(1000)
+                     @answers = 'SELECT * FROM Persons',   -- varchar(1000)
+                     @tID = 'Module 3',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'With SQL, how do you select all the columns from a table named "Persons"?',     -- varchar(500)
+                       @wrongAnswers = 'SELECT Persons', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'With SQL, how do you select all the columns from a table named "Persons"?',     -- varchar(500)
+                       @wrongAnswers = 'SELECT [all] FROM Persons', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'With SQL, how do you select all the columns from a table named "Persons"?',     -- varchar(500)
+                       @wrongAnswers = 'SELECT *.Persons', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 3, Question 10
+EXEC dbo.spQuestions @questions = 'The OR operator displays a record if ANY conditions listed are true. The AND operator displays a record if ALL the conditions listed are true.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 3',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The OR operator displays a record if ANY conditions listed are true. The AND operator displays a record if ALL the conditions listed are true.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 3, Questions 11
+EXEC dbo.spQuestions @questions = 'With SQL, how can you delete the records where the "FirstName" is "Peter" in the Persons Table?', -- varchar(1000)
+                     @answers = 'DELETE FROM Persons WHERE FirstName = "Peter"',   -- varchar(1000)
+                     @tID = 'Module 3',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'With SQL, how can you delete the records where the "FirstName" is "Peter" in the Persons Table?',     -- varchar(500)
+                       @wrongAnswers = 'DELETE FirstName="Peter" FROM Persons', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'With SQL, how can you delete the records where the "FirstName" is "Peter" in the Persons Table?',     -- varchar(500)
+                       @wrongAnswers = 'DELETE ROW FirstName="Peter" FROM Persons', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 3, Question 12
+EXEC dbo.spQuestions @questions = 'With SQL, how can you return the number of records in the "Persons" table?', -- varchar(1000)
+                     @answers = 'SELECT COUNT(*) FROM Persons',   -- varchar(1000)
+                     @tID = 'Module 3',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'With SQL, how can you return the number of records in the "Persons" table?',     -- varchar(500)
+                       @wrongAnswers = 'SELECT LEN(*) FROM Persons', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'With SQL, how can you return the number of records in the "Persons" table?',     -- varchar(500)
+                       @wrongAnswers = 'SELECT NO(*) FROM Persons', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'With SQL, how can you return the number of records in the "Persons" table?',     -- varchar(500)
+                       @wrongAnswers = 'SELECT COLUMNS(*) FROM Persons', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 3, Question 13
+EXEC dbo.spQuestions @questions = 'What is the most common type of JOIN?', -- varchar(1000)
+                     @answers = 'INNER JOIN',   -- varchar(1000)
+                     @tID = 'Module 3',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is the most common type of JOIN?',     -- varchar(500)
+                       @wrongAnswers = 'JOINED', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is the most common type of JOIN?',     -- varchar(500)
+                       @wrongAnswers = 'JOINED TABLE', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is the most common type of JOIN?',     -- varchar(500)
+                       @wrongAnswers = 'INSIDE JOIN', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 3, Question 14
+EXEC dbo.spQuestions @questions = 'The NOT NULL constraint enforces a column to not accept null values.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 3',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The NOT NULL constraint enforces a column to not accept null values.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 3, Question 15
+EXEC dbo.spQuestions @questions = 'Which SQL statement is used to create a table in a database?', -- varchar(1000)
+                     @answers = 'CREATE TABLE',   -- varchar(1000)
+                     @tID = 'Module 3',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which SQL statement is used to create a table in a database?',     -- varchar(500)
+                       @wrongAnswers = 'CREATE DB', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which SQL statement is used to create a table in a database?',     -- varchar(500)
+                       @wrongAnswers = 'CREATE DATABASE TABLE', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which SQL statement is used to create a table in a database?',     -- varchar(500)
+                       @wrongAnswers = 'CREATE DATABASE TAB', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
 
 --Module 4 Test
+
+EXEC dbo.spQuestions @questions = 'What is the proper method of calling a parameter?', -- varchar(1000) ** Question 1
+                     @answers = '@Parameter VARCHAR(20)',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+						EXEC dbo.spWrongAnswer @question = 'What is the proper method of calling a parameter?',     -- varchar(500)
+											   @wrongAnswers = '#Parameter', -- varchar(1000)
+											   @crud = 'c'          -- varchar(1)
+
+						EXEC dbo.spWrongAnswer @question = 'What is the proper method of calling a parameter?',     -- varchar(500)
+											   @wrongAnswers = '$Parameter', -- varchar(1000)
+											   @crud = 'c'          -- varchar(1)
+
+						EXEC dbo.spWrongAnswer @question = 'What is the proper method of calling a parameter?',     -- varchar(500)
+											   @wrongAnswers = '@Parameter = Parameter', -- varchar(1000)
+											   @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spQuestions @questions = 'If you do not declare a value in a parameter of (@Parameter VARCHAR(20) when executing spExample, will the stored procedure run?', -- varchar(1000) ** 2
+                     @answers = 'No',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+					   EXEC dbo.spWrongAnswer @question = 'If you do not declare a value in a parameter of (@Parameter VARCHAR(20) when executing spExample, will the stored procedure run?',     -- varchar(500)
+                       @wrongAnswers = 'Yes', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+					   EXEC dbo.spWrongAnswer @question = 'If you do not declare a value in a parameter of (@Parameter VARCHAR(20) when executing spExample, will the stored procedure run?',     -- varchar(500)
+											  @wrongAnswers = 'Maybe', -- varchar(1000)
+											  @crud = 'c'          -- varchar(1)
+
+
+EXEC dbo.spQuestions @questions = 'Do you need to put GO before or after the stored procedure to work?', -- varchar(1000) ** 3
+                     @answers = 'Both',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'Do you need to put GO before or after the stored procedure to work?',     -- varchar(500)
+											@wrongAnswers = 'Before', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'Do you need to put GO before or after the stored procedure to work?',     -- varchar(500)
+											@wrongAnswers = 'After', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'Do you need to put GO before or after the stored procedure to work?',     -- varchar(500)
+											@wrongAnswers = 'Neither', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+
+EXEC dbo.spQuestions @questions = 'A Subquery is:', -- varchar(1000) ** 4
+                     @answers = 'A query within a query',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'A Subquery is:',     -- varchar(500)
+											@wrongAnswers = 'A lesser query', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'A Subquery is:',     -- varchar(500)
+											@wrongAnswers = 'A half-query', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'A Subquery is:',     -- varchar(500)
+											@wrongAnswers = 'Actually not a query at all', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+
+EXEC dbo.spQuestions @questions = 'How can you find out if data exists?', -- varchar(1000) ** 5
+                     @answers = 'IF EXISTS',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'How can you find out if data exists?',     -- varchar(500)
+											@wrongAnswers = 'IF DATA EXISTS', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'How can you find out if data exists?',     -- varchar(500)
+											@wrongAnswers = 'IF?', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'How can you find out if data exists?',     -- varchar(500)
+											@wrongAnswers = 'IF(EXISTS)', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+
+EXEC dbo.spQuestions @questions = 'How do we convert a datatype of Example into varchar type in SQL?', -- varchar(1000) ** 6
+                     @answers = 'CONVERT(VARCHAR(100),Example)',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'How do we convert a datatype of Example into varchar type in SQL?',     -- varchar(500)
+											@wrongAnswers = 'Convert.ToVarchar(Example)', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'How do we convert a datatype of Example into varchar type in SQL?',     -- varchar(500)
+											@wrongAnswers = 'Example.ToVarchar()', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+
+EXEC dbo.spQuestions @questions = 'A Transaction..', -- varchar(1000) ** 7
+                     @answers = 'Indicates all modified data after this line will only change after a decision is made.',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'A Transaction..', -- varchar(500)
+											@wrongAnswers = 'Is an exchange of currency between two people regarding goods or services.', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'A Transaction..', -- varchar(500)
+											@wrongAnswers = 'Is a trade of SQL data from one table to another.', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+
+EXEC dbo.spQuestions @questions = 'How do we stop the transaction?', -- varchar(1000) ** 8
+                     @answers = 'Rollback',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'How do we stop the transaction?',     -- varchar(500)
+											@wrongAnswers = 'Stop', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+					 
+					 EXEC dbo.spWrongAnswer @question = 'How do we stop the transaction?',     -- varchar(500)
+											@wrongAnswers = 'Cancel Transaction', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+
+EXEC dbo.spQuestions @questions = 'How do we connect to the SQL Database using ADO.NET?', -- varchar(1000) ** 9
+                     @answers = 'Connection String',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'How do we connect to the SQL Database using ADO.NET?',     -- varchar(500)
+											@wrongAnswers = 'SqlConnect', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+					 
+					 EXEC dbo.spWrongAnswer @question = 'How do we connect to the SQL Database using ADO.NET?',     -- varchar(500)
+											@wrongAnswers = 'You are already connected', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'How do we connect to the SQL Database using ADO.NET?',     -- varchar(500)
+											@wrongAnswers = 'SqlGo', -- varchar(1000)
+											@crud = 'c'          -- varchar(1)
+
+EXEC dbo.spQuestions @questions = 'What does ExecuteReader() do?', -- varchar(1000) ** 10
+                     @answers = 'Execute queries that return data',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'What does ExecuteReader() do?',     -- varchar(500)
+					                        @wrongAnswers = 'Reads your current data', -- varchar(1000)
+					                        @crud = 'c'          -- varchar(1)
+					 
+					 EXEC dbo.spWrongAnswer @question = 'What does ExecuteReader() do?',     -- varchar(500)
+					                        @wrongAnswers = 'Terminates the data reader', -- varchar(1000)
+					                        @crud = ''          -- varchar(1)
+					 
+					 
+
+EXEC dbo.spQuestions @questions = 'What does ExecuteNonQuery() do?', -- varchar(1000) ** 11
+                     @answers = 'Execute queries that do not return any data',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'What does ExecuteNonQuery() do?',     -- varchar(500)
+					                        @wrongAnswers = 'Execute the program with no questions asked', -- varchar(1000)
+					                        @crud = 'c'          -- varchar(1)
+					 
+					 EXEC dbo.spWrongAnswer @question = 'What does ExecuteNonQuery() do?',     -- varchar(500)
+					                        @wrongAnswers = 'Cancels all current queries', -- varchar(1000)
+					                        @crud = 'c'          -- varchar(1)
+					 
+
+EXEC dbo.spQuestions @questions = 'What does ExecuteScalar() do?', -- varchar(1000) ** 12
+                     @answers = 'Used to execute queries that return 1 value',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+					 EXEC dbo.spWrongAnswer @question = 'What does ExecuteScalar() do?',     -- varchar(500)
+					                        @wrongAnswers = 'Scales the program in a varied size depending on the input', -- varchar(1000)
+					                        @crud = 'c'          -- varchar(1)
+					 EXEC dbo.spWrongAnswer @question = 'What does ExecuteScalar() do?',     -- varchar(500)
+					                        @wrongAnswers = 'Used to execute several queries', -- varchar(1000)
+					                        @crud = 'c'          -- varchar(1)
 
 
 --Module 5 Test
@@ -4645,11 +5137,884 @@ EXEC dbo.spSlides @slideID = '9-4-7',   -- varchar(50)
 
 --Module 6 Test
 
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'CSS makes pages look pretty.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'CSS makes pages look pretty.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+--Module 6, Question 3
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Link, Visited, Hover, and Active are all states for the Anchor tag.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Link, Visited, Hover, and Active are all states for the Anchor tag.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 4
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Master Pages allow you to create a consistent layout for the pages in your application', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Master Pages allow you to create a consistent layout for the pages in your application',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 5
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'A single Master Page defines the look, feel and standard behavior that you want for all of the pages in your app.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A single Master Page defines the look, feel and standard behavior that you want for all of the pages in your app.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 5
+EXEC dbo.spQuestions  --@QID = 0,        -- int
+                     @questions = 'The content of the Master Pages must stay within the < ContentPlaceHolder > tags.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The content of the Master Pages must stay within the < ContentPlaceHolder > tags.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 6
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Session Objects hold user-specific information and are available in all pages of an application.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Session Objects hold user-specific information and are available in all pages of an application.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 7
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'ID, Name, and Preferences are all common values stored in a Session.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'ID, Name, and Preferences are all common values stored in a Session.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 8
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'An Example of a Session looks like this: "Session[Username] = JoeSmith;"', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'An Example of a Session looks like this: "Session[Username] = JoeSmith;"',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 9
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'A SessionID is generated and stored at the time of session creation.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A SessionID is generated and stored at the time of session creation.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 10
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Session.End() ends the session.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Session.End() ends the session.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 11
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Storing values on the server should be used carelessly.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Storing values on the server should be used carelessly.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 12
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Session values can be stored in SQL Server.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Session values can be stored in SQL Server.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 13
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'SessionID is the link between a particular user and their requests/responses.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'SessionID is the link between a particular user and their requests/responses.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 14
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Cookies are values that are stored locally on the user''s computer.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Cookies are values that are stored locally on the user''s computer.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 6, Question 15
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'This is the correct syntax to DataBind: < %#Eval("Name")% >', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 6',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'This is the correct syntax to DataBind: < %#Eval("Name")% >',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+
 
 --Module 7 Test
 
+EXEC dbo.spQuestions --@QID = 0,        -- int
+                     @questions = 'What is a Class?', -- varchar(1000)
+                     @answers = 'Blueprint',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is a Class?',     -- varchar(500)
+                       @wrongAnswers = 'Object', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is a Class?',     -- varchar(500)
+                       @wrongAnswers = 'Template', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is a Class?',     -- varchar(500)
+                       @wrongAnswers = 'Web Form', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+
+
+-- Module 7, Question 2
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Inheritance, Polymorphism, and Encapsulation are all Major concepts of OOP.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Inheritance, Polymorphism, and Encapsulation are all Major concepts of OOP.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+
+-- Module 7, Question 3
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Static Classes do not have to be instantiated.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Static Classes do not have to be instantiated.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+
+-- Module 7, Question 4
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which of the following statements is not true regarding Objects?', -- varchar(1000)
+                     @answers = 'Objects can only have one constructor',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which of the following statements is not true regarding Objects?',     -- varchar(500)
+                       @wrongAnswers = 'Objects are just "instantiated" classes', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which of the following statements is not true regarding Objects?',     -- varchar(500)
+                       @wrongAnswers = 'They contain real values', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+EXEC dbo.spWrongAnswer @question = 'Which of the following statements is not true regarding Objects?',     -- varchar(500)
+                       @wrongAnswers = 'Objects only exist after a program is running', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 7, Question 5
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Constructors are instantiated when the keyword "new" is typed.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Constructors are instantiated when the keyword "new" is typed.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 7, Question 6
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'When you instantiate a new object, the number of parameters used will not determine which constructor code to run.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'When you instantiate a new object, the number of parameters used will not determine which constructor code to run.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 7, Question 7
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'How many parameters can a constructor have?', -- varchar(1000)
+                     @answers = 'Unlimited',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many parameters can a constructor have?',     -- varchar(500)
+                       @wrongAnswers = 'Two', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many parameters can a constructor have?',     -- varchar(500)
+                       @wrongAnswers = 'Six', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many parameters can a constructor have?',     -- varchar(500)
+                       @wrongAnswers = 'One Billion', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 8
+
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Inheritance enables new objects to take on the properties of existing objects.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spWrongAnswer @question = 'Inheritance enables new objects to take on the properties of existing objects.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 9
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'In inheritance, the DERIVED class is automatically instantiated before the DERIVED class.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'In inheritance, the DERIVED class is automatically instantiated before the DERIVED class.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 10
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'The keyword "base" can access any of the base class''s public or protected members.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The keyword "base" can access any of the base class''s public or protected members.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7 , Question 11
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'This is the correct way to Instantiate an object = "Object myObject = new myObject();"', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'This is the correct way to Instantiate an object = "Object myObject = new myObject();"',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 12
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'The "virtual" modifier indicates to derived classes that they can override a method.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The "virtual" modifier indicates to derived classes that they can override a method.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 13
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'An Array is a list in its most basic form.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'An Array is a list in its most basic form.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 14
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'A List is a class which manages the addition, removal and sorting of items in a list.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A List is a class which manages the addition, removal and sorting of items in a list.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 15
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What types of items can a List hold?', -- varchar(1000)
+                     @answers = 'Anything',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What types of items can a List hold?',     -- varchar(500)
+                       @wrongAnswers = 'Only ints.', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What types of items can a List hold?',     -- varchar(500)
+                       @wrongAnswers = 'Only decimals.', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What types of items can a List hold?',     -- varchar(500)
+                       @wrongAnswers = 'Only bananas', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 16
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Queues, Stacks, Nodes, and LinkedLists are all forms of common Data Structures.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Queues, Stacks, Nodes, and LinkedLists are all forms of common Data Structures.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 17
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'A Queue is a letter of the alphabet.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A Queue is a letter of the alphabet.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 18
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'A Stack is a type of data structure which acts like stack of plates in terms of handling data', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A Stack is a type of data structure which acts like stack of plates in terms of handling data',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 19
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'The Business-Logic Access Layer (BAL) is the ection of your code that interacts with the Data Access Layer (DAL)', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The Business-Logic Access Layer (BAL) is the ection of your code that interacts with the Data Access Layer (DAL)',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 7, Question 20
+EXEC dbo.spQuestions --@QID = 0,        -- int
+                     @questions = 'Objects make programming easier.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 7',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Objects make programming easier.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
 
 --Module 8 Test
 
+-- Module 8, Question 1
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What does XML stand for?', -- varchar(1000)
+                     @answers = 'Extensive Markup Language',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XML stand for?',     -- varchar(500)
+                       @wrongAnswers = 'X-rays Make Love', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XML stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Exhibitioning More Languages', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XML stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Example Markup Language', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+
+-- Module 8, Question 2
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML''s goal is to replace HTML', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML''s goal is to replace HTML',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 8, Question 3
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What is the correct syntax of the declaration which define the XML version?', -- varchar(1000)
+                     @answers = '<?xml version="1.0" />',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is the correct syntax of the declaration which define the XML version?',     -- varchar(500)
+                       @wrongAnswers = '<?xml version="1.0"?>', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+EXEC dbo.spWrongAnswer @question = 'What is the correct syntax of the declaration which define the XML version?',     -- varchar(500)
+                       @wrongAnswers = '<xml version="1.0" />', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 4
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What does DTD stand for?', -- varchar(1000)
+                     @answers = 'Document Type Definition',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does DTD stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Dynamic Type Definition', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does DTD stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Direct Type Definition', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does DTD stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Do The Dance', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 5
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML preserves white spaces', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML preserves white spaces',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 6
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML elements cannot be empty', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML elements cannot be empty',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 8, Question 7
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML attribute values must always be enclosed in quotes', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML attribute values must always be enclosed in quotes',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 8
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What does XSL stand for?', -- varchar(1000)
+                     @answers = 'eXtensible Stylesheet Language',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XSL stand for?',     -- varchar(500)
+                       @wrongAnswers = 'eXtensible Style Listing', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XSL stand for?',     -- varchar(500)
+                       @wrongAnswers = 'eXtra Style Language', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XSL stand for?',     -- varchar(500)
+                       @wrongAnswers = 'eXpandable Style Language', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 9
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'There is a way of describing XML data, how?', -- varchar(1000)
+                     @answers = 'XML uses a DTD to describe the data',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'There is a way of describing XML data, how?',     -- varchar(500)
+                       @wrongAnswers = 'XML uses XSL to describe data', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'There is a way of describing XML data, how?',     -- varchar(500)
+                       @wrongAnswers = 'XML uses a description node to describe data', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 8, Question 10
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'How many root elements can we have in XML?', -- varchar(1000)
+                     @answers = '1',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many root elements can we have in XML?',     -- varchar(500)
+                       @wrongAnswers = '2', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many root elements can we have in XML?',     -- varchar(500)
+                       @wrongAnswers = '3', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many root elements can we have in XML?',     -- varchar(500)
+                       @wrongAnswers = '0', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 11
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which special character is NOT used in XML?', -- varchar(1000)
+                     @answers = '$',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which special character is NOT used in XML?',     -- varchar(500)
+                       @wrongAnswers = '&', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which special character is NOT used in XML?',     -- varchar(500)
+                       @wrongAnswers = '<', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which special character is NOT used in XML?',     -- varchar(500)
+                       @wrongAnswers = '>', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 12
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML is: ', -- varchar(1000)
+                     @answers = 'Free and Extensible',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is: ',     -- varchar(500)
+                       @wrongAnswers = 'Not Extensible', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is: ',     -- varchar(500)
+                       @wrongAnswers = 'A stylesheet', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is: ',     -- varchar(500)
+                       @wrongAnswers = 'None of these', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 13
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML is a _______ Recommendation.', -- varchar(1000)
+                     @answers = 'W3C',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is a _______ Recommendation.',     -- varchar(500)
+                       @wrongAnswers = 'Microsoft', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is a _______ Recommendation.',     -- varchar(500)
+                       @wrongAnswers = 'Sun', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is a _______ Recommendation.',     -- varchar(500)
+                       @wrongAnswers = 'None of these', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 14
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which is not a correct name for an XML element?', -- varchar(1000)
+                     @answers = '< first name >',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which is not a correct name for an XML element?',     -- varchar(500)
+                       @wrongAnswers = '< NAME >', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which is not a correct name for an XML element?',     -- varchar(500)
+                       @wrongAnswers = '< age >', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which is not a correct name for an XML element?',     -- varchar(500)
+                       @wrongAnswers = 'All three names are incorrect.', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 15
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which statement is true?', -- varchar(1000)
+                     @answers = 'XML tags are case sensitive.',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which statement is true?',     -- varchar(500)
+                       @wrongAnswers = 'XML tags are case sensitive', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which statement is true?',     -- varchar(500)
+                       @wrongAnswers = 'XML documents must have a root tag', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which statement is true?',     -- varchar(500)
+                       @wrongAnswers = 'XML elements must be properly closed', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
 
 --Module 9 Test
+
+EXEC dbo.spQuestions @questions = 'What does CSS stand for?', -- varchar(1000)
+                     @answers = 'Cascading Style Sheets',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does CSS stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Cascading Sheet Styles', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does CSS stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Cascading Style Styles', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does CSS stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Calibrating Style Station', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 2
+EXEC dbo.spQuestions @questions = 'Font-size, Color, and Border are some examples of style attributes and values.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Font-size, Color, and Border are some examples of style attributes and values.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 3
+EXEC dbo.spQuestions @questions = 'You make a CSS class by using a Pound(#) symbol.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'You make a CSS class by using a Pound(#) symbol.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 4
+EXEC dbo.spQuestions @questions = 'What way can you modify the CSS in an ASP or HTML file?', -- varchar(1000)
+                     @answers = 'All of these options are applicable.',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What way can you modify the CSS in an ASP or HTML file?',     -- varchar(500)
+                       @wrongAnswers = 'In a style "<style></style>" tag in the page itself.', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What way can you modify the CSS in an ASP or HTML file?',     -- varchar(500)
+                       @wrongAnswers = 'Directly in the tag using a style="" attribute', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What way can you modify the CSS in an ASP or HTML file?',     -- varchar(500)
+                       @wrongAnswers = 'In a separate referenced .css page.', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What way can you modify the CSS in an ASP or HTML file?',     -- varchar(500)
+                       @wrongAnswers = 'Modifying from the server (In our case: C#)', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 5
+EXEC dbo.spQuestions @questions = 'Master Pages allow you to create a consistent layout for the pages in your application.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Master Pages allow you to create a consistent layout for the pages in your application.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 6
+EXEC dbo.spQuestions @questions = 'The Master Page layout must nest within the "ContentPlaceHolder" tags.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The Master Page layout must nest within the "ContentPlaceHolder" tags.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 7
+EXEC dbo.spQuestions @questions = 'The three main ways we can maintain state are Session, Cookies, and Viewstate.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The three main ways we can maintain state are Session, Cookies, and Viewstate.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 8
+EXEC dbo.spQuestions @questions = 'Session ___ hold user-specific information and are available in all pages of an application.', -- varchar(1000)
+                     @answers = 'Objects',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Session ___ hold user-specific information and are available in all pages of an application.',     -- varchar(500)
+                       @wrongAnswers = 'Values', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Session ___ hold user-specific information and are available in all pages of an application.',     -- varchar(500)
+                       @wrongAnswers = 'Variables', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Session ___ hold user-specific information and are available in all pages of an application.',     -- varchar(500)
+                       @wrongAnswers = 'Initializers', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+--Module 9, Lesson 9
+
+EXEC dbo.spQuestions @questions = '"Session["Username"] = "JoeSmith";" is an example of a Session.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = '"Session["Username"] = "JoeSmith";" is an example of a Session.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 9, Question 10
+EXEC dbo.spQuestions @questions = 'What does "Session.Abandon()" do?', -- varchar(1000)
+                     @answers = 'Ends the session.',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does "Session.Abandon()" do?',     -- varchar(500)
+                       @wrongAnswers = 'Re-loads the session.', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does "Session.Abandon()" do?',     -- varchar(500)
+                       @wrongAnswers = 'Deletes the selected session.', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does "Session.Abandon()" do?',     -- varchar(500)
+                       @wrongAnswers = 'Exits the webpage.', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 11
+
+EXEC dbo.spQuestions @questions = '___ are values that are stored locally on the users computer (usually the browser)', -- varchar(1000)
+                     @answers = 'Cookies',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = '___ are values that are stored locally on the users computer (usually the browser)',     -- varchar(500)
+                       @wrongAnswers = 'Variables', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = '___ are values that are stored locally on the users computer (usually the browser)',     -- varchar(500)
+                       @wrongAnswers = 'Master Pages', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = '___ are values that are stored locally on the users computer (usually the browser)',     -- varchar(500)
+                       @wrongAnswers = 'Style sheets', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 12
+EXEC dbo.spQuestions @questions = 'Cookies cant be expired.', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Cookies cant be expired.',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 13
+EXEC dbo.spQuestions @questions = '"<%# Eval("Name") %>" is an example of a DataBind', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = '"<%# Eval("Name") %>" is an example of a DataBind',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 9, Question 14
+EXEC dbo.spQuestions @questions = 'A(n) ___ must be used to display each item separately on a DataList.', -- varchar(1000)
+                     @answers = 'ItemTemplate',   -- varchar(1000)
+                     @tID = 'Module 9',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A(n) ___ must be used to display each item separately on a DataList.',     -- varchar(500)
+                       @wrongAnswers = 'ItemCommand', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A(n) ___ must be used to display each item separately on a DataList.',     -- varchar(500)
+                       @wrongAnswers = 'CommandArgument', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A(n) ___ must be used to display each item separately on a DataList.',     -- varchar(500)
+                       @wrongAnswers = 'Gridview', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
