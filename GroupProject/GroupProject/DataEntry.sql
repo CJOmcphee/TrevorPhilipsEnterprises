@@ -1,6 +1,7 @@
 ﻿use dbTestEnviroment
 Go
 
+-- INSERT INTO MODULES CREATING MODULES AND THEIR SUMMARIES
 insert into tbModule (moduleName, moduleSum)values
 							('Module 1',
 'The first module is an introduction to idea of programming.^
@@ -60,7 +61,7 @@ You will learn about JavaScript and what that difference with JAVA.^
 Get some understanding about JSON, Jquery and AJAX. Get knowledge about Document Object Model (DOM)^
 which is representation of HTML elements in document (page).^')
 
-
+--INSERT INTO LESSONS  CEEATING LESSONS
 insert into tbLesson(lessonID, mID)values
 						('1-1',1),('1-2',1),('1-3',1),('1-4',1),('1-5',1),('1-6',1),
 						('2-1',2),('2-2',2),('2-3',2),('2-4',2),('2-5',2),
@@ -72,6 +73,7 @@ insert into tbLesson(lessonID, mID)values
 						('8-1',8),('8-2',8),('8-3',8),('8-4',8),('8-5',8),
 						('9-1',9),('9-2',9),('9-3',9),('9-4',9),('9-5',9)
 
+-- INSERT INTO TEST CREATING TESTS
 insert into tbTest (testID,ModuleID)values
 					('Module 1',1),
 					('Module 2',2),
@@ -83,6 +85,7 @@ insert into tbTest (testID,ModuleID)values
 					('Module 8',8),
 					('Module 9',9)
 
+--LOGIN TEST DATA
 exec spStudents @crud='c', @studentEmail='tony.stark@robertsoncollege.net',@studentPassword='password',
 					@firstName='Tony',@lastName='Stark',@access='u'
 exec spStudents @crud='c', @studentEmail='bruce.banner@robertsoncollege.net',@studentPassword='password',
@@ -90,7 +93,7 @@ exec spStudents @crud='c', @studentEmail='bruce.banner@robertsoncollege.net',@st
 exec spStudents @crud='c', @studentEmail='doug.jackson@robertsoncollege.net',@studentPassword='password',
 					@firstName='Doug',@lastName='Jackson',@access='a'
 
-
+--CREATING TESTS DATA FOR SCORES
 exec spScore @crud='c', @sID='bruce.banner@robertsoncollege.net', @tID='Module 1', @score='67.45'
 exec spScore @crud='c', @sID='bruce.banner@robertsoncollege.net', @tID='Module 2', @score='87.45'
 exec spScore @crud='c', @sID='bruce.banner@robertsoncollege.net', @tID='Module 3', @score='8.45'
@@ -107,6 +110,8 @@ exec spScore @crud='c', @sID='tony.stark@robertsoncollege.net', @tID='Module 1',
 exec spScore @crud='c', @sID='tony.stark@robertsoncollege.net', @tID='Module 2', @score='0'
 exec spScore @crud='c', @sID='tony.stark@robertsoncollege.net', @tID='Module 3', @score='8.45'
 
+
+--CREATING TESTS DATA FOR WORKING EXAMPLE
 exec spExamples @crud='c',
 @lID='1-1',
 @example='<table><tr><td>Username:</td><td>&lt;asp:TextBox ID="txtUsername" runat="server">&lt;/asp:TextBox></td></tr></table>',

@@ -22,13 +22,11 @@ moduleName varchar(50),
 moduleSum VARCHAR(MAX)
 )
 	
-
 create table tbLesson(
 lessonID varchar(50) primary key,
 mID int foreign key references tbModule(moduleID)
 )
 	
-
 create table tbSlides(
 slideID varchar(50),
 lessonid varchar(50) foreign key references tbLesson(lessonID),
@@ -49,10 +47,7 @@ create table tbTest(
 testID varchar(50) primary key,
 ModuleID int foreign key references tbModule(ModuleID)
 )
-go
 
-
-go
 create table tbStudentTest(
 tID varchar(50) foreign key references tbTest(testID),
 sID varchar(100) foreign key references tbLogin (sID),
@@ -71,6 +66,7 @@ questions varchar(500) foreign key references tbQuestions(question),
 wrongAnswers varchar(1000)
 )
 go
+
 --PROCEDURES FOR STUDENTS
 create procedure spStudents(
 @studentEmail varchar(100) =null,
@@ -79,7 +75,6 @@ create procedure spStudents(
 @lastName varchar(50) =null,
 @crud varchar(1), 
 @access varchar(1) =null
-
 )
 as begin
 	if @crud='c'
@@ -120,7 +115,6 @@ go
 
 select * from tbLogin
 exec spStudents @crud='r'
-
 
 go
 create procedure spLogin(
@@ -187,15 +181,9 @@ as begin
 end
 go
 
-
-go
-
-
-
 select * from tbExample
 select * from tbTest
 go
-
 
 create procedure spQuestions(
 @QID INT =NULL,
@@ -223,13 +211,11 @@ as begin
 		end
 	if @crud='d'
 		begin
-
 			delete from tbWrongAnswers where questions = @questions
 			delete from tbQuestions where question = @questions
 		end
 end
 go
-
 
 create procedure spWrongAnswer(
 @question varchar(500) =null,
@@ -255,6 +241,7 @@ as begin
 		end
 end
 go
+
 create procedure spGetTestQuestions(
 @testID varchar(50)
 )
@@ -264,11 +251,8 @@ as begin
 end
 go
 
-
-
 exec spWrongAnswer @crud='r', @question='______ is equipment or physical devices associted with a computer?'
 exec spQuestions @crud='r', @questions='What is the correct order in the Systems Development Life Cycle?'
-
 
 go
 create procedure spforgotPassword(
@@ -302,6 +286,7 @@ as  begin
 		end
 end
 go
+
 create procedure spSlides(
 @slideID varchar(50) = null,
 @lessonid varchar(50) =null,
@@ -335,10 +320,6 @@ as begin
 end
 go
 
---exec spSlides @crud='u',@slideID='1-1-1',@slideinfo='test'-----
---exec spSlides @crud='r',@slideID='1-1-1'  --------------------- Testing the Slide Update - Darryl
---go
-
 create procedure spTest
 (
 @crud varchar(1),
@@ -363,7 +344,6 @@ as begin
 	end
 end
 go
-
 
 exec spforgotPassword @sEmail='bruce.banner@robertsoncollege.net'
 exec spTest @crud = 'r'
@@ -441,7 +421,6 @@ As begin
 	group by sID,tID 
 	order by sID, tID
 	
-
 END
 GO
 EXEC spStudentTopTests @sID='tony.stark@robertsoncollege.net'
