@@ -65,6 +65,10 @@ namespace GroupProject
             {
                 mydal.AddParam("@sID", id.ToString());
             }
+            if (Procedure == "spStudentTopTests")
+            {
+                mydal.AddParam("@sID", id.ToString());
+            }
             return mydal.ExecuteProcedure(Procedure);
         }
         public static void DeleteData(string Procedure, string id)
@@ -187,6 +191,12 @@ namespace GroupProject
             mydal.AddParam("@sID", StudentEmail);
             mydal.AddParam("@tID", test);
             mydal.ExecuteProcedure("spScore");
+        }
+        public static DataSet GetTopScore(string StudentEmail)
+        {
+            mydal.AddParam("@sID", StudentEmail);
+            return mydal.ExecuteProcedure("spStudentTopTests");
+
         }
         public static DataSet GetPassword(string Email)
         {

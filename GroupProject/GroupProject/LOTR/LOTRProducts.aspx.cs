@@ -16,7 +16,7 @@ namespace GroupProject
         double total;
         double price;
         double final;
-        double discount;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             LOTRSecurity security = new LOTRSecurity();

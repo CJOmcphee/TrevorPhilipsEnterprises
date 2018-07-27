@@ -143,11 +143,6 @@ EXEC dbo.spWrongAnswer @question = 'With SQL, how do you select all the columns 
                        @crud = 'c'          -- varchar(1)
 
 
--- Start here
-
-
-
-
 -- Module 3, Question 10
 EXEC dbo.spQuestions @questions = 'The OR operator displays a record if ANY conditions listed are true. The AND operator displays a record if ALL the conditions listed are true.', -- varchar(1000)
                      @answers = 'True',   -- varchar(1000)
@@ -1068,6 +1063,297 @@ EXEC dbo.spWrongAnswer @question = 'This is the correct syntax to DataBind: < %#
                        @wrongAnswers = 'False', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
 
+
+
+
+
+-- Module 8, Question 1
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What does XML stand for?', -- varchar(1000)
+                     @answers = 'Extensive Markup Language',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XML stand for?',     -- varchar(500)
+                       @wrongAnswers = 'X-rays Make Love', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XML stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Exhibitioning More Languages', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XML stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Example Markup Language', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+
+-- Module 8, Question 2
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML''s goal is to replace HTML', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML''s goal is to replace HTML',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 8, Question 3
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What is the correct syntax of the declaration which define the XML version?', -- varchar(1000)
+                     @answers = '<?xml version="1.0" />',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is the correct syntax of the declaration which define the XML version?',     -- varchar(500)
+                       @wrongAnswers = '<?xml version="1.0"?>', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+EXEC dbo.spWrongAnswer @question = 'What is the correct syntax of the declaration which define the XML version?',     -- varchar(500)
+                       @wrongAnswers = '<xml version="1.0" />', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 4
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What does DTD stand for?', -- varchar(1000)
+                     @answers = 'Document Type Definition',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does DTD stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Dynamic Type Definition', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does DTD stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Direct Type Definition', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does DTD stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Do The Dance', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 5
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML preserves white spaces', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML preserves white spaces',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 6
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML elements cannot be empty', -- varchar(1000)
+                     @answers = 'False',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML elements cannot be empty',     -- varchar(500)
+                       @wrongAnswers = 'True', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 8, Question 7
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML attribute values must always be enclosed in quotes', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML attribute values must always be enclosed in quotes',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 8
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What does XSL stand for?', -- varchar(1000)
+                     @answers = 'eXtensible Stylesheet Language',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XSL stand for?',     -- varchar(500)
+                       @wrongAnswers = 'eXtensible Style Listing', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XSL stand for?',     -- varchar(500)
+                       @wrongAnswers = 'eXtra Style Language', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does XSL stand for?',     -- varchar(500)
+                       @wrongAnswers = 'eXpandable Style Language', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 9
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'There is a way of describing XML data, how?', -- varchar(1000)
+                     @answers = 'XML uses a DTD to describe the data',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'There is a way of describing XML data, how?',     -- varchar(500)
+                       @wrongAnswers = 'XML uses XSL to describe data', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'There is a way of describing XML data, how?',     -- varchar(500)
+                       @wrongAnswers = 'XML uses a description node to describe data', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Module 8, Question 10
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'How many root elements can we have in XML?', -- varchar(1000)
+                     @answers = '1',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many root elements can we have in XML?',     -- varchar(500)
+                       @wrongAnswers = '2', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many root elements can we have in XML?',     -- varchar(500)
+                       @wrongAnswers = '3', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many root elements can we have in XML?',     -- varchar(500)
+                       @wrongAnswers = '0', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 11
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which special character is NOT used in XML?', -- varchar(1000)
+                     @answers = '$',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which special character is NOT used in XML?',     -- varchar(500)
+                       @wrongAnswers = '&', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which special character is NOT used in XML?',     -- varchar(500)
+                       @wrongAnswers = '<', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which special character is NOT used in XML?',     -- varchar(500)
+                       @wrongAnswers = '>', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 12
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML is: ', -- varchar(1000)
+                     @answers = 'Free and Extensible',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is: ',     -- varchar(500)
+                       @wrongAnswers = 'Not Extensible', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is: ',     -- varchar(500)
+                       @wrongAnswers = 'A stylesheet', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is: ',     -- varchar(500)
+                       @wrongAnswers = 'None of these', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 13
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'XML is a _______ Recommendation.', -- varchar(1000)
+                     @answers = 'W3C',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is a _______ Recommendation.',     -- varchar(500)
+                       @wrongAnswers = 'Microsoft', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is a _______ Recommendation.',     -- varchar(500)
+                       @wrongAnswers = 'Sun', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'XML is a _______ Recommendation.',     -- varchar(500)
+                       @wrongAnswers = 'None of these', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 14
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which is not a correct name for an XML element?', -- varchar(1000)
+                     @answers = '< first name >',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which is not a correct name for an XML element?',     -- varchar(500)
+                       @wrongAnswers = '< NAME >', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which is not a correct name for an XML element?',     -- varchar(500)
+                       @wrongAnswers = '< age >', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which is not a correct name for an XML element?',     -- varchar(500)
+                       @wrongAnswers = 'All three names are incorrect.', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Module 8, Question 15
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which statement is true?', -- varchar(1000)
+                     @answers = 'XML tags are case sensitive.',   -- varchar(1000)
+                     @tID = 'Module 8',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which statement is true?',     -- varchar(500)
+                       @wrongAnswers = 'XML tags are case sensitive', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which statement is true?',     -- varchar(500)
+                       @wrongAnswers = 'XML documents must have a root tag', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which statement is true?',     -- varchar(500)
+                       @wrongAnswers = 'XML elements must be properly closed', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 -- Slides
 
 EXEC dbo.spSlides @slideID = '2-1-1',   -- varchar(50)
@@ -3062,28 +3348,132 @@ EXEC dbo.spSlides @slideID = '9-4-7',   -- varchar(50)
                   @slideinfo = 'What is CSS3? ---- Slide 27', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
+EXEC dbo.spSlides @slideID = '7-4-1',   -- varchar(50)
+                  @lessonid = '7-4',  -- varchar(50)
+                  @slideinfo = 'Data Structures ^ (Queues, Stacks, LinkLists, and Nodes)', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '7-4-2',   -- varchar(50)
+                  @lessonid = '7-4',  -- varchar(50)
+                  @slideinfo = 'Data Structures ^^ -In the previous Lesson we made our own MyList class ^ which has methods used to Add/Remove/Print an array of ^ integers ^^ -In this lesson we will discuss a few other types of common ^ Data Structures such as: ^^ *Queues ^ *Stacks ^ *Nodes and LinkedLists', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '7-4-3',   -- varchar(50)
+                  @lessonid = '7-4',  -- varchar(50)
+                  @slideinfo = 'Queues ^^ -A Queue is a type of data structure which has a particular ^ way of handling adding/removing items in a list ^^ -Just like the line up at a fast food restaurant, a Queue is ^ First In First Out(FIFO) ^^ -When you add values to the Queue, they Enqueue() (or ^ Push) behind the values that came before them ^^ -When you remove values from a Queue, they Dequeue() (or ^ Pop) from the list based on who was added first!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '7-4-4',   -- varchar(50)
+                  @lessonid = '7-4',  -- varchar(50)
+                  @slideinfo = 'Stacks ^^ -A Stack is a type of data structure which acts like a stack of ^ plates in terms of handling data ^^ -A Stack is First In Last Out (FILO) ^^ -When you add values to the Stack, they Push() behind the ^ values that came before them ^^ -When you remove values from a Stack, they Pop() from the ^ list based on who was added first!', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '7-4-5',   -- varchar(50)
+                  @lessonid = '7-4',  -- varchar(50)
+                  @slideinfo = 'LinkedListNode ^^ -A LinkedListNode is a class which contains only a few ^ properties: ^^ *Value: an object such as an int/string/class ^ *Next: A reference to the Next Node ^ *Previous: A reference to the Previous Node ^^ -We can make a list of values by chaining each Node ^ together ^^ -C# already has a built in data structure which handles ^ adding and removing Nodes in a list...', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '7-4-6',   -- varchar(50)
+                  @lessonid = '7-4',  -- varchar(50)
+                  @slideinfo = 'LinkedList ^^ -A LinkedList is a type of data structure which allows you to ^ add/remove easily from either end ^^ -When you add values to a LinkedList, you can choose to ^ add values to the end or the front: ^ *AddLast(), AddFirst() ^^ -When you remove values from a LinkedList, you can again ^ remove from the front or the back: ^ *RemoveLast(), RemoveFirst()', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+
+EXEC dbo.spSlides @slideID = '7-4-7',   -- varchar(50)
+                  @lessonid = '7-4',  -- varchar(50)
+                  @slideinfo = 'Nodes ^^ -We should understand how Nodes are connected on a more ^ fundamental level ^^ -If we were to make our own Node class with just two ^ properties: ^ *Value ^ *NextNode ^^ -How would we connext the nodes without a LinkedList ^ class?', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spSlides @slideID = '7-4-8',   -- varchar(50)
+                  @lessonid = '7-4',  -- varchar(50)
+                  @slideinfo = 'Nodes ^^ -As you can see from the last slide, the first node has a ^ reference to the second node ^^ -If we were to make a third node, we should be able to make ^ a reference to it from the second node (and so forth to ^ forever) ^^ -As you can see, as ong as we can start at the first node ^ (RootNode), we can loop through the nodes using the ^ "NextNode" property', -- varchar(2000)
+                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-9',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+
+--EXEC dbo.spSlides @slideID = '7-4-10',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-11',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-12',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+
+--EXEC dbo.spSlides @slideID = '7-4-13',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-14',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-15',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+
+--EXEC dbo.spSlides @slideID = '7-4-16',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-17',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-18',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
 
 
 
+--EXEC dbo.spSlides @slideID = '7-4-19',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-20',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
+
+--EXEC dbo.spSlides @slideID = '7-4-21',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
 
 
+--EXEC dbo.spSlides @slideID = '7-4-22',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
 
+--EXEC dbo.spSlides @slideID = '7-4-23',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+--EXEC dbo.spSlides @slideID = '7-4-24',   -- varchar(50)
+--                  @lessonid = '7-4',  -- varchar(50)
+--                  @slideinfo = '', -- varchar(2000)
+--                  @crud = 'c'       -- varchar(1)
 
 
 
