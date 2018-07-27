@@ -20,10 +20,12 @@ namespace GroupProject
 {
     public partial class PracticeTest : System.Web.UI.Page
     {
-        public Decimal score;
+        public Decimal score;//
         public Decimal Total;
         public string ModID;
         
+        //Dictionary is used to store information in pairs
+        //Tuple 
         Dictionary<RadioButtonList,Tuple<Label, Label>> radioButtonLists = new Dictionary<RadioButtonList, Tuple<Label,Label>>();
         protected void Page_Load(object sender, EventArgs e)
         {
