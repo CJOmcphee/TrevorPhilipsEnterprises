@@ -72,6 +72,9 @@ namespace GroupProject
             }
             
         }
+        //Loop through the Data and look for every row and turns each row into a slide/
+        // the delimter splits up the string when it sees ^
+        //Then look  through every string and when it sees ^ jump to a new row in the slideshow to create the look and feel
         public void LoadSlides(string slide)
         {
             DataSet dsSlides = Crud.GetSlides(slide);
