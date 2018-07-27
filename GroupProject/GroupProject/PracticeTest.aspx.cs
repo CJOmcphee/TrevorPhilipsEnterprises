@@ -62,7 +62,6 @@ namespace GroupProject
                     LoadQuestion("Module 9");
                     break;
             }
-
             score = 0;            
         }
         // Loops through each question in the database to create a test template
