@@ -45,23 +45,22 @@ namespace GroupProject
                     ModID = "3-4";
                     break;
                 case "Module 4":
-                    ModID = "4-5";
+                    ModID = "4-4";
                     break;
                 case "Module 5":
                     ModID = "5-5";
-                    Module = 5;
                     break;
                 case "Module 6":
-                    ModID = "6-5";
+                    ModID = "6-4";
                     break;
                 case "Module 7":
                     ModID = "7-5";
                     break;
                 case "Module 8":
-                    ModID = "8-5";
+                    ModID = "8-2";
                     break;
                 case "Module 9":
-                    ModID = "9-5";
+                    ModID = "9-4";
                     break;
                 
             }
