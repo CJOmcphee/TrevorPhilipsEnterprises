@@ -66,7 +66,7 @@ questions varchar(500) foreign key references tbQuestions(question),
 wrongAnswers varchar(1000)
 )
 go
-
+--CRUD FOR STUDENTS Allowing create, read, update, delete of students
 --PROCEDURES FOR STUDENTS
 create procedure spStudents(
 @studentEmail varchar(100) =null,
@@ -117,6 +117,7 @@ select * from tbLogin
 exec spStudents @crud='r'
 
 go
+--Porcedure for Login allowing you to  be able to login using security class
 create procedure spLogin(
 @studentEmail varchar(50) =null,
 @studentPassword varchar(50) =null
@@ -137,6 +138,7 @@ as begin
 end
 
 go
+--Procedure that allows create, read, update, delete of examples
 create procedure spExamples(
 @exampleID int = null,
 @example varchar(1000) =null,
@@ -185,6 +187,7 @@ select * from tbExample
 select * from tbTest
 go
 
+--Procedure that allows create, read, update and delete of questions
 create procedure spQuestions(
 @QID INT =NULL,
 @questions varchar(1000) =null,
@@ -217,6 +220,7 @@ as begin
 end
 go
 
+-- Procedure that allows create, read, update and delete of wrong answers
 create procedure spWrongAnswer(
 @question varchar(500) =null,
 @wrongAnswers varchar(1000) = null,
@@ -241,7 +245,7 @@ as begin
 		end
 end
 go
-
+--Procedure thats gets all the wrong answers for each question given the ID if the question
 create procedure spGetTestQuestions(
 @testID varchar(50)
 )
@@ -255,6 +259,8 @@ exec spWrongAnswer @crud='r', @question='______ is equipment or physical devices
 exec spQuestions @crud='r', @questions='What is the correct order in the Systems Development Life Cycle?'
 
 go
+
+-- Procedure that allows somone to recover their user password
 create procedure spforgotPassword(
 @sEmail varchar(100)
 )
@@ -262,6 +268,8 @@ as begin
 	select  studentPassword from  tbLogin where sID=@sEmail
 end
 go
+
+--Procedure that allows create, read, update and delete of scores for the tests
 create procedure spScore(
 @score decimal(10,2) =null,
 @tID varchar(50) =null,
@@ -287,6 +295,7 @@ as  begin
 end
 go
 
+--Procedure that allows create, read, update and delete of slides
 create procedure spSlides(
 @slideID varchar(50) = null,
 @lessonid varchar(50) =null,
@@ -320,6 +329,7 @@ as begin
 end
 go
 
+--Procedure that allows create, read, update and delete of tests
 create procedure spTest
 (
 @crud varchar(1),
@@ -355,6 +365,7 @@ exec spSlides @crud='r', @lessonid ='1-1'
 SELECT * FROM dbo.tbQuestions
 GO
 
+--Procedure that allows create, read, update and delete of lessions
 CREATE PROCEDURE spLessons(
 @crud varchar(1),
 @moduleID int= null,
@@ -375,6 +386,7 @@ AS BEGIN
 END
 GO
 
+--Procedure that allows create, read, update and delete of Modules
 CREATE PROCEDURE spModule(
 @moduleID int = null,
 @moduleName VARCHAR(50) =NULL,
@@ -412,6 +424,8 @@ select * from tbStudentTest
 
 select * from tbStudentTest
 GO
+
+--Procedure that gets the top score for each test given a student id if no id given shows all top tests for all students taken
 Create procedure spStudentTopTests(
 @sID varchar(50) = null
 )
