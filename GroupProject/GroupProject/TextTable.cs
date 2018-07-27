@@ -10,12 +10,17 @@ namespace GroupProject
         static int tblID = 0;
         static int rowID = 0;
         static int cellID = 0;
+        private void takeTable(int tblNum,int rowNum, int cellNum)
+        {
+
+        }
         public string newTable(int tblNum,int rowNum, int cellNum)
         {
             string Table ="";
             for (int x = 0; x < tblNum; x++)
             {
-                string Start = "<table id=tGen"+ tblID++ + ">";
+                tblID++;
+                string Start = "<table>";
                 string Mid = newRow(rowNum, cellNum);
                 string End = "</table>";
                 Table = Table + Start + Mid + End;
@@ -28,7 +33,8 @@ namespace GroupProject
             string Row = "";
             for (int x = 0; x < rowNum; x++)
             {
-                string Start = "<tr id=rGen" + rowID++ + ">";
+                rowID++;
+                string Start = "<tr>";
                 string Mid = newCell(cellNum);
                 string End = "</tr>";
                 Row = Row + Start + Mid + End;
@@ -41,7 +47,8 @@ namespace GroupProject
             string Cell = "";
             for (int x = 0; x < cellNum; x++)
             {
-                string Start = "<td id=cGen" + cellID++ + ">";
+                cellID++;
+                string Start = "<td>";
                 string Mid = "";
                 string End = "</td>";
                 Cell = Cell + Start + Mid + End;
