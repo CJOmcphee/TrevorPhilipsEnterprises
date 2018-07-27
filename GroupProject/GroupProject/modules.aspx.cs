@@ -20,6 +20,8 @@ namespace GroupProject.user
             }
         }
 
+        //Loops through the database to look for all modules and put there into a verticle lise with each module a hyper link
+        //Then make every hyper link upon hovering over showing a verticle list of hyperlinks for all the lessons in each module
         private void loadModules()
         {
             DataSet module = Crud.ReadTable("spModule");

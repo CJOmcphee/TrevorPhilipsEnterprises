@@ -42,6 +42,7 @@ namespace GroupProject
 
             }
         }
+        //Checks the lesson id for the slide if the lesson is one of the below make the test button visible
         public void CheckSlide()
         {
             if(slide == "1-6" ||  slide=="2-5" || slide == "3-4" || slide == "4-5"
@@ -72,6 +73,9 @@ namespace GroupProject
             }
             
         }
+        //Loop through the Data and look for every row and turns each row into a slide/
+        // the delimter splits up the string when it sees ^
+        //Then look  through every string and when it sees ^ jump to a new row in the slideshow to create the look and feel
         public void LoadSlides(string slide)
         {
             DataSet dsSlides = Crud.GetSlides(slide);
