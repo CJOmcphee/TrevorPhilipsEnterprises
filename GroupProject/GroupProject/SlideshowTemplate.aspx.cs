@@ -42,6 +42,7 @@ namespace GroupProject
 
             }
         }
+        //Checks the lesson id for the slide if the lesson is one of the below make the test button visible
         public void CheckSlide()
         {
             if(slide == "1-6" ||  slide=="2-5" || slide == "3-4" || slide == "4-5"
