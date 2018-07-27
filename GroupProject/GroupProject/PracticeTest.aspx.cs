@@ -29,6 +29,7 @@ namespace GroupProject
         {
              ModID = Request.QueryString["Lesson"].ToString();
 
+            // Depening on the value of ModID, Load a different test depending on the value given through a switch
             switch (ModID)
             {
                 case "1-6":
@@ -62,6 +63,7 @@ namespace GroupProject
 
             score = 0;            
         }
+        // Loops through each question in the database to create a test template
         public void LoadQuestion(string Test)
         {     
             int count =  1;
@@ -109,6 +111,7 @@ namespace GroupProject
                 
             }
         }
+        ///When the submit button is clicked if the answer is wrong it will display wrong in red and if if the question is right will display correct in green
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             
@@ -117,7 +120,7 @@ namespace GroupProject
                 DataSet dsQuestion = Crud.ReadTable("spQuestions", radioButton.Value.Item1.Text);
                 if (radioButton.Key.SelectedValue.ToString() == dsQuestion.Tables[0].Rows[0]["answers"].ToString())
                 {
-                    radioButton.Value.Item2.Text = " Right";
+                    radioButton.Value.Item2.Text = " Correct";
                     radioButton.Value.Item2.ForeColor = System.Drawing.Color.Green;
                     score++;
                 }
@@ -127,18 +130,21 @@ namespace GroupProject
                     radioButton.Value.Item2.ForeColor = System.Drawing.Color.Red;
                 }
             }
+            //Grabs the the right answers of the test and divides by 100 to get the percent and put it in a label
             Total = (score / radioButtonLists.Count) * 100;
-            Label1.Text = Math.Round(Total, 2).ToString();
+            lblScore.Text = Math.Round(Total, 2).ToString();
+            Total= Math.Round(Total, 2);
 
             Security security = new Security();
             DataSet dsStudentName = Crud.ReadTable("spStudents", security.Email);
             string Test = ddlTestChoice.SelectedItem.Text;
 
             Crud.CreateTestScore("c", Test, security.Email,Total);
-
+            //If answer is above 70 go Create a pop up window And  send to home page
             if (Total >= 70)
             {
                 System.Windows.Forms.MessageBox.Show("Congratulations you passed with a score of %" + " " + Total);
+                //Allows you to escape the iframe and return to the home page 
                 Response.Write("<script>window.open('index_user.aspx','_parent');</script>");
             }
             else
@@ -149,11 +155,13 @@ namespace GroupProject
             }
         }
 
+        // If the retry button is clicked Reload page with proper ModId to Load right Test
         protected void btnRetry_Click(object sender, EventArgs e)
         {
             Response.Redirect("PracticeTest.aspx?Lesson=" +ModID);
         }
-
+        
+        //If iQuit button is clicked get out of the iframe and send back to home page
         protected void btniQuit_Click(object sender, EventArgs e)
         {
             Response.Write("<script>window.open('index_user.aspx','_parent');</script>");
