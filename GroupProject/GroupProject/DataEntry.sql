@@ -6302,8 +6302,391 @@ EXEC dbo.spQuestions @questions = 'What does ExecuteScalar() do?', -- varchar(10
 					                        @wrongAnswers = 'Used to execute several queries', -- varchar(1000)
 					                        @crud = 'c'          -- varchar(1)
 
+-- Mike question 1, Module 4
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'You must put Master page content outside of the ContentPlaceHolder tags.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'You must put Master page content outside of the ContentPlaceHolder tags.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Mike question 2, Module 4
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What does CRUD stand for?', -- varchar(1000)
+                     @answers = 'Create, Read, Update, Delete',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does CRUD stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Create, Remove, Update, Delete, ', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does CRUD stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Create, Read, Undo, Delete', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does CRUD stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Create, Read, Update, Dinosaur', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Mike question 3, Module 4
+EXEC dbo.spQuestions -- @QID = 0,       -- int
+                     @questions = 'Stored Procedures help the Server interact with the Database', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Stored Procedures help the Server interact with the Database',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Mike question 4, Module 4
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'A session can bring a value from one page onto another.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'A session can bring a value from one page onto another.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Mike question 5, Module 4
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Comments are used to interact with the human.', -- varchar(1000)
+                     @answers = 'True',   -- varchar(1000)
+                     @tID = 'Module 4',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Comments are used to interact with the human.',     -- varchar(500)
+                       @wrongAnswers = 'False', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+
+
+
+
+
 
 --Module 5 Test
+
+-- Question 1
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What is the .NET Code Behind for C#?', -- varchar(1000)
+                     @answers = '.aspx.cs',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is the .NET Code Behind for C#?',     -- varchar(500)
+                       @wrongAnswers = '.asp.cs', -- varchar(1000)
+                       @crud = ''          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is the .NET Code Behind for C#?',     -- varchar(500)
+                       @wrongAnswers = '.asp.js', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is the .NET Code Behind for C#?',     -- varchar(500)
+                       @wrongAnswers = 'C#.aspx.cs', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Question 2
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which command is used to navigate from one page to another?', -- varchar(1000)
+                     @answers = 'Response.Redirect();',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which command is used to navigate from one page to another?',     -- varchar(500)
+                       @wrongAnswers = 'Redirect.Response();', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which command is used to navigate from one page to another?',     -- varchar(500)
+                       @wrongAnswers = 'Response.Respond();', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which command is used to navigate from one page to another?',     -- varchar(500)
+                       @wrongAnswers = 'Server.Redirect();', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Question 3
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'What does ASP stand for?', -- varchar(1000)
+                     @answers = 'Active Server Pages',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does ASP stand for?',     -- varchar(500)
+                       @wrongAnswers = 'A Server Page', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does ASP stand for?',     -- varchar(500)
+                       @wrongAnswers = 'Another Stopping Prop', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What does ASP stand for?',     -- varchar(500)
+                       @wrongAnswers = 'A Straight Point', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Question 4
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which of the following forms will PostBack occur?', -- varchar(1000)
+                     @answers = 'Web Forms',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which of the following forms will PostBack occur?',     -- varchar(500)
+                       @wrongAnswers = 'HTML Forms', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which of the following forms will PostBack occur?',     -- varchar(500)
+                       @wrongAnswers = 'Win Forms', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Question 5 
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Web.config is used: ', -- varchar(1000)
+                     @answers = 'To store the global information and variable definitions for the application',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Web.config is used: ',     -- varchar(500)
+                       @wrongAnswers = 'Configures the time that the server-side codebehind module is called', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Web.config is used: ',     -- varchar(500)
+                       @wrongAnswers = 'To configure the web server', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Web.config is used: ',     -- varchar(500)
+                       @wrongAnswers = 'To configure the web browser', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Question 6
+EXEC dbo.spQuestions --@QID = 0,        -- int
+                     @questions = 'We can manage states in ASP.NET application using: ', -- varchar(1000)
+                     @answers = 'All of these',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'We can manage states in ASP.NET application using: ',     -- varchar(500)
+                       @wrongAnswers = 'Session Objects', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'We can manage states in ASP.NET application using: ',     -- varchar(500)
+                       @wrongAnswers = 'Application Objects', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'We can manage states in ASP.NET application using: ',     -- varchar(500)
+                       @wrongAnswers = 'Viewstate', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Question 7
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which attribute must be set on a validator control for the validation to work?', -- varchar(1000)
+                     @answers = 'ControlToValidate',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'We can manage states in ASP.NET application using: ',     -- varchar(500)
+                       @wrongAnswers = 'ControlToBind', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'We can manage states in ASP.NET application using: ',     -- varchar(500)
+                       @wrongAnswers = 'ValidateControl', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'We can manage states in ASP.NET application using: ',     -- varchar(500)
+                       @wrongAnswers = 'Validate', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Question 8
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = '', -- varchar(1000)
+                     @answers = 'Regular expression',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is used to validate complex string patterns like an email address?',     -- varchar(500)
+                       @wrongAnswers = 'Extended expression', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is used to validate complex string patterns like an email address?',     -- varchar(500)
+                       @wrongAnswers = 'Basic expressions', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'What is used to validate complex string patterns like an email address?',     -- varchar(500)
+                       @wrongAnswers = 'Irregular expressions', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Question 9
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which File extension is used for ASP.NET files?', -- varchar(1000)
+                     @answers = '.ASP',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which File extension is used for ASP.NET files?',     -- varchar(500)
+                       @wrongAnswers = '.Web', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which File extension is used for ASP.NET files?',     -- varchar(500)
+                       @wrongAnswers = '.ASPX', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which File extension is used for ASP.NET files?',     -- varchar(500)
+                       @wrongAnswers = 'None of these', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Question 10
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which of the following ASP.NET object encapsulates the state of the client?', -- varchar(1000)
+                     @answers = 'Session Object',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which of the following ASP.NET object encapsulates the state of the client?',     -- varchar(500)
+                       @wrongAnswers = 'Application Object', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which of the following ASP.NET object encapsulates the state of the client?',     -- varchar(500)
+                       @wrongAnswers = 'Response Object', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which of the following ASP.NET object encapsulates the state of the client?',     -- varchar(500)
+                       @wrongAnswers = 'Server Object', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Question 11
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which of the following control is used to validate that two fields are equal?', -- varchar(1000)
+                     @answers = 'CompareValidator',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which of the following control is used to validate that two fields are equal?',     -- varchar(500)
+                       @wrongAnswers = 'RegularExpressionValidator', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which of the following control is used to validate that two fields are equal?',     -- varchar(500)
+                       @wrongAnswers = 'equals() method', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which of the following control is used to validate that two fields are equal?',     -- varchar(500)
+                       @wrongAnswers = 'RequiredFieldValidator', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Question 12
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Which of the following is faster and consume lesser memory?', -- varchar(1000)
+                     @answers = 'SQLDataReader',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Which of the following is faster and consume lesser memory?',     -- varchar(500)
+                       @wrongAnswers = 'DataSet', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+-- Question 13
+EXEC dbo.spQuestions @QID = 0,        -- int
+                     @questions = 'The .NET framework which provides automatic memory management using a technique called ______________ ?', -- varchar(1000)
+                     @answers = 'Garbage Collection',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The .NET framework which provides automatic memory management using a technique called ______________ ?',     -- varchar(500)
+                       @wrongAnswers = 'Serialization', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The .NET framework which provides automatic memory management using a technique called ______________ ?',     -- varchar(500)
+                       @wrongAnswers = 'Assemblies', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The .NET framework which provides automatic memory management using a technique called ______________ ?',     -- varchar(500)
+                       @wrongAnswers = 'Overriding', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Question 14
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'If one has two different web form controls in a application and if one wanted to know whether the values in the above two different web form control match what control must be used?', -- varchar(1000)
+                     @answers = 'CompareValidator',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'If one has two different web form controls in a application and if one wanted to know whether the values in the above two different web form control match what control must be used?',     -- varchar(500)
+                       @wrongAnswers = 'Listview', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'If one has two different web form controls in a application and if one wanted to know whether the values in the above two different web form control match what control must be used?',     -- varchar(500)
+                       @wrongAnswers = 'GridView', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'If one has two different web form controls in a application and if one wanted to know whether the values in the above two different web form control match what control must be used?',     -- varchar(500)
+                       @wrongAnswers = 'DataList', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Question 15
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'The type of code found in Code-Behind class is ________ ?', -- varchar(1000)
+                     @answers = 'Server-side code',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'The type of code found in Code-Behind class is ________ ?',     -- varchar(500)
+                       @wrongAnswers = 'Client-side code', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'Common type system is built into which of the following:', -- varchar(1000)
+                     @answers = 'CLR',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Common type system is built into which of the following:',     -- varchar(500)
+                       @wrongAnswers = 'RCT', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Common type system is built into which of the following:',     -- varchar(500)
+                       @wrongAnswers = 'RCW', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'Common type system is built into which of the following:',     -- varchar(500)
+                       @wrongAnswers = 'GAC', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+-- Question 17
+EXEC dbo.spQuestions -- @QID = 0,        -- int
+                     @questions = 'How many classes can a single .NET DLL contain?', -- varchar(1000)
+                     @answers = 'Many',   -- varchar(1000)
+                     @tID = 'Module 5',       -- varchar(50)
+                     @crud = 'c'       -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many classes can a single .NET DLL contain?',     -- varchar(500)
+                       @wrongAnswers = 'One', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many classes can a single .NET DLL contain?',     -- varchar(500)
+                       @wrongAnswers = 'Two', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+EXEC dbo.spWrongAnswer @question = 'How many classes can a single .NET DLL contain?',     -- varchar(500)
+                       @wrongAnswers = 'None', -- varchar(1000)
+                       @crud = 'c'          -- varchar(1)
+
+
+
+
+
+
+
+
+
 
 
 --Module 6 Test
