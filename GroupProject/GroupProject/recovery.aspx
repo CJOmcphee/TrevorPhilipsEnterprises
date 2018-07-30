@@ -14,7 +14,7 @@
                 </td>
              </tr>
             </table>
-        <asp:Button ID="btngetPw" runat="server" Text="Get Password!" OnClick="btnUNRecover_Click" />
+        <asp:Button ID="btngetPw" runat="server" CssClass="button" Text="Get Password!" OnClick="btnUNRecover_Click" />
         <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label>
       </div>
   
