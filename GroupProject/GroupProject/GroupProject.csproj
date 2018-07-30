@@ -69,7 +69,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Anton.sql" />
     <Content Include="DataEntry.sql" />
     <Content Include="Grades.aspx" />
     <Content Include="images\csharp.jpg" />
@@ -938,7 +937,6 @@
     <Content Include="Install.sql" />
     <Content Include="PracticeTest.aspx" />
     <Content Include="Modules.css" />
-    <Content Include="TJ.sql" />
     <Content Include="css\ie\html5shiv.js" />
     <Content Include="css\ie\PIE.htc" />
     <Content Include="css\ie\v8.css" />
