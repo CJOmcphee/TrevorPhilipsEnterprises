@@ -7027,7 +7027,7 @@ EXEC dbo.spWrongAnswer @question = 'We can manage states in ASP.NET application 
 
 -- Question 8
 EXEC dbo.spQuestions -- @QID = 0,        -- int
-                     @questions = '', -- varchar(1000)
+                     @questions = 'What is used to validate complex string patterns like an email address?', -- varchar(1000)
                      @answers = 'Regular expression',   -- varchar(1000)
                      @tID = 'Module 5',       -- varchar(50)
                      @crud = 'c'       -- varchar(1)
@@ -7198,15 +7198,6 @@ EXEC dbo.spWrongAnswer @question = 'How many classes can a single .NET DLL conta
 EXEC dbo.spWrongAnswer @question = 'How many classes can a single .NET DLL contain?',     -- varchar(500)
                        @wrongAnswers = 'None', -- varchar(1000)
                        @crud = 'c'          -- varchar(1)
-
-
-
-
-
-
-
-
-
 
 
 --Module 6 Test
