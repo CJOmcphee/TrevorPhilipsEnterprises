@@ -2057,7 +2057,7 @@ EXEC dbo.spSlides @slideID = '1-6-3',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '1-6-4',   -- varchar(50)
                   @lessonid = '1-6',  -- varchar(50)
-                  @slideinfo = '<h1>Review</h1><h2>Variables</h2><p>Numberic (int) variables (Advanced):</p>^^You can use the Math class to perform many complex operations^(https://msdn.microsoft.com/en-us/library/system.math.aspx)^^Example: We want to find out what 15 to the power of 7 is.^^int num = 15;^int power = 7;^int result = Math.Pow(num,power);', ---- varchar (2000)
+                  @slideinfo = 'Review ^ Variables ^ <p>Numberic (int) variables (Advanced):</p>^^You can use the Math class to perform many complex operations^(https://msdn.microsoft.com/en-us/library/system.math.aspx)^^Example: We want to find out what 15 to the power of 7 is.^^int num = 15;^int power = 7;^int result = Math.Pow(num,power);', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-6-5',   -- varchar(50)
