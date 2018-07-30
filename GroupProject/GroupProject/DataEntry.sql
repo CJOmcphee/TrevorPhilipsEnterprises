@@ -4628,6 +4628,9 @@ EXEC dbo.spSlides @slideID = '7-3-16',   -- varchar(50)
                   @slideinfo = 'The List Class^ Lets now take a look at some prebuilt list management^ classes in the .NET framework^ List is a class which manages the addition, removal and^ sorting of items in a list^ Byt what type of items can an List hold?^ Answer: Anything! You can think of a List as a collection of generic Objects', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
+-- Module 7 Slides
+
+
 EXEC dbo.spSlides @slideID = '7-5-1',   -- varchar(50)
                   @lessonid = '7-5',  -- varchar(50)
                   @slideinfo = 'BAL^ The Bussiness-Logic Access Layers(BAL) is the section of^ your code that interact with the Data Access Layers(DAL)^ Our goal is to take any business logic in a given application^ and put it into classes (talking it away from the html?aspx page)^ Why are we doing this? Because you may have two or^ more places in your code that use the same kind of^ business-logic, and what do we do with two pieces of code^ that are identical? We combine them; in a class', -- varchar(1000)
