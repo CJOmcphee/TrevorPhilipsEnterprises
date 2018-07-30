@@ -1641,7 +1641,7 @@ EXEC dbo.spSlides @slideID = '1-3-9',   -- varchar(50)
 
 EXEC dbo.spSlides @slideID = '1-3-10',   -- varchar(50)
                   @lessonid = '1-3',  -- varchar(50)
-                  @slideinfo = '<h1>Decisions: (AND, OR, and CASE)</h1><h2>Evaluating Boolean Expressions</h2><p>We can also add as many more conditions as we like:</p>^if(someCondition)^{^^}^else if(someOtherCondition)^{^// You can keep adding else ifs if you want! No Limit!^}^else^{^^}', ---- varchar (2000)
+                  @slideinfo = 'Decisions: (AND, OR, and CASE) ^ Evaluating Boolean Expressions ^ <p>We can also add as many more conditions as we like:</p>^if(someCondition)^{^^}^else if(someOtherCondition)^{^// You can keep adding else ifs if you want! No Limit!^}^else^{^^}', ---- varchar (2000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '1-3-11',   -- varchar(50)
