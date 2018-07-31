@@ -15,8 +15,8 @@
 							</header>
 							<p class="subtitle">You may add, edit or delete students</p>
                             <br />
-							<p><a href="#"><img src="images/users.jpg" alt=""></a></p>
-							<a href="users_admin.aspx" class="button">More</a>
+							<p><img src="images/users.jpg" alt=""></p>
+							<a href="users_admin.aspx" class="button">See Users</a>
 						</section>
 					</div>
 					<div class="3u">
@@ -25,8 +25,8 @@
 								<h2>Tests</h2>
 							</header>
 							<p class="subtitle">You may create new, edit exists or delete Tests</p>
-							<p><a href="#"><img src="images/test.jpg" alt=""></a></p>
-							<a href="tests_admin.aspx" class="button">More</a>
+							<p><img src="images/test.jpg" alt=""></p>
+							<a href="tests_admin.aspx" class="button">See Tests</a>
 						</section>
 					</div>
 					<div class="3u">
@@ -35,8 +35,8 @@
 								<h2>Reports</h2>
 							</header>
 							<p class="subtitle">You may get some reports about students progress, marks etc.</p>
-							<p><a href="#"><img src="images/report.jpg" alt=""></a></p>
-							<a href="#" class="button">More</a>
+							<p><img src="images/report.jpg" alt=""></p>
+							<a href="Grades.aspx" class="button">See Grades</a>
 						</section>
 					</div>
 					

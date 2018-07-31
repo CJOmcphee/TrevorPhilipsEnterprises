@@ -160,7 +160,7 @@ as begin
 		begin
 			if @lID != ''
 				begin
-					select * from tbExample WHERE lID = ISNULL(@lID,lID)
+					select * from tbExample WHERE lID = @lID order by Len(exampleID), exampleID asc
 				end
 				else begin
 					select * from tbExample where exampleID = isnull(@exampleID, exampleID)

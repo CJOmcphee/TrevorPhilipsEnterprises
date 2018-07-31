@@ -22,10 +22,21 @@ namespace GroupProject
         }
         public void ShowBestScores()
         {
+            
             Security security = new Security();
-            DataSet dsTopScores = Crud.GetTopScore(security.Email);
-            GridView1.DataSource = dsTopScores;
-            GridView1.DataBind();
+            if(security.Email=="doug.jackson@robertsoncollege.net")
+            {
+                DataSet dsTopScores = Crud.GetAllTopScore();
+                GridView1.DataSource = dsTopScores;
+                GridView1.DataBind();
+            }
+            else
+            {
+                DataSet dsTopScores = Crud.GetTopScore(security.Email);
+                GridView1.DataSource = dsTopScores;
+                GridView1.DataBind();
+            }
+            
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
