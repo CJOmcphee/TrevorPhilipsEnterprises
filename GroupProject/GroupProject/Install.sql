@@ -158,11 +158,13 @@ as begin
 		end
 	if @crud='r'
 		begin
-			if @lID != null
+			if @lID != ''
 				begin
 					select * from tbExample WHERE lID = ISNULL(@lID,lID)
 				end
+				else begin
 					select * from tbExample where exampleID = isnull(@exampleID, exampleID)
+				end
 		end
 	if @crud='u'
 		begin
@@ -339,8 +341,8 @@ create procedure spTest
 as begin
 	if @crud = 'c'
 		begin
-			insert into tbTest(testID) values
-			(@TestID)
+			insert into tbTest(testID,ModuleID) values
+			(@TestID,@ModuleID)
 		end
 	if @crud = 'r'
 	begin
@@ -375,6 +377,11 @@ AS BEGIN
 	if @crud = 'r'
 		begin
 			SELECT * FROM dbo.tbLesson WHERE mID= @moduleID
+		end
+	if @crud ='c'
+		begin
+			insert into tbLesson(lessonID,mID) values
+								(@lessonID,@moduleID)
 		end
 	if @crud = 'd'
 		begin
@@ -438,3 +445,4 @@ As begin
 END
 GO
 EXEC spStudentTopTests @sID='tony.stark@robertsoncollege.net'
+exec spexamples @crud ='r', @lID='1-1'

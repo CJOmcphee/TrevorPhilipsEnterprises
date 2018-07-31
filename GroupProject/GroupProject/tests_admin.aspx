@@ -2,8 +2,56 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="Scripts/angular.min.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=basic&amp;skin=sunburst"></script>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
+    <style type="text/css">
+        #dvdisplay {
+            
+            top:0%;
+            position:fixed;
+            Left: 50%;
+            height:80%;
+            width:50%;
+        }
+        #dvNav{
+            position:fixed;
+            top:95%
+        }
+        #dvEdit {
+            top:0%;
+            position:fixed;
+            height:80%;
+        }
+        #dvCode{
+            position:fixed;
+            height:100%;
+            width:25%;
+            right:0%;
+            background:#808080;
+        }
+         #dvExplanation {
+             position:fixed;
+             top:0%;
+             height:50%;
+             width:25%;
+             right:25%;
+            background: #DDD;
+        }
+
+
+
+
+        #dvExample {
+            position:fixed;
+            height:50%;
+             width:25%;
+             right:25%;
+             top:50%;
+            background:#f5f5f5
+        }
+    </style>
     <div id="page">
         <div id="marketing" class="container">
             <div id="table">
@@ -80,6 +128,7 @@
                             <asp:BoundField HeaderText="Lesson" DataField="lessonID" />
                         </Columns>
                     </asp:GridView>
+                    <asp:Button ID="btnAddlesson" cssclass="button" runat="server" Text="Add Lesson" OnClick="btnAddlesson_Click" />
                 </asp:Panel>
                 <asp:Panel ID="pnlSlides" runat="server">
                     <asp:Button ID="btnSlideBack" runat="server" CssClass="button" Text="Back" OnClick="btnGoToLessons_Click" />
@@ -173,20 +222,18 @@
                    </script>--%>
                 </asp:Panel>
                 <asp:Panel ID="pnlExamples" runat="server">
-                    <asp:Button ID="btnExampleBack" runat="server" Text="Back" OnClick="btnGoToLessons_Click" />
+                    <asp:Button ID="btnExampleBack" CssClass="button" runat="server" Text="Back" OnClick="btnGoToLessons_Click" />
                     <asp:GridView ID="gvExamples" AutoGenerateColumns="False" DataKeyNames="exampleID" runat="server" AllowPaging="true" PageSize="5" OnPageIndexChanging="gvExamples_PageIndexChanging" OnRowCommand="gvExamples_RowCommand">
                         <Columns>
                             <asp:ButtonField HeaderText="Delete" ControlStyle-CssClass="button" ButtonType="Button" CommandName="Del" Text="Delete" />
                             <asp:ButtonField HeaderText="Edit" ControlStyle-CssClass="upd-button" ButtonType="Button" CommandName="Edi" Text="Edit" />
-                            <asp:BoundField HeaderText="Example" DataField="example" />
-                            <asp:BoundField HeaderText="Solution" DataField="solution" />
-                            <asp:BoundField HeaderText="Example" DataField="example" />
-                            <asp:BoundField HeaderText="Code" DataField="code" />
+                            <asp:BoundField HeaderText="Example" DataField="exampleID" />
                             <asp:BoundField HeaderText="Explanation" DataField="explanation" />
                         </Columns>
                     </asp:GridView>
+                    <asp:Button ID="btnAddExample" runat="server" Text="Add Example" OnClick="btnAddExample_Click" />
                 </asp:Panel>
-            </div>
+            
             <asp:Panel ID="pnlnav" runat="server" Visible="false">
                 <asp:Panel ID="pnlModuleDetails" runat="server">
                     Name
@@ -203,7 +250,65 @@
                 Slide Info : 
                 <asp:TextBox ID="tbSlideInfo" runat="server"></asp:TextBox>
             </asp:Panel>
+                </div>
+            <asp:Panel ID="pnlEditExamples" runat="server" Visible="false">
+                <div id= "dvNav" runat="server">
+        <asp:Panel ID="pnlExNav" runat="server">
+            Slide Reference
+            <asp:TextBox ID="tbSlideRef" runat="server"></asp:TextBox>
+        <asp:Button ID="btnSeeExplanation" runat="server" Text="Edit Explanation" OnClick="btnSeeExplanation_Click"/>
+        <asp:Button ID="btnSeeCode" runat="server" Text="Edit Code" OnClick="btnSeeCode_Click"/>
+        <asp:Button ID="btnSeeExample" runat="server" Text="Edit Example/Solution" OnClick="btnSeeExample_Click"/>
+            <asp:Button ID="btnBackToNav1" runat="server" Text="Back" OnClick="btnBackToNav1_Click" />
+    </asp:Panel>
+            </div>
+        <div>
 
+            <div id="dvdisplay" runat="server">
+                <div id="dvExample" runat="server">
+                    Example/Solution
+                    <br />
+                    <asp:Label ID="lblExample" runat="server" Text=""></asp:Label>
+                    <br />
+                    <asp:Label ID="lblSolution" runat="server" Text=""></asp:Label>
+                </div>
+                <div id="dvExplanation" runat="server">
+                    Explanation
+                    <br />
+                    <asp:Label ID="lblExplain" runat="server" Text=""></asp:Label>
+                </div>
+                <div id="dvCode" runat="server">
+                    Code
+                    <br />
+                    <pre class="prettyprint linenums"><asp:Label ID="lblCode" runat="server" Text=""></asp:Label></pre>
+                </div>
+            </div>
+             <div id ="dvEdit" runat="server">
+                 <asp:Label ID="lblExampleID" runat="server" Text="" Visible="false"></asp:Label>
+                     <asp:Panel ID="pnlEditCode" runat="server" Visible ="false">
+                         Code
+                         <br />
+                        <textarea  id="taEditCode" runat="server" style="width: 400px; height: 450px;"  onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"></textarea>
+                     </asp:Panel>
+                     <asp:Panel ID="pnlEditExplain" runat="server" Visible ="false">
+                         Explanation
+                         <br />
+                        <textarea  id="taEditExplain" runat="server" style="width: 400px; height: 450px;" ></textarea>
+                     </asp:Panel>
+                     <asp:Panel ID="pnlEditExample" runat="server" Visible="false">
+                         Example
+                         <br />
+                        <textarea  id="taEditExample" runat="server" style="width: 400px; height: 450px;" ></textarea>
+                         <br />
+                         Answer
+                         <br />
+                        <asp:TextBox ID="tbAnswer" runat="server"></asp:TextBox>
+                     </asp:Panel>
+                    <asp:Button ID="btnSaveExample" runat="server" Text="Save" OnClick="btnSaveExample_Click" />
+             </div>
+         </div>
+            </asp:Panel>
+                
         </div>
     </div>
 </asp:Content>
