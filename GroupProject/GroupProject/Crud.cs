@@ -160,7 +160,7 @@ namespace GroupProject
                 mydal.AddParam("@exampleID", exampleID);
             }
             mydal.AddParam("@example", example);
-            mydal.AddParam("@solution", solution);
+            mydal.AddParam("@solutions", solution);
             mydal.AddParam("@lID", lessonID);
             mydal.AddParam("@slide", slide);
             mydal.AddParam("@explanation", explanation);

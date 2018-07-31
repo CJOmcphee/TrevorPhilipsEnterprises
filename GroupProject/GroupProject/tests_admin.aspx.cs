@@ -419,6 +419,16 @@ namespace GroupProject.admin
         protected void btnAddExample_Click(object sender, EventArgs e)
         {
             HidePanels();
+            taEditCode.InnerText ="";
+            taEditExample.InnerText = "";
+            taEditExplain.InnerText = "";
+            tbAnswer.Text = "";
+            tbSlideRef.Text = "";
+            lblExampleID.Text = "";
+            lblCode.Text = "";
+            lblExplain.Text ="";
+            lblExample.Text = "";
+            lblSolution.Text = "";
             pnlEditExamples.Visible = true;
         }
 
@@ -432,6 +442,7 @@ namespace GroupProject.admin
             {
                 Crud.CreateUpdateExamples("u", lblExampleID.Text, taEditExample.InnerText, lblSolution.Text, Lesson, tbSlideRef.Text, taEditExplain.InnerText);
             }
+            LoadExamples(Crud.GetExamples(Lesson));
         }
 
         protected void btnSeeExplanation_Click(object sender, EventArgs e)
@@ -461,7 +472,7 @@ namespace GroupProject.admin
         protected void btnBackToNav1_Click(object sender, EventArgs e)
         {
             HidePanels();
-            pnlnav.Visible = true;
+            LoadExamples(Crud.GetExamples(Lesson));
         }
 
         protected void tbTable_Click(object sender, EventArgs e)

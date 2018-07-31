@@ -256,10 +256,10 @@
         <asp:Panel ID="pnlExNav" runat="server">
             Slide Reference
             <asp:TextBox ID="tbSlideRef" runat="server"></asp:TextBox>
-        <asp:Button ID="btnSeeExplanation" runat="server" Text="Edit Explanation" OnClick="btnSeeExplanation_Click"/>
-        <asp:Button ID="btnSeeCode" runat="server" Text="Edit Code" OnClick="btnSeeCode_Click"/>
-        <asp:Button ID="btnSeeExample" runat="server" Text="Edit Example/Solution" OnClick="btnSeeExample_Click"/>
-            <asp:Button ID="btnBackToNav1" runat="server" Text="Back" OnClick="btnBackToNav1_Click" />
+        <asp:Button ID="btnSeeExplanation" CssClass="button" runat="server" Text="Edit Explanation" OnClick="btnSeeExplanation_Click"/>
+        <asp:Button ID="btnSeeCode" CssClass="button" runat="server" Text="Edit Code" OnClick="btnSeeCode_Click"/>
+        <asp:Button ID="btnSeeExample" CssClass="button" runat="server" Text="Edit Example/Solution" OnClick="btnSeeExample_Click"/>
+            <asp:Button ID="btnBackToNav1" CssClass="button" runat="server" Text="Back" OnClick="btnBackToNav1_Click" />
     </asp:Panel>
             </div>
         <div>
@@ -304,7 +304,7 @@
                          <br />
                         <asp:TextBox ID="tbAnswer" runat="server"></asp:TextBox>
                      </asp:Panel>
-                    <asp:Button ID="btnSaveExample" runat="server" Text="Save" OnClick="btnSaveExample_Click" />
+                    <asp:Button ID="btnSaveExample" CssClass="button" runat="server" Text="Save" OnClick="btnSaveExample_Click" />
              </div>
          </div>
             </asp:Panel>
