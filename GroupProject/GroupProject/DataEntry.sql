@@ -67,12 +67,12 @@ insert into tbLesson(lessonID, mID)values
 						('1-1',1),('1-2',1),('1-3',1),('1-4',1),('1-5',1),('1-6',1),
 						('2-1',2),('2-2',2),('2-3',2),('2-4',2),('2-5',2),
 						('3-1',3),('3-2',3),('3-3',3),('3-4',3),
-						('4-1',4),('4-2',4),('4-3',4),('4-4',4),('4-5',4),
-						('5-1',5),('5-2',5),('5-3',5),('5-4',5),('5-5',5),
-						('6-1',6),('6-2',6),('6-3',6),('6-4',6),('6-5',6),
+						('4-1',4),('4-2',4),('4-3',4),('4-4',4),
+						('5-1',5),('5-2',5),('5-3',5),('5-4',5),
+						('6-1',6),('6-2',6),('6-3',6),('6-4',6),
 						('7-1',7),('7-2',7),('7-3',7),('7-4',7),('7-5',7),
-						('8-1',8),('8-2',8),('8-3',8),('8-4',8),('8-5',8),
-						('9-1',9),('9-2',9),('9-3',9),('9-4',9),('9-5',9)
+						('8-1',8),('8-2',8),
+						('9-1',9),('9-2',9),('9-3',9),('9-4',9)
 
 -- INSERT INTO TEST CREATING TESTS
 insert into tbTest (testID,ModuleID)values
@@ -1177,7 +1177,7 @@ exec spExamples @crud='c',
 
 EXEC dbo.spSlides @slideID = '1-1-1',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = 'An Overview of Computers and Logic ^ Welcome to the Course! ^<p>Module 1 is an introduction into the idea of programming^We will talk about: </p>^<p>Generic concepts when using a computer^Logic and basic programming ideas^A bit of history and the evolution of programming</p>', -- varchar(2000)
+                  @slideinfo = 'An Overview of Computers and Logic ^ Welcome to the Course! ^<p>Module 1 is an introduction into the idea of programming ^ We will talk about: </p>^<p>Generic concepts when using a computer ^ Logic and basic programming ideas ^ A bit of history and the evolution of programming</p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 
@@ -3972,7 +3972,7 @@ EXEC dbo.spSlides @slideID = '5-4-11',   -- varchar(50)
 
 EXEC spSlides	@slideID = '6-1-1',
 				@lessonid = '6-1',
-				@slideinfo = 'CSS - Cascading Stlye Sheets^ ^ ^ Sloow us to define consistent appearances in a website ^ ^ ^ We will be ising style attributes to do this^ ^ ^ Styles loks like this: attribute: vallue;',
+				@slideinfo = 'CSS - Cascading Style Sheets^ ^ ^ Allow us to define consistent appearances in a website ^ ^ ^ We will be using style attributes to do this^ ^ ^ Styles loks like this: <b>attribute: value;</b>',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-1-2',
@@ -3982,7 +3982,7 @@ EXEC spSlides	@slideID = '6-1-2',
 
 EXEC spSlides	@slideID = '6-1-3',
 				@lessonid = '6-1',
-				@slideinfo = 'Styles can be associated with a category of elemtns:^ dev{^ font-size: large;^ color: red;^}^ Here we see that all text inside of any <div>''s on the page^ will be large and red',
+				@slideinfo = 'Styles can be associated with a category of elements:^ div{^ font-size: large;^ color: red;^}^ Here we see that all text inside of any <div>''s on the page^ will be large and red',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-1-4',
@@ -4357,7 +4357,7 @@ EXEC dbo.spSlides @slideID = '7-4-8',   -- varchar(50)
 --End of Module 7 slides
 EXEC dbo.spSlides @slideID = '7-1-1',   -- varchar(50)
                   @lessonid = '7-1',  -- varchar(50)
-                  @slideinfo = 'Object Oriented Progmanning ^ What is Object Oriented Porgramming (OOP)? ^ OOP is code design philosophy ^ Is evolved naturally out of Porcedural Porgramming^ OOP thinks about everything as having properties or methods ^ Major concepts of OPP ^ Inheritance, Polymorphism and Encapsulation', -- varchar(1000)
+                  @slideinfo = 'Object Oriented Programming ^ What is Object Oriented Programming (OOP)? ^ ^  OOP is code design philosophy ^ Is evolved naturally out of Porcedural Porgramming^ OOP thinks about everything as having properties or methods ^ Major concepts of OPP ^ Inheritance, Polymorphism and Encapsulation', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '7-1-2',   -- varchar(50)

@@ -13,8 +13,8 @@ namespace GroupProject.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Security mysecure = new Security();
-            mysecure.checkAccess("a");
+            Security mysecurity = new Security();
+            mysecurity.checkAccess("a");
             if (!IsPostBack)
             {
                 pnlUserUpdate.Visible = false;

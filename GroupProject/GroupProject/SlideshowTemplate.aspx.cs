@@ -18,7 +18,8 @@ namespace GroupProject
         public string slide;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Security mySecurity = new Security();
+            mySecurity.checkAccess("u");
             if (!IsPostBack)
             {
                 btnPrev.Enabled = false;
