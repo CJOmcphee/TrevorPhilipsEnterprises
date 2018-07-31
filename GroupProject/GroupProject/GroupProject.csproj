@@ -84,6 +84,7 @@
     <Content Include="images\sql.png" />
     <Content Include="images\XML.jpg" />
     <Content Include="index_admin.aspx" />
+    <Content Include="js\nav.js" />
     <Content Include="LOTR\LOTRExtraPage.aspx" />
     <Content Include="LOTR\LOTRPICTURES\Mordor.jpg" />
     <Content Include="LOTR\LOTRPICTURES\Shire.png" />
@@ -864,7 +865,6 @@
     <Content Include="Scripts\sitemap.xml" />
     <Content Include="SlideshowTemplate.aspx" />
     <Content Include="SQLCodeExampleTemplate.txt" />
-    <Content Include="summaries.txt" />
     <Content Include="tests_admin.aspx" />
     <Content Include="users_admin.aspx" />
     <Content Include="bin\GroupProject.dll" />
@@ -933,10 +933,8 @@
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="ExampleTemplate.aspx" />
     <Content Include="GroupProjectLayout.txt" />
-    <Content Include="img\red-wallpaper-13.jpg" />
     <Content Include="Install.sql" />
     <Content Include="PracticeTest.aspx" />
-    <Content Include="Modules.css" />
     <Content Include="css\ie\html5shiv.js" />
     <Content Include="css\ie\PIE.htc" />
     <Content Include="css\ie\v8.css" />

@@ -14,52 +14,36 @@
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
         <script src="Scripts/angular.min.js"></script>
-        <script>
-            $(document).ready(function () {
-            var url = window.location;
-            $('#nav').find('.active').removeClass('active');
-            $('#nav li a').each(function () {
-                if (this.href == url) {
-                    $(this).parent().addClass('active');
-                }
-            }); 
-        });
-        </script>
-   
+        <script src="js/nav.js"></script>
        	<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
-            <link rel="stylesheet" type="text/css" href="css/util.css" />
-	        <link rel="stylesheet" type="text/css" href="css/main.css" />
-  		</noscript>
+        </noscript>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body class="homepage">
     <form id="form1" runat="server">
- 
         <!-- Header -->
 		<div id="header">
-           
-			<div class="container">
-    
-				<!-- Logo -->
-                  
-					<div id="logo">
+  			<div class="container">
+
+   				    <!-- Logo -->
+  					<div id="logo">
                         <h1><a href="index_user.aspx"><img src="images/robertson.png" class="image left" alt="">Software and Database <br /> Development </a></h1>
                         <br />
 					</div>
-               
-				<!-- Logo -->
-                 <!-- Login-details -->
+    				<!-- /Logo -->
+
+                <!-- Login-details -->
                 <div id="login-details">
 			        <p><asp:Label ID="lblWelcome" runat="server" Text="Welcome,"></asp:Label> <asp:Label ID="lblFullName" CssClass="user" runat="server" Text=""></asp:Label>  <asp:Button ID="btnLogout" runat="server" CssClass="ld-button" Text="Logout" OnClick="btnLogout_Click" /> </p>
                 </div>
-            <!-- End Login-details -->
-				<!-- Nav -->
+                <!-- /Login-details -->
 
+				<!-- Navigation -->
                	<nav id="nav">
                     	<ul>
 							<li class="active"><asp:HyperLink ID="hlHome" NavigateUrl="~/index_user.aspx" runat="server">Home</asp:HyperLink></li>
@@ -71,10 +55,10 @@
                             <li><asp:HyperLink ID="hlGrades" NavigateUrl="~/Grades.aspx" Visible="false" runat="server">Grades</asp:HyperLink></li>
                          </ul>
   				</nav>
-  
-        	</div>
+                <!-- /Navigation -->
+         	</div>
 		</div>
-	<!-- Header -->
+	<!-- /Header -->
   
     <!-- Banner -->
 		<div id="banner">
