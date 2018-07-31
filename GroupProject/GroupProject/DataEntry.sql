@@ -1177,7 +1177,7 @@ exec spExamples @crud='c',
 
 EXEC dbo.spSlides @slideID = '1-1-1',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = 'An Overview of Computers and Logic ^ Welcome to the Course! ^<p>Module 1 is an introduction into the idea of programming^We will talk about: </p>^<p>Generic concepts when using a computer^Logic and basic programming ideas^A bit of history and the evolution of programming</p>', -- varchar(2000)
+                  @slideinfo = 'An Overview of Computers and Logic ^ Welcome to the Course! ^<p>Module 1 is an introduction into the idea of programming ^ We will talk about: </p>^<p>Generic concepts when using a computer ^ Logic and basic programming ideas ^ A bit of history and the evolution of programming</p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 
@@ -3972,7 +3972,7 @@ EXEC dbo.spSlides @slideID = '5-4-11',   -- varchar(50)
 
 EXEC spSlides	@slideID = '6-1-1',
 				@lessonid = '6-1',
-				@slideinfo = 'CSS - Cascading Style Sheets^ ^ ^ Allow us to define consistent appearances in a website ^ ^ ^ We will be using style attributes to do this^ ^ ^ Styles loks like this: attribute: value;',
+				@slideinfo = 'CSS - Cascading Style Sheets^ ^ ^ Allow us to define consistent appearances in a website ^ ^ ^ We will be using style attributes to do this^ ^ ^ Styles loks like this: <b>attribute: value;</b>',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-1-2',
@@ -3982,7 +3982,7 @@ EXEC spSlides	@slideID = '6-1-2',
 
 EXEC spSlides	@slideID = '6-1-3',
 				@lessonid = '6-1',
-				@slideinfo = 'Styles can be associated with a category of elemtns:^ dev{^ font-size: large;^ color: red;^}^ Here we see that all text inside of any <div>''s on the page^ will be large and red',
+				@slideinfo = 'Styles can be associated with a category of elements:^ div{^ font-size: large;^ color: red;^}^ Here we see that all text inside of any <div>''s on the page^ will be large and red',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-1-4',

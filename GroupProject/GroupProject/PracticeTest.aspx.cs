@@ -20,6 +20,8 @@ namespace GroupProject
 {
     public partial class PracticeTest : System.Web.UI.Page
     {
+        
+
         public Decimal score;//
         public Decimal Total;
         public string ModID;
