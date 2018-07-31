@@ -5,20 +5,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-</head>
-<body>
     <style>
         h1 h2 p{
             font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
-
     </style>
+</head>
+<body>
+ 
     <form id="form1" runat="server">
-        <div>
-            <table>
+             <table>
                 <tr>
                     <td>
-                        <h1 runat="server" id="hTitle"></h1>
+                        <h2 runat="server" id="hTitle"></h2>
                     </td>
                 </tr>
                 
@@ -28,7 +27,6 @@
                     </td>
                 </tr>
             </table>
-        </div>
     </form>
 </body>
 </html>
