@@ -8,7 +8,7 @@
     <div id="page">
       <div class="login">
             <h1>Login</h1>
-            <asp:TextBox ID="tbEmail" Cssclass="box" runat="server" " ></asp:TextBox>
+            <asp:TextBox ID="tbEmail" Cssclass="box" runat="server"  ></asp:TextBox>
             <asp:TextBox ID="tbPassword" Cssclass="box" TextMode="Password" runat="server"></asp:TextBox>
           <br />
             <a href="recovery.aspx" class="forgot">Forgot your Password?</a>
