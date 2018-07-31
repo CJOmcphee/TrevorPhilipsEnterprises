@@ -13,6 +13,8 @@ namespace GroupProject
 {
     public partial class PracticeTest : System.Web.UI.Page
     {
+        
+
         public Decimal score;//
         public Decimal Total;
         public string ModID;
@@ -22,6 +24,8 @@ namespace GroupProject
         Dictionary<RadioButtonList,Tuple<Label, Label>> radioButtonLists = new Dictionary<RadioButtonList, Tuple<Label,Label>>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Security mySecurity = new Security();
+            mySecurity.checkAccess("u");
              ModID = Request.QueryString["Lesson"].ToString();
 
             // Depening on the value of ModID, Load a different test depending on the value given through a switch
