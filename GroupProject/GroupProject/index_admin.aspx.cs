@@ -11,7 +11,8 @@ namespace GroupProject.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Security mySecurity = new Security();
+            mySecurity.checkAccess("a");
         }
     }
 }
