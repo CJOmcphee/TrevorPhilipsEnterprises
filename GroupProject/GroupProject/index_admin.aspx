@@ -36,7 +36,7 @@
 							</header>
 							<p class="subtitle">You may get some reports about students progress, marks etc.</p>
 							<p><a href="#"><img src="images/report.jpg" alt=""></a></p>
-							<a href="#" class="button">More</a>
+							<a href="Grades.aspx" class="button">More</a>
 						</section>
 					</div>
 					

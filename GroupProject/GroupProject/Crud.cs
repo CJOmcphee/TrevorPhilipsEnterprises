@@ -210,6 +210,11 @@ namespace GroupProject
             return mydal.ExecuteProcedure("spStudentTopTests");
 
         }
+        public static DataSet GetAllTopScore()
+        { 
+            return mydal.ExecuteProcedure("spStudentTopTests");
+
+        }
         public static DataSet GetPassword(string Email)
         {
             mydal.AddParam("@sEmail", Email);
