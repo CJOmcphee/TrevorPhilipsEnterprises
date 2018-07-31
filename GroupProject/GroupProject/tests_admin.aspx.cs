@@ -15,6 +15,8 @@ namespace GroupProject.admin
         public string Module, Test, Question, Lesson;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Security mySecurity = new Security();
+            mySecurity.checkAccess("a");
             if (Session["Test"] != null)
             {
                 Test = (string)Session["Test"];
