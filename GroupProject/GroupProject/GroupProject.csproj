@@ -88,7 +88,7 @@
     <Content Include="LOTR\LOTRExtraPage.aspx" />
     <Content Include="LOTR\LOTRPICTURES\Mordor.jpg" />
     <Content Include="LOTR\LOTRPICTURES\Shire.png" />
-    <Content Include="LOTR\LOTRXSL.xslt" />
+    <Content Include="LOTR\LOTRPICTURES\LOTRXSL.xslt" />
     <Content Include="LOTR\LOTRXML.xml" />
     <Content Include="LOTR\LOTRInstall.sql" />
     <Content Include="LOTR\LOTRPICTURES\Glamdring.jpg" />
