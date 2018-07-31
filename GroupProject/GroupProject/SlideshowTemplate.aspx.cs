@@ -42,10 +42,11 @@ namespace GroupProject
 
             }
         }
+        //Checks the lesson id for the slide if the lesson is one of the below make the test button visible
         public void CheckSlide()
         {
-            if(slide == "1-6" ||  slide=="2-5" || slide == "3-4" || slide == "4-5"
-                    || slide == "5-5" || slide == "6-5" || slide == "7-5" || slide == "8-5" || slide == "9-5")
+            if(slide == "1-6" ||  slide=="2-5" || slide == "3-4" || slide == "4-4"
+                    || slide == "5-4" || slide == "6-4" || slide == "7-5" || slide == "8-2" || slide == "9-2")
             {
                 btnGoTest.Visible = true;
             }

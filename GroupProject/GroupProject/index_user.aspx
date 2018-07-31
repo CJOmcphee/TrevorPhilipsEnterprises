@@ -16,7 +16,7 @@
 							</header>
 							<p class="subtitle">Learn about the basiscs from console commands to ASP.NET webpages.</p>
 							<p><a><img width="275" height="175" src="images/csharp.jpg" alt="C Sharp" /></a></p>
-							<a href="#" class="button">Learn</a>
+							<a href="modules.aspx" class="button">Learn</a>
 						</section>
 					</div>
 					<div class="3u">
@@ -26,7 +26,7 @@
 							</header>
 							<p class="subtitle">Learn how to create crud class and how to use stored procedures.</p>
 							<p><a><img src="images/MSSQL.jpg" width="275" height="175" alt="SQL"></a></p>
-							<a href="#" class="button">Learn</a>
+							<a href="modules.aspx" class="button">Learn</a>
 						</section>
 					</div>
 					<div class="3u">
@@ -36,7 +36,7 @@
 							</header>
 							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
 							<p><a><img src="images/logo-php.png" width="275" height="175" alt="PHP"></a></p>
-							<a href="#" class="button">Learn</a>
+							<a href="modules.aspx" class="button">Learn</a>
 						</section>
 					</div>
 					<div class="3u">

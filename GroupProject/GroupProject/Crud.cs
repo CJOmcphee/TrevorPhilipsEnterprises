@@ -245,5 +245,12 @@ namespace GroupProject
             mydal.AddParam("@crud", "u");
             return mydal.ExecuteProcedure("spSlides");
         }
+
+        public static DataSet GetSum(string ModID)
+        {
+            mydal.AddParam("@moduleName",ModID);
+            mydal.AddParam("@crud", "y");
+            return mydal.ExecuteProcedure("spModule");
+        }
     }
 }

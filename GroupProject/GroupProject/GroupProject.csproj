@@ -69,7 +69,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Anton.sql" />
     <Content Include="DataEntry.sql" />
     <Content Include="Grades.aspx" />
     <Content Include="images\csharp.jpg" />
@@ -97,7 +96,6 @@
     <Content Include="LOTR\LOTRAdmin.aspx" />
     <Content Include="LOTR\LOTRProducts.aspx" />
     <Content Include="LOTR\LOTRHome.aspx" />
-    <Content Include="Mike.sql" />
     <Content Include="module_summary.aspx" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -912,7 +910,6 @@
     <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
-    <Content Include="ChrisTest.sql" />
     <Content Include="DAL_Project\bin\Debug\DAL_Project.dll" />
     <Content Include="DAL_Project\bin\Debug\DAL_Project.pdb" />
     <Content Include="DAL_Project\DAL_Project.csproj" />
@@ -934,14 +931,12 @@
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.min.js" />
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.slim.js" />
     <Content Include="DAL_Project\Scripts\jquery-3.3.1.slim.min.js" />
-    <Content Include="Darryl.sql" />
     <Content Include="ExampleTemplate.aspx" />
     <Content Include="GroupProjectLayout.txt" />
     <Content Include="img\red-wallpaper-13.jpg" />
     <Content Include="Install.sql" />
     <Content Include="PracticeTest.aspx" />
     <Content Include="Modules.css" />
-    <Content Include="TJ.sql" />
     <Content Include="css\ie\html5shiv.js" />
     <Content Include="css\ie\PIE.htc" />
     <Content Include="css\ie\v8.css" />

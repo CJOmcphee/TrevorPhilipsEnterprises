@@ -23,8 +23,8 @@
                 </tr>
                 
                 <tr>
-                    <td runat="server" id="tdContent">
-                        Sed eleifend nibh a arcu finibus, a viverra lectus lobortis. Maecenas cursus ultricies orci. Praesent porta ipsum at nisl aliquet tristique. Nulla auctor metus a purus suscipit vulputate. Vestibulum dictum, urna sed ultricies dictum, erat nisi ultrices dui, id cursus nulla risus ac ligula. Nunc dignissim velit id dolor suscipit, a rutrum ipsum convallis. Donec luctus finibus ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices purus ut neque molestie consectetur. Mauris massa ex, porta sit amet posuere vitae, rutrum nec nisl. In imperdiet dignissim quam, convallis mattis tortor varius vitae. Nunc bibendum scelerisque eleifend.
+                    <td>
+                        <table runat="server" id="tblSummary"></table>
                     </td>
                 </tr>
             </table>

@@ -43,22 +43,22 @@ namespace GroupProject
                 case "3-4":
                     LoadQuestion("Module 3");
                     break;
-                case "4-5":
+                case "4-4":
                     LoadQuestion("Module 4");
                     break;
-                case "5-5":
+                case "5-4":
                     LoadQuestion("Module 5");
                     break;
-                case "6-5":
+                case "6-4":
                     LoadQuestion("Module 6");
                     break;
                 case "7-5":
                     LoadQuestion("Module 7");
                     break;
-                case "8-5":
+                case "8-2":
                     LoadQuestion("Module 8");
                     break;
-                case "9-5":
+                case "9-4":
                     LoadQuestion("Module 9");
                     break;
             }
