@@ -3,19 +3,19 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
    
-           <!-- Main -->
+      <!-- Main -->
 		<div id="page">
-
-			<!-- Extra -->
-			<div id="marketing" class="container">
+		    <div id="marketing" class="container">
 				<div class="row">
 					<div class="3u">
 						<section>
 							<header>
 								<h2>The Basics of C#</h2>
 							</header>
+                            <br />
 							<p class="subtitle">Learn about the basiscs from console commands to ASP.NET webpages.</p>
-							<p><a><img width="275" height="175" src="images/csharp.jpg" alt="C Sharp" /></a></p>
+							<br />
+                            <p><a><img width="275" height="175" src="images/csharp.jpg" alt="C Sharp" /></a></p>
 							<a href="modules.aspx" class="button">Learn</a>
 						</section>
 					</div>
@@ -24,18 +24,21 @@
 							<header>
 								<h2>MS SQL Server </h2>
 							</header>
-							<p class="subtitle">Learn how to create crud class and how to use stored procedures.</p>
-							<p><a><img src="images/MSSQL.jpg" width="275" height="175" alt="SQL"></a></p>
+                            <br />
+							<p class="subtitle">Learn how to create CRUD class and how to use stored procedures.</p>
+							<br />
+                            <p><a><img src="images/MSSQL.jpg" width="275" height="175" alt="SQL"></a></p>
 							<a href="modules.aspx" class="button">Learn</a>
 						</section>
 					</div>
 					<div class="3u">
 						<section>
 							<header>
-								<h2>Get started with PHP</h2>
+								<h2>XML&XSL and Web Services</h2>
 							</header>
-							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a><img src="images/logo-php.png" width="275" height="175" alt="PHP"></a></p>
+							<p class="subtitle">Understand how to deal with Extensible Markup Language</p>
+                            <br />
+							<p><a><img src="images/xml.jpg" width="275" height="175" alt="PHP"></a></p>
 							<a href="modules.aspx" class="button">Learn</a>
 						</section>
 					</div>
@@ -44,16 +47,18 @@
 							<header>
 								<h2>Javascript & HTML5</h2>
 							</header>
+                            <br />
 							<p class="subtitle">Learn how to use Jquery, Json, Ajax calls and HTML5 controls.</p>
+                            <br />
 							<p><a><img src="images/jswide.png" width="275" height="175" alt="Javascript" /></a></p>
 							<a href="modules.aspx" class="button">Learn</a>
 						</section>
 					</div>
 				</div>
 			</div>
-			<!-- /Extra -->
-				
-			<!-- Main -->
+		<!-- /Main -->
+
+        <!-- Extra -->
 			<div id="main" class="container">
 				<div class="row">
 					<div class="6u">
@@ -83,8 +88,8 @@
 									<p>Customer Service and User Experience </p>
 								</li>
 								<li>
-									<a><img src="images/XML.jpg" height="75" width="100" alt=""></a>
-									<p>XML&XSL and Web Services</p>
+									<a><img src="images/php.png" height="75" width="100" alt=""></a>
+									<p>The Basics of PHP</p>
 								</li>
 								<li>
 									<a><img src="images/GitHub.jpg" alt="" height="75" width="100"></a>
@@ -95,10 +100,8 @@
 					</div>
                     </div>
 			</div>
-			<!-- Main -->
-
 		</div>
-	<!-- /Main -->
+	<!-- /Extra -->
 
 	<!-- Featured -->
 		<div id="featured">
@@ -109,7 +112,7 @@
 							<a class="image left"><img src="images/MVC.jpg" alt=""></a>
 							<h3>MVC and Entity Framework</h3>
 							<p>Learn step by stpe to create Contoso University. </p>
-							<a href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-2.1" class="button">Learn MVC</a>
+                            <a href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-2.1" class="button">Learn MVC</a>
 						</div>
 					</section>
 					<section class="4u">
@@ -117,7 +120,7 @@
 							<a class="image left"><img src="images/CSS.jpg" alt=""></a>
 							<h3>CSS and CSS3</h3>
 							<p>Learn how to style web applications and controls through the online source of W3 schools. </p>
-							<a href="https://www.w3schools.com/Css/" class="button">Learn</a>
+							<a href="https://www.w3schools.com/Css/" class="button">Learn CSS</a>
 						</div>
 					</section>
 					<section class="4u">
@@ -125,10 +128,10 @@
 							<a class="image left"><img src="images/MicroSoftCert.png" alt=""></a>
 							<h3>Microsoft Certifaction</h3>
 							<p>At the end of the course you are given 3 tokens to aquire Microsoft Certifcations </p>
-							
 						</div>
 					</section>
 				</div>	
 			</div>
 		</div>
+    <!-- /Featured -->
 </asp:Content>

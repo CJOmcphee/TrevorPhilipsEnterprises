@@ -3972,7 +3972,7 @@ EXEC dbo.spSlides @slideID = '5-4-11',   -- varchar(50)
 
 EXEC spSlides	@slideID = '6-1-1',
 				@lessonid = '6-1',
-				@slideinfo = 'CSS - Cascading Stlye Sheets^ ^ ^ Sloow us to define consistent appearances in a website ^ ^ ^ We will be ising style attributes to do this^ ^ ^ Styles loks like this: attribute: vallue;',
+				@slideinfo = 'CSS - Cascading Style Sheets^ ^ ^ Allow us to define consistent appearances in a website ^ ^ ^ We will be using style attributes to do this^ ^ ^ Styles loks like this: attribute: value;',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-1-2',
@@ -4357,7 +4357,7 @@ EXEC dbo.spSlides @slideID = '7-4-8',   -- varchar(50)
 --End of Module 7 slides
 EXEC dbo.spSlides @slideID = '7-1-1',   -- varchar(50)
                   @lessonid = '7-1',  -- varchar(50)
-                  @slideinfo = 'Object Oriented Progmanning ^ What is Object Oriented Porgramming (OOP)? ^ OOP is code design philosophy ^ Is evolved naturally out of Porcedural Porgramming^ OOP thinks about everything as having properties or methods ^ Major concepts of OPP ^ Inheritance, Polymorphism and Encapsulation', -- varchar(1000)
+                  @slideinfo = 'Object Oriented Programming ^ What is Object Oriented Programming (OOP)? ^ ^  OOP is code design philosophy ^ Is evolved naturally out of Porcedural Porgramming^ OOP thinks about everything as having properties or methods ^ Major concepts of OPP ^ Inheritance, Polymorphism and Encapsulation', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '7-1-2',   -- varchar(50)
