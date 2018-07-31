@@ -9,13 +9,6 @@ using System.Data;
 using System.Web.UI.HtmlControls;
 using System.Drawing;
 
-
-
-
-
-
-
-
 namespace GroupProject
 {
     public partial class PracticeTest : System.Web.UI.Page
