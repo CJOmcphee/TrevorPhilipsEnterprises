@@ -24,7 +24,7 @@
                 <asp:ListItem>Module 9</asp:ListItem>
             </asp:DropDownList>
             </div>
-            <table id="table1" runat="server">    
+            <table id="tblTest" runat="server">    
             </table>
             <asp:Label ID="lblScore" runat="server" Text=""></asp:Label>
             <asp:Button ID="btnSubmit" runat="server" Text="Submit"   OnClick="btnSubmit_Click" />

@@ -9,17 +9,12 @@ using System.Data;
 using System.Web.UI.HtmlControls;
 using System.Drawing;
 
-
-
-
-
-
-
-
 namespace GroupProject
 {
     public partial class PracticeTest : System.Web.UI.Page
     {
+        
+
         public Decimal score;//
         public Decimal Total;
         public string ModID;
@@ -29,6 +24,8 @@ namespace GroupProject
         Dictionary<RadioButtonList,Tuple<Label, Label>> radioButtonLists = new Dictionary<RadioButtonList, Tuple<Label,Label>>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Security mySecurity = new Security();
+            mySecurity.checkAccess("u");
              ModID = Request.QueryString["Lesson"].ToString();
 
             // Depening on the value of ModID, Load a different test depending on the value given through a switch
@@ -90,7 +87,7 @@ namespace GroupProject
                 myLabel.Text = dsQuestion.Tables[0].Rows[0]["question"].ToString();
                 tCell.Controls.Add(myLabel);
                 tRow.Controls.Add(tCell);
-                table1.Controls.Add(tRow);
+                tblTest.Controls.Add(tRow);
                 
                 RadioButtonList myrb = new RadioButtonList();
                 myrb.DataSource = dsAnswers.Tables[0];
@@ -99,13 +96,13 @@ namespace GroupProject
                 myrb.DataBind();
                 tCell1.Controls.Add(myrb);
                 trow1.Controls.Add(tCell1);
-                table1.Controls.Add(trow1);
+                tblTest.Controls.Add(trow1);
 
                 
                 Label answerLabel = new Label();
                 tCell.Controls.Add(answerLabel);
                 trow2.Controls.Add(tCell2);
-                table1.Controls.Add(trow2);
+                tblTest.Controls.Add(trow2);
 
                 radioButtonLists.Add(myrb, new Tuple<Label, Label>(myLabel,answerLabel));
                 count++;

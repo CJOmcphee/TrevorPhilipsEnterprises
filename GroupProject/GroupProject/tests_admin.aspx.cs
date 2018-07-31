@@ -15,6 +15,8 @@ namespace GroupProject.admin
         public string Module, Test, Question, Lesson;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Security mySecurity = new Security();
+            mySecurity.checkAccess("a");
             if (Session["Test"] != null)
             {
                 Test = (string)Session["Test"];
@@ -44,7 +46,7 @@ namespace GroupProject.admin
             string ModuleName = tbModuleName.Text;
             string TestName = "module" + x.ToString();
             Crud.CreatUpdateModule("c", ModuleName, tbModuleSum.Text, "");
-            Crud.CreateTest("c", TestName);
+            Crud.CreateTest(x.ToString(), TestName);
             LoadTest(Crud.ReadTable("spModule"));
         }
         protected void btnChangeModule_Click(object sender, EventArgs e)
@@ -71,66 +73,70 @@ namespace GroupProject.admin
         }
         public void LoadSlides(DataSet ds)
         {
+            HidePanels();
             gvSlides.DataSource = ds;
             gvSlides.DataBind();
             pnlSlides.Visible = true;
-            pnllessons.Visible = false;
         }
         public void LoadExamples(DataSet ds)
         {
+            HidePanels();
             gvExamples.DataSource = ds;
             gvExamples.DataBind();
-            pnllessons.Visible = false;
             pnlExamples.Visible = true;
         }
         public void LoadLessons(DataSet ds)
         {
+            HidePanels();
             gvLessons.DataSource = ds;
             gvLessons.DataBind();
             pnllessons.Visible = true;
-            pnlSlides.Visible = false;
-            pnlnav.Visible = false;
         }
         public void LoadTest(DataSet ds)
         {
+            HidePanels();
             gvTests.DataSource = ds;
             gvTests.DataBind();
-            pnlEditQuestion.Visible = false;
-            pnlQuestionDetails.Visible = false;
-            pnlNewQuestion.Visible = false;
-            pnlNewWrongAnswer.Visible = false;
-            pnlQuestion.Visible = false;
             pnlTestsList.Visible = true;
-            pnllessons.Visible = false;
-            pnlExamples.Visible = false;
-            pnlSlides.Visible = false;
+
         }
         public void LoadQuestion(DataSet ds)
         {
+            HidePanels();
             gvQuestions.DataSource = ds;
             gvQuestions.DataBind();
             pnlQuestion.Visible = true;
-            pnlEditQuestion.Visible = false;
-            pnlQuestionDetails.Visible = false;
-            pnlNewQuestion.Visible = false;
-            pnlNewWrongAnswer.Visible = false;
-            pnlQuestion.Visible = true;
-            pnlTestsList.Visible = false;
-            pnlnav.Visible = false;
+
         }
         public void LoadWrongAnswer(DataSet ds)
         {
             gvWrongAnswers.DataSource = ds.Tables[1];
             gvWrongAnswers.DataBind();
+            HidePanels();
             pnlEditQuestion.Visible = true;
             pnlQuestionDetails.Visible = true;
-            pnlNewQuestion.Visible = false;
-            pnlNewWrongAnswer.Visible = false;
-            pnlQuestion.Visible = false;
-            pnlTestsList.Visible = false;
             DataSet QuestionDS = Crud.ReadTable("spQuestions", Question);
             tbQuestionDetail.Text = QuestionDS.Tables[0].Rows[0]["question"].ToString();
             tbAnswerDetail.Text = QuestionDS.Tables[0].Rows[0]["answers"].ToString();
+        }
+        public void HidePanels()
+        {
+            pnlEditQuestion.Visible = false;
+            pnlExamples.Visible = false;
+            pnllessons.Visible = false;
+            pnlModuleDetails.Visible = false;
+            pnlnav.Visible = false;
+            pnlNewQuestion.Visible = false;
+            pnlNewSlide.Visible = false;
+            pnlNewWrongAnswer.Visible = false;
+            pnlQuestion.Visible = false;
+            pnlQuestionDetails.Visible = false;
+            pnlSlideEditor.Visible = false;
+            pnlSlides.Visible = false; ;
+            pnlTableEditor.Visible = false; ;
+            pnlTableInsert.Visible = false; ;
+            pnlTestsList.Visible = false; ;
+            pnlEditExamples.Visible = false;
         }
         protected void gvTests_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -252,7 +258,7 @@ namespace GroupProject.admin
         protected void gvExamples_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvExamples.PageIndex = e.NewPageIndex;
-
+            LoadExamples(Crud.GetExamples(Lesson));
         }
 
         protected void gvSlides_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -292,7 +298,29 @@ namespace GroupProject.admin
             {
                 return;
             }
-
+            gvExamples.SelectedIndex = Convert.ToInt32(e.CommandArgument);
+            switch(e.CommandName)
+            {
+                case "Edi":
+                    HidePanels();
+                    pnlEditExamples.Visible = true;
+                    DataSet ds = Crud.ReadTable("spExamples", gvExamples.SelectedDataKey["exampleID"].ToString());
+                    taEditCode.InnerText = ds.Tables[0].Rows[0]["code"].ToString();
+                    taEditExample.InnerText = ds.Tables[0].Rows[0]["example"].ToString();
+                    taEditExplain.InnerText = ds.Tables[0].Rows[0]["explanation"].ToString();
+                    tbAnswer.Text = ds.Tables[0].Rows[0]["solution"].ToString();
+                    tbSlideRef.Text = ds.Tables[0].Rows[0]["slide"].ToString();
+                    lblExampleID.Text = gvExamples.SelectedDataKey["exampleID"].ToString();
+                    lblCode.Text = taEditCode.InnerText;
+                    lblExplain.Text = taEditExplain.InnerText;
+                    lblExample.Text = taEditExample.InnerText;
+                    lblSolution.Text = tbAnswer.Text;
+                    break;
+                case "Del":
+                    Crud.DeleteData("spExamples", gvExamples.SelectedDataKey["exampleID"].ToString());
+                    LoadExamples(Crud.GetExamples(Lesson));
+                    break;
+            }
         }
 
         protected void gvSlides_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -380,6 +408,73 @@ namespace GroupProject.admin
             Crud.EditSlide(lblSlideID.Text, slideContent.Replace("\n", "^"));
             pnlSlideEditor.Visible = false;
             taSlideEditText.InnerText = "";
+        }
+
+        protected void btnAddlesson_Click(object sender, EventArgs e)
+        {
+            DataSet ds = Crud.GetLessons(Module);
+            int y = ds.Tables[0].Rows.Count +1;
+            Crud.CreatLesson(Module + "-" + y, Module);
+            LoadLessons(Crud.GetLessons(Module));
+        }
+
+        protected void btnAddExample_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            taEditCode.InnerText ="";
+            taEditExample.InnerText = "";
+            taEditExplain.InnerText = "";
+            tbAnswer.Text = "";
+            tbSlideRef.Text = "";
+            lblExampleID.Text = "";
+            lblCode.Text = "";
+            lblExplain.Text ="";
+            lblExample.Text = "";
+            lblSolution.Text = "";
+            pnlEditExamples.Visible = true;
+        }
+
+        protected void btnSaveExample_Click(object sender, EventArgs e)
+        {
+            if (lblExampleID.Text == "")
+            {
+                Crud.CreateUpdateExamples("c", "", taEditExample.InnerText, lblSolution.Text, Lesson, tbSlideRef.Text, taEditExplain.InnerText);
+            }
+            else
+            {
+                Crud.CreateUpdateExamples("u", lblExampleID.Text, taEditExample.InnerText, lblSolution.Text, Lesson, tbSlideRef.Text, taEditExplain.InnerText);
+            }
+            LoadExamples(Crud.GetExamples(Lesson));
+        }
+
+        protected void btnSeeExplanation_Click(object sender, EventArgs e)
+        {
+            pnlEditExamples.Visible = true;
+            pnlEditExplain.Visible = true;
+            pnlEditCode.Visible = false;
+            pnlEditExample.Visible = false;
+        }
+
+        protected void btnSeeCode_Click(object sender, EventArgs e)
+        {
+            pnlEditExamples.Visible = true;
+            pnlEditExplain.Visible = false;
+            pnlEditCode.Visible = true;
+            pnlEditExample.Visible = false;
+        }
+
+        protected void btnSeeExample_Click(object sender, EventArgs e)
+        {
+            pnlEditExamples.Visible = true;
+            pnlEditExplain.Visible = false;
+            pnlEditCode.Visible = false;
+            pnlEditExample.Visible = true;
+        }
+
+        protected void btnBackToNav1_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            LoadExamples(Crud.GetExamples(Lesson));
         }
 
         protected void tbTable_Click(object sender, EventArgs e)

@@ -15,6 +15,7 @@ namespace GroupProject
         public int Module;
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if(!IsPostBack)
             {
                 ShowBestScores();
@@ -22,16 +23,27 @@ namespace GroupProject
         }
         public void ShowBestScores()
         {
+            
             Security security = new Security();
-            DataSet dsTopScores = Crud.GetTopScore(security.Email);
-            GridView1.DataSource = dsTopScores;
-            GridView1.DataBind();
+            if(security.Email=="doug.jackson@robertsoncollege.net")
+            {
+                DataSet dsTopScores = Crud.GetAllTopScore();
+                gvAdmin.DataSource = dsTopScores;
+                gvAdmin.DataBind();
+            }
+            else
+            {
+                DataSet dsTopScores = Crud.GetTopScore(security.Email);
+                gvUser.DataSource = dsTopScores;
+                gvUser.DataBind();
+            }
+            
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            GridView1.SelectedIndex = Convert.ToInt32(e.CommandArgument);
-            string test = GridView1.SelectedDataKey["tID"].ToString();
+            gvUser.SelectedIndex = Convert.ToInt32(e.CommandArgument);
+            string test = gvUser.SelectedDataKey["tID"].ToString();
            
             switch(test)
             {

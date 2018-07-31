@@ -67,12 +67,12 @@ insert into tbLesson(lessonID, mID)values
 						('1-1',1),('1-2',1),('1-3',1),('1-4',1),('1-5',1),('1-6',1),
 						('2-1',2),('2-2',2),('2-3',2),('2-4',2),('2-5',2),
 						('3-1',3),('3-2',3),('3-3',3),('3-4',3),
-						('4-1',4),('4-2',4),('4-3',4),('4-4',4),('4-5',4),
-						('5-1',5),('5-2',5),('5-3',5),('5-4',5),('5-5',5),
-						('6-1',6),('6-2',6),('6-3',6),('6-4',6),('6-5',6),
+						('4-1',4),('4-2',4),('4-3',4),('4-4',4),
+						('5-1',5),('5-2',5),('5-3',5),('5-4',5),
+						('6-1',6),('6-2',6),('6-3',6),('6-4',6),
 						('7-1',7),('7-2',7),('7-3',7),('7-4',7),('7-5',7),
-						('8-1',8),('8-2',8),('8-3',8),('8-4',8),('8-5',8),
-						('9-1',9),('9-2',9),('9-3',9),('9-4',9),('9-5',9)
+						('8-1',8),('8-2',8),
+						('9-1',9),('9-2',9),('9-3',9),('9-4',9)
 
 -- INSERT INTO TEST CREATING TESTS
 insert into tbTest (testID,ModuleID)values
@@ -1177,7 +1177,7 @@ exec spExamples @crud='c',
 
 EXEC dbo.spSlides @slideID = '1-1-1',   -- varchar(50)
                   @lessonid = '1-1',  -- varchar(50)
-                  @slideinfo = 'An Overview of Computers and Logic ^ Welcome to the Course! ^<p>Module 1 is an introduction into the idea of programming^We will talk about: </p>^<p>Generic concepts when using a computer^Logic and basic programming ideas^A bit of history and the evolution of programming</p>', -- varchar(2000)
+                  @slideinfo = 'An Overview of Computers and Logic ^ Welcome to the Course! ^<p>Module 1 is an introduction into the idea of programming ^ We will talk about: </p>^<p>Generic concepts when using a computer ^ Logic and basic programming ideas ^ A bit of history and the evolution of programming</p>', -- varchar(2000)
                   @crud = 'c'       -- varchar(1)
 
 
@@ -3972,7 +3972,7 @@ EXEC dbo.spSlides @slideID = '5-4-11',   -- varchar(50)
 
 EXEC spSlides	@slideID = '6-1-1',
 				@lessonid = '6-1',
-				@slideinfo = 'CSS - Cascading Stlye Sheets^ ^ ^ Sloow us to define consistent appearances in a website ^ ^ ^ We will be ising style attributes to do this^ ^ ^ Styles loks like this: attribute: vallue;',
+				@slideinfo = 'CSS - Cascading Style Sheets^ ^ ^ Allow us to define consistent appearances in a website ^ ^ ^ We will be using style attributes to do this^ ^ ^ Styles loks like this: <b>attribute: value;</b>',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-1-2',
@@ -3982,7 +3982,7 @@ EXEC spSlides	@slideID = '6-1-2',
 
 EXEC spSlides	@slideID = '6-1-3',
 				@lessonid = '6-1',
-				@slideinfo = 'Styles can be associated with a category of elemtns:^ dev{^ font-size: large;^ color: red;^}^ Here we see that all text inside of any <div>''s on the page^ will be large and red',
+				@slideinfo = 'Styles can be associated with a category of elements:^ div{^ font-size: large;^ color: red;^}^ Here we see that all text inside of any <div>''s on the page ^ will be large and red',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-1-4',
@@ -4002,37 +4002,37 @@ EXEC spSlides	@slideID = '6-1-6',
 
 EXEC spSlides	@slideID = '6-1-7',
 				@lessonid = '6-1',
-				@slideinfo = 'Note that on the previous page we used CssCkass abd Ckass to do the^ same thing^ ^  The dufference is that the first one is an ASP server control. The keyword^ "class" is already reserved in C#( as you y know from Module 2).^ <asp: Button^ ID="tnSearch" runat server <u>CssClass="SmallRedWithBorder"</u>/>^ 6 The second one is just a regualr html element, so the syntax is slightly^ different^ <div <u>class="SmallRedWithBorder"</u>> This text will also use the same^ styles!</div> ',
+				@slideinfo = 'Note that on the previous page we used CssClass abd Class to do the ^ same thing^ ^  The difference is that the first one is an ASP server control. The keyword^ "class" is already reserved in C#( as you y know from Module 2).^ <asp: Button^ ID="tnSearch" runat server <u>CssClass="SmallRedWithBorder"</u>/>^ 6 The second one is just a regular html element, so the syntax is slightly ^ different ^ <div <u>class="SmallRedWithBorder"</u>> This text will also use the same ^ styles!</div> ',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-1-8',
 				@lessonid = '6-1',
-				@slideinfo = 'CSS- Cascading Style Sheets^ There are 4 ways to modify the css in our.aspx(or .html)^ files:^ In a <style> tag in the page itself^ Directly in the tag using a style"" attriute^ In a sperate referenced .css page^ Modifying from the server( in our case: C#)',
+				@slideinfo = 'CSS- Cascading Style Sheets^ There are 4 ways to modify the css in our.aspx(or .html)^ files:^ In a <style> tag in the page itself ^ Directly in the tag using a style"" attribute^ In a separate referenced .css page^ Modifying from the server( in our case: C#)',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-1-9',
 				@lessonid = '6-1',
-				@slideinfo = '1. In a <stlye> tag in the page:^ <style>^ ^body {^  font-size: xx small;^ color: black^ </style>^ ^ ^ Usually this is the placed between the head tages:^ *HERE*</head>',
+				@slideinfo = '1. In a < style > tag in the page:^ < style >^ ^body {^  font-size: xx small;^ color: black^ </style>^ ^ ^ Usually this is the placed between the head tags:^ *HERE*</head>',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-1-10',
 				@lessonid = '6-1',
-				@slideinfo = '2. Directly  in the tag, using the style= "" attribute:^ ^ ^ <body stlye="font-size: xx small; color-black;"^ ^ </body>',
+				@slideinfo = '2. Directly  in the tag, using the style= "" attribute:^ ^ ^ <body style="font-size: xx small; color-black;"^ ^ < /body >',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-1-11',
 				@lessonid = '6-1',
-				@slideinfo = '3. In a seperate .css page (created by right clicking on the project and creating a "StyleSheet"), we put the code there: ^ body {^ font-size: xx small;^ color: black^ }^ We can then click and drag the .css file from te solution^ exploerer into the <head> tag on our .aspx page and it should   ^ create a link like this^ <link href="StyleSheet1.css" rel="stylesheet" /> ',
+				@slideinfo = '3. In a separate .css page (created by right clicking on the project and creating a "StyleSheet"), we put the code there: ^ body {^ font-size: xx small;^ color: black^ }^ We can then click and drag the .css file from te solution^ explorer into the < head > tag on our .aspx page and it should   ^ create a link like this^ <link href="StyleSheet1.css" rel="stylesheet" /> ',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-1-12',
 				@lessonid = '6-1',
-				@slideinfo = 'You should alwasy endeavor to use a seperate stylesheet^ file where possible^ ^ If you use a seperate file, it will be easier to modify the style^ of your project after the fact^ ^ Good programming practice^ ^ Keep your stylesheets stored in a directory called^"StyleSheets" or "CSS"',
+				@slideinfo = 'You should always endeavor to use a seperate stylesheet^ file where possible^ ^ If you use a separate file, it will be easier to modify the style^ of your project after the fact^ ^ Good programming practice^ ^ Keep your stylesheets stored in a directory called^"StyleSheets" or "CSS"',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-1-13',
 				@lessonid = '6-1',
-				@slideinfo = '4. Modifying from the server( in our case: C#)^ <div id="mainDiv" runat="server">Hello World</div>^  ^ If we add the runat="server" attribture/value to a regular html^ element, we are able to do modifications from the server^ (note: you will need an ID, as this will be the variable name)^  mainDiv.Style.Add("color", "purple");^ mainDiv.Style.Add("font-size", "large");',
+				@slideinfo = '4. Modifying from the server( in our case: C#)^ < div id="mainDiv" runat="server">Hello World< /div >^  ^ If we add the runat="server" attribute/value to a regular html^ element, we are able to do modifications from the server^ (note: you will need an ID, as this will be the variable name)^  mainDiv.Style.Add("color", "purple");^ mainDiv.Style.Add("font-size", "large");',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-1-14',
@@ -4049,22 +4049,22 @@ EXEC spSlides	@slideID = '6-1-15',
 
 EXEC spSlides	@slideID = '6-2-1',
 				@lessonid = '6-2',
-				@slideinfo = 'File upload control <input type="file" disabled/>^ ^ There are many way to upload and display images^ ^ The following slides who two potential ways^ ^ 1. Upload and dsiplay a file to a web server using a directory^ path^ ^2. Upload a file to a database',
+				@slideinfo = 'File upload control < input type="file" disabled/>^ ^ There are many way to upload and display images^ ^ The following slides show two potential ways^ ^ 1. Upload and display a file to a web server using a directory^ path^ ^2. Upload a file to a database',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-2-2',
 				@lessonid = '6-2',
-				@slideinfo = 'Upload file to a web server  using directoty path(FileIpload^ Control):^ ^ First, save the file to th web server:^ string serverPath=Server.MapPath(".")+ "\\files\\";^ string fileName= FileUpload1.FileName;^ string pathAndFule= serverPath + fileName;^ FileUpload.PostedFile.SaveAs(pathAndFile);^ ^ ',
+				@slideinfo = 'Upload file to a web server  using directory path(FileUpload^ Control):^ ^ First, save the file to th web server:^ string serverPath=Server.MapPath(".")+ "\\files\\";^ string fileName= FileUpload1.FileName;^ string pathAndFile= serverPath + fileName;^ FileUpload.PostedFile.SaveAs(pathAndFile);^ ^ ',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-2-3',
 				@lessonid = '6-2',
-				@slideinfo = 'Second, save the text of the ath and fule to the database^ ^ The format of the pat should look lie: "Folder.FileName"^ ^ Tird, display the image from the web server using a directory path:^ Image.ImageURL = ds.Tables[0].Rows[0]["path"].ToString();',
+				@slideinfo = 'Second, save the text of the path and file to the database^ ^ The format of the path should look like: "Folder.FileName"^ ^ Third, display the image from the web server using a directory path:^ Image.ImageURL = ds.Tables[0].Rows[0]["path"].ToString();',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-2-4',
 				@lessonid = '6-2',
-				@slideinfo = 'MAster pages allow you to create a consistent layout for the^ paes in your application^ ^ A single master page defines the look, feel and standed^ behaviour that wany for all off the  pages in your app^ ^ When users request content pages, they merge with the master page to procude output that combines the layut of^ the master page  ith the content from the content page ',
+				@slideinfo = 'Master pages allow you to create a consistent layout for the^ pages in your application^ ^ A single master page defines the look, feel and standard^ behaviour that you want for all off the  pages in your app^ ^ When users request content pages, they merge with the master page to produce output that combines the layout of^ the master page  with the content from the content page ',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-2-5',
@@ -4074,12 +4074,12 @@ EXEC spSlides	@slideID = '6-2-5',
 
 EXEC spSlides	@slideID = '6-2-5',
 				@lessonid = '6-2',
-				@slideinfo = 'Now that we have a master page, we need to have a specific^ content pages (Web Content Forms)^ ^ To create a new content page: ^ Right click on your project solution^ Click "ass new item" => "Web Form using Master Page"^ You will have to specifiy which master page to use for this^ content page',
+				@slideinfo = 'Now that we have a master page, we need to have specific^ content pages (Web Content Forms)^ ^ To create a new content page: ^ Right click on your project solution^ Click "add new item" => "Web Form using Master Page"^ You will have to specify which master page to use for this^ content page',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-2-6',
 				@lessonid = '6-2',
-				@slideinfo = 'Session objects hold user-specific information and are^ available in all pages of an application^ ^ Common values stored in Sesion are: name, id, and^ preferences^ ^ The server creates a new Session object for each new user,^ and destroys the Session object when the sssion expires ',
+				@slideinfo = 'Session objects hold user-specific information and are^ available in all pages of an application^ ^ Common values stored in Session are: name, id, and^ preferences^ ^ The server creates a new Session object for each new user,^ and destroys the Session object when the session expires ',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-2-7',
@@ -4089,54 +4089,54 @@ EXEC spSlides	@slideID = '6-2-7',
 
 EXEC spSlides	@slideID = '6-2-7',
 				@lessonid = '6-2',
-				@slideinfo = 'A session start when^ ^ A new user equests a ASP file^ ^ A value is stored on a Session variable^ ^ A SessionID is generated and stored at the time of the session^ creation',
+				@slideinfo = 'A session starts when^ ^ A new user requests an ASP file^ ^ A value is stored on a Session variable^ ^ A SessionID is generated and stored at the time of the session^ creation',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-2-7',
 				@lessonid = '6-3',
-				@slideinfo = 'A session end if a user has not requested or refreshed a^ page in the application for th specified period^ ^ By Default, This default time is 20 minutes^ ^ You can use  this knowledge for storing values that you want^ to expire^ ',
+				@slideinfo = 'A session end if a user has not requested or refreshed a^ page in the application for the specified period^ ^ By Default, This default time is 20 minutes^ ^ You can use  this knowledge for storing values that you want^ to expire^ ',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-2-8',
 				@lessonid = '6-2',
-				@slideinfo = 'A session alos ends if you type:^ ^ Session.Abandon();^ ^ Use the above line of code to reset al values in a Session^ ^ Storing values on the server is fast,  but should not be used^ carelessly',
+				@slideinfo = 'A session also ends if you type:^ ^ Session.Abandon();^ ^ Use the above line of code to reset all values in a Session^ ^ Storing values on the server is fast,  but should not be used^ carelessly',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-2-9',
 				@lessonid = '6-2',
-				@slideinfo = 'SessionID is the link between a particular user and thier^ requests/responeses^ ^ The SessionID value is stored and locally in your browser like a^ cookie^ ^ You must have cookues enavle to use the Session Object^ to store values^',
+				@slideinfo = 'SessionID is the link between a particular user and their^ requests/responses^ ^ The SessionID value is stored locally in your browser like a^ cookie^ ^ You must have cookies enable to use the Session Object^ to store values^',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-2-10',
 				@lessonid = '6-2',
-				@slideinfo = 'Cookues are values that are stored locally on the users'' computer^ (usually the browser)^ ^ by default, cookues are stored in memory^ ^ If you set the "Expires" property ten the cookue can be written to the hard disk^ ^ More than one cookue can be stored  by a client per website^ & Note: all cookies are sent from the client with each request( alot of ^ overhead)',
+				@slideinfo = 'Cookies are values that are stored locally on the user''s computer^ (usually the browser)^ ^ by default, cookies are stored in memory^ ^ If you set the "Expires" property then the cookie can be written to the hard disk^ ^ More than one cookie can be stored  by a client per website^ & Note: all cookies are sent from the client with each request( alot of ^ overhead)',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-2-11',
 				@lessonid = '6-2',
-				@slideinfo = '//Write the cookie^ HttpCookue aCookue =   new = HttpCookue("LastVisited");^ aCookie.Value = DateTime.Now.ToString();^  aCookie.Expires = DateTime.Now.AddDays(1);^ Response.Cookies.add(aCookie);^ ^ //Read the cookie^ HttpCookie myCookie = Request.Cookis["lastVisited"];^ //Now that you have the cookie, check if it''s there^ if(myCookie != null)^ {^ txtLastVisited.Text= myCookie.Value.ToString();',
+				@slideinfo = '//Write the cookie^ HttpCookie aCookie =   new  HttpCookie("LastVisited");^ aCookie.Value = DateTime.Now.ToString();^  aCookie.Expires = DateTime.Now.AddDays(1);^ Response.Cookies.add(aCookie);^ ^ //Read the cookie^ HttpCookie myCookie = Request.Cookies["lastVisited"];^ //Now that you have the cookie, check if it''s there^ if(myCookie != null)^ {^ txtLastVisited.Text= myCookie.Value.ToString();',
 				@crud = 'c'
 
 --Lesson 3
 
 EXEC spSlides	@slideID = '6-3-1',
 				@lessonid = '6-3',
-				@slideinfo = 'In order to make more interesting programs, we'' have to^ understnad how  to diplay and manipulate data in a grid better, by ^ utilizing^ ^ Sorting^ Pagination^ Totals^ RowCounter',
+				@slideinfo = 'In order to make more interesting programs, we'' have to^ understand how  to display and manipulate data in a grid better, by ^ utilizing^ ^ Sorting^ Pagination^ Totals^ RowCounter',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-3-2',
 				@lessonid = '6-3',
-				@slideinfo = '<h3>Sorting</h3>^ From the properties of your GridView, you must set the^ AllowSorting property to true^ ^ Use the Sorting() event to get to the column header^ clicked on by the user^ 6 Within the Sorting() event handler the paramenter e is passed^ with some usefyl information stored within it^ 6 e.SortExpression gold the value netered in the^ SortExpression attribute of the column tag',
+				@slideinfo = 'Sorting ^ From the properties of your GridView, you must set the^ AllowSorting property to true^ ^ Use the Sorting() event to get to the column header^ clicked on by the user^ Within the Sorting() event handler the parameter <b>e</b> is passed^ with some useful information stored within it^  e.SortExpression holds the value entered in the^ SortExpression attribute of the column tag',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-3-3',
 				@lessonid = '6-3',
-				@slideinfo = 'Befoe conintuing, you will need to determine how you will^ sort your data^ Currently you should be able to create your own stored^ procedure to do thi^ ^ The  procecure would take in a column name as a^ VARCHAR and return a sorted table ORDER BY the name^ of the column^ You can either use a series of IF/ELSE statements to do^ this, or a CASE, your choice',
+				@slideinfo = 'Before continuing, you will need to determine how you will^ sort your data^ Currently you should be able to create your own stored^ procedure to do this^ ^ The  procedure would take in a column name as a^ VARCHAR and return a sorted table ORDER BY the name^ of the column^ You can either use a series of IF/ELSE statements to do^ this, or a CASE, your choice',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-3-4',
 				@lessonid = '6-3',
-				@slideinfo = 'Alternativley, you can sort your data withou making a call^ to the database^ ^ There are several solutions to do this^ ^ DataSet^ DataTable^ Dataview',
+				@slideinfo = 'Alternatively, you can sort your data without making a call^ to the database^ ^ There are several solutions to do this^ ^ DataSet^ DataTable^ Dataview',
 				@crud = 'c'
 
 EXEC spSlides	@slideID = '6-3-5',
@@ -4357,7 +4357,7 @@ EXEC dbo.spSlides @slideID = '7-4-8',   -- varchar(50)
 --End of Module 7 slides
 EXEC dbo.spSlides @slideID = '7-1-1',   -- varchar(50)
                   @lessonid = '7-1',  -- varchar(50)
-                  @slideinfo = 'Object Oriented Progmanning ^ What is Object Oriented Porgramming (OOP)? ^ OOP is code design philosophy ^ Is evolved naturally out of Porcedural Porgramming^ OOP thinks about everything as having properties or methods ^ Major concepts of OPP ^ Inheritance, Polymorphism and Encapsulation', -- varchar(1000)
+                  @slideinfo = 'Object Oriented Programming ^ What is Object Oriented Programming (OOP)? ^ ^  OOP is code design philosophy ^ Is evolved naturally out of Porcedural Porgramming^ OOP thinks about everything as having properties or methods ^ Major concepts of OPP ^ Inheritance, Polymorphism and Encapsulation', -- varchar(1000)
                   @crud = 'c'       -- varchar(1)
 
 EXEC dbo.spSlides @slideID = '7-1-2',   -- varchar(50)

@@ -120,13 +120,20 @@ namespace GroupProject
             mydal.ExecuteProcedure("spModule");
         }
 
-        public static void CreateTest(string crud,string TestID)
+        public static void CreateTest(string Module, string TestID)
         {
           
-                mydal.AddParam("@crud", crud);
+                mydal.AddParam("@crud", "c");
                 mydal.AddParam("@TestID", TestID);
+                mydal.AddParam("@ModuleID", Module);
                 mydal.ExecuteProcedure("spTest");
-            
+        }
+        public static void CreatLesson(string Lesson, string module)
+        {
+            mydal.AddParam("@crud", "c");
+            mydal.AddParam("@lessonID", Lesson);
+            mydal.AddParam("@moduleID", module);
+            mydal.ExecuteProcedure("spLessons");
         }
         public static void CreateTestScore( string crud, string TestID, string StudentID, decimal Score)
         {
@@ -145,13 +152,18 @@ namespace GroupProject
             mydal.AddParam("@lastName", LastName);
             return mydal.ExecuteProcedure("spStudents");
         }
-        public static void CreateUpdateExamples(string crud, string exampleID, string example, string solution, string lessonID)
+        public static void CreateUpdateExamples(string crud, string exampleID, string example, string solution, string lessonID,string slide, string explanation)
         {
             mydal.AddParam("@crud", crud);
-            mydal.AddParam("@exampleID", exampleID);
+            if (crud == "u")
+            {
+                mydal.AddParam("@exampleID", exampleID);
+            }
             mydal.AddParam("@example", example);
-            mydal.AddParam("@solution", solution);
-            mydal.AddParam("@lessonID", lessonID);
+            mydal.AddParam("@solutions", solution);
+            mydal.AddParam("@lID", lessonID);
+            mydal.AddParam("@slide", slide);
+            mydal.AddParam("@explanation", explanation);
             mydal.ExecuteProcedure("spExamples");
         }
         public static void CreateUpdateQuestions(string crud, string question, string answer, string TestID, string QID)
@@ -195,6 +207,11 @@ namespace GroupProject
         public static DataSet GetTopScore(string StudentEmail)
         {
             mydal.AddParam("@sID", StudentEmail);
+            return mydal.ExecuteProcedure("spStudentTopTests");
+
+        }
+        public static DataSet GetAllTopScore()
+        { 
             return mydal.ExecuteProcedure("spStudentTopTests");
 
         }

@@ -30,13 +30,6 @@
 
             position:fixed;
 
-            /*padding:1em;
-
-            box-sizing:border-box;
-
-            -moz-box-sizing:border-box;
-
-            -webkit-box-sizing:border-box;*/
 
         }
 
@@ -55,16 +48,6 @@
 
 
 
-        /*#div2 {
-            position:fixed;
-
-            top:0%;
-
-            left:50%;
-
-            background: #f5f5f5;
-
-        }*/
 
         #dvExample {
             position:fixed;
@@ -98,11 +81,6 @@
 
         }
 
-        /*#tbAnswer{
-            margin-left:150px;
-            margin-top:50px;
-        }*/
-
     </style>
 
     <title>Module 2 Lesson 1 Example</title>
@@ -117,9 +95,6 @@
 
         </div>
 
-            <%--<div id="div2">
-                <asp:Panel runat="server"></asp:Panel>
-                </div>--%>
 
             <div id="dvExample" runat="server">
                 
