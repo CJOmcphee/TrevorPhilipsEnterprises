@@ -44,7 +44,7 @@ namespace GroupProject.admin
             string ModuleName = tbModuleName.Text;
             string TestName = "module" + x.ToString();
             Crud.CreatUpdateModule("c", ModuleName, tbModuleSum.Text, "");
-            Crud.CreateTest(Module, TestName);
+            Crud.CreateTest(x.ToString(), TestName);
             LoadTest(Crud.ReadTable("spModule"));
         }
         protected void btnChangeModule_Click(object sender, EventArgs e)
