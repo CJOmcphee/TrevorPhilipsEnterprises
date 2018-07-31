@@ -61,8 +61,7 @@ You will learn about JavaScript and what that difference with JAVA.^
 Get some understanding about JSON, Jquery and AJAX. Get knowledge about Document Object Model (DOM)^
 which is representation of HTML elements in document (page).^')
 
-Exec spModule @crud ='re', @moduleName ='Module 2'
-select * from tbModule where moduleName = 'Module 2'
+
 --INSERT INTO LESSONS  CEEATING LESSONS
 insert into tbLesson(lessonID, mID)values
 						('1-1',1),('1-2',1),('1-3',1),('1-4',1),('1-5',1),('1-6',1),

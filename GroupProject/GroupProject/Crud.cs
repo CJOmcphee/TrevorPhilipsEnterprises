@@ -237,7 +237,7 @@ namespace GroupProject
         public static DataSet GetSum(string ModID)
         {
             mydal.AddParam("@moduleName",ModID);
-            mydal.AddParam("@crud", "re");
+            mydal.AddParam("@crud", "y");
             return mydal.ExecuteProcedure("spModule");
         }
     }

@@ -403,7 +403,7 @@ AS BEGIN
 		BEGIN
 			SELECT * FROM dbo.tbModule WHERE moduleID=ISNULL(@moduleID, moduleID) order by moduleID
 		END
-	IF @crud='re'
+	IF @crud='y'
 		BEGIN
 			SELECT * FROM dbo.tbModule WHERE moduleName = @moduleName
 		END
