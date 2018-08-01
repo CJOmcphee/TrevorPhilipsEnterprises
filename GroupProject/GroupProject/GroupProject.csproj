@@ -84,6 +84,7 @@
     <Content Include="images\sql.png" />
     <Content Include="images\XML.jpg" />
     <Content Include="index_admin.aspx" />
+    <Content Include="js\nav.js" />
     <Content Include="LOTR\LOTRExtraPage.aspx" />
     <Content Include="LOTR\LOTRPICTURES\Mordor.jpg" />
     <Content Include="LOTR\LOTRPICTURES\Shire.png" />
