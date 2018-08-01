@@ -328,6 +328,15 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea taSlideEditText;
         
         /// <summary>
+        /// taRawText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea taRawText;
+        
+        /// <summary>
         /// btnClose control.
         /// </summary>
         /// <remarks>
@@ -353,6 +362,15 @@ namespace GroupProject.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button tbTable;
+        
+        /// <summary>
+        /// btnRawText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRawText;
         
         /// <summary>
         /// lblSlideID control.

@@ -105,6 +105,9 @@
                                     <td>
                                         <textarea id="taSlideEditText" runat="server" style="width: 400px; height: 450px;" ng-model="editorText"></textarea>
                                     </td>
+                                    <td>
+                                        <textarea id="taRawText" visible="false" runat="server" style="width: 400px; height: 450px;"></textarea>
+                                    </td>
                                     <td style="top: 0;">
                                         <table style="top: inherit;">
                                             <tr>
@@ -120,6 +123,11 @@
                                             <tr>
                                                 <td>
                                                     <asp:Button ID="tbTable" runat="server" Text="+ Table" OnClick="tbTable_Click" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <asp:Button ID="btnRawText" Enabled="false" runat="server" Text="RawText" OnClick="btnRawText_Click" />
                                                 </td>
                                             </tr>
                                         </table>
