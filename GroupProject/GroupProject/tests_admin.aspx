@@ -9,7 +9,7 @@
       <div id="page">
         <div id="marketing" class="container">
              <div id="table">
-                <!--Test List -->
+                <!--Tests List -->
                 <asp:Panel ID="pnlTestsList" runat="server">
                     <asp:GridView ID="gvTests" PageSize="5" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="moduleID" runat="server" OnRowCommand="gvTests_RowCommand" OnPageIndexChanging="gvTests_PageIndexChanging">
                         <Columns>
@@ -25,7 +25,7 @@
                     Module Summary
                 <asp:TextBox ID="tbModuleSum" runat="server"></asp:TextBox>
                 </asp:Panel>
-                <!--/Test List -->
+                <!--/Tests List -->
 
                 <!--Questions List -->
                 <asp:Panel ID="pnlQuestion" Visible="false" runat="server">
@@ -48,9 +48,6 @@
                         <asp:Button ID="btnAddQuestion" runat="server" CssClass="upd-button" Text="Add Question" OnClick="btnAddQuestion_Click" />
                     </asp:Panel>
                 </asp:Panel>
-                <!--/Questions List -->
-
-                <!--Questions Editor -->
                 <asp:Panel ID="pnlEditQuestion" Visible="false" runat="server">
                     <asp:Button ID="btnToQuestion" runat="server" Text="Back" CssClass="button" OnClick="btnToQuestion_Click" />
                     <asp:GridView ID="gvWrongAnswers" PageSize="10" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="wrongAnswers" runat="server" OnPageIndexChanging="gvWrongAnswers_PageIndexChanging" OnRowCommand="gvWrongAnswers_RowCommand">
