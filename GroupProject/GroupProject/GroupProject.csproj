@@ -993,6 +993,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="genCell.cs" />
+    <Compile Include="genRow.cs" />
+    <Compile Include="genTable.cs" />
     <Compile Include="Grades.aspx.cs">
       <DependentUpon>Grades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1069,6 +1072,7 @@
       <DependentUpon>tests_admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="TextTable.cs" />
+    <Compile Include="TextTables.cs" />
     <Compile Include="users_admin.aspx.cs">
       <DependentUpon>users_admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

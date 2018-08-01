@@ -383,7 +383,7 @@ namespace GroupProject.admin
                 char newLine = '\n';
                 String[] substrings = taSlideEditText.InnerText.Split(newLine);
                 List<string> list = substrings.OfType<string>().ToList();
-                TextTable text = new TextTable();
+                TextTables text = new TextTables();
                 string table = text.newTable(Convert.ToInt32(tbTableNum.Text), Convert.ToInt32(tbRowTblNum.Text), Convert.ToInt32(tbTblCellNum.Text));
                 list.Insert(Convert.ToInt32(tbRowSlideNum.Text), table);
                 string insertedList = string.Join("\n", list.ToArray());
@@ -504,6 +504,8 @@ namespace GroupProject.admin
             string NewContent = content.Replace("^", "\n");
             return NewContent;
         }
+
+
 
     }
 }
