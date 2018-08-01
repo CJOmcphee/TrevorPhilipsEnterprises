@@ -29,7 +29,7 @@
 		<div id="header">
   			<div class="container">
 
-   				<!-- Logo -->
+   				    <!-- Logo -->
   					<div id="logo">
                         <h1><a href="index_user.aspx"><img src="images/robertson.png" class="image left" alt="">Software and Database <br /> Development </a></h1>
                         <br />
