@@ -14,25 +14,11 @@
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
         <script src="Scripts/angular.min.js"></script>
-        <script>
-            $(document).ready(function () {
-            var url = window.location;
-            $('#nav').find('.active').removeClass('active');
-            $('#nav li a').each(function () {
-                if (this.href == url) {
-                    $(this).parent().addClass('active');
-                }
-            }); 
-        });
-        </script>
-   
        	<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
-            <link rel="stylesheet" type="text/css" href="css/util.css" />
-	        <link rel="stylesheet" type="text/css" href="css/main.css" />
-  		</noscript>
+        </noscript>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
