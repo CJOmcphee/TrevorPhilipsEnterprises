@@ -15,8 +15,7 @@ namespace GroupProject
         public int Module;
         protected void Page_Load(object sender, EventArgs e)
         {
-            Security mySecurity = new Security();
-            mySecurity.checkAccess("a");
+           
             if(!IsPostBack)
             {
                 ShowBestScores();
