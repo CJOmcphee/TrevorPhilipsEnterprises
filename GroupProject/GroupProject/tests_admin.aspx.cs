@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI.HtmlControls;
+using System.Text.RegularExpressions;
 
 namespace GroupProject.admin
 {
@@ -573,12 +574,28 @@ namespace GroupProject.admin
                     pnlTblEdit.Visible = true;
                     lblTblEditID.Text = cid.ToString();
                     tbEditContent.Text = myTable.getContent(cid);
+                    lblEditCont.Text = myTable.getContent(cid);
                     break;
 
                 case "Del":
                     myTable.deleteCell(cid);
+                    //string delete = "<td>"+myTable.getContent(cid)+"</td>";
+                    //taRawText.InnerText.Remove(delete);
                     LoadSpecificTable();
                     break;
+            }
+        }
+
+        protected void btnEditContentSubmit_Click(object sender, EventArgs e)
+        {
+            string beforeEdit = "<td>" + lblEditCont.Text + "</td>";
+            string text = taRawText.InnerText;
+            if (text.Contains(beforeEdit))
+            {
+                string result =
+                myTable.updateCell(taRawText.InnerText, Convert.ToInt32(lblTblEditID.Text), tbEditContent.Text);
+
+                taRawText.InnerText = taRawText.InnerText.Replace(beforeEdit, result);
             }
         }
 
