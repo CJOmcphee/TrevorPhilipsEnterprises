@@ -15,54 +15,44 @@
     }
 
     .next-button {
-    position: relative;
-    display: inline-block;
-    margin-top: 2em;
-    padding: 0.5em 1.5em;
-    background: #4ae93c;
-    border-radius: 4px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.9em;
-    color: #FFF;
-    -moz-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-    -webkit-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-    -o-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-    -ms-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-    transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-    cursor: pointer;
-}
-
-    .next-button :hover {
-        background: #228c19;
-        color: #FFF !important;
+        position: relative;
+        display: inline-block;
+        margin-top: 2em;
+        padding: 0.5em 1.5em;
+        background: #4ae93c;
+        border-radius: 4px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        color: #FFF;
+        transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+        cursor: pointer;
     }
 
-.previous-button {
-    position: relative;
-    display: inline-block;
-    margin-top: 2em;
-    padding: 0.5em 1.5em;
-    background: #e95d3c;
-    border-radius: 4px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.9em;
-    color: #FFF;
-    -moz-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-    -webkit-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-    -o-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-    -ms-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-    transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-    cursor: pointer;
-}
+        .next-button:hover {
+            background: #228c19;
+            color: #FFF !important;
+        }
+
+    .previous-button {
+        position: relative;
+        display: inline-block;
+        margin-top: 2em;
+        padding: 0.5em 1.5em;
+        background: #e95d3c;
+        border-radius: 4px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        color: #FFF;
+        transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+        cursor: pointer;
+    }
 
     .previous-button:hover {
         background: #de3d27;
         color: #FFF !important;
     }
-
-   
 </style>
 </head>
 <body>

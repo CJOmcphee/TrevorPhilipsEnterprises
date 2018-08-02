@@ -215,6 +215,24 @@
                            document.getElementById("tbSlidePrev").innerHTML = $scope.editorText.innerHTML;
                        });
                    </script>--%>
+                    <br />
+                    <asp:DropDownList ID="ddlSelectTable" AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddlSelectTable_SelectedIndexChanged1"></asp:DropDownList>
+                    <asp:GridView ID="gvStoredTable" AutoGenerateColumns="false" DataKeyNames="cID" runat="server" OnRowCommand="gvStoredTable_RowCommand">
+                        <Columns>
+                            <asp:ButtonField HeaderText="Delete" ControlStyle-CssClass="button" ButtonType="Button" CommandName="Del" Text="Delete" />
+                            <asp:ButtonField HeaderText="Edit" ControlStyle-CssClass="upd-button" ButtonType="Button" CommandName="Edi" Text="Edit" />
+                            <asp:BoundField HeaderText="Table ID" DataField="tID"/>
+                            <asp:BoundField HeaderText="Row ID" DataField="rID"/>
+                            <asp:BoundField HeaderText="Cell ID" DataField="cID"/>
+                            <asp:BoundField HeaderText="Content" DataField="Content" />
+                        </Columns>
+                    </asp:GridView>
+                    <br />
+                    <asp:Panel ID="pnlTblEdit" Visible="false" runat="server">
+                        <asp:Label ID="lblTblEditID" runat="server" Text=""></asp:Label>
+                        <asp:TextBox ID="tbEditContent" runat="server"></asp:TextBox>
+                        <asp:Button ID="btnEditContentSubmit" runat="server" Text="Submit" />
+                    </asp:Panel>
                 </asp:Panel>
                 <!--/Lessons Editor -->
 
