@@ -7,7 +7,6 @@
     <div id="page">
        <div id="marketing" class="container">
         <a href="registration.aspx" class="button">Add Student</a>
-        
            <div id="table">
             <asp:Panel ID="pnlUsersList" runat="server">
               
@@ -21,7 +20,6 @@
                         <asp:BoundField HeaderText="Password" DataField="studentPassword" />
                       </Columns>
                 </asp:GridView>
-              
             </asp:Panel>
                </div>
          </div>
@@ -32,11 +30,19 @@
                     <br />
                     <h2>First Name</h2>
                     <asp:TextBox ID="tbFirstName" CssClass="box" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqValFirstName" runat="server" 
+                         ControlToValidate="tbFirstName" ForeColor="Red" Text="*"
+                        ErrorMessage=""></asp:RequiredFieldValidator>
                     <h2>Last Name</h2>
                     <asp:TextBox ID="tbLastName" CssClass="box" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqValLastName" runat="server" 
+                         ControlToValidate="tbLastName" ForeColor="Red" Text="*"
+                        ErrorMessage=""></asp:RequiredFieldValidator>
                     <h2>Password</h2>
                     <asp:TextBox ID="tbPassword" CssClass="box" runat="server"></asp:TextBox>
-                   
+                    <asp:RequiredFieldValidator ID="reqValPassword" runat="server"
+                         ControlToValidate="tbPassword" ForeColor="Red" Text="*"
+                        ErrorMessage=""></asp:RequiredFieldValidator>
                     
                     <asp:Button ID="btnSave"  runat="server" CssClass="save-button" Text="Save" OnClick="btnSave_Click" />
                     <asp:Button ID="btnCancel"  runat="server" CssClass="cancel-button" Text="Cancel" OnClick="btnCancel_Click" />

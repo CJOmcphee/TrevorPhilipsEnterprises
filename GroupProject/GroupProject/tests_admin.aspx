@@ -22,8 +22,14 @@
                     <asp:Button ID="btnAddTest" CssClass="button" runat="server" Text="Add Module" OnClick="btnAddTest_Click" />
                     Module Name
                 <asp:TextBox ID="tbModuleName" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqValModuleName" runat="server"
+                         ControlToValidate="tbModuleName" ForeColor="Red" Text="*"
+                        ErrorMessage=""></asp:RequiredFieldValidator>
                     Module Summary
                 <asp:TextBox ID="tbModuleSum" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqValModuleSum" runat="server" 
+                         ControlToValidate="tbModuleSum" ForeColor="Red" Text="*"
+                        ErrorMessage=""></asp:RequiredFieldValidator>
                 </asp:Panel>
                 <!--/Tests List -->
 
@@ -43,8 +49,14 @@
                     <asp:Panel ID="pnlNewQuestion" runat="server">
                         Question
                 <asp:TextBox ID="tbNewQuestion" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqValNewQuestion" runat="server"
+                             ControlToValidate="tbNewQuestion" ForeColor="Red" Text="*"
+                            ErrorMessage=""></asp:RequiredFieldValidator>
                         Answer
                 <asp:TextBox ID="tbNewAnswer" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqValNewAnswer" runat="server"
+                             ControlToValidate="tbNewAnswer" ForeColor="Red" Text="*"
+                            ErrorMessage=""></asp:RequiredFieldValidator>
                         <asp:Button ID="btnAddQuestion" runat="server" CssClass="upd-button" Text="Add Question" OnClick="btnAddQuestion_Click" />
                     </asp:Panel>
                 </asp:Panel>
@@ -60,13 +72,22 @@
                     <asp:Panel ID="pnlQuestionDetails" runat="server">
                         Question
                 <asp:TextBox ID="tbQuestionDetail" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqValQuestionDetail" runat="server"
+                             ControlToValidate="tbQuestionDetail" ForeColor="Red" Text="*"
+                            ErrorMessage=""></asp:RequiredFieldValidator>
                         Answer
                 <asp:TextBox ID="tbAnswerDetail" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqValAnswerDetail" runat="server"
+                             ControlToValidate="tbAnswerDetail" ForeColor="Red" Text="*"
+                            ErrorMessage=""></asp:RequiredFieldValidator>
                         <asp:Button ID="btnChangeQuestion" runat="server" CssClass="button" Text="Change Question" OnClick="btnChangeQuestion_Click" />
                     </asp:Panel>
                     <asp:Panel ID="pnlNewWrongAnswer" runat="server">
                         Wrong Answer
                 <asp:TextBox ID="tbWrongAnswer" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqValWrongAnswer" runat="server"
+                             ControlToValidate="tbWrongAnswer" ForeColor="Red" Text="*"
+                            ErrorMessage=""></asp:RequiredFieldValidator>
                         <asp:Button ID="btnAddWrongAnswer" runat="server" CssClass="upd-button" Text="Add Wrong Answer" OnClick="btnAddWrongAnswer_Click" />
                     </asp:Panel>
                 </asp:Panel>
@@ -151,15 +172,27 @@
                                         </td>
                                         <td>
                                             Slide Row#:<asp:TextBox ID="tbRowSlideNum" TextMode="Number" runat="server" Width="31px"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="reqValRowSlideNum" runat="server" 
+                                                 ControlToValidate="tbRowSlideNum" ForeColor="Red" Text="*"
+                                                ErrorMessage=""></asp:RequiredFieldValidator>
                                         </td>
                                         <td>
                                             Table#:<asp:TextBox ID="tbTableNum" TextMode="Number" runat="server" Width="31px"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="reqValTableNum" runat="server" 
+                                                 ControlToValidate="tbTableNum" ForeColor="Red" Text="*"
+                                                ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
                                         </td>
                                         <td>
-                                            Table Row#:<asp:TextBox ID="tbRowTblNum" TextMode="Number" runat="server" Width="31px"></asp:TextBox>
+                                            Table Row#:<asp:TextBox ID="tbRowTblNum" TextMode="Number" runat="server" Width="31px"></asp:TextBox>\
+                                            <asp:RequiredFieldValidator ID="reqValRowTblNum" runat="server" 
+                                                 ControlToValidate="tbRowTblNum" ForeColor="Red" Text="*"
+                                                ErrorMessage=""></asp:RequiredFieldValidator>
                                         </td>
                                         <td>
                                             Table Cell#:<asp:TextBox ID="tbTblCellNum" TextMode="Number" runat="server" Width="31px"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="reqValTblCellNum" runat="server" 
+                                                 ControlToValidate="tbTblCellNum" ForeColor="Red" Text="*"
+                                                ErrorMessage=""></asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
@@ -204,8 +237,14 @@
                 <asp:Panel ID="pnlModuleDetails" runat="server">
                     Name
                 <asp:TextBox ID="tbModuleNameDetails" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqValModuleNameDetails" runat="server"
+                         ControlToValidate="tbModuleNameDetails" ForeColor="Red" Text="*"
+                        ErrorMessage=""></asp:RequiredFieldValidator>
                     Summary
                 <asp:TextBox ID="tbModuleSumDetails" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqValModuleSumDetails" runat="server" 
+                         ControlToValidate="tbModuleSumDetails" ForeColor="Red" Text="*"
+                        ErrorMessage=""></asp:RequiredFieldValidator>
                     <asp:Button ID="btnChangeModule" runat="server" CssClass="upd-button" Text="Change Module" OnClick="btnChangeModule_Click" />
                 </asp:Panel>
                 <asp:Button ID="btnrestart" runat="server" Text="Back" CssClass="button" OnClick="btnrestart_Click" />
@@ -215,6 +254,9 @@
             <asp:Panel ID="pnlNewSlide" runat="server">
                 Slide Info : 
                 <asp:TextBox ID="tbSlideInfo" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="reqValSlideInfo" runat="server"
+                     ControlToValidate="tbSlideInfo" ForeColor="Red" Text="*"
+                    ErrorMessage=""></asp:RequiredFieldValidator>
             </asp:Panel>
                 </div>
             <asp:Panel ID="pnlEditExamples" runat="server" Visible="false">
@@ -222,6 +264,9 @@
         <asp:Panel ID="pnlExNav" runat="server">
             Slide Reference
             <asp:TextBox ID="tbSlideRef" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="reqValSlideRef" runat="server" 
+                 ControlToValidate="tbSlideRef" ForeColor="Red" Text="*"
+                ErrorMessage=""></asp:RequiredFieldValidator>
         <asp:Button ID="btnSeeExplanation" CssClass="button" runat="server" Text="Edit Explanation" OnClick="btnSeeExplanation_Click"/>
         <asp:Button ID="btnSeeCode" CssClass="button" runat="server" Text="Edit Code" OnClick="btnSeeCode_Click"/>
         <asp:Button ID="btnSeeExample" CssClass="button" runat="server" Text="Edit Example/Solution" OnClick="btnSeeExample_Click"/>
@@ -269,6 +314,9 @@
                          Answer
                          <br />
                         <asp:TextBox ID="tbAnswer" runat="server"></asp:TextBox>
+                         <asp:RequiredFieldValidator ID="reqValAnswer" runat="server" 
+                              ControlToValidate="tbAnswer" ForeColor="Red" Text="*"
+                             ErrorMessage=""></asp:RequiredFieldValidator>
                      </asp:Panel>
                     <asp:Button ID="btnSaveExample" CssClass="button" runat="server" Text="Save" OnClick="btnSaveExample_Click" />
              </div>

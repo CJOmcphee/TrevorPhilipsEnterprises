@@ -13,7 +13,8 @@ namespace GroupProject.user
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Security mySecurity = new Security();
+            mySecurity.checkAccess("a");
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
