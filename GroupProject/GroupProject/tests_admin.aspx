@@ -147,7 +147,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <asp:Button ID="btnRawText" Enabled="false" runat="server" Text="RawText" OnClick="btnRawText_Click" />
+                                                    <asp:Button ID="btnRawText" runat="server" Text="RawText" OnClick="btnRawText_Click" />
                                                 </td>
                                             </tr>
                                         </table>
@@ -231,7 +231,8 @@
                     <asp:Panel ID="pnlTblEdit" Visible="false" runat="server">
                         <asp:Label ID="lblTblEditID" runat="server" Text=""></asp:Label>
                         <asp:TextBox ID="tbEditContent" runat="server"></asp:TextBox>
-                        <asp:Button ID="btnEditContentSubmit" runat="server" Text="Submit" />
+                        <asp:Label ID="lblEditCont" runat="server" Visible="false" Text=""></asp:Label>
+                        <asp:Button ID="btnEditContentSubmit" runat="server" Text="Submit" OnClick="btnEditContentSubmit_Click" />
                     </asp:Panel>
                 </asp:Panel>
                 <!--/Lessons Editor -->
