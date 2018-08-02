@@ -166,6 +166,13 @@ namespace GroupProject
             }
         }
 
+        public string getContent(int cID)
+        {
+            genCell newCell = (genCell)_TextTable.Find(x => x.cellID == cID);
+            string cont = newCell.CellContent;
+            return cont;
+        }
+
         public string updateCell(string Data, int cID, string cContent)
         {
             genCell gCell = (genCell)_TextTable.Find(x => x.cellID == cID);

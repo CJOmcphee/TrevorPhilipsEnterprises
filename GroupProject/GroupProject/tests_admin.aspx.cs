@@ -347,6 +347,7 @@ namespace GroupProject.admin
                     }
                     else
                     {
+                        ddlSelectTable.DataSource = null;
                         gvStoredTable.DataSource = null;
                         myTable.ClearTables();
                     }
@@ -535,7 +536,7 @@ namespace GroupProject.admin
         private void LoadSpecificTable()
         {
             gvStoredTable.DataSource = null;
-            int nav = Convert.ToInt32(ddlSelectTable.SelectedIndex+1);
+            int nav = Convert.ToInt32(ddlSelectTable.SelectedIndex + 1);
             DataTable dt = myTable.GetSpecificTable(nav);
             gvStoredTable.DataSource = dt;
             gvStoredTable.DataBind();
@@ -548,13 +549,37 @@ namespace GroupProject.admin
             ddlSelectTable.DataTextField = "tID";
             ddlSelectTable.DataValueField = "tID";
             ddlSelectTable.DataBind();
-            ddlSelectTable.SelectedIndex = 1;
+            ddlSelectTable.SelectedIndex = 0;
             LoadSpecificTable();
         }
 
         protected void ddlSelectTable_SelectedIndexChanged1(object sender, EventArgs e)
         {
             LoadSpecificTable();
+        }
+
+        protected void gvStoredTable_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Page")
+            {
+                return;
+            }
+            gvStoredTable.SelectedIndex = Convert.ToInt32(e.CommandArgument);
+            int cid = Convert.ToInt32(gvStoredTable.SelectedDataKey["cID"]);
+            switch (e.CommandName)
+            {
+
+                case "Edi":
+                    pnlTblEdit.Visible = true;
+                    lblTblEditID.Text = cid.ToString();
+                    tbEditContent.Text = myTable.getContent(cid);
+                    break;
+
+                case "Del":
+                    myTable.deleteCell(cid);
+                    LoadSpecificTable();
+                    break;
+            }
         }
 
         public string editorContent(string content)
@@ -609,6 +634,6 @@ namespace GroupProject.admin
             gvStoredTable.DataBind();
         }
 
-        
+
     }
 }
