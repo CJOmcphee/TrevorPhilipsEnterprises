@@ -16,6 +16,7 @@ namespace GroupProject.admin
         public string Module, Test, Question, Lesson;
         protected void Page_Load(object sender, EventArgs e)
         {
+            myTable = new TextTables();
             Security mySecurity = new Security();
             mySecurity.checkAccess("a");
             if (Session["Test"] != null)
@@ -135,7 +136,6 @@ namespace GroupProject.admin
             pnlSlideEditor.Visible = false;
             pnlSlides.Visible = false; ;
             pnlTableEditor.Visible = false; ;
-            pnlTableInsert.Visible = false; ;
             pnlTestsList.Visible = false; ;
             pnlEditExamples.Visible = false;
         }
@@ -300,7 +300,7 @@ namespace GroupProject.admin
                 return;
             }
             gvExamples.SelectedIndex = Convert.ToInt32(e.CommandArgument);
-            switch(e.CommandName)
+            switch (e.CommandName)
             {
                 case "Edi":
                     HidePanels();
@@ -339,9 +339,17 @@ namespace GroupProject.admin
                     DataSet slideDS = Crud.ReadTable("spSlides", lblSlideID.Text);
                     string editContent = slideDS.Tables[0].Rows[0]["slideInfo"].ToString();
                     taRawText.InnerText = editContent;
-                    storeTables(editContent);
                     Editslide(editContent);
                     taSlideEditText.InnerText = editorContent(editContent);
+                    if (editContent.Contains("<table>"))
+                    {
+                        storeTables(editContent);
+                    }
+                    else
+                    {
+                        gvStoredTable.DataSource = null;
+                        myTable.ClearTables();
+                    }
                     break;
                 case "Del":
 
@@ -383,7 +391,7 @@ namespace GroupProject.admin
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
-            
+
             if (Convert.ToInt32(tbTableNum.Text) >= 0 && Convert.ToInt32(tbRowTblNum.Text) >= 0 && Convert.ToInt32(tbRowSlideNum.Text) >= 0 && Convert.ToInt32(tbTblCellNum.Text) >= 0)
             {
                 char newLine = '\n';
@@ -422,7 +430,7 @@ namespace GroupProject.admin
         protected void btnAddlesson_Click(object sender, EventArgs e)
         {
             DataSet ds = Crud.GetLessons(Module);
-            int y = ds.Tables[0].Rows.Count +1;
+            int y = ds.Tables[0].Rows.Count + 1;
             Crud.CreatLesson(Module + "-" + y, Module);
             LoadLessons(Crud.GetLessons(Module));
         }
@@ -430,14 +438,14 @@ namespace GroupProject.admin
         protected void btnAddExample_Click(object sender, EventArgs e)
         {
             HidePanels();
-            taEditCode.InnerText ="";
+            taEditCode.InnerText = "";
             taEditExample.InnerText = "";
             taEditExplain.InnerText = "";
             tbAnswer.Text = "";
             tbSlideRef.Text = "";
             lblExampleID.Text = "";
             lblCode.Text = "";
-            lblExplain.Text ="";
+            lblExplain.Text = "";
             lblExample.Text = "";
             lblSolution.Text = "";
             pnlEditExamples.Visible = true;
@@ -520,6 +528,20 @@ namespace GroupProject.admin
             }
         }
 
+        protected void ddlSelectTable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void populateTableDDL()
+        {
+            DataTable dt = myTable.GetTableNum();
+            ddlSelectTable.DataSource = dt;
+            ddlSelectTable.DataTextField = "tID";
+            ddlSelectTable.DataValueField = "tID";
+            ddlSelectTable.DataBind();
+        }
+
         public string editorContent(string content)
         {
             string NewContent = content.Replace("^", "\n");
@@ -553,18 +575,25 @@ namespace GroupProject.admin
                                         myTable.storeCell(x, y, z, cellsubstrings);
                                         z++;
                                     }
-
                                 }
                                 y++;
                             }
                         }
                         x++;
-                        //y = 1;
-                        //z = 1;
                     }
                 }
             }
+            populateTableDDL();
+            LoadTable();
         }
 
+        private void LoadTable()
+        {
+            DataTable dt = myTable.Get();
+            gvStoredTable.DataSource = dt;
+            gvStoredTable.DataBind();
+        }
+
+        
     }
 }

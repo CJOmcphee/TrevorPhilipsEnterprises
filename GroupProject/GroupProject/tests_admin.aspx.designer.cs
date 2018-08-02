@@ -319,6 +319,24 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.HtmlControls.HtmlTable tbSlidePrev;
         
         /// <summary>
+        /// ddlSelectTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSelectTable;
+        
+        /// <summary>
+        /// gvStoredTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvStoredTable;
+        
+        /// <summary>
         /// taSlideEditText control.
         /// </summary>
         /// <remarks>
@@ -452,15 +470,6 @@ namespace GroupProject.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMessage;
-        
-        /// <summary>
-        /// pnlTableInsert control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlTableInsert;
         
         /// <summary>
         /// pnlExamples control.

@@ -21,6 +21,11 @@ namespace GroupProject
             }
         }
 
+        public void ClearTables()
+        {
+            HttpContext.Current.Session["TextTable"] = null;
+        }
+
         public void Save()
         {
             HttpContext.Current.Session["TextTable"] = _TextTable;
@@ -66,6 +71,27 @@ namespace GroupProject
             Add(genC);
 
         }
+
+        public DataTable GetTableNum()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("tID");
+            foreach(TextTable t in _TextTable)
+            {
+                DataRow r = dt.NewRow();
+                switch (t.GetType().Name)
+                {
+                    case "genTable":
+                        genTable gt = (genTable)(t);
+                        r["tID"] = gt.tblID;
+                        break;
+                }
+                dt.Rows.Add(r);
+            }
+            return dt;
+        }
+
+
         public DataTable Get()
         {
             DataTable dt = new DataTable();
