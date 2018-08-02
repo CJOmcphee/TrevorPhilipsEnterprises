@@ -216,6 +216,15 @@
                            document.getElementById("tbSlidePrev").innerHTML = $scope.editorText.innerHTML;
                        });
                    </script>--%>
+
+                    <asp:DropDownList ID="ddlSelectTable" AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddlSelectTable_SelectedIndexChanged1"></asp:DropDownList>
+                    <asp:GridView ID="gvStoredTable" runat="server">
+                        <Columns>
+                            <asp:ButtonField HeaderText="Delete" ControlStyle-CssClass="button" ButtonType="Button" CommandName="Del" Text="Delete" />
+                            <asp:ButtonField HeaderText="Edit" ControlStyle-CssClass="upd-button" ButtonType="Button" CommandName="Edi" Text="Edit" />
+                        </Columns>
+                    </asp:GridView>
+
                 </asp:Panel>
                 <!--/Lessons Editor -->
 

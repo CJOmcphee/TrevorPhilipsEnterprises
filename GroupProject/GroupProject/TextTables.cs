@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Web;
 
+
 namespace GroupProject
 {
     public class TextTables
@@ -76,17 +77,45 @@ namespace GroupProject
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("tID");
-            foreach(TextTable t in _TextTable)
+            foreach (TextTable t in _TextTable)
             {
-                DataRow r = dt.NewRow();
+
                 switch (t.GetType().Name)
                 {
                     case "genTable":
+                        DataRow r = dt.NewRow();
                         genTable gt = (genTable)(t);
                         r["tID"] = gt.tblID;
+                        dt.Rows.Add(r);
                         break;
                 }
-                dt.Rows.Add(r);
+            }
+            return dt;
+        }
+
+        public DataTable GetSpecificTable(int find)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("tID");
+            dt.Columns.Add("rID");
+            dt.Columns.Add("cID");
+            dt.Columns.Add("Content");
+
+            var query = _TextTable.Where(_TextTable => _TextTable.tblID == find);
+            foreach (TextTable t in query)
+            {
+                switch (t.GetType().Name)
+                {
+                    case "genCell":
+                        DataRow r = dt.NewRow();
+                        genCell c = (genCell)(t);
+                        r["Content"] = c.CellContent;
+                        r["cID"] = t.cellID;
+                        r["tID"] = t.tblID;
+                        r["rID"] = t.rowID;
+                        dt.Rows.Add(r);
+                        break;
+                }
             }
             return dt;
         }
@@ -180,7 +209,7 @@ namespace GroupProject
                 //The FOR loop goes through every instance there is a table,
                 //so that if there is more than one table, it will create more than one table.
                 string Start = "<table>";
-                string Mid = newRow(rowNum,cellNum);
+                string Mid = newRow(rowNum, cellNum);
                 string End = "</table>";
                 Table = Table + Start + Mid + End;
                 //The STRING "Table" is created so that we have a created return value that we can call later.

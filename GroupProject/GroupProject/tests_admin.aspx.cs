@@ -405,6 +405,10 @@ namespace GroupProject.admin
                 taRawText.InnerText = dbText;
                 taSlideEditText.InnerText = insertedList;
                 Editslide(dbText);
+                myTable.ClearTables();
+                ddlSelectTable.DataSource = null;
+                storeTables(dbText);
+                pnlTableInsert.Visible = false;
             }
             else
             {
@@ -528,9 +532,13 @@ namespace GroupProject.admin
             }
         }
 
-        protected void ddlSelectTable_SelectedIndexChanged(object sender, EventArgs e)
+        private void LoadSpecificTable()
         {
-
+            gvStoredTable.DataSource = null;
+            int nav = Convert.ToInt32(ddlSelectTable.SelectedIndex+1);
+            DataTable dt = myTable.GetSpecificTable(nav);
+            gvStoredTable.DataSource = dt;
+            gvStoredTable.DataBind();
         }
 
         private void populateTableDDL()
@@ -540,6 +548,13 @@ namespace GroupProject.admin
             ddlSelectTable.DataTextField = "tID";
             ddlSelectTable.DataValueField = "tID";
             ddlSelectTable.DataBind();
+            ddlSelectTable.SelectedIndex = 1;
+            LoadSpecificTable();
+        }
+
+        protected void ddlSelectTable_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+            LoadSpecificTable();
         }
 
         public string editorContent(string content)
