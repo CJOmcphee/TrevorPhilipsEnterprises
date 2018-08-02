@@ -179,7 +179,6 @@ namespace GroupProject.admin
                     break;
             }
         }
-
         protected void gvQuestions_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Page")
@@ -216,13 +215,11 @@ namespace GroupProject.admin
             gvTests.PageIndex = e.NewPageIndex;
             LoadTest(Crud.ReadTable("spModule"));
         }
-
         protected void gvQuestions_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvQuestions.PageIndex = e.NewPageIndex;
             LoadQuestion(Crud.GetTestQuestions(Test));
         }
-
         protected void gvWrongAnswers_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvWrongAnswers.PageIndex = e.NewPageIndex;
@@ -234,40 +231,33 @@ namespace GroupProject.admin
 
             LoadQuestion(Crud.GetTestQuestions(Test));
         }
-
         protected void btnGoToTest_Click(object sender, EventArgs e)
         {
             LoadQuestion(Crud.GetTestQuestions(Test));
         }
-
         protected void btnGoToLessons_Click(object sender, EventArgs e)
         {
             LoadLessons(Crud.GetLessons(Module));
         }
-
         protected void btnrestart_Click(object sender, EventArgs e)
         {
             LoadTest(Crud.ReadTable("spModule"));
         }
-
         protected void gvLessons_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvLessons.PageIndex = e.NewPageIndex;
             LoadLessons(Crud.GetLessons(Module));
         }
-
         protected void gvExamples_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvExamples.PageIndex = e.NewPageIndex;
             LoadExamples(Crud.GetExamples(Lesson));
         }
-
         protected void gvSlides_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvSlides.PageIndex = e.NewPageIndex;
             LoadSlides(Crud.GetSlides(Lesson));
         }
-
         protected void gvLessons_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             gvLessons.SelectedIndex = Convert.ToInt32(e.CommandArgument);
@@ -289,10 +279,8 @@ namespace GroupProject.admin
                 case "EditExamples":
                     LoadExamples(Crud.GetExamples(gvLessons.SelectedDataKey["lessonID"].ToString()));
                     break;
-
             }
         }
-
         protected void gvExamples_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Page")
@@ -323,7 +311,6 @@ namespace GroupProject.admin
                     break;
             }
         }
-
         protected void gvSlides_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Page")
@@ -356,14 +343,12 @@ namespace GroupProject.admin
                     break;
             }
         }
-
         protected void btnToTest_Click(object sender, EventArgs e)
         {
             pnlnav.Visible = true;
             pnlQuestion.Visible = false;
             pnllessons.Visible = false;
         }
-
         protected void btnPreviewGen_Click(object sender, EventArgs e)
         {
             string newContent = taSlideEditText.InnerText;
@@ -377,13 +362,11 @@ namespace GroupProject.admin
                 Editslide(substring);
             }
         }
-
         protected void btnNewQuestion_Click(object sender, EventArgs e)
         {
             pnlQuestionDetails.Visible = false;
             pnlNewQuestion.Visible = true;
         }
-
         protected void btnNewWrongAnswer_Click(object sender, EventArgs e)
         {
             pnlNewWrongAnswer.Visible = true;
@@ -391,7 +374,6 @@ namespace GroupProject.admin
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
-
             if (Convert.ToInt32(tbTableNum.Text) >= 0 && Convert.ToInt32(tbRowTblNum.Text) >= 0 && Convert.ToInt32(tbRowSlideNum.Text) >= 0 && Convert.ToInt32(tbTblCellNum.Text) >= 0)
             {
                 char newLine = '\n';
@@ -411,13 +393,11 @@ namespace GroupProject.admin
                 lblMessage.Text = "You must fill in all the fields to continue";
             }
         }
-
         protected void btnClose_Click(object sender, EventArgs e)
         {
             pnlSlideEditor.Visible = false;
             taSlideEditText.InnerText = "";
         }
-
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             string slideContent = taRawText.InnerText;
@@ -426,7 +406,6 @@ namespace GroupProject.admin
             taSlideEditText.InnerText = "";
             taRawText.InnerText = "";
         }
-
         protected void btnAddlesson_Click(object sender, EventArgs e)
         {
             DataSet ds = Crud.GetLessons(Module);
@@ -434,7 +413,6 @@ namespace GroupProject.admin
             Crud.CreatLesson(Module + "-" + y, Module);
             LoadLessons(Crud.GetLessons(Module));
         }
-
         protected void btnAddExample_Click(object sender, EventArgs e)
         {
             HidePanels();
@@ -450,7 +428,6 @@ namespace GroupProject.admin
             lblSolution.Text = "";
             pnlEditExamples.Visible = true;
         }
-
         protected void btnSaveExample_Click(object sender, EventArgs e)
         {
             if (lblExampleID.Text == "")
@@ -463,7 +440,6 @@ namespace GroupProject.admin
             }
             LoadExamples(Crud.GetExamples(Lesson));
         }
-
         protected void btnSeeExplanation_Click(object sender, EventArgs e)
         {
             pnlEditExamples.Visible = true;
@@ -471,7 +447,6 @@ namespace GroupProject.admin
             pnlEditCode.Visible = false;
             pnlEditExample.Visible = false;
         }
-
         protected void btnSeeCode_Click(object sender, EventArgs e)
         {
             pnlEditExamples.Visible = true;
@@ -479,7 +454,6 @@ namespace GroupProject.admin
             pnlEditCode.Visible = true;
             pnlEditExample.Visible = false;
         }
-
         protected void btnSeeExample_Click(object sender, EventArgs e)
         {
             pnlEditExamples.Visible = true;
@@ -487,18 +461,15 @@ namespace GroupProject.admin
             pnlEditCode.Visible = false;
             pnlEditExample.Visible = true;
         }
-
         protected void btnBackToNav1_Click(object sender, EventArgs e)
         {
             HidePanels();
             LoadExamples(Crud.GetExamples(Lesson));
         }
-
         protected void tbTable_Click(object sender, EventArgs e)
         {
             pnlTableEditor.Visible = true;
         }
-
         protected void btnRawText_Click(object sender, EventArgs e)
         {
             if (taRawText.Visible == false)
@@ -510,7 +481,6 @@ namespace GroupProject.admin
                 taRawText.Visible = false;
             }
         }
-
         private void Editslide(string slideInfo)
         {
             Char delimiter = '^';
@@ -527,7 +497,6 @@ namespace GroupProject.admin
                 tbSlidePrev.Controls.Add(myRow);
             }
         }
-
         protected void ddlSelectTable_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -547,7 +516,6 @@ namespace GroupProject.admin
             string NewContent = content.Replace("^", "\n");
             return NewContent;
         }
-
         private void storeTables(string input)
         {
             int x = 1;
@@ -586,14 +554,11 @@ namespace GroupProject.admin
             populateTableDDL();
             LoadTable();
         }
-
         private void LoadTable()
         {
             DataTable dt = myTable.Get();
             gvStoredTable.DataSource = dt;
             gvStoredTable.DataBind();
         }
-
-        
     }
 }

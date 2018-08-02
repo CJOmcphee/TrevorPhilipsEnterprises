@@ -15,7 +15,6 @@ namespace GroupProject.user
         {
 
         }
-
         protected void btnUNRecover_Click(object sender, EventArgs e)
         {
             DataSet ds = Crud.GetPassword(tbEmail.Text);

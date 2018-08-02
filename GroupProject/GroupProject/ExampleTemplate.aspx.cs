@@ -20,16 +20,12 @@ namespace GroupProject
         List<Object> Answer = new List<Object>();
         protected void Page_Load(object sender, EventArgs e)
         {
-
             loadExample("1-1");
-           
             HidePreviousBtn();
             if(!IsPostBack)
             {
                 Session["Nav"] = 0;
             }
-            
-            
         }
         public string CheckType()
         {
@@ -53,7 +49,6 @@ namespace GroupProject
             count = ds.Tables[0].Rows.Count;
             foreach(DataRow Row in ds.Tables[0].Rows)
             {
-                
                 Panel pnlExp = new Panel();
                 Label lblExplain = new Label();
                 lblExplain.Text = Row["explanation"].ToString();
@@ -67,7 +62,6 @@ namespace GroupProject
                     pnlExp.Visible = false;
                     Explanation.Add(pnlExp);
                 }
-
                 Panel pnlExm = new Panel();
                 Label lblExample = new Label();
                 lblExample.Text = Row["example"].ToString();
@@ -86,7 +80,6 @@ namespace GroupProject
                     pnlExm.Controls.Add(lblAnswer);
 
                 }
-                
                 if (Example.Count == 0)
                 {
                     Example.Add(pnlExm);
@@ -96,7 +89,6 @@ namespace GroupProject
                     pnlExm.Visible = false;
                     Example.Add(pnlExm);
                 }
-
                 Panel pnlCode = new Panel();
                 Table tblCode = new Table();
                 pnlCode.Controls.Add(tblCode);
@@ -130,7 +122,6 @@ namespace GroupProject
                 dvCode.Controls.Add(pnlCode);
             }
         }
-
         protected void btnGo_Click(object sender, EventArgs e)
         {
             int x = (int)Session["Nav"];
@@ -145,9 +136,7 @@ namespace GroupProject
                     btnGo.Enabled = false;
                 }
             }
-           
         }
-
         protected void btnNext_Click(object sender, EventArgs e)
         {
             int x = (int)Session["Nav"];
@@ -178,7 +167,6 @@ namespace GroupProject
                 btnNext.Enabled = false;
             }
         }
-
         protected void btnPrev_Click(object sender, EventArgs e)
         {
             int x = (int)Session["Nav"];
@@ -206,6 +194,5 @@ namespace GroupProject
             Example[index].Visible = false;
             Code[index].Visible = false;
         }
-
     }
 }
