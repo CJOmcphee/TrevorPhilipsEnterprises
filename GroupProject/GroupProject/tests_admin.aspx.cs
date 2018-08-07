@@ -335,6 +335,8 @@ namespace GroupProject.admin
             switch (e.CommandName)
             {
                 case "Edi":
+                    myTable.ClearTables();
+                    ddlSelectTable.DataSource = null;
                     pnlSlideEditor.Visible = true;
                     lblSlideID.Text = gvSlides.SelectedDataKey["slideID"].ToString();
                     DataSet slideDS = Crud.ReadTable("spSlides", lblSlideID.Text);
@@ -354,7 +356,8 @@ namespace GroupProject.admin
                     }
                     break;
                 case "Del":
-
+                    Crud.DeleteData("spSlides", gvSlides.SelectedDataKey["slideID"].ToString());
+                    LoadSlides(Crud.GetSlides(Lesson));
                     break;
             }
         }
@@ -545,13 +548,13 @@ namespace GroupProject.admin
 
         private void populateTableDDL()
         {
+            ddlSelectTable.DataSource = null;
+            Editslide(taRawText.InnerText);
             DataTable dt = myTable.GetTableNum();
             ddlSelectTable.DataSource = dt;
             ddlSelectTable.DataTextField = "tID";
             ddlSelectTable.DataValueField = "tID";
             ddlSelectTable.DataBind();
-            ddlSelectTable.SelectedIndex = 0;
-            LoadSpecificTable();
         }
 
         protected void ddlSelectTable_SelectedIndexChanged1(object sender, EventArgs e)
@@ -571,6 +574,7 @@ namespace GroupProject.admin
             {
 
                 case "Edi":
+                    saveEditedSlideText("d", 1);
                     pnlTblEdit.Visible = true;
                     lblTblEditID.Text = cid.ToString();
                     tbEditContent.Text = myTable.getContent(cid);
@@ -578,9 +582,10 @@ namespace GroupProject.admin
                     break;
 
                 case "Del":
+                    string delete = "<td>" + myTable.getContent(cid) + "</td>";
                     myTable.deleteCell(cid);
-                    //string delete = "<td>"+myTable.getContent(cid)+"</td>";
-                    //taRawText.InnerText.Remove(delete);
+                    taRawText.InnerText = taRawText.InnerText.Replace(delete, "");
+                    Editslide(taRawText.InnerText);
                     LoadSpecificTable();
                     break;
             }
@@ -605,11 +610,51 @@ namespace GroupProject.admin
             return NewContent;
         }
 
+        
+        // Saves the text into the raw text for the final save.
+        private void saveEditedSlideText(string mod, int id)
+        {
+            char newLine = '^';
+            String[] substring = taRawText.InnerText.ToLower().Split(newLine);
+            //List<string> list = substrings.OfType<string>().ToList();
+            foreach (string lineString in substring)
+            {
+                if (lineString.Contains("<table>") || lineString.Contains("</table>"))
+                {
+                    String[] tableString = lineString.Split(new String[] { "<table>", "</table>" }, StringSplitOptions.None);
+                    foreach (string tableSubstrings in tableString)
+                    {
+                        if (tableSubstrings != "" && tableSubstrings.Contains("<tr>") || tableSubstrings.Contains("</tr>"))
+                        {
+                            String[] rowString = tableSubstrings.Split(new String[] { "<tr>", "</tr>" }, StringSplitOptions.None);
+                            foreach (string rowSubString in rowString)
+                            {
+                                if (rowSubString.Contains("<td>") || rowSubString.Contains("</td>"))
+                                {
+                                    
+                                    if (mod == "d") // "d" = Delete
+                                    {
+                                        
+                                    }
+                                    else if (mod == "e") // "e" = Edit
+                                    {
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
         private void storeTables(string input)
         {
-            int x = 1;
-            int y = 1;
-            int z = 1;
+            int x = 1; // Table Number
+            int y = 1; // Row Number
+            int z = 1; // Cell Number
+
             if (input.ToLower().Contains("<table>") || input.ToLower().Contains("</table>"))
             {
                 String[] tableString = input.Split(new String[] { "<table>", "</table>" }, StringSplitOptions.None);
@@ -627,6 +672,7 @@ namespace GroupProject.admin
                                 string[] cellstring = rowSubString.Split(new string[] { "<td>", "</td>" }, StringSplitOptions.None);
                                 foreach (string cellsubstrings in cellstring)
                                 {
+
                                     if (cellsubstrings != "")
                                     {
                                         myTable.storeCell(x, y, z, cellsubstrings);
@@ -641,7 +687,6 @@ namespace GroupProject.admin
                 }
             }
             populateTableDDL();
-            LoadTable();
         }
 
         private void LoadTable()
