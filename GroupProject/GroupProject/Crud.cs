@@ -86,7 +86,10 @@ namespace GroupProject
             {
                 mydal.AddParam("@questions", id.ToString());
             }
-            
+            if(Procedure == "spSlides")
+            {
+                mydal.AddParam("@slideID", id.ToString());
+            }
             if(Procedure == "spTest")
             {
                 mydal.AddParam("@TestID", id.ToString());
