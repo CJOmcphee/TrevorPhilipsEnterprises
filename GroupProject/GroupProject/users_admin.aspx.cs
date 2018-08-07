@@ -54,7 +54,7 @@ namespace GroupProject.admin
         }
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            Crud.CreateUpdateUser("u", lblEmail.Text, tbPassword.Text, tbFirstName.Text, tbLastName.Text);
+            Crud.CreateUpdateUser("u", lblEmail.Text, tbPassword.Text, tbFirstName.Text, tbLastName.Text,"u");
             pnlUsersList.Visible = true;
             pnlUserUpdate.Visible = false;
             LoadView();
