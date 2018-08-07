@@ -574,7 +574,6 @@ namespace GroupProject.admin
             {
 
                 case "Edi":
-                    saveEditedSlideText("d", 1);
                     pnlTblEdit.Visible = true;
                     lblTblEditID.Text = cid.ToString();
                     tbEditContent.Text = myTable.getContent(cid);
@@ -582,9 +581,9 @@ namespace GroupProject.admin
                     break;
 
                 case "Del":
-                    string delete = "<td>" + myTable.getContent(cid) + "</td>";
+                    string delete = myTable.getContent(cid);
                     myTable.deleteCell(cid);
-                    taRawText.InnerText = taRawText.InnerText.Replace(delete, "");
+                    saveEditedSlideText(cid,delete,"");
                     Editslide(taRawText.InnerText);
                     LoadSpecificTable();
                     break;
@@ -612,38 +611,23 @@ namespace GroupProject.admin
 
         
         // Saves the text into the raw text for the final save.
-        private void saveEditedSlideText(string mod, int id)
+        private void saveEditedSlideText(int id, string oldVal, string newVal)
         {
             char newLine = '^';
-            String[] substring = taRawText.InnerText.ToLower().Split(newLine);
+            String[] substring = taRawText.InnerText.Split(newLine);
             //List<string> list = substrings.OfType<string>().ToList();
             foreach (string lineString in substring)
             {
-                if (lineString.Contains("<table>") || lineString.Contains("</table>"))
+                if (lineString.Contains("<td>") || lineString.Contains("</td>"))
                 {
-                    String[] tableString = lineString.Split(new String[] { "<table>", "</table>" }, StringSplitOptions.None);
-                    foreach (string tableSubstrings in tableString)
-                    {
-                        if (tableSubstrings != "" && tableSubstrings.Contains("<tr>") || tableSubstrings.Contains("</tr>"))
+                        if (id == substring.Length)
                         {
-                            String[] rowString = tableSubstrings.Split(new String[] { "<tr>", "</tr>" }, StringSplitOptions.None);
-                            foreach (string rowSubString in rowString)
-                            {
-                                if (rowSubString.Contains("<td>") || rowSubString.Contains("</td>"))
-                                {
-                                    
-                                    if (mod == "d") // "d" = Delete
-                                    {
-                                        
-                                    }
-                                    else if (mod == "e") // "e" = Edit
-                                    {
-
-                                    }
-                                }
-                            }
+                            substring[id].Replace(oldVal, newVal);
+                            string newContent = String.Join("", substring);
+                            taRawText.InnerText = newContent;
+                            taSlideEditText.InnerText = newContent;
                         }
-                    }
+                    
                 }
             }
         }
