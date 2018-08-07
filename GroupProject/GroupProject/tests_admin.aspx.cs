@@ -7,14 +7,17 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI.HtmlControls;
+using System.Text.RegularExpressions;
 
 namespace GroupProject.admin
 {
     public partial class tests_admin : System.Web.UI.Page
     {
+        TextTables myTable;
         public string Module, Test, Question, Lesson;
         protected void Page_Load(object sender, EventArgs e)
         {
+            myTable = new TextTables();
             Security mySecurity = new Security();
             mySecurity.checkAccess("a");
             if (Session["Test"] != null)
@@ -134,7 +137,6 @@ namespace GroupProject.admin
             pnlSlideEditor.Visible = false;
             pnlSlides.Visible = false; ;
             pnlTableEditor.Visible = false; ;
-            pnlTableInsert.Visible = false; ;
             pnlTestsList.Visible = false; ;
             pnlEditExamples.Visible = false;
         }
@@ -299,7 +301,7 @@ namespace GroupProject.admin
                 return;
             }
             gvExamples.SelectedIndex = Convert.ToInt32(e.CommandArgument);
-            switch(e.CommandName)
+            switch (e.CommandName)
             {
                 case "Edi":
                     HidePanels();
@@ -333,15 +335,29 @@ namespace GroupProject.admin
             switch (e.CommandName)
             {
                 case "Edi":
+                    myTable.ClearTables();
+                    ddlSelectTable.DataSource = null;
                     pnlSlideEditor.Visible = true;
                     lblSlideID.Text = gvSlides.SelectedDataKey["slideID"].ToString();
                     DataSet slideDS = Crud.ReadTable("spSlides", lblSlideID.Text);
                     string editContent = slideDS.Tables[0].Rows[0]["slideInfo"].ToString();
+                    taRawText.InnerText = editContent;
                     Editslide(editContent);
                     taSlideEditText.InnerText = editorContent(editContent);
+                    if (editContent.Contains("<table>"))
+                    {
+                        storeTables(editContent);
+                    }
+                    else
+                    {
+                        ddlSelectTable.DataSource = null;
+                        gvStoredTable.DataSource = null;
+                        myTable.ClearTables();
+                    }
                     break;
                 case "Del":
-
+                    Crud.DeleteData("spSlides", gvSlides.SelectedDataKey["slideID"].ToString());
+                    LoadSlides(Crud.GetSlides(Lesson));
                     break;
             }
         }
@@ -356,11 +372,14 @@ namespace GroupProject.admin
         protected void btnPreviewGen_Click(object sender, EventArgs e)
         {
             string newContent = taSlideEditText.InnerText;
+            string dbText = newContent.Replace("\n", "^");
+            taRawText.InnerText = dbText;
             char newLine = '\n';
             String[] substrings = newContent.Split(newLine);
             foreach (string substring in substrings)
             {
-                Editslide(substring.Replace("\n", "^"));
+                substring.Replace("\n", "^");
+                Editslide(substring);
             }
         }
 
@@ -377,18 +396,24 @@ namespace GroupProject.admin
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
-            
+
             if (Convert.ToInt32(tbTableNum.Text) >= 0 && Convert.ToInt32(tbRowTblNum.Text) >= 0 && Convert.ToInt32(tbRowSlideNum.Text) >= 0 && Convert.ToInt32(tbTblCellNum.Text) >= 0)
             {
                 char newLine = '\n';
                 String[] substrings = taSlideEditText.InnerText.Split(newLine);
                 List<string> list = substrings.OfType<string>().ToList();
-                TextTable text = new TextTable();
+                TextTables text = new TextTables();
                 string table = text.newTable(Convert.ToInt32(tbTableNum.Text), Convert.ToInt32(tbRowTblNum.Text), Convert.ToInt32(tbTblCellNum.Text));
                 list.Insert(Convert.ToInt32(tbRowSlideNum.Text), table);
                 string insertedList = string.Join("\n", list.ToArray());
+                string dbText = insertedList.Replace("\n", "^");
+                taRawText.InnerText = dbText;
                 taSlideEditText.InnerText = insertedList;
-                Editslide(insertedList.Replace("\n", "^"));
+                Editslide(dbText);
+                myTable.ClearTables();
+                ddlSelectTable.DataSource = null;
+                storeTables(dbText);
+                pnlTableInsert.Visible = false;
             }
             else
             {
@@ -404,16 +429,17 @@ namespace GroupProject.admin
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            string slideContent = taSlideEditText.InnerText;
-            Crud.EditSlide(lblSlideID.Text, slideContent.Replace("\n", "^"));
+            string slideContent = taRawText.InnerText;
+            Crud.EditSlide(lblSlideID.Text, slideContent);
             pnlSlideEditor.Visible = false;
             taSlideEditText.InnerText = "";
+            taRawText.InnerText = "";
         }
 
         protected void btnAddlesson_Click(object sender, EventArgs e)
         {
             DataSet ds = Crud.GetLessons(Module);
-            int y = ds.Tables[0].Rows.Count +1;
+            int y = ds.Tables[0].Rows.Count + 1;
             Crud.CreatLesson(Module + "-" + y, Module);
             LoadLessons(Crud.GetLessons(Module));
         }
@@ -421,14 +447,14 @@ namespace GroupProject.admin
         protected void btnAddExample_Click(object sender, EventArgs e)
         {
             HidePanels();
-            taEditCode.InnerText ="";
+            taEditCode.InnerText = "";
             taEditExample.InnerText = "";
             taEditExplain.InnerText = "";
             tbAnswer.Text = "";
             tbSlideRef.Text = "";
             lblExampleID.Text = "";
             lblCode.Text = "";
-            lblExplain.Text ="";
+            lblExplain.Text = "";
             lblExample.Text = "";
             lblSolution.Text = "";
             pnlEditExamples.Visible = true;
@@ -482,6 +508,18 @@ namespace GroupProject.admin
             pnlTableEditor.Visible = true;
         }
 
+        protected void btnRawText_Click(object sender, EventArgs e)
+        {
+            if (taRawText.Visible == false)
+            {
+                taRawText.Visible = true;
+            }
+            else
+            {
+                taRawText.Visible = false;
+            }
+        }
+
         private void Editslide(string slideInfo)
         {
             Char delimiter = '^';
@@ -499,11 +537,165 @@ namespace GroupProject.admin
             }
         }
 
+        private void LoadSpecificTable()
+        {
+            gvStoredTable.DataSource = null;
+            int nav = Convert.ToInt32(ddlSelectTable.SelectedIndex + 1);
+            DataTable dt = myTable.GetSpecificTable(nav);
+            gvStoredTable.DataSource = dt;
+            gvStoredTable.DataBind();
+        }
+
+        private void populateTableDDL()
+        {
+            ddlSelectTable.DataSource = null;
+            Editslide(taRawText.InnerText);
+            DataTable dt = myTable.GetTableNum();
+            ddlSelectTable.DataSource = dt;
+            ddlSelectTable.DataTextField = "tID";
+            ddlSelectTable.DataValueField = "tID";
+            ddlSelectTable.DataBind();
+        }
+
+        protected void ddlSelectTable_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+            LoadSpecificTable();
+        }
+
+        protected void gvStoredTable_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Page")
+            {
+                return;
+            }
+            gvStoredTable.SelectedIndex = Convert.ToInt32(e.CommandArgument);
+            int cid = Convert.ToInt32(gvStoredTable.SelectedDataKey["cID"]);
+            switch (e.CommandName)
+            {
+
+                case "Edi":
+                    saveEditedSlideText("d", 1);
+                    pnlTblEdit.Visible = true;
+                    lblTblEditID.Text = cid.ToString();
+                    tbEditContent.Text = myTable.getContent(cid);
+                    lblEditCont.Text = myTable.getContent(cid);
+                    break;
+
+                case "Del":
+                    string delete = "<td>" + myTable.getContent(cid) + "</td>";
+                    myTable.deleteCell(cid);
+                    taRawText.InnerText = taRawText.InnerText.Replace(delete, "");
+                    Editslide(taRawText.InnerText);
+                    LoadSpecificTable();
+                    break;
+            }
+        }
+
+        protected void btnEditContentSubmit_Click(object sender, EventArgs e)
+        {
+            string beforeEdit = "<td>" + lblEditCont.Text + "</td>";
+            string text = taRawText.InnerText;
+            if (text.Contains(beforeEdit))
+            {
+                string result =
+                myTable.updateCell(taRawText.InnerText, Convert.ToInt32(lblTblEditID.Text), tbEditContent.Text);
+
+                taRawText.InnerText = taRawText.InnerText.Replace(beforeEdit, result);
+            }
+        }
+
         public string editorContent(string content)
         {
             string NewContent = content.Replace("^", "\n");
             return NewContent;
         }
+
+        
+        // Saves the text into the raw text for the final save.
+        private void saveEditedSlideText(string mod, int id)
+        {
+            char newLine = '^';
+            String[] substring = taRawText.InnerText.ToLower().Split(newLine);
+            //List<string> list = substrings.OfType<string>().ToList();
+            foreach (string lineString in substring)
+            {
+                if (lineString.Contains("<table>") || lineString.Contains("</table>"))
+                {
+                    String[] tableString = lineString.Split(new String[] { "<table>", "</table>" }, StringSplitOptions.None);
+                    foreach (string tableSubstrings in tableString)
+                    {
+                        if (tableSubstrings != "" && tableSubstrings.Contains("<tr>") || tableSubstrings.Contains("</tr>"))
+                        {
+                            String[] rowString = tableSubstrings.Split(new String[] { "<tr>", "</tr>" }, StringSplitOptions.None);
+                            foreach (string rowSubString in rowString)
+                            {
+                                if (rowSubString.Contains("<td>") || rowSubString.Contains("</td>"))
+                                {
+                                    
+                                    if (mod == "d") // "d" = Delete
+                                    {
+                                        
+                                    }
+                                    else if (mod == "e") // "e" = Edit
+                                    {
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        private void storeTables(string input)
+        {
+            int x = 1; // Table Number
+            int y = 1; // Row Number
+            int z = 1; // Cell Number
+
+            if (input.ToLower().Contains("<table>") || input.ToLower().Contains("</table>"))
+            {
+                String[] tableString = input.Split(new String[] { "<table>", "</table>" }, StringSplitOptions.None);
+                foreach (string tableSubstrings in tableString)
+                {
+                    if (tableSubstrings != "" && tableSubstrings.Contains("<tr>") || tableSubstrings.Contains("</tr>"))
+                    {
+                        myTable.storeTable(x);
+                        String[] rowString = tableSubstrings.Split(new String[] { "<tr>", "</tr>" }, StringSplitOptions.None);
+                        foreach (string rowSubString in rowString)
+                        {
+                            if (rowSubString.Contains("<td>") || rowSubString.Contains("</td>"))
+                            {
+                                myTable.storeRow(x, y);
+                                string[] cellstring = rowSubString.Split(new string[] { "<td>", "</td>" }, StringSplitOptions.None);
+                                foreach (string cellsubstrings in cellstring)
+                                {
+
+                                    if (cellsubstrings != "")
+                                    {
+                                        myTable.storeCell(x, y, z, cellsubstrings);
+                                        z++;
+                                    }
+                                }
+                                y++;
+                            }
+                        }
+                        x++;
+                    }
+                }
+            }
+            populateTableDDL();
+        }
+
+        private void LoadTable()
+        {
+            DataTable dt = myTable.Get();
+            gvStoredTable.DataSource = dt;
+            gvStoredTable.DataBind();
+        }
+
 
     }
 }

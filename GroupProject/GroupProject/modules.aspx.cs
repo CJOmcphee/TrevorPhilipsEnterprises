@@ -15,13 +15,11 @@ namespace GroupProject.user
         {
             Security mySecurity = new Security();
             mySecurity.checkAccess("u");
-           
             if (!IsPostBack)
             {
                 loadModules();
             }
         }
-
         //Loops through the database to look for all modules and put there into a verticle lise with each module a hyper link
         //Then make every hyper link upon hovering over showing a verticle list of hyperlinks for all the lessons in each module
         private void loadModules()
@@ -29,7 +27,6 @@ namespace GroupProject.user
             DataSet module = Crud.ReadTable("spModule");
             HtmlTable tbMod = new HtmlTable();
             dvModuleList.Controls.Add(tbMod);
-
             foreach(DataRow row in module.Tables[0].Rows)
             {
                 HtmlTableRow trMod = new HtmlTableRow();

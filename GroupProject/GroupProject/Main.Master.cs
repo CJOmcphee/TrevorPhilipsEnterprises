@@ -12,8 +12,6 @@ namespace GroupProject
         public Security mySecurity = new Security();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            
             switch (mySecurity.Access)
             {
                 case "u":
@@ -45,7 +43,6 @@ namespace GroupProject
                     hlGrades.Enabled = false;
                     break;
             }
-
             lblFullName.Text = mySecurity.FullName;
             if (mySecurity.Access == "" || mySecurity.Access == "x")
             {
@@ -57,7 +54,6 @@ namespace GroupProject
                 btnLogout.Visible = true;
                 lblWelcome.Visible = true;
             }
-
             if(mySecurity.Access == "a")
             {
                 hlHome.NavigateUrl = "~/index_admin.aspx";
@@ -66,9 +62,7 @@ namespace GroupProject
             {
                 hlHome.NavigateUrl = "~/index_user.aspx";
             }
-
         }
-
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             mySecurity.AbandonSession();

@@ -21,7 +21,6 @@ namespace GroupProject.admin
                 LoadView();
             }
         }
-
         protected void gvUsers_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             gvUsers.SelectedIndex = Convert.ToInt32(e.CommandArgument);
@@ -48,14 +47,11 @@ namespace GroupProject.admin
             gvUsers.DataSource = Crud.ReadTable("spStudents");
             gvUsers.DataBind();
         }
-        
-
         protected void gvUsers_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvUsers.PageIndex = e.NewPageIndex;
             LoadView();
         }
-
         protected void btnSave_Click(object sender, EventArgs e)
         {
             Crud.CreateUpdateUser("u", lblEmail.Text, tbPassword.Text, tbFirstName.Text, tbLastName.Text,"u");
@@ -63,7 +59,6 @@ namespace GroupProject.admin
             pnlUserUpdate.Visible = false;
             LoadView();
         }
-
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             pnlUsersList.Visible = true;

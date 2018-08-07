@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-   
       <!-- Main -->
 		<div id="page">
 		    <div id="marketing" class="container">
@@ -15,7 +14,7 @@
                             <br />
 							<p class="subtitle">Learn about the basiscs from console commands to ASP.NET webpages.</p>
 							<br />
-                            <p><a><img width="275" height="175" src="images/csharp.jpg" alt="C Sharp" /></a></p>
+                            <p><a><img width="260" height="130" src="images/csharp.jpg" alt="C Sharp" /></a></p>
 							<a href="modules.aspx" class="button">Learn</a>
 						</section>
 					</div>
@@ -27,7 +26,7 @@
                             <br />
 							<p class="subtitle">Learn how to create CRUD class and how to use stored procedures.</p>
 							<br />
-                            <p><a><img src="images/MSSQL.jpg" width="275" height="175" alt="SQL"></a></p>
+                            <p><a><img src="images/MSSQL.jpg" width="260" height="130" alt="SQL"></a></p>
 							<a href="modules.aspx" class="button">Learn</a>
 						</section>
 					</div>
@@ -38,7 +37,7 @@
 							</header>
 							<p class="subtitle">Understand how to deal with Extensible Markup Language</p>
                             <br />
-							<p><a><img src="images/xml.jpg" width="275" height="175" alt="PHP"></a></p>
+							<p><a><img src="images/xml.jpg" width="260" height="130" alt="PHP"></a></p>
 							<a href="modules.aspx" class="button">Learn</a>
 						</section>
 					</div>
@@ -50,7 +49,7 @@
                             <br />
 							<p class="subtitle">Learn how to use Jquery, Json, Ajax calls and HTML5 controls.</p>
                             <br />
-							<p><a><img src="images/jswide.png" width="275" height="175" alt="Javascript" /></a></p>
+							<p><a><img src="images/js.jpg" width="260" height="130" alt="Javascript" /></a></p>
 							<a href="modules.aspx" class="button">Learn</a>
 						</section>
 					</div>

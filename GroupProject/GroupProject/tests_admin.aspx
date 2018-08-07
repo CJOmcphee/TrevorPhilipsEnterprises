@@ -3,60 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="Scripts/angular.min.js"></script>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=basic&amp;skin=sunburst"></script>
-    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-    <style type="text/css">
-        #dvdisplay {
-            
-            top:0%;
-            position:fixed;
-            Left: 50%;
-            height:80%;
-            width:50%;
-        }
-        #dvNav{
-            position:fixed;
-            top:95%
-        }
-        #dvEdit {
-            top:0%;
-            position:fixed;
-            height:80%;
-        }
-        #dvCode{
-            position:fixed;
-            height:100%;
-            width:25%;
-            right:0%;
-            background:#808080;
-        }
-         #dvExplanation {
-             position:fixed;
-             top:0%;
-             height:50%;
-             width:25%;
-             right:25%;
-            background: #DDD;
-        }
-
-
-
-
-        #dvExample {
-            position:fixed;
-            height:50%;
-             width:25%;
-             right:25%;
-             top:50%;
-            background:#f5f5f5
-        }
-    </style>
-    <div id="page">
+      <div id="page">
         <div id="marketing" class="container">
-            <div id="table">
+             <div id="table">
+                <!--Tests List -->
                 <asp:Panel ID="pnlTestsList" runat="server">
-
                     <asp:GridView ID="gvTests" PageSize="5" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="moduleID" runat="server" OnRowCommand="gvTests_RowCommand" OnPageIndexChanging="gvTests_PageIndexChanging">
                         <Columns>
                             <asp:ButtonField HeaderText="Delete" ControlStyle-CssClass="button" ButtonType="Button" CommandName="Del" Text="Delete" />
@@ -68,12 +21,18 @@
                     <asp:Button ID="btnAddTest" CssClass="button" runat="server" Text="Add Module" OnClick="btnAddTest_Click" />
                     Module Name
                 <asp:TextBox ID="tbModuleName" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqValModuleName" runat="server"
+                         ControlToValidate="tbModuleName" ForeColor="Red" Text="*"
+                        ErrorMessage=""></asp:RequiredFieldValidator>
                     Module Summary
                 <asp:TextBox ID="tbModuleSum" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqValModuleSum" runat="server" 
+                         ControlToValidate="tbModuleSum" ForeColor="Red" Text="*"
+                        ErrorMessage=""></asp:RequiredFieldValidator>
                 </asp:Panel>
+                <!--/Tests List -->
 
-
-
+                <!--Questions List -->
                 <asp:Panel ID="pnlQuestion" Visible="false" runat="server">
                     <asp:Button ID="btnToTest" runat="server" CssClass="button" Text="Back" OnClick="btnToTest_Click" />
                     <asp:GridView ID="gvQuestions" PageSize="10" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="question" runat="server" OnRowCommand="gvQuestions_RowCommand" OnPageIndexChanging="gvQuestions_PageIndexChanging">
@@ -89,13 +48,17 @@
                     <asp:Panel ID="pnlNewQuestion" runat="server">
                         Question
                 <asp:TextBox ID="tbNewQuestion" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqValNewQuestion" runat="server"
+                             ControlToValidate="tbNewQuestion" ForeColor="Red" Text="*"
+                            ErrorMessage=""></asp:RequiredFieldValidator>
                         Answer
                 <asp:TextBox ID="tbNewAnswer" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqValNewAnswer" runat="server"
+                             ControlToValidate="tbNewAnswer" ForeColor="Red" Text="*"
+                            ErrorMessage=""></asp:RequiredFieldValidator>
                         <asp:Button ID="btnAddQuestion" runat="server" CssClass="upd-button" Text="Add Question" OnClick="btnAddQuestion_Click" />
                     </asp:Panel>
                 </asp:Panel>
-
-
                 <asp:Panel ID="pnlEditQuestion" Visible="false" runat="server">
                     <asp:Button ID="btnToQuestion" runat="server" Text="Back" CssClass="button" OnClick="btnToQuestion_Click" />
                     <asp:GridView ID="gvWrongAnswers" PageSize="10" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="wrongAnswers" runat="server" OnPageIndexChanging="gvWrongAnswers_PageIndexChanging" OnRowCommand="gvWrongAnswers_RowCommand">
@@ -108,16 +71,28 @@
                     <asp:Panel ID="pnlQuestionDetails" runat="server">
                         Question
                 <asp:TextBox ID="tbQuestionDetail" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqValQuestionDetail" runat="server"
+                             ControlToValidate="tbQuestionDetail" ForeColor="Red" Text="*"
+                            ErrorMessage=""></asp:RequiredFieldValidator>
                         Answer
                 <asp:TextBox ID="tbAnswerDetail" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqValAnswerDetail" runat="server"
+                             ControlToValidate="tbAnswerDetail" ForeColor="Red" Text="*"
+                            ErrorMessage=""></asp:RequiredFieldValidator>
                         <asp:Button ID="btnChangeQuestion" runat="server" CssClass="button" Text="Change Question" OnClick="btnChangeQuestion_Click" />
                     </asp:Panel>
                     <asp:Panel ID="pnlNewWrongAnswer" runat="server">
                         Wrong Answer
                 <asp:TextBox ID="tbWrongAnswer" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqValWrongAnswer" runat="server"
+                             ControlToValidate="tbWrongAnswer" ForeColor="Red" Text="*"
+                            ErrorMessage=""></asp:RequiredFieldValidator>
                         <asp:Button ID="btnAddWrongAnswer" runat="server" CssClass="upd-button" Text="Add Wrong Answer" OnClick="btnAddWrongAnswer_Click" />
                     </asp:Panel>
                 </asp:Panel>
+                <!--/Questions Editor -->
+
+                <!--Lessons Editor -->
                 <asp:Panel ID="pnllessons" runat="server">
                     <asp:Button ID="btnBackToNav" CssClass="button" runat="server" Text="Back" OnClick="btnToTest_Click" />
                     <asp:GridView ID="gvLessons" AutoGenerateColumns="False" DataKeyNames="lessonID" runat="server" AllowPaging="true" PageSize="5" OnPageIndexChanging="gvLessons_PageIndexChanging" OnRowCommand="gvLessons_RowCommand">
@@ -150,6 +125,9 @@
                                     <td>
                                         <textarea id="taSlideEditText" runat="server" style="width: 400px; height: 450px;" ng-model="editorText"></textarea>
                                     </td>
+                                    <td>
+                                        <textarea id="taRawText" visible="false" runat="server" style="width: 400px; height: 450px;"></textarea>
+                                    </td>
                                     <td style="top: 0;">
                                         <table style="top: inherit;">
                                             <tr>
@@ -165,6 +143,11 @@
                                             <tr>
                                                 <td>
                                                     <asp:Button ID="tbTable" runat="server" Text="+ Table" OnClick="tbTable_Click" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <asp:Button ID="btnRawText" runat="server" Text="RawText" OnClick="btnRawText_Click" />
                                                 </td>
                                             </tr>
                                         </table>
@@ -188,15 +171,27 @@
                                         </td>
                                         <td>
                                             Slide Row#:<asp:TextBox ID="tbRowSlideNum" TextMode="Number" runat="server" Width="31px"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="reqValRowSlideNum" runat="server" 
+                                                 ControlToValidate="tbRowSlideNum" ForeColor="Red" Text="*"
+                                                ErrorMessage=""></asp:RequiredFieldValidator>
                                         </td>
                                         <td>
                                             Table#:<asp:TextBox ID="tbTableNum" TextMode="Number" runat="server" Width="31px"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="reqValTableNum" runat="server" 
+                                                 ControlToValidate="tbTableNum" ForeColor="Red" Text="*"
+                                                ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
                                         </td>
                                         <td>
-                                            Table Row#:<asp:TextBox ID="tbRowTblNum" TextMode="Number" runat="server" Width="31px"></asp:TextBox>
+                                            Table Row#:<asp:TextBox ID="tbRowTblNum" TextMode="Number" runat="server" Width="31px"></asp:TextBox>\
+                                            <asp:RequiredFieldValidator ID="reqValRowTblNum" runat="server" 
+                                                 ControlToValidate="tbRowTblNum" ForeColor="Red" Text="*"
+                                                ErrorMessage=""></asp:RequiredFieldValidator>
                                         </td>
                                         <td>
                                             Table Cell#:<asp:TextBox ID="tbTblCellNum" TextMode="Number" runat="server" Width="31px"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="reqValTblCellNum" runat="server" 
+                                                 ControlToValidate="tbTblCellNum" ForeColor="Red" Text="*"
+                                                ErrorMessage=""></asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
@@ -220,7 +215,29 @@
                            document.getElementById("tbSlidePrev").innerHTML = $scope.editorText.innerHTML;
                        });
                    </script>--%>
+                    <br />
+                    <asp:DropDownList ID="ddlSelectTable" AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddlSelectTable_SelectedIndexChanged1"></asp:DropDownList>
+                    <asp:GridView ID="gvStoredTable" AutoGenerateColumns="false" DataKeyNames="cID" runat="server" OnRowCommand="gvStoredTable_RowCommand">
+                        <Columns>
+                            <asp:ButtonField HeaderText="Delete" ControlStyle-CssClass="button" ButtonType="Button" CommandName="Del" Text="Delete" />
+                            <asp:ButtonField HeaderText="Edit" ControlStyle-CssClass="upd-button" ButtonType="Button" CommandName="Edi" Text="Edit" />
+                            <asp:BoundField HeaderText="Table ID" DataField="tID"/>
+                            <asp:BoundField HeaderText="Row ID" DataField="rID"/>
+                            <asp:BoundField HeaderText="Cell ID" DataField="cID"/>
+                            <asp:BoundField HeaderText="Content" DataField="Content" />
+                        </Columns>
+                    </asp:GridView>
+                    <br />
+                    <asp:Panel ID="pnlTblEdit" Visible="false" runat="server">
+                        <asp:Label ID="lblTblEditID" runat="server" Text=""></asp:Label>
+                        <asp:TextBox ID="tbEditContent" runat="server"></asp:TextBox>
+                        <asp:Label ID="lblEditCont" runat="server" Visible="false" Text=""></asp:Label>
+                        <asp:Button ID="btnEditContentSubmit" runat="server" Text="Submit" OnClick="btnEditContentSubmit_Click" />
+                    </asp:Panel>
                 </asp:Panel>
+                <!--/Lessons Editor -->
+
+                <!--Examples Editor -->
                 <asp:Panel ID="pnlExamples" runat="server">
                     <asp:Button ID="btnExampleBack" CssClass="button" runat="server" Text="Back" OnClick="btnGoToLessons_Click" />
                     <asp:GridView ID="gvExamples" AutoGenerateColumns="False" DataKeyNames="exampleID" runat="server" AllowPaging="true" PageSize="5" OnPageIndexChanging="gvExamples_PageIndexChanging" OnRowCommand="gvExamples_RowCommand">
@@ -233,13 +250,18 @@
                     </asp:GridView>
                     <asp:Button ID="btnAddExample" runat="server" Text="Add Example" OnClick="btnAddExample_Click" />
                 </asp:Panel>
-            
             <asp:Panel ID="pnlnav" runat="server" Visible="false">
                 <asp:Panel ID="pnlModuleDetails" runat="server">
                     Name
                 <asp:TextBox ID="tbModuleNameDetails" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqValModuleNameDetails" runat="server"
+                         ControlToValidate="tbModuleNameDetails" ForeColor="Red" Text="*"
+                        ErrorMessage=""></asp:RequiredFieldValidator>
                     Summary
                 <asp:TextBox ID="tbModuleSumDetails" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqValModuleSumDetails" runat="server" 
+                         ControlToValidate="tbModuleSumDetails" ForeColor="Red" Text="*"
+                        ErrorMessage=""></asp:RequiredFieldValidator>
                     <asp:Button ID="btnChangeModule" runat="server" CssClass="upd-button" Text="Change Module" OnClick="btnChangeModule_Click" />
                 </asp:Panel>
                 <asp:Button ID="btnrestart" runat="server" Text="Back" CssClass="button" OnClick="btnrestart_Click" />
@@ -249,6 +271,9 @@
             <asp:Panel ID="pnlNewSlide" runat="server">
                 Slide Info : 
                 <asp:TextBox ID="tbSlideInfo" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="reqValSlideInfo" runat="server"
+                     ControlToValidate="tbSlideInfo" ForeColor="Red" Text="*"
+                    ErrorMessage=""></asp:RequiredFieldValidator>
             </asp:Panel>
                 </div>
             <asp:Panel ID="pnlEditExamples" runat="server" Visible="false">
@@ -256,6 +281,9 @@
         <asp:Panel ID="pnlExNav" runat="server">
             Slide Reference
             <asp:TextBox ID="tbSlideRef" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="reqValSlideRef" runat="server" 
+                 ControlToValidate="tbSlideRef" ForeColor="Red" Text="*"
+                ErrorMessage=""></asp:RequiredFieldValidator>
         <asp:Button ID="btnSeeExplanation" CssClass="button" runat="server" Text="Edit Explanation" OnClick="btnSeeExplanation_Click"/>
         <asp:Button ID="btnSeeCode" CssClass="button" runat="server" Text="Edit Code" OnClick="btnSeeCode_Click"/>
         <asp:Button ID="btnSeeExample" CssClass="button" runat="server" Text="Edit Example/Solution" OnClick="btnSeeExample_Click"/>
@@ -263,7 +291,6 @@
     </asp:Panel>
             </div>
         <div>
-
             <div id="dvdisplay" runat="server">
                 <div id="dvExample" runat="server">
                     Example/Solution
@@ -303,12 +330,15 @@
                          Answer
                          <br />
                         <asp:TextBox ID="tbAnswer" runat="server"></asp:TextBox>
+                         <asp:RequiredFieldValidator ID="reqValAnswer" runat="server" 
+                              ControlToValidate="tbAnswer" ForeColor="Red" Text="*"
+                             ErrorMessage=""></asp:RequiredFieldValidator>
                      </asp:Panel>
                     <asp:Button ID="btnSaveExample" CssClass="button" runat="server" Text="Save" OnClick="btnSaveExample_Click" />
              </div>
          </div>
             </asp:Panel>
-                
+            <!--/Examples Editor -->
         </div>
-    </div>
+  </div>
 </asp:Content>

@@ -49,6 +49,15 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.WebControls.TextBox tbModuleName;
         
         /// <summary>
+        /// reqValModuleName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValModuleName;
+        
+        /// <summary>
         /// tbModuleSum control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace GroupProject.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbModuleSum;
+        
+        /// <summary>
+        /// reqValModuleSum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValModuleSum;
         
         /// <summary>
         /// pnlQuestion control.
@@ -112,6 +130,15 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.WebControls.TextBox tbNewQuestion;
         
         /// <summary>
+        /// reqValNewQuestion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValNewQuestion;
+        
+        /// <summary>
         /// tbNewAnswer control.
         /// </summary>
         /// <remarks>
@@ -119,6 +146,15 @@ namespace GroupProject.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbNewAnswer;
+        
+        /// <summary>
+        /// reqValNewAnswer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValNewAnswer;
         
         /// <summary>
         /// btnAddQuestion control.
@@ -184,6 +220,15 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.WebControls.TextBox tbQuestionDetail;
         
         /// <summary>
+        /// reqValQuestionDetail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValQuestionDetail;
+        
+        /// <summary>
         /// tbAnswerDetail control.
         /// </summary>
         /// <remarks>
@@ -191,6 +236,15 @@ namespace GroupProject.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbAnswerDetail;
+        
+        /// <summary>
+        /// reqValAnswerDetail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValAnswerDetail;
         
         /// <summary>
         /// btnChangeQuestion control.
@@ -218,6 +272,15 @@ namespace GroupProject.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbWrongAnswer;
+        
+        /// <summary>
+        /// reqValWrongAnswer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValWrongAnswer;
         
         /// <summary>
         /// btnAddWrongAnswer control.
@@ -328,6 +391,15 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea taSlideEditText;
         
         /// <summary>
+        /// taRawText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea taRawText;
+        
+        /// <summary>
         /// btnClose control.
         /// </summary>
         /// <remarks>
@@ -353,6 +425,15 @@ namespace GroupProject.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button tbTable;
+        
+        /// <summary>
+        /// btnRawText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRawText;
         
         /// <summary>
         /// lblSlideID control.
@@ -400,6 +481,15 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.WebControls.TextBox tbRowSlideNum;
         
         /// <summary>
+        /// reqValRowSlideNum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValRowSlideNum;
+        
+        /// <summary>
         /// tbTableNum control.
         /// </summary>
         /// <remarks>
@@ -407,6 +497,15 @@ namespace GroupProject.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbTableNum;
+        
+        /// <summary>
+        /// reqValTableNum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValTableNum;
         
         /// <summary>
         /// tbRowTblNum control.
@@ -418,6 +517,15 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.WebControls.TextBox tbRowTblNum;
         
         /// <summary>
+        /// reqValRowTblNum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValRowTblNum;
+        
+        /// <summary>
         /// tbTblCellNum control.
         /// </summary>
         /// <remarks>
@@ -425,6 +533,15 @@ namespace GroupProject.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbTblCellNum;
+        
+        /// <summary>
+        /// reqValTblCellNum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValTblCellNum;
         
         /// <summary>
         /// lblMessage control.
@@ -443,6 +560,69 @@ namespace GroupProject.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlTableInsert;
+        
+        /// <summary>
+        /// ddlSelectTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSelectTable;
+        
+        /// <summary>
+        /// gvStoredTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvStoredTable;
+        
+        /// <summary>
+        /// pnlTblEdit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlTblEdit;
+        
+        /// <summary>
+        /// lblTblEditID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTblEditID;
+        
+        /// <summary>
+        /// tbEditContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbEditContent;
+        
+        /// <summary>
+        /// lblEditCont control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEditCont;
+        
+        /// <summary>
+        /// btnEditContentSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditContentSubmit;
         
         /// <summary>
         /// pnlExamples control.
@@ -508,6 +688,15 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.WebControls.TextBox tbModuleNameDetails;
         
         /// <summary>
+        /// reqValModuleNameDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValModuleNameDetails;
+        
+        /// <summary>
         /// tbModuleSumDetails control.
         /// </summary>
         /// <remarks>
@@ -515,6 +704,15 @@ namespace GroupProject.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbModuleSumDetails;
+        
+        /// <summary>
+        /// reqValModuleSumDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValModuleSumDetails;
         
         /// <summary>
         /// btnChangeModule control.
@@ -571,6 +769,15 @@ namespace GroupProject.admin {
         protected global::System.Web.UI.WebControls.TextBox tbSlideInfo;
         
         /// <summary>
+        /// reqValSlideInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValSlideInfo;
+        
+        /// <summary>
         /// pnlEditExamples control.
         /// </summary>
         /// <remarks>
@@ -605,6 +812,15 @@ namespace GroupProject.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbSlideRef;
+        
+        /// <summary>
+        /// reqValSlideRef control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValSlideRef;
         
         /// <summary>
         /// btnSeeExplanation control.
@@ -794,6 +1010,15 @@ namespace GroupProject.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbAnswer;
+        
+        /// <summary>
+        /// reqValAnswer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValAnswer;
         
         /// <summary>
         /// btnSaveExample control.
