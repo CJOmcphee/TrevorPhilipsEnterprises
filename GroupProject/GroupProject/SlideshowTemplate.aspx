@@ -8,10 +8,10 @@
 <style>
     div  {
         background-image:url(../images/red-wallpaper-13.jpg);
-        height: 250px;
-        width: 710px;
+        height: 190px;
+        width: 670px;
         text-align:center;
-        font-size:1.5em;
+        font-size:x-large;
     }
 
     .next-button {
