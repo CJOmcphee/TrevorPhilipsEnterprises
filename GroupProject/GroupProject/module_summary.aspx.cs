@@ -19,7 +19,6 @@ namespace GroupProject
                 loadSummary(module);
             }
         }
-
         private void loadSummary(string module)
         {
             if (module == null)
@@ -37,7 +36,6 @@ namespace GroupProject
                 generateTable(moduleSum);
             }
         }
-
         private void generateTable(string text)
         {
             Char delimiter = '^';
@@ -54,7 +52,5 @@ namespace GroupProject
                 tblSummary.Controls.Add(myRow);
             }
         }
-
-
     }
 }

@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="registration.aspx.cs" Inherits="GroupProject.user.registration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 <%--    <asp:ValidationSummary ID="valSumRegister" DisplayMode="BulletList" BorderStyle="Solid" BorderColor="Red" runat="server" />--%>
@@ -33,5 +32,4 @@
         </div>
         <div class="shadow"></div>
     </div>
-
 </asp:Content>

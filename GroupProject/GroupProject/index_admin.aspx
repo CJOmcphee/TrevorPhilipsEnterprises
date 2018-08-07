@@ -4,7 +4,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
       <!-- Main -->
 		<div id="page">
-
 			<!-- Extra -->
 			<div id="marketing" class="container">
 				<div class="row">
@@ -39,7 +38,6 @@
 							<a href="Grades.aspx" class="button">See Grades</a>
 						</section>
 					</div>
-					
 				</div>
 			</div>
 			<!-- /Extra -->

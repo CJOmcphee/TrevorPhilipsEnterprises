@@ -4,15 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    
     <title></title>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
- 
 </head>
 <body>
-  
     <form id="form1" runat="server">
         <div id="page">
             <div id="marketing" class="container">

@@ -3,7 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="Scripts/angular.min.js"></script>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=basic&amp;skin=sunburst"></script>
-    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
       <div id="page">
@@ -251,7 +250,6 @@
                     </asp:GridView>
                     <asp:Button ID="btnAddExample" runat="server" Text="Add Example" OnClick="btnAddExample_Click" />
                 </asp:Panel>
-            
             <asp:Panel ID="pnlnav" runat="server" Visible="false">
                 <asp:Panel ID="pnlModuleDetails" runat="server">
                     Name
@@ -293,7 +291,6 @@
     </asp:Panel>
             </div>
         <div>
-
             <div id="dvdisplay" runat="server">
                 <div id="dvExample" runat="server">
                     Example/Solution

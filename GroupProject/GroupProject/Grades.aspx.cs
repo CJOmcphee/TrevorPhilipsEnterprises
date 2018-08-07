@@ -15,7 +15,6 @@ namespace GroupProject
         public int Module;
         protected void Page_Load(object sender, EventArgs e)
         {
-           
             if(!IsPostBack)
             {
                 ShowBestScores();
@@ -23,7 +22,6 @@ namespace GroupProject
         }
         public void ShowBestScores()
         {
-            
             Security security = new Security();
             if(security.Email=="doug.jackson@robertsoncollege.net")
             {
@@ -37,14 +35,11 @@ namespace GroupProject
                 gvUser.DataSource = dsTopScores;
                 gvUser.DataBind();
             }
-            
         }
-
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             gvUser.SelectedIndex = Convert.ToInt32(e.CommandArgument);
             string test = gvUser.SelectedDataKey["tID"].ToString();
-           
             switch(test)
             {
                 case "Module 1":
@@ -74,7 +69,6 @@ namespace GroupProject
                 case "Module 9":
                     ModID = "9-4";
                     break;
-                
             }
             Response.Redirect("PracticeTest.aspx?Lesson=" + ModID);
         }

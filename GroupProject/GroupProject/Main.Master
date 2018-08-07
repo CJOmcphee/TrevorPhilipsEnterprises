@@ -20,7 +20,6 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
         </noscript>
-
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -29,14 +28,12 @@
         <!-- Header -->
 		<div id="header">
   			<div class="container">
-
    				    <!-- Logo -->
   					<div id="logo">
                         <h1><a href="index_user.aspx"><img src="images/robertson.png" class="image left" alt="">Software and Database <br /> <br /> Development </a></h1>
                         <br />
 					</div>
     				<!-- /Logo -->
-
                 <!-- Login-details -->
                 <div id="login-details">
 			        <p><asp:Label ID="lblWelcome" runat="server" Text="Welcome,"></asp:Label> <asp:Label ID="lblFullName" CssClass="user" runat="server" Text=""></asp:Label>  <asp:Button ID="btnLogout" runat="server" CssClass="ld-button" Text="Logout" OnClick="btnLogout_Click" /> </p>
@@ -66,7 +63,6 @@
 			</div>
 		</div>
 	<!-- /Banner -->		
-	 
 		 <asp:ContentPlaceHolder ID="body" runat="server">
          </asp:ContentPlaceHolder>
         </form>

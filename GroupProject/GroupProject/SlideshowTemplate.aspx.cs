@@ -30,7 +30,6 @@ namespace GroupProject
                 Session["SlideShow"] = Slideshow;
                 Session["Navi"] = 0;
                 CheckSlide();
-
             }
             else
             {
@@ -40,7 +39,6 @@ namespace GroupProject
                 {
                     FillDiv(Slide);
                 }
-
             }
         }
         //Checks the lesson id for the slide if the lesson is one of the below make the test button visible
@@ -72,7 +70,6 @@ namespace GroupProject
                 btnNext.Enabled = true;
                 btnGoToExample.Visible = true;
             }
-            
         }
         //Loop through the Data and look for every row and turns each row into a slide/
         // the delimter splits up the string when it sees ^
@@ -126,7 +123,6 @@ namespace GroupProject
         {
             myslides.Controls.Add(panel);
         }
-
         protected void btnPrev_Click(object sender, EventArgs e)
         {
             int y = (int)Session["Navi"];
@@ -140,17 +136,14 @@ namespace GroupProject
             Session["Navi"] = y;
             CheckNav();
         }
-
         protected void btnGoToExample_Click(object sender, EventArgs e)
         {
             Response.Redirect("ExampleTemplate.aspx?Lesson="+Request.QueryString["slide"]);
         }
-
         protected void btnGoTest_Click(object sender, EventArgs e)
         {
             Response.Redirect("PracticeTest.aspx?Lesson=" + Request.QueryString["slide"]);
         }
-
         protected void btnNext_Click(object sender, EventArgs e)
         {
             int y = (int)Session["Navi"];

@@ -90,29 +90,19 @@
 <body>
     <form runat="server" id="form1">
     <div>
-
         <div id="dvExplaination" runat="server">
-
         </div>
-
-
             <div id="dvExample" runat="server">
-                
             </div>
-
             <div id="dvCode" runat="server">
             </div>
-
     </div>
-
     <br />
     <div id="button" runat="server">
         <asp:Button ID="btnPrev" runat="server" Text="Prev" OnClick="btnPrev_Click" />
         <asp:Button ID="btnGo" runat="server" Text="Go" OnClick="btnGo_Click" />
         <asp:Button ID="btnNext" Enabled ="false" runat="server" Text="Next" OnClick="btnNext_Click" />
-
     </div>
     </form>
 </body>
-
 </html>

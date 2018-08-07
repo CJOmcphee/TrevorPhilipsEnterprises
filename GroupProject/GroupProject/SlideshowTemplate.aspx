@@ -55,7 +55,6 @@
     }
 </style>
 </head>
-
 <body>
     <div  id ="myslides" runat="server" >        
     </div>
