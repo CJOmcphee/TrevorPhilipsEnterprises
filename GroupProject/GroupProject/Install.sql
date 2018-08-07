@@ -108,6 +108,8 @@ as begin
 		begin
 			select @studentEmail=studentEmail from tbStudents where studentEmail=@studentEmail
 			delete from tbStudents where studentEmail=@studentEmail
+			delete from tbStudentTest where sID = @studentEmail
+			delete from tbStudentTest where sID = @studentEmail
 			delete from tbLogin where sID =@studentEmail
 		end
 end
@@ -448,5 +450,6 @@ As begin
 	
 END
 GO
+exec spStudents @crud = 'd', @studentEmail = 'tony.stark@robertsoncollege.net'
 EXEC spStudentTopTests @sID='tony.stark@robertsoncollege.net'
 exec spexamples @crud ='r', @lID='1-1'
