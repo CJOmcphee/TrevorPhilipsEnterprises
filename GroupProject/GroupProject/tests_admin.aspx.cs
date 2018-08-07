@@ -335,6 +335,8 @@ namespace GroupProject.admin
             switch (e.CommandName)
             {
                 case "Edi":
+                    myTable.ClearTables();
+                    ddlSelectTable.DataSource = null;
                     pnlSlideEditor.Visible = true;
                     lblSlideID.Text = gvSlides.SelectedDataKey["slideID"].ToString();
                     DataSet slideDS = Crud.ReadTable("spSlides", lblSlideID.Text);
@@ -546,13 +548,13 @@ namespace GroupProject.admin
 
         private void populateTableDDL()
         {
+            ddlSelectTable.DataSource = null;
+            Editslide(taRawText.InnerText);
             DataTable dt = myTable.GetTableNum();
             ddlSelectTable.DataSource = dt;
             ddlSelectTable.DataTextField = "tID";
             ddlSelectTable.DataValueField = "tID";
             ddlSelectTable.DataBind();
-            ddlSelectTable.SelectedIndex = 0;
-            LoadSpecificTable();
         }
 
         protected void ddlSelectTable_SelectedIndexChanged1(object sender, EventArgs e)
@@ -629,13 +631,10 @@ namespace GroupProject.admin
                             {
                                 if (rowSubString.Contains("<td>") || rowSubString.Contains("</td>"))
                                 {
-                                    int count = Regex.Matches(rowSubString, "<td>").Count;
+                                    
                                     if (mod == "d") // "d" = Delete
                                     {
-                                        if( count == id)
-                                        {
-
-                                        }
+                                        
                                     }
                                     else if (mod == "e") // "e" = Edit
                                     {
