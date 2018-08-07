@@ -84,11 +84,11 @@ namespace DAL_Project
                 da.SelectCommand.Parameters.Add(parameter);
             }
 
-            conn.Open();
-            da.Fill(dsResult);
-            conn.Close();
-            ClearParams();
-            return dsResult;
+                conn.Open();
+                da.Fill(dsResult);
+                conn.Close();
+                ClearParams();
+                return dsResult;
         }
 
         /// <summary>
