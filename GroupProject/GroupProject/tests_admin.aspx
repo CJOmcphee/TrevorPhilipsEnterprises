@@ -209,12 +209,6 @@
                             </asp:Panel>
                         </div>
                     </asp:Panel>
-                    <%--<script>
-                       var app = angular.module('myApp', []);
-                       app.controller('myCtrl', function ($scope) {
-                           document.getElementById("tbSlidePrev").innerHTML = $scope.editorText.innerHTML;
-                       });
-                   </script>--%>
                     <br />
                     <asp:DropDownList ID="ddlSelectTable" AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddlSelectTable_SelectedIndexChanged1"></asp:DropDownList>
                     <asp:GridView ID="gvStoredTable" AutoGenerateColumns="false" DataKeyNames="cID" runat="server" OnRowCommand="gvStoredTable_RowCommand">
