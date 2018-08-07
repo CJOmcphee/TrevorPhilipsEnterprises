@@ -143,13 +143,14 @@ namespace GroupProject
             mydal.AddParam("@score", Score.ToString());
             mydal.ExecuteProcedure("spScore");
         }
-        public static DataSet CreateUpdateUser(string crud ,string UserEmail,string UserPassword,string FirstName,string LastName)
+        public static DataSet CreateUpdateUser(string crud ,string UserEmail,string UserPassword,string FirstName,string LastName, string Access)
         {
             mydal.AddParam("@crud", crud);
             mydal.AddParam("@studentEmail", UserEmail);
             mydal.AddParam("@studentPassword", UserPassword);
             mydal.AddParam("@firstName", FirstName);
             mydal.AddParam("@lastName", LastName);
+            mydal.AddParam("@access", Access);
             return mydal.ExecuteProcedure("spStudents");
         }
         public static void CreateUpdateExamples(string crud, string exampleID, string example, string solution, string lessonID,string slide, string explanation)
